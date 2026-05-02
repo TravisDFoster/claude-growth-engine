@@ -1,0 +1,15 @@
+# Cerkl Website
+
+## Status: IN PROGRESS
+
+## Task Checklist
+- [ ] Insights Video — add to website (requirements from Travis)
+- [ ] Email builder page — add WCAG compliance blurb
+- [ ] Webinar landing pages — update/maintain via Webflow CMS
+  - Example: https://see.cerkl.com/personalization-and-overload
+  - Webinars are CMS objects: https://cerkl-3.design.webflow.com/?workflow=cms
+
+## Notes
+- Website built in Webflow
+- Webinar pages managed via Webflow CMS (no custom dev needed)
+- WCAG compliance note is specific to the email builder feature page

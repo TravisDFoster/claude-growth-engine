@@ -1,0 +1,36 @@
+# Advertising
+
+## Overview
+Paid advertising across Meta, LinkedIn, and Reddit. UTM tracking database maintained separately.
+
+## Status: ACTIVE / MONITORING
+
+## Meta / Facebook Ads
+- [ ] Meta Page Ownership Verification — blocking Facebook Ads
+- [ ] Start another ad (after verification resolved)
+- [ ] Check performance after 1 week of new ad running
+- [ ] Look at new ads to run after review
+- [ ] Resolve UTM click vs. visit discrepancy with Eric Anderson
+  - Email sent to Eric Anderson asking about discrepancy
+  - Action: Pause ads if no response by EOB March 26 (past due — confirm current status)
+- [ ] Video asset for YouTube targeting — Pains of employee comms with Outlook or Gmail
+  - CTA: Foundations sign-up
+  - Targeting controls: TK to define
+  - AI video creation tool exploration — **Owner: Travis Foster**
+
+## LinkedIn Ads
+- [ ] LinkedIn Group ads — TK posted to 1 LinkedIn Group, awaiting approval
+- [ ] Test with Rachel (Gallagher)
+- [ ] Interest-Based Ads exploration
+
+## Reddit
+- [ ] Reddit subreddit ads — exploration phase
+- **Erik Anderson** — Reddit ad account manager; contact for UTM discrepancy and ad performance questions
+
+## UTM Tracking
+- UTM database maintained in UTM Tracker tool
+- All new ads require UTM parameters added to database
+
+## Notes
+- Pains ad concept: employee comms pain points with Outlook or Gmail → CTA is Foundations sign-up
+- AI video creation tool exploration is a Travis-owned research task

@@ -1,0 +1,60 @@
+# ICPro — Schema Markup / SEO
+
+## Objective
+Add structured data (Schema.org) to blog posts to enable rich results in Google Search.
+
+## Status: PARTIALLY COMPLETE
+
+## Validator Status
+- Google Rich Results Test: https://search.google.com/test/rich-results — FAILING ❌
+- Schema.org Validator: https://validator.schema.org/ — PASSING ✅
+
+## Schema Template (BlogPosting)
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://cerkl.com/blog/<<slug>>",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cerkl.com/blog/<<slug>>"
+      },
+      "headline": "<<meta-title>>",
+      "description": "<<seo-meta-description>>",
+      "image": "<<header-image>>",
+      "author": {
+        "@id": "https://cerkl.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://cerkl.com/#organization"
+      },
+      "datePublished": "<<published-on>>",
+      "dateModified": "<<updated-on>>",
+      "keywords": "<<primary-keyword>>",
+      "articleSection": "<<categories:name>>"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cerkl.com/#organization",
+      "name": "Cerkl",
+      "url": "https://cerkl.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.prod.website-files.com/691f7a33d90467d9ab273404/69a3822cd8cb1f93e36c4bd9_cerkl_wordmark.png"
+      }
+    }
+  ]
+}
+```
+
+## Task Checklist
+- [ ] Diagnose why Google Rich Results Test is failing while Schema.org validator passes
+- [ ] Fix schema implementation to pass Google Rich Results Test
+- [ ] Roll out schema to all blog posts
+
+## Notes
+- Schema is injected via `<script type="application/ld+json">` in page `<head>`
+- Variables use `<<placeholder>>` format (Webflow CMS field bindings)

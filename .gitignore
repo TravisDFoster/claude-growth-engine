@@ -1,0 +1,18 @@
+# Credentials — never commit
+.env
+
+# Branding assets — 6GB, too large for GitHub
+marketing/design/branding-assets/
+
+# HubSpot contact data — PII
+hubspot/data/audit-logs/
+
+# Mac noise
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
