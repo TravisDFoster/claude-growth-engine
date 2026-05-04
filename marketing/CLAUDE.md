@@ -29,6 +29,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 | One-pagers | `design/one-pagers/` |
 | Website copy, Webflow, site structure | `website/` |
 | HubSpot CRM — contacts, segments, workflows, cleanup | `../hubspot/` |
+| Reusable skills (CRO, copy, SEO, paid, email, growth, research) | `skills/` (see `skills/INDEX.md`) |
 
 ## File Structure
 
@@ -66,7 +67,18 @@ marketing/
 └── website/
     ├── CLAUDE.md
     └── CONTEXT.md
+skills/                              ← 35 vendored skills (Layer 3, plug-and-play)
+└── INDEX.md                         ← read this to see what's available
 ```
+
+## Skills layer
+
+`skills/` holds 35 self-contained marketing skills (CRO, copywriting, SEO, paid, email, growth, retention, research). They are plug-and-play — channel/project agents reference them by absolute path; do not fork or copy them into channel folders.
+
+- Catalog: `/Users/travisfoster/claude-code/cerkl/marketing/skills/INDEX.md`
+- Reference pattern: `/Users/travisfoster/claude-code/cerkl/marketing/skills/{name}/SKILL.md`
+- Skills auto-trigger on the natural-language phrases in their YAML descriptions — you usually don't need to name them
+- Cerkl context substitution: when a skill references `.agents/product-marketing-context.md`, use the `shared/` files already loaded above instead
 
 ## Rules
 - Read `diagnosis-and-guiding-policy.md` before any strategy or channel work

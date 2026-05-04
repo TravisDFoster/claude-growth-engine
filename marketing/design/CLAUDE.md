@@ -100,6 +100,18 @@ design/
         └── Mont/
 ```
 
+## Skills (Layer 3 — auto-invoke on trigger phrases)
+
+| Task | Skill |
+|---|---|
+| Generating or optimizing marketing images, OG images, hero graphics, mockups | `/Users/travisfoster/claude-code/cerkl/marketing/skills/image/SKILL.md` |
+| Producing video content with AI tools (Remotion, HeyGen, Veo, Runway) | `/Users/travisfoster/claude-code/cerkl/marketing/skills/video/SKILL.md` |
+| Writing copy for one-pagers, decks, banners, ad creative | `/Users/travisfoster/claude-code/cerkl/marketing/skills/copywriting/SKILL.md` |
+| Generating ad creative variations at scale | `/Users/travisfoster/claude-code/cerkl/marketing/skills/ad-creative/SKILL.md` |
+| Designing social graphics / repurposing for LinkedIn, X, IG, TikTok | `/Users/travisfoster/claude-code/cerkl/marketing/skills/social-content/SKILL.md` |
+
+Full catalog: `/Users/travisfoster/claude-code/cerkl/marketing/skills/INDEX.md`
+
 ## Rules
 - Ask about audience, channel, and goal before starting
 - Flag any brand deviations before producing
