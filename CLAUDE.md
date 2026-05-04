@@ -8,7 +8,7 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 - /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
 - /Users/travisfoster/claude-code/cerkl/shared/competitors.md
 
-## Routing Table
+## Routing Table - to CLAUDE.md files
 
 | Task | Go to |
 |---|---|
