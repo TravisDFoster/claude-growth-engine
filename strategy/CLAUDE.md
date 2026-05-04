@@ -70,3 +70,17 @@ cerkl/
 - Apply the strategy kernel: diagnosis → guiding policy → coherent actions
 - Ask clarifying questions before making assumptions
 - When you are unsure, say so
+
+## Personal Assistant — Push-Update Protocol
+
+When you complete work that affects a project tracked in `personal-assistant/projects/`, append an update block to the bottom of the relevant project file before ending the session:
+
+```
+## Update — YYYY-MM-DD (from strategy/)
+- Completed: <task name or INDEX row reference>
+- Status change: <if any, otherwise "none">
+- New blocker: <if any, otherwise "none">
+- Proposed next step: <one line>
+```
+
+Use absolute dates (YYYY-MM-DD). Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles these update blocks into INDEX during Travis's next planning session.

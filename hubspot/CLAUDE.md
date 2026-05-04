@@ -52,3 +52,17 @@ hubspot-audit, hubspot-implementation-plan, delete-no-email-contacts, suppress-h
 - Never skip the Planning phase of a skill
 - If a skill's abort threshold feels wrong for Cerkl's database size, adjust it in the SKILL.md before running
 - Export a CSV audit trail before any delete or suppress operation
+
+## Personal Assistant — Push-Update Protocol
+
+When you complete work that affects a project tracked in `personal-assistant/projects/` (e.g. the-cerkular HubSpot audience uploads, advertising-related list builds), append an update block to the bottom of the relevant project file before ending the session:
+
+```
+## Update — YYYY-MM-DD (from hubspot/)
+- Completed: <task name or INDEX row reference>
+- Status change: <if any, otherwise "none">
+- New blocker: <if any, otherwise "none">
+- Proposed next step: <one line>
+```
+
+Use absolute dates (YYYY-MM-DD). Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles these update blocks into INDEX during Travis's next planning session.
