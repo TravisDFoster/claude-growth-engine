@@ -24,6 +24,7 @@ Most interactions run through one of these skills. Load the skill file when inte
 | "Process this meeting note", "extract action items from `<meetings/...>`", reviewing meeting files | `skills/process-meeting.md` |
 | "Catch me up", start of session, returning after time away, checking what's changed | `skills/refresh.md` |
 | "Add a task: X", "log this", quick capture into the right project | `skills/capture.md` |
+| "Start a project for X", "spin up a new project" — also called by `capture` and `process-meeting` when no project fits | `skills/new-project.md` |
 
 ## File structure
 
@@ -38,7 +39,8 @@ personal-assistant/
 │   ├── retro.md           ← Friday wrap + archive
 │   ├── process-meeting.md
 │   ├── refresh.md
-│   └── capture.md
+│   ├── capture.md
+│   └── new-project.md     ← spin up a new project; called by capture and process-meeting
 ├── projects/          ← per-project state + history
 │   ├── archive/       ← closed projects
 │   └── <project>.md   ← starts with Status block, then narrative

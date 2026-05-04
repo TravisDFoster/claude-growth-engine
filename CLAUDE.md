@@ -23,7 +23,7 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 ```
 cerkl/
 ├── CLAUDE.md                    ← you are here (router)
-├── shared/                      ← company-wide context; load before any task
+├── shared/                      ← company-wide context; load before any task except plan
 │   ├── company-info.md
 │   ├── icp.md
 │   ├── broadcast.md

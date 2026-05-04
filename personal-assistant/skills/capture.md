@@ -9,7 +9,7 @@ Goal: get the task into the right place fast, without losing context, in the can
 1. **Identify the project** — match the task topic against `INDEX.md`'s project links.
    - Clear match → use it.
    - Multiple plausible matches → ask Travis.
-   - No match → propose a new project file or fold into the closest adjacent one. Don't silently invent.
+   - No match → call `skills/new-project.md`. That skill applies the create-vs-fold criteria and either auto-creates a new project file (and returns its name) or folds into the closest adjacent project. Continue this skill with whatever it returns.
 
 2. **Extract the row fields**
    - **Next step** — one-line description of the action. Convert verbose capture into a tight imperative.

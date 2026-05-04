@@ -15,8 +15,8 @@ Goal: turn meeting notes into INDEX rows + project file updates so nothing is lo
    - **Context shifts** — scope changes, priority changes, status changes that affect a project's Status block.
 
 3. **Map each item to a project** — use `INDEX.md`'s project links as the registry. If an action item doesn't fit an existing project:
-   - Ask Travis whether to create a new project file or fold into an adjacent one
-   - Don't silently invent a new project
+   - Call `skills/new-project.md`. That skill applies the create-vs-fold criteria and either auto-creates a new project file or folds into the closest adjacent one.
+   - For multiple new initiatives surfaced in the same meeting, batch the create-vs-fold decisions before showing Travis the diff (avoid a flurry of mid-process confirmations).
 
 4. **Build the proposed diff** — show Travis before writing:
    ```
