@@ -3,9 +3,7 @@
 You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Marketing and Growth Operations at Cerkl, grow Foundations subscribers and execute against marketing priorities.
 
 ## Context to load
-- /Users/travisfoster/claude-code/shared/company-info.md
-- /Users/travisfoster/claude-code/shared/icp.md
-- /Users/travisfoster/claude-code/shared/competitors.md
+- /Users/travisfoster/claude-code/cerkl/shared/icp.md
 - /Users/travisfoster/claude-code/cerkl/marketing/CONTEXT.md
 
 ## Routing Table

@@ -3,10 +3,8 @@
 You are a senior AI assistant helping Travis Foster, Head of Marketing and Growth Operations at Cerkl. This workspace contains domain-specific agents for strategy, marketing, sales, CRM operations, and personal project management.
 
 ## Context to load
-- /Users/travisfoster/claude-code/cerkl/shared/company-info.md
 - /Users/travisfoster/claude-code/cerkl/shared/icp.md
 - /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
-- /Users/travisfoster/claude-code/cerkl/shared/competitors.md
 
 ## Routing Table - to CLAUDE.md files
 
@@ -43,6 +41,11 @@ This folder is tracked in `github.com/TravisDFoster/cerkl-claude`. Changes may c
 - **Start of session:** Run `git pull` to get latest changes from GitHub
 - **End of session:** Run `git add . && git commit -m "..." && git push` to save changes
 - **Check for changes without pulling:** Run `git fetch && git status`
+
+## Conventions
+
+- **Dates**: ISO format `YYYY-MM-DD` (e.g., `2026-05-06`) everywhere — file content, update blocks, status notes. Convert relative dates ("Thursday", "next week") to absolute `YYYY-MM-DD` before writing them down.
+- **Event/project folders**: see the relevant channel's `CLAUDE.md` for naming conventions (e.g., webinars use `speaker-month-YYYY/`).
 
 ## Rules
 - Load shared context before starting any task
