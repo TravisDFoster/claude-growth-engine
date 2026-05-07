@@ -28,8 +28,10 @@ If the call came from `capture` or `process-meeting`, return control to that ski
    - From the project name. e.g. "Partner Co-Marketing with Crescenzo" → `partner-co-marketing-crescenzo.md` (trim aggressively — under 40 chars where possible).
    - Check for collisions in `projects/` and `projects/archive/`. If a collision, append a disambiguator and surface it to Travis.
 
-2. **Populate the template** (below) with what's known
-   - For unknown fields, write `<pending — to fill in>` and surface them in the post-create summary. Don't block on them.
+2. **Clarify, then populate the template** (below)
+   - Before writing, ask Travis briefly for any of these that aren't obvious from the capture: **context** (why now / is something broken / why this matters), **scope** (what's in / out), **acceptance criteria** (what makes it done). Keep it tight — one question per gap, skip what's already clear.
+   - Default owner = Travis silently. Don't ask about ownership unless he names someone else in the capture.
+   - For remaining unknowns after the clarify pass, write `<pending — to fill in>` and surface them in the post-create summary. Don't block on them.
    - `Last updated: <today's date>` in YYYY-MM-DD.
 
 3. **Write `projects/<filename>.md`** using the template.
@@ -71,7 +73,10 @@ If the call came from `capture` or `process-meeting`, return control to that ski
 - [ ] <step 3>
 
 ## Notes / References
-- <key contacts, links, constraints, open questions>
+- **Context / why now:** <one line — what's broken, what changed, why this matters>
+- **Scope:** <what's in / out>
+- **Acceptance criteria:** <what makes this done>
+- <other: contacts, links, constraints, open questions>
 ```
 
 ## Don't

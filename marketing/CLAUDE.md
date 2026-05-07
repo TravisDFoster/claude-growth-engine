@@ -28,6 +28,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 | Website copy, Webflow, site structure | `website/` |
 | HubSpot CRM — contacts, segments, workflows, cleanup | `../hubspot/` |
 | Reusable skills (CRO, copy, SEO, paid, email, growth, research) | `skills/` (see `skills/INDEX.md`) |
+| **Build out skills/templates for a new (or existing) channel** | [`channels/build-channel-process.md`](channels/build-channel-process.md) |
 
 ## File Structure
 

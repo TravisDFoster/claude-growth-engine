@@ -27,6 +27,7 @@
 | [The Cerkular](projects/the-cerkular.md) | Resolve personalization-link feasibility in Blast (Jira FUTURE-232) | High | — | Blocked | Travis |
 | [Cerkl Website](projects/cerkl-website.md) | Define Insights Video website requirements | High | — | Yes | Travis |
 | [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Resolve account access with IT + Meta support | High | — | Blocked | Travis |
+| [Ad Conversion Tracking](projects/ad-conversion-tracking.md) | Diagnose Segment → Google Ads + Bing conversion tracking (review early, fix if needed) | Med | 2026-05-12 | Yes | Travis |
 | [Webinars](projects/webinars.md) | Add Webinars to Resources menu (Webflow CMS with Furqan) | Med | — | Yes | Travis / Furqan |
 | [Review Sites](projects/review-sites.md) | Sourceforge — claim product listing; add Foundations | Med | — | Yes | Travis |
 | [ICPro SEO](projects/icpro-seo.md) | Diagnose why Google Rich Results Test fails (Schema.org validator passes) | Med | — | n/a | Travis |
@@ -35,4 +36,5 @@
 | [YouTube](projects/youtube.md) | Decide with TK — post product videos (Foundations, Audience Manager) to Cerkl YouTube? | Low | — | Pending | Travis / TK |
 
 ## Calendar Anchors
+- **2026-05-12** — Ad conversion tracking audit (Segment → Google Ads + Bing) due EOD
 - **2026-06-01** — Insights 3.0 launch / press release embargo lifts (delayed from 2026-05-09)
