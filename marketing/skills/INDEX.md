@@ -42,7 +42,7 @@ Channel fit: `marketing/website/`, landing pages from any paid channel (`paid-re
 
 ## SEO
 
-Channel fit: `channels/organic/seo-blog/`, `channels/comparison-seo/`.
+Channel fit: `channels/seo-blog/`, `channels/icpro-blog/`, `channels/comparison-seo/`.
 
 | Skill | Use when |
 |---|---|

@@ -36,8 +36,8 @@ A blog post following the Cerkl SEO blog structure:
 ## Reference
 
 - The Cerkl SEO blog writing guides — load the channel CLAUDE.md to invoke them:
-  - `/Users/travisfoster/claude-code/cerkl/marketing/channels/organic/seo-blog/CLAUDE.md`
-  - `/Users/travisfoster/claude-code/cerkl/marketing/channels/organic/seo-blog/blog-post-writing-guide.md`
+  - `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/CLAUDE.md`
+  - `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/skills/seo-blog-drafting/SKILL.md`
 
 ## Output
 

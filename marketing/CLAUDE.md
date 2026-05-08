@@ -4,17 +4,23 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 
 ## Context to load
 - /Users/travisfoster/claude-code/cerkl/shared/icp.md
+- /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
+- /Users/travisfoster/claude-code/cerkl/shared/competitors.md
+- /Users/travisfoster/claude-code/cerkl/shared/company-info.md
 - /Users/travisfoster/claude-code/cerkl/marketing/CONTEXT.md
+
+(Per [PRINCIPLES.md #4](../PRINCIPLES.md), this list is authoritative for `marketing/`. Channel-level routers re-list their own loads.)
 
 ## Routing Table
 
 | Task | Go to |
 |---|---|
 | Strategy, diagnosis, roadmap, 90-day sprint | `marketing-strategy/` |
-| Blog posts, SEO content, writing guides | `channels/organic/seo-blog/` |
-| Content planning, monthly plans, Jira CSV | `channels/organic/content-plan/` |
-| LinkedIn content | `channels/organic/linkedin/` |
-| Webinars, event planning, promotion copy | `channels/webinar/` |
+| Content planning, monthly plans, Jira CSV (cross-channel) | `content-plan/` |
+| Cerkl-branded SEO blog posts (cerkl.com, Webflow) | [`channels/seo-blog/`](channels/seo-blog/CLAUDE.md) |
+| Internal Comms Pro blog posts (internalcommspro.com, Wix) | [`channels/icpro-blog/`](channels/icpro-blog/CLAUDE.md) |
+| LinkedIn content | `channels/linkedin/` |
+| Webinars, event planning, promotion copy | [`channels/webinar/`](channels/webinar/CLAUDE.md) |
 | Versus/comparison landing pages | `channels/comparison-seo/` |
 | Customer case studies | `channels/case-studies/` |
 | Press releases, newsroom, PR | `channels/newsroom-pr/` |
@@ -44,12 +50,12 @@ marketing/
 │   ├── sprint-90-day.md
 │   └── team/
 │       └── weekly-mtg/
+├── content-plan/                    ← cross-channel: annual + monthly plans, Jira CSV rules
 ├── channels/
-│   ├── organic/
-│   │   ├── content-plan/            ← annual plan, monthly plans, Jira CSV rules
-│   │   ├── seo-blog/                ← writing guides, pre-writing/, draft/, live/
-│   │   └── linkedin/
-│   ├── webinar/                     ← CLAUDE.md, strategy, dated event folders
+│   ├── seo-blog/                    ← cerkl.com blog (Webflow): CLAUDE.md, process, skills/, posts/
+│   ├── icpro-blog/                  ← internalcommspro.com (Wix): CLAUDE.md, process, skills/, posts/
+│   ├── linkedin/                    ← CONTEXT + writing guide
+│   ├── webinar/                     ← CLAUDE.md, strategy, skills/, dated event folders
 │   ├── comparison-seo/
 │   ├── case-studies/
 │   ├── newsroom-pr/                 ← CONTEXT + dated PR files

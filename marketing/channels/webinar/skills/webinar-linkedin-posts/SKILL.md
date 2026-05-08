@@ -41,7 +41,7 @@ This applies to all 5 posts.
 ## Reference
 
 - [matt-frost-linkedin.md](../../matt-frost-april-2026/matt-frost-linkedin.md) — gold-standard structure (intro post + day-before with multiple angle options)
-- [linkedin-writing-guide.md](../../../organic/linkedin/linkedin-writing-guide.md) — Cerkl LinkedIn voice and format
+- [linkedin-writing-guide.md](../../../linkedin/linkedin-writing-guide.md) — Cerkl LinkedIn voice and format
 - Generic skill (input only): `/Users/travisfoster/claude-code/cerkl/marketing/skills/social-content/SKILL.md`
 
 ## Output
