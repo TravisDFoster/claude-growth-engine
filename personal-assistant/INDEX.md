@@ -34,6 +34,7 @@
 | [Design Tools](projects/design-tools.md) | Research AI video creation tools (HeyGen alternatives for Pains-concept ad video) | Low | — | n/a | Travis |
 | [Advertising](projects/advertising.md) | LinkedIn Ads — test with Rachel (Gallagher); explore Interest-Based Ads | Low | — | n/a | Travis |
 | [YouTube](projects/youtube.md) | Decide with TK — post product videos (Foundations, Audience Manager) to Cerkl YouTube? | Low | — | Pending | Travis / TK |
+| [IC Trends Knowledge Base](projects/ic-trends-knowledge-base.md) | Decide scope option (topics-only / full wiki / full + outputs) before any restructure | Low | — | n/a | Travis |
 
 ## Calendar Anchors
 - **2026-05-12** — Ad conversion tracking audit (Segment → Google Ads + Bing) due EOD

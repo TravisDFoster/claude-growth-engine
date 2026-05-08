@@ -98,8 +98,10 @@ Then list the **next Claude skills to invoke as the project progresses** (do not
 - `webinar-linkedin-posts` — paired with promo emails
 - `webinar-blog-intro` — pre-event blog
 - `webinar-runofshow` — before rehearsal
-- `webinar-followup-email` — day after the event
-- `webinar-recap-clips` — within a week of the event
+- `webinar-ingest` — **immediately after the live event**, once raw transcript / chat / deck are saved into `<event-folder>/raw/`. Produces the cleaned source-of-truth files every other post-event skill consumes.
+- `webinar-followup-email` — day after the event (reads from the cleaned transcript)
+- `webinar-recap-clips` — within a week of the event (reads from the cleaned transcript)
+- `webinar-recap-blog` — within ~1–2 weeks; standalone topic-led blog post for the SEO archive (reads from the cleaned transcript + deck extract)
 
 ## Push update
 

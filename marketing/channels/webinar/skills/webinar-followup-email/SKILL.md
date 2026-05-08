@@ -18,26 +18,28 @@ Draft the email sent to all webinar registrants the day after the event with the
 
 ## Inputs to gather
 
-- Recording link (URL — required)
-- Slidedeck link (if shared)
+- Recording link (URL — required; YouTube by default)
+- Slidedeck link (if shared; HubSpot by default)
 - Any other post-event assets the speakers want to share (audit form, partner offer, etc.)
-- Whether to send to **all registrants** (default) or to **attendees only** + a separate "sorry you missed it" version to no-shows
+- Audience split — **default is two emails**: one for attendees, one "sorry you missed it" for registrants who did not attend. Override to a single email to all registrants only if the user explicitly asks.
+
+If a link isn't ready yet, write the draft with bracketed placeholders (e.g., `[YOUTUBE_RECORDING_LINK]`, `[HUBSPOT_SLIDEDECK_LINK]`, `[FOUNDATIONS_SIGNUP_LINK]`) so the file is final-form once URLs are dropped in.
 
 ## What to produce
 
-A single email (or two if user wants the attended/missed split). Each includes:
+By default, **two emails** (attendees + did-not-attend). Each includes:
 
 - **Subject line** + 1–2 alternates
 - **Preview text** (50–90 chars)
 - **Body** (150–250 words):
-  - Thank-you / quick framing of what was covered (one short paragraph)
+  - Thank-you / quick framing of what was covered (one short paragraph). For the no-show version, lead with "sorry we missed you" framing instead.
   - 3 bullet recap of the key takeaways from the webinar
   - **Recording link** (clear, prominent)
   - Slidedeck link (if applicable)
   - Giveaway mention if the winner is being announced separately, or the winner reveal if announced here
   - **Foundations CTA** — start a free Foundations account (frictionless, no demo)
   - Partner asset link (if any)
-- **Sign-off** — Cerkl voice (Tarek or marketing team)
+- **Sign-off** — default is `Cerkl Thought Leadership Series Team`. Override only if the user specifies otherwise (e.g., Tarek personally).
 
 ## Cerkl context to apply
 

@@ -15,23 +15,31 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 | Outbound sequences, discovery, objection handling, sales enablement | `sales/` |
 | HubSpot CRM — cleanup, enrichment, segments, workflows, audit | `hubspot/` |
 | Travis's schedule, projects, meetings, task list | `personal-assistant/` |
+| IC trends, market intel, horizon-scan research | `research/` |
+| Build a new process / spin up a new workflow | [`skills/build-process/SKILL.md`](skills/build-process/SKILL.md) |
+| Upload `.md` files to Google Drive as native Google Docs (default destination: Claude-Uploads) | [`skills/md-to-drive/SKILL.md`](skills/md-to-drive/SKILL.md) |
 
 ## File Structure
 
 ```
 cerkl/
 ├── CLAUDE.md                    ← you are here (router)
+├── PRINCIPLES.md                ← workspace-wide principles for routing/skills/processes
 ├── shared/                      ← company-wide context; load before any task except plan
 │   ├── company-info.md
 │   ├── icp.md
 │   ├── broadcast.md
 │   ├── competitors.md
 │   └── features/                ← deep dives on 7 Broadcast product modules
+├── skills/                      ← workspace-wide skills (cross-domain)
+│   ├── build-process/           ← meta-skill: build a new repeatable process
+│   └── md-to-drive/             ← upload .md files to Drive as native Google Docs
 ├── strategy/                    ← growth strategy, diagnosis, guiding policy
 ├── marketing/                   ← demand gen, content, channels, marketing-strategy
 ├── sales/                       ← outbound, discovery, objection-handling, enablement
 ├── hubspot/                     ← CRM ops; 31 reusable skills + Python scripts
-└── personal-assistant/          ← Travis's projects, meetings, calendar, task list
+├── personal-assistant/          ← Travis's schedule, projects, meetings, task list
+└── research/                    ← horizon-scan research (IC trends, market intel)
 ```
 
 ## Git Sync

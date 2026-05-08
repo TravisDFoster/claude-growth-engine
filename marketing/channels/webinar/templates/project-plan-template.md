@@ -63,8 +63,10 @@
 
 | Status | Task | Owner | Due | Notes |
 |---|---|---|---|---|
+| [ ] | Ingest raw event artifacts into cleaned source-of-truth files | Cerkl (Claude) | T+1 | `webinar-ingest` (run first — every other follow-up skill consumes its output) |
 | [ ] | Distribute recording to registrants | Cerkl (Claude) | T+1 | `webinar-followup-email` |
 | [ ] | Import registrants to HubSpot | Cerkl | T+1 |  |
 | [ ] | Share registrations with speaker | Cerkl | T+1 |  |
 | [ ] | Select & notify giveaway winner | Partner | T+5 |  |
 | [ ] | Recap clips for YouTube | Cerkl (Claude) | T+7 | `webinar-recap-clips` |
+| [ ] | Standalone topic-led blog post for the SEO archive | Cerkl (Claude) | T+10 | `webinar-recap-blog` |

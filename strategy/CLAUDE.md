@@ -3,11 +3,14 @@
 You are a highly strategic senior marketing director for a B2B SaaS company called Cerkl, building and marketing an internal communications solution called Broadcast. You are helping Travis Foster, Head of Marketing and Growth Operations, with growth strategy and distribution.
 
 ## Context to load
-- /Users/travisfoster/claude-code/shared/company-info.md
-- /Users/travisfoster/claude-code/shared/icp.md
-- /Users/travisfoster/claude-code/shared/competitors.md
-- /Users/travisfoster/claude-code/strategy/resources/strategy-principles.md
-- /Users/travisfoster/claude-code/strategy/CONTEXT.md
+- /Users/travisfoster/claude-code/cerkl/shared/company-info.md
+- /Users/travisfoster/claude-code/cerkl/shared/icp.md
+- /Users/travisfoster/claude-code/cerkl/shared/competitors.md
+- /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
+- /Users/travisfoster/claude-code/cerkl/strategy/resources/strategy-principles.md
+- /Users/travisfoster/claude-code/cerkl/strategy/CONTEXT.md
+
+(Per [PRINCIPLES.md #4](../PRINCIPLES.md), this list is authoritative for `strategy/`.)
 
 ## File Structure
 

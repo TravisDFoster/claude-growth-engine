@@ -4,7 +4,7 @@
 Marketing strategy and channel planning to grow Foundations subscribers. This includes evaluating channel mix, building campaign architecture, testing distribution hypotheses, and ensuring all marketing initiatives connect to a clear theory of how they drive sign-ups.
 
 ## Strategic frame
-Apply the Rumelt kernel: name the specific obstacle, define the guiding policy, then identify coherent actions. Avoid plans that are lists of initiatives without a connecting logic. See: /Users/travisfoster/claude-code/strategy/resources/strategy-principles.md
+Apply the Rumelt kernel: name the specific obstacle, define the guiding policy, then identify coherent actions. Avoid plans that are lists of initiatives without a connecting logic. See: /Users/travisfoster/claude-code/cerkl/strategy/resources/strategy-principles.md
 
 ## Key strategic questions in play
 - Which distribution channels best reach the SMB and mid-market internal comms buyer who is underserved by enterprise alternatives?

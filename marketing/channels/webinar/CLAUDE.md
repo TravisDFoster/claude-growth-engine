@@ -34,8 +34,10 @@ Invoke these in roughly the order the project moves through phases.
 | Promotion | 5 LinkedIn posts (intro, mirror, thought-leadership, 2 boosts) | [`webinar-linkedin-posts`](skills/webinar-linkedin-posts/SKILL.md) |
 | Promotion | Pre-event blog post | [`webinar-blog-intro`](skills/webinar-blog-intro/SKILL.md) |
 | Webinar | Rehearsal checklist + day-of run-of-show | [`webinar-runofshow`](skills/webinar-runofshow/SKILL.md) |
+| Follow-up | **Ingest raw event artifacts** (transcript .vtt + chat .txt + deck .pptx) into cleaned source-of-truth files. **Run this first** — every other follow-up skill consumes its output. | [`webinar-ingest`](skills/webinar-ingest/SKILL.md) |
 | Follow-up | Post-event recording distribution email | [`webinar-followup-email`](skills/webinar-followup-email/SKILL.md) |
 | Follow-up | YouTube clip plan from transcript | [`webinar-recap-clips`](skills/webinar-recap-clips/SKILL.md) |
+| Follow-up | Standalone topic-led blog post derived from the webinar's IP — published to the SEO blog archive, not framed as a recap | [`webinar-recap-blog`](skills/webinar-recap-blog/SKILL.md) |
 
 ## Skills (Layer 3 — generic marketing skills, used as inputs)
 

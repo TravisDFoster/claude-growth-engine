@@ -1,7 +1,7 @@
 # Cerkl Broadcast — Company & Product Reference
 
 > **This file has moved.** The canonical version is now at:
-> `/Users/travisfoster/claude-code/shared/company-info.md`
+> `/Users/travisfoster/claude-code/cerkl/shared/company-info.md`
 >
 > This copy is preserved for reference but should not be edited. Update the shared/ version instead.
 
