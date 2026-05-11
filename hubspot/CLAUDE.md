@@ -20,7 +20,7 @@ Cerkl's marketing goal is **Foundations subscriber growth**. The HubSpot databas
 
 ## Skills
 
-hubspot-audit, hubspot-implementation-plan, delete-no-email-contacts, suppress-hard-bounced, suppress-ghost-contacts, suppress-global-unsubscribes, review-bounced-contacts, merge-duplicate-companies, enrich-company-name, enrich-industry, backfill-geo-data, standardize-geo-values, fix-lifecycle-stages, assign-unowned-contacts, reassign-deactivated-owners, create-icp-tiers, build-lead-scoring, build-smart-lists, create-segment-lists, bounce-monitoring-workflow, engagement-suppression-workflow, lifecycle-progression-workflow, new-contact-hygiene-workflow, cleanup-properties, cleanup-lists, cleanup-workflows, cleanup-forms, cleanup-dashboards, cleanup-deals, cleanup-lead-owners, weekly-cleanup-routine, quarterly-database-cleanup
+hubspot-audit, hubspot-implementation-plan, audit-marketing-emails, draft-marketing-email, delete-no-email-contacts, suppress-hard-bounced, suppress-ghost-contacts, suppress-global-unsubscribes, review-bounced-contacts, merge-duplicate-companies, enrich-company-name, enrich-industry, backfill-geo-data, standardize-geo-values, fix-lifecycle-stages, assign-unowned-contacts, reassign-deactivated-owners, create-icp-tiers, build-lead-scoring, build-smart-lists, create-segment-lists, bounce-monitoring-workflow, engagement-suppression-workflow, lifecycle-progression-workflow, new-contact-hygiene-workflow, cleanup-properties, cleanup-lists, cleanup-workflows, cleanup-forms, cleanup-dashboards, cleanup-deals, cleanup-lead-owners, weekly-cleanup-routine, quarterly-database-cleanup
 
 ## Cerkl-Specific Context
 
@@ -47,7 +47,6 @@ hubspot-audit, hubspot-implementation-plan, delete-no-email-contacts, suppress-h
 - Any contact associated with a named account in active sales
 
 ## Rules
-- Always run `hubspot-audit` first before any delete, suppress, or bulk-update operation
 - Always confirm counts before bulk operations — show before/after
 - Never skip the Planning phase of a skill
 - If a skill's abort threshold feels wrong for Cerkl's database size, adjust it in the SKILL.md before running

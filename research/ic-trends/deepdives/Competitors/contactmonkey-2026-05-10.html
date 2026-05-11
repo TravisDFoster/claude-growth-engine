@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IC Deep Dive — ContactMonkey (2026-05-10)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border);
+  }
+  .verdict.good { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try {
+    background: var(--accent-soft); border-color: var(--info-border); color: var(--accent);
+  }
+  .callout.warn {
+    background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn);
+  }
+  .callout.info {
+    background: var(--info-bg); border-color: var(--info-border); color: var(--info);
+  }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 8px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco-cell ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .reco-cell li { margin-bottom: 4px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { margin: 0 0 8px; }
+  details.q .q-body p:last-child { margin-bottom: 0; }
+
+  .source-list {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 16px;
+    font-size: 14px;
+  }
+  .source-list ul { margin: 4px 0; }
+
+  .lines-list {
+    list-style: none; padding: 0; margin: 12px 0 0;
+  }
+  .lines-list li {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 10px 14px; margin-bottom: 8px;
+    font-style: italic; font-size: 14.5px;
+  }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>ContactMonkey</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Competitor</span>
+      <span><b>Action:</b> Update <code>competitors.md</code> + brief AEs</span>
+      <span class="verdict">Worth profiling — Maybe / refresh existing row</span>
+    </div>
+    <p class="tldr">
+      ContactMonkey is doubling down on its core moat — <b>send measurable internal email from inside Outlook and Gmail</b> — and has spent Q3 2025 through Q2 2026 layering AI (CoAuthor drafting, ConfidenceCheck pre-send QA), faster send infrastructure (150k recipients in ~2 minutes), and deeper HRIS/Canva integrations on top of that wedge. They remain sales-led with custom pricing and no free entry point — exactly the soft underbelly Cerkl's Foundations free-forever plan is built to exploit. The 2026 wrinkle: ContactMonkey is publicly framing the Microsoft EWS deprecation (Oct 2026) as a vendor-readiness gut check — useful air cover for them, but a re-evaluation window Cerkl can also walk through.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Add an EWS-deprecation note + a CEO-transition note to the ContactMonkey row in <code>shared/competitors.md</code>; refresh the head-to-head section with the four counter-positioning lines below. Add a one-liner about the <b>2026-10-01 EWS deadline</b> so AEs can use it in deals where ContactMonkey is the active competitor.
+      <div class="code-row">
+        <code id="ews-date">EWS auto-disable: 2026-10-01  ·  Full shutdown: 2027-04-01</code>
+        <button class="copy-btn" data-copy="ews-date" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Company</h3>
+        <p>
+          ContactMonkey is a Toronto-headquartered internal-email platform founded in 2010 by Scott Pielsticker, originally as a sales email tracking tool, pivoted to internal comms in 2015
+          (<a href="https://www.contactmonkey.com/about">About</a>;
+          <a href="https://techcrunch.com/2023/12/07/contactmonkey-lands-55m-investment-to-grow-its-email-software-for-internal-comms/">TechCrunch, 2023-12-07</a>).
+        </p>
+        <p>
+          Raised a <b>$55M Series A</b> from Updata Partners in December 2023 — total funding ~$55.8M across two rounds
+          (<a href="https://betakit.com/contactmonkey-raises-55-million-series-a-from-updata-partners/">BetaKit</a>;
+          <a href="https://tracxn.com/d/companies/contactmonkey/__CC8w1CTrp9TMag10i9CjSlfpX5-VxZa6-jnmOSye1ic">Tracxn</a>).
+        </p>
+        <p>
+          Reached 1,000+ customers in 2023, named to Deloitte Technology Fast 50 (2023) and Fast 500 (2024). <b>Jeff Cates joined as CEO in 2026</b> — leadership transition worth noting.
+        </p>
+      </div>
+      <div>
+        <h3>Positioning</h3>
+        <p>
+          Homepage tagline (verbatim): <em>"Intelligent internal communications platform that reaches every employee"</em>
+          (<a href="https://www.contactmonkey.com/">contactmonkey.com</a>).
+        </p>
+        <div class="source-list">
+          <b style="font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Source URLs</b>
+          <ul>
+            <li>Homepage: <a href="https://www.contactmonkey.com/">contactmonkey.com</a></li>
+            <li>About: <a href="https://www.contactmonkey.com/about">/about</a></li>
+            <li>Product updates blog: <a href="https://www.contactmonkey.com/blog/category/product-updates">/blog/category/product-updates</a></li>
+            <li>Pricing (gated): <a href="https://www.contactmonkey.com/pricing">/pricing</a></li>
+            <li>Compare pages: <a href="https://www.contactmonkey.com/compare/workshop">/compare/workshop</a>, <a href="https://www.contactmonkey.com/compare/politemail">/compare/politemail</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it does / claims</h2>
+    <p>
+      ContactMonkey sells a single product surface — an internal-email platform that lives inside the communicator's existing inbox (Outlook desktop add-in, Gmail extension, or browser send) — with measurement, segmentation, and AI layered on top.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">CORE MOAT</div>
+        <h4>Outlook + Gmail native send</h4>
+        <p>"Emails send directly through Outlook or Gmail, just like your existing internal communications" — the foundational claim and primary moat. <a href="https://marketplace.microsoft.com/en-us/product/office/wa104382036?tab=overview">MS AppSource, 4.6</a></p>
+      </div>
+      <div class="pillar">
+        <div class="n">BUILDER</div>
+        <h4>Drag-and-drop email builder</h4>
+        <p>Responsive templates, saved content blocks, AI-generated subject lines and preheaders.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">AI · DEC 2025 · BETA</div>
+        <h4>CoAuthor</h4>
+        <p>"Turn ideas into emails in seconds" — AI drafting. Launched December 2025, BETA as of May 2026.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">AI · DEC 2025</div>
+        <h4>ConfidenceCheck</h4>
+        <p>Pre-send QA in ~2-3 seconds: link checks, editorial AI (typos, placeholders), WCAG accessibility checks, read-time signals, custom rules. <a href="https://www.contactmonkey.com/blog/product-updates-dec-2025">post</a></p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEB 2025</div>
+        <h4>Dynamic Content</h4>
+        <p>Single campaign renders different content blocks per audience attribute (location, department, role). <a href="https://www.contactmonkey.com/blog/product-update-february-2025">post</a></p>
+      </div>
+      <div class="pillar">
+        <div class="n">SEPT 2025</div>
+        <h4>Analytics + Analytics API</h4>
+        <p>Click maps, pulse surveys, read time — historically the strongest review-driven feature; now exposed via API. <a href="https://www.contactmonkey.com/blog/product-updates-sept-2025">post</a></p>
+      </div>
+      <div class="pillar">
+        <div class="n">ADJUNCTS</div>
+        <h4>Multi-channel</h4>
+        <p>SMS (priced separately), Microsoft Teams, SharePoint, Appspace digital signage. Email is the center of gravity — others are adjuncts, not peers.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">PLUMBING</div>
+        <h4>HRIS sync + SSO</h4>
+        <p>Workday, BambooHR, ADP, Dayforce, Lattice. SSO via Okta and SAML 2.0.</p>
+      </div>
+    </div>
+
+    <h3>Recent shipping cadence (Q3 2025 → Q2 2026)</h3>
+    <table class="cmp">
+      <thead><tr><th>Month</th><th>Release</th></tr></thead>
+      <tbody>
+        <tr><td class="alt-name">Jul 2025</td><td>Send-at-scale flexibility improvements (<a href="https://www.contactmonkey.com/blog/category/product-updates">post</a>)</td></tr>
+        <tr><td class="alt-name">Sep 2025</td><td>Analytics API GA</td></tr>
+        <tr><td class="alt-name">Nov 2025</td><td>Deferred Sending ("hit cancel on mistakes")</td></tr>
+        <tr><td class="alt-name">Dec 2025</td><td>ConfidenceCheck (AI QA) + CoAuthor (AI drafting, BETA)</td></tr>
+        <tr><td class="alt-name">Mar 2026</td><td>Public-facing EWS deprecation positioning piece (<a href="https://www.contactmonkey.com/blog/ews-deprecation-internal-comms-platform">EWS post</a>)</td></tr>
+        <tr><td class="alt-name">Apr 2026</td><td>"2,500x faster sending" — 150,000 recipients in ~2 minutes; Canva integration</td></tr>
+        <tr><td class="alt-name">May 2026</td><td>Enhanced HRIS integrations</td></tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      Steady, disciplined cadence — almost exactly one update/month, each shoring up a known weakness (send speed, asset workflows, AI gaps, HRIS depth). <b>No surprise product directions; no signal of a platform-level pivot.</b>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Internal communications managers and directors at mid-market through large enterprise orgs — overlaps Cerkl's <b>Foundations+</b> tier and the lower edge of <b>Omni AI</b>. Heavy Outlook-shop bias: financial services, manufacturing, healthcare, education, frontline-heavy employers. Customer logos: Mustang Cat, Freedom Mobile, SEEK, McCownGordon, CertaPros, Flagger Force.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Communicator already lives in Outlook and won't switch workflows; org wants email-engagement metrics they can't get natively from Outlook; HRIS is the source of truth for distribution lists; comms team is staffed and has procurement authority to clear a custom-quote contract.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Comms team is a department of one with no procurement runway; org wants to start free / self-serve before talking to sales; email is only one of several equally important channels (intranet, mobile push, Slack-first cultures); communicator works primarily in a browser or Google-first environment with no add-in dependency; org is preparing to retire its EWS-dependent Outlook tooling and wants to consolidate channels rather than re-platform an Outlook add-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>How it slots into Cerkl's competitive set</h2>
+    <p>
+      ContactMonkey is <code>shared/competitors.md</code>'s explicit "more direct internal-comms comparison" — the head-to-head that already exists ("ContactMonkey is sales-led with custom pricing. Cerkl wins on: free forever entry, no procurement needed to start, self-serve workflow") still holds in 2026 and is sharper than ever given how their motion has evolved.
+    </p>
+
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. Sales-led + custom pricing is now the explicit wedge</h4>
+        <p>
+          ContactMonkey's pricing page lists three tiers (Launch / Grow / Enterprise) and every CTA is "Request pricing" — no public numbers, no free plan, no self-serve trial (<a href="https://www.contactmonkey.com/pricing">pricing page</a>). Their own marketing language confirms it: <em>"a quick discovery process used to tailor a custom quote by tier, number of sender seats, and recipient coverage."</em>
+        </p>
+        <p>
+          <b>Cerkl reframe:</b> "Try Foundations free today, upgrade when you outgrow it — no procurement cycle, no discovery call, no quote." Structural, not tactical; doesn't depend on any feature shipping.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>2. The Outlook integration moat is real — but reframe past it</h4>
+        <p>
+          ContactMonkey's "send from inside Outlook" is genuinely sticky for Outlook-shop comms teams (G2 reviewers cite it as the #1 reason they bought). <b>Cerkl should not try to match it head-on.</b>
+        </p>
+        <p>
+          Instead, reframe: "Living inside Outlook is convenient when email is the only channel. The minute you need to reach frontline, deskless, or non-corporate-email employees, the Outlook add-in becomes the ceiling on your reach."
+        </p>
+        <p>
+          The EWS deprecation (Microsoft retiring Exchange Web Services Oct 2026, full shutdown Apr 2027 — <a href="https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online">Microsoft Learn</a>; <a href="https://www.computerworld.com/article/4129036/after-years-of-warnings-microsoft-is-finally-pulling-the-plug-on-ews.html">Computerworld</a>) is a natural opening — ContactMonkey is using it to position themselves as the safe migration choice (<a href="https://www.contactmonkey.com/blog/ews-deprecation-internal-comms-platform">their EWS post</a>), but the same deprecation is a <b>re-evaluation window</b> for any IC team rethinking an Outlook-tethered tool. <b>AEs should know this deadline cold.</b>
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>3. Single-channel constraint should be prominent in mid-market+ deals</h4>
+        <p>
+          ContactMonkey now claims multi-channel (SMS, Teams, SharePoint, Appspace) but their product center of gravity, marketing, and review feedback are all email-first. Recurring G2 complaint: <em>"limited functionality for channels outside of email, lacking features like mobile push notifications or intranet integration"</em> (<a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2 pros/cons</a>).
+        </p>
+        <p>
+          Cerkl's omnichannel posture is the cleaner answer for any 2,001+ employee buyer with distributed/frontline workforce — exactly the Omni AI ICP boundary. <b>In deals at 2,000+ employees, lead with channel coverage, not feature parity on email.</b> Below 2,000 and Outlook-shop, ContactMonkey is genuinely competitive — won/lost on price posture and speed-to-value, not feature comparison.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 24px;">ICP overlap map</h3>
+    <table class="cmp">
+      <thead><tr><th>Cerkl tier</th><th>Overlap</th><th>Posture</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Foundations / Subscriber Growth</td>
+          <td>Almost none — ContactMonkey requires a sales conversation, won't serve sub-500 self-serve buyers.</td>
+          <td>Free Foundations wins this segment uncontested.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Foundations+</td>
+          <td><b>Direct overlap.</b> Comms team of one or two, Outlook-heavy, willing to talk to sales for the right tool.</td>
+          <td>Counter-position on speed-to-launch and price transparency.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Omni AI (2,001+ employees)</td>
+          <td>Partial overlap at the lower edge. ContactMonkey can serve this segment but their email-first shape doesn't match complex distributed workforces.</td>
+          <td>Lead with omnichannel + segmentation + measurement-across-channels.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top: 24px;">Counter-positioning lines AEs can use</h3>
+    <ul class="lines-list">
+      <li>"ContactMonkey is a great Outlook plug-in. We're a comms platform that doesn't depend on Outlook being your future." <span style="font-style: normal; color: var(--muted); font-size: 12px;">(Frames the EWS migration risk without naming it.)</span></li>
+      <li>"They quote, we publish. You can start Foundations today without a discovery call."</li>
+      <li>"They measure email opens. We measure whether the message landed across email, mobile, Teams, and intranet."</li>
+      <li>"If every employee has corporate email and you live in Outlook, they're a real option. If half your workforce is frontline, the answer is different."</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Cerkl Broadcast</td>
+          <td>Free Foundations entry, self-serve, omnichannel by default, no Outlook add-in dependency. ContactMonkey wins inside Outlook-only shops with procurement budget; Cerkl wins when reach extends beyond email or when the buyer wants to start free. (<code>shared/competitors.md</code> head-to-head framing.)</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Workshop</td>
+          <td>Web-only (no Outlook add-in), AI-forward (Cici assistant), entry pricing ~$250/mo for up to 250 employees (<a href="https://www.contactmonkey.com/compare/workshop">ContactMonkey's own comparison</a>). Cleaner SMB price floor than ContactMonkey but loses for Outlook-tethered IC teams.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">PoliteMail</td>
+          <td>Pure Outlook-tracking play; oldest in the category. Starts ~$639/mo for 1,000 employees (<a href="https://politemail.com/best-internal-email-tools/">PoliteMail comparison roundup</a>). Narrower than ContactMonkey (analytics-on-Outlook only), more affordable entry, no AI/dynamic-content layer.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Staffbase Email</td>
+          <td>Email module inside a full intranet platform; targets the buyer who wants email + intranet + mobile app in one suite (<a href="https://staffbase.com/blog/contactmonkey-alternatives">Staffbase's own ContactMonkey alternatives post</a> — they actively compete here). Different deal — Staffbase is a platform replacement, ContactMonkey is an Outlook enhancement.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: workflow surface.</b> ContactMonkey wins when the buyer wants email tracking inside Outlook and accepts a sales-led procurement cycle. Cerkl and Staffbase win when the buyer needs to reach beyond email or wants to start without a quote. Workshop sits in between (web-only, lower floor); PoliteMail is the budget Outlook-tracking baseline.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Gotchas</h2>
+
+    <div class="callout warn">
+      <div class="callout-label">No public pricing, no free plan, no self-serve trial</div>
+      Every path leads to a sales call. Confirmed on <a href="https://www.contactmonkey.com/pricing">their pricing page</a> — three tiers, three "Request pricing" buttons.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">EWS deprecation risk surface · 2026-10-01 auto-disable · 2027-04-01 full shutdown</div>
+      Any vendor whose Outlook integration leans on Exchange Web Services has to migrate to Microsoft Graph / Exchange Online Admin API (<a href="https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online">Microsoft Learn</a>; <a href="https://www.theregister.com/2026/02/06/microsoft_ews_shutdown/">The Register, 2026-02-06</a>). ContactMonkey is publicly positioning their migration as a strength — but it's a non-trivial technical lift for every Outlook-add-in vendor and a legit re-evaluation moment for buyers.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Email-first, channel-light</div>
+      SMS and Teams exist but reviewers and marketing both treat them as adjuncts. Mobile push notifications and intranet integration come up repeatedly as missing (<a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2</a>).
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">CoAuthor is BETA as of May 2026</div>
+      Not GA. Worth knowing if a prospect cites it as a deciding factor.
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">CEO transition</div>
+      Jeff Cates became CEO in 2026 (<a href="https://www.contactmonkey.com/about">About</a>) — replacing founder Scott Pielsticker in the top seat. Leadership changes in growth-stage companies often correlate with motion and packaging changes; worth watching.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Reporting bugs are a recurring G2 complaint</div>
+      Aggregate reporting (across email groups) is weaker than per-email reporting and has been called out for crashes (<a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2 cons</a>).
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">4.2</div><div class="lbl">G2 stars (242 reviews)</div></div>
+      <div class="stat"><div class="num">4.6</div><div class="lbl">MS AppSource rating</div></div>
+      <div class="stat"><div class="num">1,000+</div><div class="lbl">customers (Dec 2023)</div></div>
+      <div class="stat"><div class="num">$55M</div><div class="lbl">Series A (Updata, 2023)</div></div>
+    </div>
+
+    <h3>Recurring praise</h3>
+    <p>
+      Outlook integration depth, HRIS-synced distribution lists, click-map analytics, ease of use, responsive customer support, visually superior email vs. native Outlook (<a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2 pros/cons</a>).
+    </p>
+
+    <h3>Recurring complaints</h3>
+    <p>
+      Limited channels beyond email (no mobile push, no intranet integration); aggregate/group reporting weaker than per-email; occasional formatting quirks in complex Outlook designs; pricing opacity; some delayed technical support response times (<a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2</a>; <a href="https://www.selectsoftwareReviews.com/reviews/contactmonkey">SelectSoftware review</a>).
+    </p>
+
+    <h3>Practitioner takes</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>"It syncs with our HRIS to create smart, accurate distribution lists for company news, which is incredibly helpful."</p>
+        <div class="who">— G2 reviewer summary · <a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2 pros/cons</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">&ldquo;</span>
+        <p>"Limited functionality for channels outside of email, lacking features like mobile push notifications or intranet integration."</p>
+        <div class="who">— recurring G2 complaint pattern · <a href="https://www.g2.com/products/contactmonkey-inc-contactmonkey/reviews?qs=pros-and-cons">G2</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>"Workshop is web-based only with no Outlook add-in, which is a meaningful limitation for organizations where communication teams and executive assistants work primarily inside Outlook."</p>
+        <div class="who">— ContactMonkey's own framing of the moat · <a href="https://www.contactmonkey.com/compare/workshop">their Workshop compare page</a> · useful intel because it tells you exactly where they think they're strongest</div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top: 14px;">
+      <div class="callout-label">r/internalcomms signal</div>
+      No prominent threads surfaced this pass. Practitioner sentiment lives mostly on G2 and vendor-roundup blogs (Sociabble, Staffbase, Workshop, PoliteMail all publish ContactMonkey-alternatives content — a signal that ContactMonkey is a meaningful enough player to attack).
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">08</span>Recommendation</h2>
+    <p style="font-size: 16px;"><b>Action:</b> Update <code>shared/competitors.md</code> + brief AEs.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Add an EWS-deprecation note + a CEO-transition note to the ContactMonkey row in <code>shared/competitors.md</code>; refresh the head-to-head with the four counter-positioning lines. Add a one-liner about the 2026-10-01 EWS deadline for AE use.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>45 minutes — 30 to update <code>competitors.md</code>, 15 to write a short Slack note to the AE team with the four positioning lines and the EWS talking point.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind <span style="font-weight: 400; text-transform: none; letter-spacing: 0;">(escalate to "Worth profiling further")</span></h4>
+        <ul>
+          <li>ContactMonkey ships a free or self-serve tier that breaks the price-transparency wedge.</li>
+          <li>They ship a credible mobile-push or intranet product that closes the omnichannel gap.</li>
+          <li>ContactMonkey wins 2+ Cerkl deals/quarter where the buyer specifically cited a feature, not the existing sales relationship.</li>
+          <li>Jeff Cates publicly re-positions the company (e.g., away from "Outlook-native" toward "platform-first") — that would change the head-to-head fundamentals.</li>
+          <li>A major Cerkl customer migrates to ContactMonkey citing Outlook integration as the deciding factor.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Has ContactMonkey actually completed the EWS-to-Microsoft-Graph migration?</summary>
+      <div class="q-body">
+        <p>Their March 2026 blog post positions them as ready, but no clean public confirmation that their Outlook add-in is 100% off EWS today.</p>
+        <p>If they're behind, that's a real angle. If they're ahead, it's air cover for them — but also a useful deadline AEs can raise.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What does "Enterprise" pricing actually look like in 2026?</summary>
+      <div class="q-body">
+        <p>Pre-Series A reports suggested ~$15–40k+ ACVs depending on seat count and recipient coverage; current floor and ceiling are not public. Worth asking a friendly prospect/customer.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>CoAuthor GA timeline</summary>
+      <div class="q-body">
+        <p>Beta as of December 2025; no public GA date. If it ships GA before VOICES/CommConnect season (late summer), expect a marketing push that lands in the same window as Cerkl AI messaging.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Customer count growth post-Series A</summary>
+      <div class="q-body">
+        <p>They claimed 1,000+ customers at the December 2023 Series A; no updated public number found. Growth rate matters for assessing how often AEs will actually see them in deals.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Jeff Cates' strategic intent</summary>
+      <div class="q-body">
+        <p>No public interviews surfaced explaining the leadership change or the 2026 roadmap. Worth a focused watch over the next 1-2 quarters — leadership transitions usually telegraph through pricing, packaging, or category-frame changes within 6 months.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Note on adversarial content</h2>
+    <p style="font-size: 14px; color: var(--muted);">
+      No prompt-injection attempts detected in any fetched page during this research pass. ContactMonkey's own comparison pages (<a href="https://www.contactmonkey.com/compare/workshop">/compare/workshop</a>, <a href="https://www.contactmonkey.com/compare/politemail">/compare/politemail</a>) are marketing pages and were read as such — treated as data on their self-positioning, not as instructions.
+    </p>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="contactmonkey-2026-05-10.md">contactmonkey-2026-05-10.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

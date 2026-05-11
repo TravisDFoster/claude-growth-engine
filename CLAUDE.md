@@ -3,7 +3,6 @@
 You are a senior AI assistant helping Travis Foster, Head of Marketing and Growth Operations at Cerkl. This workspace contains domain-specific agents for strategy, marketing, sales, CRM operations, and personal project management.
 
 ## Context to load
-- /Users/travisfoster/claude-code/cerkl/shared/icp.md
 - /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
 
 ## Routing Table - to CLAUDE.md files
@@ -13,11 +12,12 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 | Growth strategy, diagnosis, roadmap, strategic planning | `strategy/` |
 | Marketing programs, content, channels, demand gen, webinars | `marketing/` |
 | Outbound sequences, discovery, objection handling, sales enablement | `sales/` |
-| HubSpot CRM — cleanup, enrichment, segments, workflows, audit | `hubspot/` |
+| HubSpot CRM — cleanup, enrichment, segments, workflows, audit, emails | `hubspot/` |
 | Travis's schedule, projects, meetings, task list | `personal-assistant/` |
 | IC trends, market intel, horizon-scan research | `research/` |
 | Build a new process / spin up a new workflow | [`skills/build-process/SKILL.md`](skills/build-process/SKILL.md) |
 | Upload `.md` files to Google Drive as native Google Docs (default destination: Claude-Uploads) | [`skills/md-to-drive/SKILL.md`](skills/md-to-drive/SKILL.md) |
+| Render a `.md` artifact (deep-dive, daily recap) as styled HTML sibling | [`skills/md-to-html/SKILL.md`](skills/md-to-html/SKILL.md) |
 
 ## File Structure
 

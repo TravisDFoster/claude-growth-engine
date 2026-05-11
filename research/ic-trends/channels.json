@@ -1,0 +1,31 @@
+{
+  "_doc": "Curated IC YouTube channels checked alongside the search-discovery pass. The 'handle' is the @-handle from the channel page; resolved at runtime via YouTube Data API.",
+  "_verification_run": "Verified 2026-05-10 against 30d and 365d windows. Channels below all resolve via forHandle and publish IC-relevant video on at least an occasional cadence. Channels below in '_dropped' were tested and rejected (handle didn't resolve, channel was a namesake/false positive, or cadence was effectively zero).",
+  "_search_vs_channels_tradeoff": "Channels are doing nearly all the useful work in this pipeline. Even narrowed DEFAULT_QUERIES return mostly tangential content (MOOC lectures, generic platform listicles). Treat search hits as a weak supplement; treat channel uploads as the primary IC signal.",
+  "channels": [
+    { "handle": "@IABCHQ",              "why": "IABC — practitioner association; high cadence (10+ videos/30d, conference previews, master classes)" },
+    { "handle": "@Staffbase",           "why": "Staffbase official — competitor signal; 4 videos/30d incl. product webinars and Trendmonitor IK launches" },
+    { "handle": "@RaganCommunications", "why": "Ragan Communications — flagship IC trade publication; very high cadence, AI-in-comms and tool-adoption content. Note: '@Raganinc' does NOT resolve" },
+    { "handle": "@useworkshop",         "why": "Workshop (IC email tool) — competitor signal; weekly IC-craft videos ('How to create employee influencers', 'four tools to run IC well'). Note: '@Workshop' and '@withworkshop' do NOT resolve — must use '@useworkshop'" },
+    { "handle": "@Poppulo",             "why": "Poppulo — competitor signal; product + IC strategy content ('Misalignment Tax', digital signage)" },
+    { "handle": "@Workvivobyzoom",      "why": "Workvivo (Zoom) — competitor signal; Vivowire podcast and product launches. Note: '@Workvivo' and '@WorkvivoOfficial' do NOT resolve — must use '@Workvivobyzoom'" },
+    { "handle": "@Simpplr",             "why": "Simpplr — competitor signal; lower cadence (1 video/30d) but high-value when posted (Comms AI launch announcement)" },
+    { "handle": "@Haiilo",              "why": "Haiilo — competitor signal; product + customer-story videos, mix of EN/DE" },
+    { "handle": "@LumApps",             "why": "LumApps — competitor signal; LOW cadence (last upload Oct 2025) but keep for major product/customer-story drops" },
+    { "handle": "@ContactMonkey",       "why": "ContactMonkey — competitor signal; 0 videos in last 30d but historically posts product/webinar content; keep and monitor" },
+    { "handle": "@Firstup-io",          "why": "Firstup — competitor signal; VERY LOW cadence (~1 video/365d) but worth keeping for any release video. Note: '@Firstup' does NOT resolve — must use '@Firstup-io'" }
+  ],
+  "_dropped": [
+    { "handle": "@Raganinc",            "reason": "Does not resolve. Use @RaganCommunications instead." },
+    { "handle": "@Workvivo",            "reason": "Does not resolve. Use @Workvivobyzoom instead." },
+    { "handle": "@WorkvivoOfficial",    "reason": "Does not resolve." },
+    { "handle": "@HaiiloOfficial",      "reason": "Does not resolve. Use @Haiilo." },
+    { "handle": "@FirstupInc",          "reason": "Does not resolve. Use @Firstup-io." },
+    { "handle": "@Workshop",            "reason": "Does not resolve. Use @useworkshop." },
+    { "handle": "@withworkshop",        "reason": "Does not resolve." },
+    { "handle": "@axios",               "reason": "Resolves, but is Axios news media (politics/general news) — NOT AxiosHQ the IC newsletter product." },
+    { "handle": "@AxiosHQ",             "reason": "Handle does not resolve via forHandle. AxiosHQ has a channel (id UCq60_5Tu5wX6IfCrraqnmKg) but no @-handle the API can look up. Excluded until handle is set or script is extended to accept channel IDs." },
+    { "handle": "@davisandco",          "reason": "Resolves, but channel owner is real-estate agent Brittany Davis — NOT Davis & Company the IC consultancy." },
+    { "handle": "@davisandcompany",     "reason": "Resolves but has zero recent uploads (Davis & Company appears to publish web workshops, not YouTube)." }
+  ]
+}

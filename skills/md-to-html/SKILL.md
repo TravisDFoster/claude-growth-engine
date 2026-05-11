@@ -1,0 +1,281 @@
+# md-to-html — Convert a Markdown artifact into a styled, interactive HTML sibling file
+
+> Renders a Markdown file as a self-contained HTML artifact applying the "Unreasonable Effectiveness of HTML" principles: rich layout, color-coded callouts, click-to-copy, collapsibles, and component-based visual structure. The HTML file is written as a sibling of the source (same basename, `.html` extension).
+
+## Trigger
+
+- "Render this competitor deep-dive as HTML"
+- "Convert <markdown file> to HTML"
+- Invoked automatically by `ic-trends-daily-process.md` and `ic-trends-tool-deepdive-process.md` after the markdown is written.
+- Invoked automatically by `paid-youtube-hook-batch` after a batch's `ideas.md` is written, producing the interactive `ideas.html` selection sheet.
+
+## Inputs
+
+- **Source path** (required) — absolute path to the `.md` file to convert
+- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `generic`
+
+## Output
+
+- A `.html` file at the same path with `.md` → `.html` (e.g., `staffbase-2026-05-10.md` → `staffbase-2026-05-10.html`)
+- The HTML must be **self-contained**: inline CSS, inline JS, no CDN dependencies, no external assets.
+- Footer references the source `.md` for traceability.
+
+## When to use
+
+Whenever a Markdown artifact is going to be **read by a human as a final document**, not consumed by another agent. Cerkl examples:
+
+- Competitor deep-dives in `cerkl/research/ic-trends/deepdives/`
+- Daily IC trends recaps (link-shareable to leadership)
+- Vendor profile updates feeding `shared/competitors.md`
+- Strategy briefings, comparison matrices, market scans
+
+**Don't use** for:
+
+- Files that are agent-consumed (CLAUDE.md, CONTEXT.md, sources.md, process docs, `shared/icp.md`, `shared/competitors.md`)
+- Short conversational outputs
+- HubSpot CSV exports or any data file
+
+## How to invoke
+
+The caller dispatches a sub-agent (to keep conversion tokens out of the main context window) with this brief:
+
+```
+Run the md-to-html skill on <source_path>.
+
+1. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/SKILL.md
+2. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-deep-dive.html — visual language reference (theme, components, JS).
+   For `daily-recap` artifact type, also read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-daily-recap.html.
+   For `hook-batch` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-hook-batch.html instead — it carries the selection UI and copy-to-clipboard JS that the other references don't have.
+3. Read the source markdown at <source_path>.
+4. Write the HTML at the sibling path (same basename, .html extension), self-contained per the skill's quality bar.
+5. Return only the output path + a one-line confirmation of components used. Do NOT echo the HTML body back to the parent.
+```
+
+## Design principles
+
+The point of HTML output (per Thariq Shihipar's "Unreasonable Effectiveness of HTML", 2026-05-08) is to use what HTML can do that Markdown can't. Don't just style the Markdown — **rearrange for visual density**.
+
+### Typography — Cerkl brand-aligned
+
+Per Cerkl brand guidelines (`cerkl/marketing/design/branding-assets/Brand Guidelines/typography.md`), **Work Sans is the brand face for all web type** (headings, body, buttons). No serif body — that was the personal/ default; cerkl follows brand.
+
+- **Font: Work Sans** (Google Fonts) — all web text. Body Regular 400; subtitles Medium 500; headings/buttons SemiBold 600 (Bold 700 for H1).
+- **Stack:** `"Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif` — falls back gracefully if Google Fonts CDN is unreachable.
+- **Mono (`ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace`)** for code, install commands, copy-prompt boxes.
+- **Sizes:** body 18px / 1.55 (close to brand Body 2 = 18px / 28px). H1 32–36px / 1.2; H2 22–24px / 1.3; H3 18px / 1.4. Letter-spacing -0.25 to -0.5 on headings per brand. Overlines (`.breadcrumb`, `.callout-label`) use SemiBold 600 with letter-spacing 0.05–0.08, all-caps.
+- **Prose width:** `<p>` capped at 70ch. Outer wrap can extend ~1080px for grids/tables.
+
+**Google Fonts exception to "self-contained" rule:** Brand-faced cerkl artifacts MUST use Work Sans. Embed via `<link>` to `https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap`. This is the only allowed external dependency. The fallback stack ensures the artifact remains readable if the CDN is unreachable (cached / offline / blocked).
+
+### Color scheme — Cerkl brand palette
+
+Per `cerkl/marketing/design/branding-assets/Brand Guidelines/colors.md`. The primary palette is **cobalt + cosmic + butter** with accents in forest, ruby, and violet.
+
+- **Light mode by default.** Brand defaults to white / Cosmic 10 backgrounds with Cosmic-base text. Dark mode is not specified in the guidelines and is not used for cerkl artifacts.
+- **Accent (primary brand):** Cobalt 60 `#3547c4` — used for hyperlinks, accent borders, TL;DR rule, primary buttons.
+- **Surfaces:** white `#ffffff` (panel), Cosmic 10 `#f5f5fa` (panel-soft / body bg).
+- **Text:** Cosmic base `#18181d` (ink), Cosmic 80 `#373740` (muted secondary).
+- **Borders:** Cosmic 30 `#d5d5db` (line).
+- **Semantic colors:**
+  - Good (Yes verdict, success): Forest base `#1a9979` on Forest 10 `#e8fffa`
+  - Warn (Maybe verdict, caution): Butter 100 `#80550f` text on Butter 10 `#fff9f2` bg
+  - Bad (No verdict, danger): Ruby 80 `#b00045` on Ruby 10 `#fcf0f0`
+  - Info (callouts, accent panels): Cobalt 60 `#3547c4` on Cobalt 10 `#f0f2fc`
+  - Quote (community-signal accent): Violet base `#802ee6`
+- **Code bg:** Cosmic 20 `#ebebf0`.
+- One accent color (Cobalt 60) does the heavy lifting. Semantic colors only used where they carry meaning, never for vibe.
+
+**Daily-recap category badges** — IC-specific, brand-aligned:
+- Competitor: Cobalt 60 `#3547c4`
+- Publication: Forest base `#1a9979`
+- Analyst: Violet base `#802ee6`
+- Community: Butter 100 `#80550f` text on Butter 10 bg (Butter base `#ffaa22` is too bright for badge text on light bg)
+- Policy: Ruby 80 `#b00045` on Ruby 10 bg
+
+### Required components
+
+1. **Hero block at top** — title, breadcrumb (e.g., "ic-trends · Competitor Deep Dive"), date, category, and a color-coded verdict pill if there's a recommendation (Yes = green, Maybe = amber, No = red).
+2. **TL;DR rendered prominently** — accent-bordered paragraph in the hero, ~2-3 sentences max.
+3. **First-thing-to-try as a callout** — if the source has a "first thing to try" or "first action," surface it in the hero with a prominent style.
+4. **Sectioned cards** — each major section gets a numbered card (`<section>` with a numbered `<h2>`). This breaks up wall-of-text.
+5. **Click-to-copy on actionable strings** — any verbatim quote, vendor URL, install command, magic config line gets a copy button. JS is included in the reference.
+6. **Color-coded callouts** for warnings/info/try-this. Three variants: `.try` (Cobalt 60), `.warn` (Butter 100/10), `.info` (Cobalt 60 / Cobalt 10).
+7. **Quote cards** for community signal — speaker, date, link to source. Skeptic quotes get a different border color.
+8. **Comparison tables** with hover states + a highlighted "decision-relevant axis" callout below.
+9. **Collapsible `<details>` for open questions** — preserves data without wall-of-text.
+10. **Print-friendly stylesheet** — include `@media print { ... }` so the artifact exports cleanly to PDF (light theme acceptable for print).
+11. **Self-contained — with brand-font exception.** No CDN-loaded JS libraries, no analytics, no tracking. **Only allowed external resource:** Google Fonts `<link>` for Work Sans (see Typography). All other CSS and JS must be inline.
+
+### Anti-patterns (avoid)
+
+These are the "AI default look" — if your output drifts toward any of them, restart. Inherited from `dogum/html-artifacts`:
+
+- **Cards everywhere** with rounded corners and shadows, on a gray background, doing no actual work.
+- **Full-bleed gradient hero.** Or any gradient anywhere, really.
+- **Emoji as section headers** (📊 Analytics, ⚡ Performance). Use real iconography or none.
+- **Four shades of indigo or violet** doing nothing in particular. One accent color, used semantically.
+- **Shadcn-shaped components** when no shadcn library is in play.
+- **Glass morphism, frosted blur, animated background gradients.**
+- **Centered everything.** Left-aligned prose with deliberate structure beats centered cards.
+- **Header with a logo placeholder.**
+- **Wall of generic Tailwind cards with emoji headers.** This is the strongest tell of unconsidered generation.
+
+If the output has any three of these, the rendering agent should restart from the reference template.
+
+### Also avoid
+
+- Centered layouts wider than ~1080px
+- Fonts other than Work Sans for primary text (Work Sans IS the brand face; loading additional families is unnecessary)
+- Animations beyond simple hover states
+- Tracking scripts, analytics, or any network calls beyond the Google Fonts `<link>`
+- Markdown-rendered-as-HTML look (i.e., just `<h1>`/`<p>` with no structure) — that defeats the purpose
+
+## Layout patterns by artifact type
+
+### `deep-dive` (default — competitor deep-dive, vendor profile, etc.)
+
+Sections in this order (skip any that don't apply):
+1. Hero (title, meta, verdict, TL;DR, first-thing-to-try)
+2. What it is + What it does — two-column
+3. Who it's for — three-card grid (primary user / strong fit / weak fit)
+4. How it slots into Cerkl's competitive set / positioning — section with stack-card grid
+5. Comparison to alternatives — table + axis callout
+6. Gotchas — stacked callouts
+7. Community signal — stats strip + quote cards
+8. Recommendation — highlighted block with reco-grid (first thing to try / time-box / what would change my mind)
+9. Open questions — collapsibles
+
+### `daily-recap`
+
+See `reference-daily-recap.html` in this folder for the canonical example.
+
+Sections:
+1. **Hero** — date, breadcrumb ("ic-trends · Daily Recap"), headline takeaway (2-sentence framing, accent-bordered). No verdict pill — recaps don't recommend; they survey.
+2. **Top items** as numbered cards (5–10 items). Each card has:
+   - Headline, source, URL, date, category badge (color-coded: Competitor / Publication / Analyst / Community / Vendor news / Policy)
+   - 1–2 sentence summary
+   - Optional "Why it matters for Cerkl" callout — only when it actually does
+3. **Watchlist** as a 2-column compact list grouped by sub-heading (Competitors / Publications / Analysts / Community). Each row is one line: bold-title, source, date, URL. Denser than top items.
+4. **Notes** as collapsible `<details>` blocks — covers gaps, source failures, paywalled reports.
+
+Layout-specific patterns:
+- Category badges in top-item cards should be visually distinct enough to scan by category at-a-glance
+- Watchlist is *much* denser than top items — small font, one line each, multi-column where space allows
+- Don't include a "recommendation" block — daily recaps don't recommend
+
+### `hook-batch`
+
+See `reference-hook-batch.html` for the canonical example. **This is the only artifact type with interactive state.** Used exclusively by the `paid-youtube` channel's hook generation flow.
+
+Sections:
+1. **Hero** — title (`Hook Batch — <YYYY-MM-DD>`), breadcrumb (`paid-youtube · Hook Batch`), batch parameters in meta-row (ICP, mix ratio, total hook count, seed sources), TL;DR with usage instruction ("click a card to select, copy button produces paste-ready block").
+2. **Sticky selection bar** — sits just below the hero with `position: sticky; top: 12px;`. Shows live "N selected" counter, primary "Copy Selections" button (disabled at 0), secondary "Clear" button.
+3. **Hook grid** — single column of `.hook-card` rows. Each card has:
+   - Custom-styled checkbox (orange when checked)
+   - Hook ID (e.g., `H01`) in sans-serif uppercase
+   - VO line — large serif, the dominant element
+   - Visual concept — small italic muted-gray
+   - Two badges: `.cat-badge.pain` or `.cat-badge.positioning` for angle, `.cat-badge.pattern` for the pattern type
+   - Whole-card click toggles the checkbox (label-wrapping pattern); selected state changes background + adds accent inset shadow
+4. **Footer** — references source `ideas.md`, batch date.
+
+Required JS behavior:
+- Checkbox change updates counter and selected-card visual state
+- Clear button unchecks everything
+- Copy button reads all checked cards' `data-id` and `data-vo` attributes, builds a paste-ready text block, writes to clipboard (`navigator.clipboard.writeText` with a `document.execCommand('copy')` fallback for non-secure contexts), shows a brief toast
+- Format of the copied block (must match exactly so the chat parser downstream is predictable):
+  ```
+  Picks from <YYYY-MM-DD>-batch — paid-youtube hooks
+
+  Selected (N):
+
+  H## — "<VO line>"
+  Reason: [add your reason]
+
+  ... (one block per pick)
+
+  Next: run paid-youtube-hook-select with these picks.
+  ```
+
+Required HTML pattern per card — the `data-` attributes are what the copy script reads, so they must be present and accurate:
+```html
+<label class="hook-card" data-id="H01" data-vo="The exact VO line, no smart quotes">
+  <input type="checkbox" class="hook-cb" aria-label="Select H01">
+  <div class="hook-body">
+    <div class="hook-id">H01</div>
+    <div class="hook-vo">&ldquo;The VO line with smart quotes for display&rdquo;</div>
+    <div class="hook-visual">The visual concept sentence.</div>
+    <div class="hook-tags">
+      <span class="cat-badge pain">Pain · short angle label</span>
+      <span class="cat-badge pattern">Pattern label</span>
+    </div>
+  </div>
+</label>
+```
+
+Don't apply deep-dive components (verdict pills, comparison tables, reco grid, quote cards) — hook-batch is selection-driven, not analysis-driven.
+
+### `generic`
+
+Render sections in source order, applying components opportunistically. Use callouts where the source has bold caveats, comparison tables for any markdown table, quote cards for any blockquote.
+
+## Component reference
+
+This skill folder contains three reference templates:
+
+- **`reference-deep-dive.html`** — canonical visual language (dark-mode, serif body, component library, click-to-copy JS, print stylesheet). Use as the source-of-truth design system reference.
+- **`reference-daily-recap.html`** — example application of the same design system to a daily-recap content shape. Use when artifact-type is `daily-recap`.
+- **`reference-hook-batch.html`** — selection-driven variant of the design system. Adds checkbox-state cards, sticky selection bar, and copy-to-clipboard JS that produces a paste-ready text block. Use when artifact-type is `hook-batch`.
+
+Read whichever matches your artifact type once, then write fresh HTML — don't try to diff against it. Both share the same CSS theme, so cross-referencing the deep-dive reference for components and the recap reference for layout is fine.
+
+Component classes available in the reference:
+
+| Class | Purpose |
+|---|---|
+| `.hero` | Title block at top with verdict pill |
+| `.verdict` (`.good` / `.warn` / `.bad`) | Color-coded recommendation pill |
+| `.tldr` | Accent-bordered TL;DR paragraph |
+| `.callout.try` / `.callout.warn` / `.callout.info` | Styled callouts |
+| `.code-row` + `.copy-btn` | Inline code with click-to-copy |
+| `.cols-2` | Two-column responsive layout |
+| `.pillars` / `.pillar` | Numbered card grid (e.g., "five pillars") |
+| `.personas` / `.persona` | Primary user / fit / not-fit cards |
+| `.stack-cards` / `.stack-card` | "How it slots into the stack" cards |
+| `.cmp` (table) | Comparison table |
+| `.axis-note` | "Decision-relevant axis" highlight |
+| `.quotes` / `.quote` (`.skeptic`) | Community quote cards |
+| `.stats` / `.stat` | Numeric stats strip |
+| `.reco` / `.reco-cell` | Recommendation block (deep-dive only) |
+| `details.q` | Collapsible open questions / notes |
+| `.top-item` / `.cat-badge.*` | Numbered top-item card with category badge (daily-recap) |
+| `.watchlist` / `.watch-row` | Compact multi-column watchlist (daily-recap) |
+| `.sel-bar` | Sticky selection bar with counter + copy/clear buttons (hook-batch) |
+| `.hook-card` (+ `.selected`) | Selectable hook card with custom checkbox (hook-batch) |
+| `.cat-badge.pain` / `.positioning` / `.pattern` | Angle and pattern type badges (hook-batch) |
+| `.toast` (`.show`) | Toast notification after copy-to-clipboard (hook-batch) |
+
+## Quality bar
+
+Before returning, verify:
+- [ ] Self-contained (no `<link>` to external CSS, no `<script src=…>`)
+- [ ] Dark by default (no light-mode background leaking through)
+- [ ] Body in serif; UI chrome (breadcrumb, badges, buttons) in sans
+- [ ] Print stylesheet present (flips to light for paper)
+- [ ] Footer references the source `.md` file
+- [ ] All hyperlinks from the source markdown are preserved
+- [ ] All quoted text from community signal includes attribution + source link
+- [ ] No content is dropped — if the source has 8 sections, the HTML has 8 sections
+- [ ] Verdict pill matches the source's recommendation (Yes/Maybe/No)
+- [ ] No anti-patterns (gradient hero, emoji headers, glass morphism, etc.)
+
+## Token cost honesty
+
+HTML output runs **2–4× the tokens of a Markdown equivalent**. Smoke tests have come in at ~2.5× (13.8 KB MD → 34 KB HTML). The reading experience and shareability earn the cost for artifacts that get reread or shared. For one-shot summaries that get scanned once and discarded, stay in Markdown.
+
+This is also the main reason every render is dispatched to a sub-agent: ~9K of tokens that would otherwise sit in the main context permanently end up isolated in the sub-agent and only a confirmation returns to the parent.
+
+## Future work
+
+- Add a `generic` reference template if a third artifact type is requested
+- Auto-generate share links if/when a render-and-host pipeline exists (Google Drive `md-to-drive` skill is the likely host — see `cerkl/skills/md-to-drive/SKILL.md`)

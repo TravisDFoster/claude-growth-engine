@@ -88,6 +88,72 @@ Write to `<speaker-slug>-promo-email.md` in the event folder. Structure:
 ...
 ```
 
+## Push the 3 Cerkl-voice emails into HubSpot
+
+After writing the markdown file, automatically push the **3 Cerkl-voice emails** into HubSpot as new drafts. The partner-voice emails stay in markdown only — the partner sends those from their own system.
+
+Use the [`draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) skill in **create mode**, cloning from the standing template.
+
+### Template reference
+
+| Field | Value |
+|---|---|
+| **Template name** | Webinar Promo Template |
+| **Template ID** | `212619094633` |
+| **Created** | 2026-05-10 (cloned from `211471728030` — "April 2026 Webinar - Matt Frost") |
+
+The template carries Cerkl's standard webinar promo layout, button styling, and (importantly) the **Cerkl marketing list / audience settings**. Cloning preserves all of these — that's the whole reason this template exists. To update the audience or styling going forward, edit `212619094633` directly in HubSpot; every future clone will inherit the change.
+
+If the template ID stops resolving (404), it was archived or deleted in HubSpot. Find its replacement, update this section, and continue. Don't fall back to cloning a random recent webinar email — the audience settings won't match.
+
+### Naming convention for clones
+
+Name each cloned draft consistently so they're easy to find in the HubSpot UI:
+
+```
+[Speaker] [Month YYYY] - Webinar Promo Email #N
+```
+
+Examples:
+- `Matt Frost April 2026 - Webinar Promo Email #1`
+- `Matt Frost April 2026 - Webinar Promo Email #2`
+- `Matt Frost April 2026 - Webinar Promo Email #3`
+
+### Steps
+
+For each of the 3 Cerkl-voice emails:
+
+1. **Clone** the Webinar Promo Template (ID `212619094633`) with the name above. Use the create-mode workflow in `draft-marketing-email`.
+2. **PATCH the draft** with the new subject and body. The body HTML should follow the cloned template's structure — replace the inner copy via the read-modify-write pattern from `draft-marketing-email`, don't reconstruct the layout.
+3. **Capture the new email ID** and add it to the speaker event folder for future reference (see "Output" addition below).
+
+### After all 3 drafts are staged
+
+Tell the user:
+- The 3 draft IDs and where to find them in HubSpot (Marketing → Email → Drafts).
+- **What still needs human review/edits before publishing**: send time, A/B variants if any, and a content check against the markdown source-of-truth.
+- The partner-voice emails are in the markdown file — those go to the partner directly.
+
+Never call `/publish`. The user clicks publish in the HubSpot UI for each draft after review.
+
+### Update to output structure
+
+Append a "HubSpot drafts" footer to the markdown file after staging:
+
+```
+---
+
+## HubSpot drafts (Cerkl voice)
+
+| Email | HubSpot ID | Draft name |
+|---|---|---|
+| #1 (T-10d) | `<new-id>` | [Speaker Month YYYY] - Webinar Promo Email #1 |
+| #2 (T-3d) | `<new-id>` | [Speaker Month YYYY] - Webinar Promo Email #2 |
+| #3 (T-1d) | `<new-id>` | [Speaker Month YYYY] - Webinar Promo Email #3 |
+
+Cloned from Webinar Promo Template (`212619094633`). Partner-voice emails sent by partner from their own system.
+```
+
 ## Push update
 
-After producing the emails, append an update block to the relevant file in `personal-assistant/projects/`. See [../../CLAUDE.md](../../CLAUDE.md) for the protocol.
+After producing the emails AND staging the HubSpot drafts, append an update block to the relevant file in `personal-assistant/projects/`. See [../../CLAUDE.md](../../CLAUDE.md) for the protocol.

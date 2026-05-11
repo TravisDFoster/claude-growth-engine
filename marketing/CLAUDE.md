@@ -28,7 +28,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 | Crescenzo, Paycor, co-marketing | `channels/partnerships/` |
 | Reddit paid ads | `channels/paid-reddit/` |
 | YouTube organic video | `channels/youtube/` |
-| YouTube paid ads | `channels/paid-youtube/` |
+| YouTube paid ads — hook generation, storyboards, Flow prompts | [`channels/paid-youtube/`](channels/paid-youtube/CLAUDE.md) |
 | Brand assets, logos, colors, design | `design/` |
 | One-pagers | `design/one-pagers/` |
 | Website copy, Webflow, site structure | `website/` |

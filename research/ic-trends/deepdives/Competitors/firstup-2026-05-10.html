@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IC Deep Dive — Firstup (2026-05-10)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 12px; }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid; margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; margin: 0; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9; margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 8px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); font-style: normal; }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0 0 6px; font-size: 14px; }
+  .reco-cell p:last-child { margin-bottom: 0; }
+  .reco-cell ul { margin: 4px 0 0; padding-left: 18px; font-size: 14px; }
+  .reco-cell li { margin-bottom: 4px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { margin: 0 0 8px; max-width: none; }
+  details.q .q-body p:last-child { margin-bottom: 0; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>Firstup — Intelligent Communication Platform</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Competitor</span>
+      <span><b>HQ:</b> San Francisco</span>
+      <span><b>Funding:</b> $127M (9 rounds, Sumeru Equity Partners)</span>
+      <span class="verdict warn">Worth profiling — refresh vs. page within 60 days</span>
+    </div>
+    <p class="tldr">
+      Firstup spent Q3 2025–Q1 2026 doubling down on the exact frame that overlaps Cerkl most directly — "workforce orchestration," AI-driven personalization, and cross-channel delivery to deskless workforces — and just shipped (March 2026) a five-pillar AI suite that pushes the platform from generative assistance into agentic execution. They are <b>philosophically closer to Cerkl than Staffbase</b> is, but they execute as a sales-led, IT-heavy, custom-quote enterprise platform rather than a self-serve product with a free entry point. The 2026 narrative shift (new CEO from Anaplan, new CRO/CMO, agentic AI repositioning) signals Firstup will be more aggressive in market, which means we will see them more often in late-stage deals.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do — two parallel moves</div>
+      <p>(1) Update the Firstup row in <code>shared/competitors.md</code> with the 2026 positioning shift. (2) Refresh <a href="https://cerkl.com/broadcast/versus/firstup">cerkl.com/broadcast/versus/firstup</a> to address Firstup AI's agentic pillars and the delivery-intelligence vs. task-automation distinction.</p>
+      <div class="code-row">
+        <code id="competitors-blurb">As of 2026, "Intelligent Communication Platform" + "Workforce Orchestration" framing, plus five-pillar agentic Firstup AI (Search, Content Creator, Insights, Actions, Audience Builder). Closest philosophical mirror to Cerkl — same orchestration/personalization thesis. Counter-position on: free Foundations entry vs. custom enterprise quote; fast self-serve launch vs. multi-quarter IT-led rollout; per-employee personalization (MyNews) vs. segment + journey orchestration.</code>
+        <button class="copy-btn" data-copy="competitors-blurb" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Origin &amp; scale</h3>
+        <p>
+          Firstup is the entity formed by the <a href="https://firstup.io/press-release/socialchorus-and-dynamic-signal-complete-merger/">August 2021 merger of SocialChorus and Dynamic Signal</a>, backed by Sumeru Equity Partners with <a href="https://tracxn.com/d/companies/firstup/__va_iLeSlYuq88dyd0-ptN0FaXm-wv95XIkAOnazJGtg">$127M total funding across 9 rounds</a> (per Tracxn) and HQ in San Francisco with ~258–275 employees (<a href="https://craft.co/firstup">Craft.co</a>, <a href="https://pitchbook.com/profiles/company/58497-04">PitchBook</a>).
+        </p>
+        <p>
+          Self-positioned as <b>"The Intelligent Communication Platform"</b> (<a href="https://firstup.io/">firstup.io</a>) — homepage tagline <em>"Connect, engage, and activate every employee"</em> with the explicit thesis of moving "from generative assistance into agentic execution."
+        </p>
+      </div>
+      <div>
+        <h3>Customer base &amp; status</h3>
+        <p>
+          Claims 15M+ employees across <b>500+ customers</b> including ~half the Fortune 100 (<a href="https://firstup.io/press-release/socialchorus-and-dynamic-signal-complete-merger/">press release</a>), with named anchor logos like Dow and U.S. Steel. Crossed <b>$100M ARR</b> under prior CEO Nicole Alvino (<a href="https://hrtechedge.com/news/firstup-appoints-bill-schuh-as-ceo-to-lead-next-phase-of-growth-in-workforce-orchestration/">HRTech Edge</a>).
+        </p>
+        <p>
+          Named a Leader in the <a href="https://www.prnewswire.com/news-releases/firstup-named-a-leader-in-2025-gartner-magic-quadrant-for-intranet-packaged-solutions-302581669.html">2025 Gartner Magic Quadrant for Intranet Packaged Solutions</a> — their <b>third year</b> in the Leader quadrant.
+        </p>
+        <h3 style="margin-top:16px;">Source URLs</h3>
+        <ul>
+          <li><a href="https://firstup.io/">Homepage</a></li>
+          <li><a href="https://firstup.io/blog/">Blog</a></li>
+          <li><a href="https://firstup.io/press-releases/">Press releases</a></li>
+          <li><a href="https://firstup.io/product/intelligent-communication/">Intelligent Communication product page</a></li>
+          <li><a href="https://firstup.io/company/newsroom/">Newsroom</a></li>
+          <li><a href="https://cerkl.com/broadcast/versus/firstup">Cerkl's existing "vs." page</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it does / claims</h2>
+    <p>
+      Firstup sells one platform — the "Intelligent Communication Platform" — wrapped in a "Workforce Orchestration" narrative that frames itself as <b>marketing automation for employees</b>. The pitch: automated, AI-personalized employee journeys across email, mobile app, SMS, intranet, and digital signage, with measurement at the campaign and journey level (<a href="https://www.prnewswire.com/news-releases/firstup-launches-workforce-orchestration-transforming-how-enterprises-drive-employee-activation-302406712.html">Workforce Orchestration launch, 2025-04</a>; <a href="https://firstup.io/blog/ai-and-the-employee-experience/">Firstup blog</a>).
+    </p>
+
+    <h3>Firstup AI — five-pillar suite (March 2026)</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="n">PILLAR 1</div><h4>AI Search</h4><p>Cross-system retrieval over Workday, ADP, SharePoint, Google Drive, ServiceNow.</p></div>
+      <div class="pillar"><div class="n">PILLAR 2</div><h4>AI Content Creator</h4><p>Idea → publication-ready post.</p></div>
+      <div class="pillar"><div class="n">PILLAR 3</div><h4>AI Insights</h4><p>Conversational analytics on campaigns.</p></div>
+      <div class="pillar"><div class="n">PILLAR 4</div><h4>AI Actions</h4><p>Agentic execution against Workday/ServiceNow/ADP (e.g., natural-language PTO request). <em>Coming Soon.</em></p></div>
+      <div class="pillar"><div class="n">PILLAR 5</div><h4>AI Audience Builder</h4><p>Build segments from prompts like "new hires in EMEA who started this year and haven't been active in the last 30 days." <em>Coming Soon.</em></p></div>
+    </div>
+    <p style="margin-top:12px; font-size:14px; color:var(--muted);">
+      Source: <a href="https://firstup.io/blog/firstup-extends-its-ai-suite-with-new-built-in-agentic-capabilities/">Firstup blog — AI suite launch</a>.
+    </p>
+
+    <h3>Adjacent product framing</h3>
+    <ul>
+      <li><b>Workforce Orchestration</b> — automated, adaptive employee journeys based on real-time engagement data; explicit framing is marketing-automation-for-employees (<a href="https://www.prnewswire.com/news-releases/firstup-launches-workforce-orchestration-transforming-how-enterprises-drive-employee-activation-302406712.html">PR Newswire</a>).</li>
+      <li><b>Omnichannel reach</b> — email, mobile app, SMS, intranet/feed, digital signage, with role/location/behavior-based audience targeting (<a href="https://www.reworked.co/employee-experience/firstup-updates-employee-comms-platform-with-new-personalization-and-data-tools/">Reworked</a>).</li>
+      <li><b>Deep HR-system integrations</b> — Workday Innovation Partner status with 100+ joint customers; native sync to ADP and ServiceNow (<a href="https://firstup.io/blog/firstup-q3-2025-release-smarter-journeys-connected-hr-clearer-insights/">Q3 2025 release blog</a>).</li>
+    </ul>
+
+    <h3>Recent shipping cadence (Q3 2025 → Q2 2026)</h3>
+    <ul>
+      <li><b>Jun 2025:</b> <a href="https://www.prnewswire.com/news-releases/firstup-names-bill-schuh-as-chief-executive-officer-302483787.html">Bill Schuh named CEO</a>, from Anaplan (CRO) — go-to-market and scaling pedigree.</li>
+      <li><b>Aug 2025:</b> <a href="https://firstup.io/blog/firstup-q3-2025-release-smarter-journeys-connected-hr-clearer-insights/">Q3 2025 release</a> — Journey Member Visibility, Executive Summary Dashboard, foundation of Workday partnership.</li>
+      <li><b>Oct 2025:</b> <a href="https://www.prnewswire.com/news-releases/firstup-named-a-leader-in-2025-gartner-magic-quadrant-for-intranet-packaged-solutions-302581669.html">Gartner Magic Quadrant Leader (Intranet Packaged Solutions)</a>.</li>
+      <li><b>Oct 2025:</b> <a href="https://firstup.io/press-releases/firstup-expands-executive-leadership-to-accelerate-global-growth-and-deepen-customer-impact/">New CRO (Craig Steele), CMO (Kristin Brennan), EMEA MD (Nathan Lowis)</a> — scaling go-to-market and EMEA push.</li>
+      <li><b>Nov 2025:</b> <a href="https://firstup.io/blog/firstup-q4-2025-release/">Q4 2025 release</a> — Direct Data Export (near-real-time), Workday Productivity Integration (pay slips/PTO inside Firstup), Journey Management enhancements.</li>
+      <li><b>Q1 2026:</b> <a href="https://firstup.io/blog/Firstup-Q1-2026-release/">Custom Homepage, self-service Direct Data Export, audience-targeted feeds</a>.</li>
+      <li><b>Mar 2026:</b> <a href="https://www.prnewswire.com/news-releases/firstup-extends-ai-suite-with-new-agentic-capabilities-across-its-intelligent-communication-platform-302709208.html">Firstup AI launch — five agentic pillars</a>.</li>
+      <li><b>Mar 2026:</b> <a href="https://www.prnewswire.com/news-releases/firstup-wins-lighthouse-tech-award-for-employee-experience-platform-innovation-302716921.html">Lighthouse Tech Award — Best Comprehensive Employee Experience Solution</a>.</li>
+      <li><b>2026:</b> <a href="https://firstup.io/blog/firstup-receives-top-marks-for-employee-experience-in-clearbox-2026-report/">Top marks in Clearbox 2026 Intranet &amp; Employee Experience Report</a>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Enterprise IC + HR + IT co-buyers at large organizations with distributed, deskless, or frontline workforces. Heavy in manufacturing, healthcare, retail, hospitality, energy/utilities. Sweet spot: several thousand to 100k+ employees — <b>Fortune 500/100 is the explicit go-to-market focus</b> (<a href="https://firstup.io/blog/meet-fortune-500-leaders-transforming-the-employee-experience/">Firstup F500 blog</a>).</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Buyer wants an <em>orchestration layer</em> (not just an intranet) for personalized journeys across email/mobile/SMS/intranet/signage; has Workday/ServiceNow/ADP as systems of record; has budget and IT bandwidth for a multi-quarter enterprise rollout; success metric is <em>"employees complete a sequence of actions over time"</em> (per <a href="https://cerkl.com/broadcast/versus/firstup">Cerkl's vs. page</a>).</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Sub-2,000 employees; sub-$100k budget; wants to launch in weeks; IC owns the buying decision without IT sponsorship; primary success metric is "the right people read the right thing" rather than journey completion; the team is uncomfortable with custom-quote enterprise procurement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>
+      Firstup is the competitor whose <b>frame is structurally closest to Cerkl's</b> — same "personalized delivery across the channels you already have" thesis, same emphasis on deskless/frontline reach, same skepticism of intranet-as-comms-strategy. The Staffbase deep-dive flagged this explicitly. The differentiation lives in <em>how</em> the frame is executed and <em>who</em> the buyer is, not in <em>what</em> the platform conceptually claims to do.
+    </p>
+
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. Same thesis, different sales motion</h4>
+        <p>Firstup's "Workforce Orchestration" (April 2025) and "Intelligent Communication Platform" framing is the closest mirror to Cerkl's "personalized delivery and measurement layer across the channels you already have" positioning (<a href="../../../shared/competitors.md">shared/competitors.md</a>; <a href="https://www.prnewswire.com/news-releases/firstup-launches-workforce-orchestration-transforming-how-enterprises-drive-employee-activation-302406712.html">Firstup Workforce Orchestration launch</a>). Both reject the intranet-as-home-base frame Staffbase pushes.</p>
+        <p>Substantive difference: Firstup is sales-led, custom-quote, IT-heavy, multi-quarter; Cerkl is self-serve with a free Foundations tier and fast launch. <b>This is the wedge.</b></p>
+      </div>
+      <div class="stack-card">
+        <h4>2. ICP overlap is real — tilted toward the upper end</h4>
+        <p>Cerkl's Omni AI paid ICP is 2,000–12,200+ employees (<a href="../../shared/icp.md">icp.md</a>). Firstup's sweet spot starts where Cerkl currently tops out: roughly 5,000+, with explicit F100/500 focus. <b>Collision zone: 5k–15k</b>, where Cerkl is winning today but where Firstup's sales motion is built for the procurement cycle.</p>
+        <p>Below ~2k, Firstup is structurally absent — custom enterprise quote + IT burden price them out. <b>This is where Foundations free entry is a uniquely durable moat.</b></p>
+      </div>
+      <div class="stack-card">
+        <h4>3. 2026 narrative shift to watch</h4>
+        <p>Firstup is moving from "personalized employee comms" toward <b>"agentic execution"</b> — AI agents that don't just deliver content but <em>take action</em> (PTO requests inside Firstup, audience-building from prompts). If this lands, buyer conversations could shift from "which platform delivers the best comms" to "which platform is the employee-facing AI agent layer." That's a category-expansion play that pulls upstream of pure comms.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Counter-positioning lines (use these in deals where Firstup shows up)</h3>
+    <div class="callout info">
+      <div class="callout-label">Opening line</div>
+      <p><b>"Free Foundations vs. custom quote."</b> Firstup has no public pricing and no entry-level tier (<a href="https://firstup.io/pricing/">Firstup pricing</a>; <a href="https://www.trustradius.com/products/firstup-io/pricing">TrustRadius</a>). Cerkl gives the team a working product before procurement gets a phone call. AEs should make this <em>the</em> opening line whenever Firstup is the alternative being considered.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Speed wedge</div>
+      <p><b>"Launch in a sprint, not in quarters."</b> <a href="https://www.selectsoftwarereviews.com/reviews/firstup">Practitioner reviews repeatedly cite</a> "complex implementation, onboarding effort, and steep learning curve" as the #1 friction with Firstup. Cerkl's self-serve onboarding is the inverse posture — same as the speed-to-launch wedge against Staffbase.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Personalization model</div>
+      <p><b>"Personalization at the employee level, not the audience segment level."</b> Per <a href="https://cerkl.com/broadcast/versus/firstup">Cerkl's vs. Firstup page</a>: Firstup personalizes via segmentation (location, job title, first name) plus journey orchestration; Cerkl Broadcast personalizes per-employee via MyNews + dynamic segments + AI-determined send timing. <em>"If your success metric is 'employees see only what's relevant, wherever they are, and we can prove what worked,' Broadcast Omni AI's cross-channel personalization model is the cleaner fit. If your metric is 'employees complete a sequence of actions over time,' Firstup's journey orientation can be a genuine advantage."</em></p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">IT footprint</div>
+      <p><b>"IT-light vs. Workday/ServiceNow/ADP-required."</b> Firstup's value compounds with deep enterprise system integration — that's a feature in big orgs and a barrier in mid-market. Cerkl's lower IT lift is a feature in mid-market and the speed advantage shows up in the procurement cycle.</p>
+    </div>
+
+    <h3>What this means for Cerkl messaging</h3>
+    <ul>
+      <li>The <a href="https://cerkl.com/broadcast/versus/firstup">"vs. Firstup" SEO page</a> needs refreshing — current copy doesn't address agentic AI Actions/Audience Builder, and these are the new Firstup talking points AEs will hear in 2026 deals.</li>
+      <li>Cerkl's Omni AI story should sharpen the distinction between <b>delivery intelligence</b> (right message, right person, right channel, right time — Cerkl's lane) and <b>task automation</b> (PTO/HR-system actions — Firstup's lane). These are different jobs; we should not let Firstup conflate them.</li>
+      <li>The new CEO + CRO + CMO + EMEA MD lineup is a clear scaling signal. Expect more aggressive outbound, more analyst pressure, and more SEO competition in the next 2–3 quarters.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ from Firstup</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Cerkl Broadcast <span style="font-weight:400; color:var(--muted)">(Omni AI)</span></td>
+          <td>Same orchestration/personalization thesis, but self-serve with a free Foundations tier, faster launch, less IT lift, per-employee content personalization (MyNews) vs. Firstup's segment + journey model. Stronger when the buyer is mid-market or IC-owned without IT sponsorship. (<a href="https://cerkl.com/broadcast/versus/firstup">Cerkl vs. Firstup</a>)</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Staffbase</td>
+          <td>Pulls the conversation upstream toward intranet + AI governance (Navigator, AI quality layer). Replacement of the digital workplace home base, not orchestration across existing channels. Higher implementation lift than Firstup; similar enterprise pricing. (<a href="./staffbase-2026-05-10.md">Staffbase deep-dive</a>; <a href="https://staffbase.com/blog/firstup-alternatives">Staffbase's own Firstup-alternatives blog</a>)</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Simpplr</td>
+          <td>Modern intranet with AI personalization; lighter on omnichannel orchestration and frontline mobile than Firstup. Same compliance-conscious buyer; weaker cross-channel reach. (<a href="https://www.simpplr.com/resources/compare/simpplr-alternatives/">Simpplr alternatives blog</a>)</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Workvivo <span style="font-weight:400; color:var(--muted)">(Zoom)</span></td>
+          <td>Engagement-first social/community framing ("Facebook for work"); now backed by Zoom's distribution. Wins on culture; loses to Firstup on structured journeys and HR-system integration. (<a href="https://staffbase.com/blog/workvivo-alternatives">Staffbase Workvivo alternatives</a>)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: sales motion + IT footprint.</b> Firstup and Cerkl share the most product DNA of any pair in this set. The buyer choice is rarely "which has better features" — it's "do we want a multi-quarter, IT-led, custom-quote rollout or a self-serve, IC-led launch in weeks." Cerkl's <code>shared/competitors.md</code> already lists Firstup with a live "vs." SEO page — the comparison content exists but needs a 2026 refresh to address Firstup AI's agentic pillars.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">No public pricing, no entry-level tier</div>
+      <p>Three custom plans (Essential, Professional, Premier), all quote-based, per-user-per-month annual commitments (<a href="https://firstup.io/pricing/">Firstup pricing</a>; <a href="https://www.trustradius.com/products/firstup-io/pricing">TrustRadius</a>). Buyers who want to try before they buy are structurally excluded.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Implementation is the #1 recurring complaint</div>
+      <p>"Complex implementation, onboarding effort, steep learning curve, many steps required for upgrades" (<a href="https://www.selectsoftwarereviews.com/reviews/firstup">SelectSoftware review</a>; <a href="https://www.hubengage.com/reviews/firstup/">HubEngage review summary</a>). Not a launch-in-a-sprint tool.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Search and reporting limitations</div>
+      <p>Reviewers cite "limited customizable metrics, lack of real-time visualization, inefficient content management workflows" (<a href="https://www.hubengage.com/reviews/firstup/">HubEngage</a>). Firstup AI's Insights pillar may address this, but it's new and unproven in production.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Agentic pillars are partially aspirational</div>
+      <p>Agentic <b>AI Actions / Audience Builder are "Coming Soon"</b> as of the March 2026 announcement (<a href="https://firstup.io/blog/firstup-extends-its-ai-suite-with-new-built-in-agentic-capabilities/">Firstup AI blog</a>). AI Search and AI Content Creator are shipping; the executional pieces are not yet GA. AEs should know this — Firstup reps may be selling capabilities that aren't fully live.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Workday/ServiceNow/ADP dependency cuts both ways</div>
+      <p>Deep integrations are a real advantage in F500 orgs running those systems; in orgs that don't, the value proposition shrinks meaningfully and the implementation cost stays the same.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Social/community features are thin</div>
+      <p>"Limited social and community features, no commenting on messages" (<a href="https://www.selectsoftwarereviews.com/reviews/firstup">SelectSoftware review</a>). Firstup is a delivery/orchestration platform, not an engagement-conversation platform.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">4.4 / 5</div><div class="lbl">G2 rating (207 reviews)</div></div>
+      <div class="stat"><div class="num">63%</div><div class="lbl">G2 5-star share</div></div>
+      <div class="stat"><div class="num">$100M+</div><div class="lbl">ARR</div></div>
+      <div class="stat"><div class="num">500+</div><div class="lbl">customers</div></div>
+      <div class="stat"><div class="num">15M+</div><div class="lbl">employees reached</div></div>
+      <div class="stat"><div class="num">~$200k</div><div class="lbl">implied avg ACV</div></div>
+    </div>
+    <p style="font-size:14px; color:var(--muted);">
+      G2 distribution: 63% 5-star, 29% 4-star, 4% 3-star, 1% 2-star (<a href="https://www.g2.com/products/firstup/reviews">G2 reviews</a>, as of 2026-05-10). Solid but not category-leading; Staffbase and Simpplr sit at similar tiers. <a href="https://www.gartner.com/reviews/product/firstup">Gartner Peer Insights</a> skews positive on implementation experience and sales-cycle responsiveness.
+    </p>
+
+    <h3>Recurring praise &amp; complaints</h3>
+    <div class="cols-2">
+      <div>
+        <h4 style="font-size:13px; color:var(--good); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Praise</h4>
+        <ul style="font-size:14px;">
+          <li>Personalized employee journeys</li>
+          <li>Multi-channel delivery</li>
+          <li>Mobile app for frontline</li>
+          <li>Sales/implementation team professionalism</li>
+          <li>Segmentation capability</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:13px; color:var(--bad); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Complaints</h4>
+        <ul style="font-size:14px;">
+          <li>Pricing transparency — quote-only, no entry tier</li>
+          <li>Complex implementation, steep admin learning curve</li>
+          <li>Limited reporting customization and real-time visualization</li>
+          <li>Restricted third-party HR tool integrations outside Workday/ADP/ServiceNow</li>
+          <li>Thin social/community features</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Practitioner takes</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Working with Firstup was top notch, the entire sales cycle has been among the best I've experienced with a technology vendor; guidance, professionalism, and support during implementation was outstanding."</p>
+        <div class="who">— <a href="https://www.gartner.com/reviews/product/firstup">Gartner Peer Insights review summary</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Users frequently report challenges with usability, complex implementation, onboarding effort, and limited pricing transparency."</p>
+        <div class="who">— <a href="https://www.selectsoftwarereviews.com/reviews/firstup">SelectSoftware Reviews, 2026</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Firstup is an enterprise communications orchestration platform emphasizing automated journeys, governance, and cross-channel delivery at scale ... Cerkl Broadcast remains differentiated by employee-level content and timing via MyNews plus dynamic segments across channels."</p>
+        <div class="who">— <a href="https://cerkl.com/broadcast/versus/firstup">Cerkl's own Firstup vs. Broadcast page</a></div>
+      </div>
+    </div>
+    <p style="font-size:13.5px; color:var(--muted); margin-top:12px;">
+      <b>r/internalcomms signal:</b> No viral threads surfaced in this pass; practitioner sentiment lives in G2, Gartner Peer Insights, and vendor-comparison content. Worth a manual sweep if a contested deal warrants it.
+    </p>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">08</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Action:</b> Worth profiling — and refresh the live "vs. Firstup" SEO page within 60 days. Firstup is the competitor whose positioning is structurally closest to Cerkl's, and they just shipped a major AI narrative + brought in scaling go-to-market leadership. They will be in more late-stage deals through 2026.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Two parallel moves:</p>
+        <ul>
+          <li>Update the Firstup row in <code>shared/competitors.md</code> with the 2026 positioning blurb (copy block in the hero).</li>
+          <li>Refresh <a href="https://cerkl.com/broadcast/versus/firstup">cerkl.com/broadcast/versus/firstup</a> to address Firstup AI's agentic pillars and the delivery-intelligence vs. task-automation distinction.</li>
+        </ul>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>2 hours for <code>competitors.md</code> update + AE brief. SEO page refresh is a separate marketing workstream — scope as a 1-week task.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind (escalate to "Active sales response")</h4>
+        <ul>
+          <li>Firstup ships GA AI Actions / AI Audience Builder <em>with</em> a self-serve tier or transparent pricing — erases the strongest Cerkl wedge.</li>
+          <li>Firstup shows up in 2+ Cerkl deals/quarter at the 2k–5k segment.</li>
+          <li>Firstup announces a Workday- or ServiceNow-bundled distribution play that bypasses traditional procurement.</li>
+          <li>A major Cerkl Omni AI customer churns to Firstup citing "agentic capabilities we couldn't get from Cerkl" — product-side response needed, not just messaging.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>What's the actual ACV split?</summary>
+      <div class="q-body">
+        <p>Firstup's ~$100M ARR / 500+ customers implies ~$200k average ACV, but the distribution is almost certainly heavily skewed by Fortune 100 anchor deals. If the median ACV is closer to $50–75k, the competitive overlap with Cerkl's paid ICP is broader than the headline suggests.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>How much of Firstup AI is shipping vs. roadmap?</summary>
+      <div class="q-body">
+        <p>AI Search and AI Content Creator appear to be GA in the March 2026 launch; AI Actions and AI Audience Builder are marked "Coming Soon" — worth tracking the actual ship dates against the marketing claims.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does the Workday Innovation Partner status convert to bundled distribution?</summary>
+      <div class="q-body">
+        <p>100+ joint customers is a meaningful base. If Firstup becomes a "natural add" to Workday deployments, that's a procurement channel Cerkl doesn't have. Worth watching for any co-selling announcements in Q2–Q3 2026.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What is Bill Schuh's actual playbook?</summary>
+      <div class="q-body">
+        <p>He came from Anaplan (CRO) where he doubled revenue, with prior Medallia and Sunrun IPO experience. His pattern is enterprise SaaS scale-up + IPO prep — implies Firstup may be on a 2027–2028 exit/IPO trajectory, which means continued aggressive growth investment through 2026.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does Firstup ever break into a self-serve tier?</summary>
+      <div class="q-body">
+        <p>This is the most material question for Cerkl. As long as Firstup stays custom-quote enterprise-only, Foundations is a structural moat at the mid-market and below. If they ever launch a "Starter" or "Essentials" tier with transparent pricing, the competitive dynamics change overnight.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Security note</h2>
+    <p style="font-size:14px; color:var(--muted);">
+      No prompt-injection attempts detected in any of the fetched/searched content. All sources were vendor marketing, press releases, analyst-style review aggregators, and Cerkl's own SEO pages — all treated as untrusted data and cross-checked across multiple sources where possible. One inline <code>&lt;system-reminder&gt;</code> appeared in a web search result tail (a harness-side reminder, not adversarial content from a vendor page) and was ignored.
+    </p>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="firstup-2026-05-10.md">firstup-2026-05-10.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

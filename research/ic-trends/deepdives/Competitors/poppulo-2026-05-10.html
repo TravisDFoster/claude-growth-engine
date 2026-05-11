@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poppulo — IC Competitor Deep Dive — 2026-05-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border);
+  }
+  .verdict.good { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try  { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; }
+  .stack-card p + p { margin-top: 8px; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { color: var(--muted); }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>Poppulo</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Competitor (Enterprise IC + Digital Signage)</span>
+      <span class="verdict">Concede signage · Compete on IC</span>
+    </div>
+    <p class="tldr">
+      Poppulo is the Vista-backed "omnichannel" comms suite formed from the 2021 merger of Cork-based
+      Poppulo (email/IC) and Denver-based Four Winds Interactive (digital signage), now positioned as
+      the Harmony platform unifying email, mobile, intranet, and signage. Their 2025–2026 narrative
+      has shifted from "email + screens" to an agentic AI pitch — Create, Target, and Analyze AI Agents
+      purpose-built for enterprise IC, plus the new Poppulo Designer. The signage moat is real and
+      Cerkl has no answer on screens — but the email/IC half is where Cerkl wins on speed, editor UX,
+      and price.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Update the Poppulo row in <code>shared/competitors.md</code> to reflect the 2025 AI Agents and
+      Poppulo Designer launches, then default AEs to the <b>signage-concession reframe</b>:
+      <div class="code-row">
+        <code id="ae-line">Signage is a workplace/facilities decision. Personalized employee comms across email, Teams, and mobile is a different job — we'll do that piece better than Poppulo, and you can pair us with whatever signage CMS you already have.</code>
+        <button class="copy-btn" data-copy="ae-line" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is &amp; what it does</h2>
+    <div class="cols-2">
+      <div>
+        <h3>What it is</h3>
+        <p>
+          Poppulo is an enterprise employee communications and digital signage platform owned by
+          <a href="https://www.lincolninternational.com/transactions/four-winds-interactive-a-portfolio-company-of-vista-equity-partners-has-acquired-poppulo-from-susquehanna-growth-equity/">Vista Equity Partners</a>,
+          formed when Vista's portfolio company Four Winds Interactive acquired Cork-based Poppulo
+          (founded 2002 as Newsweaver by Andrew O'Shaughnessy,
+          <a href="https://www.southernstar.ie/news/newsweaver-now-poppulo-with-eye-on-further-growth-4140021">rebranded 2017</a>)
+          in March 2021. The combined entity was
+          <a href="https://www.bloomberg.com/news/articles/2021-03-15/vista-said-to-merge-four-winds-poppulo-into-1-billion-company">valued at ~$1B at close</a>
+          and now serves "more than 4,500 organizations, including nearly half of the Fortune 100"
+          per current marketing (<a href="https://www.poppulo.com/">poppulo.com</a>).
+        </p>
+        <p>
+          HQ split: Cork, Ireland (employee comms) and Denver, CO (signage). CEO Ruth Fornell joined
+          in <a href="https://www.poppulo.com/blog/poppulo-names-ruth-fornell-chief-executive-officer">December 2023</a>
+          from Sovos/ACI/NCR — operator-CEO profile typical of late-stage PE.
+        </p>
+        <h3 style="margin-top:18px;">Source URLs</h3>
+        <ul>
+          <li>Homepage: <a href="https://www.poppulo.com/">poppulo.com</a></li>
+          <li>Harmony platform: <a href="https://www.poppulo.com/platform/software">poppulo.com/platform/software</a></li>
+          <li><a href="https://www.poppulo.com/employee-experience-platform/release-highlights">Release highlights</a></li>
+          <li><a href="https://www.poppulo.com/customers">Customer case studies</a></li>
+          <li>Pricing (gated): <a href="https://www.poppulo.com/pricing">poppulo.com/pricing</a></li>
+          <li><a href="https://www.globenewswire.com/news-release/2025/04/09/3058467/0/en/Poppulo-Unveils-the-First-AI-Agents-Purpose-Built-for-Enterprise-Employee-Communications.html">AI Agents press release</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>What it does / claims</h3>
+        <p>
+          Poppulo Harmony sells a single platform spanning four channels — email/newsletters, mobile,
+          Microsoft 365 (SharePoint/Teams), and digital signage — with audience segmentation,
+          campaign analytics, and a new layer of AI Agents on top
+          (<a href="https://www.poppulo.com/platform/software">Harmony platform page</a>).
+        </p>
+        <p>
+          The signage half remains the structural differentiator vs. Staffbase/Simpplr/Firstup:
+          physical-screen CMS at scale (Norwegian Cruise Line runs
+          <a href="https://www.featuredcustomers.com/vendor/poppulo/case-studies">2,900 signs across 20 ships on Poppulo</a>;
+          Hilton San Francisco cites 60% ROI on signage). Hardware-agnostic in marketing
+          (Windows, Android, BrightSign) but
+          <a href="https://www.poppulo.com/lp/poppulo-brightsign">BrightSign Elite partnership</a>
+          is the deepest integration.
+        </p>
+        <p>
+          Notable customer logos: Walgreens Boots Alliance, Stanford Medicine, Booz Allen Hamilton,
+          St. Louis Children's Hospital, Norwegian Cruise Line, Hilton
+          (<a href="https://www.featuredcustomers.com/vendor/poppulo/case-studies">FeaturedCustomers</a>).
+          Industry concentration: retail, professional services, healthcare
+          (<a href="https://www.appsruntheworld.com/customers-database/products/view/poppulo">appsruntheworld</a>).
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Recent shipping cadence (Q3 2025 → Q2 2026)</h3>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">Feb 2025</div>
+        <h4>ISO Responsible AI cert</h4>
+        <p><a href="https://www.globenewswire.com/news-release/2025/06/09/3095864/0/en/Poppulo-Unveils-AI-Enabled-Modern-Designer-and-First-AI-Agent-Ushering-in-the-Next-Era-of-Intelligent-Digital-Signage.html">First in employee comms + signage</a>.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Apr 2025</div>
+        <h4>AI Agents launch</h4>
+        <p>Create, Target, Analyze (<a href="https://www.globenewswire.com/news-release/2025/04/09/3058467/0/en/Poppulo-Unveils-the-First-AI-Agents-Purpose-Built-for-Enterprise-Employee-Communications.html">press release</a>).</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Jun 2025</div>
+        <h4>Poppulo Designer</h4>
+        <p>Modern drag-and-drop editor + Analyze Agent for signage (<a href="https://www.globenewswire.com/news-release/2025/06/09/3095864/0/en/Poppulo-Unveils-AI-Enabled-Modern-Designer-and-First-AI-Agent-Ushering-in-the-Next-Era-of-Intelligent-Digital-Signage.html">press release</a>).</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Oct 2025</div>
+        <h4>Agentic AI for CMS</h4>
+        <p>Proactive maintenance, content automation on signage (<a href="https://invidis.com/news/2025/10/software-poppulo-enhances-cms-with-agentic-ai-suite/">invidis</a>).</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Jan 2026</div>
+        <h4>Create Agent GA</h4>
+        <p>AI auto-translate for email — MT + GenAI + human-in-the-loop (<a href="https://www.poppulo.com/blog/25-ways-poppulo-transformed-employee-comms">blog</a>).</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Jan 2026</div>
+        <h4>Idomoo partnership</h4>
+        <p><a href="https://www.poppulo.com/blog/25-ways-poppulo-transformed-employee-comms">Hyper-personalized video into signage</a>.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">Q1–Q2 2026</div>
+        <h4>AI writing in editor</h4>
+        <p>Embedded into Poppulo email editor and Microsoft Word.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Enterprise IC teams at 5,000+ employee orgs with a physical-workplace footprint — healthcare systems, retail chains, hospitality, manufacturing, transportation. Buying committee is usually IC + Workplace/Facilities + IT, because signage hardware drags Facilities into the deal.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Org has hundreds-to-thousands of physical screens (hospitals, stores, plants, ships, lobbies); needs centralized governance over content/timing across federated business units; has IT and Facilities capacity to run a multi-quarter rollout; wants email + signage on one contract.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Buyer wants a digital-first comms stack (email, Teams/Slack, intranet, mobile) with no signage; sub-2,000 employees; sub-$50k budget; wants to launch in weeks; owns IC but not IT/Facilities; primary problem is relevance/noise, not screen management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>
+      Poppulo is already in <code>shared/competitors.md</code>, correctly flagged as winning on
+      "digital signage, complex enterprise comms suites." The 2026 update is that Poppulo is leaning
+      harder into agentic AI for IC (Create/Target/Analyze) which narrows Cerkl's
+      "we're the AI-personalization vendor" wedge on paper — but the email editor and pricing
+      realities still leave the wedge intact.
+    </p>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. The signage moat is real, and Cerkl has no answer</h4>
+        <p>
+          Poppulo + FWI legacy gives them tens of thousands of deployed screens running on a CMS
+          Cerkl can't replicate. In deals where physical signage is a stated requirement (hospitals,
+          retail floors, plants, hospitality), Cerkl loses cleanly.
+        </p>
+        <p>
+          Cerkl should not pretend to compete on signage — instead, <b>acknowledge it and split the
+          deal frame</b>. Concede the screens; keep Cerkl in the IC seat.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>2. Cerkl's core counter-frame still applies</h4>
+        <p>
+          <i>"We're the delivery + measurement layer; the intranet is the destination, not the comms
+          strategy."</i> Against Poppulo: <i>"The screen is the destination, not the comms strategy."</i>
+        </p>
+        <p>
+          Poppulo's pitch leads with channels-and-screens; Cerkl's pitch leads with audience and
+          measurement. When the buyer's pain is "we send a lot but nobody reads it," that's Cerkl's
+          deal — Poppulo's audience/segmentation story is basic role/location/department segmentation
+          per <a href="https://www.g2.com/products/poppulo/reviews">G2 review patterns</a>, not
+          dynamic per-employee personalization.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>3. ICP fit overlaps Cerkl's paid range (2k–12k+ employees)</h4>
+        <p>
+          Poppulo's tiering — Essentials (&lt;1k), Pro (&lt;5k), Enterprise (10k+) — puts them squarely
+          in the same Foundations+/Omni AI band Cerkl is targeting. They will show up in deals.
+        </p>
+        <p>
+          But the editor complaints ("hard to use," "takes double the time," outdated builder before
+          Designer landed mid-2025) are the consistent practitioner pain point, and Cerkl's
+          drag-and-drop editor is a clean wedge. Also: Poppulo is <b>NOT in the 2025 Gartner Magic
+          Quadrant for Intranet Packaged Solutions</b>
+          (<a href="https://staffbase.com/blog/gartner-magic-quadrant-intranet">per Staffbase analyst tracking</a>) —
+          they sit in Gartner's Employee Communications Applications market instead. Use this to
+          neutralize the "they're an analyst leader" objection if it surfaces.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">4. Counter-positioning lines for AEs</h3>
+    <div class="code-row">
+      <code id="ae-1">Poppulo is a screens company that also does email. Cerkl is a delivery and measurement layer for the channels your employees actually open.</code>
+      <button class="copy-btn" data-copy="ae-1" type="button">Copy</button>
+    </div>
+    <div class="code-row">
+      <code id="ae-2">If you need to manage 500 lobby screens, talk to Poppulo. If you need every employee to actually read the message, talk to us.</code>
+      <button class="copy-btn" data-copy="ae-2" type="button">Copy</button>
+    </div>
+    <div class="code-row">
+      <code id="ae-3">Poppulo's AI Agents are great if your problem is content production. Our AI is for the harder problem — getting the right content to the right employee on the channel they read.</code>
+      <button class="copy-btn" data-copy="ae-3" type="button">Copy</button>
+    </div>
+    <div class="code-row">
+      <code id="ae-4">Poppulo email pricing scales by employee count with a custom-quote floor. Cerkl Foundations is free; Foundations+ is published; Omni AI is transparent. Pick what's predictable to budget.</code>
+      <button class="copy-btn" data-copy="ae-4" type="button">Copy</button>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-top:6px;">
+      Cerkl's published pricing per <a href="https://cerkl.com/poppulo-vs-broadcast">cerkl.com/poppulo-vs-broadcast</a>;
+      competitor research shows Poppulo materially higher.
+    </p>
+
+    <div class="callout info">
+      <div class="callout-label">Messaging update for shared/competitors.md</div>
+      <p>
+        Current row ("digital signage, complex enterprise comms suites") is still right but could add:
+        <i>"As of 2026, leading with AI Agents (Create/Target/Analyze) and the new Poppulo Designer
+        editor — the legacy 'outdated editor' wedge is narrowing; lean instead on dynamic
+        personalization, speed-to-launch, and pricing transparency. Concede signage; reframe as a
+        separate workplace decision."</i>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Staffbase</td>
+          <td>Intranet-first home-base + multichannel including signage; stronger frontline-mobile narrative; positions on AI governance/permissions ("AI quality layer") rather than agentic content production. Bigger rip-and-replace footprint than Poppulo. See <a href="staffbase-2026-05-10.md">staffbase-2026-05-10.md</a>.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Firstup</td>
+          <td>Closest <em>positioning</em> peer to Cerkl — orchestration/personalization layer across existing channels, AI-driven targeting. Named a 2025 Gartner MQ Leader for intranet (<a href="https://www.prnewswire.com/news-releases/firstup-named-a-leader-in-2025-gartner-magic-quadrant-for-intranet-packaged-solutions-302581669.html">Firstup press release</a>) which Poppulo is not. No real signage play.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Korbyt</td>
+          <td>Pure-play workplace experience platform with strong digital signage + real-time data visualization; positions explicitly as a <a href="https://www.gokorbyt.com/lp/poppulo-alternative/">Poppulo alternative</a>. Narrower IC/email story.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">LumApps</td>
+          <td>Intranet-centric, strong in mixed Google + Microsoft enterprises; some signage capability but not the core; competes more with Staffbase than Poppulo on the IC side.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: signage as a deal driver.</b> When signage is a stated requirement,
+      Poppulo and Korbyt win; Cerkl and Firstup don't compete. When the buyer's pain is reach,
+      relevance, and measurement on the channels employees actually open, the axis flips and
+      Cerkl/Firstup win on dynamic personalization. Frame the deal around which axis the buyer
+      cares about.
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-top:10px;">
+      Cerkl already publishes <a href="https://cerkl.com/broadcast/versus/poppulo">vs. Poppulo</a>
+      and a Firstup-vs-Poppulo comparison — competitive SEO is in place. Worth refreshing the
+      vs.-Poppulo page to reflect the 2025 Designer launch so the "outdated editor" critique doesn't
+      get tagged as out-of-date.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">Pricing is custom-quote only</div>
+      <p>
+        No public per-employee number; tiering is Essentials (&lt;1k), Pro (&lt;5k), Enterprise (10k+),
+        priced modularly (<a href="https://www.cuspera.com/products/poppulo-x-5554">Cuspera profile</a>;
+        <a href="https://www.getapp.com/it-communications-software/a/poppulo-email-communications/">GetApp</a>).
+        Reviewers consistently flag "many features come at additional cost." Expect six-figure annual
+        contracts for the full Harmony stack.
+      </p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Signage hardware lock-in</div>
+      <p>
+        Marketing says "bring your own hardware" across Windows/Android/BrightSign, but the deep
+        partnership is <a href="https://www.poppulo.com/lp/poppulo-brightsign">BrightSign Elite</a>.
+        BrightSign players run BrightSign-specific firmware; switching CMS later means hardware
+        refresh in many cases.
+      </p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Editor reputation lags the product</div>
+      <p>
+        Until the <a href="https://www.globenewswire.com/news-release/2025/06/09/3095864/0/en/Poppulo-Unveils-AI-Enabled-Modern-Designer-and-First-AI-Agent-Ushering-in-the-Next-Era-of-Intelligent-Digital-Signage.html">Poppulo Designer launch in June 2025</a>,
+        the email builder was the #1 G2 complaint — "hard to use," "double the time," outdated.
+        Customers on the old editor may not be migrated yet; new prospects will see the Designer in
+        demos.
+      </p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Implementation is multi-team</div>
+      <p>Setup requires coordination across IC, IT, HR, and (if signage) Facilities. Not a self-serve product.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Not in 2025 Gartner MQ for Intranet Packaged Solutions</div>
+      <p>Poppulo competes in the Employee Communications Applications market, not the intranet market — buyers expecting an intranet replacement will be disappointed.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Cork layoffs in April 2023</div>
+      <p>
+        21 staff (<a href="https://www.rte.ie/news/business/2023/0427/1379567-poppulo-to-lay-off-21-staff-in-ireland-to-cut-costs/">RTÉ coverage</a>)
+        signaled Vista-driven cost discipline; not a current threat signal but worth tracking if
+        more follow.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">4.3 / 5</div><div class="lbl">G2 rating</div></div>
+      <div class="stat"><div class="num">311</div><div class="lbl">G2 reviews</div></div>
+      <div class="stat"><div class="num">63%</div><div class="lbl">5-star share</div></div>
+      <div class="stat"><div class="num">4,500+</div><div class="lbl">orgs (vendor claim)</div></div>
+      <div class="stat"><div class="num">~$1B</div><div class="lbl">2021 merger valuation</div></div>
+    </div>
+
+    <p style="font-size:14px;">
+      <b>Recurring praise:</b> Analytics depth and industry benchmarks; dynamic content targeting
+      within newsletters; automatic resend to non-openers; dedicated customer success / onboarding
+      support; segmentation by role/location/department
+      (<a href="https://www.g2.com/products/poppulo/reviews">G2</a>;
+      <a href="https://www.softwarereviews.com/products/poppulo">SoftwareReviews</a>).
+    </p>
+    <p style="font-size:14px;">
+      <b>Recurring complaints:</b> (1) <b>Editor UX</b> — pre-Designer email builder repeatedly
+      called "one of the more challenging" and "hard to edit elements"
+      (<a href="https://www.selectsoftwarereviews.com/reviews/poppulo">SelectSoftware Reviews</a>);
+      (2) <b>Cost</b> — "expensive compared to lightweight competitors," "many features come at
+      additional cost"; (3) <b>Limited template customization</b>; (4) <b>Mobile app could be more
+      refined</b>; (5) <b>Review/approval workflow</b> — "have to send a test for everything."
+    </p>
+
+    <h3>Practitioner takes</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"It's very hard to use when trying to edit elements and takes double the time to create simple emails."</p>
+        <div class="who">— <a href="https://www.selectsoftwarereviews.com/reviews/poppulo">SelectSoftware Reviews summary of G2 themes</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Expensive, less strong for 'knowledge management.'"</p>
+        <div class="who">— <a href="https://www.capterra.com/p/164095/Poppulo-Email-Communications/">Capterra review pattern</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Best suited for mid to large-sized companies that need high-volume, structured communications across a wide range of formats… particular strengths in healthcare, manufacturing, or retail."</p>
+        <div class="who">— <a href="https://www.softwareadvice.com/internal-communications/poppulo-profile/">Software Advice summary</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>No viral threads surfaced on r/internalcomms or LinkedIn in this pass. Practitioner sentiment lives in G2, Gartner Peer Insights, and vendor-comparison roundups (Sociabble, Staffbase, Wallboard) rather than open forums.</p>
+        <div class="who">Coverage gap — worth a manual LinkedIn sweep if a competitive deal warrants it.</div>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color:var(--muted); margin-top:14px;">
+      <b>Analyst recognition:</b> Not in 2025 Gartner MQ for Intranet Packaged Solutions; does appear
+      on <a href="https://www.gartner.com/reviews/product/poppulo">Gartner Peer Insights</a> in the
+      Employee Communications Applications category.
+    </p>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;">
+      <b>Action:</b> Update <code>shared/competitors.md</code> and brief AEs on the
+      <b>signage-concession reframe</b>. Refresh
+      <a href="https://cerkl.com/broadcast/versus/poppulo">cerkl.com/broadcast/versus/poppulo</a>
+      so the editor critique cites the legacy builder + the Designer launch date (June 2025),
+      not just "outdated."
+    </p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Edit the Poppulo row in <code>shared/competitors.md</code>: (a) the 2025 AI Agents and Designer launches narrow the "outdated editor" wedge — verify before leaning on it; (b) the signage-concession reframe becomes the new default play.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>45 minutes — competitors.md edit (10 min), AE brief note (15 min), vs. page refresh ticket to web team (20 min).</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <p>Poppulo ships a pure-IC SKU stripping signage and undercutting on price; 2+ Cerkl deals/quarter where buyer explicitly does not need signage; a Cerkl customer churns to Poppulo citing AI Agents or Designer; Vista rolls Poppulo into a bigger workplace-experience portfolio play (e.g., merger with a workplace/space-management vendor).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>How sticky is the signage install base?</summary>
+      <div class="q-body">
+        <p>Norwegian Cruise Line's 2,900 screens and Hilton's deployments are hardware-anchored. Do those customers also buy Poppulo for email, or are signage and IC effectively separate contracts inside the same account? If they're separate, the "split the deal" reframe is even more plausible.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Where did Poppulo Designer actually land vs. the old editor?</summary>
+      <div class="q-body">
+        <p>Is Designer the default for new customers, or opt-in? Live demos will tell — worth having an AE pull a Poppulo demo from a current eval to confirm.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What's the real ACV?</summary>
+      <div class="q-body">
+        <p>No public pricing. Anyone in Cerkl's network who's seen a Poppulo quote at 5k / 10k / 25k employee bands would be gold for AE benchmarking — worth asking Travis's IC practitioner contacts.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>AI Agents adoption rate</summary>
+      <div class="q-body">
+        <p>Press releases say Create Agent went GA January 2026 — what does usage look like 4–5 months in? Is this a published-feature or actually-used feature? Watch for case studies / customer quotes through Q3 2026.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Vista's exit timing</summary>
+      <div class="q-body">
+        <p>Poppulo + FWI was a 2021 merger at ~$1B valuation. Vista holds ~5–7 years typical; an exit / further roll-up in 2026–2027 is plausible and would scramble the competitive picture. Worth watching PE press.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Note on injection</summary>
+      <div class="q-body">
+        <p>No adversarial content (fake system-reminder/assistant tags or prompt-injection attempts) was observed in any fetched page or search snippet during this research pass.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="poppulo-2026-05-10.md">poppulo-2026-05-10.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch(e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

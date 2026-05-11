@@ -108,12 +108,17 @@ tco = max(total_companies, 1)
 td  = max(total_deals, 1)
 
 # ── 2. EMAIL DELIVERABILITY ───────────────────────────────────────────────────
+# Counts only contacts that still need action (still marketing). Hard-bounce/optout
+# properties are permanent stamps — once set, they stay forever. Suppression at Cerkl
+# means flipping hs_marketable_status to false, so AND with marketable=true to count
+# only the un-suppressed remainder.
 print("[2/8] Email deliverability...")
-hard_bounced   = cc(HAS("hs_email_hard_bounce_reason_enum"))
-soft_bounced   = cc(HAS("hs_email_bounce") + NHAS("hs_email_hard_bounce_reason_enum"))
-global_unsub   = cc(EQ("hs_email_optout", "true"))
+MKT = EQ("hs_marketable_status", "true")
+hard_bounced   = cc(HAS("hs_email_hard_bounce_reason_enum") + MKT)
+soft_bounced   = cc(HAS("hs_email_bounce") + NHAS("hs_email_hard_bounce_reason_enum") + MKT)
+global_unsub   = cc(EQ("hs_email_optout", "true") + MKT)
 never_emailed  = cc(NHAS("hs_email_last_send_date"))
-bounces_3plus  = cc(GTE("hs_email_bounce", "3"))
+bounces_3plus  = cc(GTE("hs_email_bounce", "3") + MKT)
 
 # ── 3. DATA COMPLETENESS ─────────────────────────────────────────────────────
 print("[3/8] Data completeness...")
@@ -224,7 +229,7 @@ report = f"""# HubSpot CRM Audit Report
 | Dimension | Grade | Key Finding |
 |-----------|-------|-------------|
 | Database Size | {g_db} | {total_contacts:,} contacts · {total_companies:,} companies · {total_deals:,} deals |
-| Email Deliverability | {g_deliv} | {hard_bounced:,} hard bounced · {global_unsub:,} global unsubscribes |
+| Email Deliverability | {g_deliv} | {hard_bounced:,} hard bounced · {global_unsub:,} unsubscribed (both still marketing) |
 | Data Completeness | {g_complete} | {missing_email:,} missing email ({pct(missing_email, tc)}) · {missing_lifecycle:,} missing lifecycle |
 | Engagement Health | {g_engage} | {never:,} never active · {inactive:,} inactive 12+ months |
 | Duplicate Analysis | {g_dupes} | {co_no_domain:,} companies ({pct(co_no_domain, tco)}) without domain — manual dedup required |
@@ -251,13 +256,15 @@ report = f"""# HubSpot CRM Audit Report
 
 ### 2. Email Deliverability — {g_deliv}
 
+Counts reflect contacts that **still need action** (currently marked as marketing). Already-suppressed contacts are excluded — they retain the bounce/optout property history but are no longer billed or emailed.
+
 | Metric | Count | % of Contacts |
 |--------|-------|---------------|
-| Hard Bounced | {hard_bounced:,} | {pct(hard_bounced, tc)} |
-| Soft Bounced | {soft_bounced:,} | {pct(soft_bounced, tc)} |
-| Global Unsubscribes | {global_unsub:,} | {pct(global_unsub, tc)} |
+| Hard Bounced — still marketing | {hard_bounced:,} | {pct(hard_bounced, tc)} |
+| Soft Bounced — still marketing | {soft_bounced:,} | {pct(soft_bounced, tc)} |
+| Global Unsubscribes — still marketing | {global_unsub:,} | {pct(global_unsub, tc)} |
 | Never Emailed | {never_emailed:,} | {pct(never_emailed, tc)} |
-| 3+ Bounces | {bounces_3plus:,} | {pct(bounces_3plus, tc)} |
+| 3+ Bounces — still marketing | {bounces_3plus:,} | {pct(bounces_3plus, tc)} |
 
 ---
 

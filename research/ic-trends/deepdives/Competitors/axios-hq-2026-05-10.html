@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IC Deep Dive — Axios HQ — 2026-05-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try {
+    background: var(--accent-soft); border-color: var(--info-border); color: var(--accent);
+  }
+  .callout.warn {
+    background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn);
+  }
+  .callout.info {
+    background: var(--info-bg); border-color: var(--info-border); color: var(--info);
+  }
+  .callout p { max-width: none; margin: 0 0 6px; }
+  .callout p:last-child { margin: 0; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .stack-card h4 { margin: 4px 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 6px; font-size: 14px; }
+  .stack-card p:last-child { margin: 0; }
+
+  .ae-lines {
+    display: grid; gap: 8px; grid-template-columns: 1fr; margin-top: 10px;
+  }
+  .ae-line {
+    background: var(--accent-soft); border: 1px solid var(--info-border);
+    border-radius: 10px; padding: 12px 14px;
+    font-size: 14px; color: var(--ink);
+    position: relative;
+  }
+  .ae-line .ae-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .ae-line em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); font-style: normal; }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco-cell ul { margin: 0; padding-left: 18px; font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative; padding-right: 40px;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { margin: 0 0 8px; }
+
+  .source-list {
+    display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 8px;
+  }
+  .source-list a {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 12px; font-size: 13px;
+    border-bottom: 1px solid var(--line);
+    word-break: break-word;
+  }
+  .source-list a:hover { border-color: var(--accent); }
+
+  .timeline { margin-top: 10px; }
+  .timeline li {
+    list-style: none; padding: 6px 0 6px 14px;
+    border-left: 2px solid var(--line);
+    margin-left: 4px;
+    font-size: 14px;
+  }
+  .timeline li b {
+    color: var(--accent); font-weight: 600;
+    display: inline-block; min-width: 90px;
+  }
+  .timeline { padding-left: 0; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>Axios HQ</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Competitor</span>
+      <span class="verdict warn">Active competitor — close the SEO gap</span>
+    </div>
+    <p class="tldr">
+      Axios HQ is the "Smart Brevity" AI writing/editing tool for internal comms — a 4.7-star, ~120-review
+      <a href="https://www.g2.com/products/axios-hq/reviews">G2 darling</a> that has spent 2024–2026 trying to
+      graduate from "best-in-class newsletter editor" into a fuller employee-comms platform via Slack/Teams
+      distribution, an AI Assistant suite, and the December 2024 acquisition of the
+      <a href="https://www.businesswire.com/news/home/20241205614424/en/Axios-HQ-Acquires-Mixing-Board-to-Expand-the-Only-B2B-Comms-Solution-by-for-and-With-Communicators">Mixing Board community</a>.
+      They overlap with Cerkl on the writer/editor experience and on the SMB-through-mid-market buyer, but stay narrow on
+      delivery (still email-first) and prescriptive on format — and Cerkl has no live "vs. Axios HQ" SEO page despite
+      Axios HQ being listed as a main competitor in <code>shared/competitors.md</code>. That gap is now worth closing.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Update <code>shared/competitors.md</code> with the 2026 Axios HQ positioning and scope a lightweight
+      "vs. Axios HQ" SEO page framed around the <b>free Foundations vs. ~$15k floor</b> angle and
+      <b>multi-channel + measurement</b> angle. Cheapest competitive SEO win on the list.
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Origin &amp; ownership</h3>
+        <p>
+          Axios HQ is an AI-powered internal communications platform built around the Smart Brevity editorial method.
+          Launched in February 2021 inside Axios Media by Roy Schwartz, Jim VandeHei, and Mike Allen
+          (<a href="https://en.wikipedia.org/wiki/Axios_HQ">Wikipedia</a>), then spun out as a separate software
+          company in August 2022 when Cox Enterprises acquired Axios Media for $525M — Axios HQ became
+          majority-owned by the founders, with Cox as sole minority investor
+          (<a href="https://www.axios.com/2022/08/08/axios-agrees-to-sell-to-cox-enterprises-for-525-million">Axios 2022-08-08</a>).
+        </p>
+        <p>
+          Raised a $20M Series A in March 2023 at ~$100M post-money, co-led by Glade Brook Capital and Greycroft
+          (<a href="https://www.axios.com/2023/03/24/axios-hq-raises-20-million-software-ai">Axios 2023-03-24</a>).
+          Roy Schwartz is CEO; VandeHei chairs the board. ARR crossed $10M by January 2024
+          (<a href="https://www.businesswire.com/news/home/20240109720123/en/Axios-HQ-exceeds-$10M-ARR-hires-its-first-CMO-and-launches-Slack-Teams-integrations">BusinessWire 2024-01-09</a>).
+        </p>
+      </div>
+      <div>
+        <h3>Source URLs</h3>
+        <div class="source-list">
+          <a href="https://www.axioshq.com/">Homepage</a>
+          <a href="https://www.axioshq.com/features/ai">AI feature page</a>
+          <a href="https://www.axioshq.com/smart-brevity">Smart Brevity explainer</a>
+          <a href="https://www.axioshq.com/pricing">Pricing (gated)</a>
+          <a href="https://www.axioshq.com/testimonials">Testimonials</a>
+          <a href="https://www.axioshq.com/insights">Insights / blog</a>
+          <a href="https://www.axioshq.com/about">About</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it does / claims</h2>
+    <p>
+      Axios HQ is positioned as "the only internal communications platform powered by Smart Brevity®" — a method that claims
+      <a href="https://www.axioshq.com/smart-brevity">40% shorter read times</a> and an open-rate boost
+      ("readers are 2x more likely to open an Axios HQ email") (<a href="https://www.axioshq.com/">Axios HQ homepage</a>).
+      The product is essentially a writer-first IDE for internal updates with delivery and analytics bolted on:
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>AI Assistant</h4>
+        <p>Fine-tuned on top of ChatGPT and the Axios HQ editorial corpus. Smart Brevify, Tone, Translate, Brainstorm, Q&amp;A over archive, DALL·E 2 image gen.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>Brevity scoring</h4>
+        <p>Every draft gets a brevity score; templates and "Axiom" structures gate writers toward the house style.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>Multi-channel (Jan 2024)</h4>
+        <p>Slack + Teams integrations post summary + link from a sent edition; SharePoint distribution supported. Email remains primary.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>Analytics</h4>
+        <p>Open rate, CTR, segment performance, competitive benchmarks. Reporting is a top G2 praise category.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>Integrations</h4>
+        <p>Okta, Workday, Gmail, Outlook, Slack, Teams, SharePoint (<a href="https://www.capterra.com/p/10007050/Axios-HQ/">Capterra</a>).</p>
+      </div>
+      <div class="pillar">
+        <div class="n">FEATURE</div><h4>Mixing Board</h4>
+        <p>Dec 2024 acquisition of senior-comms-leader network; "Mixing Board, powered by Axios"; first joint product: IC training (2025).</p>
+      </div>
+    </div>
+
+    <h3>Recent shipping cadence (Q3 2024 → Q2 2026)</h3>
+    <ul class="timeline">
+      <li><b>Jan 2024</b> Slack + Teams integrations GA; first CMO hired; ARR &gt; $10M (<a href="https://www.businesswire.com/news/home/20240109720123/en/Axios-HQ-exceeds-$10M-ARR-hires-its-first-CMO-and-launches-Slack-Teams-integrations">BusinessWire</a>).</li>
+      <li><b>2024</b> AI Assistant suite expanded — Q&amp;A over comms archive, image gen (DALL·E 2), translation, tone (<a href="https://www.axioshq.com/insights/axios-hq-new-artificial-intelligence-features-elevate-your-essential-communications">Axios HQ insights</a>).</li>
+      <li><b>Dec 2024</b> Acquired Mixing Board (<a href="https://www.businesswire.com/news/home/20241205614424/en/Axios-HQ-Acquires-Mixing-Board-to-Expand-the-Only-B2B-Comms-Solution-by-for-and-With-Communicators">BusinessWire</a>).</li>
+      <li><b>2025</b> First joint Axios HQ + Mixing Board product — internal-comms training — launched (<a href="https://www.axios.com/2024/12/05/axios-hq-acquires-mixing-board">Axios</a>).</li>
+      <li><b>Oct 2025</b> Communicators Pro merged into Mixing Board → "Mixing Board, powered by Axios" (<a href="https://www.axios.com/2025/10/07/mixing-board-axios-communications-membership">Axios</a>).</li>
+      <li><b>Dec 2025</b> Communicators Live NYC event (<a href="https://www.axios.com/2025/12/10/axios-live-communicators-nyc-2025">Axios</a>).</li>
+      <li><b>2026</b> 2026 State of Internal Communications report w/ Ragan (<a href="https://www.ragan.com/store/deep-dive-the-2026-state-of-internal-communications/">Ragan</a>); 2026 Best-in-Class Communicator Awards (<a href="https://www.axioshq.com/awards">HQ</a>).</li>
+    </ul>
+
+    <p style="font-size:14px; color:var(--muted); margin-top:14px;">
+      Customer logos publicly cited include Walmart, JPMorgan Chase, and Citi — the
+      <a href="https://www.axioshq.com/case-studies/how-citi-turned-enterprise-communications-into-a-must-read">Citi case study</a>
+      cites a flagship newsletter reaching ~300,000 employees.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>The <b>writer</b> — comms managers, chiefs of staff, HR/People comms, exec-comms ghostwriters, individual leaders writing their own all-hands. Buyer ranges from a single VP up through mid-market and enterprise IC teams (Citi-scale exists but isn't the modal customer).</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Writing-quality problem &gt; delivery problem. Leadership has bought into Smart Brevity (the book often sold it before the software did). Buyer wants an AI editor more than a comms platform. Email is dominant. &lt;2,000 employees, polished newsletter workflow.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Cross-channel orchestration (intranet + email + mobile + SMS + signage); large deskless/frontline pop without corporate email; dynamic segmentation as core; price-sensitive SMB (~$15k floor); any allergy to format prescriptiveness (<a href="https://www.cjr.org/criticism/axios-smart-brevity-longform.php">CJR</a>; <a href="https://newrepublic.com/article/167733/axios-guide-writing-well-neither-smart-brief-smart-brevity-book-review">New Republic</a>).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>
+      Axios HQ is listed in <code>shared/competitors.md</code> as a main competitor but has
+      <b>no live "vs. Axios HQ" SEO page</b> — unlike Simpplr, LumApps, Firstup, Workvivo, and Poppulo, all of which do.
+      That gap is bigger than it looks because Axios HQ's natural buyer profile overlaps Cerkl Foundations and
+      Foundations+ more cleanly than Staffbase or Simpplr do.
+    </p>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <div class="n">POSITION 1</div>
+        <h4>Writing-tool-first, not platform-first</h4>
+        <p>Their entire wedge: "your updates aren't being read because they aren't written well — buy our AI editor + house style." Staffbase competes on intranet/home-base; Cerkl competes on personalized delivery + measurement; Axios HQ competes on <em>the draft itself</em>. Different axis — AEs need to disqualify the comparison early.</p>
+      </div>
+      <div class="stack-card">
+        <div class="n">POSITION 2</div>
+        <h4>Sharpest overlap: Foundations</h4>
+        <p>Foundations targets "any team that owns internal employee comms and needs something better than Outlook or Gmail" — exactly the buyer AHQ courts with its $15k entry price. The wedge: <b>free vs. $15k+</b>. Foundations gives them writing surface, scheduling, design, and delivery analytics without procurement. Real, uncomfortable price-anchor for AHQ's sales motion.</p>
+      </div>
+      <div class="stack-card">
+        <div class="n">POSITION 3</div>
+        <h4>Softens at Foundations+ / Omni AI</h4>
+        <p>Once a buyer has 500+ employees, multiple channels, deskless workforce, and SSO/IT requirements, AHQ's single-channel-with-bolt-on-distribution model gets thin. Slack/Teams = post-hoc forwards-with-link, not native publishing. Mixing Board signals investment in <em>community + training</em>, not delivery infra. Counter-position: "AHQ writes a good email — we make sure the right person reads it on the channel they actually open."</p>
+      </div>
+    </div>
+
+    <h3>Counter-positioning lines for AEs</h3>
+    <div class="ae-lines">
+      <div class="ae-line">
+        <div class="ae-label">Price anchor</div>
+        <em>"Axios HQ is an AI editor priced like a platform. Cerkl is a platform priced like a free tool."</em>
+        — anchors on the $15k/year floor vs. free Foundations.
+      </div>
+      <div class="ae-line">
+        <div class="ae-label">Cross-channel wedge</div>
+        <em>"They're great if your problem is writing. Ours is if your problem is reaching everyone, not just the people who open email."</em>
+      </div>
+      <div class="ae-line">
+        <div class="ae-label">Format lock-in</div>
+        <em>"Smart Brevity is a style. We don't dictate the style — we make sure whatever you write gets read by the right person."</em>
+        — defangs the format-prescriptiveness lock-in
+        (<a href="https://www.cjr.org/criticism/axios-smart-brevity-longform.php">CJR</a>,
+        <a href="https://newrepublic.com/article/167733/axios-guide-writing-well-neither-smart-brief-smart-brevity-book-review">New Republic</a>).
+      </div>
+      <div class="ae-line">
+        <div class="ae-label">Integration depth</div>
+        <em>"Their Slack/Teams support is a post-send forward. Ours is native publishing with read attribution."</em>
+        — use only if the buyer has dug into AHQ's integration docs
+        (<a href="https://help.axioshq.com/hc/en-us/articles/40445557403923-Distributing-and-collecting-content-with-the-Slack-integration">HQ Slack help</a>).
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">Should we commission a "vs. Axios HQ" SEO page?</div>
+      <p><b>Yes — but a lighter version than the enterprise comparisons.</b> Axios HQ's organic surface is dominated by review aggregators (G2, Capterra, GetApp, Software Advice) and their own brand pages — there's room for a Cerkl-authored page to rank on "Axios HQ alternatives" and "Axios HQ pricing."</p>
+      <p>Frame the page around the <b>free Foundations vs. $15k floor</b> angle and the <b>multi-channel + measurement</b> angle. Don't write it as enterprise positioning; write it as SMB/Foundations-buyer positioning. Cheapest competitive SEO win on the list.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ from Axios HQ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Workshop</td>
+          <td>Email-first SMB comms platform, similar buyer profile, comparable price tier. Less AI-editor-prescriptive than AHQ; more flexible templates; weaker editorial brand. Reviewers say Workshop edges ContactMonkey on support and product fit (<a href="https://www.g2.com/products/workshop/competitors/alternatives">G2</a>).</td>
+        </tr>
+        <tr>
+          <td class="alt-name">ContactMonkey</td>
+          <td>Outlook/Gmail-plugin model — composes inside the email client. Sales-led custom pricing; strong analytics; single-channel limitation cited as growth ceiling (<a href="https://staffbase.com/blog/contactmonkey-alternatives">Staffbase blog</a>). Less AI-writing-centric than AHQ.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Cerkl Foundations</td>
+          <td>Free-forever entry, no procurement, self-serve. Same writer-buyer in early stages; differentiates on personalized delivery, audience sync, cross-channel reach, and a real upgrade path to Foundations+ / Omni AI. Doesn't dictate format.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Staffbase / Simpplr / Firstup</td>
+          <td>Out of category for the AHQ buyer — intranet/EX platforms targeting 1,000+ employee orgs at 2–5× AHQ's price floor. Show up against AHQ only in category-of-one decisions inviting wildly different tools to demo. Worth flagging on a discovery call.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: writer-tool vs. delivery platform.</b> AHQ optimizes <em>the draft</em>;
+      Cerkl optimizes <em>who receives it and where</em>. Buyers usually pick one of those two problems first —
+      that's the disqualification question.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Gotchas</h2>
+
+    <div class="callout warn">
+      <div class="callout-label">Pricing floor — ~$15k/year, gated</div>
+      <p>Per <a href="https://www.getapp.com/it-communications-software/a/axios-hq/pricing/">GetApp</a>, starts at ~$15,000/year behind a quote. Licensing started at $10k/year in 2021 per <a href="https://digiday.com/media/axios-has-made-1m-in-revenue-from-its-eight-month-old-software-licensing-business/">Digiday</a> — floor has crept up. Multiple G2/Capterra reviewers call it expensive for the value:</p>
+      <p><em>"the price feels a bit too high for what we get"</em> · <em>"pricing does not reflect overall competitive environment"</em> (<a href="https://www.g2.com/products/axios-hq/reviews">G2</a>; <a href="https://www.capterra.com/p/10007050/Axios-HQ/reviews/">Capterra</a>). Value-for-money scores 4.0/5 on Capterra — the lowest sub-score.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Single-channel reality</div>
+      Despite the Slack/Teams story, the product is still an email tool — Slack/Teams support is "send your edition, then post a link/summary into a channel" (<a href="https://help.axioshq.com/hc/en-us/articles/40445557403923-Distributing-and-collecting-content-with-the-Slack-integration">HQ Slack help</a>). Only one Slack workspace per account. Not native cross-channel publishing.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Smart Brevity is opinionated — the format is the product</div>
+      Reviewers love it when leadership is bought in; they hate it when prescribed top-down. Critics call it "a one-trick pony" that "oversimplifies things and loses vital context" (<a href="https://www.cjr.org/criticism/axios-smart-brevity-longform.php">CJR</a>; <a href="https://newrepublic.com/article/167733/axios-guide-writing-well-neither-smart-brief-smart-brevity-book-review">New Republic</a>; <a href="https://voxuspr.com/2023/03/4-pros-and-4-cons-of-axios-smart-brevity-format-in-tech-pr/">Voxus PR</a>). G2 reviewers consistently flag <em>"limitations in customization options, which can restrict creative expression"</em>.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Scope creep risk — community over delivery</div>
+      Mixing Board acquisition + "Mixing Board, powered by Axios" + joint training product signal investment in <b>community and training</b> as growth vectors, not in deepening delivery/analytics. Differentiation doubles down on editorial-thought-leadership, not platform breadth. Good for Cerkl on the delivery axis; bad if a Cerkl buyer values the brand-halo.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">AI quality is opaque</div>
+      "Fine-tuned ChatGPT" plus proprietary editorial guidance (<a href="https://help.axioshq.com/hc/en-us/articles/40443549694355-AI-Assistant-Frequently-Asked-Questions">HQ AI FAQ</a>). No public model card, no governance/audit story comparable to Staffbase's "AI quality layer." For regulated-industry buyers, that's a gap.
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Performance complaints</div>
+      Recurring G2/Capterra complaint: slow load times, occasional glitches — <em>"feels like it's still in development"</em> (<a href="https://www.g2.com/products/axios-hq/reviews">G2</a>).
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">4.7</div><div class="lbl">G2 / ~120 reviews</div></div>
+      <div class="stat"><div class="num">4.6</div><div class="lbl">Capterra / 13 reviews</div></div>
+      <div class="stat"><div class="num">4.0</div><div class="lbl">Capterra value-for-$ (lowest)</div></div>
+      <div class="stat"><div class="num">~$15k</div><div class="lbl">entry-price floor</div></div>
+      <div class="stat"><div class="num">$10M+</div><div class="lbl">ARR (Jan 2024)</div></div>
+    </div>
+
+    <h3>Recurring praise &amp; complaints</h3>
+    <div class="cols-2">
+      <div>
+        <p style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:4px;">Praise</p>
+        <ul>
+          <li>Smart Brevity scoring keeps writers disciplined</li>
+          <li>AI Assistant for shortening / expanding / tone</li>
+          <li>Clean templates</li>
+          <li>Responsive support</li>
+          <li>Analytics dashboard</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:4px;">Complaints</p>
+        <ul>
+          <li>Price-to-value, especially sub-200-employee orgs</li>
+          <li>Limited design/branding customization</li>
+          <li>Audience-targeting / re-targeting controls thin</li>
+          <li>Speed / glitches</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Practitioner takes</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Axios HQ has exceeded our expectations. Our open rate is phenomenal because our readers know they can expect succinct and clear messages with attractive graphics."</p>
+        <div class="who">— <a href="https://www.axioshq.com/testimonials">HQ testimonials page</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"The Axios HQ software and the Smart Brevity model have become essential to how we share information across the firm through our flagship newsletter."</p>
+        <div class="who">— Leslie Hart, Citi Global News Editor in Chief · <a href="https://www.axioshq.com/case-studies/how-citi-turned-enterprise-communications-into-a-must-read">HQ Citi case study</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"The pricing is a little high for a small business like ours but I do see the value in it."</p>
+        <div class="who">— via <a href="https://www.softwareadvice.com/internal-communications/axios-hq-profile/">Software Advice review summary</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Limitations in customization options, which can restrict creative expression."</p>
+        <div class="who">— recurring G2 complaint pattern · <a href="https://www.g2.com/products/axios-hq/reviews">G2</a></div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">Coverage gaps</div>
+      <p><b>Reddit r/internalcomms:</b> A targeted <code>site:reddit.com "Axios HQ" internal comms</code> query returned no indexed threads in this pass. Practitioner sentiment lives mostly on G2, Capterra, LinkedIn, and Ragan/PR Daily op-eds. Worth a manual r/internalcomms sweep if AHQ shows up in a hot deal.</p>
+      <p><b>Ragan / PR Daily:</b> Axios HQ is a frequent collaborator — co-published the <a href="https://www.ragan.com/store/deep-dive-the-2026-state-of-internal-communications/">2026 State of Internal Communications report</a> with Ragan, which has also covered the "<a href="https://www.ragan.com/writing-short-not-shallow-for-better-internal-comms/">short, not shallow</a>" Smart Brevity angle approvingly. They own meaningful share-of-voice in IC trade media.</p>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">08</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Action:</b> Update <code>competitors.md</code> + commission a lightweight "vs. Axios HQ" SEO page.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <ul>
+          <li>Add a row/section to <code>shared/competitors.md</code> with the 2026 positioning: <em>"AI-editor-first competitor priced like a platform; overlap is with Foundations buyers more than enterprise; counter with free entry + cross-channel + no format lock-in."</em></li>
+          <li>Brief AEs on the four counter-positioning lines in section 04.</li>
+          <li>Scope a 1,500-word "vs. Axios HQ" page optimized for "Axios HQ alternatives" and "Axios HQ pricing" — SMB/Foundations frame, not enterprise.</li>
+        </ul>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>2 hours to update <code>competitors.md</code> + brief AEs verbally. Separate ~1-week marketing project to draft + publish the SEO page.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind (escalate to active sales response)</h4>
+        <ul>
+          <li>AHQ ships <em>native</em> multi-channel publishing (not link-forwarding) with cross-channel attribution — would put them on Omni AI's turf.</li>
+          <li>AHQ launches a free or freemium tier — eliminates Foundations' single biggest wedge.</li>
+          <li>AHQ shows up in 2+ Cerkl deals/quarter as the <em>active</em> alternative (not just incumbent we're replacing).</li>
+          <li>Mixing Board / community plays start showing up as a procurement-influence vector in lost deals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>What's the actual 2026 product roadmap?</summary>
+      <div class="q-body">
+        <p>Public signal is heavy on community + training (Mixing Board) and incremental AI Assistant features. Is there a multi-channel or measurement-stack investment in flight that hasn't been announced? Worth a manual scan of LinkedIn job postings for Axios HQ engineering hires.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What's the modal customer size?</summary>
+      <div class="q-body">
+        <p>Citi (~300k employees) and Walmart/JPMorgan logos are real but feel like outliers — most G2 review snippets read like sub-2,000-employee orgs. A precise ICP read would change how aggressively Cerkl needs to counter at Foundations+ / Omni AI.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>r/internalcomms sentiment</summary>
+      <div class="q-body">
+        <p>No direct threads surfaced in this pass; the "Smart Brevity is divisive on Reddit" hypothesis in the brief wasn't confirmed or denied. Worth a manual sweep.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does the Mixing Board acquisition drive procurement influence?</summary>
+      <div class="q-body">
+        <p>If senior comms leaders in the Mixing Board network are referring AHQ into peer orgs, that's a closed-loop sales channel Cerkl has no equivalent to. Watch for "we heard about it from [Mixing Board member]" in lost-deal notes.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>AI governance posture</summary>
+      <div class="q-body">
+        <p>Axios HQ has no public "AI quality layer" / governance framework comparable to Staffbase's. For regulated-industry buyers in Cerkl's Omni AI ICP, is the absence of a governance story a Cerkl advantage or just shared white space? Worth probing in next 1–2 enterprise discovery calls.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="axios-hq-2026-05-10.md">axios-hq-2026-05-10.md</a><br>
+    <span style="opacity:0.7;">No prompt-injection attempts detected in fetched/searched content during this pass.</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

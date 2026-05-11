@@ -14,20 +14,40 @@ Per [PRINCIPLES.md #4](../PRINCIPLES.md), this list is authoritative for `resear
 | Task | Go to |
 |---|---|
 | Daily IC trends and news recap | [`ic-trends/ic-trends-daily-process.md`](ic-trends/ic-trends-daily-process.md) |
+| Ad-hoc deep-dive on competitor / vendor / analyst report | [`ic-trends/ic-trends-deepdive-process.md`](ic-trends/ic-trends-deepdive-process.md) |
+| Weekly competitor marketing digest (positioning, content, ads, pain points) | [`competitor-marketing/competitor-marketing-weekly-process.md`](competitor-marketing/competitor-marketing-weekly-process.md) |
 | Update IC trends source list | [`ic-trends/sources.md`](ic-trends/sources.md) |
+| Update competitor marketing source list | [`competitor-marketing/sources.md`](competitor-marketing/sources.md) |
+| Update curated YouTube channels | [`ic-trends/channels.json`](ic-trends/channels.json) |
+| Update RSS feeds (publications + competitor blogs) | [`ic-trends/feeds.json`](ic-trends/feeds.json) |
 
 ## File Structure
 
 ```
 research/
-├── CLAUDE.md              ← you are here (router)
-├── CONTEXT.md             ← what research means at Cerkl
-└── ic-trends/
-    ├── ic-trends-daily-process.md  ← orchestrator: daily recap
-    ├── sources.md                  ← input source list
-    ├── output-template.md          ← daily recap scaffold
-    └── daily/                      ← YYYY-MM-DD.md files (created at runtime)
+├── CLAUDE.md                      ← you are here (router)
+├── CONTEXT.md                     ← what research means at Cerkl
+├── ic-trends/
+│   ├── ic-trends-daily-process.md      ← orchestrator: daily recap (5-bucket fan-out)
+│   ├── ic-trends-deepdive-process.md   ← orchestrator: ad-hoc vendor/competitor deep-dive
+│   ├── sources.md                       ← input source list (all 5 buckets)
+│   ├── output-template.md               ← daily recap scaffold
+│   ├── ic-trends-deepdive-template.md   ← deep-dive scaffold
+│   ├── feeds.json                       ← RSS/Atom feed config for feed_fetch.py
+│   ├── channels.json                    ← curated YouTube channel allowlist
+│   ├── lib/                             ← helper scripts (stdlib only)
+│   │   ├── feed_fetch.py                 ← RSS/Atom fetcher
+│   │   └── yt_search.py                  ← YouTube Data API v3 fetcher
+│   ├── daily/                           ← YYYY-MM-DD.md + .html files
+│   └── deepdives/                       ← <slug>-YYYY-MM-DD.md + .html files
+└── competitor-marketing/
+    ├── competitor-marketing-weekly-process.md   ← orchestrator: weekly digest (6-bucket fan-out)
+    ├── sources.md                                ← input source list (positioning, content, ads, social, reviews, SEO/pricing)
+    ├── output-template.md                        ← weekly digest scaffold
+    └── weekly/                                   ← YYYY-WNN.md + .html files
 ```
+
+HTML rendering uses the cross-workspace skill: [`cerkl/skills/md-to-html/`](../skills/md-to-html/SKILL.md) (dispatched as a sub-agent per process Step 5).
 
 ## Conventions
 

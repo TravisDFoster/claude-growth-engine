@@ -35,7 +35,7 @@ Recurring switch reasons: better design, better scheduling, dynamic targeting, p
 
 | Competitor | When They Win |
 |---|---|
-| Staffbase | Buyer wants broader intranet/home-base platform; roadmap and overall business need fit; larger enterprise deal dynamics |
+| Staffbase | Buyer wants broader intranet/home-base platform; roadmap and overall business need fit; larger enterprise deal dynamics. *As of 2026-05: leading with an "AI quality layer / permission-aware AI Navigator" narrative — pushing the buyer conversation toward governance-as-table-stakes, especially in regulated industries. See `cerkl/research/ic-trends/deepdives/staffbase-2026-05-10.md`.* |
 | LumApps | Intranet-centric or digital-signage-heavy use cases |
 | Poppulo | Digital signage, complex enterprise comms suites |
 | ContactMonkey | Already in a sales-led evaluation; buyer has been primed by outreach |
@@ -47,6 +47,8 @@ Recurring switch reasons: better design, better scheduling, dynamic targeting, p
 
 ### vs. Staffbase
 Staffbase is a fuller intranet platform — if a buyer wants to replace their entire digital workplace, Staffbase competes there. Cerkl's advantage: faster to launch, less IT lift, no channel replacement required, self-serve free entry point. Cerkl loses when the buyer's primary need is a home-base intranet, not delivery and measurement.
+
+**Cerkl reframe (use this in deals where Staffbase is the alternative):** *"We're the delivery + measurement layer. The intranet is the destination, not the comms strategy."* Lean into speed-to-launch and IT-light implementation against Staffbase's ~$30k floor and multi-quarter rollouts. The 2026 Staffbase narrative is upstream — Navigator (permission-aware AI search), AI quality layer, intranet-as-content-source — which makes their pitch governance-heavy and longer to procurement; Cerkl's pitch lands inside the IC team's existing channels with measurable delivery from day one. (Reframe sourced from the 2026-05-10 deep-dive: `cerkl/research/ic-trends/deepdives/staffbase-2026-05-10.md`.)
 
 ### vs. ContactMonkey
 More direct internal-comms comparison. ContactMonkey is sales-led with custom pricing. Cerkl wins on: free forever entry, no procurement needed to start, self-serve workflow. Cerkl may lose to ContactMonkey if the buyer is already deep in a ContactMonkey sales cycle.

@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workvivo — IC Deep Dive — 2026-05-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border);
+  }
+  .verdict.good { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  h4 { margin: 14px 0 6px; font-size: 15px; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; width: 22%; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); font-style: normal; }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; margin: 0 0 8px; }
+
+  .source-list {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 16px; margin-top: 12px;
+  }
+  .source-list ul { margin: 0; padding-left: 20px; }
+  .source-list li { font-size: 13.5px; margin-bottom: 4px; }
+
+  .icp-band {
+    display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 8px;
+  }
+  .icp-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .icp-card h4 { margin: 0 0 4px; font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .icp-card p { margin: 0; font-size: 13.5px; }
+
+  .ship-list { font-size: 14px; }
+  .ship-list li b { color: var(--ink); }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>Workvivo</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Competitor</span>
+      <span><b>Status:</b> Direct head-to-head, ICP overlap in deskless 2k–12k+</span>
+      <span class="verdict">Refresh competitor entry — Maybe escalate</span>
+    </div>
+    <p class="tldr">
+      Workvivo spent the year post-Zoom-acquisition shedding its "Facebook for work" reputation and rebranding as
+      an "AI-native employee experience platform" — anchored on Workvivo AI (Zoom AI Companion under the hood),
+      the new Seer people-intelligence product, and a third consecutive Gartner Leader placement plus a Q2 2026
+      Forrester Wave Leader nod. The threat to Cerkl is no longer the engagement-first social feed; it's that
+      Workvivo is now Zoom's distribution arm for EX — bundled, AI-priced-in, and named Meta Workplace's only
+      preferred migration partner — which expands its top-of-funnel into exactly the 2k–12k+ deskless segment
+      Cerkl wants. Counter-position on delivery-and-measurement-over-existing-channels, not on "they're just a
+      social feed."
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Add two lines to the Workvivo row in <code>shared/competitors.md</code>: the post-acquisition reality
+      (Zoom Workplace pillar, AI is Zoom AI Companion rebadged, Seer launched 2026-05, ~$20k/yr floor matches
+      Staffbase) and the counter-positioning frame (treat Workvivo as a channel in the stack, not a replacement).
+      <div class="code-row">
+        <code id="counter-line">Workvivo is the destination — Cerkl is the delivery + measurement layer on top of whatever destination the buyer has. AEs should treat Workvivo as a channel, not a replacement, in deals where it's already in the stack.</code>
+        <button class="copy-btn" data-copy="counter-line" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is &amp; what it does</h2>
+    <div class="cols-2">
+      <div>
+        <h3>What it is</h3>
+        <p>
+          Cork, Ireland-founded employee experience platform founded in 2017 by Joe Lennon and John Goulding
+          (<a href="https://www.thinkbusiness.ie/articles/workvivo-cork-employee-communications-future-of-work/">thinkbusiness.ie</a>),
+          raised a $16M Series A from Tiger Global in May 2020
+          (<a href="https://techcrunch.com/2020/05/13/workvivo-a-platform-for-employee-culture-raises-a-16m-series-a-from-tiger-global/">TechCrunch</a>),
+          acquired by Zoom April 2023
+          (<a href="https://techcrunch.com/2023/04/14/zoom-acquires-ireland-based-employee-communications-platform-workvivo/">TechCrunch</a>).
+        </p>
+        <p>
+          2026 homepage tagline: <em>"Empower your people, unlock knowledge, and deepen understanding. The
+          AI-native employee experience platform bringing it all together."</em>
+          (<a href="https://www.workvivo.com/">workvivo.com</a>).
+          Named a Leader in the 2025 Gartner Magic Quadrant for Intranet Packaged Solutions for the third
+          consecutive year
+          (<a href="https://www.workvivo.com/newsroom/workvivo-named-a-leader-in-the-2025-gartner-magic-quadrant-for-intranet-packaged-solutions/">press</a>)
+          and a Leader in the Forrester Wave: Intranet Platforms, Q2 2026
+          (<a href="https://www.linkedin.com/posts/workvivo_workvivo-named-a-leader-in-the-forrester-activity-7448023195426693120-Zosr">LinkedIn</a>).
+        </p>
+        <div class="source-list">
+          <ul>
+            <li>Homepage: <a href="https://www.workvivo.com/">workvivo.com</a></li>
+            <li>Product: <a href="https://www.workvivo.com/product/">workvivo.com/product</a></li>
+            <li>Newsroom: <a href="https://www.workvivo.com/newsroom/">workvivo.com/newsroom</a></li>
+            <li>Customers: <a href="https://www.workvivo.com/customers/">workvivo.com/customers</a></li>
+            <li>Pricing: <a href="https://www.workvivo.com/pricing/">workvivo.com/pricing</a></li>
+            <li>2026 release notes: <a href="https://support.workvivo.com/hc/en-gb/articles/33557749839645-2026-Release-Notes">support.workvivo.com</a></li>
+            <li>Zoom acquisition: <a href="https://news.zoom.com/workvivo-acquisition/">news.zoom.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3>What it does / claims</h3>
+        <p>
+          Positions itself as <em>"the world's best employee experience platform designed for engagement, built
+          for intelligence, and powered by AI at every layer"</em>
+          (<a href="https://www.workvivo.com/">workvivo.com</a>) — an all-in-one EXP combining internal comms,
+          engagement, recognition, intranet, and measurement on one stack.
+        </p>
+        <ul>
+          <li><b>Social-first activity feed + Spaces + Pages</b> — the original "Facebook for work" UX: feed,
+            reactions/comments/shares, shout-outs, podcasts, live streams. Pages handle governed content; Spaces
+            handle conversation
+            (<a href="https://www.changeengine.com/glossary/what-is-workvivo">Changeengine</a>).</li>
+          <li><b>Workvivo AI</b> — launched April 2025, powered by Zoom AI Companion. Searches across Workvivo
+            content, drafts updates/shout-outs/surveys; customizable Help Center. Included at no extra cost
+            (<a href="https://www.workvivo.com/blog/4-things-you-need-to-know-about-workvivo-ai/">blog</a>,
+            <a href="https://support.workvivo.com/hc/en-gb/articles/25076159425309-Workvivo-AI-Overview">support</a>).</li>
+          <li><b>Seer by Workvivo</b> — standalone people-intelligence product launched 2026-05-06. Connects
+            sentiment, communication, and performance data
+            (<a href="https://www.globenewswire.com/news-release/2026/05/06/3288671/0/en/Workvivo-Launches-Seer-to-Advance-People-Intelligence-and-Close-the-Employee-Listening-Gap.html">GlobeNewswire</a>).</li>
+          <li><b>Zoom-client integration</b> — Workvivo runs as a tab inside the Zoom desktop client
+            (<a href="https://www.workvivo.com/blog/workvivo-in-the-zoom-client-launch/">blog</a>).</li>
+          <li><b>Frontline mobile + Zoom Workplace for Frontline</b> — push-to-talk, shift swapping, task
+            management, AI shift-handoff summaries
+            (<a href="https://news.zoom.com/zoom-unveils-ai-first-industry-offerings-including-solutions-for-frontline-workers/">Zoom news</a>).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Shipping cadence (Q3 2025 → Q2 2026)</h3>
+    <ul class="ship-list">
+      <li><b>Q3–Q4 2025:</b> Employee Listening Suite; AI Companion extended into Employee Insights for
+        sentiment analysis and admin Q&amp;A
+        (<a href="https://www.workvivo.com/blog/workvivo-product-innovations-roundup-july/">product roundup</a>).</li>
+      <li><b>Late 2025:</b> New survey question types — date/time pickers, file uploads, dropdowns,
+        contact/number/email fields
+        (<a href="https://support.workvivo.com/hc/en-gb/articles/25402501361437-2025-Release-Notes">2025 release notes</a>).</li>
+      <li><b>Jan 2026:</b> Journey Reminders (manual + automatic at journey/step level)
+        (<a href="https://support.workvivo.com/hc/en-gb/articles/33557749839645-2026-Release-Notes">2026 release notes</a>).</li>
+      <li><b>Feb 2026:</b> Space Category Improvements — preferred audience at category level, 50-category limit,
+        arrow-based navigation.</li>
+      <li><b>Q2 2026:</b> Named a Leader in Forrester Wave: Intranet Platforms
+        (<a href="https://www.workvivo.com/es/newsroom/forrester-wave-intranet-2026/">Spanish newsroom</a>).</li>
+      <li><b>2026-05-06:</b> Seer launched as a standalone people-intelligence platform — biggest strategic move
+        of the quarter.</li>
+    </ul>
+
+    <div class="callout info">
+      <div class="callout-label">Zoom integration story (2026)</div>
+      The post-acquisition narrative is no longer "Workvivo, now part of Zoom" — it's "Workvivo is one of five
+      Zoom Workplace pillars" alongside Zoom Workplace, Zoom Phone, Zoom Revenue Accelerator, and Zoom CX
+      (<a href="https://www.zoom.com/en/blog/zoom-enterprise-connect-2026/">Zoom blog</a>). Workvivo AI is Zoom
+      AI Companion rebadged. Workvivo is now sold (and bundled) by Zoom's enterprise sales force, not just by
+      the Cork team.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user</h4>
+        <p>
+          Internal comms, HR, and people teams at mid-market through enterprise organizations that want a
+          culture-and-engagement platform employees actually open. Strong pull in retail, hospitality,
+          transportation, and frontline-heavy industries. Published logos: Amazon, Ryanair, Bupa, Dollar
+          General, Virgin Group, Lululemon, Mercedes, Telus, Motherson
+          (<a href="https://www.workvivo.com/customers/">customers</a>).
+        </p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>
+          Buyer's #1 KPI is engagement/adoption/cultural connection; org is already a Zoom Workplace shop or
+          migrating off Workplace from Meta (Workvivo is Meta's only named migration partner —
+          <a href="https://www.globenewswire.com/news-release/2024/05/14/2881724/0/en/Workvivo-by-Zoom-is-named-preferred-migration-partner-for-Workplace-from-Meta.html">GlobeNewswire 2024-05-14</a>);
+          workforce is deskless/distributed; budget supports ~$20k+/year floor.
+        </p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>
+          Buyer needs structured, governed corporate comms (compliance-driven announcements, formal HR notices,
+          regulated-industry change comms); needs cross-channel delivery to channels Workvivo doesn't own
+          (Outlook, Teams, existing SharePoint, SMS, signage) without replacing the home; needs deep
+          email-newsletter authoring; is sub-250 employees or needs a free tier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl's competitive set</h2>
+    <p>
+      Workvivo is already in <code>shared/competitors.md</code> with a live Cerkl "vs." page
+      (<a href="https://cerkl.com/broadcast/versus/workvivo">cerkl.com/broadcast/versus/workvivo</a>). The 2026
+      update is that Workvivo has visibly rotated its narrative from "social engagement platform" toward
+      "AI-native EXP with people intelligence" — compressing the differentiation gap on the AI axis even though
+      the underlying surface area is still engagement-first.
+    </p>
+
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. Counter-frame still wins — framing matters more</h4>
+        <p>
+          <em>"We're the delivery + measurement layer; the intranet is the destination, not the comms strategy."</em>
+          Workvivo's homepage now claims intranet, engagement, and measurement in one product. That's a fat
+          target if the buyer already has an intranet/SharePoint, an HRIS for measurement, and just wants
+          disciplined cross-channel delivery. Reframe lands hardest when buyer is adding to an existing stack.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>2. Engagement-first vs. structured comms collision</h4>
+        <p>
+          Workvivo wins "how do we get employees to feel something?" Cerkl wins "how do we make sure the right
+          message reached the right people through the channel they actually read?" Different jobs that look
+          similar in an RFP. Practitioner reviews flag notification overload and weak search — symptoms of
+          feed-first design. Cerkl's pitch: predictable native-inbox delivery, segment-targeted, measurable
+          open/read by audience.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>3. Zoom acquisition pushed Workvivo upmarket</h4>
+        <p>
+          Sold by Zoom AEs into Workplace renewals. Business plan ~$20k/yr for 250–2,000 employees
+          (<a href="https://elearningindustry.com/workvivo-pricing-plans-costs-which-plan-is-right-for-you">eLearning Industry</a>);
+          Enterprise quote-driven for 2,000+. Structurally similar to Staffbase's ~$30k floor — both now
+          enterprise-procurement deals with IT involvement. <b>Cerkl's Foundations free tier remains the only
+          wedge in this set that doesn't require procurement.</b>
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px;">ICP-fit map for AEs</h3>
+    <div class="icp-band">
+      <div class="icp-card">
+        <h4>Foundations / 0–500</h4>
+        <p>Workvivo is not in the conversation — pricing floor excludes them. Foundations wins by default; lead with free-forever, no procurement.</p>
+      </div>
+      <div class="icp-card">
+        <h4>Foundations+ / 501–2,000</h4>
+        <p>Workvivo Business is the price-comparable competitor. Cerkl wins on speed-to-launch, no-IT-required, and native email/inbox delivery vs. Workvivo's feed-first model. Lose when the buyer's KPI is "make work feel like community."</p>
+      </div>
+      <div class="icp-card">
+        <h4>Omni AI / 2,001–12,200+ deskless</h4>
+        <p>Workvivo is the most direct head-to-head, especially in retail/hospitality/transportation. Cerkl wins when buyer has SharePoint/Viva/Teams and wants to <em>layer on</em> personalized cross-channel delivery + measurement; loses on Workplace-from-Meta migrations or Zoom Workplace bundles.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px;">Counter-positioning lines AEs can use</h3>
+    <div class="callout try">
+      <p>"Workvivo is the destination — we make sure your message gets read on the channels your employees
+        already use, including Workvivo if you have it." <em>(Reframes Workvivo as a channel, not a replacement.)</em></p>
+      <p>"Workvivo measures engagement with Workvivo. Cerkl measures engagement with your message — across
+        email, intranet, mobile, and whatever else is in your stack."</p>
+      <p>"A feed is great for shout-outs. It's not great for the CEO town hall summary, the open-enrollment
+        deadline, or the safety bulletin. That's what Cerkl does."</p>
+      <p style="margin-bottom:0;">"If you're already paying Zoom for Workplace, Workvivo gets bundled in cheap —
+        and you should take it for the social layer. We're the delivery and measurement layer that sits on top,
+        regardless of what intranet you land on."</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Staffbase</td>
+          <td>Closest enterprise peer on the <em>structured comms + intranet</em> axis. Stronger on governance,
+            audit trails, regulated industries; weaker on the consumer-social UX Workvivo is known for. Already
+            deep-dived (<a href="staffbase-2026-05-10.md">staffbase-2026-05-10.md</a>). Staffbase explicitly
+            publishes <a href="https://staffbase.com/blog/workvivo-alternatives">a Workvivo alternatives blog</a>.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Simpplr</td>
+          <td>Modern intranet with strong AI content recommendations and an "Apple-like" UX; lighter on
+            social-feed engagement, heavier on intranet polish. Direct head-to-head — Simpplr publishes a
+            <a href="https://www.simpplr.com/resources/compare/simpplr-vs-workvivo/">vs. Workvivo page</a>.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">LumApps</td>
+          <td>Connected employee hub for orgs running both Google Workspace + Microsoft 365. Strongest where
+            Workvivo is weakest — multi-ecosystem governance.
+            (<a href="https://www.lumapps.com/insights/blog/workvivo-alternatives">LumApps blog</a>).</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Firstup</td>
+          <td>Closest <em>positioning</em> peer to Cerkl, not Workvivo — orchestration + personalization across
+            existing channels. Comes up in Workvivo alternatives lists
+            (<a href="https://www.sociabble.com/blog/comparison/best-workvivo-alternatives/">Sociabble roundup</a>)
+            because some buyers shopping Workvivo are actually shopping the structured-delivery problem.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis:</b> destination-and-engagement vs. cross-channel-delivery-and-measurement.
+      Workvivo, Staffbase, Simpplr, LumApps are destinations; Cerkl and Firstup are delivery layers. Cerkl
+      already has live "vs." pages for Simpplr, LumApps, Firstup, Workvivo, plus Poppulo — the Workvivo page
+      should be refreshed with the post-Seer / post-Workvivo-AI / Zoom-bundle 2026 narrative.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">Pricing floor</div>
+      Business plan starts at ~$20,000/year for 250–2,000 employees
+      (<a href="https://elearningindustry.com/workvivo-pricing-plans-costs-which-plan-is-right-for-you">eLearning Industry</a>);
+      per-user equivalents cited as $5–6/user/month. Enterprise (2,000+) is quote-driven. Not as public as
+      Workvivo claims — final price varies materially by user count and configuration.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Zoom dependency is now structural, not symbolic</div>
+      Workvivo AI is Zoom AI Companion rebadged; the Zoom-client integration is a featured channel; Workvivo is
+      sold/bundled in Zoom enterprise deals. <b>Upside:</b> scale and AI investment ride Zoom's roadmap.
+      <b>Downside:</b> orgs not on Zoom Workplace (or de-emphasizing Zoom for Teams/Google Meet) get a thinner
+      product story. Procurement may slow if Workvivo gets pulled into a multi-product Zoom MSA negotiation.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Search and governance gaps in large orgs</div>
+      Reviewers repeatedly flag <em>"the search function lacks robustness, making it hard to find specific
+      content in large organizations"</em>
+      (<a href="https://www.softwareadvice.com/voip/workvivo-profile/reviews/">review summary</a>) and
+      <em>"limitations in scalability and customization... for very large enterprises or those with complex
+      communication demands"</em>
+      (<a href="https://research.com/software/reviews/workvivo">Research.com</a>). Workvivo addresses
+      governance via
+      <a href="https://thetalake.com/blog/compliance-meets-connection-theta-lake-brings-seamless-governance-to-employee-engagement-in-workvivo/">Theta Lake's compliance integration</a>
+      — but that's a partnership, not a native capability. Finance/healthcare/regulated buyers should sniff this.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Notification overload is the #1 recurring UX complaint</div>
+      <em>"Notifications cannot be personalized and users get pop ups for so many irrelevant posts"</em> — the
+      consumer-social UX is the brand, but it's also the operational risk for "did the safety bulletin actually
+      reach the line?" use cases.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">The "AI-native" claim is partly retrofit</div>
+      Workvivo has been a social engagement platform since 2017. Workvivo AI launched April 2025; Seer launched
+      May 2026. Real products, real shipping cadence — but the foundation is engagement, and the AI sits on top,
+      not underneath. Same pattern as Staffbase. Buyers should ask whether they're getting AI-native
+      architecture or AI-bolted-on UX.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Workplace-from-Meta migration is a one-time tailwind</div>
+      Workplace shut at end of August 2025; Workvivo was the named migration partner
+      (<a href="https://www.workvivo.com/blog/workvivo-meta-workplace-customers/">blog</a>). Many 2025–2026
+      customer wins are migrations, not net-new wins against incumbents. That tailwind has now passed.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">96%</div><div class="lbl">user satisfaction (aggr.)</div></div>
+      <div class="stat"><div class="num">2,544</div><div class="lbl">reviews across 3 sites</div></div>
+      <div class="stat"><div class="num">~$20k</div><div class="lbl">price floor / year</div></div>
+      <div class="stat"><div class="num">3×</div><div class="lbl">Gartner MQ Leader years</div></div>
+      <div class="stat"><div class="num">Q2 2026</div><div class="lbl">Forrester Wave Leader</div></div>
+    </div>
+
+    <div class="cols-2">
+      <div>
+        <h3>Recurring praise</h3>
+        <ul>
+          <li>Ease of use</li>
+          <li>Engaging social UX ("feels like a corporate Facebook")</li>
+          <li>Shout-outs / recognition driving morale</li>
+          <li>Podcast and live-stream features (rare among EX platforms)</li>
+          <li>Intuitive mobile app for frontline</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Recurring complaints</h3>
+        <ul>
+          <li>Notification overload — "easy to miss critical updates amidst the social noise"</li>
+          <li>Search is weak in large organizations</li>
+          <li>Mobile app slow loading / battery drain</li>
+          <li>Limited customization for very large enterprises</li>
+          <li>Inconsistent support quality</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px;">Practitioner takes</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"While other softwares felt like dry update boards, Workvivo feels like a corporate Facebook."</p>
+        <div class="who">— review aggregator summary · <a href="https://www.softwareadvice.com/voip/workvivo-profile/reviews/">softwareadvice</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"The industry doesn't have a listening problem, it has an execution problem."</p>
+        <div class="who">— Justin Black, Head of Seer, 2026-05-06 · <a href="https://www.globenewswire.com/news-release/2026/05/06/3288671/0/en/Workvivo-Launches-Seer-to-Advance-People-Intelligence-and-Close-the-Employee-Listening-Gap.html">GlobeNewswire</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Workvivo lacks deep AI-driven personalization of content tailored to individual employee behavior."</p>
+        <div class="who">— head-to-head comparison framing · <a href="https://cerkl.com/comparisons/workvivo-vs-cerkl-broadcast/">Cerkl comparison page</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Notifications can get overwhelming if not managed strictly, making it easy to miss critical operational updates amidst the social noise."</p>
+        <div class="who">— review summary (operational risk) · <a href="https://www.softwareadvice.com/voip/workvivo-profile/reviews/">softwareadvice</a></div>
+      </div>
+    </div>
+
+    <p style="margin-top:14px; font-size:13.5px; color:var(--muted);">
+      <b>r/internalcomms signal:</b> No viral threads surfaced in this pass. Practitioner sentiment lives in
+      G2/Gartner/Capterra and vendor-comparison blogs, not open forums. Worth a manual sweep if a specific
+      competitive deal warrants it.
+      G2 main page:
+      <a href="https://www.g2.com/products/workvivo/reviews">g2.com/products/workvivo/reviews</a>.
+      Gartner Peer Insights:
+      <a href="https://www.gartner.com/reviews/market/employee-communications-applications/vendor/workvivo-by-zoom/product/workvivo">listed under EC Apps and Intranet Packaged Solutions</a>.
+    </p>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Action:</b> Update <code>shared/competitors.md</code> + refresh the live
+      <a href="https://cerkl.com/broadcast/versus/workvivo">cerkl.com/broadcast/versus/workvivo</a> SEO page +
+      brief AEs on the Zoom-bundle dynamic.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Add two lines to the Workvivo row in <code>competitors.md</code>: (1) post-acquisition reality
+          (Zoom Workplace pillar, Workvivo AI = Zoom AI Companion rebadged, Seer launched 2026-05, ~$20k/yr
+          floor matches Staffbase). (2) Counter-positioning (treat Workvivo as a channel in the stack, not a
+          replacement).</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>45 min to update <code>competitors.md</code> + brief AEs verbally. 2–3 hours if also refreshing the
+          SEO page with 2026 narrative. Do not commission new content beyond that.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <p>Workvivo ships a delivery-layer product orchestrating across non-Workvivo channels with attribution
+          (that's Cerkl's wedge); Zoom packages Workvivo as a free add-on inside Workplace bundles (expands
+          top-of-funnel into 500–2,000 band); Seer becomes a separate-shop item Cerkl ICPs buy as a wedge;
+          Workvivo shows up as the <em>active</em> competitor in 2+ Cerkl deals/quarter because of the bundle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>How much of Workvivo's 2025–2026 growth was Workplace-from-Meta migration vs. net-new?</summary>
+      <div class="q-body">
+        <p>The Meta partnership was named May 2024; Workplace shut down end of August 2025. If most of the
+          customer logo growth is migration, the tailwind is now spent and 2026–2027 numbers will tell a
+          different story. Worth checking Zoom's earnings calls for disclosure.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does Workvivo AI / Seer actually read non-Workvivo content?</summary>
+      <div class="q-body">
+        <p>Like Staffbase's Navigator, the value proposition collapses if AI search is Workvivo-content-only.
+          If Seer can ingest Workday, ServiceNow, HRIS, and other non-Workvivo signals into its "people
+          intelligence," that's a meaningfully bigger product. If it's Workvivo data only, the moat is narrower.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What's the actual attach rate of Workvivo into Zoom Workplace deals?</summary>
+      <div class="q-body">
+        <p>Zoom's enterprise GTM has been pushing the bundled story for two years. Are renewals attaching
+          Workvivo at 5%, 20%, 50% of accounts? This is the single most decision-relevant number for sizing
+          the threat, and it's not public.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is Cerkl's Workvivo "vs." SEO page still effective?</summary>
+      <div class="q-body">
+        <p>It's been live for some time. Refresh-vs-rewrite decision: does it currently address the Zoom
+          bundle, Workvivo AI, and Seer? If not, the page is dated and worth a content sprint.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Should Firstup be the next deep-dive?</summary>
+      <div class="q-body">
+        <p>Firstup is structurally closer to Cerkl's positioning than either Staffbase or Workvivo. If Travis
+          is mapping the orchestration-layer competitive vector, Firstup may be the more decision-relevant
+          target next.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Prompt-injection note</summary>
+      <div class="q-body">
+        <p>No adversarial instructions detected in any fetched content. WebFetch on the Workvivo homepage was
+          denied by the harness; primary-source positioning quotes were captured via WebSearch result summaries
+          citing the same URLs. All claims are sourced to public pages.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="workvivo-2026-05-10.md">workvivo-2026-05-10.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch(e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

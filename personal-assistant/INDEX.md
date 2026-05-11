@@ -9,26 +9,27 @@
 > - On project close: move the file to `projects/archive/`.
 > - All dates absolute (YYYY-MM-DD). Convert "Thursday", "next week", "after launch" before writing.
 >
-> **Last refreshed:** 2026-05-04
+> **Last refreshed:** 2026-05-10 (Sunday refresh — archived 7 stale 2026-05-07 update blocks)
 
 ## Top of Mind
-1. **Press Release — Insights 3.0** — embargo lifts 2026-06-01 (delayed from 2026-05-09). Draft + Maria's review + final approval.
-2. **Webinars (Matt Frost post-event)** — recording, landing page, audience follow-up email, YouTube snippets.
-3. **The Cerkular** — HubSpot → Broadcast API integration is the gate to launch. Resolve Jira FUTURE-232 first.
-4. **Cerkl Website — Insights Video requirements** — Travis-owned; unblocks Furqan's upload work.
-5. **Meta Ads Channel Launch** — blocked on account access (need IT + Meta support). Stalled until resolved.
+1. **Webinars (Matt Frost post-event)** — final approvals Mon 2026-05-11 on landing page + audience email; schedule email send EOD Mon; finish YouTube snippets.
+2. **The Cerkular** — HubSpot → Broadcast API integration is the gate to launch. Resolve Jira FUTURE-232 first.
+3. **Meta Ads Channel Launch** — blocked on account access. Unblock conversation w/ Joey at SEM Sync 2026-05-13 2:30pm.
+4. **[SEO Strategy & Plan](projects/seo-strategy-plan.md)** — multi-step project just spun up; Phase 1 = pillars + import previous work + inventory existing skills/marketing-folder assets.
 
 ## Next Steps
 
 | Project | Next step | Priority | Due | On track | Owner |
 |---|---|---|---|---|---|
-| [Press Release](projects/press-release.md) | Draft press release with Maria's review notes | High | 2026-06-01 | Yes | Travis |
-| [Webinars](projects/webinars.md) | Post-event distribution: recording, landing page, audience follow-up email, YouTube snippets | High | — | Yes | Travis |
+| [Webinars](projects/webinars.md) | Final approval Mon 2026-05-11 on landing page + audience email; schedule email send EOD Mon; finish YouTube snippets | High | 2026-05-11 | Yes | Travis |
 | [The Cerkular](projects/the-cerkular.md) | Resolve personalization-link feasibility in Blast (Jira FUTURE-232) | High | — | Blocked | Travis |
-| [Cerkl Website](projects/cerkl-website.md) | Define Insights Video website requirements | High | — | Yes | Travis |
-| [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Resolve account access with IT + Meta support | High | — | Blocked | Travis |
+| [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Use 2026-05-13 SEM Sync w/ Joey to align on path to unblock account access (IT + Meta support) | High | 2026-05-13 | Blocked | Travis |
+| [SEO Strategy & Plan](projects/seo-strategy-plan.md) | Define SEO pillars (Phase 1 kickoff) | High | — | Yes | Travis |
 | [Ad Conversion Tracking](projects/ad-conversion-tracking.md) | Diagnose Segment → Google Ads + Bing conversion tracking (review early, fix if needed) | Med | 2026-05-12 | Yes | Travis |
-| [Webinars](projects/webinars.md) | Add Webinars to Resources menu (Webflow CMS with Furqan) | Med | — | Yes | Travis / Furqan |
+| [SEM Landing Page Rebuild](projects/sem-landing-page-rebuild.md) | Audit why-pay-for-internal-email vs. CTR best practices; draft rebuild brief | Med | — | Yes | Travis |
+| [Webinars](projects/webinars.md) | Add Webinars to Resources menu (Webflow CMS with Furqan) — unblocked once landing page live Mon 2026-05-11 | Med | — | Yes | Travis / Furqan |
+| [Press Release](projects/press-release.md) | Resume final approval cycle in late May (publish embargo 2026-06-01) | Med | 2026-06-01 | Yes | Travis |
+| [Cerkl Website](projects/cerkl-website.md) | Webinar landing pages — launch Mon 2026-05-11 (paired with Webinars project) | High | 2026-05-11 | Yes | Travis |
 | [Review Sites](projects/review-sites.md) | Sourceforge — claim product listing; add Foundations | Med | — | Yes | Travis |
 | [ICPro SEO](projects/icpro-seo.md) | Diagnose why Google Rich Results Test fails (Schema.org validator passes) | Med | — | n/a | Travis |
 | [Design Tools](projects/design-tools.md) | Research AI video creation tools (HeyGen alternatives for Pains-concept ad video) | Low | — | n/a | Travis |
@@ -37,5 +38,7 @@
 | [IC Trends Knowledge Base](projects/ic-trends-knowledge-base.md) | Decide scope option (topics-only / full wiki / full + outputs) before any restructure | Low | — | n/a | Travis |
 
 ## Calendar Anchors
+- **2026-05-11** — Webinar landing page + audience email final approval; email scheduled to send EOD
 - **2026-05-12** — Ad conversion tracking audit (Segment → Google Ads + Bing) due EOD
+- **2026-05-13** — SEM Sync w/ Joey 2:30pm — align on path to unblock Meta Ads account access
 - **2026-06-01** — Insights 3.0 launch / press release embargo lifts (delayed from 2026-05-09)

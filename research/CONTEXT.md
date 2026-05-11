@@ -10,7 +10,8 @@ Research here is the **horizon-scan layer** — what's happening in the IC marke
 
 ## Streams
 
-- **Internal-comms trends** (`ic-trends/`) — emerging patterns in the IC market, surfaced from publications, competitor blogs, analyst reports, and community discussion.
+- **Internal-comms trends** (`ic-trends/`) — emerging patterns in the IC market, surfaced from publications, competitor blogs, analyst reports, and community discussion. Cadence: daily.
+- **Competitor marketing** (`competitor-marketing/`) — how the IC vendor set is positioning, distributing content, advertising, pricing, and prioritizing pain points. Goal: ideas to expand and improve Cerkl's own marketing. Cadence: weekly.
 
 (More streams will land here as they're built — e.g., AI-in-IC tracking, partnership intel, buyer-narrative monitoring.)
 

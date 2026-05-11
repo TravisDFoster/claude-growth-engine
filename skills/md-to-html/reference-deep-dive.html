@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Unreasonable Effectiveness of HTML — Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    /* Cerkl brand palette — light mode by default. */
+    --bg: #f5f5fa;            /* Cosmic 10 — body background */
+    --panel: #ffffff;         /* White — card surfaces */
+    --panel-soft: #f5f5fa;    /* Cosmic 10 — sub-cards inside panels */
+    --ink: #18181d;           /* Cosmic base — primary text */
+    --muted: #373740;         /* Cosmic 80 — secondary text */
+    --line: #d5d5db;          /* Cosmic 30 — borders */
+    --accent: #3547c4;        /* Cobalt 60 — primary brand */
+    --accent-soft: #f0f2fc;   /* Cobalt 10 — accent panel bg */
+    --good: #1a9979;          /* Forest base */
+    --good-bg: #e8fffa;       /* Forest 10 */
+    --good-border: #aaf7e6;   /* Forest 30 */
+    --warn: #80550f;          /* Butter 100 — readable text */
+    --warn-bg: #fff9f2;       /* Butter 10 */
+    --warn-border: #ffeccd;   /* Butter 30 */
+    --bad: #b00045;           /* Ruby 80 — readable text */
+    --bad-bg: #fcf0f0;        /* Ruby 10 */
+    --bad-border: #fbc2c4;    /* Ruby 30 */
+    --info: #3547c4;          /* Cobalt 60 */
+    --info-bg: #f0f2fc;       /* Cobalt 10 */
+    --info-border: #ccd5f7;   /* Cobalt 30 */
+    --quote: #802ee6;         /* Violet base */
+    --code-bg: #ebebf0;       /* Cosmic 20 */
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Prose paragraphs cap at a comfortable reading width. */
+  section p, .tldr {
+    max-width: 70ch;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  /* Header */
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    /* Default: good (Yes) — Forest */
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before {
+    content: "●"; font-size: 10px;
+  }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  /* Sections */
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  /* Two-column */
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  /* Pillars grid */
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try {
+    background: var(--accent-soft); border-color: var(--info-border); color: var(--accent);
+  }
+  .callout.warn {
+    background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn);
+  }
+  .callout.info {
+    background: var(--info-bg); border-color: var(--info-border); color: var(--info);
+  }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  /* Code + copy */
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; } /* Cobalt 50 */
+  .copy-btn.copied { background: var(--good); }
+  /* Inline code inside prose */
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  /* Personas grid */
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  /* Stack section cards */
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; }
+
+  /* Comparison table */
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  /* Quote cards */
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  /* Stats strip */
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  /* Recommendation block */
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+
+  /* Open questions: collapsibles */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+
+  /* Footer */
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  /* Print — already light; ensure paper-friendly contrast. */
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">cc-trends · Tool Deep Dive</div>
+    <h1>The Unreasonable Effectiveness of HTML</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-10</span>
+      <span><b>Category:</b> Anthropic prompting / output-format technique</span>
+      <span class="verdict">Worth trying — Yes</span>
+    </div>
+    <p class="tldr">
+      Anthropic engineer Thariq Shihipar argues you should ask Claude to output <b>HTML</b> (not Markdown)
+      for any substantive artifact: plans, code reviews, design docs, dashboards. The cost is one extra
+      sentence in the prompt (and ~1.2× more tokens); the payoff is interactive, denser, link-shareable
+      artifacts that Markdown can't represent. Production users report real wins replacing custom render
+      frameworks with raw HTML output.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">Try this in your next deep-dive run</div>
+      Append this exact line to the synthesis brief in
+      <code>cc-tool-deepdive-process.md</code>:
+      <div class="code-row">
+        <code id="magic-prompt">Output HTML, neatly styled and using capabilities of HTML and CSS and JavaScript to make the explanation rich and interactive and as clear as possible.</code>
+        <button class="copy-btn" data-copy="magic-prompt" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is &amp; what it does</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Origin</h3>
+        <p>
+          A prompting technique published by Thariq Shihipar (Claude Code team, Anthropic) on
+          <b>2026-05-08</b> and amplified by Simon Willison's weblog the same day. Comes with a companion
+          site of <b>20 self-contained HTML artifacts</b> produced by Claude Code, each illustrating a
+          real use case.
+        </p>
+        <ul>
+          <li>Original (Thariq): <a href="https://thariqs.github.io/html-effectiveness/">thariqs.github.io/html-effectiveness</a></li>
+          <li>Simon Willison's writeup: <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/">simonwillison.net</a></li>
+          <li>Community skill: <a href="https://github.com/dogum/html-artifacts">github.com/dogum/html-artifacts</a></li>
+          <li>HN thread (500+ pts, 269 comments): <a href="https://news.ycombinator.com/item?id=48071940">news.ycombinator.com/item?id=48071940</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>How you actually use it</h3>
+        <p>
+          You append one line to your prompt asking for HTML. Claude returns a single self-contained HTML
+          file with inline styles + JS. You open it in a browser (or a plain-HTML preview pane in the IDE)
+          instead of reading rendered Markdown.
+        </p>
+        <p style="font-size:13.5px; color:var(--muted); margin-top:8px;">
+          The companion site shows what these artifacts look like — they aren't styled blog posts;
+          they're interactive documents with sortable tables, sliders, copy buttons, and SVG diagrams.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Thariq's five pillars</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="n">PILLAR 1</div><h4>Density</h4><p>Tables, SVG, CSS, JS — all in one file.</p></div>
+      <div class="pillar"><div class="n">PILLAR 2</div><h4>Readability</h4><p>Past ~100 lines, Markdown becomes unreadable. HTML scales.</p></div>
+      <div class="pillar"><div class="n">PILLAR 3</div><h4>Sharing</h4><p>A link beats a Markdown attachment.</p></div>
+      <div class="pillar"><div class="n">PILLAR 4</div><h4>Interactivity</h4><p>Sliders, knobs, copy-to-prompt buttons, collapsibles.</p></div>
+      <div class="pillar"><div class="n">PILLAR 5</div><h4>Joy factor</h4><p>Outputs feel like artifacts, not text dumps.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user</h4>
+        <p>Anyone using Claude or Claude Code to produce documents that will be <b>read by humans</b>, not parsed by code.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Plan docs, code reviews, architecture proposals, comparison matrices, status reports, custom mini-editors, technical explainers, dashboards over local data (DuckDB, CSVs).</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Short conversational replies, terminal-only context (no rendering surface), code-only outputs, anything you'll re-process programmatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Travis's stack</h2>
+    <p>Three immediate fits:</p>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>cc-trends daily recap</h4>
+        <p>
+          The recap <em>is</em> a multi-section document with categorized lists, dates, links,
+          "Why this matters" callouts. HTML output would let it carry color-coded categories,
+          collapsible sections, and an inline filter bar. <b>Tradeoff:</b> render to <code>.html</code>
+          on disk, lose the IDE's Markdown preview.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Tool deep-dive output</h4>
+        <p>
+          Exactly the artifact type Thariq enumerates. Replace this very file's Markdown with
+          HTML and you get: live comparison-matrix, collapsible Gotchas, click-to-copy install
+          commands. <b>Highest-leverage place to try it.</b>
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Cerkl marketing reports</h4>
+        <p>
+          If Travis ever generates briefings for stakeholders, HTML artifacts beat both Markdown
+          and Slides because they're shareable as a single link with no Slides license.
+        </p>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);">
+      <b>What you'd have to change:</b> pick a render-and-host pattern. Options: (a) save to local
+      <code>.html</code> files and open in Chrome (zero infra, ugly URLs), (b) render to
+      <code>~/Documents/Claude/artifacts/</code> served by a tiny local HTTP daemon, (c) push to a
+      private gist or GitHub Pages branch for share links.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Markdown <span style="font-weight:400; color:var(--muted)">(default)</span></td>
+          <td>Caps out at headers/lists/tables/bold; can't express layout, color coding, interactivity, collapsibles. Best for short conversational replies.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">XML tags</td>
+          <td>Anthropic's structuring primitive — but for <em>input</em> delimiting, not rendered output. No native browser styling. <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">docs</a></td>
+        </tr>
+        <tr>
+          <td class="alt-name">JSON / structured outputs</td>
+          <td>Maximally machine-parseable; expresses data, not documents. Useless for human-facing rich display.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Tool-use / function-calling</td>
+          <td>Schema-constrained outputs for downstream code. Different problem entirely — reliability for programs, not richness for humans. <a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use">docs</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: render fidelity for humans.</b> HTML is the only one that goes to
+      a browser and arrives interactive.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">Token cost</div>
+      ~1.2× vs. Markdown for the same content (HN: <code>abirch</code>). A WYSIWYG-flavored HTML output can be much higher with <code>&lt;span&gt;</code> soup.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Render surface required</div>
+      Useless in plain terminal contexts. Travis's IDE renders Markdown but won't render HTML inline; you need to open the file in Chrome or use a preview pane (e.g., VS Code Live Preview).
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Script-injection risk (overlooked in the discussion)</div>
+      HTML output can include <code>&lt;script&gt;</code> tags. Thariq's prompt doesn't sandbox the JS. If you're going to publish these or render where a third party sees them, treat the JS as untrusted: strip <code>&lt;script&gt;</code> or render in a sandboxed iframe.
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Note on the dichotomy</div>
+      Markdown already permits inline HTML/SVG (HN: <code>PhilippGille</code>, <code>mock-possum</code>) — so you can ask Claude to emit Markdown with inline <code>&lt;svg&gt;</code> and <code>&lt;details&gt;</code> for a hybrid.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">500+</div><div class="lbl">HN points</div></div>
+      <div class="stat"><div class="num">269</div><div class="lbl">HN comments</div></div>
+      <div class="stat"><div class="num">~1.2×</div><div class="lbl">token cost vs. MD</div></div>
+      <div class="stat"><div class="num">2026-05-08</div><div class="lbl">published</div></div>
+    </div>
+
+    <h3>Practitioner takes (production)</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"A few months ago, we let the agent just write HTML instead. It [solved] feature requests for what the framework could render."</p>
+        <div class="who">— mritchie712 (Definite.app), 2026-05-09 · replaced a YAML-spec dashboard renderer with HTML output for revenue/order reports · <a href="https://news.ycombinator.com/item?id=48074807">HN</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"CC is exceptional on html, creating local apps for reviewing output, dashboards sourced from DuckDB… To review PRs in a little custom app is a very good idea. Who cares about 1.2× more tokens when clarity is squared?"</p>
+        <div class="who">— estetlinus, 2026-05-09 · <a href="https://news.ycombinator.com/item?id=48072527">HN</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"I always use a markdown file as an intermediate and tell the LLM to generate a fancier version of it with SVG for graphs/pictures based on tables in the markdown."</p>
+        <div class="who">— edoloughlin, 2026-05-09 (hybrid pattern) · <a href="https://news.ycombinator.com/item?id=48074053">HN</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"An html table takes up way more tokens than a markdown table. Especially if it's a WYSIWYG editor that has all kinds of css and <code>&lt;span&gt;</code> tags just for fun."</p>
+        <div class="who">— abirch (skeptic), 2026-05-09 · <a href="https://news.ycombinator.com/item?id=48073622">HN</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"The author works for Anthropic and has probably never paid for a token."</p>
+        <div class="who">— walthamstow (cost cynicism), 2026-05-09 · <a href="https://news.ycombinator.com/item?id=48072798">HN</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Worth trying? Yes</b> — for deep-dive outputs and the cc-trends daily recap specifically.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to try</h4>
+        <p>Re-emit this very deep-dive as HTML on the next run. Append the magic sentence to the synthesis brief in <code>cc-tool-deepdive-process.md</code>. Reversible in one line.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>One deep-dive run + one cc-trends daily run, both compared side-by-side against their Markdown counterparts. ~30 min of attention.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <p>If rendering ergonomics suck (no good preview, opening in Chrome breaks flow), or if the token-cost increase shows up as recap latency. If the HTML versions feel like artifacts you actually revisit while the Markdown ones rot — that's the win.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Best preview surface for VS Code?</summary>
+      <div class="q-body">
+        <code>ms-vscode.live-server</code> (Microsoft Live Preview) is now installed. Worth comparing against just opening the file in Chrome side-by-side with the IDE. ~10 min to decide.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Skill or per-prompt?</summary>
+      <div class="q-body">
+        Cleaner to wrap the magic sentence in a small Claude Code skill (e.g., <code>output-html</code>) that any process can invoke. The community already has <code>dogum/html-artifacts</code> — worth reading their SKILL.md before rolling your own.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Stable URL pattern for share links?</summary>
+      <div class="q-body">
+        If artifacts go to a private gist, that's friction; if local-only, no link. The sharing pillar only pays off with a render-and-host pipeline, which doesn't exist in your stack yet.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does it compose with Outcomes / multiagent sessions?</summary>
+      <div class="q-body">
+        Code w/ Claude shipped Outcomes — does an Outcome rubric work better when the agent produces HTML vs. Markdown? Untested.
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="unreasonable-html-2026-05-10.md">unreasonable-html-2026-05-10.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

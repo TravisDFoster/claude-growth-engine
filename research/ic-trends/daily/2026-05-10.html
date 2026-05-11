@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ic-trends Daily — 2026-05-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+    --cat-competitor:  #3547c4;
+    --cat-competitor-bg:  #f0f2fc;
+    --cat-competitor-border: #ccd5f7;
+    --cat-publication: #1a9979;
+    --cat-publication-bg: #e8fffa;
+    --cat-publication-border: #aaf7e6;
+    --cat-analyst:     #802ee6;
+    --cat-analyst-bg:  #f7f2ff;
+    --cat-analyst-border: #d5b2ff;
+    --cat-community:   #80550f;
+    --cat-community-bg: #fff9f2;
+    --cat-community-border: #ffeccd;
+    --cat-policy:      #b00045;
+    --cat-policy-bg:   #fcf0f0;
+    --cat-policy-border: #fbc2c4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 16px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+
+  .top-items { display: grid; gap: 14px; }
+  .top-item {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px 16px;
+    display: grid; grid-template-columns: auto 1fr; gap: 14px;
+    align-items: start;
+  }
+  .item-num {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--code-bg); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    letter-spacing: -0.005em;
+  }
+  .item-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+  .item-head h3 { margin: 0; font-size: 18px; line-height: 1.3; flex: 1; min-width: 200px; font-weight: 600; letter-spacing: -0.0025em; }
+  .cat-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+    border: 1px solid;
+    flex-shrink: 0;
+  }
+  .cat-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .cat-badge.cat-competitor  { color: var(--cat-competitor);  border-color: var(--cat-competitor-border);  background: var(--cat-competitor-bg); }
+  .cat-badge.cat-publication { color: var(--cat-publication); border-color: var(--cat-publication-border); background: var(--cat-publication-bg); }
+  .cat-badge.cat-analyst     { color: var(--cat-analyst);     border-color: var(--cat-analyst-border);     background: var(--cat-analyst-bg); }
+  .cat-badge.cat-community   { color: var(--cat-community);   border-color: var(--cat-community-border);   background: var(--cat-community-bg); }
+  .cat-badge.cat-policy      { color: var(--cat-policy);      border-color: var(--cat-policy-border);      background: var(--cat-policy-bg); }
+  .item-meta {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 8px;
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .item-meta .sep { opacity: 0.45; }
+  .item-body p { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+  .item-body p:last-child { margin-bottom: 0; }
+  .why-callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .why-callout .label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+    margin-right: 8px;
+  }
+
+  .watch-group { margin-top: 18px; }
+  .watch-group:first-of-type { margin-top: 6px; }
+  .watch-group h3 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600;
+    margin: 0 0 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .watchlist {
+    display: grid; gap: 8px 24px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+  .watch-row {
+    font-size: 13.5px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .watch-row:last-child { border-bottom: none; }
+  .watch-row .w-title { font-weight: 600; color: var(--ink); }
+  .watch-row .w-src { color: var(--muted); font-size: 12px; }
+  .watch-row .w-date { color: var(--muted); font-size: 12px; margin-left: auto; }
+  .watch-row a { font-size: 12px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent);
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+  details.q .q-body code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
+
+  code, pre { font-family: var(--mono); }
+  p code, li code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q[open] .q-body { display: block !important; }
+  }
+
+  @media (max-width: 640px) {
+    .top-item { grid-template-columns: 1fr; }
+    .item-num { width: 28px; height: 28px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Daily Recap</div>
+    <h1>2026-05-10</h1>
+    <div class="meta-row">
+      <span><b>Top items:</b> 8</span>
+      <span><b>Watchlist:</b> 17</span>
+      <span><b>Notes:</b> 8</span>
+    </div>
+    <p class="tldr">
+      AI dominates the week's IC conversation from three angles — Poppulo and Axios HQ pushing competitor
+      narratives (agentic measurement, AI as influence lever) while Cisco's "AI slop" POV cuts the other way,
+      and ContactMonkey drops a 2026 email benchmark report that will get cited all year. The structural
+      story underneath: Gallup's 2026 engagement collapse and Ragan's ECCC takeaways both name managers —
+      not channels — as the actual broken link.
+    </p>
+  </header>
+
+  <section>
+    <h2><span class="num">TOP</span>Items</h2>
+    <div class="top-items">
+
+      <article class="top-item">
+        <div class="item-num">1</div>
+        <div>
+          <div class="item-head">
+            <h3>Poppulo asks if agentic AI finally solves IC measurement</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.poppulo.com/blog/can-agentic-ai-finally-solve-internal-communication-s-measurement-problem">poppulo.com/blog</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-06</span>
+          </div>
+          <div class="item-body">
+            <p>Poppulo stakes a claim that agentic AI is the answer to IC's perennial measurement gap — framing measurement as a problem only AI can fix at scale.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Measurement is one of our core differentiators. If "agentic AI" becomes the buyer-side shorthand for measurement, our cross-channel measurement story needs an explicit AI-readiness layer in the pitch — not as a feature claim but as a positioning move.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">2</div>
+        <div>
+          <div class="item-head">
+            <h3>Cisco comms leader names the real problem with AI-generated content</h3>
+            <span class="cat-badge cat-publication">Publication</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.prdaily.com/cisco-comms-leader-on-the-real-problem-with-ai-generated-content/">prdaily.com</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-08</span>
+          </div>
+          <div class="item-body">
+            <p>Cisco's AI Acceleration Office head argues "AI slop" fails because it lacks POV — original human framing still breaks through.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Reinforces the angle that <em>delivery and structure</em>, not generation, is where IC tooling earns its keep. Useful POV alignment for content that defends against "AI replaces IC" narratives.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">3</div>
+        <div>
+          <div class="item-head">
+            <h3>ContactMonkey drops 2026 Internal Email Benchmark Report</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.contactmonkey.com/blog/contactmonkeys-internal-email-benchmark-report-2026-key-findings-for-internal-communications-teams">contactmonkey.com/blog</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-08</span>
+          </div>
+          <div class="item-body">
+            <p>Original benchmark research paired with a companion measurement how-to (<a href="https://www.contactmonkey.com/blog/measure-communications">measure-communications</a>) — a coordinated content push around measurement positioning.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>This is the kind of original research IC buyers cite in deck appendices. Two options worth considering: (a) reference the dataset in our own measurement narrative with our own framing, or (b) produce the Cerkl equivalent benchmark from anonymized Foundations+/Omni data.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">4</div>
+        <div>
+          <div class="item-head">
+            <h3>Forrester Wave: Intranet Platforms Q2 2026 evaluates 13 vendors</h3>
+            <span class="cat-badge cat-analyst">Analyst</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.forrester.com/blogs/the-forrester-wave-intranet-platforms-q2-2026-our-evaluation-of-13-key-vendors/">forrester.com/blogs</a></span>
+            <span class="sep">·</span>
+            <span>2026-04-09</span>
+          </div>
+          <div class="item-body">
+            <p>GenAI authoring, personalization, and frontline support separate leaders from laggards. [Paywalled full report — anchored to Forrester blog.]</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Reinforces the reframe in <code>shared/competitors.md</code>: the analyst lens still puts Staffbase, LumApps, Workvivo, etc. into "intranet platforms" — a category Cerkl deliberately is not in. When a deal references this Wave, lean into "we're the delivery + measurement layer, the intranet is the destination, not the comms strategy."</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">5</div>
+        <div>
+          <div class="item-head">
+            <h3>Gallup: global engagement falls to 20%, manager engagement drops 9 points</h3>
+            <span class="cat-badge cat-analyst">Analyst</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx">gallup.com/workplace</a></span>
+            <span class="sep">·</span>
+            <span>2026-04-08</span>
+          </div>
+          <div class="item-body">
+            <p>Global engagement at its lowest since 2020, driven by a 9-point collapse in manager engagement since 2022. The cascade is breaking at the manager layer.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Strong supporting stat for the manager-cascade angle in any ICP pitch. Pairs naturally with item #6 — manager-as-broken-link is now an analyst-backed frame, not just a Ragan conference talking point.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">6</div>
+        <div>
+          <div class="item-head">
+            <h3>M&amp;T Bank rethinks town halls for comprehension</h3>
+            <span class="cat-badge cat-publication">Publication</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.ragan.com/ragan-eccc-2026-town-halls-evans/">ragan.com</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-08</span>
+          </div>
+          <div class="item-body">
+            <p>Case study on converting passive info-dump town halls into structured-for-comprehension formats — explicit antidote to the "AI;DR" pattern.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Channel-level case study Travis can lift into webinar/content as a "comms structure beats comms volume" example. Aligns with Cerkl's measurement angle.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">7</div>
+        <div>
+          <div class="item-head">
+            <h3>Workvivo launches Seer "People Intelligence" platform</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.youtube.com/watch?v=tte79K1SBQc">youtube.com</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-06</span>
+          </div>
+          <div class="item-body">
+            <p>Standalone product that turns employee feedback into tracked, owned actions — Workvivo moving into the measurement/analytics layer.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Another competitor extending into measurement-adjacent territory. Combined with Poppulo's agentic-measurement framing (item #1), this is a pattern, not a one-off — the IC competitive set is annexing the measurement narrative. Worth a deep-dive next week.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="top-item">
+        <div class="item-num">8</div>
+        <div>
+          <div class="item-head">
+            <h3>Axios HQ frames AI adoption as the comms-leader influence lever</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.axioshq.com/insights/2026-comms-leaders-ai">axioshq.com/insights</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-06</span>
+          </div>
+          <div class="item-body">
+            <p>14-min POV piece tying AI fluency directly to comms-leader influence and seniority — "use AI, pull ahead."</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Direct competition for our AI narrative real estate. Axios HQ is positioning AI as the executive-influence story; Cerkl can counter with the delivery/measurement-as-influence story.</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">WATCH</span>Watchlist</h2>
+    <p style="font-size:14px;color:var(--muted);margin-top:-6px;">Items not in the top cut but worth tracking.</p>
+
+    <div class="watch-group">
+      <h3>Competitors</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">Firstup — Nursing comms challenges 2026</span>
+          <span class="w-src">· vertical wedge into healthcare frontline</span>
+          <span class="w-date"><a href="https://firstup.io/blog/nursing-communications-challenges-report-2026/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Firstup — "Internal Comms Are Failing" 2026</span>
+          <span class="w-src">· 6,200-employee survey; only 44% have what they need</span>
+          <span class="w-date"><a href="https://firstup.io/blog/internal-communications-failure-2026-research/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Simpplr — 15 gen AI use cases for internal comms</span>
+          <span class="w-src">· synthesizing messaging, simulating announcement landing</span>
+          <span class="w-date"><a href="https://www.simpplr.com/blog/gen-ai-use-cases-internal-comms/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Workshop — "you only need four tools to run IC well"</span>
+          <span class="w-src">· competitive positioning intel (YouTube)</span>
+          <span class="w-date"><a href="https://www.youtube.com/watch?v=K96B-XdcRb4">link</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="watch-group">
+      <h3>Publications</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">Ragan ECCC 2026 — manager cascade is #1 priority</span>
+          <span class="w-src">· PR Daily; 56% name manager comms, 4% rate them "very effective"</span>
+          <span class="w-date"><a href="https://www.prdaily.com/top-takeaways-from-ragans-employee-communications-and-culture-conference-2026/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Ragan AI Horizons 2026 — exec-adoption debate</span>
+          <span class="w-src">· upskilling, not tooling, as the bottleneck</span>
+          <span class="w-date"><a href="https://www.ragan.com/ragan-ai-horizons-2026-executives-ai-adoption/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily — 2026 Internal Email Benchmarks Report</span>
+          <span class="w-src">· vendor-adjacent, likely gated</span>
+          <span class="w-date"><a href="https://www.prdaily.com/the-2026-internal-email-benchmarks-report/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily — biggest comms surprises of 2026 so far</span>
+          <span class="w-src">· mid-year practitioner pulse</span>
+          <span class="w-date"><a href="https://www.prdaily.com/the-biggest-comms-surprises-of-2026-so-far/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily — AI predictions reader thread</span>
+          <span class="w-src">· "AI voice" backlash, deliberate imperfection</span>
+          <span class="w-date"><a href="https://www.prdaily.com/your-predictions-how-ai-in-comms-will-evolve-in-2026/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">HBR — metaphor as change-comms shortcut</span>
+          <span class="w-src">· Tanvi Gautam</span>
+          <span class="w-date"><a href="https://hbr.org/topic/subject/internal-communication">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Ragan — resilience habits that grow comms-pro influence</span>
+          <span class="w-src">· Mandy Mooney, Prologis VP IC</span>
+          <span class="w-date"><a href="https://www.ragan.com/ragan-video-mandy-mooney-resilience/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Ragan — AI rattling employees even where jobs unaffected</span>
+          <span class="w-src">· FlexJobs data, employee-anxiety frame</span>
+          <span class="w-date"><a href="https://www.ragan.com/ai-internal-comms-adoption-flexjobs/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Ragan — 3 priorities before the next AI vendor incident</span>
+          <span class="w-src">· pre-built crisis comms checklist</span>
+          <span class="w-date"><a href="https://www.ragan.com/3-priorities-to-lock-in-before-the-next-ai-vendor-incident/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Ragan week in comms — RTO mandate strain</span>
+          <span class="w-src">· managers selling mandates they didn't author</span>
+          <span class="w-date"><a href="https://www.ragan.com/the-week-in-comms-paramount-microsoft-recognition/">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Isentia webinar — AI shift &amp; comms-leader adaptation</span>
+          <span class="w-src">· 58-min panel (YouTube)</span>
+          <span class="w-date"><a href="https://www.youtube.com/watch?v=Ers_3p5q25k">link</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="watch-group">
+      <h3>Analysts</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">SHRM — State of AI in HR 2026</span>
+          <span class="w-src">· n=1,908; penetration highest in recruiting/EX; governance is the bottleneck</span>
+          <span class="w-date"><a href="https://www.shrm.org/topics-tools/research/state-of-ai-hr-2026">link</a></span>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Gartner — Modernize Employee Communications</span>
+          <span class="w-src">· volume/relevance overload as engagement-killer</span>
+          <span class="w-date"><a href="https://www.gartner.com/en/documents/6771034">link</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">NOTES</span>Gaps &amp; infrastructure</h2>
+
+    <details class="q">
+      <summary>Reddit r/internalcomms — still blocked</summary>
+      <div class="q-body">
+        <p>WebFetch still blocked. WebSearch coverage of the sub thin this week — no high-signal threads surfaced. Practitioner conversation is currently flowing through trade press (Ragan, PR Daily) more than Reddit.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>LinkedIn — inaccessible as expected</summary>
+      <div class="q-body">
+        <p>Known gap. Not actionable until an alternate ingestion path is built.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Joel Schwartzberg "All Hands" Substack — no recent post list</summary>
+      <div class="q-body">
+        <p>Redirect chain didn't expose a recent post list — no May posts surfaced. May be worth removing from <code>sources.md</code> if pattern persists.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>feeds.json audit needed</summary>
+      <div class="q-body">
+        <p>Bucket 2b reports that Workvivo, ContactMonkey, Haiilo, Firstup, and Davis &amp; Co. feeds did not appear in <code>feeds_fetched</code> output — may be missing from <code>feeds.json</code> or silently failing. Staffbase feed returned 10 items but 0 in-window. Worth a maintenance pass on the config.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Workshop blog 403'd to WebFetch</summary>
+      <div class="q-body">
+        <p>Bucket 2a — surfaced via WebSearch instead.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Forrester Wave Q2 2026 is paywalled</summary>
+      <div class="q-body">
+        <p>Anchored to the public Forrester blog. Full vendor evaluation not directly accessible.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Gartner doc — April publish date not in public metadata</summary>
+      <div class="q-body">
+        <p>Flagged as lower-confidence on the date field.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Bucket 2a — vendor coverage gap</summary>
+      <div class="q-body">
+        <p>Bucket 2a found Staffbase, Simpplr, Workvivo, Haiilo had no clearly in-window POV/research items surfaceable without their RSS feeds; bucket 2b's feed pass would have caught anything that exists.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Security note</summary>
+      <div class="q-body">
+        <p>No prompt-injection attempts encountered across any of the five fetch buckets.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · Source markdown: <a href="2026-05-10.md">daily/2026-05-10.md</a>
+  </footer>
+
+</div>
+</body>
+</html>

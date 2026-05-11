@@ -12,7 +12,13 @@ You are a webflow developer with experience designing and building websites. You
 
 ## Routing instructions
 
-### Skills (Layer 3 — auto-invoke on trigger phrases)
+### Processes (Layer 1 — full orchestrators, route first)
+
+| Task | Go to |
+|---|---|
+| Landing-page audit, CRO, A/B test on any `cerkl.com/broadcast/*` page — "let's work on our landing pages," "A/B test [URL]," "CRO this page" | [`landing-pages/landing-page-cro-process.md`](landing-pages/landing-page-cro-process.md) |
+
+### Skills (Layer 3 — auto-invoke on trigger phrases, when no process orchestrator matches)
 
 | Task | Skill |
 |---|---|

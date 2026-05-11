@@ -1,0 +1,20 @@
+{
+  "_doc": "Curated RSS/Atom feeds for the IC daily recap. Used by lib/feed_fetch.py — fetched directly via urllib (avoids WebFetch denylist). Mirrors the (b) bucket in sources.md.",
+  "_first_run_results": "Verified 2026-05-10. Working: Ragan, PR Daily, Staffbase (/rss.xml — different path than the /blog/feed/ that returned malformed XML), Simpplr (/feed/ — root, not /blog/feed/). All 4 vendor feeds tested with feed_fetch.py against actual blog content. For competitors without a working RSS endpoint (Workvivo, ContactMonkey, Haiilo, Firstup, Davis & Co., LumApps, Poppulo), fall back to Step 2a's WebFetch on blog landing pages.",
+  "_cadence_notes": "Re-audited 2026-05-10. All 4 active feeds live. Ragan ~3/day, PR Daily ~3/day, Simpplr ~weekly, Staffbase ~biweekly (so 7-day in_window=0 is normal for Staffbase, not a failure). Staffbase RSS items are not sorted chronologically — order in the feed is unrelated to publish date; rely on the parser's date sort.",
+  "feeds": [
+    { "url": "https://www.ragan.com/feed/",    "name": "Ragan Communications" },
+    { "url": "https://www.prdaily.com/feed/",  "name": "PR Daily" },
+    { "url": "https://staffbase.com/rss.xml",  "name": "Staffbase blog" },
+    { "url": "https://www.simpplr.com/feed/",  "name": "Simpplr blog" }
+  ],
+  "_unverified_to_test": [
+    { "url": "https://www.workvivo.com/blog",        "name": "Workvivo blog",   "note": "2026-05-10: no RSS exposed. Tried /feed/, /feed.xml, /blog/feed/, /blog/feed.xml, /blog/rss.xml, /blog/index.xml, blog.workvivo.com/feed/ — all 404 or HTML. Site is JS-rendered (Next.js). Use WebFetch fallback." },
+    { "url": "https://www.contactmonkey.com/blog",   "name": "ContactMonkey",   "note": "2026-05-10: WordPress site explicitly disabled RSS (/feed/ and /blog/feed/ return HTTP 410 wp_die). No alternate path. Use WebFetch fallback." },
+    { "url": "https://haiilo.com/blog",              "name": "Haiilo blog",     "note": "2026-05-10: Cloudflare 403 blocks all feed paths regardless of User-Agent. Even if a feed exists, feed_fetch.py's urllib won't get past the JS challenge. Use WebFetch fallback." },
+    { "url": "https://firstup.io/blog",              "name": "Firstup blog",    "note": "2026-05-10: Next.js site, no RSS. Tried /feed/, /blog/feed/, /blog/rss.xml, /blog/feed.xml, /blog/index.xml — all return Next.js 404 page. No feed advertised in HTML head. Use WebFetch fallback." },
+    { "url": "https://www.davisandco.com/blog",      "name": "Davis & Co.",     "note": "2026-05-10: server returns HTTP 200 with HTML for every /feed/, /blog/feed/, /blog.atom, /insights/feed path — no real RSS endpoint exists, just SPA catch-all. Use WebFetch fallback." },
+    { "url": "https://www.lumapps.com/learn/blog",   "name": "LumApps blog",    "note": "2026-05-10: Webflow site, no RSS. Tried /blog/rss.xml, /learn/blog/rss.xml, /learn/feed/, /feed/, /rss.xml, /blog.atom — all 404. Webflow doesn't auto-generate feeds. Use WebFetch fallback." },
+    { "url": "https://www.poppulo.com/blog",         "name": "Poppulo blog",    "note": "2026-05-10: Sanity CMS site, no RSS. Tried /blog/feed/, /feed/, /blog/rss.xml, /feed.xml, /blog.atom, /resources/feed — all 404. Sanity has no built-in RSS. Use WebFetch fallback." }
+  ]
+}

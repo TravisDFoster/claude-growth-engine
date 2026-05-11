@@ -1,11 +1,6 @@
 ---
 name: hubspot-audit
 description: "Run a comprehensive HubSpot CRM database audit. Analyzes contacts, companies, deals, engagement, data quality, and deliverability. Use when starting a CRM cleanup, onboarding a new client, or performing quarterly health checks."
-license: MIT
-metadata:
-  author: tomgranot
-  version: "1.0"
-  category: audit-planning
 ---
 
 # HubSpot CRM Database Audit
@@ -40,12 +35,15 @@ Run queries for each of the following eight dimensions. Collect exact counts for
 - Marketing contacts vs non-marketing contacts (if Marketing Hub is active)
 
 ### 2. Email Deliverability
-- Hard bounced contacts (`hs_email_hard_bounce_reason_enum` is not empty)
-- Soft bounced contacts (`hs_email_bounce` > 0 AND no hard bounce)
-- Global unsubscribes (`hs_is_unworked` or `hs_email_optout` = true)
-- Never-emailed contacts (no `hs_email_last_send_date`)
+
+Count only contacts that **still need action** (i.e., still marked as marketing contacts). Hard-bounce and opt-out properties are permanent historical stamps; once suppressed (`hs_marketable_status` flipped to false), the property remains but the contact no longer needs work. AND every metric below with `hs_marketable_status = "true"`.
+
+- Hard bounced — still marketing (`hs_email_hard_bounce_reason_enum` is not empty AND `hs_marketable_status` = true)
+- Soft bounced — still marketing (`hs_email_bounce` > 0 AND no hard bounce AND `hs_marketable_status` = true)
+- Global unsubscribes — still marketing (`hs_email_optout` = true AND `hs_marketable_status` = true)
+- Never-emailed contacts (no `hs_email_last_send_date`) — no marketable filter; this is a different signal
 - Invalid email format (regex check on `email` property)
-- Contacts with 3+ bounces
+- Contacts with 3+ bounces — still marketing (`hs_email_bounce` >= 3 AND `hs_marketable_status` = true)
 
 ### 3. Data Completeness
 - Missing `email`
