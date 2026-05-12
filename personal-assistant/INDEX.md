@@ -30,6 +30,7 @@
 | [Webinars](projects/webinars.md) | Add Webinars to Resources menu (Webflow CMS with Furqan) — unblocked once landing page live Mon 2026-05-11 | Med | — | Yes | Travis / Furqan |
 | [Press Release](projects/press-release.md) | Resume final approval cycle in late May (publish embargo 2026-06-01) | Med | 2026-06-01 | Yes | Travis |
 | [Cerkl Website](projects/cerkl-website.md) | Webinar landing pages — launch Mon 2026-05-11 (paired with Webinars project) | High | 2026-05-11 | Yes | Travis |
+| [Comparison SEO Pages](projects/comparison-seo-pages.md) | Build channel process for `comparison-seo` (page template, research inputs, production + refresh workflow) before drafting first new page | Med | — | Yes | Travis |
 | [Review Sites](projects/review-sites.md) | Sourceforge — claim product listing; add Foundations | Med | — | Yes | Travis |
 | [ICPro SEO](projects/icpro-seo.md) | Diagnose why Google Rich Results Test fails (Schema.org validator passes) | Med | — | n/a | Travis |
 | [Design Tools](projects/design-tools.md) | Research AI video creation tools (HeyGen alternatives for Pains-concept ad video) | Low | — | n/a | Travis |

@@ -2,7 +2,7 @@
 
 **Webinar:** The Cost of Benefits Communications That Nobody's Talking About
 **Date:** April 30, 2026 | 10:00 a.m. EST
-**Recording (YouTube):** `[YOUTUBE_RECORDING_LINK]`
+**Recording (YouTube):** https://www.youtube.com/watch?v=39zrStaVpVo
 **Slidedeck (HubSpot):** `[HUBSPOT_SLIDEDECK_LINK]`
 **Foundations sign-up:** `[FOUNDATIONS_SIGNUP_LINK]`
 
@@ -32,14 +32,12 @@ If you want to revisit anything (or share it with a colleague who couldn't make 
 - **Clarity:** How campaign-based, segmented communication replaces one-off blasts and static PDFs — and raises the perceived value of your total rewards.
 - **Proof:** The difference between vanity metrics (open rates) and meaningful engagement metrics by employee segment that leadership can actually use.
 
-**[Watch the recording →](`[YOUTUBE_RECORDING_LINK]`)**
-**[Download the slides →](`[HUBSPOT_SLIDEDECK_LINK]`)**
-
-We'll announce the Benefits Communication Audit winner from Matt separately later this week — keep an eye on your inbox.
+**[Watch the recording →](https://www.youtube.com/watch?v=39zrStaVpVo)**
+**[Download the slides →]([HUBSPOT_SLIDEDECK_LINK])**
 
 If yesterday's session made you reconsider whether your current tools are up to the job, you can start a free Foundations account in minutes — no credit card, no demo, no sales call.
 
-**[Start a free Foundations account →](`[FOUNDATIONS_SIGNUP_LINK]`)**
+**[Start a free Foundations account →]([FOUNDATIONS_SIGNUP_LINK])**
 
 Thanks again for spending an hour with us.
 
@@ -69,13 +67,24 @@ In case you need a reason to carve out the time, here's what Tarek Kamil and Mat
 - **Clarity:** How campaign-based, segmented communication replaces one-off blasts and static PDFs — and raises the perceived value of your total rewards.
 - **Proof:** The difference between vanity metrics (open rates) and meaningful engagement metrics by employee segment that leadership can actually use.
 
-**[Watch the recording →](`[YOUTUBE_RECORDING_LINK]`)**
-**[Download the slides →](`[HUBSPOT_SLIDEDECK_LINK]`)**
+**[Watch the recording →](https://www.youtube.com/watch?v=39zrStaVpVo)**
+**[Download the slides →]([HUBSPOT_SLIDEDECK_LINK])**
 
 If the topic feels familiar — generic email tools doing a job they were never built for — you can start a free Foundations account in minutes. No credit card, no demo, no sales call. Just a purpose-built tool for internal communication.
 
-**[Start a free Foundations account →](`[FOUNDATIONS_SIGNUP_LINK]`)**
+**[Start a free Foundations account →]([FOUNDATIONS_SIGNUP_LINK])**
 
 Sorry to have missed you live — hope the recording proves useful.
 
 — Cerkl Thought Leadership Series Team
+
+---
+
+## HubSpot drafts
+
+| Audience | HubSpot ID | Draft name |
+|---|---|---|
+| Attendees | `212470500999` | Matt Frost Webinar - Follow-up - Attendees |
+| Did-not-attend | `212480086899` | Matt Frost Webinar - Follow-up - Missed |
+
+Attendees draft cloned from `211881103895` ("April 2026 Webinar #2 - Matt Frost"). Missed draft cloned from the Attendees draft.

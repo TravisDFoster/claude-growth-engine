@@ -1,0 +1,51 @@
+# Employee Wellness Comms: How Segmentation Helps You Reach the Right People
+
+You send the all-staff wellness email. A few hundred employees open it. Nobody schedules a counseling session, nobody updates their FSA election, and your EAP vendor's quarterly utilization report comes back at 4%. The message was good. The timing was fine. The problem is that you sent the same email about parental leave benefits, chronic condition management, and mental health resources to a 55-year-old plant supervisor, a 28-year-old remote engineer, and a part-time retail associate who is not eligible for half the programs you mentioned. Broad employee wellness communication does not underperform because HR teams write poorly. It underperforms because the delivery model was never built for a workforce this varied.
+
+## Why Broad Wellness Emails Fall Short
+
+An all-staff email treats every employee as interchangeable. Same subject line, same content, same send time, regardless of job type, location, life stage, or benefits eligibility. The result is a message that is technically relevant to nobody in particular, which is why employees learn quickly to skip it. Inbox behavior research shows that perceived irrelevance is a faster driver of disengagement than volume or frequency. Employees who receive content that does not apply to them do not filter more carefully. They stop opening at all.
+
+The wellness context makes this problem worse because the programs are so varied. EAP resources, mental health support, parental leave, FSA and HSA contribution deadlines, chronic condition management, fertility benefits, return-to-office wellness perks: each of these matters to a specific slice of the workforce and is irrelevant or unavailable to everyone else. When you pack them into a single send, you guarantee low relevance for the majority of recipients. For the employees who are not eligible for a program you featured prominently, every future wellness send from HR looks like more noise they have learned not to read.
+
+There is also a downstream credibility problem. When employees consistently receive communications about benefits they cannot use, they stop trusting the channel. That matters when you need them to act. Open enrollment windows are short, EAP resources are time-sensitive, and mental health support is something employees will not seek out proactively if they have already tuned out the inbox.
+
+## The Case for Segmentation in Wellness Outreach
+
+Wellness email segmentation means delivering a version of the message that matches the audience receiving it. That is not the same as writing twelve separate emails by hand every time you have a benefits announcement to make. Segmentation at the audience level means using employee data to filter who receives what, so that each group gets content that applies to them.
+
+Three dimensions do most of the work in a benefits communication strategy:
+
+**Role and job type.** Frontline and deskless workers often have different EAP access, different benefit eligibility, and different wellness challenges than office-based employees. A warehouse team lead dealing with physical strain and irregular scheduling does not have the same wellness needs as a corporate HR generalist working from home. Sending them the same mental health resource email is low-relevance and signals that whoever sent it did not think about either of them specifically.
+
+**Location.** State-specific benefit plans, regional insurance carriers, local clinic partnerships, and return-to-office wellness offerings mean that geography changes what is available to an employee. A wellness send promoting a clinic network only available in Ohio is irrelevant noise to your Texas workforce. Benefits communications that do not account for location will consistently fail employees outside the headquarters footprint.
+
+**Eligibility.** Full-time versus part-time status, tenure thresholds, enrollment windows, HDHP enrollment for HSA eligibility: these are the mechanical filters that determine whether a program is accessible to a given employee at all. Sending FSA enrollment reminders to employees who are not enrolled in a qualifying health plan wastes their attention on a program they cannot use and dilutes your credibility for the next send.
+
+When employees consistently receive wellness communications that apply to them, the downstream effects are measurable. Open rates improve because the relevance signal is real. Program enrollment increases because the right employees see the right resources. HR's credibility as a trustworthy source of benefits information builds over time, which matters when you need employees to act quickly during open enrollment or a benefits deadline.
+
+## How to Build Wellness Segments Without Building a Manual Process
+
+The objection most HR communicators raise is reasonable: "We don't have the bandwidth to manage separate lists for every wellness campaign." If segmentation requires manually pulling spreadsheets, updating distribution lists, and verifying eligibility before each send, it is not a sustainable strategy for a lean team.
+
+Dynamic segmentation, driven by HRIS data, eliminates that overhead. When employee attributes (role, location, employment status, tenure, benefits enrollment) live in a system like Workday, ADP, or Paycor, those attributes can drive audience logic automatically. A segment that captures full-time employees hired at least 90 days ago and not currently enrolled in EAP can be built once and updated continuously as the workforce changes. The next time you need to send an EAP enrollment reminder, the audience is already there.
+
+Practical segment logic for common wellness campaigns looks like this: full-time employees hired 90 or more days ago receive EAP enrollment reminders timed to benefits eligibility windows. Employees in states with specific parental leave laws receive targeted parental benefits communications rather than a general policy summary. Frontline and non-desk employees receive mobile-optimized mental health resource pushes rather than long-form email that does not render well on a phone. Employees enrolled in high-deductible health plans receive HSA contribution deadline reminders that are meaningless to everyone else on the standard plan.
+
+None of this requires a larger team. It requires the right tooling connected to the people data you already have. Newer-generation internal comms tools sync directly with HRIS and IdP systems (Workday, ADP, Paycor, and others), so wellness communicators can build these audiences once and reuse them across campaigns without touching a spreadsheet between sends. The work shifts from list maintenance to audience design, which is where it should have been all along.
+
+## What Targeted Wellness Delivery Does for Engagement
+
+Engagement metrics are a proxy, not a goal, but they tell you something real about whether your benefits communication strategy is working. Open rate by segment, not just overall open rate, is the number worth watching. If your full-time office employees open at 38% and your frontline workforce opens at 9%, that gap is not a copywriting problem. It is a targeting problem, and it points at which group is receiving content that does not apply to them.
+
+Click-through on program links matters more than open rate for wellness sends, because a click usually represents intent: an employee who clicked through to schedule a counseling session, download a mental health resource, or start an enrollment form was reached by the communication. Tracking clicks by segment tells you which groups are converting on the resources you send them and which groups are opening but not acting.
+
+Unsubscribe spikes on wellness sends are worth watching for a different reason. They usually signal relevance problems, not message quality problems. An employee who unsubscribes from a wellness send after receiving EAP information that does not apply to their status is not rejecting wellness programs. They are rejecting the noise.
+
+The business case for leadership runs in a straightforward direction. A wellness program with 4% EAP utilization is not necessarily evidence that employees do not need mental health support. It may be evidence that the communication about those resources never reached the employees who needed it in a form relevant to them. When HR teams can show that targeted wellness sends drove measurable increases in utilization or enrollment, that is a defensible ROI story, one that justifies both the wellness investment and the communications infrastructure that makes it reach people. When internal comms and HR share that kind of data, the conversation shifts from "did we send the email?" to "did the program reach people?"
+
+## Getting the Right Wellness Communication to the Right Employees
+
+Wellness programs only work when employees know they exist and can access them. That sounds obvious, but broad all-staff emails are a poor vehicle for that goal when your workforce spans job types, locations, eligibility tiers, and life stages that make a single message relevant to almost nobody in full.
+
+The fix is not better copywriting on a generic blast. It is getting the right message to the right group in the first place, and doing it through audience logic that updates automatically as your workforce changes, not through manual list maintenance that breaks down before the next open enrollment cycle. Segmentation does not require a larger team or more hours. It requires tooling connected to the people data you already have, and the discipline to design audiences before you write a subject line.

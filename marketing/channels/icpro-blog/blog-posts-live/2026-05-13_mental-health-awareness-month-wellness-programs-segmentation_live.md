@@ -1,40 +1,5 @@
 # Mental Health Awareness Month: Communicating Wellness Programs with Segmentation
 
----
-
-## Properties
-
-**Title:** Mental Health Awareness Month: Communicating Wellness Programs with Segmentation
-
-**Slug:** mental-health-awareness-month-wellness-programs-segmentation
-
-**Top 3 Organic Search Keywords:**
-1. employee wellness program communication
-2. internal communications segmentation
-3. mental health benefits employee communication
-
-**Primary Solution:** Omni AI
-
-**Top CTA:** Nothing
-
-**Middle CTA:** Omni AI Personalization Middle
-
-**Bottom CTA:** Email General Bottom
-
-**Primary Category:** Employee Engagement and Experience
-
-**Secondary Category:** Internal Communication Strategy
-
-**Meta Description:** Mental Health Awareness Month is the right moment to ask: are your wellness program communications reaching the employees who need them? Learn how segmentation helps HR communicators target the right people, and how to measure whether your wellness comms are working.
-
-**Meta Title:** Mental Health Awareness Month: Communicating Wellness Programs with Segmentation
-
----
-
-<!-- Top CTA -->
-
-# Mental Health Awareness Month: Communicating Wellness Programs with Segmentation
-
 May is Mental Health Awareness Month, which means many HR communicators are either sending wellness emails right now or asking themselves why they haven't yet. Before the send button gets pressed, sit with a more useful question: are these messages reaching the employees who need them? Most organizations have substantive mental health benefits in place. The issue is rarely the program itself. Employees don't know about it, can't find it, or received a message that felt like it was written for someone else. Segmentation is how you close the gap between "we sent it" and "they saw something relevant." Measurement is how you know it worked.
 
 ## The Problem: Wellness Emails Get Lost Because They're Written for Everyone
@@ -54,8 +19,6 @@ Here is what that looks like in practice. New hires in their first 90 days shoul
 None of this requires writing five separate campaigns from scratch. Build one core message and vary it for each audience, with different opening sentences, different resource links, and different calls to action depending on what that group needs. The content investment is modest. The targeting difference is significant.
 
 Dynamic segmentation takes this further. When audience lists are connected to live employee data from an HRIS system, segments like "employees hired in the last 90 days" or "employees at field locations" update automatically. New employees get added to the right group without manual list maintenance, and the right message finds them during the period when it is most useful.
-
-<!-- Middle CTA -->
 
 ## Measuring Whether Your Wellness Comms Are Landing
 
@@ -77,85 +40,9 @@ Mental Health Awareness Month gives you a timely reason to build this process no
 
 Employees cannot benefit from wellness programs they do not know about. HR communicators cannot prove the impact of their work without data. Both problems are solvable with the same approach: send the right message to the right people, then measure what happened.
 
-<!-- Bottom CTA -->
-
----
-
-## Frequently Asked Questions
-
-### What is employee wellness program communication?
-
-Employee wellness program communication is the set of messages an organization sends to make employees aware of available mental health, well-being, and benefits resources. This includes emails, intranet posts, manager communications, and other channels used to explain what programs exist, how to access them, and who is eligible.
-
-### Why is segmentation important for mental health benefits communication?
-
-Different employee groups have different mental health needs and different ways of consuming information. New hires may not know what EAP benefits exist. Remote employees may be unaware of virtual therapy options. Frontline workers may not access email during shifts. Segmentation lets HR communicators send targeted messages to each group, improving relevance, engagement, and utilization of the programs being communicated.
-
-### What metrics should HR communicators track for wellness emails?
-
-The most useful metrics for wellness email campaigns are open rate (basic awareness), click rate (engagement with a specific resource or link), reach by segment (which employee groups opened vs. which did not), and whether non-openers received a follow-up. Click-through to a scheduling page or benefits portal is a strong proxy for utilization intent.
-
-### How do you segment employees for Mental Health Awareness Month communications?
-
-A practical starting point is four segments: new hires (0–90 days), remote or hybrid employees, frontline or deskless workers, and managers. Each group receives a message tailored to their situation: EAP basics for new hires, virtual therapy options for remote employees, short-form mobile-accessible content for frontline workers, and team-support resources for managers. Dynamic segmentation tools can automate list membership so groups stay current without manual upkeep.
-
-### How can HR communicators measure the impact of wellness program communications?
-
-Start by tracking open and click rates at the segment level, not just in aggregate. Connect click-through data to specific resources. If the EAP has a scheduling link, clicks on that link indicate utilization intent. Follow up with non-openers within the campaign window and document results to share with leadership. Reporting reach and engagement by segment, rather than overall send volume, gives HR communicators a concrete proof-of-impact story.
-
----
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is employee wellness program communication?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Employee wellness program communication is the set of messages an organization sends to make employees aware of available mental health, well-being, and benefits resources. This includes emails, intranet posts, manager communications, and other channels used to explain what programs exist, how to access them, and who is eligible."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is segmentation important for mental health benefits communication?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Different employee groups have different mental health needs and different ways of consuming information. New hires may not know what EAP benefits exist. Remote employees may be unaware of virtual therapy options. Frontline workers may not access email during shifts. Segmentation lets HR communicators send targeted messages to each group, improving relevance, engagement, and utilization of the programs being communicated."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What metrics should HR communicators track for wellness emails?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The most useful metrics for wellness email campaigns are open rate (basic awareness), click rate (engagement with a specific resource or link), reach by segment (which employee groups opened vs. which did not), and whether non-openers received a follow-up. Click-through to a scheduling page or benefits portal is a strong proxy for utilization intent."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you segment employees for Mental Health Awareness Month communications?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A practical starting point is four segments: new hires (0–90 days), remote or hybrid employees, frontline or deskless workers, and managers. Each group receives a message tailored to their situation: EAP basics for new hires, virtual therapy options for remote employees, short-form mobile-accessible content for frontline workers, and team-support resources for managers. Dynamic segmentation tools can automate list membership so groups stay current without manual upkeep."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can HR communicators measure the impact of wellness program communications?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Start by tracking open and click rates at the segment level, not just in aggregate. Connect click-through data to specific resources. If the EAP has a scheduling link, clicks on that link indicate utilization intent. Follow up with non-openers within the campaign window and document results to share with leadership. Reporting reach and engagement by segment, rather than overall send volume, gives HR communicators a concrete proof-of-impact story."
-      }
-    }
-  ]
-}
-```
-
 ---
 **Edit log**
-- Final score: 39/50 (Directness 8, Rhythm 8, Trust 8, Authenticity 7, Density 8)
-- Major structural changes: Tightened opening; consolidated wellness-comms framing
-- Notable phrase/structure fixes: Removed all em-dashes, cut "actually," "genuinely," "entirely," "really"; replaced "It's not X, it's Y" contrast in opening
+- Final score: 41/50 (Directness 8, Rhythm 8, Trust 9, Authenticity 8, Density 8)
+- Major structural changes: Re-scoped from cerkl.com style to ICPro. Stripped duplicate inline H1, the cerkl.com Properties block (Primary Solution + Top/Middle/Bottom CTAs), the three `<!-- CTA -->` placeholder comments, the FAQ section, and the FAQPage JSON-LD schema.
+- Notable phrase/structure fixes: Body prose preserved from the original 39/50 edit (already free of em-dashes and adverb crutches per that edit log). No further line-level work required.
+- Brand-mention check: pass. Zero Cerkl mentions, zero competitor mentions. Outlook/Slack referenced generically only where the topic required (no occurrences in this post).

@@ -1,0 +1,647 @@
+<!doctype html>
+<!--
+  Reference template for weekly-plan artifacts (personal-assistant current-week).
+
+  Snapshot example using the 2026-W20 PA current-week as a worked example of
+  the visual language. Demonstrates the components a weekly-plan render should
+  use. The rendering agent should compose fresh HTML using these components,
+  not template-fill.
+
+  Design system shared with reference-daily-recap.html — same CSS variables,
+  fonts, callout types, collapsibles. Weekly-plan-specific additions:
+    - deadline-pill strip in the hero
+    - week-at-a-glance table (Day | Meetings | Free | Top priority)
+    - day-card collapsibles (one per Mon–Fri) with meetings, free blocks,
+      priorities, ad-hocs
+    - carryover panel + Friday-retro panel
+    - auto-open today's day-card via inline JS
+
+  Scope: Cerkl personal-assistant ONLY (Mon–Fri work meetings + priorities).
+  Not for personal life-plan use — that artifact lives under personal/ and uses
+  a darker serif theme; the two should not converge.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PA Weekly Plan — 2026-W20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    /* Cerkl brand palette — light mode by default. */
+    --bg: #f5f5fa;            /* Cosmic 10 — body background */
+    --panel: #ffffff;         /* White — card surfaces */
+    --panel-soft: #f5f5fa;    /* Cosmic 10 — sub-cards inside panels */
+    --ink: #18181d;           /* Cosmic base — primary text */
+    --muted: #373740;         /* Cosmic 80 — secondary text */
+    --line: #d5d5db;          /* Cosmic 30 — borders */
+    --accent: #3547c4;        /* Cobalt 60 — primary brand */
+    --accent-soft: #f0f2fc;   /* Cobalt 10 — accent panel bg */
+    --good: #1a9979;          /* Forest base */
+    --good-bg: #e8fffa;       /* Forest 10 */
+    --good-border: #aaf7e6;   /* Forest 30 */
+    --warn: #80550f;          /* Butter 100 — readable text */
+    --warn-bg: #fff9f2;       /* Butter 10 */
+    --warn-border: #ffeccd;   /* Butter 30 */
+    --bad: #b00045;           /* Ruby 80 — readable text */
+    --bad-bg: #fcf0f0;        /* Ruby 10 */
+    --bad-border: #fbc2c4;    /* Ruby 30 */
+    --info: #3547c4;          /* Cobalt 60 */
+    --info-bg: #f0f2fc;       /* Cobalt 10 */
+    --info-border: #ccd5f7;   /* Cobalt 30 */
+    --quote: #802ee6;         /* Violet base */
+    --code-bg: #ebebf0;       /* Cosmic 20 */
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  /* Hero */
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .week-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+    border: 1px solid var(--info-border);
+    background: var(--info-bg); color: var(--accent);
+  }
+  .tldr {
+    font-size: 17px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  /* Deadline pill strip */
+  .deadline-strip {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+  }
+  .deadline-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--bad-bg); border: 1px solid var(--bad-border);
+    color: var(--bad); border-radius: 999px; padding: 5px 14px;
+    font-size: 12.5px; font-weight: 600;
+  }
+  .deadline-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .deadline-pill .when { color: rgba(176,0,69,0.65); font-weight: 500; }
+
+  /* Sections */
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 16px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 4px; }
+
+  /* Week at a glance table */
+  table.glance {
+    width: 100%; border-collapse: collapse; margin-top: 8px;
+    font-size: 14px;
+  }
+  table.glance th, table.glance td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.glance th {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.glance tr:last-child td { border-bottom: none; }
+  table.glance tr:hover td { background: var(--panel-soft); }
+  table.glance td.day-cell { font-weight: 600; color: var(--ink); white-space: nowrap; width: 110px; }
+  table.glance td.free-cell { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; width: 80px; }
+  table.glance td.priority-cell { font-size: 13.5px; }
+  table.glance .today-row td { background: var(--accent-soft); }
+  table.glance .today-row td.day-cell { color: var(--accent); }
+
+  /* Day cards (collapsible details) */
+  .day-card {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    border-radius: 12px; margin-bottom: 10px; overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+  .day-card[open] { border-color: var(--info-border); }
+  .day-card.today { border-color: var(--accent); border-left-width: 3px; }
+  .day-card summary {
+    padding: 14px 18px; cursor: pointer; list-style: none;
+    position: relative; display: flex; align-items: center; gap: 14px;
+  }
+  .day-card summary::-webkit-details-marker { display: none; }
+  .day-card summary::after {
+    content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+    font-size: 20px; color: var(--accent); font-weight: 400;
+  }
+  .day-card[open] summary::after { content: "−"; }
+  .day-card .day-dow {
+    font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; min-width: 32px; font-weight: 600;
+  }
+  .day-card .day-date {
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    min-width: 80px; letter-spacing: -0.0025em;
+  }
+  .day-card .day-tag {
+    font-size: 10.5px; padding: 3px 9px; border-radius: 6px;
+    background: var(--bad-bg); color: var(--bad); font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border: 1px solid var(--bad-border);
+  }
+  .day-card .day-headline {
+    flex: 1; font-size: 13.5px; color: var(--muted);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    margin-right: 36px;
+  }
+  .day-card .day-body { padding: 4px 18px 18px; }
+  .day-card .day-deadline {
+    background: var(--bad-bg); border-left: 3px solid var(--bad);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 13.5px; color: var(--bad); margin-bottom: 14px;
+  }
+  .day-card .day-deadline b { color: var(--bad); }
+
+  /* Day card sub-sections */
+  .day-section { margin: 14px 0 6px; }
+  .day-section:first-child { margin-top: 6px; }
+  .day-section h4 {
+    margin: 0 0 8px; font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+    padding-bottom: 4px; border-bottom: 1px dotted var(--line);
+  }
+  .day-section ul { margin: 0; padding-left: 20px; font-size: 14px; }
+  .day-section ul li { margin-bottom: 4px; }
+  .day-section .meeting-row {
+    font-size: 13.5px; padding: 4px 0;
+  }
+  .day-section .meeting-row .m-time {
+    font-family: var(--mono); font-size: 12.5px; color: var(--muted);
+    margin-right: 10px;
+  }
+  .day-section .free-block {
+    display: inline-block; font-family: var(--mono); font-size: 12.5px;
+    color: var(--muted); background: var(--code-bg);
+    padding: 2px 8px; border-radius: 5px; margin: 0 6px 4px 0;
+  }
+  .day-section .free-total { font-size: 12px; color: var(--muted); margin-left: 4px; }
+  .day-section ol.priority-list {
+    padding-left: 22px; margin: 4px 0 0; font-size: 14px;
+  }
+  .day-section ol.priority-list li { margin-bottom: 6px; }
+  .day-section ol.priority-list li b { color: var(--ink); }
+  .day-section .empty { font-size: 13px; color: var(--muted); font-style: italic; }
+
+  /* Carryover panel */
+  .carryover-list { display: grid; gap: 6px; margin-top: 4px; }
+  .carryover-row {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px;
+    font-size: 13.5px;
+    padding: 6px 10px;
+    background: var(--panel-soft); border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .carryover-row .c-title { font-weight: 600; color: var(--ink); }
+  .carryover-row .c-detail { color: var(--muted); font-size: 13px; flex: 1; min-width: 200px; }
+  .carryover-row .c-priority {
+    font-size: 10.5px; padding: 2px 8px; border-radius: 5px;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    border: 1px solid;
+  }
+  .c-priority.high { color: var(--bad); border-color: var(--bad-border); background: var(--bad-bg); }
+  .c-priority.med  { color: var(--warn); border-color: var(--warn-border); background: var(--warn-bg); }
+  .c-priority.low  { color: var(--muted); border-color: var(--line); background: var(--code-bg); }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 14px 16px; border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); }
+  .callout.try  { background: var(--accent-soft); border-color: var(--info-border); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); }
+  .callout p { max-width: none; margin: 0; }
+  .callout-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+  .callout.info .callout-label { color: var(--accent); }
+  .callout.try  .callout-label { color: var(--accent); }
+  .callout.warn .callout-label { color: var(--warn); }
+
+  /* Collapsible details */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent);
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+
+  /* Code */
+  code, pre { font-family: var(--mono); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  /* Footer */
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  /* Print */
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    a { color: #18181d; }
+    details.q summary::before, details.q[open] summary::before,
+    .day-card summary::after, .day-card[open] summary::after { display: none; }
+    details.q, .day-card { page-break-inside: avoid; }
+    details.q .q-body, .day-card .day-body { display: block !important; }
+    details.q[open], .day-card[open] { /* force open on print */ }
+  }
+
+  @media (max-width: 640px) {
+    .day-card summary { flex-wrap: wrap; }
+    .day-card .day-headline { white-space: normal; margin-right: 28px; }
+    table.glance td.free-cell { width: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">Personal Assistant · Weekly Plan</div>
+    <h1>Week of 2026-05-11 — W20</h1>
+    <div class="meta-row">
+      <span><b>Range:</b> Mon May 11 – Fri May 15</span>
+      <span class="week-chip">Week B</span>
+      <span><b>Materialized:</b> 2026-05-08</span>
+    </div>
+    <p class="tldr">
+      Two hard EOD deadlines front-load Mon and Tue. Wed's 2:30 SEM Sync is the
+      unblock moment for Meta Ads. Thu and Fri open up for the new SEO Strategy
+      project — Phase 1 pillars, import previous work, inventory assets.
+    </p>
+    <div class="deadline-strip">
+      <span class="deadline-pill"><span class="when">Mon EOD ·</span> Webinar landing page launched + audience email scheduled</span>
+      <span class="deadline-pill"><span class="when">Tue EOD ·</span> Ad Conversion Tracking audit complete</span>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>Week at a glance</h2>
+    <table class="glance">
+      <thead>
+        <tr><th>Day</th><th>Meetings</th><th>Free</th><th>Top priority</th></tr>
+      </thead>
+      <tbody>
+        <tr class="today-row" data-date="2026-05-11">
+          <td class="day-cell">Mon 5/11</td>
+          <td>9:00 Product Feature Request</td>
+          <td class="free-cell">~7h</td>
+          <td class="priority-cell">Webinar landing page launch · audience email scheduled EOD · Resources menu</td>
+        </tr>
+        <tr data-date="2026-05-12">
+          <td class="day-cell">Tue 5/12</td>
+          <td>11:00 Cerkl all-hands · 3:00 Sales</td>
+          <td class="free-cell">~6.75h</td>
+          <td class="priority-cell">Ad Conversion Tracking audit (<b>due EOD</b>) · SEO kickoff</td>
+        </tr>
+        <tr data-date="2026-05-13">
+          <td class="day-cell">Wed 5/13</td>
+          <td>10:00 Marketing · 2:30 SEM Sync w/ Joey</td>
+          <td class="free-cell">~7h</td>
+          <td class="priority-cell">Meta Ads unblock convo @ 2:30 · SEO pillars + import previous work</td>
+        </tr>
+        <tr data-date="2026-05-14">
+          <td class="day-cell">Thu 5/14</td>
+          <td>9:00 Growth w/ Tarek</td>
+          <td class="free-cell">~6.7h</td>
+          <td class="priority-cell">SEO inventory of skills + <code>marketing/</code> folder · finish webinar YouTube clips</td>
+        </tr>
+        <tr data-date="2026-05-15">
+          <td class="day-cell">Fri 5/15</td>
+          <td>8:30 Cerkl 3.0 · 9:30 Marc · 11:00 Broadcast Sprint Review</td>
+          <td class="free-cell">~6h</td>
+          <td class="priority-cell">SEO content-planning process + audit · carryover wrap-ups · Friday retro</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Daily</h2>
+    <p style="color:var(--muted); font-size:13.5px; margin-top:-4px;">Click any day to expand. Today's card opens automatically.</p>
+
+    <details class="day-card" data-date="2026-05-11">
+      <summary>
+        <span class="day-dow">Mon</span>
+        <span class="day-date">May 11</span>
+        <span class="day-tag">deadline</span>
+        <span class="day-headline">Webinar landing page + audience email scheduled (EOD)</span>
+      </summary>
+      <div class="day-body">
+        <div class="day-deadline"><b>Hard deadline EOD:</b> Webinar landing page launched + audience email scheduled.</div>
+
+        <div class="day-section">
+          <h4>Meetings</h4>
+          <div class="meeting-row"><span class="m-time">9:00 – 10:00 am</span>Product Feature Request Meeting <span style="color:var(--muted); font-size:12px;">(Week B)</span></div>
+        </div>
+
+        <div class="day-section">
+          <h4>Free blocks</h4>
+          <span class="free-block">10:00 am – 5:00 pm</span><span class="free-total">7h total</span>
+        </div>
+
+        <div class="day-section">
+          <h4>Priorities for the day</h4>
+          <ol class="priority-list">
+            <li><b>Webinars — landing page final approval + launch</b> (paired with Cerkl Website project — same work)</li>
+            <li><b>Webinars — audience follow-up email</b> — implement + schedule for EOD send</li>
+            <li><b>Webinars — Resources menu</b> — once landing page live, work with Furqan to add (Webflow CMS)</li>
+          </ol>
+        </div>
+
+        <div class="day-section">
+          <h4>Ad-hocs / notes</h4>
+          <p class="empty">(empty)</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="day-card" data-date="2026-05-12">
+      <summary>
+        <span class="day-dow">Tue</span>
+        <span class="day-date">May 12</span>
+        <span class="day-tag">deadline</span>
+        <span class="day-headline">Ad Conversion Tracking audit (EOD) · SEO kickoff</span>
+      </summary>
+      <div class="day-body">
+        <div class="day-deadline"><b>Hard deadline EOD:</b> Ad Conversion Tracking audit complete (Segment → Google Ads + Bing).</div>
+
+        <div class="day-section">
+          <h4>Meetings</h4>
+          <div class="meeting-row"><span class="m-time">11:00 – 11:30 am</span>Team meeting (Cerkl all-hands)</div>
+          <div class="meeting-row"><span class="m-time">3:00 – 3:45 pm</span>Sales meeting</div>
+        </div>
+
+        <div class="day-section">
+          <h4>Free blocks</h4>
+          <span class="free-block">9:00 – 11:00 am</span>
+          <span class="free-block">11:30 am – 3:00 pm</span>
+          <span class="free-block">3:45 – 5:00 pm</span>
+          <span class="free-total">6.75h total</span>
+        </div>
+
+        <div class="day-section">
+          <h4>Priorities for the day</h4>
+          <ol class="priority-list">
+            <li><b>Ad Conversion Tracking</b> — diagnose Segment → Google Ads + Bing; complete audit (due EOD)</li>
+            <li><b>SEO Strategy &amp; Plan</b> — kickoff: outline SEO pillars</li>
+          </ol>
+        </div>
+
+        <div class="day-section">
+          <h4>Ad-hocs / notes</h4>
+          <p class="empty">(empty)</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="day-card" data-date="2026-05-13">
+      <summary>
+        <span class="day-dow">Wed</span>
+        <span class="day-date">May 13</span>
+        <span class="day-headline">Meta Ads unblock @ 2:30 SEM Sync · SEO pillars</span>
+      </summary>
+      <div class="day-body">
+        <div class="day-section">
+          <h4>Meetings</h4>
+          <div class="meeting-row"><span class="m-time">10:00 – 10:30 am</span>Marketing Team meeting</div>
+          <div class="meeting-row"><span class="m-time">2:30 – 3:00 pm</span>SEM Sync w/ Joey <span style="color:var(--accent); font-weight:600;">← Meta Ads unblock conversation</span></div>
+        </div>
+
+        <div class="day-section">
+          <h4>Free blocks</h4>
+          <span class="free-block">9:00 – 10:00 am</span>
+          <span class="free-block">10:30 am – 2:30 pm</span>
+          <span class="free-block">3:00 – 5:00 pm</span>
+          <span class="free-total">7h total</span>
+        </div>
+
+        <div class="day-section">
+          <h4>Priorities for the day</h4>
+          <ol class="priority-list">
+            <li><b>Meta Ads</b> — use 2:30 SEM Sync to align with Joey on path to unblock account access (IT + Meta support)</li>
+            <li><b>SEO Strategy &amp; Plan</b> — finalize pillars; import previous SEO work into the project</li>
+          </ol>
+        </div>
+
+        <div class="day-section">
+          <h4>Ad-hocs / notes</h4>
+          <p class="empty">(empty)</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="day-card" data-date="2026-05-14">
+      <summary>
+        <span class="day-dow">Thu</span>
+        <span class="day-date">May 14</span>
+        <span class="day-headline">SEO inventory + Webinar YouTube clips</span>
+      </summary>
+      <div class="day-body">
+        <div class="day-section">
+          <h4>Meetings</h4>
+          <div class="meeting-row"><span class="m-time">9:00 – 10:20 am</span>Growth Meeting with Tarek</div>
+        </div>
+
+        <div class="day-section">
+          <h4>Free blocks</h4>
+          <span class="free-block">10:20 am – 5:00 pm</span>
+          <span class="free-total">~6.7h total</span>
+        </div>
+
+        <div class="day-section">
+          <h4>Priorities for the day</h4>
+          <ol class="priority-list">
+            <li><b>SEO Strategy &amp; Plan</b> — inventory existing skills + the imported <code>marketing/</code> folder; map which apply where (especially SEO audit)</li>
+            <li><b>Webinars — YouTube snippets</b> — finish remaining clips</li>
+          </ol>
+        </div>
+
+        <div class="day-section">
+          <h4>Ad-hocs / notes</h4>
+          <p class="empty">(empty)</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="day-card" data-date="2026-05-15">
+      <summary>
+        <span class="day-dow">Fri</span>
+        <span class="day-date">May 15</span>
+        <span class="day-headline">SEO content-planning · carryover wrap-ups · Friday retro</span>
+      </summary>
+      <div class="day-body">
+        <div class="day-section">
+          <h4>Meetings</h4>
+          <div class="meeting-row"><span class="m-time">8:30 – 9:00 am</span>Cerkl 3.0 check-in</div>
+          <div class="meeting-row"><span class="m-time">9:30 – 10:30 am</span>Sync with Marc Fregoe</div>
+          <div class="meeting-row"><span class="m-time">11:00 am – 12:00 pm</span>Broadcast Sprint Review <span style="color:var(--muted); font-size:12px;">(Week B)</span></div>
+        </div>
+
+        <div class="day-section">
+          <h4>Free blocks</h4>
+          <span class="free-block">9:00 – 9:30 am</span>
+          <span class="free-block">10:30 – 11:00 am</span>
+          <span class="free-block">12:00 – 5:00 pm</span>
+          <span class="free-total">6h total</span>
+        </div>
+
+        <div class="day-section">
+          <h4>Priorities for the day</h4>
+          <ol class="priority-list">
+            <li><b>SEO Strategy &amp; Plan</b> — define content-planning process (blog ↔ SEO linkage); run SEO audit if the inventoried skill is ready</li>
+            <li>Carryover wrap-ups: Sourceforge claim · ICPro SEO Rich Results · AI video research</li>
+            <li><b>Friday retro</b> — end of day, run the <code>retro</code> skill to archive this week</li>
+          </ol>
+        </div>
+
+        <div class="day-section">
+          <h4>Ad-hocs / notes</h4>
+          <p class="empty">(empty)</p>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Carryover candidates</h2>
+    <p style="font-size:13.5px; color:var(--muted); margin-top:-4px;">From INDEX but not slotted this week. Pull in if a focus block opens.</p>
+    <div class="carryover-list">
+      <div class="carryover-row">
+        <span class="c-title">The Cerkular</span>
+        <span class="c-detail">Jira FUTURE-232 (blocked)</span>
+        <span class="c-priority med">Med</span>
+      </div>
+      <div class="carryover-row">
+        <span class="c-title">Press Release</span>
+        <span class="c-detail">Resume late May; embargo 2026-06-01</span>
+        <span class="c-priority med">Med</span>
+      </div>
+      <div class="carryover-row">
+        <span class="c-title">Cerkl Website — Email builder WCAG blurb</span>
+        <span class="c-detail">Per Travis: not super important</span>
+        <span class="c-priority low">Low</span>
+      </div>
+      <div class="carryover-row">
+        <span class="c-title">Advertising — LinkedIn test with Rachel</span>
+        <span class="c-detail">Gallagher; explore Interest-Based Ads</span>
+        <span class="c-priority low">Low</span>
+      </div>
+      <div class="carryover-row">
+        <span class="c-title">YouTube — decision with TK</span>
+        <span class="c-detail">Post product videos (Foundations, Audience Manager) to Cerkl YouTube?</span>
+        <span class="c-priority low">Low</span>
+      </div>
+      <div class="carryover-row">
+        <span class="c-title">IC Trends Knowledge Base</span>
+        <span class="c-detail">Decide scope option before any restructure</span>
+        <span class="c-priority low">Low</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Friday retro notes</h2>
+    <div class="callout info">
+      <div class="callout-label">Populated Friday</div>
+      <p>Run during the <code>retro</code> skill at end of day Fri. What shipped, what slipped, observations to carry forward.</p>
+    </div>
+  </section>
+
+  <footer>
+    Generated 2026-05-08 · Source markdown: <code>cerkl/personal-assistant/calendar/current-week.md</code>
+  </footer>
+
+</div>
+
+<script>
+  // Auto-open today's day-card and highlight the matching row in Week at a Glance.
+  (function() {
+    var today = new Date();
+    var y = today.getFullYear();
+    var m = String(today.getMonth() + 1).padStart(2, '0');
+    var d = String(today.getDate()).padStart(2, '0');
+    var iso = y + '-' + m + '-' + d;
+    var todayCard = document.querySelector('details.day-card[data-date="' + iso + '"]');
+    if (todayCard) {
+      todayCard.open = true;
+      todayCard.classList.add('today');
+    }
+    // Glance row highlight: clear any pre-rendered today-row, then mark the real one.
+    document.querySelectorAll('table.glance tr.today-row').forEach(function(r) { r.classList.remove('today-row'); });
+    var todayRow = document.querySelector('table.glance tr[data-date="' + iso + '"]');
+    if (todayRow) todayRow.classList.add('today-row');
+  })();
+</script>
+</body>
+</html>

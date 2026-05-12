@@ -37,6 +37,7 @@ Invoke these in roughly the order the project moves through phases.
 | Webinar | Rehearsal checklist + day-of run-of-show | [`webinar-runofshow`](skills/webinar-runofshow/SKILL.md) |
 | Follow-up | **Ingest raw event artifacts** (transcript .vtt + chat .txt + deck .pptx) into cleaned source-of-truth files. **Run this first** — every other follow-up skill consumes its output. | [`webinar-ingest`](skills/webinar-ingest/SKILL.md) |
 | Follow-up | Post-event recording distribution email | [`webinar-followup-email`](skills/webinar-followup-email/SKILL.md) |
+| Follow-up | Push the 2 follow-up emails into HubSpot as new drafts (clone the most recent promo for this same webinar; user publishes from UI) | [`hubspot/skills/draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) |
 | Follow-up | YouTube clip plan from transcript | [`webinar-recap-clips`](skills/webinar-recap-clips/SKILL.md) |
 | Follow-up | Standalone topic-led blog post derived from the webinar's IP — published to the SEO blog archive, not framed as a recap | [`webinar-recap-blog`](skills/webinar-recap-blog/SKILL.md) |
 

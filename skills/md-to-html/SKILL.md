@@ -12,7 +12,7 @@
 ## Inputs
 
 - **Source path** (required) — absolute path to the `.md` file to convert
-- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `generic`
+- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `weekly-plan` (PA `current-week.md`) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `generic`
 
 ## Output
 
@@ -45,6 +45,7 @@ Run the md-to-html skill on <source_path>.
 1. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/SKILL.md
 2. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-deep-dive.html — visual language reference (theme, components, JS).
    For `daily-recap` artifact type, also read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-daily-recap.html.
+   For `weekly-plan` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-weekly-plan.html instead — it carries the day-card collapsibles, deadline-pill strip, week-at-a-glance table, and auto-open-today JS.
    For `hook-batch` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-hook-batch.html instead — it carries the selection UI and copy-to-clipboard JS that the other references don't have.
 3. Read the source markdown at <source_path>.
 4. Write the HTML at the sibling path (same basename, .html extension), self-contained per the skill's quality bar.
@@ -53,7 +54,7 @@ Run the md-to-html skill on <source_path>.
 
 ## Design principles
 
-The point of HTML output (per Thariq Shihipar's "Unreasonable Effectiveness of HTML", 2026-05-08) is to use what HTML can do that Markdown can't. Don't just style the Markdown — **rearrange for visual density**.
+The point of HTML output is to use what HTML can do that Markdown can't. Don't just style the Markdown — **rearrange for visual density**.
 
 ### Typography — Cerkl brand-aligned
 
@@ -163,6 +164,27 @@ Layout-specific patterns:
 - Watchlist is *much* denser than top items — small font, one line each, multi-column where space allows
 - Don't include a "recommendation" block — daily recaps don't recommend
 
+### `weekly-plan`
+
+See `reference-weekly-plan.html` for the canonical example. Used by the `personal-assistant` `plan-week` skill to render a sibling HTML of `current-week.md`. Scope is Mon–Fri work — not a personal life-plan (that artifact lives in `personal/` with a different theme).
+
+Sections:
+1. **Hero** — breadcrumb (`Personal Assistant · Weekly Plan`), title (`Week of <Mon> — W##`), meta-row (Range, Week A/B chip, Materialized date), TL;DR (2–3 sentences synthesizing the week's shape), and a **deadline-pill strip** for any hard EOD/by-date deadlines in the week. No verdict pill — weekly plans don't recommend; they allocate.
+2. **Week at a glance** — a 4-column table (Day | Meetings | Free | Top priority). The "today" row gets a Cobalt-tinted background; the auto-open JS rewrites this on load using the visitor's local date, so don't hard-code which row is "today" unless you also want the script to overwrite it.
+3. **Daily** — one collapsible `<details class="day-card">` per Mon–Fri. Each card has:
+   - Summary row with day-of-week, date, optional `.day-tag` (e.g. `deadline`), and a one-line headline of the day's top priority
+   - `.day-deadline` callout at the top of the body if the day has a hard EOD deadline
+   - `.day-section` sub-blocks for Meetings, Free blocks, Priorities for the day, Ad-hocs / notes (preserve empty `(empty)` placeholders rather than dropping the section — Travis reads the absence as signal)
+4. **Carryover candidates** — `.carryover-row` list with title · detail · priority pill (`.high` / `.med` / `.low`).
+5. **Friday retro notes** — `.callout.info` placeholder section. Stays empty in the materialized plan; the `retro` skill populates it Friday end-of-day.
+
+Layout-specific patterns:
+- The `data-date="YYYY-MM-DD"` attribute on every day-card and glance row is **required** — the auto-open script keys off it
+- Day-card auto-opens for today and gets `.today` styling (left-border accent)
+- Free blocks render as inline `.free-block` code-style pills with a total at the end
+- Priorities use an ordered list; bold the project name at the start of each item
+- Don't include personal-life sections (goals, calendar snapshot with non-work events, weekend days) — this artifact is work-only. If a user wants a full life-plan, that's the personal/ template, not this one.
+
 ### `hook-batch`
 
 See `reference-hook-batch.html` for the canonical example. **This is the only artifact type with interactive state.** Used exclusively by the `paid-youtube` channel's hook generation flow.
@@ -221,10 +243,11 @@ Render sections in source order, applying components opportunistically. Use call
 
 ## Component reference
 
-This skill folder contains three reference templates:
+This skill folder contains four reference templates:
 
 - **`reference-deep-dive.html`** — canonical visual language (dark-mode, serif body, component library, click-to-copy JS, print stylesheet). Use as the source-of-truth design system reference.
 - **`reference-daily-recap.html`** — example application of the same design system to a daily-recap content shape. Use when artifact-type is `daily-recap`.
+- **`reference-weekly-plan.html`** — PA weekly-plan variant. Day-card collapsibles (Mon–Fri), deadline-pill strip, week-at-a-glance table, auto-open-today JS. Use when artifact-type is `weekly-plan`.
 - **`reference-hook-batch.html`** — selection-driven variant of the design system. Adds checkbox-state cards, sticky selection bar, and copy-to-clipboard JS that produces a paste-ready text block. Use when artifact-type is `hook-batch`.
 
 Read whichever matches your artifact type once, then write fresh HTML — don't try to diff against it. Both share the same CSS theme, so cross-referencing the deep-dive reference for components and the recap reference for layout is fine.
@@ -250,6 +273,12 @@ Component classes available in the reference:
 | `details.q` | Collapsible open questions / notes |
 | `.top-item` / `.cat-badge.*` | Numbered top-item card with category badge (daily-recap) |
 | `.watchlist` / `.watch-row` | Compact multi-column watchlist (daily-recap) |
+| `.deadline-strip` / `.deadline-pill` | Hard-deadline pills in the hero (weekly-plan) |
+| `table.glance` | Week-at-a-glance table with today-row highlight (weekly-plan) |
+| `.day-card` / `.day-section` | Collapsible per-day card with Meetings / Free / Priorities sub-blocks (weekly-plan) |
+| `.free-block` | Inline mono pill for a free time range (weekly-plan) |
+| `.carryover-row` / `.c-priority.{high,med,low}` | Carryover candidates list with priority pill (weekly-plan) |
+| `.week-chip` | Week A/B parity chip in the hero meta-row (weekly-plan) |
 | `.sel-bar` | Sticky selection bar with counter + copy/clear buttons (hook-batch) |
 | `.hook-card` (+ `.selected`) | Selectable hook card with custom checkbox (hook-batch) |
 | `.cat-badge.pain` / `.positioning` / `.pattern` | Angle and pattern type badges (hook-batch) |

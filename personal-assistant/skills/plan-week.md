@@ -72,6 +72,21 @@ Goal: produce a fresh `calendar/current-week.md` that materializes the upcoming 
     - Flag any tight spots: "Press Release deadline Fri — Mon and Tue are your only big focus blocks before Maria needs the draft."
     - Ask: anything to adjust before finalizing?
 
+11. **Render HTML sibling** (after Travis confirms the markdown is final)
+    - Dispatch the `md-to-html` skill on `calendar/current-week.md` with artifact-type `weekly-plan`.
+    - Output lands at `calendar/current-week.html` (same basename, sibling path).
+    - Brief for the sub-agent:
+      ```
+      Run the md-to-html skill on /Users/travisfoster/claude-code/cerkl/personal-assistant/calendar/current-week.md with artifact-type weekly-plan.
+
+      1. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/SKILL.md
+      2. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-weekly-plan.html
+      3. Read the source markdown.
+      4. Write current-week.html at the sibling path.
+      5. Return only the output path + one-line confirmation. Do not echo HTML.
+      ```
+    - Re-run this step on any mid-week re-materialization or after the Friday retro updates the file. The HTML is a derived artifact — always regenerated from the `.md`, never edited directly.
+
 ## Don't
 
 - Don't pin tasks to specific time slots within a day. Day-level allocation only.

@@ -55,6 +55,79 @@ By default, **two emails** (attendees + did-not-attend). Each includes:
 
 Write to `<speaker-slug>-followup-email.md` in the event folder.
 
+## Push both emails into HubSpot
+
+After writing the markdown file, automatically push **both** follow-up emails into HubSpot as new drafts (one Attendees, one Did-not-attend).
+
+Unlike promos, follow-up emails do not clone from a standing template. **Clone from the most recent promo email for this same webinar** so the new drafts inherit that webinar's audience list and subscription type — the lists you'll send to (Attendees vs. Registered-but-did-not-attend) are sliced from the same audience the promos targeted, so cloning the promo is the right starting point.
+
+### Step 1 — Check if drafts already exist (safety check)
+
+Travis sometimes pre-clones the follow-up drafts manually before this skill runs. Before cloning, list `BATCH_EMAIL` emails and look for an existing pair matching the naming convention below:
+
+Use the listing pattern from [`audit-marketing-emails`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/audit-marketing-emails/SKILL.md) Phase 2 — just the list call, not a full audit. Filter results by name containing the speaker's last name plus `Follow-up`.
+
+- **If both drafts exist** → use `draft-marketing-email` in **update mode**: read-modify-write each draft's body HTML and preview text. Don't re-clone.
+- **If neither exists** → continue to Step 2.
+
+### Step 2 — Find the clone source
+
+The clone source is the most recent promo email for this webinar — typically the day-before reminder (Email #3 from `webinar-promo-emails`). Cerkl-voice promos follow the naming convention `[Speaker] [Month YYYY] - Webinar Promo Email #N`.
+
+Use the lookup pattern from [`draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) Phase A to find it by speaker name. Confirm the source ID with the user before cloning.
+
+If the promo emails were never pushed to HubSpot (unusual — `webinar-promo-emails` does this automatically), fall back to cloning any recent webinar promo for the same audience (e.g., `211471728030` "April 2026 Webinar - Matt Frost").
+
+### Step 3 — Clone the source twice and PATCH each
+
+Use [`draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) in **create mode** for each follow-up email.
+
+**Naming convention** (matches the existing Matt Frost follow-ups):
+
+```
+[Speaker] Webinar - Follow-up - Attendees
+[Speaker] Webinar - Follow-up - Missed
+```
+
+Examples:
+- `Matt Frost Webinar - Follow-up - Attendees`
+- `Matt Frost Webinar - Follow-up - Missed`
+
+For each clone:
+
+1. **Clone** the promo source with the name above (create-mode workflow in `draft-marketing-email`).
+2. **PATCH the draft** with the new subject (use the primary subject from the markdown — not an alternate), preview text, and body HTML. Use the read-modify-write pattern; do not reconstruct the layout.
+3. **Capture the new email ID** for the markdown footer.
+
+### Step 4 — Hand off to the user
+
+After both drafts are staged, tell the user:
+
+- The 2 draft IDs and where to find them (HubSpot → Marketing → Email → Drafts).
+- **What still needs human review/edits before publishing**:
+  - Slidedeck `href` (the `[HUBSPOT_SLIDEDECK_LINK]` placeholder in the body — HubSpot's rich-text editor is the right place to set the actual file attachment)
+  - Foundations sign-up `href` (same — `[FOUNDATIONS_SIGNUP_LINK]` placeholder)
+  - **Audience list selection** — cloning carries the promo's list forward, but the Attendees draft needs the Attendees segment and the Missed draft needs the Registered-but-did-not-attend segment. These are different lists and must be switched manually.
+  - Send time.
+  - Subject line is set by Claude from the markdown file — review and swap to an alternate if desired.
+
+Never call `/publish`. The user clicks publish in the HubSpot UI for each draft after review.
+
+### Step 5 — Append a HubSpot drafts footer to the markdown file
+
+```
+---
+
+## HubSpot drafts
+
+| Audience | HubSpot ID | Draft name |
+|---|---|---|
+| Attendees | `<new-id>` | [Speaker] Webinar - Follow-up - Attendees |
+| Did-not-attend | `<new-id>` | [Speaker] Webinar - Follow-up - Missed |
+
+Cloned from `<source-id>` (`<source-name>`).
+```
+
 ## Push update
 
-After producing the follow-up, append an update block to the relevant file in `personal-assistant/projects/`. See [../../CLAUDE.md](../../CLAUDE.md) for the protocol.
+After producing the follow-up AND staging the HubSpot drafts, append an update block to the relevant file in `personal-assistant/projects/`. See [../../CLAUDE.md](../../CLAUDE.md) for the protocol.

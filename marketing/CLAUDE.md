@@ -17,6 +17,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 |---|---|
 | Strategy, diagnosis, roadmap, 90-day sprint | `marketing-strategy/` |
 | Content planning, monthly plans, Jira CSV (cross-channel) | `content-plan/` |
+| SEO strategy, keyword maps, audits, backlinks, technical roadmap | [`seo/`](seo/CLAUDE.md) |
 | Cerkl-branded SEO blog posts (cerkl.com, Webflow) | [`channels/seo-blog/`](channels/seo-blog/CLAUDE.md) |
 | Internal Comms Pro blog posts (internalcommspro.com, Wix) | [`channels/icpro-blog/`](channels/icpro-blog/CLAUDE.md) |
 | LinkedIn content | `channels/linkedin/` |
@@ -51,6 +52,7 @@ marketing/
 │   └── team/
 │       └── weekly-mtg/
 ├── content-plan/                    ← cross-channel: annual + monthly plans, Jira CSV rules
+├── seo/                             ← cross-channel: keyword strategy, audits, backlinks, technical roadmap
 ├── channels/
 │   ├── seo-blog/                    ← cerkl.com blog (Webflow): CLAUDE.md, process, skills/, posts/
 │   ├── icpro-blog/                  ← internalcommspro.com (Wix): CLAUDE.md, process, skills/, posts/
