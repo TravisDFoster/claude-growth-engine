@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop "Cici" Agentic AI — IC Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout.bad { background: var(--bad-bg); border-color: var(--bad-border); color: var(--bad); }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 8px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+  .stack-card .tag {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 999px; margin-bottom: 8px;
+  }
+  .stack-card .tag.threat { background: var(--bad-bg); color: var(--bad); border: 1px solid var(--bad-border); }
+  .stack-card .tag.counter { background: var(--good-bg); color: var(--good); border: 1px solid var(--good-border); }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco ol { padding-left: 22px; margin: 8px 0 12px; }
+  .reco ol li { font-size: 14.5px; margin-bottom: 6px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative; padding-right: 40px;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+  details.q .q-body p:last-child { margin-bottom: 0; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>Workshop "Cici" Agentic AI — prompt → send-ready campaign</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-14</span>
+      <span><b>Category:</b> Competitor — capability launch (not full vendor refresh)</span>
+      <span class="verdict warn">Update competitors.md — commission vs. page</span>
+    </div>
+    <p class="tldr">
+      Workshop's <b>Cici</b> (initial launch <b>2026-02-19</b>) shipped its biggest expansion on <b>2026-05-12</b>: a single natural-language prompt now returns a <b>fully designed, send-ready email</b> — layout, copy, images, formatting, tone. Press framing is "agentic AI that builds complete internal comms from a single prompt," but the actual mechanic is artifact-generation: Cici produces the email; <b>send, segmentation, and scheduling still happen in Workshop's existing UI</b>. Cici is bundled across all plans (no upcharge today) and there's a <b>free Cici lite at useworkshop.com/cici with no account required</b> — a top-of-funnel wedge that is more strategically interesting than the in-product agent itself.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Append the 2026-05-14 Cici update line to the "Where Competitors Win — Workshop" row in <code>shared/competitors.md</code>, then add the reframe below to the "vs. Workshop" head-to-head section.
+      <div class="code-row">
+        <code id="reframe-line">Workshop Cici writes the email. Cerkl makes sure it gets read by the right person on the right channel. Different jobs.</code>
+        <button class="copy-btn" data-copy="reframe-line" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is &amp; what it does</h2>
+    <div class="cols-2">
+      <div>
+        <h3>What it is</h3>
+        <p>
+          <b>Cici</b> is Workshop's branded agentic AI assistant for IC. It launched <b>2026-02-19</b> as an in-editor copy assistant and analytics agent, then expanded <b>2026-05-12</b> to single-prompt full-email generation. Built by Workshop (Twin Cities, ~100 employees, ~600 customers, Foundations-tier IC platform priced from $250/mo / $3k/yr floor). Currently in <b>beta</b>, with rolling updates.
+        </p>
+        <h3>Source URLs</h3>
+        <ul>
+          <li>Homepage: <a href="https://www.useworkshop.com">useworkshop.com</a></li>
+          <li>Cici product page: <a href="https://useworkshop.com/cici">useworkshop.com/cici</a></li>
+          <li>Cici docs (beta): <a href="https://docs.useworkshop.com/hc/en-us/articles/49228484483347-Cici-Workshop-AI-assistant-Beta">docs.useworkshop.com</a></li>
+          <li>May 2026 launch press: <a href="https://www.prnewswire.com/news-releases/workshop-launches-agentic-ai-that-builds-complete-internal-comms-from-a-single-prompt-302769308.html">PR Newswire</a></li>
+          <li>Feb 2026 launch press: <a href="https://www.prnewswire.com/news-releases/workshop-launches-cici-an-agentic-ai-assistant-built-for-modern-internal-communications-302692714.html">PR Newswire</a></li>
+          <li>Pricing: <a href="https://useworkshop.com/pricing">useworkshop.com/pricing</a></li>
+          <li>Press pickup: <a href="https://martechseries.com/predictive-ai/ai-platforms-machine-learning/workshop-launches-agentic-ai-that-builds-complete-internal-comms-from-a-single-prompt/">MarTech Series</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>What it does — user flow (confirmed)</h3>
+        <ol style="padding-left:22px; margin:8px 0 12px;">
+          <li>Communicator types a single natural-language prompt (e.g., <em>"open enrollment reminder for full-time employees"</em>, <em>"monthly safety update for our warehouse team"</em>).</li>
+          <li>Cici returns a <b>fully designed, send-ready email</b> — layout, copy, images, formatting, tone — in seconds.</li>
+          <li>The user lands in Workshop's existing collaborative editor with the artifact ready to refine, then sends through Workshop's existing distribution UI (segments, schedule, deliver).</li>
+        </ol>
+
+        <h3>Adjacent capabilities (also Cici)</h3>
+        <ul>
+          <li>In-editor copy refinement and tone adjustment.</li>
+          <li>Multi-language translation.</li>
+          <li>Analytics agent: summarizes campaign performance, compares quarters, flags engagement drop-off, recommends best send time.</li>
+          <li>Real-time multi-user collaborative editor (not strictly AI, bundled in same launch).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Positioning quotes (verbatim, vendor-controlled)</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Most IC teams are running on instinct, three cups of coffee, and not enough time."</p>
+        <div class="who">— Jamie Bell, CMO · <a href="https://martechseries.com/predictive-ai/ai-platforms-machine-learning/workshop-launches-agentic-ai-that-builds-complete-internal-comms-from-a-single-prompt/">MarTech Series</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Internal communications is high-impact work, and teams need tools that help them operate at that level."</p>
+        <div class="who">— Rick Knudtson, CEO &amp; co-founder · <a href="https://www.prnewswire.com/news-releases/workshop-launches-cici-an-agentic-ai-assistant-built-for-modern-internal-communications-302692714.html">PR Newswire, Feb 2026</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Describe what you need, and the AI generates the entire email."</p>
+        <div class="who">— Vendor framing for the May expansion · <a href="https://www.prnewswire.com/news-releases/workshop-launches-agentic-ai-that-builds-complete-internal-comms-from-a-single-prompt-302769308.html">PR Newswire, May 2026</a></div>
+      </div>
+    </div>
+
+    <div class="callout bad" style="margin-top:14px;">
+      <div class="callout-label">What it doesn't do (confirmed gaps)</div>
+      <ul style="margin:6px 0 0; padding-left:20px;">
+        <li>Cici does <b>not</b> autonomously segment, schedule, or send. Press framing of "complete campaign" overstates this — the agent generates the artifact; downstream send is still a human-in-the-loop step in Workshop's UI.</li>
+        <li>No evidence Cici reaches across multiple channels (Slack, Teams, intranet, SMS). Workshop is fundamentally email-first; Cici inherits that surface.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Same as Workshop's existing buyer — internal communications professionals at SMB through mid-market organizations. Customer logos cited in May launch (S&amp;P Global, Aston Martin, Monster Energy, Meijer) show enterprise reach but the price floor + email-only surface keeps the wedge at Foundations-tier buyers.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>A solo IC owner or small IC team needs to ship more campaigns per week, primary channel is email, brand templates are already loaded into Workshop, and "good enough" first drafts speed up the workflow.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Multi-channel delivery is required (Workshop's wedge ends at email + post-send link-forward to Slack/Teams), audience segmentation needs are complex (per-block segmentation is capped at 1 — see Gotchas), or the IC team needs API-level personalization at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>
+      Workshop is the <b>most direct head-to-head for Cerkl Foundations</b> (<a href="../../shared/competitors.md#vs-workshop"><code>shared/competitors.md</code></a> — "vs. Workshop" row). The Cici expansion sharpens that on three axes — two threaten Cerkl, one helps:
+    </p>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <span class="tag threat">Threat 1</span>
+        <h4>Speed-of-first-draft becomes table stakes at Foundations tier</h4>
+        <p>When the alternative product produces a send-ready email from one sentence, Cerkl Foundations' personalization-and-delivery story needs an equally fast first-touch experience.</p>
+        <p>The marketing question: do prospects experience Foundations as <em>"start sending in 5 minutes"</em> the way Cici frames <em>"prompt to send-ready in seconds"</em>? If not, Cici is the more visible AI story even though Cerkl has the better delivery infrastructure.</p>
+      </div>
+      <div class="stack-card">
+        <span class="tag threat">Threat 2</span>
+        <h4>Free Cici lite is a top-of-funnel wedge that competes with ChatGPT/Claude</h4>
+        <p>A communicator at a target Cerkl Foundations org can land at useworkshop.com/cici with no account and get a usable email draft. That's a marketing-funnel weapon — every IC team curious about AI lands in Workshop's brand, not Cerkl's.</p>
+        <p>Cerkl has nothing equivalent ungated today. Worth a 30-day decision on whether a free Cerkl-branded "IC AI" sandbox is a reasonable retort, even if it's just a structured prompt → templated email built on the existing Foundations engine.</p>
+      </div>
+      <div class="stack-card">
+        <span class="tag counter">Counter-positioning</span>
+        <h4>Cici is artifact generation. Cerkl is delivery intelligence.</h4>
+        <p>A first-draft email is the cheap part of IC work. Getting it read by the right person on the right channel at the right time is what changes outcomes. Cici doesn't touch that — it ends at "here's the email."</p>
+        <p>The reframe writes itself: <em>"Workshop Cici writes the email. Cerkl makes sure it gets read by the right person on the right channel. Different jobs."</em> This also lets Cerkl deflect the "we don't have an agent" line — Cerkl's wedge isn't drafting, it's delivery.</p>
+      </div>
+    </div>
+
+    <h3>Competitors.md update implications (concrete edits)</h3>
+    <ul>
+      <li>The "vs. Workshop" row in <a href="../../shared/competitors.md#vs-workshop"><code>shared/competitors.md</code></a> currently cites <em>"Workshop is email-first for SMB"</em> and the <em>"clearer upgrade path to omni-channel"</em> angle. Both still true. <b>Add:</b> a 2026-05-14 update line — <em>"Cici (Workshop's agentic AI) expanded 2026-05-12 from in-editor assist to prompt → send-ready email; bundled in all plans + free Cici lite at useworkshop.com/cici. Capability is artifact-generation only — Cici does not segment, schedule, or send. Reframe vs. Workshop: 'Cici writes the email; Cerkl makes sure it gets read.'"</em></li>
+      <li>The "Where Competitors Win — Workshop" row references the 2026-05-10 Workshop deep-dive at <code>Competitors/workshop-2026-05-10.md</code>. <b>That file is not on disk</b> (see Notes / Open questions). Either commission the full Workshop vendor refresh and place it there, or correct the path. The Cici story alone doesn't justify a full vendor re-profile.</li>
+      <li>"Gaps to commission — vs. Workshop" — most-direct Foundations-tier head-to-head, still no live <code>cerkl.com/broadcast/versus/workshop</code> page. The Cici launch is a fresh reason to commission this page now rather than later.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name"><a href="https://www.simpplr.com">Simpplr Comms AI</a> <span style="font-weight:400; color:var(--muted)">(Feb 2026)</span></td>
+          <td>Closest peer in framing — AI workspace for campaign planning + multichannel delivery + approvals — but built on top of an intranet platform with enterprise-custom pricing and IT-led implementation. Same job at a different tier.</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://firstup.io">Firstup agentic suite</a> <span style="font-weight:400; color:var(--muted)">(Mar 2026 — Search, Content Creator, Insights, Actions, Audience Builder)</span></td>
+          <td>Most architecturally similar agentic stack, but positioned at Fortune 100/500 with journey orchestration across email/mobile/SMS/intranet/signage. Not single-prompt-to-campaign for an SMB IC owner.</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://www.poppulo.com">Poppulo Create/Target/Analyze Agents</a> <span style="font-weight:400; color:var(--muted)">(Jun 2025)</span></td>
+          <td>Ships the same agent triad (generate, target, measure) plus Poppulo Designer editor, but enterprise-suite priced and anchored to a digital-signage moat rather than Workshop's prompt-first email-campaign surface.</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://www.lumapps.com">LumApps Agent Hub</a> <span style="font-weight:400; color:var(--muted)">(Nov 2025 / GA Jun 2026 under "AI Employee Hub" rebrand)</span></td>
+          <td>Agentic IC orchestration but for frontline + multichannel intranet/signage buyers running Google Workspace + M365 — not Workshop's single-prompt SMB IC persona.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Closest single competitor on the agentic-campaign axis: Simpplr Comms AI.</b> The only 2026 launch explicitly framed as an AI workspace that plans a full campaign (multichannel delivery + approvals) from an IC-owner starting point. Workshop's Cici is the SMB-tier version of the same idea, scoped to a single email rather than a full multichannel campaign.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">"Complete internal comms from a single prompt" overstates the mechanic</div>
+      Press release headline is marketing; the actual capability is <em>"complete email artifact from a single prompt."</em> Send, segmentation, and scheduling are still manual in Workshop's existing UI. Buyers expecting Cici to autonomously run a full campaign end-to-end will be disappointed.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Beta status + hallucination risk</div>
+      Cici is officially in beta with rolling updates. Industry LLM hallucination rates run 15–52% — for an IC tool generating compliance, safety, and benefits messaging, that's a non-trivial risk surface. No public Cici-specific accuracy data exists yet.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Pre-Cici Workshop limitations are now AI-personalization limitations</div>
+      Workshop's existing platform caps <b>per-block segmentation at 1</b> (vs. ContactMonkey's 10), has <b>no API</b> (SFTP/CSV data integration only), <b>no per-language proofing or analytics</b>, and click-map-only analytics with no individual engagement drill-down (<a href="https://www.contactmonkey.com/compare/workshop">ContactMonkey vs Workshop comparison</a>). For AI-generated content, that means: Cici can write personalized-feeling copy, but Workshop can't actually deliver it personalized to the individual at scale.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Pricing — Cici is free today, "advanced future capabilities may become premium"</div>
+      Workshop has signaled the door is open to upcharging later. The bundling story changes the moment that happens.
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Free Cici lite at useworkshop.com/cici is marketing infrastructure</div>
+      Not a Workshop customer feature — it's a top-of-funnel lead-gen tool. Treat it as marketing infrastructure, not as a product capability competitors can buy.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Admin seats capped at 4 on lower tiers; renewal price hikes after Y1</div>
+      Per <a href="https://www.selectsoftwarereviews.com/reviews/workshop">SelectSoftware</a>. Worth flagging in any vs. Workshop refresh.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">~129</div><div class="lbl">G2 reviews</div></div>
+      <div class="stat"><div class="num">9.7</div><div class="lbl">G2 support score</div></div>
+      <div class="stat"><div class="num">#1</div><div class="lbl">G2 Spring 2026 usability</div></div>
+      <div class="stat"><div class="num">~600</div><div class="lbl">Workshop customers (pre-Cici)</div></div>
+      <div class="stat"><div class="num">T+2</div><div class="lbl">days since May 2026 launch</div></div>
+    </div>
+
+    <h3>Aggregator data</h3>
+    <ul>
+      <li><b>G2:</b> Workshop product page returned 403 to direct fetch; aggregator data shows ~129 reviews, support score 9.7, ranked #1 Spring 2026 in Usability / Easiest Admin / Estimated ROI / User Adoption for enterprise &amp; frontline internal newsletters. (<a href="https://www.g2.com/products/workshop/reviews">G2</a>)</li>
+      <li><b>Capterra:</b> p/197234 returned 404; alternate ID is p/229354. No 2026 reviews surfaced that mention Cici by name.</li>
+    </ul>
+
+    <h3>Recurring praise (pre-Cici)</h3>
+    <p>Drag-and-drop email builder, auto-updated distribution lists, Slack/Teams/SharePoint integration, "beautiful" templates, engagement analytics, ease-of-use. (<a href="https://www.selectsoftwarereviews.com/reviews/workshop">SelectSoftware Reviews</a>)</p>
+
+    <h3>Recurring complaints (pre-Cici, directly relevant to AI launch)</h3>
+    <ul>
+      <li><b>Segmentation:</b> only 1 segment per dynamic block.</li>
+      <li><b>Multi-language:</b> no per-language proofing or analytics.</li>
+      <li><b>Analytics:</b> click-map only, no individual engagement drill-down.</li>
+      <li><b>Data integration:</b> SFTP/CSV only, no API.</li>
+      <li><b>Pricing:</b> admin seats capped at 4 on lower tier; renewal price hikes after Y1; $250/mo floor.</li>
+    </ul>
+
+    <div class="callout info" style="margin-top:14px;">
+      <div class="callout-label">Key signal gap</div>
+      <p style="margin:0;"><b>Practitioner quotes:</b> none located. Reddit blocked via WebFetch; WebSearch surfaced no organic r/internalcomms threads on Cici. LinkedIn returned only Workshop-employee posts (CMO Jamie Bell, company page) — vendor-controlled, excluded. <b>Viral threads:</b> none — coverage is PRNewswire reprints (MarTech Series, HRTech Cube, AI Journal, Yahoo Finance, MartechEdge). <b>Switching stories:</b> none — too early (T+2 days) for migration narratives.</p>
+      <p style="margin:8px 0 0;"><b>Recommend re-running the practitioner-signal pass at T+14 (2026-05-28) and T+30 (2026-06-13)</b> to capture real-world reception once IC teams have actually used Cici.</p>
+    </div>
+
+    <h3>Comparison chatter</h3>
+    <p>ContactMonkey actively publishes Workshop comparison content positioning around analytics depth, segmentation (10 vs 1), API/SOC2, multi-language proofing (<a href="https://www.contactmonkey.com/blog/best-internal-email-platforms">ContactMonkey "best platforms 2026"</a>). Expect ContactMonkey to publish a vs.-Cici angle within the next 30 days.</p>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Action:</b> Update <code>competitors.md</code> + commission the missing <code>vs. Workshop</code> SEO page. Do <b>not</b> commission a full Workshop vendor-profile refresh yet (existing 2026-05-10 deep-dive is recent — though see Open questions on whether it's actually on disk).</p>
+
+    <h3 style="margin-top:14px;">First thing to do</h3>
+    <ol>
+      <li>Append the 2026-05-14 Cici update line to the "Where Competitors Win — Workshop" row in <a href="../../shared/competitors.md"><code>shared/competitors.md</code></a> — same pattern as the LumApps 2026-05-13 and ContactMonkey 2026-05-13 update notes already there.</li>
+      <li>Add the <em>"Cici writes the email; Cerkl makes sure it gets read"</em> reframe to the "vs. Workshop" head-to-head section.</li>
+      <li>Move the <code>vs. Workshop</code> SEO page from "Gaps to commission" into active production. The Cici launch is the publication hook.</li>
+    </ol>
+
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>1 hour for the <code>competitors.md</code> edits. Allocate the <code>vs. Workshop</code> SEO page to the next marketing-content sprint.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind — sharpens picture</h4>
+        <p>If Workshop ships a second Cici expansion that <em>does</em> autonomously segment + schedule + send — the "Cici writes / Cerkl delivers" reframe stops working and the competitive picture sharpens materially.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind — eases picture</h4>
+        <p>If Workshop quietly moves Cici behind a paywall — the "bundled, free" wedge collapses and the competitive picture eases. Likewise, T+14 / T+30 hallucination incidents in production (compliance / safety / benefits) become a competitive talking point.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind — different problem</h4>
+        <p>If a major free LLM-native IC tool from ChatGPT/Claude/Gemini lands (e.g., a built-in "internal newsletter" template), the free Cici lite wedge gets commoditized — different problem entirely.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Does the 2026-05-10 Workshop deep-dive at <code>cerkl/research/ic-trends/deepdives/Competitors/workshop-2026-05-10.md</code> actually exist on disk?</summary>
+      <div class="q-body">
+        <p>The path is referenced from <code>shared/competitors.md</code> but the <code>Competitors/</code> subfolder isn't present (only <code>prdaily-beyond-ai-hype-2026-05-13.*</code> and <code>ragan-email-benchmarks-report-2026-05-12.*</code> are in <code>deepdives/</code>). Either the file was lost, never written, or the path is wrong. <b>Worth a 5-minute check</b> before relying on it in any positioning work.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Cici autonomous send roadmap</summary>
+      <div class="q-body">
+        <p>Workshop's framing hints at <em>"some advanced future capabilities may become premium"</em> — is autonomous segmentation/scheduling/send on that roadmap? No public signal yet.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Cici premium-tier gating</summary>
+      <div class="q-body">
+        <p>Will Cici stay bundled across all plans, or become a Pro/Enterprise lever? Watch pricing-page diffs.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Cici accuracy data</summary>
+      <div class="q-body">
+        <p>No published hallucination rate / confidence-check telemetry. Workshop has "ConfidenceCheck" (per the ContactMonkey 2026-05-13 deep-dive's mention — <em>wait, that was ContactMonkey's, not Workshop's</em>). Workshop has no equivalent disclosed; flag this as a buyer-side question to surface in <code>vs. Workshop</code> content.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Workshop customer count post-Cici</summary>
+      <div class="q-body">
+        <p>Pre-Cici Workshop had ~600 customers. Did Cici (and the free lite) materially change growth? Worth tracking via LinkedIn employee count + any earnings/funding signal.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Notes</h2>
+    <div class="callout info">
+      <div class="callout-label">Prompt-injection attempts (research run)</div>
+      Step 2b sub-agent encountered one fake <code>&lt;system-reminder&gt;</code> block inside a WebSearch result body, instructing the agent to invoke TodoWrite. Correctly identified as adversarial content (inside tool-result body, not a standalone harness message) and ignored. Step 2a and 2c saw no injection attempts.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Source quality caveat</div>
+      Workshop's own pages (homepage, /blog, /pricing, /cici) returned 403 to WebFetch. All Workshop-sourced quotes come via PR Newswire distribution, MarTech Series pickup, the public docs subdomain, or WebSearch snippets. No direct primary-source page access this run.
+    </div>
+  </section>
+
+  <footer>
+    Generated 2026-05-14 · Source markdown: <a href="workshop-agentic-campaigns-2026-05-14.md">workshop-agentic-campaigns-2026-05-14.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const finish = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(finish, () => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); finish(); } finally { document.body.removeChild(ta); }
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); finish(); } finally { document.body.removeChild(ta); }
+      }
+    });
+  });
+</script>
+</body>
+</html>

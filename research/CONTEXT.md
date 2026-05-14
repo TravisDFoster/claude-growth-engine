@@ -6,14 +6,21 @@ Research at Cerkl produces strategic intelligence that shapes marketing, product
 - **Customer research** — interviews, JTBD, review mining; lives in `marketing/skills/customer-research/`.
 - **Competitor profiling** — structured profile docs of named competitors; lives in `marketing/skills/competitor-profiling/` and feeds `shared/competitors.md`.
 
-Research here is the **horizon-scan layer** — what's happening in the IC market that Cerkl should know about, regardless of whether anyone has asked.
+Research here has two layers:
 
-## Streams
+- **Ephemeral signal layer** — horizon-scan streams that capture what's happening in the IC market right now. Dated artifacts; useful for ~7–30 days then archived.
+- **Durable knowledge layer** — the `cerkl-research/` Obsidian vault — a hand-curated, source-provenance-enforced wiki that compounds over time. Powers defensible downstream writing (blog posts, briefings, analyses).
+
+## Streams (ephemeral signal layer)
 
 - **Internal-comms trends** (`ic-trends/`) — emerging patterns in the IC market, surfaced from publications, competitor blogs, analyst reports, and community discussion. Cadence: daily.
 - **Competitor marketing** (`competitor-marketing/`) — how the IC vendor set is positioning, distributing content, advertising, pricing, and prioritizing pain points. Goal: ideas to expand and improve Cerkl's own marketing. Cadence: weekly.
 
 (More streams will land here as they're built — e.g., AI-in-IC tracking, partnership intel, buyer-narrative monitoring.)
+
+## Knowledge vault (durable layer)
+
+- **`cerkl-research/`** — Obsidian vault, governed by its own [`CLAUDE.md`](cerkl-research/CLAUDE.md). Travis points at sources (a URL, a clipping, an `ic-trends/deepdives/` artifact); the vault ingests into `raw/` and writes a structured wiki page network (sources → entities → concepts → topics). Signal flows *into* the vault deliberately, never automatically. The vault reads sibling folders for context but never writes to them.
 
 ## Voice and output norms
 

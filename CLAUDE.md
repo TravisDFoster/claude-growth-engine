@@ -13,7 +13,7 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 | Marketing programs, content, channels, demand gen, webinars | `marketing/` |
 | Outbound sequences, discovery, objection handling, sales enablement | `sales/` |
 | HubSpot CRM — cleanup, enrichment, segments, workflows, audit, emails | `hubspot/` |
-| Travis's schedule, projects, meetings, task list | `personal-assistant/` |
+| Travis's schedule, projects, meetings, task list, PA | `personal-assistant/` |
 | IC trends, market intel, horizon-scan research | `research/` |
 | Build a new process / spin up a new workflow | [`skills/build-process/SKILL.md`](skills/build-process/SKILL.md) |
 | Upload `.md` files to Google Drive as native Google Docs (default destination: Claude-Uploads) | [`skills/md-to-drive/SKILL.md`](skills/md-to-drive/SKILL.md) |
@@ -63,5 +63,5 @@ Workflow rules (keep routine pushes fast):
 
 ## Rules
 - Load shared context before starting any task
-- Route to the correct subdirectory and load its CLAUDE.md before responding
+- Route to the correct subdirectory and load its CLAUDE.md (and CONTEXT.md) directly — do not use `find`/`ls`/`grep` to re-discover structure; the routing table is the map
 - Ask clarifying questions before making assumptions

@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond AI Hype — IC Deep Dive — 2026-05-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border);
+  }
+  .verdict.good { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  /* Source URLs block */
+  .source-list { font-size: 14px; }
+  .source-list li { word-break: break-word; }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try {
+    background: var(--accent-soft); border-color: var(--info-border); color: var(--accent);
+  }
+  .callout.warn {
+    background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn);
+  }
+  .callout.info {
+    background: var(--info-bg); border-color: var(--info-border); color: var(--info);
+  }
+  .callout.bad {
+    background: var(--bad-bg); border-color: var(--bad-border); color: var(--bad);
+  }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  /* Code + copy */
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  /* Personas */
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  /* Stack cards (findings) */
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stack-card p { margin: 0 0 8px; font-size: 14.5px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+
+  /* Comparison table */
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; width: 28%; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  /* Quotes (verbatim promo copy) */
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+
+  /* Stats */
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .stat.warn .num { color: var(--warn); }
+  .stat.bad .num { color: var(--bad); }
+
+  /* Recommendation */
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+
+  /* Action steps */
+  .actions { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 12px; }
+  .action {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+  }
+  .action .step {
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 13px;
+    width: 28px; height: 28px; border-radius: 8px; display: inline-flex;
+    align-items: center; justify-content: center; letter-spacing: 0;
+  }
+  .action h4 { margin: 0 0 4px; font-size: 15px; font-weight: 600; }
+  .action p { margin: 0; font-size: 14px; }
+  .action .est { display: inline-block; font-size: 12px; color: var(--muted); margin-left: 8px;
+    background: var(--code-bg); padding: 1px 8px; border-radius: 999px; font-weight: 500; }
+
+  /* Collapsibles */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+
+  /* Footer */
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  /* Print */
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Deep Dive · Trend / Industry Narrative</div>
+    <h1>Beyond AI Hype: What Actually Moves the Needle in Internal Communications</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-13</span>
+      <span><b>Category:</b> Trend (industry narrative) &mdash; <em>not</em> the editorial article it appeared to be</span>
+      <span class="verdict">Worth riding &mdash; with caveats</span>
+    </div>
+    <p class="tldr">
+      The PR Daily URL flagged in today's recap (#3) redirects to a <b>sponsored Ragan webinar registration page</b>
+      co-produced with <b>LineZero</b> &mdash; a Workvivo implementation consultancy (and Workvivo's 2025 Global
+      Partner of the Year). The thesis is real, on-message for Cerkl, and now the <em>consensus</em> IC industry
+      narrative &mdash; but the source is vendor-adjacent marketing, not journalism, and the headline stats
+      (78%/9%) carry no citation. Cerkl can ride the wave but can't differentiate on the thesis alone &mdash;
+      every major competitor has already adopted some flavor of "landing &gt; volume" framing in the last 90 days.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      <p style="margin:0;"><b>Source-trace the 78% / 9% stats</b> before any sales-enablement, deck, or Cerkular reuse.
+      WebFetch the underlying study; if it's gated or proprietary to LineZero, the stats are unsafe for Cerkl to cite
+      uncritically. Estimate: 30 min.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>The artifact</h3>
+        <p>
+          A <b>June 3, 2026 webinar registration page</b> at ragan.com, presented by <b>Greg Sugar</b>
+          (President &amp; CEO, LineZero &mdash; 15+ yrs digital/IT strategy, ex-PwC, Citrix, ProServeIT) and
+          <b>Jack Hamwi</b> (Sr. Mgr. of Digital Communities, LineZero), moderated by Jon Minnick (Ragan).
+          Marked "In partnership with LineZero."
+        </p>
+        <p>
+          The slug appears on prdaily.com but <b>301-redirects</b> to the ragan.com/store/ webinar listing &mdash;
+          there is no underlying PR Daily editorial byline.
+        </p>
+      </div>
+      <div>
+        <h3>Source URLs</h3>
+        <ul class="source-list">
+          <li>Webinar page (redirect target): <a href="https://www.ragan.com/store/beyond-ai-hype-what-actually-moves-the-needle-in-internal-communications/">ragan.com/store/beyond-ai-hype-...</a></li>
+          <li>Original flagged URL (redirects): <a href="https://www.prdaily.com/beyond-ai-hype-what-actually-moves-the-needle-in-internal-communications/">prdaily.com/beyond-ai-hype-...</a></li>
+          <li>Greg Sugar profile: <a href="https://pulse2.com/linezero-greg-sugar-profile/">pulse2.com/linezero-greg-sugar-profile</a></li>
+          <li>LineZero named Workvivo 2025 Global Partner of the Year (Feb 2026): <a href="https://www.linezero.com/blog/linezero-named-workvivo-2025-global-partner-of-the-year">linezero.com/blog/...partner-of-the-year</a></li>
+          <li>LineZero company: <a href="https://www.linezero.com/">linezero.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it does / claims</h2>
+
+    <h3>Thesis</h3>
+    <p>
+      AI adoption in IC is near-universal but frontline satisfaction is collapsing because teams use AI to produce
+      <em>more</em> content rather than <em>better</em> communication. The fix is to redirect AI toward
+      navigation, knowledge retrieval, and signal-over-volume &mdash; and to measure outcomes in CFO/leadership
+      language.
+    </p>
+
+    <h3>Specific claims</h3>
+    <div class="cols-2">
+      <div>
+        <p><b>What AI is getting wrong</b></p>
+        <ul>
+          <li>Cranking out more content vs. better communication</li>
+          <li>Widening gap between what's sent and what lands</li>
+          <li>Laptop-centric assumptions exclude frontline</li>
+        </ul>
+      </div>
+      <div>
+        <p><b>What actually moves the needle</b></p>
+        <ul>
+          <li>AI for navigation, knowledge retrieval, routine tasks (faster answers)</li>
+          <li>Reaching frontline without laptop assumptions</li>
+          <li>Evaluating AI tools by leadership outcomes</li>
+          <li>ROI cases in CFO language</li>
+          <li>AI to build employee trust</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Headline stats <span style="color:var(--bad); font-weight:500; font-size:14px;">(unattributed on the page)</span></h3>
+    <div class="stats">
+      <div class="stat warn">
+        <div class="num">78%</div>
+        <div class="lbl">of IC teams use AI</div>
+      </div>
+      <div class="stat bad">
+        <div class="num">9%</div>
+        <div class="lbl">of frontline "very satisfied" with comms</div>
+      </div>
+      <div class="stat">
+        <div class="num">June 3</div>
+        <div class="lbl">live webinar (2026)</div>
+      </div>
+      <div class="stat">
+        <div class="num">21 days</div>
+        <div class="lbl">until live session</div>
+      </div>
+    </div>
+
+    <h3>Vendors named</h3>
+    <p>
+      LineZero (sponsor); customer logos Topgolf, Veterinary Emergency Group, Waste Connections, Group 1
+      Automotive; implied LineZero stack alignment with Workvivo, Meta Workplace, Microsoft, Zoom. No competitor
+      mentions.
+    </p>
+
+    <h3>Quotable lines <span style="color:var(--muted); font-weight:500; font-size:14px;">(verbatim, from promo copy)</span></h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>"Seventy-eight percent of internal communications teams use AI, but only 9% of frontline employees are very satisfied with how their company communicates."</p>
+        <div class="who">&mdash; LineZero/Ragan webinar promo copy &middot; <button class="copy-btn" data-copy="quote-1" type="button" style="padding:2px 8px; border-radius:6px; margin-left:4px;">Copy</button> <span id="quote-1" style="display:none;">Seventy-eight percent of internal communications teams use AI, but only 9% of frontline employees are very satisfied with how their company communicates.</span></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>"The problem is not awareness; it is application."</p>
+        <div class="who">&mdash; LineZero/Ragan webinar promo copy &middot; <button class="copy-btn" data-copy="quote-2" type="button" style="padding:2px 8px; border-radius:6px; margin-left:4px;">Copy</button> <span id="quote-2" style="display:none;">The problem is not awareness; it is application.</span></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>"Most teams are using AI to produce more content, not better communication &mdash; and the gap between what gets sent and what actually lands keeps widening."</p>
+        <div class="who">&mdash; LineZero/Ragan webinar promo copy &middot; <button class="copy-btn" data-copy="quote-3" type="button" style="padding:2px 8px; border-radius:6px; margin-left:4px;">Copy</button> <span id="quote-3" style="display:none;">Most teams are using AI to produce more content, not better communication — and the gap between what gets sent and what actually lands keeps widening.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Webinar audience</h4>
+        <p>IC managers, comms leaders, HR/communications crossover roles in mid-market to enterprise orgs &mdash; same band as Cerkl's Paid ICP (2,000&ndash;12,200+ employees) but with a frontline/deskless skew (LineZero's house specialty via Workvivo).</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit</h4>
+        <p>Orgs already on Workvivo / Meta Workplace / Microsoft 365 looking for an AI-implementation playbook.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit</h4>
+        <p>Orgs evaluating greenfield IC tooling decisions &mdash; the webinar's worldview presumes you've already picked a platform-of-record.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>This is the most important section of this deep-dive &mdash; there are four distinct findings:</p>
+
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>Finding 1 &mdash; The thesis is now consensus, not contrarian</h4>
+        <p>
+          Step 2b found the same "landing &gt; volume" framing in the last 30 days from <b>Firstup</b>
+          ("Internal Comms Are Failing: 2026 Engagement Data"), <b>Poppulo</b> ("trust, AI, measurement"),
+          <b>Icology</b> ("AI;DR"), <b>Ragan ECCC</b> takeaways ("AI as editor, not amplifier"), and
+          <b>Sociabble/Gallagher 2026</b> ("+30% leadership trust risk in high-volume environments").
+        </p>
+        <p>
+          Cerkl cannot differentiate by <em>adopting</em> this thesis &mdash; every credible voice in the
+          category already has. <b>Differentiation has to be on execution of the thesis:</b> delivery + read
+          attribution + personalization + free Foundations vs. competitors who frame the same thesis but lack
+          one or more of those legs.
+        </p>
+      </div>
+
+      <div class="stack-card">
+        <h4>Finding 2 &mdash; The cleanest competitive contrast is Simpplr Comms AI</h4>
+        <p>
+          Simpplr (Feb 2026 launch) pitches AI as "campaign planning, content creation, approvals,
+          multichannel delivery" &mdash; i.e., AI as content-coordination workspace. <b>That's the "more
+          content" stance the webinar thesis frames as the problem.</b>
+        </p>
+        <p>
+          Refresh <code>cerkl.com/broadcast/versus/simpplr</code> (already queued in
+          <code>shared/competitors.md</code>) to lean explicitly into this asymmetry:
+        </p>
+        <div class="callout info" style="margin: 10px 0 0;">
+          <p style="margin:0;">"Simpplr Comms AI optimizes the upstream &mdash; drafting, approval, distribution.
+          Cerkl Broadcast optimizes the downstream &mdash; landing, reading, measuring. Both can be true;
+          only one can be ROI."</p>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <h4>Finding 3 &mdash; The cleanest narrative ally is Poppulo</h4>
+        <p>
+          Today's "AI and Alignment" piece (daily recap #1, and Step 2c's verdict in Step 2b context) openly
+          pushes back on opens/clicks as success metrics. Cerkl can quote Poppulo favorably to validate the
+          read-attribution wedge <em>without</em> ceding any ground, because Poppulo lacks Cerkl's cross-channel
+          delivery layer and free tier.
+        </p>
+        <p><b>This is a quote-pull opportunity, not a positioning concession.</b></p>
+      </div>
+
+      <div class="stack-card">
+        <h4>Finding 4 &mdash; Calibration note on LineZero</h4>
+        <p>
+          LineZero implements Workvivo. The webinar's thesis is <em>implicitly Workvivo-aligned</em> &mdash;
+          Workvivo's 2026 narrative pivoted from feed/engagement toward <em>listening + insight</em>
+          (Seer launch 2026-05-06), which fits "navigation, knowledge retrieval" framing far better than
+          "produce more content."
+        </p>
+        <p>
+          <b>This is competitive intelligence, not neutral journalism.</b> Treat the webinar as a window into
+          how Workvivo's channel partners will pitch IC buyers through Q3 2026.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Comparison to alternatives</h2>
+    <p>
+      This isn't a vendor profile, so "alternatives" here means <b>other voices making the same argument</b>
+      &mdash; voices the Cerkl marketing team could quote, cite, or refer to instead of or alongside this one.
+    </p>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Firstup &mdash; "Internal Comms Are Failing: 2026 Engagement Data"</td>
+          <td>Has actual numbers (61&ndash;76% of employees miss critical updates) with implied methodology; vendor-published but more data-grounded.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Poppulo &mdash; "AI and Alignment" (today, 2026-05-13)</td>
+          <td>Same-day publication; explicitly reframes success away from open/click toward whether messages land; competitive-friendly source for quote-pulls.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Icology &mdash; "AI;DR" framing</td>
+          <td>Coined a memorable shorthand ("AI;DR'd") that travels in social posts; useful as a punch-line citation.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Gallagher &mdash; State of the Sector 2026 ("Readiness Gap")</td>
+          <td>Independent industry report (not vendor-published); strongest credibility if you need a non-vendor anchor stat.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: source credibility for citation.</b> The LineZero/Ragan webinar is the
+      <em>weakest</em> citation on this list because it's vendor-sponsored marketing with unattributed stats.
+      For Cerkl publishing, lead with Gallagher (independent) or Firstup (numbers + methodology). Use the
+      webinar for competitive intel, not for citation.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Gotchas</h2>
+
+    <div class="callout bad">
+      <div class="callout-label">The stats aren't cited</div>
+      <p style="margin:0;">The page presents 78% / 9% as fact with no source link. Before any sales-enablement,
+      deck, or Cerkular reuse, <b>source-trace these numbers</b>. Likely candidates: a Ragan-property benchmark
+      (the 2026 Internal Email Benchmarks Report dropped 2026-05-12), a Gallagher State of the Sector pull, or
+      a LineZero/Workvivo proprietary survey. If they trace to a LineZero customer base, the generalizability
+      is limited.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Source &ne; what it appears to be</div>
+      <p style="margin:0;">The URL on prdaily.com makes this look like editorial; the destination is a
+      <code>/store/</code> registration page for sponsored content. The daily recap Step 2b sub-agent did not
+      catch the 301 redirect &mdash; flagging for the process Learnings section.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Webinar is 21 days out</div>
+      <p style="margin:0;">If Travis or someone on the marketing team wants the underlying citations (and the
+      competitive signal of how LineZero is selling Workvivo), the live session on <b>June 3, 2026</b> is
+      where those land. The recording is gated behind registration but registration is free.</p>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">No actual article body</div>
+      <p style="margin:0;">The 1,200&ndash;1,400 words on the page are promo copy + presenter bios. There is
+      no long-form essay to extract from &mdash; only the marketing lede.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Community signal</h2>
+
+    <div class="stats">
+      <div class="stat"><div class="num">0</div><div class="lbl">direct reactions (2026-05-13)</div></div>
+      <div class="stat"><div class="num">2026-05-20</div><div class="lbl">recheck date</div></div>
+      <div class="stat"><div class="num">Consensus</div><div class="lbl">wave reading</div></div>
+    </div>
+
+    <ul>
+      <li>
+        <b>No direct reactions</b> to the article surfaced via WebSearch as of 2026-05-13. Same-day publication
+        explains it; re-check on/after <b>2026-05-20</b> for amplification data.
+      </li>
+      <li>
+        <b>Wave reading:</b> the thesis is decisively dominant in the IC community right now. Counter-voices
+        come almost exclusively from vendor marketing for high-throughput AI tools (Workshop's
+        "single-prompt-to-campaign" press release, Staffbase's "AI lets you do more, faster" pieces), not
+        from named practitioners.
+      </li>
+      <li>
+        <b>Named practitioner voices</b> (Mike Klein, Rachel Miller) did not surface fresh AI-volume-vs-quality
+        essays in the 30-day window &mdash; the consensus is being carried mainly by vendor blogs and
+        analyst-adjacent reports, which is itself a signal that the <em>practitioner</em> community has
+        internalized the framing as default.
+      </li>
+    </ul>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">08</span>Recommendation</h2>
+    <p style="font-size:16px;">
+      <b>Action: Worth riding</b> &mdash; but with three specific moves, not one.
+    </p>
+
+    <div class="actions">
+      <div class="action">
+        <div class="step">1</div>
+        <div>
+          <h4>Source-trace the 78% / 9% stats <span class="est">~30 min</span></h4>
+          <p>WebFetch the underlying study. If gated or proprietary to LineZero, the stats are unsafe for
+          Cerkl to cite uncritically. Do this before any sales/marketing reuse.</p>
+        </div>
+      </div>
+      <div class="action">
+        <div class="step">2</div>
+        <div>
+          <h4>Cerkl publishes its own POV in this lane within the next 14 days <span class="est">~1 week</span></h4>
+          <p>With citable stats and Cerkl's specific execution angle &mdash; delivery + read attribution +
+          personalization across channels. Consensus is forming now; whoever stakes the cleanest
+          "execution beats thesis" claim owns the position before it commoditizes. Candidate venues:
+          Cerkular newsletter, a Ragan guest column pitch, a LinkedIn article from Travis.</p>
+        </div>
+      </div>
+      <div class="action">
+        <div class="step">3</div>
+        <div>
+          <h4>Register for the June 3 webinar <span class="est">60 min live + 15 min notes</span></h4>
+          <p>Capture (a) the underlying citations for the stats, (b) LineZero's competitive positioning of
+          Workvivo, and (c) the IC-buyer questions in chat &mdash; same intel-yield Travis liked from the
+          AI visibility workshop write-up flagged as item #10 in today's recap.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>Source-trace + Cerkular brief by <b>2026-05-20</b>. Webinar attendance <b>June 3</b>. Refresh
+        <code>cerkl.com/broadcast/versus/simpplr</code> (Simpplr contrast) within 30 days.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind &mdash; up</h4>
+        <p>If the 78%/9% stats trace to a credible independent source (Gallagher, Gartner, Forrester),
+        aggressiveness on Cerkl POV publishing should go <em>up</em> (the stats are quote-armor).</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind &mdash; pivot</h4>
+        <p>If LineZero starts publishing white-label co-marketing for Cerkl-style "delivery layer" pitches
+        (unlikely given the Workvivo partnership, but worth watching), they become a potential channel
+        partner conversation, not just a competitor signal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Where do 78% / 9% come from?</summary>
+      <div class="q-body">
+        <p>No public attribution on the page. Likely a Ragan benchmark or LineZero/Workvivo survey &mdash;
+        needs source-tracing. The 2026 Internal Email Benchmarks Report dropped 2026-05-12 is one candidate;
+        Gallagher State of the Sector is another.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is the prdaily.com &rarr; ragan.com/store/ redirect a temporary co-promotion or a permanent slug move?</summary>
+      <div class="q-body">
+        <p>If permanent, it changes how Cerkl interprets "PR Daily" hits in future daily recaps (more sponsored
+        content sneaks in under the editorial URL).</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What % of LineZero's revenue comes from Workvivo implementations vs. other partnerships?</summary>
+      <div class="q-body">
+        <p>Affects how seriously to read the webinar as Workvivo-aligned. If Workvivo is &gt;50% of LineZero's
+        book, treat the webinar as Workvivo channel marketing in everything but name.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Will the live webinar Q&amp;A reveal which specific Cerkl-overlap buyers LineZero is engaging?</summary>
+      <div class="q-body">
+        <p>Watch for customer logos that match Cerkl's pipeline. Chat questions during the live session often
+        leak prospect identity in ways the registration list doesn't.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Calibration note for the daily-recap process</h2>
+    <p>
+      The Step 2b sub-agent (publications) flagged this URL as editorial because the slug is on prdaily.com.
+      The 301 redirect to ragan.com/store/ should have been caught. Suggest adding to the Step 2b sub-agent
+      brief:
+    </p>
+    <div class="code-row">
+      <code id="learning-rule">If a PR Daily or Ragan URL contains /store/, webinar, register, or shows "In partnership with" in the body, mark as sponsored content in the takeaway line and downgrade rank relative to editorial pieces. Always follow 301s before scoring.</code>
+      <button class="copy-btn" data-copy="learning-rule" type="button">Copy</button>
+    </div>
+    <p style="font-size:14px; color:var(--muted);">
+      Logged here for Travis to merge into <code>ic-trends-daily-process.md</code> Learnings section on the
+      next process tidy.
+    </p>
+  </section>
+
+  <footer>
+    Generated 2026-05-13 &middot; Source markdown:
+    <a href="prdaily-beyond-ai-hype-2026-05-13.md">prdaily-beyond-ai-hype-2026-05-13.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch(e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

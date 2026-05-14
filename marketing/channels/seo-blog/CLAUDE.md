@@ -2,6 +2,8 @@
 
 You are a senior B2B SaaS content and SEO strategist helping Travis Foster plan, write, and edit blog posts for Cerkl Broadcast (cerkl.com).
 
+> **Upstream input:** This channel starts from a SEO brief in [`../../seo/briefs/`](../../seo/briefs/). The brief carries the Webflow schema (`Primary Category`, `Primary Solution`, `All Categories`), primary + secondary keywords, hub link, ≥2 sibling URLs, and pre-flight checks. The `seo-blog-pre-writing` skill reads the brief and carries those properties forward — pre-writing does not re-derive them. See [`../../seo/seo-process.md`](../../seo/seo-process.md) decision log (2026-05-13).
+
 ## Context to load
 - /Users/travisfoster/claude-code/cerkl/shared/company-info.md
 - /Users/travisfoster/claude-code/cerkl/shared/icp.md

@@ -1,13 +1,18 @@
 ---
 name: seo-blog-pre-writing
-description: Use when preparing a Cerkl SEO blog post for drafting — gather the topic, fill out Webflow publishing properties (title, slug, keywords, CTAs, categories, meta), and produce an outline before any prose is written. Triggers on phrases like "pre-writing for [topic]", "set up the blog brief for [post]", "outline this blog post", "fill out the blog properties". Output: `blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md` in the seo-blog channel folder.
+description: Use when preparing a Cerkl SEO blog post for drafting. Reads the upstream SEO brief from `seo/briefs/<slug>.md`, carries its schema decisions (pillar, solution, keywords, internal links) into a Webflow-ready pre-writing file, and adds the per-post decisions the brief doesn't cover (Top/Middle/Bottom CTA variants, meta description, full H1/H2/H3 outline). Triggers on phrases like "pre-writing for [topic]", "set up the blog brief for [post]", "outline this blog post". Output: `blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md`.
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # SEO Blog Pre-Writing
 
-Pre-writing scopes a single blog post: it locks the title, slug, target keywords, CTAs, categories, meta tags, and outline before any prose is written. Output feeds directly into `seo-blog-drafting`.
+Pre-writing turns a queued **SEO brief** into a draft-ready pre-writing file. The brief (produced by the SEO function in [`seo/briefs/`](/Users/travisfoster/claude-code/cerkl/marketing/seo/briefs/)) already decided pillar, solution, keywords, hub link, sibling URLs, and angle. Pre-writing's job is to (a) carry those forward verbatim, (b) pick the specific CTA variants the brief doesn't specify, (c) write meta tags, and (d) expand the angle into a full outline.
+
+## Inputs
+
+1. **The SEO brief** — `/Users/travisfoster/claude-code/cerkl/marketing/seo/briefs/<slug>.md`. This is the source of truth for pillar, solution, keywords, and internal links. If the brief is missing, **stop and ask** — pre-writing should not invent these properties.
+2. **The brief's `status:` field** — should be `scheduled` (or `in-progress`). If it's `queued`, the planner hasn't picked it up yet; verify with Travis before proceeding.
 
 ## Output
 
@@ -15,34 +20,46 @@ Create the pre-writing file at:
 
 `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md`
 
-Where `YYYY-MM-DD` is the publish date and `[slug]` is the URL slug (lowercase, hyphenated, ≤60 chars).
+Where `YYYY-MM-DD` is the publish date (from the brief's `scheduled_for:` or the content plan row) and `[slug]` is the URL slug from the brief.
 
-## Properties to complete
-
-- **Title**
-- **Slug**
-- **Top 3 Organic Search Keywords**
-- **Primary Solution**
-- **Top CTA**
-- **Middle CTA**
-- **Bottom CTA**
-- **Primary Category**
-- **Secondary Category**
-- **Meta Description**
-- **Meta Title** (typically the same as the Title)
-- **Outline for Writing**
+After creating the file, flip the brief's `status:` to `in-progress`.
 
 ---
 
-## Field guidelines
+## Properties to complete
 
-### Primary Solution
+### Group A — Carry from the SEO brief (no re-derivation)
 
-| Option | When to use |
+| Field | Source in brief |
 |---|---|
-| **Omni AI** | Content covers multiple channels (email + Teams, mobile, etc.) or a channel that is not email |
-| **Foundations** | Content covers only email or email-specific features (including email analytics) |
-| **Educational** | All other blog post topics |
+| Title | `title:` |
+| Slug | `slug:` |
+| Primary Keyword | `primary_keyword:` |
+| Secondary Keywords (3) | `secondary_keywords:` |
+| Primary Solution | `primary_solution:` |
+| Primary Category | `target_pillar:` (Webflow value) |
+| All Categories (cross-cutting tags) | `all_categories:` |
+| Hub page link | "Internal linking" section |
+| Sibling links (≥2, same pillar) | "Internal linking" section |
+| Why-now context (for writer) | "Why now" section |
+| Pre-flight checks (cannibalization, refresh-vs-new) | "Pre-flight checks" section |
+
+If any of these are blank or contradictory in the brief, **stop and flag back to SEO** — don't fill them in here.
+
+### Group B — Decided in pre-writing
+
+| Field | Notes |
+|---|---|
+| Top CTA | Pick the variant — see table below. Driven by Primary Solution + topic focus. |
+| Middle CTA | Pick the variant — see table below. Driven by Primary Solution + topic focus. |
+| Bottom CTA | Pick the variant — see table below. Always required. |
+| Meta Title | Typically the same as Title; tune if title is >60 chars. |
+| Meta Description | 140–160 chars; lead with the primary keyword; include the value promise. |
+| Outline for Writing | Full H1 / H2 / H3 outline. Include primary keyword in H1 and ≥1 H2/H3. Expand on the brief's angle. |
+
+---
+
+## CTA variant selection
 
 ### Top CTA
 
@@ -53,7 +70,7 @@ Leave blank when Primary Solution is **Educational** or **Omni AI**.
 | Email General Top | Article discusses both Gmail and Outlook, or is tool-agnostic |
 | Gmail General Top | Article focuses specifically on Gmail |
 | Outlook General Top | Article focuses specifically on Outlook |
-| Nothing | Primary Solution is Educational or Omni AI |
+| *(blank)* | Primary Solution is Educational or Omni AI |
 
 ### Middle CTA
 
@@ -70,7 +87,7 @@ Leave blank when Primary Solution is **Educational**.
 | Omni AI Channel Complexity Middle | Omni AI multi-channel management |
 | Omni AI Deskless Workforce Middle | Omni AI for frontline/deskless workers |
 | Omni AI Personalization Middle | Omni AI personalization |
-| Nothing | Primary Solution is Educational |
+| *(blank)* | Primary Solution is Educational |
 
 ### Bottom CTA
 
@@ -82,16 +99,36 @@ Always required — never blank.
 | Gmail General Bottom | Gmail-specific |
 | Outlook General Bottom | Outlook-specific |
 
-### Categories
+---
 
-Pick one **Primary** and one different **Secondary** from:
+## Categories reference
 
-- Internal Email Communication
-- Internal Communication Strategy
-- Frontline and Mobile Workforce
-- Internal Communications Measurement
-- Employee Engagement and Experience
+Webflow's `Primary Category` (= pillar) is set by the brief. Pick the matching label:
 
-### Outline for Writing
+| Webflow value (from brief `target_pillar:`) | Display label |
+|---|---|
+| `employee-email` | Internal Email Communication |
+| `internal-communication-strategy` | Internal Communication Strategy |
+| `employee-engagement-articles` | Employee Engagement and Experience |
+| `internal-communications-measurement` | Internal Communications Measurement |
+| `mobile-employee-experience` | Frontline and Mobile Workforce |
 
-A working H1 / H2 / H3 outline that reflects search intent and the answer the post commits to. Include the focus keyword in the H1 and at least one H2/H3.
+**All Categories** (the multi-tag field) comes from the brief's `all_categories:` list. Use it to tag cross-cutting themes like *AI in IC*, *Audience Segmentation*, *Healthcare*, *Remote/Hybrid*. There is no "Secondary Category" anymore — Webflow uses multi-tag.
+
+---
+
+## Outline for writing
+
+Expand the brief's "Angle / outline" section into a full H1 / H2 / H3 structure:
+- H1 includes the primary keyword (verbatim or close paraphrase)
+- ≥1 H2 or H3 includes the primary keyword or a secondary keyword
+- Structure should commit to the search intent — for "how-to" intent, sections are steps; for "best X" intent, sections are options
+- Where the brief lists sibling links, note in the outline which H2/H3 will host the link (so the writer knows where to place it, not just that links exist)
+
+---
+
+## When done
+
+1. Save the pre-writing file at the path above.
+2. Flip the brief's `status:` from `scheduled` to `in-progress`.
+3. The pre-writing file is the direct input for [`seo-blog-drafting`](../seo-blog-drafting/SKILL.md).

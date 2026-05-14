@@ -38,7 +38,7 @@
 | Building a case for comms investment using data | Blog — cerkl.com | May 19 | Furqan |
 | Communicating inclusively across diverse workforces — AAPI Heritage Month | Blog — internalcommspro.com | May 19 | Furqan |
 | 5 metrics every internal communicator should track | LinkedIn carousel | May 20 | Furqan |
-| Prove Your Impact: Using Analytics to Strengthen Internal Comms | Webinar | May 21 | Travis |
+| ~~Prove Your Impact: Using Analytics to Strengthen Internal Comms~~ (pulled 2026-05-13 — no speaker) | Webinar | ~~May 21~~ | Travis |
 | Make the case for comms investment with data | LinkedIn static/theme | May 19 | Furqan |
 | Link post: case-building for leadership blog | LinkedIn static/blog | May 20 | Furqan |
 | Has your leadership ever asked you to justify comms spend? | LinkedIn poll | May 21 | Furqan |

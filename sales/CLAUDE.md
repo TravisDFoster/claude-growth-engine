@@ -22,6 +22,7 @@ You are a senior B2B SaaS sales strategist helping Travis Foster build sales pro
 | Objection responses, handling playbook | `objection-handling/` |
 | Battle cards, talk tracks, one-pagers, competitive | `enablement/` |
 | Review an email draft for voice/tone and factual accuracy | `email-editor/` |
+| Pressure Prospecting — signal taxonomy, bucket model, account handoff to AEs | `pressure-prospecting/` |
 
 ## File Structure
 
@@ -43,9 +44,29 @@ sales/
 ├── enablement/
 │   ├── CLAUDE.md          ← sales enablement identity; battle cards, talk tracks, one-pagers
 │   └── competitive/       ← competitor-specific battle cards go here
-└── email-editor/
-    └── email-review-process.md  ← voice/tone + fact-check process for reviewing emails
+├── email-editor/
+│   └── email-review-process.md  ← voice/tone + fact-check process for reviewing emails
+└── pressure-prospecting/
+    ├── CLAUDE.md                ← scope, phase status, decisions, open calls
+    └── methodology.md           ← signal taxonomy, bucket model, emotional reads, handoff schema
 ```
+
+## Vendored skills (referenced from sales)
+
+These are workspace-shared skills vendored under `marketing/skills/` (from `coreyhaines31/marketingskills`). Sales uses them by reference — do not fork or move. Cerkl context (ICP, Broadcast, competitors) is already loaded above; the skill substitutes its `.agents/product-marketing-context.md` lookup with the `shared/` files.
+
+| Skill | When to use in sales |
+|---|---|
+| [cold-email](../marketing/skills/cold-email/SKILL.md) | Writing or rewriting cold outbound emails, follow-up cadences, subject lines. Default for any outbound copy task. |
+| [sales-enablement](../marketing/skills/sales-enablement/SKILL.md) | Pitch decks, one-pagers, objection docs, demo scripts, ROI calculators, persona cards, playbooks. Pairs with `enablement/`. |
+| [customer-research](../marketing/skills/customer-research/SKILL.md) | Pre-call research; digital-watering-hole mining (Mode 2) for Pressure Prospecting signal sources; review/forum mining for Competitor Dissatisfaction work. |
+| [competitor-profiling](../marketing/skills/competitor-profiling/SKILL.md) | Profiling competitors (Staffbase, Workshop, LumApps, etc.) for battle cards and objection handling. Also: tracking competitor *pressure* events as a signal in Pressure Prospecting. |
+
+Absolute paths:
+- `/Users/travisfoster/claude-code/cerkl/marketing/skills/cold-email/SKILL.md`
+- `/Users/travisfoster/claude-code/cerkl/marketing/skills/sales-enablement/SKILL.md`
+- `/Users/travisfoster/claude-code/cerkl/marketing/skills/customer-research/SKILL.md`
+- `/Users/travisfoster/claude-code/cerkl/marketing/skills/competitor-profiling/SKILL.md`
 
 ## Rules
 - Write in plain, clear language

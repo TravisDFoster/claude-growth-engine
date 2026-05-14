@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ragan "2026 Internal Email Benchmarks Report" — IC Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "\25CF"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 8px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco-cell ul { margin: 0; padding-left: 18px; }
+  .reco-cell li { font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "\2212"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+
+  blockquote.suggested {
+    margin: 12px 0 0; padding: 14px 18px;
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px; color: var(--ink);
+  }
+  blockquote.suggested p { max-width: none; margin: 0 0 8px; }
+  blockquote.suggested p:last-child { margin-bottom: 0; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends &middot; Analyst Report Deep Dive</div>
+    <h1>Ragan "2026 Internal Email Benchmarks Report"</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-12</span>
+      <span><b>Category:</b> Analyst report (vendor-funded, co-branded)</span>
+      <span class="verdict warn">Worth profiling &mdash; Maybe</span>
+    </div>
+    <p class="tldr">
+      The "Ragan 2026 Internal Email Benchmarks Report" is <b>not Ragan research</b> &mdash; it's PoliteMail's annual vendor-data study, co-branded with Ragan and distributed via Ragan/PR Daily as a gated white paper. Headline numbers (66% open, 7% click, 14 emails/mo, 33-min monthly read time, n=~2B emails / ~11M employees / 10 S&amp;P sectors) are useful buyer-side anchors, but the source is the IC email <b>measurement</b> vendor whose moat depends on those numbers staying interesting. Two competing 2026 benchmarks dropped within 24 hours (PoliteMail/Ragan 2026-05-07, ContactMonkey 2026-05-08) &mdash; vendors are racing to own the 2026 benchmark category, and <b>no neutral independent IC email benchmark exists in the space yet.</b>
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      Brief the marketing team on the cross-channel benchmark opportunity. Cerkl's ~6M employees/month dataset is credible at scale and is <b>the only one in the IC vendor set that crosses email + Teams + Slack + intranet + SMS</b> &mdash; the angle no single-channel vendor can match. Q3 2026 content target.
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>The report</h3>
+        <p>
+          An annual internal-email benchmark report, <b>conducted by <a href="https://politemail.com">PoliteMail</a></b> and distributed through Ragan Communications / PR Daily as a gated white paper. PoliteMail is an Outlook plug-in product for IC email tracking &mdash; their dataset IS the benchmark.
+        </p>
+        <p>
+          Coverage: ~2 billion corporate internal emails sent to nearly 11 million employees across 10 S&amp;P industry sectors (technology, healthcare, consumer, financials, industrials, materials, communications, energy, education/nonprofit, utilities), with year-over-year comparisons to 2024 and 2023.
+        </p>
+        <p>
+          PR Daily summary post is bylined by <b>Michael DesRochers (PoliteMail)</b>, labeled "presented by PoliteMail," and ran on 2026-05-04 &mdash; three days before the gated Ragan landing went live.
+        </p>
+      </div>
+      <div>
+        <h3>Source URLs</h3>
+        <ul>
+          <li>Ragan landing (gated): <a href="https://www.ragan.com/the-2026-internal-email-benchmarks-report/">ragan.com/the-2026-internal-email-benchmarks-report</a></li>
+          <li>Ragan white-paper page: <a href="https://www.ragan.com/white-papers/the-2026-internal-email-benchmarks-report/">ragan.com/white-papers/...</a></li>
+          <li>PR Daily key findings (ungated): <a href="https://www.prdaily.com/internal-email-benchmark-report-key-findings/">prdaily.com/internal-email-benchmark-report-key-findings</a></li>
+          <li>PoliteMail's own 2026 page: <a href="https://politemail.com/internal-email-communications-benchmarks/internal-email-communications-benchmarks-2026/">politemail.com/.../2026</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Headline data</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="n">OPEN RATE</div><h4>66% unique</h4><p>"One-third of employees aren't even getting past the subject line."</p></div>
+      <div class="pillar"><div class="n">OPEN ATTENTION</div><h4>83.7% avg</h4><p>PoliteMail proprietary metric &mdash; time-in-email.</p></div>
+      <div class="pillar"><div class="n">CLICK RATE</div><h4>7% / 10%</h4><p>7% of recipients click at least one link; 10% of openers click on avg.</p></div>
+      <div class="pillar"><div class="n">VOLUME</div><h4>~14 emails/mo</h4><p>33 minutes total monthly read time per employee.</p></div>
+      <div class="pillar"><div class="n">SKIM BEHAVIOR</div><h4>14% skim</h4><p>Skimmers spend max 36 seconds (30% of the 2-min baseline).</p></div>
+      <div class="pillar"><div class="n">EMAIL LENGTH</div><h4>~500 words</h4><p>~2-minute read time average.</p></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Methodology caveat (acknowledged by PoliteMail's own content)</div>
+      Open rates are <b>inflated by Outlook preview-pane "opens," automated security scans, and stale distribution lists</b> (<a href="https://politemail.com/5-internal-email-metrics-better-than-open-rates/">PoliteMail on metrics</a>). Buried in marketing copy but it matters: the 66% open-rate headline is the most-cited PoliteMail number and the least defensible one in technical terms.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user</h4>
+        <p>Internal-comms managers and directors building 2026 plans, slide decks, and CFO conversations. Particularly useful for <i>PoliteMail buyers</i> &mdash; the report is structured to convert the reader to a PoliteMail demo.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>You need a defensible-sounding 2026 anchor stat for a slide ("benchmark IC open rate is 66%") and your audience won't fact-check the methodology.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>You need rigorous cross-channel measurement, multi-vendor data, or methodology you can defend in a technical procurement review. Also weak for SMB / Foundations buyers (PoliteMail is enterprise-Outlook-shop oriented).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>This is the second IC email benchmark to drop in May 2026 (<a href="https://www.contactmonkey.com/blog/contactmonkeys-internal-email-benchmark-report-2026-key-findings-for-internal-communications-teams">ContactMonkey's 2026-05-08</a> ran a day later). Three angles for Cerkl:</p>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. PoliteMail is an adjacent competitor not yet in competitors.md</h4>
+        <p>
+          PoliteMail's wedge &mdash; "IC email measurement, attached to your existing Outlook stack, with a benchmark-research moat" &mdash; is the closest <i>positioning</i> analog to what Cerkl claims in delivery + measurement. They're the data layer; Cerkl is the data + delivery layer.
+        </p>
+        <p>
+          Should be in the competitors list, at least as an adjacency, with the note that they're enterprise-Outlook-only (so they don't compete for Foundations buyers).
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>2. The benchmark-research category is wide open for Cerkl</h4>
+        <p>
+          Both vendor benchmarks have the same flaw &mdash; single-vendor data, single-channel scope, vendor-funded. Cerkl's ~6M employees/month dataset is roughly half PoliteMail's volume &mdash; credible, but the asymmetric move is <b>publishing a cross-channel benchmark</b> (Cerkl sees email + Teams + Slack + intranet + SMS unified, which neither PoliteMail nor ContactMonkey can).
+        </p>
+        <p>"Cross-channel benchmark" is a defensible content position that doesn't require beating PoliteMail at email-volume.</p>
+      </div>
+      <div class="stack-card">
+        <h4>3. The 66% open-rate methodology issue is a positioning gift</h4>
+        <p>
+          Cerkl's "we measure delivery + read-through across channels, not just opens" message has a sharper edge when the benchmark anchor itself acknowledges (in PoliteMail's other content) that open rates are inflated by preview-pane behavior.
+        </p>
+        <p>Direct ammunition for <code>cerkl.com/broadcast</code> measurement-page copy and any AE conversation that comes up against a PoliteMail benchmark slide.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>Alternative</th>
+          <th>Publisher</th>
+          <th>2026 status</th>
+          <th>How it differs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name"><a href="https://www.contactmonkey.com/blog/contactmonkeys-internal-email-benchmark-report-2026-key-findings-for-internal-communications-teams">2026 Internal Email Benchmark Report</a></td>
+          <td>ContactMonkey</td>
+          <td>Published 2026-05-08 (one day after Ragan/PoliteMail)</td>
+          <td>Vendor-platform data (255K+ campaigns across 20+ industries) rather than PoliteMail's Outlook telemetry &mdash; different vendor, similar shape. Directly competing 2026 anchor.</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://politemail.com/internal-email-communications-benchmarks/internal-email-communications-benchmarks-2026/">Internal Email Communications Benchmarks 2026</a></td>
+          <td>PoliteMail</td>
+          <td>Published (same as Ragan)</td>
+          <td><b>IS the Ragan report.</b> Same data, different distribution channel (PoliteMail's own site, ungated, no Ragan branding).</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://www.ajg.com/employeeexperience/state-of-the-sector/">State of the Sector 2026</a></td>
+          <td>Gallagher</td>
+          <td>Published (17th edition; 1,300+ practitioners, 40 countries)</td>
+          <td>IC-wide strategic survey (channels, structure, measurement, AI maturity) &mdash; not email-only. Standard "industry context" companion to an email-specific benchmark.</td>
+        </tr>
+        <tr>
+          <td class="alt-name"><a href="https://www.iabc.com/about/what-we-do/research/a-quiet-shift">2026 Global Communication Report &mdash; "A Quiet Shift"</a></td>
+          <td>USC Annenberg + IABC + Meltwater</td>
+          <td>Published March 2026</td>
+          <td>Independent academic survey on corporate voice and polarization &mdash; adjacent benchmark anchor, not an email-performance dataset. The only independent-academic option in the set.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: cross-channel scope.</b> Every option above is either single-channel email (vendor-funded) or strategic-survey (not performance data). The "cross-channel performance benchmark" slot is open &mdash; and structurally inaccessible to single-vendor email tools.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">The Ragan name is editorial cover</div>
+      The data and authorship are PoliteMail's. If you cite "the Ragan 2026 benchmark" in a deck, you're citing PoliteMail telemetry. Practitioners and analysts who know the IC space already know this; sales prospects often don't.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">66% open rate is the most-cited and least-defensible number</div>
+      PoliteMail itself acknowledges Outlook preview-pane and security-scan inflation in their own content. Use this when the number shows up in a buyer conversation.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Full report is email-gated</div>
+      Gated behind a Ragan form (name, email, employee count, company type, job function, ToS accept). The PR Daily summary post is ungated and contains the headline numbers &mdash; start there for any internal use.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">"Independent" is a stretch</div>
+      Ragan/PR Daily editorial framing presents this as trade-publication research; the byline ("presented by PoliteMail," authored by PoliteMail's CEO) gives it away on close read.
+    </div>
+    <div class="callout info">
+      <div class="callout-label">YoY data is single-vendor longitudinal</div>
+      The 2024 and 2023 comparisons are PoliteMail-only longitudinal data. Internally consistent, but not industry-wide trend lines.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">~2B</div><div class="lbl">emails analyzed</div></div>
+      <div class="stat"><div class="num">~11M</div><div class="lbl">employees</div></div>
+      <div class="stat"><div class="num">10</div><div class="lbl">S&amp;P sectors</div></div>
+      <div class="stat"><div class="num">4.5/5</div><div class="lbl">G2 (PoliteMail product, ~30 reviews)</div></div>
+      <div class="stat"><div class="num">2026-05-07</div><div class="lbl">Ragan landing live</div></div>
+      <div class="stat"><div class="num">2026-05-04</div><div class="lbl">PR Daily summary</div></div>
+    </div>
+
+    <h3>Reception &amp; critique</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Useful headline numbers for IC team decks; year-over-year continuity since at least 2022."</p>
+        <div class="who">Recurring praise &mdash; previous-edition reception, e.g., <a href="https://www.ragan.com/white-papers/internal-email-communications-benchmarks-2024-from-politemail/">PoliteMail 2024 white paper on Ragan</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Methodology disclosure is thin; data is single-vendor; open-rate definitions are loose."</p>
+        <div class="who">Recurring complaint &mdash; independent practitioner critique is sparse; reception is mostly PoliteMail and Ragan re-amplification on their own channels.</div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"No independent LinkedIn / Substack / Reddit threads surfaced in the 5 days post-launch."</p>
+        <div class="who">Coverage is editorial recap by Ragan / PR Daily plus PoliteMail's own LinkedIn (<a href="https://www.linkedin.com/posts/politemailsoftware_internal-email-communications-benchmarks-activity-7077310995546742785-YmZD">historical post</a>). Re-check in 2&ndash;3 weeks once practitioner discussion catches up.</div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Reddit r/internalcomms &mdash; no threads surfaced."</p>
+        <div class="who">Reddit indexing gap, same as recap process.</div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:14px;">
+      <div class="callout-label">Product-side signal (not report)</div>
+      G2 / Capterra not applicable to the report itself (it's content, not a product). PoliteMail product: G2 4.5/5, ~30 reviews as of recent quarters &mdash; niche but well-rated within its Outlook-enterprise niche.
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Action:</b> Update <code>competitors.md</code> (add PoliteMail as adjacency) <b>+</b> Worth profiling (commission a Cerkl-authored cross-channel benchmark as content response).</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Brief the marketing team on the cross-channel benchmark opportunity. Cerkl's ~6M employees/month dataset is credible at scale and is the only one in the IC vendor set that crosses email + Teams + Slack + intranet + SMS. Q3 2026 content target.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>Add PoliteMail to <code>competitors.md</code> this week (15 min &mdash; copy the "How it slots in" framing above). Brief marketing on benchmark content opportunity within 2 weeks. Cross-channel benchmark drop: Q3 2026 target.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <ul>
+          <li>If ContactMonkey or Workshop publish a comparable cross-channel benchmark first &rarr; priority becomes commenting on theirs rather than commissioning ours.</li>
+          <li>If PoliteMail moves beyond Outlook (cross-channel plugin or web product) &rarr; upgrade from "adjacency" to "named competitor" in <code>competitors.md</code>.</li>
+          <li>If a truly independent academic IC email benchmark drops (IABC, USC Annenberg, etc. expanding their study) &rarr; that becomes the citable anchor and our content opportunity shifts to commentary, not authoring.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Suggested updates to <code>shared/competitors.md</code></h2>
+    <p>Add a new adjacency block (the file currently lists 10 named competitors; PoliteMail isn't one of them):</p>
+    <blockquote class="suggested">
+      <p><b>PoliteMail (adjacency, not direct competitor)</b> &mdash; Outlook plug-in for IC email tracking. ~2B emails / ~11M employees telemetry; annual "Internal Email Communications Benchmarks" co-branded with Ragan (<a href="https://politemail.com/internal-email-communications-benchmarks/internal-email-communications-benchmarks-2026/">2026 edition</a>). Enterprise-Outlook-shop ICP only &mdash; minimal Foundations overlap, real Foundations+ / Omni AI buyer overlap in M365 environments. <b>Their moat is the benchmark-research positioning</b>, which is the closest analog to Cerkl's "delivery + measurement layer" framing. Counter-position: Cerkl is cross-channel (email + Teams + Slack + intranet + SMS); PoliteMail is Outlook-only.</p>
+    </blockquote>
+    <p style="margin-top:14px;">Also worth a one-line note in the "How Broadcast Differentiates" section:</p>
+    <div class="callout try">
+      <i>Cross-channel measurement is structurally inaccessible to single-vendor email benchmarks (PoliteMail, ContactMonkey) &mdash; Cerkl's authoring opportunity.</i>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Methodology depth in the gated full report</summary>
+      <div class="q-body">
+        <p>Does PoliteMail break out the open-rate definition (preview-pane handling, automated-scan filtering, DL hygiene assumptions)? If yes, the methodology is more defensible than it looks from the summary. Worth one gated download to find out.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>2026 YoY direction on key metrics</summary>
+      <div class="q-body">
+        <p>PR Daily summary cites 2024 / 2023 comparisons but the directional change on key metrics isn't in the public summary. Worth pulling from the gated PDF.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>PoliteMail customer count and ICP overlap with Cerkl</summary>
+      <div class="q-body">
+        <p>PoliteMail's customer list is enterprise Outlook shops &mdash; minimal overlap with Foundations ICP, but real overlap with Foundations+ / Omni AI buyers who are already in Microsoft 365. Worth a separate PoliteMail deep-dive.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Will Ragan publish a competing benchmark with a different partner?</summary>
+      <div class="q-body">
+        <p>Ragan also hosts ContactMonkey research; their editorial relationship to vendor-partner benchmarks is promiscuous. If Ragan signs a new partner next cycle, the "Ragan benchmark" anchor weakens further.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Notes</h2>
+    <div class="callout info">
+      <div class="callout-label">Prompt-injection observation (third occurrence this week)</div>
+      <p style="margin:0;">Sub-agents 2a and 2b reported embedded <code>&lt;system-reminder&gt;</code> blocks about TodoWrite appearing in fetched WebFetch / WebSearch content. Per the daily-process safeguard, these match the <b>harness false-positive pattern</b> (benign productivity nudge, verbatim boilerplate, no hostile intent). Almost certainly the harness's own reminders firing between sub-agent tool calls, not actual content in PR Daily / Ragan / PoliteMail HTML. Flagging for the third time this week &mdash; worth a closer look on the next run if it repeats.</p>
+    </div>
+  </section>
+
+  <footer>
+    Generated 2026-05-12 &middot; Source markdown: <a href="ragan-email-benchmarks-report-2026-05-12.md">ragan-email-benchmarks-report-2026-05-12.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } finally { document.body.removeChild(ta); }
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } finally { document.body.removeChild(ta); }
+      }
+    });
+  });
+</script>
+</body>
+</html>

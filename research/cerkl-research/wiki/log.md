@@ -84,3 +84,16 @@ Header format: `## [YYYY-MM-DD] operation | Title`. Parseable with `grep "^## \[
 - Updated topics: [[ai-in-internal-comms]] (Workshop AI-use stats), [[internal-email]] (81% effectiveness), [[intranet-and-digital-workplace]] (29% hardest, evergreen strategy), [[ic-measurement-and-roi]] (vendor-tier addition)
 - Notable: confirmed methodological non-contradiction between Forrester (49% vendor-AI) and Workshop (73% any-AI) — different denominators
 - Pages touched: 12
+
+## [2026-05-12] ingest | Ragan 2026 Internal Email Benchmarks Report (Cerkl deep-dive)
+- Source: local deep-dive at `cerkl/research/ic-trends/deepdives/ragan-email-benchmarks-report-2026-05-12.md`
+- Mode: discuss-first per CLAUDE.md; Travis directed paired-anchor restructure + 2 new concepts + entity additions for PoliteMail (full), Ragan Communications, Gallagher, IABC, USC Annenberg, Meltwater
+- Key finding: the "Ragan benchmark" is PoliteMail's annual report distributed via Ragan co-branding; same vendor lead-gen substance, editorial cover
+- Created source: [[ragan-email-benchmarks-report-2026-05-12]]
+- Created entities: [[politemail]], [[ragan-communications]], [[gallagher]], [[iabc]], [[usc-annenberg]], [[meltwater]]
+- Created concepts: [[open-rate-inflation]], [[cross-channel-benchmark]]
+- Restructured concept: [[internal-email-benchmarks]] — now paired-anchored on PoliteMail (66/7) and ContactMonkey (76/9) with shared methodology section
+- Updated entities: [[contactmonkey]] (paired-benchmark context), [[pr-daily]] (Ragan parent + vendor-distribution pattern)
+- Updated topics: [[internal-email]] (paired anchors + inflation caveat + cross-channel-vacuum), [[ic-measurement-and-roi]] (practitioner-survey + academic tier rows; PoliteMail filter; cross-channel pattern)
+- Updated index.md with 9 new pages and refined descriptions
+- Pages touched: 13

@@ -1,6 +1,6 @@
 # Bulk SEO Blog Production
 
-> Take a target month from the content plan and produce every blog post on the calendar — pre-writing, draft, edit — into the seo-blog channel folder. Output: one `_live.md` per post in `blog-posts-live/`, each also published to Drive.
+> Take every SEO brief scheduled for a target month — from [`../../seo/briefs/`](../../seo/briefs/), cross-referenced with [`../../content-plan/rolling-4week.md`](../../content-plan/rolling-4week.md) — and produce every blog post: pre-writing → draft → edit. Output: one `_live.md` per post in `blog-posts-live/`, each also published to Drive.
 
 ## Trigger
 
@@ -13,8 +13,8 @@
 
 I'll ask before scaffolding:
 
-1. **Target month** (e.g., May 2026) — used to find `monthly-content-plans/[month-year].md` and `[month-year]-jira.csv` in the content-plan folder.
-2. **Subset?** — all blog posts on the plan, or a specific list of slugs.
+1. **Target month** (e.g., May 2026) — used to filter SEO briefs by `scheduled_for:` falling in that month.
+2. **Subset?** — all scheduled briefs for the month, or a specific list of slugs.
 3. **Skip Drive upload?** — default is to publish each `_live.md` to Drive; user can opt out.
 
 **For n=1 (single-post runs):** skip the sub-agent dispatch in Steps 2a/2b/2c and run each step inline in the orchestrator's own context. The "dispatch one sub-agent per post" framing exists to parallelize across many posts; with one post, the dispatch overhead is wasted. Same skills, same prompts, same output paths — just inline.
@@ -37,36 +37,41 @@ I'll ask before scaffolding:
 
 ## Steps
 
-### Step 1 — Load the monthly plan
+### Step 1 — Load scheduled briefs
 
 - **Owner:** Claude
 - **Parallelizable with:** —
 - **Needs:** —
-- **Inputs:** `/Users/travisfoster/claude-code/cerkl/marketing/content-plan/monthly-content-plans/[month-year].md` and `[month-year]-jira.csv`
-- **Produces:** an in-memory list of cerkl.com blog posts for the month, each with `{publish_date, slug, working_title, summary}` parsed from the Jira CSV.
-- **What to do:** Read both files. Filter the CSV to rows where:
-  - `Channel` column = `Blog Posts`, **AND**
-  - `Summary` column begins with `Content - Blog (Cerkl.com) -`
-  
-  This is the rule that splits cerkl.com posts from internalcommspro.com posts in a shared content plan — both have channel = "Blog Posts", but only Cerkl-branded rows carry the `(Cerkl.com)` marker. (ICPro posts use `(ICP)` and are owned by [`channels/icpro-blog/icpro-blog-process.md`](../icpro-blog/icpro-blog-process.md).)
-  
-  For each, extract publish date (`YYYY-MM-DD`), slug, working title, and the post summary. If `Subset?` was specified, narrow the list. Confirm the list with the user before proceeding.
+- **Inputs:** [`../../seo/briefs/`](../../seo/briefs/) (the SEO brief queue) and [`../../content-plan/rolling-4week.md`](../../content-plan/rolling-4week.md)
+- **Produces:** an in-memory list of seo-blog briefs scheduled for the month, each with `{brief_path, slug, scheduled_for, title, target_pillar, primary_solution}` parsed from the brief's YAML frontmatter.
+- **What to do:** List files in `seo/briefs/` (exclude `_template.md` and `archive/`). Parse each file's YAML frontmatter. Filter to briefs where **all** of:
+  - `target_channel: seo-blog`, **AND**
+  - `status: scheduled` or `in-progress`, **AND**
+  - `scheduled_for:` falls in the target month (`YYYY-MM-*`).
+
+  Cross-check against `rolling-4week.md`: every brief surfaced should also have a row in the rolling 4-week plan whose `Source brief` column links the same brief file. Flag any discrepancy to the user (brief scheduled but not in plan, or plan row pointing at a brief whose `status` ≠ `scheduled`/`in-progress`) before proceeding.
+
+  If `Subset?` was specified, narrow the list. Confirm the list with the user before proceeding.
+
+  ICPro posts are out of scope — they're a separate property with their own production path under [`../icpro-blog/`](../icpro-blog/).
 
 ### Step 2a — Pre-writing (per post)
 
 - **Owner:** Claude (sub-agent per post — parallelizable)
 - **Parallelizable with:** every other 2a instance (one per post)
-- **Needs:** [`skills/seo-blog-pre-writing/SKILL.md`](skills/seo-blog-pre-writing/SKILL.md)
-- **Inputs:** post summary + working title from Step 1
+- **Needs:** [`skills/seo-blog-pre-writing/SKILL.md`](skills/seo-blog-pre-writing/SKILL.md) (v0.2.0+ — reads from SEO brief)
+- **Inputs:** the brief path from Step 1 (one per post)
 - **Produces:** `blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md`
-- **What to do:** Dispatch one sub-agent per post. Each sub-agent loads the pre-writing skill, completes every property (title, slug, keywords, CTAs, categories, meta, outline), and writes the file.
+- **What to do:** Dispatch one sub-agent per brief. Each sub-agent loads the pre-writing skill, reads the SEO brief at the given path, carries Group A properties verbatim (pillar, solution, keywords, hub link, sibling URLs, all-categories), decides Group B (CTA variants, Meta Title, Meta Description, full outline), and writes the pre-writing file. After writing, the sub-agent flips the brief's `status:` from `scheduled` to `in-progress`.
 
 **Sub-agent brief must say:**
-- Inputs verbatim: post summary, working title, publish date, channel = seo-blog (Cerkl-branded).
-- Output path: `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md`.
+- Inputs verbatim: full path to the SEO brief (`/Users/travisfoster/claude-code/cerkl/marketing/seo/briefs/<slug>.md`).
+- Output path: `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/YYYY-MM-DD_[slug]_pre-writing.md` (use the brief's `scheduled_for:` as `YYYY-MM-DD`).
+- Read the SEO brief first. Carry Group A properties verbatim — do not re-derive. Decide Group B (Top/Middle/Bottom CTA variants per the skill's CTA tables, Meta Title, Meta Description, full H1/H2/H3 outline expanding the brief's angle).
+- If any Group A property in the brief is missing or contradictory, **stop and flag** — do not invent.
 - Length cap: pre-writing is structured properties + outline, not prose; aim ≤300 lines.
 - Conventions: dates in `YYYY-MM-DD`; slug lowercase-hyphenated, ≤60 chars.
-- Use the property tables in the pre-writing skill verbatim — do not invent CTA or category names.
+- After writing the file, update the brief's `status:` from `scheduled` to `in-progress`.
 
 ### Step 2b — Drafting (per post)
 
@@ -122,10 +127,11 @@ I'll ask before scaffolding:
 - `blog-posts-live/YYYY-MM-DD_[slug]_live.md` — one per post, with edit log appended
 - A Drive Doc per live file (Claude-Uploads folder, `YYYY-MM-DD — <H1 title>` naming)
 - A chat-printed roll-up summary
+- Each brief's `status:` is `in-progress` after Step 2a runs. **Do not flip to `shipped` here** — that happens when the post actually goes live in Webflow, after Travis copies the Drive Doc over. The planner archives shipped briefs on the next Monday reconcile.
 
 ## Push-update protocol
 
-Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to `personal-assistant/projects/icpro-seo.md` (or the relevant blog project file) when bulk production completes:
+Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to `personal-assistant/projects/seo-strategy-plan.md` (or the relevant blog project file — no dedicated `cerkl-blog.md` PA project exists yet) when bulk production completes:
 
 ```
 ## Update — YYYY-MM-DD (from marketing/channels/seo-blog/)

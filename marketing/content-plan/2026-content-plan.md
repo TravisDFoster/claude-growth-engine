@@ -25,7 +25,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## May 2026 — Prove Your Impact
 
-**Campaign Epic:** 2026 Insights Update
+**Campaign Epic:** May Campaigns
 
 **Anchor:** Insights Update product launch
 
@@ -50,7 +50,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## June 2026 — Reach Every Employee
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** June Campaigns
 
 **Anchor:** Pride Month / Juneteenth / deskless and frontline comms moment
 
@@ -75,7 +75,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## July 2026 — Work Smarter with AI
 
-**Campaign Epic:** 2026 AI-Assistant Launch
+**Campaign Epic:** July Campaigns
 
 **Anchor:** AI-assistant product launch
 
@@ -100,7 +100,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## August 2026 — Ditch the Manual Stack
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** August Campaigns
 
 **Anchor:** Back-to-work season; new fiscal year planning for many orgs
 
@@ -125,7 +125,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## September 2026 — Plan Ahead
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** September Campaigns
 
 **Anchor:** Q4 planning season; internal comms strategy and budgeting
 
@@ -151,7 +151,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## October 2026 — Benefits Season Ready
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** October Campaigns
 
 **Anchor:** Open enrollment season; benefits and HR comms moment
 
@@ -179,7 +179,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## November 2026 — Communicate Through Change
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** November Campaigns
 
 **Anchor:** End-of-year change communications; Veterans Day; pre-holiday engagement push
 
@@ -206,7 +206,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ## December 2026 — Year in Review
 
-**Campaign Epic:** 2026 Foundations Free
+**Campaign Epic:** December Campaigns
 
 **Anchor:** Year-end reporting; 2027 planning; budget cycles opening for new tools
 
