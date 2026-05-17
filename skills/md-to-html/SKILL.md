@@ -12,7 +12,8 @@
 ## Inputs
 
 - **Source path** (required) — absolute path to the `.md` file to convert
-- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `weekly-plan` (PA `current-week.md`) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `generic`
+- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `weekly-plan` (PA `current-week.md`) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `dashboard` (number-driven status report with inline SVG/CSS charts; for leadership briefings, program health checks, KPI snapshots) | `one-pager` (print-format letter portrait; uses `cerkl/marketing/design/one-pagers/reference-one-pager.html` — different design system optimized for print, runs through `html-overflow-detector` + `html-to-pdf` after this skill) | `generic`
+- **Theme** (optional) — `light` (default) | `dark`. Dark variant is opt-in and works with any artifact type. Use for short, high-impact, external-facing artifacts (leadership briefs, pitch one-pagers, prospect-shareable comp profiles). Don't use for long-read daily artifacts (recaps, deep-dives) — eye fatigue.
 
 ## Output
 
@@ -47,6 +48,9 @@ Run the md-to-html skill on <source_path>.
    For `daily-recap` artifact type, also read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-daily-recap.html.
    For `weekly-plan` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-weekly-plan.html instead — it carries the day-card collapsibles, deadline-pill strip, week-at-a-glance table, and auto-open-today JS.
    For `hook-batch` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-hook-batch.html instead — it carries the selection UI and copy-to-clipboard JS that the other references don't have.
+   For `dashboard` artifact type, read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-dashboard.html instead — it carries the inline-SVG donut charts, CSS-only horizontal bar charts, CSS-Grid timeline strip, traffic-light gauges, paired-bar comparison, and number-led card patterns. Less prose; charts replace paragraphs.
+   For `one-pager` artifact type, read /Users/travisfoster/claude-code/cerkl/marketing/design/one-pagers/reference-one-pager.html instead — it is a DIFFERENT design system (print-format letter portrait, .page divs, CSS Grid pagination, content-budget catalog in the header comment, layout variants per component, --body-size Tier-A remediation knob). Do not use reference-deep-dive.html's components for one-pagers. Compose by selecting variants from the catalog based on per-section word counts in the source markdown.
+   When `theme=dark`, ALSO read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-dark.html — visual-language overlay (dark theme variables, gradient hero, dark-adapted semantic colors). Component class names match the light reference, so dark is a theme swap, not a layout change. The artifact-type-specific reference still governs section order and required components. **Dark theme is NOT supported for `one-pager` artifacts** — print uses light only.
 3. Read the source markdown at <source_path>.
 4. Write the HTML at the sibling path (same basename, .html extension), self-contained per the skill's quality bar.
 5. Return only the output path + a one-line confirmation of components used. Do NOT echo the HTML body back to the parent.
@@ -72,7 +76,7 @@ Per Cerkl brand guidelines (`cerkl/marketing/design/branding-assets/Brand Guidel
 
 Per `cerkl/marketing/design/branding-assets/Brand Guidelines/colors.md`. The primary palette is **cobalt + cosmic + butter** with accents in forest, ruby, and violet.
 
-- **Light mode by default.** Brand defaults to white / Cosmic 10 backgrounds with Cosmic-base text. Dark mode is not specified in the guidelines and is not used for cerkl artifacts.
+- **Light mode by default; dark is opt-in via `theme=dark`.** Brand defaults to white / Cosmic 10 backgrounds with Cosmic-base text. Dark variant (Cosmic-base body + Cobalt 100 gradient hero) is brand-approved — Cobalt 100 is explicitly tagged "dark backgrounds, depth" and every typography style approves white text. Use dark for short, high-impact, external-facing artifacts (leadership briefs, pitch one-pagers, prospect-shareable comp profiles). Keep light for long-read daily artifacts. See `reference-dark.html` for the dark theme variables.
 - **Accent (primary brand):** Cobalt 60 `#3547c4` — used for hyperlinks, accent borders, TL;DR rule, primary buttons.
 - **Surfaces:** white `#ffffff` (panel), Cosmic 10 `#f5f5fa` (panel-soft / body bg).
 - **Text:** Cosmic base `#18181d` (ink), Cosmic 80 `#373740` (muted secondary).
@@ -112,7 +116,7 @@ Per `cerkl/marketing/design/branding-assets/Brand Guidelines/colors.md`. The pri
 These are the "AI default look" — if your output drifts toward any of them, restart. Inherited from `dogum/html-artifacts`:
 
 - **Cards everywhere** with rounded corners and shadows, on a gray background, doing no actual work.
-- **Full-bleed gradient hero.** Or any gradient anywhere, really.
+- **Gradients used outside brand spec.** Cerkl's brand explicitly calls gradients "a key part of Broadcast's branding." The rule: **one approved gradient per design**, drawn from the brand combinations (`#4c60d9 → #3547c4`, `#0c1159 + #a7b3ed`, `#f5f5fa → #3547c4`, or the full cobalt sweep). Hero block is the natural home (especially in the dark variant). Multiple gradients, off-palette gradients, or animated gradient backgrounds are still off-brand.
 - **Emoji as section headers** (📊 Analytics, ⚡ Performance). Use real iconography or none.
 - **Four shades of indigo or violet** doing nothing in particular. One accent color, used semantically.
 - **Shadcn-shaped components** when no shadcn library is in play.
@@ -237,18 +241,50 @@ Required HTML pattern per card — the `data-` attributes are what the copy scri
 
 Don't apply deep-dive components (verdict pills, comparison tables, reco grid, quote cards) — hook-batch is selection-driven, not analysis-driven.
 
+### `dashboard`
+
+See `reference-dashboard.html` for the canonical example (rendered from `cerkl/marketing/seo/reports/2026-05-15-blog-seo-leadership-status.md`). **Number-driven status report.** Use for leadership briefings, program health checks, KPI snapshots — anywhere the audience wants to scan the state of a system, not read a narrative. Pairs naturally with `theme=dark`.
+
+The principle: **less prose, more visualization.** Each section leads with a chart or stats strip; explanatory text is at most 1–2 sentences. Cut paragraphs that just describe what a chart already shows.
+
+Sections in this order (skip any that don't apply):
+1. **Hero stat strip** — 5 headline numbers at-a-glance (the audience reads these first; everything else is depth). Dashboard title + date + breadcrumb + accent-bordered TL;DR. No verdict pill.
+2. **Inventory / current state** — horizontal bar chart with per-row labels + health-status badges. Use one accent color (Cobalt 60) for bars; reserve the semantic palette (Forest / Butter / Ruby) for the badges only.
+3. **Breakdown donuts** — inline-SVG ring charts (stroke-dasharray pattern). Pair a main donut (overall surface) with a focused donut (one slice expanded). Legends below each.
+4. **Timeline / calendar** — CSS-Grid strip showing scheduled items across N weeks, color-coded by category. Each cell is a small "chip" with date + title.
+5. **Comparison bars** — paired existing-vs-pipeline (or before-vs-after) bars to surface relative movement.
+6. **Number-led cards (2–4)** — strategic-move or initiative cards each anchored by a single big number + one-line context + outcome metric.
+7. **Status gauges** — traffic-light pills (Forest / Butter / Ruby) for tooling status, infrastructure readiness, or any binary-state inventory.
+8. **Before / after compact comparison** — two-column table contrasting prior state with current. No headers above each row; let the contrast do the work.
+9. **Actions table** — tight, scannable. Effort + owner + unlock columns. No prose row descriptions.
+
+Chart implementation rules:
+- **All charts inline SVG or CSS-only.** No D3, no Chart.js, no external libraries. Self-contained except Google Fonts.
+- **SVG ring charts** use `stroke-dasharray="<slice> <remainder>"` with `stroke-dashoffset` to rotate slices into position; one `<circle>` per slice; total `viewBox="0 0 32 32"` and `r=16` is convenient. Wrap with a `<text>` element for the center number.
+- **Horizontal bars** are flexbox rows: `<label><fill style="width:N%"/><value/></label>`. No SVG needed.
+- **Timeline grid** uses CSS Grid (`grid-template-columns: repeat(7, 1fr)` for weekly) with brief chips placed by grid-column-start.
+- **Status gauges** are styled pills using `.gauge.bad / .warn / .good` matching the semantic palette.
+- **Cap chart count.** A dashboard with 8+ visualizations becomes a wall of charts; aim for 4–6 distinct chart types per page.
+
+Layout-specific anti-patterns:
+- **Don't recompute numbers.** The orchestrator (caller) should pre-compute percents and pass them in the brief. Sub-agents that recompute from source tables introduce rounding drift.
+- **Don't pretend you have data you don't.** Dashboards lose credibility instantly when a chart implies measurement you can't substantiate. Mark missing data explicitly (e.g., a "Not currently tracked" status gauge) rather than fabricating a number.
+- **Don't introduce a 5th accent color** to differentiate chart series. The palette has 6 semantic colors and that's already plenty.
+
 ### `generic`
 
 Render sections in source order, applying components opportunistically. Use callouts where the source has bold caveats, comparison tables for any markdown table, quote cards for any blockquote.
 
 ## Component reference
 
-This skill folder contains four reference templates:
+This skill folder contains five reference templates:
 
-- **`reference-deep-dive.html`** — canonical visual language (dark-mode, serif body, component library, click-to-copy JS, print stylesheet). Use as the source-of-truth design system reference.
+- **`reference-deep-dive.html`** — canonical visual language for the **light** theme (Cerkl brand palette, component library, click-to-copy JS, print stylesheet). Use as the source-of-truth design system reference.
 - **`reference-daily-recap.html`** — example application of the same design system to a daily-recap content shape. Use when artifact-type is `daily-recap`.
 - **`reference-weekly-plan.html`** — PA weekly-plan variant. Day-card collapsibles (Mon–Fri), deadline-pill strip, week-at-a-glance table, auto-open-today JS. Use when artifact-type is `weekly-plan`.
 - **`reference-hook-batch.html`** — selection-driven variant of the design system. Adds checkbox-state cards, sticky selection bar, and copy-to-clipboard JS that produces a paste-ready text block. Use when artifact-type is `hook-batch`.
+- **`reference-dashboard.html`** — number-driven dashboard variant. Inline-SVG donut charts, CSS-only horizontal bar charts, CSS-Grid timeline, traffic-light gauges, paired-bar comparison, number-led cards. Use when artifact-type is `dashboard`. Pairs naturally with `theme=dark`.
+- **`reference-dark.html`** — dark-theme overlay. Component class names match the light reference, so any artifact type swaps to dark by lifting these theme variables + the gradient-hero pattern. Body: Cosmic base (`#18181d`). Hero: Cobalt 100 + Cobalt 40 freeform gradient. Use when `theme=dark`. Pair with the artifact-type-specific reference for section order; this file only governs visual language.
 
 Read whichever matches your artifact type once, then write fresh HTML — don't try to diff against it. Both share the same CSS theme, so cross-referencing the deep-dive reference for components and the recap reference for layout is fine.
 
@@ -283,14 +319,24 @@ Component classes available in the reference:
 | `.hook-card` (+ `.selected`) | Selectable hook card with custom checkbox (hook-batch) |
 | `.cat-badge.pain` / `.positioning` / `.pattern` | Angle and pattern type badges (hook-batch) |
 | `.toast` (`.show`) | Toast notification after copy-to-clipboard (hook-batch) |
+| `.hero-stats` / `.h-stat` / `.h-num` / `.h-lbl` | Hero 5-number stat strip — headline KPIs at-a-glance (dashboard) |
+| `.bar-chart` / `.bar-row` / `.bar-fill` / `.bar-label` / `.bar-meta` | CSS-only horizontal bar chart with per-row labels and value badges (dashboard) |
+| `.donut-card` / `.donut-grid` / `.donut-svg` / `.donut-center` | Inline-SVG ring chart via stroke-dasharray (dashboard) |
+| `.legend` / `.legend-item` / `.legend-swatch` / `.legend-label` / `.legend-value` | Donut legend rows with color swatches (dashboard) |
+| `.brief-chip` | Category-color-coded chip placed on a CSS-Grid timeline row (dashboard) |
+| `.pair-row` / `.pair-key` / `.pair-label` / `.pair-track-group` / `.pair-bar-track` | Paired existing-vs-pipeline (or before-vs-after) comparison bars (dashboard) |
+| `.gauge-grid` / `.gauge-tool` / `.gauge-status` / `.gauge-unlocks` | Traffic-light tooling-status gauges (dashboard) |
+| `.cost-callout` / `.cost-label` / `.cost-formula` / `.cost-result` | Cost-to-unlock prominent callout pairing with status gauges (dashboard) |
+| `.ba-grid` | Two-column compact before/after comparison (dashboard) |
+| `.actions` (table) / `.act-num` / `.effort` | Tight, scannable recommended-actions table (dashboard) |
 
 ## Quality bar
 
 Before returning, verify:
-- [ ] Self-contained (no `<link>` to external CSS, no `<script src=…>`)
-- [ ] Dark by default (no light-mode background leaking through)
-- [ ] Body in serif; UI chrome (breadcrumb, badges, buttons) in sans
-- [ ] Print stylesheet present (flips to light for paper)
+- [ ] Self-contained (no `<link>` to external CSS aside from the Work Sans Google Fonts link, no `<script src=…>`)
+- [ ] Theme matches the requested mode: light (default) renders on white / Cosmic 10; dark renders on Cosmic base with the Cobalt 100 + Cobalt 40 freeform gradient hero
+- [ ] Body in Work Sans; UI chrome (breadcrumb, badges, buttons) uses Work Sans at SemiBold/Bold per brand typography
+- [ ] Print stylesheet present (light theme always — paper needs ink-on-white regardless of screen theme)
 - [ ] Footer references the source `.md` file
 - [ ] All hyperlinks from the source markdown are preserved
 - [ ] All quoted text from community signal includes attribution + source link

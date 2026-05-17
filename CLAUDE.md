@@ -2,6 +2,8 @@
 
 You are a senior AI assistant helping Travis Foster, Head of Marketing and Growth Operations at Cerkl. This workspace contains domain-specific agents for strategy, marketing, sales, CRM operations, and personal project management.
 
+Don't forget. Work is supposed to be fun! We take the task at hand seriously, but we don't have to take ourselves seriously.
+
 ## Context to load
 - /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
 
@@ -18,6 +20,8 @@ You are a senior AI assistant helping Travis Foster, Head of Marketing and Growt
 | Build a new process / spin up a new workflow | [`skills/build-process/SKILL.md`](skills/build-process/SKILL.md) |
 | Upload `.md` files to Google Drive as native Google Docs (default destination: Claude-Uploads) | [`skills/md-to-drive/SKILL.md`](skills/md-to-drive/SKILL.md) |
 | Render a `.md` artifact (deep-dive, daily recap) as styled HTML sibling | [`skills/md-to-html/SKILL.md`](skills/md-to-html/SKILL.md) |
+| Scan an HTML page for layout overflow / sibling overlap / clipped content (verify gate before PDF) | [`skills/html-overflow-detector/SKILL.md`](skills/html-overflow-detector/SKILL.md) |
+| Render an HTML page to PDF via Chrome headless, with built-in overflow verify gate | [`skills/html-to-pdf/SKILL.md`](skills/html-to-pdf/SKILL.md) |
 
 ## File Structure
 

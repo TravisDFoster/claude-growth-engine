@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gartner — People-Centric AI Strategy (2027 Talent Prediction) — Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #18181d;
+    --panel: #1f1f26;
+    --panel-soft: #27272e;
+    --ink: #f5f5fa;
+    --muted: #bfbfc7;
+    --line: #373740;
+    --accent: #4c60d9;
+    --accent-pale: #a7b3ed;
+    --accent-soft: rgba(76, 96, 217, 0.14);
+    --accent-border: rgba(167, 179, 237, 0.28);
+    --warm: #ffaa22;
+    --warm-pale: #ffbf57;
+    --good: #6de4c9;
+    --good-bg: rgba(59, 197, 164, 0.10);
+    --good-border: rgba(109, 228, 201, 0.30);
+    --warn: #ffbf57;
+    --warn-bg: rgba(255, 170, 34, 0.10);
+    --warn-border: rgba(255, 170, 34, 0.30);
+    --bad: #f79499;
+    --bad-bg: rgba(242, 73, 95, 0.10);
+    --bad-border: rgba(242, 73, 95, 0.30);
+    --info: #a7b3ed;
+    --info-bg: rgba(76, 96, 217, 0.12);
+    --info-border: rgba(167, 179, 237, 0.25);
+    --quote: #a869fd;
+    --code-bg: #27272e;
+    --shadow: 0 1px 0 rgba(0,0,0,0.30), 0 8px 24px rgba(0,0,0,0.40);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    --hero-gradient:
+      radial-gradient(ellipse 90% 70% at 20% 25%, rgba(167,179,237,0.22) 0%, rgba(167,179,237,0) 60%),
+      radial-gradient(ellipse 60% 50% at 85% 80%, rgba(76,96,217,0.18) 0%, rgba(76,96,217,0) 60%),
+      linear-gradient(135deg, #0c1159 0%, #0c1159 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--hero-gradient);
+    border: 1px solid rgba(167, 179, 237, 0.20);
+    border-radius: 14px;
+    padding: 32px 36px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--accent-pale); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 {
+    font-size: 34px; line-height: 1.2; margin: 0 0 10px;
+    letter-spacing: -0.005em; font-weight: 700; color: #ffffff;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: rgba(255,255,255,0.78); margin-bottom: 18px;
+  }
+  .meta-row b { color: #ffffff; font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    backdrop-filter: blur(4px);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: rgba(255,255,255,0.92);
+    border-left: 3px solid var(--accent-pale); padding-left: 16px;
+    margin: 0;
+  }
+  .tldr b { color: #ffffff; }
+
+  section {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px; color: var(--ink);
+  }
+  h2 .num {
+    font-size: 12px; color: var(--accent-pale); font-weight: 600;
+    background: var(--accent-soft); padding: 2px 8px; border-radius: 6px;
+    border: 1px solid var(--accent-border);
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; color: var(--ink); }
+  p { margin: 0 0 12px; color: var(--ink); }
+  a { color: var(--accent-pale); text-decoration: none; border-bottom: 1px solid var(--accent-border); }
+  a:hover { color: #ffffff; border-bottom-color: var(--accent-pale); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; color: var(--ink); }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent-pale); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid; margin: 12px 0;
+  }
+  .callout.try  { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent-pale); }
+  .callout.warn { background: var(--warn-bg);     border-color: var(--warn-border);   color: var(--warn); }
+  .callout.info { background: var(--info-bg);     border-color: var(--info-border);   color: var(--info); }
+  .callout p { max-width: none; color: inherit; }
+  .callout b { color: #ffffff; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9; margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden; margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em; font-family: inherit;
+  }
+  .copy-btn:hover { background: #3547c4; }
+  .copy-btn.copied { background: var(--good); color: #003324; }
+  p code, li code, td code {
+    font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+    color: var(--accent-pale);
+  }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--accent-pale); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent-pale); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent-pale); font-weight: 600; background: var(--panel);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--accent-pale);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px; color: var(--ink);
+  }
+  .axis-note b { color: #ffffff; }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.5; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; color: var(--ink); }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 24px; font-weight: 700; color: var(--accent-pale); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .stat.warm .num { color: var(--warm); }
+
+  .reco {
+    background: var(--panel-soft);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--accent-pale); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  details.q {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative; color: var(--ink);
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent-pale); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    header.hero {
+      background: #ffffff; color: #18181d; border: 1px solid #d5d5db; box-shadow: none;
+    }
+    header.hero h1, header.hero .meta-row b, .tldr b, .callout b, .axis-note b { color: #18181d; }
+    header.hero .breadcrumb { color: #373740; }
+    header.hero .meta-row { color: #373740; }
+    .tldr { color: #18181d; border-left-color: #3547c4; }
+    section, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; background: #ffffff; color: #18181d; }
+    h2, h3, p, td, th, .stat .num, .pillar h4, .stack-card h4, .persona p, .reco-cell p, li { color: #18181d; }
+    h2 .num { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    .stat .lbl, .quote .who, details.q .q-body { color: #373740; }
+    .pillar, .persona, .stack-card, .reco-cell, .quote, .stat, details.q { background: #f5f5fa; border-color: #d5d5db; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Analyst Report Deep Dive</div>
+    <h1>Gartner: 50% of Enterprises Without a People-Centric AI Strategy Will Lose Their Top AI Talent by 2027</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-15</span>
+      <span><b>Source date:</b> 2026-05-13</span>
+      <span><b>Category:</b> Analyst report (Gartner)</span>
+      <span class="verdict">Worth profiling — analyst-grade validation for the rollout-comms thesis</span>
+    </div>
+    <p class="tldr">
+      Gartner predicts that by 2027, half of enterprises that fail to build a <b>people-centric AI strategy</b>
+      will lose their top AI talent — and names <b>CHROs (in partnership with CIOs)</b> as owners of governance,
+      decision rights, and tool UX. The data underneath the prediction is the IC-relevant part:
+      <b>19% of employees report zero time saved from AI</b>, <b>88%</b> with enterprise AI access also use
+      personal AI tools, and the gap between "rollout" and "transformation" — what Gartner calls the
+      <b>"enablement illusion"</b> — is the problem. Analyst-grade validation for Cerkl's "delivery +
+      measurement layer" pitch.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to try</div>
+      Draft a 200-word "Gartner just validated the rollout-comms thesis" snippet for sales enablement —
+      citation-ready, with the key stats (<b>19% / 88% / 73%</b>) and one-line tie to Cerkl positioning.
+      Distribute to AEs and CSMs within 5 business days. Then fold into the Staffbase and Simpplr versus
+      pages on the next refresh.
+      <div class="code-row">
+        <code id="snippet-prompt">Gartner (2026-05-13) predicts 50% of enterprises without a people-centric AI strategy will lose top AI talent by 2027. 19% of employees report zero time saved from AI; 88% with enterprise AI access use personal AI tools anyway. Gartner names CHROs+CIOs as co-owners of tool UX, governance, and rollout communications.</code>
+        <button class="copy-btn" data-copy="snippet-prompt" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is &amp; what it claims</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Origin</h3>
+        <p>
+          A Gartner press release dated <b>2026-05-13</b>, sourced from the
+          <b>Gartner Global Labor Market Survey 1Q26</b> (12,004 employees and managers across 40 countries)
+          plus a December 2025 survey of 197 CxOs. Authored by <b>Swagatam Basu</b> (Senior Director Analyst,
+          Gartner HR practice) and <b>Diana Sanchez</b> (Senior Director Analyst, Gartner HR practice).
+        </p>
+        <ul>
+          <li>Press release: <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-predicts-by-2027-50-percent-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent">gartner.com (May 13)</a></li>
+          <li>Re-publication: <a href="https://it-online.co.za/2026/05/15/people-centric-ai-strategy-key-to-retaining-top-talent/">it-online.co.za</a></li>
+          <li>Re-publication: <a href="https://appleworld.today/2026/05/gartner-by-2027-50-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent/">appleworld.today</a></li>
+          <li>Journalist write-up: <a href="https://www.itpro.com/business/careers-and-training/upskill-your-staff-in-ai-or-expect-them-to-quit-says-gartner">ITPro (Emma Woollacott)</a></li>
+        </ul>
+        <p style="font-size:13px; color:var(--muted); margin-top:8px;">
+          Gartner's own URL blocked direct fetch with a 403; coverage cross-verified across three
+          independent re-publishers who each lift the same Basu/Sanchez verbatim quotes and stats.
+        </p>
+      </div>
+      <div>
+        <h3>The headline prediction</h3>
+        <p>
+          <em>"By 2027, 50% of enterprises without a people-centric AI strategy will lose their top AI talent
+          to competitors who prioritize workforce enablement over basic adoption."</em>
+        </p>
+        <p>
+          The release lands the prediction, then unpacks <b>four workforce dynamics</b> CHROs and CIOs must
+          address together. The "enablement illusion" — confusing access and adoption metrics for
+          transformation — is the diagnosis. Tool UX, governance, leadership gap, and psychological safety
+          are the prescriptions.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">The four workforce dynamics</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="n">DYNAMIC 1</div><h4>Beyond time-saved</h4><p>"True ROI Index" tracking depth and diversity of AI use; central use-case repository.</p></div>
+      <div class="pillar"><div class="n">DYNAMIC 2</div><h4>Shadow AI &amp; governance</h4><p>CIOs + CHROs partner to audit and improve enterprise AI tool UX; HR in governance bodies.</p></div>
+      <div class="pillar"><div class="n">DYNAMIC 3</div><h4>Close leadership gap</h4><p>73% of high-productivity users are managers/execs — front line is underserved.</p></div>
+      <div class="pillar"><div class="n">DYNAMIC 4</div><h4>Psychological safety</h4><p>Transparent comms on job evolution; explicit human-AI norms; trust pulse surveys.</p></div>
+    </div>
+
+    <h3 style="margin-top:22px;">The numbers</h3>
+    <div class="stats">
+      <div class="stat warm"><div class="num">19%</div><div class="lbl">employees zero time saved</div></div>
+      <div class="stat"><div class="num">88%</div><div class="lbl">use personal AI tools</div></div>
+      <div class="stat"><div class="num">73%</div><div class="lbl">power users are managers</div></div>
+      <div class="stat"><div class="num">27%</div><div class="lbl">execs w/ AI strategy</div></div>
+      <div class="stat"><div class="num">20%</div><div class="lbl">workforce truly AI-ready</div></div>
+      <div class="stat"><div class="num">3.4×</div><div class="lbl">productivity (positive outlook)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary audience</h4>
+        <p>CHROs, CIOs, Chief AI Officers, CEOs at enterprises with formal AI initiatives. Gartner is explicitly putting CHROs in the seat alongside CIOs — historically a Gartner CIO-first frame.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>The org has rolled out AI tools (Copilot, ChatGPT Enterprise, Glean) but can't show ROI; leadership is debating who owns AI governance; HR is on the outside of an IT-led AI program; "shadow AI" has been flagged by security or legal.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>The org hasn't yet rolled out AI tools (the dynamics described don't exist yet), or the org is a pre-product AI-native startup where the labor distinctions don't map.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <p>
+      This is the most useful analyst-grade validation Cerkl has seen this quarter for the "delivery +
+      measurement layer" thesis — and the reason is structural, not headline-driven. The IC-relevance hook
+      is the <b>second dynamic</b>, not the first.
+    </p>
+    <div class="callout info">
+      <div class="callout-label">Gartner's reframe</div>
+      Shadow AI isn't a security problem — it's a <b>rollout communications problem</b>. 88% of employees
+      with enterprise AI access are using personal AI anyway, <em>to save time</em>. Enterprise AI tools'
+      UX is bad, employees don't know which tools are sanctioned for which jobs, managers don't know how
+      to model behavior, and the org has no read-through on whether AI rollout messages are landing. That's
+      not a security tooling problem. It's a comms problem with security consequences.
+    </div>
+
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>Reinforces "delivery + measurement layer"</h4>
+        <p>
+          This Gartner prediction is a CHRO-language version of Cerkl's core thesis. Use it in deals
+          where IT and HR are co-buyers: <em>"Gartner just put CHROs and CIOs in the same seat for AI
+          governance. The first thing they own together is whether AI rollout messaging is reaching the
+          people doing the work — measurably."</em>
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Sharpens IT-as-co-buyer narrative</h4>
+        <p>
+          Foundations+ / Omni AI deals where IT is a co-buyer typically have a security frame. This adds
+          a <b>people</b> frame on the IT side: shadow AI as a personalization failure. Reframe:
+          <em>"Cerkl is the substrate that closes the gap between IT's AI tool rollout and HR's adoption KPIs."</em>
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Direct counter to Staffbase Navigator</h4>
+        <p>
+          Staffbase's 2026 narrative is <b>Navigator</b> (permission-aware AI search) — a
+          governance-as-table-stakes pitch aimed at the same CHRO/CIO co-buyer. Staffbase's answer to
+          shadow AI is "build a better internal AI." Cerkl's answer is "make sure the right humans are
+          getting the right message about AI on the channels they already use" — closer to what Gartner
+          actually recommends under dynamic #2.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Sharpens the Simpplr Comms AI counter</h4>
+        <p>
+          Simpplr's Feb 2026 Comms AI is an orchestration layer for IC <em>inside the Simpplr workspace</em>.
+          Gartner's "True ROI Index" (depth and diversity of engagement, not basic open rate) maps almost
+          1:1 onto Cerkl's analytics surface — and onto the argument that the comms problem isn't the
+          workspace, it's the channel-spanning delivery and read-through.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>Validates Foundations free-tier</h4>
+        <p>
+          27% of execs have a comprehensive AI strategy; 73% don't. That bottom 73% includes mid-market
+          and SMB orgs whose CHRO or comms lead is being told they need a "people-centric AI strategy"
+          by their CEO this quarter — but who can't get IT or budget for an enterprise platform.
+          Foundations is the lowest-friction entry point for that buyer.
+        </p>
+      </div>
+      <div class="stack-card">
+        <h4>What Cerkl has to change if this gains traction</h4>
+        <p>
+          Sales: add an AI-rollout-comms talk track to discovery. Marketing: a Foundations+/Omni AI piece on
+          "the AI rollout comms playbook" with IT/HR co-buyer framing. Versus pages: refresh Staffbase and
+          Simpplr pages citing this Gartner prediction as the analyst frame.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to adjacent analyst frames</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Analyst frame</th><th>How it differs from Gartner's "people-centric AI strategy"</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Forrester — AI-driven Deep Listening</td>
+          <td>
+            Forrester (<a href="https://www.forrester.com/blogs/ai-will-rewrite-employee-experience-deep-listening-shows-how/">David Johnson</a>)
+            focuses on <em>passive sentiment signal</em> from Teams/chat/meeting transcripts to detect
+            issues in near real-time, replacing surveys. Gartner's emphasis is upstream — <em>active comms,
+            governance, tool UX</em>. Complementary, not competitive. Forrester is the case for analytics-led
+            EX platforms; Gartner is the case for rollout-and-delivery platforms (Cerkl's lane).
+          </td>
+        </tr>
+        <tr>
+          <td class="alt-name">Josh Bersin — Superworker / Superagent reinvention</td>
+          <td>
+            Bersin (<a href="https://joshbersin.com/imperatives/">2026 Imperatives</a>) is more
+            transformational — HR is undergoing the "biggest reinvention in decades," superagents will
+            automate 60–70% of L&amp;D work, HR headcount may shrink ~30%. Bersin's lens is structural
+            (operating model, headcount); Gartner's is operational (governance, decision rights, tool UX).
+            Bersin = future state; Gartner = right-now blocker.
+          </td>
+        </tr>
+        <tr>
+          <td class="alt-name">McKinsey — State of AI / Superagency at Work</td>
+          <td>
+            McKinsey (<a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work">2025 report</a>)
+            lands hardest on <em>leadership lag</em> — employees are ready, leaders are slower. Their
+            recipe: <b>$5 in people for every $1 in AI tech</b>. McKinsey = budget-justification frame;
+            Gartner = operating-execution frame.
+          </td>
+        </tr>
+        <tr>
+          <td class="alt-name">IDC — FutureScape 2026 / skills shortage</td>
+          <td>
+            IDC (<a href="https://my.idc.com/getdoc.jsp?containerId=prUS53883425">2025-12</a>) quantifies
+            the skills dimension — 90%+ of global enterprises face critical skills shortages by 2026;
+            $5.5T in losses possible. IDC = macro skills-gap frame; Gartner = people-strategy execution
+            frame. IDC supports a budget conversation; Gartner supports a process conversation.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: which analyst frame supports a Cerkl conversation?</b> Gartner's is the
+      cleanest fit. It (a) names the CHRO-CIO co-buyer Cerkl already sells to, (b) names the rollout-comms
+      problem Cerkl already solves, and (c) names "tool UX → shadow AI → attrition" as the failure chain
+      — a chain that broke for the exact reason Cerkl's pitch addresses.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">Prediction is squishy by design</div>
+      "By 2027, 50% of enterprises…" is forecast-language. Don't cite it as a fact — cite it as analyst
+      guidance backed by survey data. The defensible numbers are the 1Q26 survey figures
+      (<b>19%, 88%, 73%, 3.4×</b>), not the prediction itself.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Direct fetch is blocked (HTTP 403)</div>
+      Gartner is blocking automated access to its newsroom URLs. Cite the three independent re-publishers
+      (IT-Online, AppleWorld Today, ITPro) — they each independently lift the same Basu/Sanchez quotes and
+      stats, which is corroboration enough.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">"People-centric AI strategy" is a Gartner-coined frame</div>
+      It will become a buzzword. Cerkl shouldn't adopt the exact phrase — let prospects use it. Instead,
+      translate it operationally: <em>"rollout comms, decision rights, and tool UX."</em> That maps to
+      Cerkl's actual product surface.
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Shadow AI as a comms problem is contested</div>
+      Most security and IT trade press treats shadow AI as a tooling/governance problem (block ChatGPT,
+      deploy enterprise AI, enforce DLP). Gartner is reframing it as primarily a UX-and-communication
+      problem. That reframe is the IC-relevant insight; it's also the part most likely to be
+      misunderstood by IT buyers. Be explicit when citing.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal &amp; practitioner takes</h2>
+    <p style="color: var(--muted); font-size: 14px;">
+      No vendor reviews to track — this is an analyst report, not a product. Signal flows from coverage
+      and practitioner reactions instead.
+    </p>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"The survey revealed that in the shift to an AI-powered workforce, most leaders are mistaking basic access or adoption metrics for transformation. This 'enablement illusion' is hiding risks and draining ROI."</p>
+        <div class="who">— <b>Swagatam Basu</b>, Senior Director Analyst, Gartner HR practice, 2026-05-13 · <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-predicts-by-2027-50-percent-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent">press release</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Eighty-eight percent of employees with enterprise AI access also use personal AI tools for business tasks, often to save time. While hybrid AI users are 1.7 times more likely to report significant time saved, this behavior increases corporate data risk and also drives attrition risks with critical talent."</p>
+        <div class="who">— <b>Diana Sanchez</b>, Senior Director Analyst, Gartner HR practice, 2026-05-13 · <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-predicts-by-2027-50-percent-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent">press release</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Upskilling can no longer be treated as an HR program… It's business-critical infrastructure, part of your technology stack."</p>
+        <div class="who">— <b>Michael Morris</b>, Randstad Digital, cited in ITPro 2026-05 · <a href="https://www.itpro.com/business/careers-and-training/upskill-your-staff-in-ai-or-expect-them-to-quit-says-gartner">source</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"AI is not a strategy. AI is a tool for you to accelerate your strategy."</p>
+        <div class="who">— <b>Josh Bersin</b>, January 2026 · <a href="https://joshbersin.com/podcast/ai-is-not-a-strategy-ai-is-a-tool-for-you-to-accelerate-your-strategy/">source</a> — aligned with Gartner's "stop confusing adoption for transformation"</div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Junior staff are underserved. While 73% of highly productive users are managers/executives, frontline employees handling automatable tasks lack adequate support — creating both productivity and retention risks."</p>
+        <div class="who">— <b>Emma Woollacott</b>, ITPro 2026-05 (journalist's added angle) · <a href="https://www.itpro.com/business/careers-and-training/upskill-your-staff-in-ai-or-expect-them-to-quit-says-gartner">source</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"For every dollar spent on AI technology, organizations should invest five dollars in people."</p>
+        <div class="who">— Paraphrased framing from <b>McKinsey, AI in the workplace 2025</b> · <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work">source</a> — sets a budget bar Gartner's prediction doesn't</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Patterns in third-party coverage</h3>
+    <ul>
+      <li>The "<b>enablement illusion</b>" phrase is being lifted verbatim across coverage — strong tell that the analyst-relations team designed it to travel.</li>
+      <li>The <b>19% / 88% / 73%</b> triplet is the meme; the prediction itself (50% / 2027) gets the headline but the survey numbers get the body.</li>
+      <li>Several outlets frame this as a <b>CHRO story</b> rather than a <em>CIO story</em> — Gartner is repositioning AI ownership.</li>
+    </ul>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Worth profiling — use it as a citable analyst frame in sales and marketing.</b>
+      Not "update competitors.md" (Gartner isn't a competitor); not "worth ignoring" (this is too
+      well-aligned with our pitch to pass on).</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Draft a 200-word "Gartner just validated the rollout-comms thesis" snippet for sales enablement — citation-ready, with the key stats (19% / 88% / 73%) and one-line tie to Cerkl positioning. Distribute to AEs and CSMs within 5 business days.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>~2 hours for the sales snippet + 1 follow-up cycle to fold into the Staffbase and Simpplr versus pages on the next refresh pass. Don't build a standalone marketing campaign around it — let it surface naturally as supporting evidence.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <p>Forrester or IDC publishing a direct counter-frame in 60 days; Staffbase/Simpplr/Firstup picking up "people-centric AI strategy" language in marketing within 30 days; a real-world enterprise case study contradicting the prediction publicly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Is there a companion Gartner full report or webinar behind this press release?</summary>
+      <div class="q-body">
+        The release reads like a teaser for a paid Gartner subscription product (likely a Gartner CHRO or
+        CIO HR Leaders briefing). Worth asking the Gartner peer-network connections at Cerkl if anyone has
+        access to the underlying deck — the survey methodology and detailed cuts would matter for
+        cite-defensibility.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Where does Axios HQ position against this frame?</summary>
+      <div class="q-body">
+        Axios HQ's Smart Brevity angle is well-aligned with Gartner's "communicate clearly about job
+        evolution" recommendation — but their product surface (an editor, not delivery infrastructure)
+        doesn't actually solve the comms-distribution problem the press release identifies. Watch for
+        them to pick up this frame in their 2026 SoIC report (released with Ragan).
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>How does this interact with the Staffbase Navigator narrative?</summary>
+      <div class="q-body">
+        Navigator is permission-aware AI search inside the intranet — i.e., a governance-as-table-stakes
+        answer to shadow AI. Gartner's recommendation is broader: governance, decision rights, AND tool UX
+        AND communications. Staffbase will likely cite this Gartner prediction to support Navigator; the
+        Cerkl counter is that Navigator only solves one of the four dynamics Gartner names.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does Cerkl have read-through data we could publish that lines up with the "True ROI Index"?</summary>
+      <div class="q-body">
+        If Foundations+/Omni AI customers can show a measurable lift in AI-rollout-comms read-through
+        tied to retention or AI tool adoption, that's a publishable case study tied directly to a current
+        Gartner prediction — high-leverage marketing artifact.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Should the daily IC trends recap surface Gartner press releases more aggressively?</summary>
+      <div class="q-body">
+        This one is unusually well-aligned. The broader question is whether Gartner press releases as a
+        class warrant a higher signal weight in the daily recap pipeline.
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-15 · Source markdown: <a href="gartner-people-centric-ai-2026-05-15.md">gartner-people-centric-ai-2026-05-15.md</a> · Dark variant
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

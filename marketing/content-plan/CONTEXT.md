@@ -70,6 +70,7 @@ When asked to generate the CSV for a given month:
 
 ## Resources
 
+- [process.md](process.md) — End-to-end content lifecycle (brief queue → schedule → write → Jira → publish); read this first to understand how the layers connect
 - [2026-content-plan.md](2026-content-plan.md) — Annual themes, Epics, ICP context, and important dates by month
 - [jira-csv-guidelines.md](jira-csv-guidelines.md) — Field mappings, subtask templates, ownership, and CSV output rules
 - [monthly-content-plans/](monthly-content-plans/) — Generated monthly plans, one file per month

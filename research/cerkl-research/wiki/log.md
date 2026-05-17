@@ -97,3 +97,50 @@ Header format: `## [YYYY-MM-DD] operation | Title`. Parseable with `grep "^## \[
 - Updated topics: [[internal-email]] (paired anchors + inflation caveat + cross-channel-vacuum), [[ic-measurement-and-roi]] (practitioner-survey + academic tier rows; PoliteMail filter; cross-channel pattern)
 - Updated index.md with 9 new pages and refined descriptions
 - Pages touched: 13
+
+## [2026-05-15] ingest | Gartner: AI Layoffs Don't Deliver Returns
+- Source: local deep-dive at `cerkl/research/ic-trends/deepdives/gartner-ai-layoffs-no-returns-2026-05-15.md` (Gartner 2026-05-05 release; 403 on programmatic fetch)
+- Mode: discuss-first per CLAUDE.md; Travis directed concept-page treatment for [[people-amplification]] + role in [[ai-rollout-comms]] chain
+- Key finding: ~80% of orgs piloting autonomous business cut headcount; zero correlation between cut rate and AI ROI. Helen Poitevin's "people amplification, not elimination" framing is convergent with BCG / Forrester / McKinsey / MIT Sloan
+- Created source: [[gartner-ai-layoffs-no-returns-2026-05-15]]
+- Created concept: [[people-amplification]]
+- Created entities: [[gartner]], [[helen-poitevin]]
+- Updated concept: [[do-more-with-less]] (added analyst-grade rebuttal via Gartner)
+- Pages touched: 5
+
+## [2026-05-15] ingest | Gartner: People-Centric AI Strategy / 50% AI Talent Loss by 2027
+- Source: local deep-dive at `cerkl/research/ic-trends/deepdives/gartner-people-centric-ai-2026-05-15.md` (Gartner 2026-05-13 release; 403 on programmatic fetch)
+- Mode: discuss-first per CLAUDE.md; Travis directed concept-page treatment for [[enablement-illusion]] + [[shadow-ai-comms-problem]] (the IC-relevant reframe)
+- Key finding: 88% of employees with enterprise AI also use personal AI tools — Gartner reframes shadow AI as a *comms* problem (bad UX + unclear rollout messaging), not a tooling/governance problem. Direct CHRO/CIO co-buyer naming
+- Created source: [[gartner-people-centric-ai-2026-05-15]]
+- Created concepts: [[enablement-illusion]], [[shadow-ai-comms-problem]]
+- Created entities: [[swagatam-basu]], [[diana-sanchez]] (stubs; [[gartner]] entity created in companion ingest)
+- Pages touched: 5
+
+## [2026-05-15] ingest | Ragan: The Week in Comms (LinkedIn, GM, GitLab)
+- Source: local deep-dive at `cerkl/research/ic-trends/deepdives/ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15.md` (Ragan 2026-05-15)
+- Mode: discuss-first per CLAUDE.md; Travis directed one-concept-plus-three-entity-pages for LinkedIn/GM/GitLab cases
+- Key finding: three layoff memos in one week show *content matters less than channel and choreography*. GM's 15-minute meeting became the AI-replacement narrative even though GM didn't claim AI. "Delivery layer not destination" framing verbatim on a competitor's editorial — cleanest 2026 public proof point for Cerkl positioning
+- Created source: [[ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15]]
+- Created concepts: [[layoff-comms-choreography]], [[ai-washing]]
+- Created entities: [[linkedin]], [[gm]], [[gitlab]], [[daniel-shapero]], [[bill-staples]], [[sean-devlin]]
+- Updated entity: [[ragan-communications]] (added "Week in Comms" editorial throughline)
+- Pages touched: 9
+
+## [2026-05-15] ingest | Forrester: AI Will Rewrite EX — Deep Listening Shows How
+- Source: local deep-dive at `cerkl/research/ic-trends/deepdives/forrester-ai-rewrite-ex-deep-listening-2026-05-15.md` (Forrester blog 2026-02-06, by Brodeur-Johnson + McQuivey)
+- Mode: discuss-first per CLAUDE.md; Travis directed concept-page treatment for [[deep-listening]] *with* the Cerkl complement-not-compete positioning baked in
+- Key finding: Forrester names a new EX category — passive NLP on Teams chats / meeting transcripts → real-time sentiment, replacing surveys. 24-month vendor build window. Structurally favors data-plane incumbents (Microsoft, Workvivo-via-Zoom, Qualtrics). Cerkl positioning: complement-not-compete on listening; we own the response half of the loop
+- Created source: [[forrester-ai-rewrite-ex-deep-listening-2026-05-15]]
+- Created concept: [[deep-listening]]
+- Created entities: [[david-brodeur-johnson]], [[james-mcquivey]]
+- Updated entities: [[forrester]] (added deep-listening + Brodeur-Johnson/McQuivey), [[workvivo]] (deep-listening positioning impact on Seer), [[seer]] (analyst legitimacy from Forrester frame)
+- Pages touched: 6
+
+## [2026-05-15] synthesis | 2026 AI-change-comms thesis cluster (4-source)
+- Travis-directed unifying treatment of items #1, #3, #4, #6 from today's [[../ic-trends/daily/2026-05-15]] recap; sub-agent deep-dives copied into raw/ with provenance preserved
+- Created topic: [[change-management-communications]] (taxonomy slot first-touched by Ragan + Gartner-layoffs sources)
+- Created concept: [[ai-rollout-comms]] (unifying chain spanning [[ai-in-internal-comms]] ↔ [[change-management-communications]]; the thesis page Travis directed)
+- Updated topics: [[ai-in-internal-comms]] (added rollout / response / listening sections + 3 new sources), [[employee-experience]] (added Forrester deep-listening + Gartner CHRO frames)
+- Index refreshed end-to-end (10 new entries, 4 entity refresh, 1 thesis concept)
+- The cluster's positioning window framed: roughly 12–18 months until competitors (Workvivo, Staffbase, Simpplr, Firstup, etc.) cite the same Forrester / Gartner frames in marketing

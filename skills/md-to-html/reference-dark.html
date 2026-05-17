@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerkl dark variant — design system reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  /*
+    DARK VARIANT — visual-language override for the Cerkl md-to-html skill.
+
+    Any artifact type (deep-dive, daily-recap, weekly-plan, hook-batch, generic)
+    can opt into dark by lifting these theme variables and the gradient-hero
+    pattern below; the artifact-type-specific layout patterns still come from
+    their own reference templates (reference-deep-dive, reference-daily-recap, etc).
+
+    Body: Cosmic base (#18181d) — neutral dark.
+    Hero: Cobalt 100 (#0c1159) with a Cobalt 40 freeform glow — the brand-approved
+          freeform gradient combination, used as the visual anchor.
+    Sections: Cosmic 90 (#27272e) panels on Cosmic base — subtle elevation.
+    Text: Cosmic 10 (#f5f5fa) primary, Cosmic 40 (#bfbfc7) muted secondary.
+    Accent: Cobalt 50 (#4c60d9) — links and accent borders.
+    Accent-pale: Cobalt 40 (#a7b3ed) — info bg text, overlines on dark.
+    Warm: Butter base (#ffaa22) — single warm accent point per design.
+  */
+  :root {
+    --bg: #18181d;                          /* Cosmic base */
+    --panel: #1f1f26;                       /* slight elevation between Cosmic base and 90 */
+    --panel-soft: #27272e;                  /* Cosmic 90 — sub-cards */
+    --ink: #f5f5fa;                         /* Cosmic 10 — primary text */
+    --muted: #bfbfc7;                       /* Cosmic 40 — muted secondary */
+    --line: #373740;                        /* Cosmic 80 — borders */
+    --accent: #4c60d9;                      /* Cobalt 50 — accent on dark */
+    --accent-pale: #a7b3ed;                 /* Cobalt 40 — pale accent */
+    --accent-soft: rgba(76, 96, 217, 0.14); /* tinted Cobalt 50 fill */
+    --accent-border: rgba(167, 179, 237, 0.28); /* tinted Cobalt 40 border */
+    --warm: #ffaa22;                        /* Butter base — single warm accent */
+    --warm-pale: #ffbf57;                   /* Butter 50 — for text on dark */
+    --good: #6de4c9;                        /* Forest 40 */
+    --good-bg: rgba(59, 197, 164, 0.10);
+    --good-border: rgba(109, 228, 201, 0.30);
+    --warn: #ffbf57;                        /* Butter 50 */
+    --warn-bg: rgba(255, 170, 34, 0.10);
+    --warn-border: rgba(255, 170, 34, 0.30);
+    --bad: #f79499;                         /* Ruby 40 */
+    --bad-bg: rgba(242, 73, 95, 0.10);
+    --bad-border: rgba(242, 73, 95, 0.30);
+    --info: #a7b3ed;                        /* Cobalt 40 */
+    --info-bg: rgba(76, 96, 217, 0.12);
+    --info-border: rgba(167, 179, 237, 0.25);
+    --quote: #a869fd;                       /* Violet 40 */
+    --code-bg: #27272e;                     /* Cosmic 90 */
+    --shadow: 0 1px 0 rgba(0,0,0,0.30), 0 8px 24px rgba(0,0,0,0.40);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    /*
+      Hero gradient — brand-approved freeform combination (#0c1159 + #a7b3ed).
+      Cobalt 100 base with a Cobalt 40 aurora glow upper-left. ONE gradient per design.
+    */
+    --hero-gradient:
+      radial-gradient(ellipse 90% 70% at 20% 25%, rgba(167,179,237,0.22) 0%, rgba(167,179,237,0) 60%),
+      radial-gradient(ellipse 60% 50% at 85% 80%, rgba(76,96,217,0.18) 0%, rgba(76,96,217,0) 60%),
+      linear-gradient(135deg, #0c1159 0%, #0c1159 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  /* Hero — gradient block. The one place gradient lives by default. */
+  header.hero {
+    background: var(--hero-gradient);
+    border: 1px solid rgba(167, 179, 237, 0.20);
+    border-radius: 14px;
+    padding: 32px 36px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--accent-pale); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 {
+    font-size: 36px; line-height: 1.2; margin: 0 0 10px;
+    letter-spacing: -0.005em; font-weight: 700; color: #ffffff;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: rgba(255,255,255,0.78); margin-bottom: 18px;
+  }
+  .meta-row b { color: #ffffff; font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    backdrop-filter: blur(4px);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: rgba(255,255,255,0.92);
+    border-left: 3px solid var(--accent-pale); padding-left: 16px;
+    margin: 0;
+  }
+  .tldr b { color: #ffffff; }
+
+  /* Sections — Cosmic 90 panels on Cosmic base body. */
+  section {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px; color: var(--ink);
+  }
+  h2 .num {
+    font-size: 12px; color: var(--accent-pale); font-weight: 600;
+    background: var(--accent-soft); padding: 2px 8px; border-radius: 6px;
+    border: 1px solid var(--accent-border);
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; color: var(--ink); }
+  p { margin: 0 0 12px; color: var(--ink); }
+  a { color: var(--accent-pale); text-decoration: none; border-bottom: 1px solid var(--accent-border); }
+  a:hover { color: #ffffff; border-bottom-color: var(--accent-pale); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  /* Two-column */
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  /* Pillars grid */
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent-pale); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid; margin: 12px 0;
+  }
+  .callout.try  { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent-pale); }
+  .callout.warn { background: var(--warn-bg);     border-color: var(--warn-border);   color: var(--warn); }
+  .callout.info { background: var(--info-bg);     border-color: var(--info-border);   color: var(--info); }
+  .callout p { max-width: none; color: inherit; }
+  .callout b { color: #ffffff; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9; margin-bottom: 4px;
+  }
+
+  /* Code + copy */
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden; margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em; font-family: inherit;
+  }
+  .copy-btn:hover { background: #3547c4; } /* Cobalt 60 — darker on hover */
+  .copy-btn.copied { background: var(--good); color: #003324; }
+  p code, li code, td code {
+    font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+    color: var(--accent-pale);
+  }
+
+  /* Personas grid */
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--accent-pale); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  /* Stack section cards */
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent-pale); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  /* Comparison table */
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent-pale); font-weight: 600; background: var(--panel);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--accent-pale);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px; color: var(--ink);
+  }
+  .axis-note b { color: #ffffff; }
+
+  /* Quote cards */
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.5; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; color: var(--ink); }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  /* Stats strip */
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 24px; font-weight: 700; color: var(--accent-pale); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  /* warm-accented stat — use sparingly for the single butter touch */
+  .stat.warm .num { color: var(--warm); }
+
+  /* Recommendation block */
+  .reco {
+    background: var(--panel-soft);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--accent-pale); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; color: var(--ink); }
+
+  /* Open questions: collapsibles */
+  details.q {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative; color: var(--ink);
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent-pale); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+
+  /* Status pills (used in ledger rows for On Track / Blocked / Pending etc) */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; padding: 2px 10px;
+    border-radius: 999px; border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .status-pill.warn    { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .status-pill.bad     { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .status-pill.pending { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .status-pill::before { content: "●"; font-size: 8px; }
+
+  /* Footer */
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  /* Print — flip to light for paper. Dark mode is for screen; paper needs ink. */
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    header.hero {
+      background: #ffffff; color: #18181d; border: 1px solid #d5d5db; box-shadow: none;
+    }
+    header.hero h1, header.hero .meta-row b, .tldr b, .callout b, .axis-note b { color: #18181d; }
+    header.hero .breadcrumb { color: #373740; }
+    header.hero .meta-row { color: #373740; }
+    .tldr { color: #18181d; border-left-color: #3547c4; }
+    section, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; background: #ffffff; color: #18181d; }
+    h2, h3, p, td, th, .stat .num, .pillar h4, .stack-card h4, .persona p, .reco-cell p { color: #18181d; }
+    h2 .num { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    .muted, .stat .lbl, .quote .who, details.q .q-body { color: #373740; }
+    .pillar, .persona, .stack-card, .reco-cell, .quote, .stat, details.q { background: #f5f5fa; border-color: #d5d5db; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">cerkl · dark variant reference</div>
+    <h1>Cerkl HTML — Dark Variant Reference</h1>
+    <div class="meta-row">
+      <span><b>Variant:</b> dark</span>
+      <span><b>Body:</b> Cosmic base</span>
+      <span><b>Hero:</b> Cobalt 100 + Cobalt 40 freeform</span>
+      <span class="verdict">On-brand</span>
+    </div>
+    <p class="tldr">
+      This file is the dark-theme overlay for the <b>md-to-html</b> skill. Component class names match
+      the light reference (<code>.hero</code>, <code>.callout</code>, <code>.cmp</code>, etc.) so any
+      artifact type can swap themes without changing markup. One brand-approved gradient lives in the
+      hero block; sections sit as Cosmic 90 panels on a Cosmic base body. Butter is the single warm
+      accent.
+    </p>
+    <div class="callout try">
+      <div class="callout-label">When to use the dark variant</div>
+      High-impact, short-read, external-facing artifacts: leadership briefs, pitch one-pagers,
+      campaign pages, prospect-shareable competitor profiles. <b>Not</b> long-read daily artifacts
+      (recaps, deep-dives) — eye fatigue on 3,000-word reads is real.
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>Theme variables</h2>
+    <p>
+      Lift these CSS custom properties as-is to render any artifact type in dark. The gradient hero
+      pattern (<code>--hero-gradient</code>) uses the brand-approved freeform combination
+      <code>#0c1159 + #a7b3ed</code>. One gradient per design — don't stack another elsewhere.
+    </p>
+    <div class="pillars">
+      <div class="pillar"><div class="n">BG</div><h4>Cosmic base</h4><p><code>#18181d</code></p></div>
+      <div class="pillar"><div class="n">PANEL</div><h4>Cosmic 90</h4><p><code>#27272e</code></p></div>
+      <div class="pillar"><div class="n">INK</div><h4>Cosmic 10</h4><p><code>#f5f5fa</code></p></div>
+      <div class="pillar"><div class="n">MUTED</div><h4>Cosmic 40</h4><p><code>#bfbfc7</code></p></div>
+      <div class="pillar"><div class="n">ACCENT</div><h4>Cobalt 50</h4><p><code>#4c60d9</code></p></div>
+      <div class="pillar"><div class="n">PALE</div><h4>Cobalt 40</h4><p><code>#a7b3ed</code></p></div>
+      <div class="pillar"><div class="n">WARM</div><h4>Butter</h4><p><code>#ffaa22</code></p></div>
+      <div class="pillar"><div class="n">QUOTE</div><h4>Violet 40</h4><p><code>#a869fd</code></p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Components — verdict, callouts, code-row</h2>
+    <div class="cols-2">
+      <div>
+        <h3>Verdict pills</h3>
+        <p>
+          <span class="verdict">Yes</span>
+          &nbsp;
+          <span class="verdict warn">Maybe</span>
+          &nbsp;
+          <span class="verdict bad">No</span>
+        </p>
+        <h3>Status pills</h3>
+        <p>
+          <span class="status-pill">On track</span>
+          &nbsp;
+          <span class="status-pill warn">Caution</span>
+          &nbsp;
+          <span class="status-pill bad">Blocked</span>
+          &nbsp;
+          <span class="status-pill pending">Pending</span>
+        </p>
+      </div>
+      <div>
+        <h3>Code with copy</h3>
+        <div class="code-row">
+          <code id="sample-code">cerkl artifact rendered in dark — Cosmic base + Cobalt 100 hero</code>
+          <button class="copy-btn" data-copy="sample-code" type="button">Copy</button>
+        </div>
+        <h3>Inline code</h3>
+        <p>References look like <code>--hero-gradient</code> in body prose.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:22px;">Callouts</h3>
+    <div class="callout try">
+      <div class="callout-label">Try this</div>
+      Accent callout for actions and try-this notes. Uses <code>--accent-soft</code> on Cobalt 40 border.
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Warning</div>
+      Butter-toned for caution. The single warm color point in the design — use sparingly.
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Note</div>
+      Cobalt 40 informational callout — neutral framing, lower visual weight than <code>.try</code>.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Stats &amp; persona grid</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">17</div><div class="lbl">active</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">top of mind</div></div>
+      <div class="stat warm"><div class="num">5</div><div class="lbl">hard deadlines</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">blocked / at risk</div></div>
+    </div>
+    <h3>Personas</h3>
+    <div class="personas">
+      <div class="persona"><h4>Primary user</h4><p>Anyone reading a final Cerkl artifact — leadership, prospects, or the team.</p></div>
+      <div class="persona"><h4>Strong fit</h4><p>Leadership reviews, pitch one-pagers, campaign pages, external comp briefs.</p></div>
+      <div class="persona"><h4>Weak fit</h4><p>Long-read daily recaps and deep-dive deep-dives — dark hurts eye fatigue here.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Stack cards &amp; comparison table</h2>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>Stack card A</h4>
+        <p>Three-column responsive stack-card grid. Use for "how it slots into X" — each card carries a short heading and ~2 sentences of body.</p>
+      </div>
+      <div class="stack-card">
+        <h4>Stack card B</h4>
+        <p>Cards sit on the elevated panel (Cosmic 90 over Cosmic base) with subtle borders. Headings use the Cobalt 40 pale accent.</p>
+      </div>
+      <div class="stack-card">
+        <h4>Stack card C</h4>
+        <p>Body text stays Cosmic 10 white. Hover states aren't applied to stack cards — they're informational, not interactive.</p>
+      </div>
+    </div>
+    <table class="cmp">
+      <thead><tr><th>Variant</th><th>When to use</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="alt-name">Light (default)</td><td>Daily recaps, weekly plans, deep dives — long-read artifacts.</td><td><span class="status-pill">Active</span></td></tr>
+        <tr><td class="alt-name">Dark (this file)</td><td>Leadership briefs, pitch pages, external comp profiles.</td><td><span class="status-pill">Active</span></td></tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: read length &amp; audience.</b> Short + external → dark. Long + internal → light.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Quote cards &amp; collapsibles</h2>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"Quote cards use Violet 40 left border for community signal on dark."</p>
+        <div class="who">— example speaker, 2026-05-14 · <a href="#">source</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Skeptic variant switches the border to butter — same caution-pill semantics."</p>
+        <div class="who">— skeptic, 2026-05-14 · <a href="#">source</a></div>
+      </div>
+    </div>
+    <h3>Collapsibles</h3>
+    <details class="q">
+      <summary>Open questions sit in a collapsible card</summary>
+      <div class="q-body">Body uses muted Cosmic 40 — secondary information. Plus/minus indicator uses Cobalt 40 pale.</div>
+    </details>
+    <details class="q">
+      <summary>Print stylesheet flips the whole document to light</summary>
+      <div class="q-body">PDF export comes out as paper-ready ink-on-white. Dark mode is for screens, not paper.</div>
+    </details>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">06</span>Recommendation block</h2>
+    <p style="font-size:16px;"><b>Use dark for the right artifact types</b> — short, premium, external-facing.</p>
+    <div class="reco-grid">
+      <div class="reco-cell"><h4>First thing to try</h4><p>Render the next leadership brief in dark. One artifact, one comparison.</p></div>
+      <div class="reco-cell"><h4>Time-box</h4><p>One leadership review + one pitch one-pager rendered dark — ~20 min of attention.</p></div>
+      <div class="reco-cell"><h4>What would change my mind</h4><p>If readers report the dark hero feels gimmicky on small screens, or print export breaks despite the override.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    Cerkl dark variant reference · Brand: <a href="../../marketing/design/branding-assets/Brand%20Guidelines/colors.md">colors.md</a>, <a href="../../marketing/design/branding-assets/Brand%20Guidelines/typography.md">typography.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

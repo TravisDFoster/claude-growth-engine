@@ -32,11 +32,17 @@ Seer is Workvivo's people-intelligence product, launched 2026-05-06. Available s
 - [[employee-listening]] — incumbent category
 - [[people-intelligence]] — Workvivo's preferred category name
 - [[execution-gap]] — Black's positioning frame
+- [[deep-listening]] — Forrester's Feb 2026 category-naming move; Seer is the most-direct in-market vendor execution
 - [[glint]], [[culture-amp]], [[peakon]], [[qualtrics]] — named comparators
 - [[ai-in-internal-comms]] — AI-product category
+
+## 2026-05-15 Update — Forrester analyst legitimacy
+
+[[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] (Brodeur-Johnson + McQuivey, Feb 2026) names the **[[deep-listening]]** category in terms almost verbatim to Seer's launch framing — "combining feedback with real-time signals from communication, collaboration, and engagement." The Forrester blog gives Seer external analyst legitimacy at exactly the moment it needed it. Expected: Workvivo will cite the blog (or one of the paywalled reports — RES189386, RES189391) in Seer sales decks within 30 days.
 
 ## Open Questions
 
 - Real integration surface (Workday / Slack / Teams / HRIS), not just Workvivo + Zoom telemetry?
 - Pricing — inside Workvivo's ~$20k floor or a separate SKU?
 - Zoom-bundling decision — will Seer ride into Zoom Workplace renewals?
+- Will Seer publicly position against Forrester's deep-listening category by name? Watch for press release / sales-page references.

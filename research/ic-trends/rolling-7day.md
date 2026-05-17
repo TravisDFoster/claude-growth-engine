@@ -6,6 +6,19 @@
 
 ---
 
+## 2026-05-15
+
+1. **Gartner: 50% of enterprises without a "people-centric AI strategy" will lose top AI talent by 2027** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-predicts-by-2027-50-percent-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent
+2. **Simpplr: "The good news and growing pressures for IC professionals in 2026"** — Competitor — https://www.simpplr.com/blog/internal-communications-pressures/
+3. **Gartner: AI layoffs create budget room but don't deliver returns** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-05-gartner-says-autonomous-business-and-artificial-intelligence-layoffs-may-create-budget-room-but-do-not-deliver-returns
+4. **Ragan Week in Comms: LinkedIn, GM, GitLab — three change-comms case studies in one week** — Publication — https://www.ragan.com/the-week-in-comms-linkedin-gm-gitlab/
+5. **PR Daily: PR's "quiet shift" — brands speaking less in a polarized world** — Publication — https://www.prdaily.com/prs-quiet-shift-why-brands-are-speaking-less-in-a-polarized-world/
+6. **Forrester: "AI will rewrite EX, and deep listening shows how"** — Analyst — https://www.forrester.com/blogs/ai-will-rewrite-employee-experience-deep-listening-shows-how/
+7. **HBR: "Don't treat AI agents like employees"** — Analyst — https://hbr.org/2026/05/research-why-you-shouldnt-treat-ai-agents-like-employees
+8. **Staffbase keynote: "Beyond Almost — designing AI for trust and adoption"** — Competitor — https://www.youtube.com/watch?v=jUu81Z0Jh9E
+9. **Meta's AI mandate sparks internal backlash — Bosworth's "no opt-out" memo + activity-tracking pushback** — Community — https://www.businesstoday.in/technology/story/meta-staff-protest-over-activity-tracking-tool-amid-privacy-concerns-531282-2026-05-13
+10. **Poppulo: "How AI and alignment could make or break HR and comms"** — Competitor — https://www.poppulo.com/employee-experience-platform/blog/ai-alignment-hr-comms
+
 ## 2026-05-14
 
 1. **LinkedIn cuts ~900 jobs in AI-restructure — Shapero memo becomes the new IC template** — Community — https://www.republicworld.com/tech/linkedin-layoffs-2026-900-jobs-cut-as-microsoft-owned-platform-restructures-teams-around-ai-2026-05-14-124183

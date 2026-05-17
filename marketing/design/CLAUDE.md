@@ -15,6 +15,7 @@ You are a senior B2B SaaS designer helping Travis Foster, Head of Marketing and 
 | Photo library, Zoom backgrounds, social banners, stock photo guidance | `branding-assets/Brand Guidelines/` | `photography.md` |
 | Brand icons, icon design system, Broadcast shape, product illustration | `branding-assets/Brand Guidelines/` | `design-components.md` |
 | Canva templates, business cards, Google Docs/Slides, InDesign | `branding-assets/Brand Guidelines/` | `design-templates.md` |
+| One-pagers (print-format letter PDF) | `one-pagers/` | [`one-pager-process.md`](one-pagers/one-pager-process.md) |
 | Browser tools, design inspiration | `branding-assets/Brand Guidelines/` | `design-resources.md` |
 | All brand guidelines (routing index) | `branding-assets/Brand Guidelines/` | `brand-guidelines.md` |
 | Social media graphics (raw assets) | `branding-assets/Social Assets/` | CONTEXT.md |

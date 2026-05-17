@@ -1,0 +1,940 @@
+<!doctype html>
+<!--
+  Reference template for one-pager artifacts (print-format, letter portrait).
+
+  Visual language: inherits the Cerkl brand palette and Work Sans typography from
+  reference-deep-dive.html. Adds print-specific CSS (@page, page-break rules)
+  and 13 components specific to one-pager handouts.
+
+  Pipeline: one-pager-process.md → markdown copy → md-to-html (reads this file)
+  → html-overflow-detector (verify) → html-to-pdf → .pdf sibling in pdfs/.
+
+  ============================================================================
+  COMPONENT + CONTENT-BUDGET CATALOG (read this before picking a layout)
+  ============================================================================
+
+  Each component declares: variants available, items it holds, word budget per
+  item. The rendering process measures the markdown copy against the budget and
+  picks the variant that fits. If no variant fits, escalate to the user.
+
+  Heros (pick one per page)
+    .hero-cover                 — full-page cover with photo + arc blob + title
+                                  budget: title ≤6 words, subtitle ≤14 words
+    .hero-compact               — wordmark + H1 band
+                                  budget: H1 ≤4 words, no body
+    .hero-compact (logo-only)   — wordmark alone, paired with .grid-2 below
+                                  budget: title elsewhere on page
+
+  Page chrome
+    .running-header             — guide title + brand + page number (multi-page)
+                                  budget: title ≤8 words
+    .footer                     — contact / URL / wordmark
+                                  budget: address line ≤14 words
+
+  Headings
+    .display-h1                 — chapter-opener heading, large cobalt-dark
+                                  budget: ≤14 words (max-width: 14ch enforces)
+
+  Content blocks — each has variants graded by content density
+    .feature-grid.cols-3        — 6 cells × 25–45 words/cell    (default)
+    .feature-grid.cols-2        — 4 cells × 50–85 words/cell
+    .feature-grid.cols-1        — 3–6 cells × 90–150 words/cell (list-like)
+                                  all variants: h4 ≤4 words; ✓ icon + h4 + body
+
+    .icon-row-list              — 3–6 rows, 35–60 words/row
+                                  large cobalt circle icon + body per row
+
+    .bullet-grid.cols-2         — 2 cols × 5–8 bullets/col, 12–25 words/bullet
+    .bullet-grid.cols-3         — 3 cols × 4–6 bullets/col, 10–20 words/bullet
+    .bullet-grid.cols-4         — 4 cols × 3–5 bullets/col, 8–16 words/bullet
+                                  all variants: h3 ≤4 words per col
+
+    .editorial-2col             — H2 + body one side, image card on the other
+                                  budget: H2 ≤6 words, body 60–100 words
+
+    .image-card                 — image top, H3, body
+                                  budget: H3 ≤5 words, body 30–80 words
+
+    .stat-panel                 — headline stat + label + body + optional photo
+                                  budget: stat ≤4 chars, label ≤14 words, body 20–40 words
+
+    .pill-row                   — security/integration badges
+                                  budget: ≤8 pills, 1–3 words each, 1 label prefix
+
+    .logo-strip.logos           — image-based social proof (PREFERRED when assets exist)
+                                  budget: ≤7 logos at uniform 32px height
+                                  asset source: cerkl/marketing/design/branding-assets/
+                                    Customer Logos/  (6 currently: Church & Dwight,
+                                    Novant Health, UC, Paycor, Roivant, St. Elizabeth)
+    .logo-strip.names           — text-wordmark fallback (when asset missing or
+                                  customer not in the Customer Logos folder)
+                                  budget: ≤8 names, 1–3 words each, optional label
+
+    .cta-strip                  — split: pitch left, stat-panel right
+                                  budget: pitch h3 ≤6 words, body 35–55 words
+                                          + stat-panel right (see above)
+
+  ============================================================================
+  REMEDIATION HIERARCHY (when content exceeds budget)
+  ============================================================================
+    Tier A (auto): shrink body type one step within --type-down range
+    Tier B (auto): swap to a roomier variant (cols-3 → cols-2 → cols-1)
+    Tier C (user): split section across pages OR trim items OR rewrite shorter
+
+  ============================================================================
+  ASSET SUBSTITUTION (real renders, not the reference's CSS placeholders)
+  ============================================================================
+    .photo-ph     → <img src=".../branding-assets/Cerkl Photography/*.jpg">
+    .wordmark-ph  → inline SVG or <img> from
+                    branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/
+    .logo-strip.logos <img>  → branding-assets/Customer Logos/<filename>.png
+                    (path from /pdfs/ output: ../../branding-assets/Customer Logos/...)
+                    Available: Church & Dwight, Novant Health, UC, Paycor,
+                               Roivant, St. Elizabeth (6 logos as of 2026-05-15)
+
+  Design notes:
+    - Body type 16px screen / scales via --body-size for tier-A remediation
+    - Cobalt 60 is the primary accent; Cobalt 100 for display headings
+    - Violet 10 / Ruby 10 reserved for .stat-panel only — don't reuse elsewhere
+    - position:absolute children (arc-blob, mockup overlay) are decorative and
+      excluded from overlap checks by html-overflow-detector
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference — Cerkl One-Pager Components</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    /* Cerkl brand palette */
+    --bg: #f5f5fa;            /* Cosmic 10 — screen-preview canvas */
+    --paper: #ffffff;         /* Paper white */
+    --panel-soft: #f5f5fa;    /* Cosmic 10 — subtle card bg */
+    --ink: #18181d;           /* Cosmic base — primary text */
+    --muted: #373740;         /* Cosmic 80 — secondary text */
+    --subtle: #6f6f78;        /* Cosmic 60 — captions / footer */
+    --line: #d5d5db;          /* Cosmic 30 — borders */
+    --line-soft: #ebebf0;     /* Cosmic 20 — subtle dividers */
+    --accent: #3547c4;        /* Cobalt 60 — primary brand */
+    --accent-dark: #0c1159;   /* Cobalt 100 — display headings */
+    --accent-soft: #f0f2fc;   /* Cobalt 10 — icon fills, accent panels */
+    --accent-mid: #ccd5f7;    /* Cobalt 30 — borders on accent panels */
+    --accent-tint: #e3e9fc;   /* Cobalt 20 */
+    --good: #1a9979;          /* Forest base — feature-grid checkmarks */
+    --good-bg: #e8fffa;
+    --stat-violet: #802ee6;   /* Violet base */
+    --stat-violet-bg: #f7f2ff;
+    --stat-violet-border: #d5b2ff;
+    --stat-ruby: #dd0e4e;     /* Ruby base */
+    --stat-ruby-bg: #fcf0f0;
+    --stat-ruby-border: #fbc2c4;
+    --butter: #ffaa22;
+  }
+
+  /* === Page setup ===
+     Standard print model: @page provides the page margin; .page is the
+     printable-area container with no extra padding. Lets Chrome's print
+     engine size things correctly (the "all-margin-on-.page" trick fights
+     pagination and leaves bottom whitespace). */
+  @page {
+    size: letter portrait;
+    margin: 0.5in 0.6in;
+  }
+  html, body { height: 100%; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  /* --body-size is the Tier-A remediation knob. Default 16px (screen-comfortable).
+     Render process can set on <body style="--body-size:15px"> to shrink one step
+     when overflow detector flags content past page bottom. Min: 13px. */
+  :root { --body-size: 16px; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: var(--body-size);
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Page container.
+
+     The .page is structured as a CSS Grid with three rows: header (auto),
+     body (1fr), footer (auto). Grid row tracks reliably stretch the body to
+     fill the page in both screen AND print mode — flexbox flex:1 alone
+     doesn't survive Chrome's print pagination pass.
+
+     Screen mode: .page renders as a styled paper card with shadow + margin.
+     Print mode: @page provides margin; .page just fills the printable area. */
+  .page {
+    width: 7.3in;                          /* printable area width (8.5in - 1.2in @page) */
+    height: 10in;                          /* printable area height (11in - 1in @page) */
+    background: var(--paper);
+    display: grid;
+    grid-template-rows: auto 1fr;          /* header (compact hero / running header), body */
+    row-gap: 22px;
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  /* .page-body fills the middle (1fr) row. Its own inner layout stretches
+     content vertically via flex. */
+  .page-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: 0;
+  }
+  .page-body.stretch > * { flex: 0 0 auto; }
+  /* Basis: auto (content size) — flex starts at content, grows into spare space.
+     Shrink: 0 — never shrinks below content (prevents overlap with siblings). */
+  .page-body.stretch > .grow { flex: 1 0 auto; }
+  /* When .grow lands on a CSS Grid: rows respect content minimum, then stretch
+     to 1fr if there's extra space. minmax(min-content, 1fr) prevents the
+     "content taller than 1fr cell" overlap that pure 1fr causes. */
+  .feature-grid.grow,
+  .bullet-grid.grow { grid-auto-rows: minmax(min-content, 1fr); align-items: stretch; }
+  /* When .grow lands on a flex column, distribute children with breathing room. */
+  .icon-row-list.grow { justify-content: space-between; }
+
+  /* Screen preview: float pages in the gray canvas with paper-card chrome. */
+  @media screen {
+    body { padding: 24px 0; }
+    .page {
+      margin: 24px auto;
+      padding: 0.5in 0.6in;                /* simulates the @page margin visually */
+      width: 8.5in;
+      height: 11in;
+      box-shadow: 0 1px 0 rgba(24,24,29,0.04), 0 8px 24px rgba(24,24,29,0.08);
+    }
+  }
+  @media print {
+    body { background: white; }
+  }
+
+  /* === Base typography === */
+  h1, h2, h3, h4 { margin: 0; letter-spacing: -0.005em; }
+  h1 { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); }
+  h2 { font-size: 24px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+  h3 { font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  h4 { font-size: 16px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  p  { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol { margin: 8px 0; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-mid); }
+  strong { font-weight: 600; }
+  .lead { font-size: 17px; color: var(--muted); line-height: 1.55; }
+  .small { font-size: 13px; color: var(--subtle); }
+  .overline {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+
+  /* === (1) Cover hero ===
+     Spans the .page grid (rows 1 / -1). Uses its own grid to anchor the
+     photo block in row 1 (1fr → fills upper region) and the title block in
+     row 2 (auto → natural content height, sits at bottom). The arc-blob is
+     position:absolute so it bleeds behind both rows.
+
+     Why grid not flex: Chrome's print pagination respects grid row tracks
+     reliably; flex:1 on a child often collapses to content size in print. */
+  .hero-cover {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    row-gap: 36px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+  }
+  .hero-cover .arc-blob {
+    position: absolute;
+    top: -15%; right: -30%;
+    width: 110%; height: 75%;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .hero-cover .photo-block {
+    position: relative; z-index: 1;
+    width: 100%;
+    /* Sits in grid row 1 (1fr) — automatically stretches to fill upper region. */
+    min-height: 0;
+    background: linear-gradient(135deg, var(--accent-tint), var(--accent-soft));
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+    font-weight: 600;
+    box-shadow: 0 12px 32px rgba(12, 17, 89, 0.10);
+  }
+  .hero-cover .photo-block::after {
+    content: "[ HERO PHOTO ]";
+    font-size: 13px; letter-spacing: 0.12em;
+  }
+  /* Overlay mockup card (newsletter mockup or product image, top-left of photo) */
+  .hero-cover .mockup {
+    position: absolute; z-index: 2;
+    top: 10%; left: 6%;
+    width: 28%;
+    aspect-ratio: 3 / 4;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(12, 17, 89, 0.22);
+    border: 1px solid var(--line-soft);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--subtle); font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .hero-cover .title-block {
+    position: relative; z-index: 1;
+    /* Sits in grid row 2 (auto) — natural content height, anchored at bottom. */
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .hero-cover .wordmark-ph {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 22px; color: var(--ink);
+  }
+  .hero-cover .wordmark-ph::before {
+    content: ""; width: 22px; height: 22px;
+    background: var(--accent);
+    border-radius: 5px;
+  }
+  .hero-cover .wordmark-ph .powered { font-size: 12px; color: var(--subtle); font-weight: 500; letter-spacing: 0.04em; }
+  .hero-cover .cover-title {
+    font-size: 60px; font-weight: 700; line-height: 1.05;
+    color: var(--accent-dark);
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  .hero-cover .cover-subtitle {
+    font-size: 26px; font-weight: 400; line-height: 1.3;
+    color: var(--muted);
+    max-width: 28ch;
+    margin: 0;
+  }
+
+  /* === (2) Compact hero === */
+  .hero-compact {
+    display: flex; align-items: center; gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-compact .wordmark-ph {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 20px; color: var(--ink);
+  }
+  .hero-compact .wordmark-ph::before {
+    content: ""; width: 18px; height: 18px;
+    background: var(--accent); border-radius: 4px;
+  }
+  .hero-compact .divider { width: 1px; height: 32px; background: var(--line); }
+  .hero-compact h1 { font-size: 32px; }
+
+  /* === (3) Running header (multi-page guides) === */
+  .running-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 12px; color: var(--subtle);
+    border-bottom: 1px solid var(--line-soft);
+    padding-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+  .running-header .left { font-weight: 500; }
+  .running-header .right { font-weight: 600; }
+  .running-header .right .sep { color: var(--line); margin: 0 8px; }
+
+  /* === (4) Display H1 === */
+  .display-h1 {
+    font-size: 46px; font-weight: 700; line-height: 1.1;
+    color: var(--accent-dark);
+    letter-spacing: -0.01em;
+    max-width: 14ch;
+    margin: 0;
+  }
+
+  /* === (5) Feature grid — three density variants ===
+     .cols-3 (default): 6 cells × 25–45 words/cell — sales-overview density
+     .cols-2:           4 cells × 50–85 words/cell — feature deep-dive
+     .cols-1:           3–6 cells × 90–150 words/cell — list-style elaboration */
+  .feature-grid {
+    display: grid; gap: 28px 36px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .feature-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .feature-grid.cols-2 { grid-template-columns: repeat(2, 1fr); gap: 24px 32px; }
+  .feature-grid.cols-1 { grid-template-columns: 1fr; gap: 20px; }
+  .feature-grid .feat {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 10px;
+    align-items: start;
+  }
+  .feature-grid .feat .ic {
+    color: var(--good);
+    margin-top: 2px;
+  }
+  .feature-grid .feat h4 { font-size: 16px; margin: 0 0 6px; color: var(--accent-dark); }
+  .feature-grid .feat p  { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0; }
+  /* .cols-1 variant: more space per cell, slightly larger body type. */
+  .feature-grid.cols-1 .feat h4 { font-size: 17px; }
+  .feature-grid.cols-1 .feat p  { font-size: 15px; }
+
+  /* === (6) Icon-row list === */
+  .icon-row-list { display: flex; flex-direction: column; gap: 28px; }
+  .icon-row-list .row {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  .icon-row-list .row .ic-circle {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon-row-list .row .ic-circle svg { width: 36px; height: 36px; }
+  .icon-row-list .row p {
+    font-size: 15px; color: var(--ink); line-height: 1.55;
+    margin: 10px 0 0;
+  }
+
+  /* === (7) Bullet grid — three density variants ===
+     .cols-2: 2 cols × 5–8 bullets, 12–25 words/bullet — moderate density
+     .cols-3: 3 cols × 4–6 bullets, 10–20 words/bullet — IT/process flow density
+     .cols-4: 4 cols × 3–5 bullets, 8–16 words/bullet  — fact-sheet / pre-meeting */
+  .bullet-grid {
+    display: grid; gap: 24px 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bullet-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .bullet-grid.cols-3 { grid-template-columns: repeat(3, 1fr); gap: 24px 26px; }
+  .bullet-grid.cols-4 { grid-template-columns: repeat(4, 1fr); gap: 24px 22px; }
+  .bullet-col h3 { font-size: 16px; color: var(--accent-dark); margin: 0 0 10px; }
+  .bullet-col ul { padding-left: 18px; margin: 0; }
+  .bullet-col li { font-size: 13.5px; color: var(--ink); line-height: 1.5; margin-bottom: 8px; }
+  .bullet-grid.cols-3 .bullet-col li { font-size: 13px; line-height: 1.5; margin-bottom: 7px; }
+  .bullet-grid.cols-4 .bullet-col li { font-size: 12.5px; line-height: 1.45; margin-bottom: 6px; }
+
+  /* === (8) Editorial 2-col === */
+  .editorial-2col {
+    display: grid; gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .editorial-2col.media-right > :nth-child(1) { order: 0; }
+  .editorial-2col.media-left  > :nth-child(2) { order: -1; }
+  .editorial-2col h2 { margin-bottom: 14px; }
+  .editorial-2col p  { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+  /* === (9) Image card === */
+  .image-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .image-card .photo-ph {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent-tint));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 12px; letter-spacing: 0.12em; font-weight: 600;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .image-card .photo-ph::after { content: "[ PHOTO ]"; }
+  .image-card .body { padding: 18px 20px; }
+  .image-card h3 { font-size: 16px; margin: 0 0 6px; color: var(--accent-dark); }
+  .image-card p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+  /* === (10) Stat panel ===
+     Budget: stat-num ≤4 chars (e.g., "40%" or "$1M"), label ≤14 words,
+     body 20–40 words. Standalone: also valid as a 1/3-page aside. */
+  .stat-panel {
+    background: var(--stat-violet-bg);
+    border: 1px solid var(--stat-violet-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .stat-panel.ruby { background: var(--stat-ruby-bg); border-color: var(--stat-ruby-border); }
+  .stat-panel .stat-num {
+    font-size: 46px; font-weight: 700; line-height: 1; color: var(--stat-violet);
+    letter-spacing: -0.015em;
+  }
+  .stat-panel.ruby .stat-num { color: var(--stat-ruby); }
+  .stat-panel .stat-label {
+    font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 4px; line-height: 1.4;
+  }
+  .stat-panel p { font-size: 13.5px; color: var(--muted); margin: 6px 0 0; line-height: 1.55; }
+  .stat-panel .stat-photo {
+    margin-top: 14px;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, rgba(128,46,230,0.15), rgba(128,46,230,0.05));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--stat-violet); font-size: 11px; letter-spacing: 0.12em; font-weight: 600;
+  }
+  .stat-panel.ruby .stat-photo {
+    background: linear-gradient(135deg, rgba(221,14,78,0.12), rgba(221,14,78,0.04));
+    color: var(--stat-ruby);
+  }
+  .stat-panel .stat-photo::after { content: "[ PHOTO ]"; }
+
+  /* === (11) Pill row === */
+  .pill-row {
+    display: flex; flex-wrap: wrap; gap: 8px 10px;
+    align-items: center;
+  }
+  .pill-row .label {
+    font-size: 12px; color: var(--subtle); font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-right: 6px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12.5px; font-weight: 500;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-mid);
+    letter-spacing: 0.01em;
+  }
+
+  /* === (12a) Logo strip — social proof ===
+     .names: text-wordmark mode (default; no external assets needed)
+     .logos: image mode (requires sourced customer logos in branding-assets/)
+     Budget: ≤8 names (text) or ≤7 logos (image). Optional "TRUSTED BY" label. */
+  .logo-strip {
+    display: flex; align-items: center; justify-content: center;
+    gap: 28px;
+    padding: 14px 0;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .logo-strip .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-right: 8px;
+  }
+  .logo-strip.names .name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+  /* Customer Logos folder ships logos already in navy on transparent —
+     no filter needed. Just normalize height + slight opacity for visual rhythm.
+     Path from a /pdfs/ output HTML to the logo file:
+       ../../branding-assets/Customer Logos/<filename>
+     URL-encode spaces and special chars in the filename. */
+  .logo-strip.logos img {
+    height: 30px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+
+  /* === (12) CTA strip ===
+     Budget: pitch h3 ≤6 words, body 35–55 words. Stat panel right side carries
+     its own budget — see (10). Total cta-strip ~200–240px tall depending on
+     stat-panel body length. */
+  .cta-strip {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    border-top: 2px solid var(--accent);
+    padding-top: 18px;
+  }
+  .cta-strip .pitch h3 { font-size: 18px; color: var(--accent-dark); margin-bottom: 8px; }
+  .cta-strip .pitch p  { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  /* === (13) Footer === */
+  .footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--subtle); font-size: 12.5px; line-height: 1.55;
+  }
+  .footer .addr { max-width: 60%; }
+  .footer .addr .small { color: var(--subtle); }
+  .footer .brand {
+    text-align: right;
+    font-weight: 700; font-size: 15px; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* Utility */
+  .stack-12 > * + * { margin-top: 14px; }
+  .stack-8  > * + * { margin-top: 10px; }
+  .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; }
+  /* Vertical filler — drop into a .page-body wherever an empty stretch is wanted */
+  .spacer { flex: 1 1 auto; min-height: 0; }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     PAGE 1 — Cover hero (guide-style)
+     Used by: long-form handouts, comprehensive guides, ebooks
+     Components shown: .hero-cover (with .arc-blob, .photo-block, .mockup),
+                       .wordmark-ph, .cover-title, .cover-subtitle
+===================================================================== -->
+<div class="page">
+  <div class="hero-cover">
+    <div class="arc-blob"></div>
+    <div class="photo-block">
+      <div class="mockup">[ MOCKUP ]</div>
+    </div>
+    <div class="title-block">
+      <div class="wordmark-ph">
+        Broadcast
+        <span class="powered">powered by Cerkl</span>
+      </div>
+      <h1 class="cover-title">Employee Newsletters</h1>
+      <p class="cover-subtitle">A Comprehensive Guide for Internal Communicators</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     PAGE 2 — Sales overview one-pager (front)
+     Used by: product/sales overview handouts
+     Components shown: .hero-compact, .lead, .feature-grid, .stat-panel
+===================================================================== -->
+<div class="page" style="--body-size:15px">
+
+  <!-- (2) Compact hero. NOTE: --body-size:15px is Tier-A remediation in action —
+       this page packs a 6-cell feature grid + CTA strip + footer; at the default
+       16px body type the footer overruns the page bottom by ~24px. -->
+  <div class="hero-compact">
+    <span class="wordmark-ph">Broadcast</span>
+    <span class="divider"></span>
+    <h1>Product Overview</h1>
+  </div>
+
+  <div class="page-body stretch">
+
+  <p class="lead">
+    A no-pressure overview of Cerkl Broadcast. To personalize your experience,
+    here's a sneak-peek at what we'll cover.
+  </p>
+
+  <!-- (5) Feature grid — variant .cols-3 (6 cells × 25–45 words/cell).
+       .grow lets it stretch to fill vertical space; minmax row sizing prevents
+       sibling overlap when content varies by cell. -->
+  <div class="feature-grid cols-3 grow">
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Audience Manager</h4>
+        <p>Broadcast offers three different ways to upload and manage employee audience and segmentation. Integrating with your existing HRIS, manually uploading .csv files, and our IT-necessary rule-based segmentation.</p>
+      </div>
+    </div>
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Content Control</h4>
+        <p>Set the priority, frequency, and lifespan of every piece. Send to fixed or interest-based segments on every channel.</p>
+      </div>
+    </div>
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Email Blasts</h4>
+        <p>Ditch HTML with Broadcast's drag-and-drop email builder. Schedule or immediately send your fully-responsive, branded messages to the correct segments in minutes with full analytics.</p>
+      </div>
+    </div>
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Insights</h4>
+        <p>Cross-channel and audience analytics on one platform. Filter, track, and share the dashboards that matter most to your team.</p>
+      </div>
+    </div>
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Intelligent Content</h4>
+        <p>Publish once to all your channels. When an employee interacts with content on one channel, it's marked read on every other channel automatically.</p>
+      </div>
+    </div>
+    <div class="feat">
+      <span class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div>
+        <h4>Deskless Workforce</h4>
+        <p>White-labeled native iOS and Android mobile apps with an intelligent, personalized experience. Up and running in hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- (12) CTA strip with stat-panel inside.
+       Budget: pitch h3 ≤6 words, body 35–55 words. Stat-panel: ≤4-char stat,
+       label ≤14 words, body 20–40 words. -->
+  <div class="cta-strip">
+    <div class="pitch">
+      <h3>Broadcast Platform <span class="overline" style="margin-left:6px;">Powered by Cerkl</span></h3>
+      <p><strong>Deliverability, Insights and Control with Cerkl Broadcast.</strong> No-code, scalable, secure, compliance-ready. Integrates full control of your data with enterprise communication effectiveness.</p>
+    </div>
+    <div class="stat-panel ruby">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">Engaged employees have up to 40% lower turnover</div>
+      <p>Email that delivers what employees want and what the company needs drives engagement and business results.</p>
+    </div>
+  </div>
+
+  <!-- (13) Footer -->
+  <div class="footer">
+    <div class="addr">
+      <div>For more information, visit cerkl.com or call us at 888-350-9777.</div>
+    </div>
+    <div class="brand">Cerkl</div>
+  </div>
+  </div><!-- /.page-body -->
+</div>
+
+<!-- =====================================================================
+     PAGE 3 — IT pre-meeting one-pager (dense)
+     Used by: stakeholder pre-call briefs, internal-review handouts
+     Components shown: .hero-compact (logo-only variant), .pill-row,
+                       .bullet-grid.cols-4, .grid-2 with .stat-panel
+===================================================================== -->
+<div class="page">
+
+  <!-- (2) Compact hero — logo-only variant: no divider, no title in band -->
+  <div class="hero-compact" style="border-bottom:none; padding-bottom:0;">
+    <span class="wordmark-ph">Broadcast</span>
+  </div>
+
+  <div class="page-body stretch">
+
+  <!-- Two-up: H1 on left, "Purpose" callout on right -->
+  <div class="grid-2">
+    <div class="stack-12">
+      <h1 style="font-size:38px; color:var(--ink);">IT Pre-meeting</h1>
+      <p class="lead">
+        Ahead of our upcoming meeting, please find an overview of the topics we will
+        cover. This is an abridged version of the presentation that will accompany
+        our discussion.
+      </p>
+    </div>
+    <div class="stack-8">
+      <h3 style="color:var(--accent-dark);">Purpose</h3>
+      <ul style="font-size:14px; color:var(--ink); margin:0; padding-left:20px;">
+        <li>Support Internal Communication's exploration with Cerkl Broadcast</li>
+        <li>Review what work IT might need to perform</li>
+        <li>Establish what benefits / ROI IT will get</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h2 style="color:var(--accent-dark); margin-bottom:10px;">Broadcast and How it Works</h2>
+    <ul style="font-size:14px; color:var(--ink); margin:0; padding-left:20px;">
+      <li>Broadcast is a cloud-based platform built to modernize how companies communicate, engage and understand their people. Broadcast is hosted in the Google Cloud and emails using SendGrid.</li>
+      <li>Broadcast offers Audience Management, Email, CMS, Analytics built for internal communication.</li>
+    </ul>
+  </div>
+
+  <!-- (11) Pill row -->
+  <div class="pill-row">
+    <span class="label">Security Standards</span>
+    <span class="pill">GDPR</span>
+    <span class="pill">CCPA</span>
+    <span class="pill">Google Partner</span>
+    <span class="pill">SSO</span>
+    <span class="pill">Encryption</span>
+    <span class="pill">SOC 2 Type 2</span>
+  </div>
+
+  <!-- (7) Bullet grid — 4 columns of dense bullets. .grow stretches to fill. -->
+  <div class="bullet-grid cols-4 grow">
+    <div class="bullet-col">
+      <h3>Broadcast's Traction</h3>
+      <ul>
+        <li>300 customers including VMware, Citrix, CBRE, St. Elizabeth Health, ATB Financial, Goto Meeting</li>
+        <li>SOC2 type 2, 99.999% uptime, GDPR compliant, 4.2 million employees reached monthly</li>
+        <li>100% US operations, founded 2012</li>
+        <li>~25k emails sent per minute for customers</li>
+      </ul>
+    </div>
+    <div class="bullet-col">
+      <h3>IT Benefits, Impact</h3>
+      <ul>
+        <li>In working with Internal Communications IT will no longer have to: Create Distribution Lists, Sync Distribution Lists, Track email deliverability, Manually Pull people data, Generate reports, Offer analytics, reports, insights</li>
+        <li>This will result in less tickets, phone calls</li>
+      </ul>
+    </div>
+    <div class="bullet-col">
+      <h3>IT's Investment</h3>
+      <ul>
+        <li>No code people data integration</li>
+        <li>Dedicated IP, reverse DNS setup</li>
+        <li>Adjust email security to preserve Broadcast analytics</li>
+        <li>Automatic image download</li>
+        <li>Branded email links setup</li>
+        <li>Sender authentication</li>
+      </ul>
+    </div>
+    <div class="bullet-col">
+      <h3>Integrations</h3>
+      <ul>
+        <li>Content — Your existing content channels (e.g., SharePoint) can be integrated into Broadcast for distribution using the Broadcast API.</li>
+        <li>People Data — Your people data can be integrated into Broadcast using our no-code process which allows organizations to map 1 or more sources of people data to Broadcast.</li>
+        <li>Data is only available to Broadcast when it is pushed by you.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- (13) Footer -->
+  <div class="footer">
+    <div class="addr">
+      <div><strong>Cerkl</strong></div>
+      <div class="small">15815 Hillington Ct. Suite #138 · Covington, Ohio 45226</div>
+    </div>
+    <div class="brand">Cerkl</div>
+  </div>
+  </div><!-- /.page-body -->
+</div>
+
+<!-- =====================================================================
+     PAGE 4 — Guide interior, chapter opener
+     Used by: long-form guides (Newsletter Guide, Engagement Playbook)
+     Components shown: .running-header, .display-h1, .icon-row-list, .footer
+===================================================================== -->
+<div class="page">
+
+  <!-- (3) Running header -->
+  <div class="running-header">
+    <div class="left">Employee Newsletters: A Comprehensive Guide</div>
+    <div class="right">Cerkl<span class="sep">|</span>06</div>
+  </div>
+
+  <div class="page-body stretch">
+
+  <!-- (4) Display H1 -->
+  <h1 class="display-h1">Why do Employee Newsletters Matter?</h1>
+
+  <p class="lead" style="max-width:60ch;">
+    The value of employee newsletters hasn't changed. It's just their creation,
+    format, and distribution options that have changed — a lot.
+  </p>
+
+  <p style="color:var(--ink); margin: 0;">So, why are newsletters important? Here are a few key factors to consider when you decide what you are going to put into each new employee newsletter:</p>
+
+  <!-- (6) Icon-row list — 4 rows. .grow stretches gap distribution. -->
+  <div class="icon-row-list grow">
+    <div class="row">
+      <div class="ic-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2-8z"/></svg>
+      </div>
+      <p>Employee newsletters provide a central platform to share important company updates, announcements, and industry news. This keeps everyone informed about what's happening within the organization, fostering a sense of transparency and trust between employees and leadership.</p>
+    </div>
+    <div class="row">
+      <div class="ic-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/></svg>
+      </div>
+      <p>Organizations can use newsletters to recognize employee achievements, celebrate milestones, and share company stories. This helps employees feel valued and connected to the bigger picture, contributing to a more positive and engaged company culture.</p>
+    </div>
+    <div class="row">
+      <div class="ic-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6"/><circle cx="17" cy="15" r="5"/></svg>
+      </div>
+      <p>Newsletters can showcase different departments or teams, allowing employees to learn about each other's work. This can spark collaboration and break down silos within the organization.</p>
+    </div>
+    <div class="row">
+      <div class="ic-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <p>Ultimately, content is king. Get it right, and you'll reap its benefits. Just remember that employees are humans. Speak to them like humans.</p>
+    </div>
+  </div>
+
+  <!-- (13) Footer -->
+  <div class="footer">
+    <div class="addr">
+      <div><strong>Cerkl</strong></div>
+      <div class="small">Internal-Communications Software · cerkl.com</div>
+    </div>
+    <div class="brand">Broadcast</div>
+  </div>
+  </div><!-- /.page-body -->
+</div>
+
+<!-- =====================================================================
+     PAGE 5 — Guide interior, editorial spread
+     Used by: long-form guides
+     Components shown: .running-header, .editorial-2col (both directions),
+                       .image-card grid (2-col)
+===================================================================== -->
+<div class="page">
+
+  <!-- (3) Running header -->
+  <div class="running-header">
+    <div class="left">Employee Newsletters: A Comprehensive Guide</div>
+    <div class="right">Cerkl<span class="sep">|</span>19</div>
+  </div>
+
+  <div class="page-body stretch">
+
+  <!-- (8) Editorial 2-col (text left, image right) -->
+  <div class="editorial-2col media-right">
+    <div>
+      <h2>Other HTML-Based Options</h2>
+      <p>The good news is that you don't have to be able to write HTML code from scratch to design newsletters using HTML. There are a few applications that cater to different levels of technical expertise.</p>
+      <p>Furthermore, leveraging pre-built templates, drag-and-drop editors, and potentially some basic HTML knowledge, you can design effective newsletters using HTML even without extensive coding experience.</p>
+    </div>
+    <div class="image-card">
+      <div class="photo-ph"></div>
+    </div>
+  </div>
+
+  <!-- (9) Image-headed cards — 2-col. .grow lets the row stretch vertically. -->
+  <div class="feature-grid cols-2 grow" style="gap:22px;">
+    <div class="image-card">
+      <div class="photo-ph"></div>
+      <div class="body">
+        <h3>Pre-Designed Templates</h3>
+        <p>Many email marketing platforms and services offer collections of ready-built HTML templates specifically designed for newsletters. These templates come with a predefined structure and layout, often with customizable elements like colors, fonts, and logos.</p>
+      </div>
+    </div>
+    <div class="image-card">
+      <div class="photo-ph"></div>
+      <div class="body">
+        <h3>Drag-and-Drop Editors</h3>
+        <p>Several online tools and services offer drag-and-drop editors specifically designed for creating HTML newsletters. These tools provide pre-built elements like text boxes, images, buttons, and more. You can simply drag and drop these elements onto a canvas to build your newsletter layout.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- (13) Footer -->
+  <div class="footer">
+    <div class="addr">
+      <div><strong>Cerkl</strong></div>
+      <div class="small">Internal-Communications Software · cerkl.com</div>
+    </div>
+    <div class="brand">Broadcast</div>
+  </div>
+  </div><!-- /.page-body -->
+</div>
+
+</body>
+</html>

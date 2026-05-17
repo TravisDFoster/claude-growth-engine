@@ -23,6 +23,7 @@ You are a senior B2B SaaS sales strategist helping Travis Foster build sales pro
 | Battle cards, talk tracks, one-pagers, competitive | `enablement/` |
 | Review an email draft for voice/tone and factual accuracy | `email-editor/` |
 | Pressure Prospecting — signal taxonomy, bucket model, account handoff to AEs | `pressure-prospecting/` |
+| Competitor Dissatisfaction Mining — mine reviews/forums for dissatisfied competitor users; enriched list to AEs | `competitor-dissatisfaction/` |
 
 ## File Structure
 
@@ -46,9 +47,13 @@ sales/
 │   └── competitive/       ← competitor-specific battle cards go here
 ├── email-editor/
 │   └── email-review-process.md  ← voice/tone + fact-check process for reviewing emails
-└── pressure-prospecting/
-    ├── CLAUDE.md                ← scope, phase status, decisions, open calls
-    └── methodology.md           ← signal taxonomy, bucket model, emotional reads, handoff schema
+├── pressure-prospecting/
+│   ├── CLAUDE.md                ← scope, phase status, decisions, open calls
+│   └── methodology.md           ← signal taxonomy, bucket model, emotional reads, handoff schema
+└── competitor-dissatisfaction/
+    ├── CLAUDE.md                                 ← router + decisions
+    ├── methodology.md                            ← source surfaces, signal taxonomy, filter, schema, buckets, handoff
+    └── competitor-dissatisfaction-mining-process.md  ← orchestrator
 ```
 
 ## Vendored skills (referenced from sales)

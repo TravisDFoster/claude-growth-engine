@@ -15,12 +15,20 @@ In 2025, employee wellbeing improved (Gallup "thriving" up to 34%, first uptick 
 
 Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, anger 22%, loneliness 22% ([[state-of-the-global-workplace-2026]]).
 
-**EX-vendor framing:** [[workvivo]]'s 2026-05-06 launch of [[seer]] extends its product surface into employee listening / people-intelligence, strengthening a "one-vendor EX stack" pitch (engagement feed + AI + people-intelligence). This vendor-consolidation pattern is a recurring frame in EX coverage ([[workvivo-seer-2026-05-11]]).
+**2026 EX measurement is being reframed.** [[forrester]]'s February 2026 *deep listening* blog ([[forrester-ai-rewrite-ex-deep-listening-2026-05-15]]) names a category — AI on Teams chats and meeting transcripts producing real-time sentiment, replacing surveys — that will likely become the new evaluation lens for EX/Comms platforms by 2027. Vendors are "one to two years away" from full-featured offerings. Structurally favors incumbents with the data (Microsoft Viva, [[workvivo]] [[seer]], Qualtrics). See [[deep-listening]] for the category breakdown and Cerkl's **complement-not-compete** positioning.
+
+**EX-vendor framing:** [[workvivo]]'s 2026-05-06 launch of [[seer]] is the most direct vendor execution of Forrester's deep-listening frame in market; Workvivo's own framing ("combining feedback with real-time signals from communication, collaboration, and engagement") is almost verbatim Forrester's. Expect Seer to cite the Forrester blog (or one of the paywalled reports) in sales decks within 30 days ([[workvivo-seer-2026-05-11]]).
+
+**Companion CHRO frame:** [[gartner]]'s 2026-05-13 *People-Centric AI* release ([[gartner-people-centric-ai-2026-05-15]]) puts the CHRO at the center of AI-era org design alongside the CIO. Read with Forrester: Gartner says *deploy AI deliberately to people*; Forrester says *listen for what AI deployment is doing to people*. Both put the EX leader at the center.
 
 ## Key Entities
 
 - [[gallup]] — primary-research source
-- [[workvivo]] — EX-suite vendor
+- [[forrester]] — analyst frame: deep listening
+- [[david-brodeur-johnson]] — Forrester EX research lead
+- [[james-mcquivey]] — Forrester co-author on deep listening
+- [[gartner]] — analyst frame: people-centric AI
+- [[workvivo]] — EX-suite vendor; most direct execution of Forrester's frame
 - [[seer]] — Workvivo's people-intelligence product
 
 ## Key Concepts
@@ -28,11 +36,14 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 - [[thriving-struggling-suffering]] — Gallup's wellbeing classification
 - [[employee-engagement-three-bucket-model]] — the separate construct that EX strategy must distinguish from wellbeing
 - [[employee-listening]] — adjacent EX surface
-- [[people-intelligence]] — emerging EX-adjacent category
+- [[deep-listening]] — Forrester's 2026 evolution of employee-listening; AI-native
+- [[people-intelligence]] — Workvivo's competing category name for the same surface
+- [[execution-gap]] — listen well, then act; the failure mode deep-listening claims to fix
 
 ## Practitioner Voices
 
 - [[justin-black]] — Head of Seer; "execution gap" framing for EX listening
+- [[david-brodeur-johnson]] — Forrester EX research lead; deep-listening category-namer
 
 ## Sources Read
 
@@ -40,12 +51,17 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 |---|---|---|
 | [[state-of-the-global-workplace-2026]] | 2026-04 | Thriving up to 34% (first improvement in 3 years) while engagement down to 20%; daily stress 40% |
 | [[workvivo-seer-2026-05-11]] | 2026-05-11 | Vendor EX-suite framing; people-intelligence as adjacent EX surface |
+| [[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] | 2026-02-06 | Category-naming for deep listening; 24-month build window for EX/Comms vendor field |
+| [[gartner-people-centric-ai-2026-05-15]] | 2026-05-13 | CHRO at the center of AI-era org design; complementary axis to Forrester |
 
 ## Open Questions
 
 - What share of the wellbeing improvement is attributable to employer action vs macroeconomic factors?
 - Will EX vendors continue consolidating across listening, IC, and recognition surfaces?
+- Will the Q2 2027 Forrester Wave evaluate EX platforms on deep-listening criteria? If yes, every vendor's roadmap shifts overnight.
+- Cross-reference: how should Cerkl's positioning vs the deep-listening category be expressed in customer-facing materials — neutral integration story, opinion piece, or product roadmap commitment to sentiment-on-replies?
 
 ## Contradictions & Tensions
 
-_(none yet)_
+- Forrester's deep-listening frame (passive NLP on collaboration exhaust) sits in tension with practitioner privacy pushback ([ExpressVPN 2026 surveillance trends](https://www.expressvpn.com/blog/workplace-surveillance-trends-us/); [Meta no-opt-out backlash](https://www.businesstoday.in/technology/story/meta-staff-protest-over-activity-tracking-tool-amid-privacy-concerns-531282-2026-05-13)). "Privacy by design" is doing a lot of work in Forrester's framing.
+- Wellbeing-engagement divergence (Gallup) vs deep-listening's promise of real-time sentiment: the deep-listening capability could measure the divergence in days rather than the quarters surveys take, *if* the consent model holds.

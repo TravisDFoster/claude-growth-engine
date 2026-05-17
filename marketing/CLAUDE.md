@@ -16,6 +16,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 | Task | Go to |
 |---|---|
 | Strategy, diagnosis, roadmap, 90-day sprint | `marketing-strategy/` |
+| End-to-end content lifecycle — brief queue → schedule → write → Jira → publish | [`content-plan/process.md`](content-plan/process.md) |
 | Content planning — rolling 4-week plan (source of truth), Jira CSV (cross-channel) | [`content-plan/rolling-4week.md`](content-plan/rolling-4week.md) |
 | Triage research signal into the content plan (Monday reconcile) | [`content-plan/inputs.md`](content-plan/inputs.md) (mailbox — Wed team-update writes; Travis reads) |
 | SEO strategy, keyword maps, audits, backlinks, technical roadmap | [`seo/`](seo/CLAUDE.md) |
@@ -32,7 +33,7 @@ You are a senior B2B SaaS marketing strategist helping Travis Foster, Head of Ma
 | YouTube organic video | `channels/youtube/` |
 | YouTube paid ads — hook generation, storyboards, Flow prompts | [`channels/paid-youtube/`](channels/paid-youtube/CLAUDE.md) |
 | Brand assets, logos, colors, design | `design/` |
-| One-pagers | `design/one-pagers/` |
+| One-pagers (print-format letter PDF — render-verify-remediate loop) | [`design/one-pagers/one-pager-process.md`](design/one-pagers/one-pager-process.md) |
 | Website copy, Webflow, site structure | `website/` |
 | HubSpot CRM — contacts, segments, workflows, cleanup | `../hubspot/` |
 | Reusable skills (CRO, copy, SEO, paid, email, growth, research) | `skills/` (see `skills/INDEX.md`) |

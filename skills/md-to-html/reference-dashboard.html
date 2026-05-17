@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerkl Blog SEO — Leadership Status · 2026-05-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #18181d;
+    --panel: #1f1f26;
+    --panel-soft: #27272e;
+    --ink: #f5f5fa;
+    --muted: #bfbfc7;
+    --line: #373740;
+    --accent: #4c60d9;            /* Cobalt 50 */
+    --accent-strong: #3547c4;     /* Cobalt 60 — primary bar fill */
+    --accent-deep: #0c1159;       /* Cobalt 100 */
+    --accent-pale: #a7b3ed;       /* Cobalt 40 */
+    --accent-soft: rgba(76, 96, 217, 0.14);
+    --accent-border: rgba(167, 179, 237, 0.28);
+    --warm: #ffaa22;              /* Butter base */
+    --warm-pale: #ffbf57;
+    --good: #6de4c9;              /* Forest 40 */
+    --good-bg: rgba(59, 197, 164, 0.10);
+    --good-border: rgba(109, 228, 201, 0.30);
+    --warn: #ffbf57;
+    --warn-bg: rgba(255, 170, 34, 0.10);
+    --warn-border: rgba(255, 170, 34, 0.30);
+    --bad: #f79499;               /* Ruby 40 */
+    --bad-bg: rgba(242, 73, 95, 0.10);
+    --bad-border: rgba(242, 73, 95, 0.30);
+    --quote: #a869fd;             /* Violet 40 */
+    --violet: #802ee6;            /* Violet base */
+    --code-bg: #27272e;
+    --shadow: 0 1px 0 rgba(0,0,0,0.30), 0 8px 24px rgba(0,0,0,0.40);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    --hero-gradient:
+      radial-gradient(ellipse 90% 70% at 20% 25%, rgba(167,179,237,0.22) 0%, rgba(167,179,237,0) 60%),
+      radial-gradient(ellipse 60% 50% at 85% 80%, rgba(76,96,217,0.18) 0%, rgba(76,96,217,0) 60%),
+      linear-gradient(135deg, #0c1159 0%, #0c1159 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+  section p { max-width: 70ch; }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    background: var(--hero-gradient);
+    border: 1px solid rgba(167, 179, 237, 0.20);
+    border-radius: 14px;
+    padding: 32px 36px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--accent-pale); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 {
+    font-size: 34px; line-height: 1.15; margin: 0 0 10px;
+    letter-spacing: -0.005em; font-weight: 700; color: #ffffff;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 13px; color: rgba(255,255,255,0.78); margin-bottom: 22px;
+  }
+  .meta-row b { color: #ffffff; font-weight: 600; }
+
+  /* ---------- Hero stat strip — 5 big numbers ---------- */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 6px 0 4px;
+  }
+  @media (max-width: 720px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  .h-stat {
+    background: rgba(12, 17, 89, 0.45);
+    border: 1px solid rgba(167, 179, 237, 0.25);
+    border-radius: 12px;
+    padding: 16px 18px;
+    backdrop-filter: blur(2px);
+  }
+  .h-stat .h-num {
+    font-size: 36px; font-weight: 700; color: #ffffff;
+    letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .h-stat .h-num small {
+    font-size: 18px; font-weight: 600; color: var(--accent-pale);
+    margin-left: 2px;
+  }
+  .h-stat .h-lbl {
+    font-size: 11px; color: var(--accent-pale); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-top: 6px;
+  }
+  .h-stat.warm .h-num { color: var(--warm); }
+  .h-stat.warm .h-num small { color: var(--warm-pale); }
+
+  /* ---------- Sections ---------- */
+  section {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-size: 20px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px; color: var(--ink);
+  }
+  h2 .num {
+    font-size: 11px; color: var(--accent-pale); font-weight: 600;
+    background: var(--accent-soft); padding: 2px 8px; border-radius: 6px;
+    border: 1px solid var(--accent-border);
+  }
+  h2 .lead {
+    font-size: 13px; color: var(--muted); font-weight: 500; margin-left: auto;
+  }
+  h3 { font-size: 12px; margin: 14px 0 8px; font-weight: 600; color: var(--accent-pale); text-transform: uppercase; letter-spacing: 0.08em; }
+  p { margin: 0 0 10px; color: var(--ink); font-size: 15px; }
+  a { color: var(--accent-pale); text-decoration: none; border-bottom: 1px solid var(--accent-border); }
+  a:hover { color: #ffffff; border-bottom-color: var(--accent-pale); }
+  p code, td code {
+    font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+    color: var(--accent-pale);
+  }
+
+  /* ---------- Section 1: Horizontal bar chart (pillar inventory) ---------- */
+  .bar-chart { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 140px;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .bar-row .bar-label { color: var(--ink); font-weight: 600; }
+  .bar-track {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    height: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bar-fill {
+    background: var(--accent-strong);
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px;
+    color: #ffffff; font-size: 12px; font-weight: 600;
+    transition: width 0.4s ease;
+    white-space: nowrap;
+  }
+  .bar-fill.thin {
+    color: var(--ink); justify-content: flex-start;
+    padding-left: 0; background: var(--accent-strong);
+    overflow: visible;
+  }
+  .bar-fill.thin::after {
+    content: attr(data-label);
+    position: absolute;
+    left: calc(var(--bar-w, 0%) + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .bar-meta {
+    font-size: 12px; color: var(--muted);
+    display: flex; align-items: center; gap: 8px;
+    justify-content: flex-end;
+  }
+  .badge {
+    display: inline-flex; align-items: center;
+    font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 999px; border: 1px solid;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    white-space: nowrap;
+  }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .badge.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .badge.info { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  @media (max-width: 720px) {
+    .bar-row { grid-template-columns: 1fr; gap: 4px; }
+    .bar-meta { justify-content: flex-start; }
+  }
+
+  /* ---------- Section 2: Donuts ---------- */
+  .donut-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  @media (max-width: 820px) {
+    .donut-grid { grid-template-columns: 1fr; }
+  }
+  .donut-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .donut-card h3 { margin-top: 0; }
+  .donut-wrap {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+  @media (max-width: 520px) {
+    .donut-wrap { grid-template-columns: 1fr; justify-items: center; }
+  }
+  .donut-svg { width: 180px; height: 180px; }
+  .donut-center {
+    font-size: 12px; font-weight: 700; fill: var(--ink);
+    text-anchor: middle; dominant-baseline: central;
+  }
+  .donut-sublabel {
+    font-size: 2.4px; font-weight: 600; fill: var(--muted);
+    text-anchor: middle; letter-spacing: 0.05em;
+  }
+  .legend { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+  .legend-item {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    align-items: center; gap: 10px;
+  }
+  .legend-swatch {
+    width: 12px; height: 12px; border-radius: 3px; display: inline-block;
+  }
+  .legend-label { color: var(--ink); }
+  .legend-value { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .donut-headline {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-pale);
+  }
+  .donut-headline b { color: #ffffff; }
+
+  /* ---------- Section 3: Pipeline timeline + paired bars ---------- */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) {
+    .timeline { grid-template-columns: 1fr 1fr; }
+  }
+  .timeline-week {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 140px;
+    display: flex; flex-direction: column;
+  }
+  .week-label {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 8px;
+  }
+  .brief-chip {
+    background: var(--panel-soft);
+    border-left: 3px solid var(--accent-strong);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .brief-chip:last-child { margin-bottom: 0; }
+  .brief-chip .b-date {
+    font-size: 10px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .brief-chip .b-title { color: var(--ink); font-weight: 500; line-height: 1.3; }
+  .brief-chip .b-pillar {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    margin-top: 4px; color: var(--muted);
+  }
+  /* color-coded by pillar */
+  .brief-chip.ic       { border-left-color: #3547c4; }       /* Cobalt 60 */
+  .brief-chip.email    { border-left-color: #a7b3ed; }       /* Cobalt 40 */
+  .brief-chip.measure  { border-left-color: #802ee6; }       /* Violet base */
+  .brief-chip.mobile   { border-left-color: #ffaa22; }       /* Butter base */
+
+  /* paired bars: existing vs pipeline */
+  .paired-bars { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .pair-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+  }
+  @media (max-width: 720px) { .pair-row { grid-template-columns: 1fr; } }
+  .pair-label { color: var(--ink); font-weight: 600; font-size: 14px; }
+  .pair-track-group { display: flex; flex-direction: column; gap: 4px; }
+  .pair-track-row {
+    display: grid; grid-template-columns: 70px 1fr 80px;
+    align-items: center; gap: 8px;
+    font-size: 11px;
+  }
+  .pair-track-row .pair-key {
+    color: var(--muted); font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .pair-track-row .pair-val {
+    color: var(--ink); font-variant-numeric: tabular-nums; text-align: right;
+  }
+  .pair-bar-track {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .pair-bar-fill { height: 100%; background: var(--accent-strong); }
+  .pair-bar-fill.existing { background: var(--accent-pale); opacity: 0.55; }
+  .pair-bar-fill.pipeline { background: var(--accent-strong); }
+
+  /* ---------- Section 4: Strategic move cards ---------- */
+  .strat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 6px;
+  }
+  @media (max-width: 820px) { .strat-grid { grid-template-columns: 1fr; } }
+  .strat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex; flex-direction: column;
+  }
+  .strat-card .strat-num {
+    font-size: 32px; font-weight: 700; color: var(--accent-pale);
+    letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .strat-card .strat-num .unit {
+    font-size: 13px; color: var(--muted); font-weight: 500;
+    margin-left: 6px; letter-spacing: 0;
+  }
+  .strat-card.warm .strat-num { color: var(--warm); }
+  .strat-card .strat-eyebrow {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 6px;
+  }
+  .strat-card .strat-title {
+    font-size: 15px; color: var(--ink); font-weight: 600; margin: 8px 0 4px;
+  }
+  .strat-card .strat-ctx {
+    font-size: 13px; color: var(--muted); margin: 0 0 10px;
+  }
+  .strat-card .strat-outcome {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--accent-pale); font-weight: 500;
+  }
+
+  /* ---------- Section 5: Tooling gauges ---------- */
+  .gauge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 6px;
+  }
+  @media (max-width: 820px) { .gauge-grid { grid-template-columns: 1fr; } }
+  .gauge-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .gauge-card.bad  { border-color: var(--bad-border); }
+  .gauge-card.warn { border-color: var(--warn-border); }
+  .gauge-tool {
+    font-size: 14px; color: var(--ink); font-weight: 600; margin-bottom: 8px;
+  }
+  .gauge-status {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; padding: 3px 10px;
+    border-radius: 999px; border: 1px solid;
+    background: var(--bad-bg); color: var(--bad); border-color: var(--bad-border);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .gauge-status::before { content: "●"; font-size: 8px; }
+  .gauge-status.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .gauge-unlocks {
+    font-size: 12px; color: var(--muted); line-height: 1.45;
+  }
+  .gauge-unlocks b { color: var(--ink); font-weight: 500; }
+
+  .cost-callout {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 10px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  }
+  .cost-callout .cost-label {
+    font-size: 11px; color: var(--accent-pale); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600;
+  }
+  .cost-callout .cost-formula {
+    font-family: var(--mono); font-size: 13px; color: var(--ink);
+    font-weight: 500; margin-top: 2px;
+  }
+  .cost-callout .cost-result {
+    font-size: 22px; color: #ffffff; font-weight: 700;
+    margin-left: auto;
+  }
+  @media (max-width: 720px) {
+    .cost-callout .cost-result { margin-left: 0; }
+  }
+
+  /* ---------- Section 6: Before/after compact ---------- */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 6px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 720px) { .ba-grid { grid-template-columns: 1fr; } }
+  .ba-col-header {
+    padding: 10px 16px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .ba-col-header.before {
+    background: var(--panel);
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+  .ba-col-header.after {
+    background: var(--accent-soft);
+    color: var(--accent-pale);
+    border-bottom: 1px solid var(--line);
+  }
+  .ba-cell {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .ba-cell.before { background: var(--panel); color: var(--muted); border-right: 1px solid var(--line); }
+  .ba-cell.after { background: var(--panel-soft); }
+  .ba-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .ba-cell b { color: #ffffff; font-weight: 600; }
+  @media (max-width: 720px) {
+    .ba-cell.before { border-right: none; }
+    .ba-col-header.before { border-right: none; }
+  }
+
+  /* ---------- Section 7: Actions table ---------- */
+  table.actions {
+    width: 100%; border-collapse: collapse; margin-top: 6px;
+    font-size: 13px;
+  }
+  table.actions th, table.actions td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  table.actions th {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent-pale); font-weight: 600; background: var(--panel);
+  }
+  table.actions tr:last-child td { border-bottom: none; }
+  table.actions tr:hover td { background: var(--panel); }
+  table.actions .act-num {
+    color: var(--accent-pale); font-weight: 700;
+    font-variant-numeric: tabular-nums; width: 30px;
+  }
+  table.actions .effort { color: var(--muted); }
+
+  /* ---------- TL;DR strip ---------- */
+  .tldr-strip {
+    margin-top: 18px;
+    border-left: 3px solid var(--accent-pale);
+    padding: 6px 0 6px 16px;
+    font-size: 15px; line-height: 1.55;
+    color: rgba(255,255,255,0.92);
+    max-width: 80ch;
+  }
+  .tldr-strip b { color: #ffffff; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line);
+  }
+  footer a { color: var(--muted); border-bottom-color: var(--line); }
+  footer a:hover { color: var(--ink); }
+
+  /* ---------- Print — light, ink on white ---------- */
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    header.hero {
+      background: #ffffff; color: #18181d; border: 1px solid #d5d5db; box-shadow: none;
+    }
+    header.hero h1, header.hero .meta-row b, .tldr-strip b { color: #18181d; }
+    header.hero .breadcrumb { color: #373740; }
+    header.hero .meta-row { color: #373740; }
+    .h-stat { background: #f5f5fa; border-color: #d5d5db; backdrop-filter: none; }
+    .h-stat .h-num { color: #18181d; }
+    .h-stat.warm .h-num { color: #80550f; }
+    .h-stat .h-num small { color: #373740; }
+    .h-stat .h-lbl { color: #373740; }
+    .tldr-strip { color: #18181d; border-left-color: #3547c4; }
+
+    section { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; background: #ffffff; color: #18181d; }
+    h2, h3, p, td, th, .gauge-tool, .gauge-unlocks b, .strat-card .strat-title { color: #18181d; }
+    h2 .num { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    h2 .lead { color: #373740; }
+    h3 { color: #373740; }
+
+    .bar-track, .pair-bar-track { background: #ebebf0; border-color: #d5d5db; }
+    .bar-fill, .pair-bar-fill, .pair-bar-fill.pipeline { background: #3547c4; color: #ffffff; }
+    .pair-bar-fill.existing { background: #a7b3ed; opacity: 1; }
+    .bar-fill.thin { color: #18181d; background: #3547c4; }
+    .bar-fill.thin::after { color: #18181d; }
+
+    .donut-card, .timeline-week, .strat-card, .gauge-card { background: #f5f5fa; border-color: #d5d5db; }
+    .donut-center { fill: #18181d; }
+    .donut-sublabel { fill: #373740; }
+    .legend-label { color: #18181d; }
+    .legend-value { color: #373740; }
+    .donut-headline { background: #f0f2fc; border-color: #d5d5db; color: #3547c4; }
+    .donut-headline b { color: #18181d; }
+
+    .brief-chip { background: #ffffff; }
+    .brief-chip .b-title { color: #18181d; }
+    .brief-chip .b-pillar, .brief-chip .b-date, .week-label { color: #373740; }
+
+    .strat-card .strat-num { color: #3547c4; }
+    .strat-card.warm .strat-num { color: #80550f; }
+    .strat-card .strat-num .unit { color: #373740; }
+    .strat-card .strat-eyebrow, .strat-card .strat-ctx { color: #373740; }
+    .strat-card .strat-outcome { color: #3547c4; border-top-color: #d5d5db; }
+
+    .gauge-status { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .gauge-status.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
+    .gauge-unlocks { color: #373740; }
+
+    .cost-callout { background: #f0f2fc; border-color: #d5d5db; }
+    .cost-callout .cost-label { color: #3547c4; }
+    .cost-callout .cost-formula { color: #18181d; }
+    .cost-callout .cost-result { color: #18181d; }
+
+    .ba-grid { border-color: #d5d5db; }
+    .ba-col-header.before, .ba-col-header.after { color: #373740; background: #ebebf0; border-color: #d5d5db; }
+    .ba-cell.before { color: #373740; background: #f5f5fa; border-color: #d5d5db; }
+    .ba-cell.after { background: #ffffff; color: #18181d; border-color: #d5d5db; }
+    .ba-cell b { color: #18181d; }
+
+    table.actions th { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    table.actions td { color: #18181d; border-color: #d5d5db; }
+    table.actions .act-num { color: #3547c4; }
+    table.actions .effort { color: #373740; }
+
+    .badge { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
+    .badge.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
+    .badge.bad  { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .badge.info { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
+
+    footer { color: #373740; border-top-color: #d5d5db; }
+    a { color: #18181d; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============== HERO ============== -->
+  <header class="hero">
+    <div class="breadcrumb">seo · leadership status dashboard</div>
+    <h1>Cerkl Blog SEO — Leadership Status</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-15</span>
+      <span><b>Scope:</b> cerkl.com blog</span>
+      <span><b>Last full audit:</b> 2026-05-11</span>
+      <span><b>Prepared by:</b> SEO (Travis + Claude)</span>
+    </div>
+
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-num">331</div>
+        <div class="h-lbl">Live blog posts</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num">1,293</div>
+        <div class="h-lbl">Keyword↔URL pairs</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num">12</div>
+        <div class="h-lbl">Briefs in pipeline</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num">6</div>
+        <div class="h-lbl">Scheduled June 2026</div>
+      </div>
+      <div class="h-stat warm">
+        <div class="h-num">4<small>/5</small></div>
+        <div class="h-lbl">Gaps briefed today (80%)</div>
+      </div>
+    </div>
+
+    <p class="tldr-strip">
+      The blog SEO engine is structurally healthy — <b>331 posts mapped 1:1 to 5 pillars</b>, <b>12 briefs produced in a single day</b>,
+      and <b>4 of 5 documented coverage gaps closed today</b>. The constraint is <b>visibility, not capacity</b>:
+      Search Console access, rank tracking, and automated CWV would close the reporting gap for ~$100–$200/mo.
+    </p>
+  </header>
+
+  <!-- ============== SECTION 1: PILLAR INVENTORY ============== -->
+  <section>
+    <h2><span class="num">01</span>Pillar inventory — 331 live posts<span class="lead">3 mature · 2 growth lanes</span></h2>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">IC Strategy &amp; Practice</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 40.2%;">133 · 40.2%</div></div>
+        <div class="bar-meta"><span class="badge">Mature</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Internal Email</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 36.0%;">119 · 36.0%</div></div>
+        <div class="bar-meta"><span class="badge">Mature</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Engagement &amp; Experience</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 19.9%;">66 · 19.9%</div></div>
+        <div class="bar-meta"><span class="badge">Healthy</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Analytics &amp; Measurement</div>
+        <div class="bar-track"><div class="bar-fill thin" data-label="11 · 3.3%" style="width: 3.3%; --bar-w: 3.3%;"></div></div>
+        <div class="bar-meta"><span class="badge warn">Growth target</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Omni-Channel &amp; Mobile</div>
+        <div class="bar-track"><div class="bar-fill thin" data-label="2 · 0.6%" style="width: 0.6%; --bar-w: 0.6%;"></div></div>
+        <div class="bar-meta"><span class="badge bad">Underdeveloped</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 2: KEYWORD STRATEGY DONUTS ============== -->
+  <section>
+    <h2><span class="num">02</span>Keyword strategy state<span class="lead">29 mapped items · 7 Tier 1 keywords</span></h2>
+
+    <div class="donut-grid">
+
+      <!-- Main donut: 29 keyword items by tier/gap -->
+      <div class="donut-card">
+        <h3>Surface breakdown (29 items)</h3>
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 42 42" aria-label="Keyword surface donut">
+            <!--
+              Circumference ~ 100 (r = 15.9155). Slice offsets stacked clockwise from top.
+              Slices: Tier1 24.1 · Tier2 20.7 · Tier3 27.6 · Gaps 17.2 · Cannib 10.3
+            -->
+            <circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#27272e" stroke-width="6"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#3547c4" stroke-width="6"
+              stroke-dasharray="24.1 75.9" stroke-dashoffset="25"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#a7b3ed" stroke-width="6"
+              stroke-dasharray="20.7 79.3" stroke-dashoffset="0.9"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#802ee6" stroke-width="6"
+              stroke-dasharray="27.6 72.4" stroke-dashoffset="-19.8"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#ffaa22" stroke-width="6"
+              stroke-dasharray="17.2 82.8" stroke-dashoffset="-47.4"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#b00045" stroke-width="6"
+              stroke-dasharray="10.3 89.7" stroke-dashoffset="-64.6"
+              transform="rotate(-90 21 21)"></circle>
+            <text x="21" y="21" class="donut-center">29</text>
+          </svg>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#3547c4"></span>
+              <span class="legend-label">Tier 1 — Foundations</span>
+              <span class="legend-value">7 · 24.1%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#a7b3ed"></span>
+              <span class="legend-label">Tier 2 — Paid ICP / feature</span>
+              <span class="legend-value">6 · 20.7%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#802ee6"></span>
+              <span class="legend-label">Tier 3 — Versus pages</span>
+              <span class="legend-value">8 · 27.6%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#ffaa22"></span>
+              <span class="legend-label">Coverage gaps</span>
+              <span class="legend-value">5 · 17.2%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#b00045"></span>
+              <span class="legend-label">Cannibalization watch</span>
+              <span class="legend-value">3 · 10.3%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small donut: Tier 1 status (7 keywords) -->
+      <div class="donut-card">
+        <h3>Tier 1 status mix (7 keywords)</h3>
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 42 42" aria-label="Tier 1 status donut">
+            <!-- 4 needs-work · 1 now-briefed · 2 untested  →  57.1 · 14.3 · 28.6 -->
+            <circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#27272e" stroke-width="6"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#ffaa22" stroke-width="6"
+              stroke-dasharray="57.1 42.9" stroke-dashoffset="25"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#b00045" stroke-width="6"
+              stroke-dasharray="14.3 85.7" stroke-dashoffset="-32.1"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#bfbfc7" stroke-width="6"
+              stroke-dasharray="28.6 71.4" stroke-dashoffset="-46.4"
+              transform="rotate(-90 21 21)"></circle>
+            <text x="21" y="21" class="donut-center">7</text>
+          </svg>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#ffaa22"></span>
+              <span class="legend-label">Needs on-page work</span>
+              <span class="legend-value">4</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#b00045"></span>
+              <span class="legend-label">No page — now briefed</span>
+              <span class="legend-value">1</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#bfbfc7"></span>
+              <span class="legend-label">Untested</span>
+              <span class="legend-value">2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="donut-headline">
+      Today's brief round closed <b>4 of 5 documented coverage gaps</b> and <b>2 of 8 Tier 3 versus gaps</b>.
+    </div>
+  </section>
+
+  <!-- ============== SECTION 3: JUNE TIMELINE + PIPELINE MIX ============== -->
+  <section>
+    <h2><span class="num">03</span>Brief pipeline — June 2026<span class="lead">6 scheduled · 6 queued · ~6 weeks of inventory</span></h2>
+
+    <div class="timeline">
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 1</div>
+        <div class="brief-chip ic">
+          <div class="b-date">Mon · Jun 1</div>
+          <div class="b-title">Internal Communications in Manufacturing</div>
+          <div class="b-pillar">IC Strategy</div>
+        </div>
+        <div class="brief-chip measure">
+          <div class="b-date">Wed · Jun 3</div>
+          <div class="b-title">The Cross-Channel Read Gap</div>
+          <div class="b-pillar">Measurement</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 8</div>
+        <div class="brief-chip mobile">
+          <div class="b-date">Mon · Jun 8</div>
+          <div class="b-title">Microsoft Teams for Internal Communications</div>
+          <div class="b-pillar">Mobile</div>
+        </div>
+        <div class="brief-chip ic">
+          <div class="b-date">Wed · Jun 10</div>
+          <div class="b-title">Internal Communications in Financial Services</div>
+          <div class="b-pillar">IC Strategy</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 15</div>
+        <div class="brief-chip" style="border-left-color: var(--line); opacity: 0.55;">
+          <div class="b-date">—</div>
+          <div class="b-title">(no scheduled briefs)</div>
+          <div class="b-pillar">Reconcile window</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 22</div>
+        <div class="brief-chip email">
+          <div class="b-date">Mon · Jun 22</div>
+          <div class="b-title">10 Best Internal Newsletter Software (Refresh)</div>
+          <div class="b-pillar">Email</div>
+        </div>
+        <div class="brief-chip email">
+          <div class="b-date">Wed · Jun 24</div>
+          <div class="b-title">7 Best Free Employee Newsletter Tools</div>
+          <div class="b-pillar">Email</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 20px;">Pillar mix — existing vs pipeline (12 briefs)</h3>
+    <div class="paired-bars">
+      <div class="pair-row">
+        <div class="pair-label">IC Strategy</div>
+        <div class="pair-track-group">
+          <div class="pair-track-row">
+            <span class="pair-key">Existing</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill existing" style="width: 40.2%;"></div></div>
+            <span class="pair-val">40.2%</span>
+          </div>
+          <div class="pair-track-row">
+            <span class="pair-key">Pipeline</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill pipeline" style="width: 58.3%;"></div></div>
+            <span class="pair-val">58.3% · 7</span>
+          </div>
+        </div>
+      </div>
+      <div class="pair-row">
+        <div class="pair-label">Email</div>
+        <div class="pair-track-group">
+          <div class="pair-track-row">
+            <span class="pair-key">Existing</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill existing" style="width: 36.0%;"></div></div>
+            <span class="pair-val">36.0%</span>
+          </div>
+          <div class="pair-track-row">
+            <span class="pair-key">Pipeline</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill pipeline" style="width: 16.7%;"></div></div>
+            <span class="pair-val">16.7% · 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="pair-row">
+        <div class="pair-label">Engagement</div>
+        <div class="pair-track-group">
+          <div class="pair-track-row">
+            <span class="pair-key">Existing</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill existing" style="width: 19.9%;"></div></div>
+            <span class="pair-val">19.9%</span>
+          </div>
+          <div class="pair-track-row">
+            <span class="pair-key">Pipeline</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill pipeline" style="width: 0%;"></div></div>
+            <span class="pair-val">0% · 0</span>
+          </div>
+        </div>
+      </div>
+      <div class="pair-row">
+        <div class="pair-label">Measurement</div>
+        <div class="pair-track-group">
+          <div class="pair-track-row">
+            <span class="pair-key">Existing</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill existing" style="width: 3.3%;"></div></div>
+            <span class="pair-val">3.3%</span>
+          </div>
+          <div class="pair-track-row">
+            <span class="pair-key">Pipeline</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill pipeline" style="width: 16.7%;"></div></div>
+            <span class="pair-val">16.7% · 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="pair-row">
+        <div class="pair-label">Mobile</div>
+        <div class="pair-track-group">
+          <div class="pair-track-row">
+            <span class="pair-key">Existing</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill existing" style="width: 0.6%;"></div></div>
+            <span class="pair-val">0.6%</span>
+          </div>
+          <div class="pair-track-row">
+            <span class="pair-key">Pipeline</span>
+            <div class="pair-bar-track"><div class="pair-bar-fill pipeline" style="width: 8.3%;"></div></div>
+            <span class="pair-val">8.3% · 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="donut-headline" style="margin-top: 14px;">
+      <b>Measurement</b> and <b>Mobile</b> are the relative growth winners from this pipeline; <b>Engagement</b> is intentionally skipped (66 existing posts, well-served).
+    </div>
+  </section>
+
+  <!-- ============== SECTION 4: STRATEGIC MOVES ============== -->
+  <section>
+    <h2><span class="num">04</span>Strategic moves — Q2 2026<span class="lead">3 plays driven by 2026-05-13 signals</span></h2>
+    <div class="strat-grid">
+      <div class="strat-card warm">
+        <div class="strat-eyebrow">Play 1 · Time-sensitive</div>
+        <div class="strat-num">2–3<span class="unit">week window</span></div>
+        <div class="strat-title">Claim "AI Execution" language</div>
+        <div class="strat-ctx">Staffbase VOICES, LumApps "AI Employee Hub," Poppulo "AI &amp; Alignment" — category converging fast.</div>
+        <div class="strat-outcome">1 brief queued · pair with LinkedIn essay + paid-ad copy test</div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-eyebrow">Play 2 · Uncontested lane</div>
+        <div class="strat-num">4<span class="unit">verticals open</span></div>
+        <div class="strat-title">Industry-vertical playbooks</div>
+        <div class="strat-ctx">Firstup is the only competitor with serious vertical investment. Manufacturing, FinServ, Retail, Healthcare uncovered.</div>
+        <div class="strat-outcome">2 in June pipeline · Retail + Healthcare to follow in Q3</div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-eyebrow">Play 3 · Structural moat</div>
+        <div class="strat-num">0<span class="unit">of 10 competitors free</span></div>
+        <div class="strat-title">"Free-forever" as wedge</div>
+        <div class="strat-ctx">No major competitor offers free-forever. The <code>free [keyword]</code> family is uncontested SERP territory.</div>
+        <div class="strat-outcome">2 briefs leaning in · cross-link to Cerkl vs ContactMonkey / Workshop</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 5: VISIBILITY GAP — GAUGES + COST ============== -->
+  <section>
+    <h2><span class="num">05</span>Visibility gap — tooling status<span class="lead">The constraint, quantified</span></h2>
+    <div class="gauge-grid">
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Google Search Console</div>
+        <div class="gauge-status">No access</div>
+        <div class="gauge-unlocks">Unlocks: <b>impressions, CTR, average position, indexing coverage, query-level rankings</b></div>
+      </div>
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Rank tracking</div>
+        <div class="gauge-status">Not formalized</div>
+        <div class="gauge-unlocks">Unlocks: <b>keyword movement over time, competitor rank tracking</b></div>
+      </div>
+      <div class="gauge-card warn">
+        <div class="gauge-tool">PageSpeed Insights API</div>
+        <div class="gauge-status warn">Manual only</div>
+        <div class="gauge-unlocks">Unlocks: <b>automated LCP / INP / CLS monitoring</b></div>
+      </div>
+    </div>
+
+    <div class="cost-callout">
+      <div>
+        <div class="cost-label">Cost to unlock full SEO visibility</div>
+        <div class="cost-formula">$0 (GSC) + $99–$199/mo (rank tracker) + $0 (PageSpeed API)</div>
+      </div>
+      <div class="cost-result">~$100–$200/mo</div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 6: PROCESS MATURITY (BEFORE/AFTER) ============== -->
+  <section>
+    <h2><span class="num">06</span>Process maturity — built this week<span class="lead">Scattered docs → operational engine in 5 days</span></h2>
+    <div class="ba-grid">
+      <div class="ba-col-header before">Before</div>
+      <div class="ba-col-header after">After</div>
+
+      <div class="ba-cell before">Brief production: implicit, scattered across 2 files</div>
+      <div class="ba-cell after">Single <b>orchestrator process file</b></div>
+
+      <div class="ba-cell before">Cannibalization: 500K-token CSV grep</div>
+      <div class="ba-cell after"><b>5K-token derived keyword map</b></div>
+
+      <div class="ba-cell before">Sibling URLs: per-pillar judgment</div>
+      <div class="ba-cell after"><b>Deterministic</b> per-pillar files</div>
+
+      <div class="ba-cell before">Inventory hygiene: awk-parsed (lossy)</div>
+      <div class="ba-cell after">Python-parsed (lossless) · <b>0 unassigned</b></div>
+
+      <div class="ba-cell before">Brief capacity: 1–2 per session</div>
+      <div class="ba-cell after"><b>12 in one day</b> (validated 2026-05-15)</div>
+
+      <div class="ba-cell before">CONTEXT.md said: "7 pillars"</div>
+      <div class="ba-cell after">Aligned to current <b>5-pillar reality</b></div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 7: ACTIONS ============== -->
+  <section>
+    <h2><span class="num">07</span>Recommended actions — next 30 days<span class="lead">6 items · 4 require leadership input</span></h2>
+    <table class="actions">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Action</th>
+          <th>Owner</th>
+          <th>Effort</th>
+          <th>Unlocks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="act-num">1</td>
+          <td>Grant Travis GSC access for cerkl.com</td>
+          <td>Leadership / Webflow admin</td>
+          <td class="effort">1 day</td>
+          <td>Full performance visibility</td>
+        </tr>
+        <tr>
+          <td class="act-num">2</td>
+          <td>Approve ~$100–$200/mo rank tracking SaaS</td>
+          <td>Leadership</td>
+          <td class="effort">Budget approval</td>
+          <td>Keyword movement reporting</td>
+        </tr>
+        <tr>
+          <td class="act-num">3</td>
+          <td>Ship 6 scheduled June briefs per content-plan</td>
+          <td>Travis + writers</td>
+          <td class="effort">4 weeks</td>
+          <td>Q2 content engine momentum</td>
+        </tr>
+        <tr>
+          <td class="act-num">4</td>
+          <td>Reconcile remaining 6 queued briefs into Monday rolling-4week</td>
+          <td>Travis</td>
+          <td class="effort">30 min</td>
+          <td>Pipeline visibility for July</td>
+        </tr>
+        <tr>
+          <td class="act-num">5</td>
+          <td>Refresh <code>keyword-strategy.md</code> Coverage gaps</td>
+          <td>SEO</td>
+          <td class="effort">1 hour</td>
+          <td>Next batch candidate seeding</td>
+        </tr>
+        <tr>
+          <td class="act-num">6</td>
+          <td>Establish quarterly SEO scorecard review</td>
+          <td>Leadership + SEO</td>
+          <td class="effort">1 hour (Q3 kickoff)</td>
+          <td>Outcome accountability</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    Source: <code>2026-05-15-blog-seo-leadership-status.md</code> · Date: 2026-05-15 · Cerkl Blog SEO Program
+  </footer>
+
+</div>
+</body>
+</html>

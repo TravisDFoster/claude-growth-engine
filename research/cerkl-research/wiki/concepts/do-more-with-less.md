@@ -31,7 +31,8 @@ The implicit thesis: protecting team time enables consistent, high-quality commu
 
 ## Related Concepts
 
-_(none yet)_
+- [[people-amplification]] — [[gartner]]'s analyst-grade rebuttal at the org level. Gartner's May 2026 data ([[gartner-ai-layoffs-no-returns-2026-05-15]]) shows ~80% of orgs piloting autonomous AI cut headcount, with **no correlation** between cut rate and AI ROI. The high-ROI cohort invests *more* in people, not less. This is the analyst-grade evidence for the IC-team-level pushback Workshop's data described, scaled to org-wide AI/restructure decisions.
+- [[ai-rollout-comms]] — IC-team pushback against "do more with less" is the same shape as analyst pushback against "cut to fund AI"; both sit in the [[ai-rollout-comms]] chain.
 
 ## Tensions / Criticisms
 

@@ -14,7 +14,7 @@
 ## Top of Mind
 1. **[Competitor Dissatisfaction Mining](projects/competitor-dissatisfaction-mining.md)** — High, due EOD Mon 2026-05-18. Kickoff Thu 2026-05-14. **PA: time-block Thu 05/14 + Mon 05/18** to separate from SEM LP sprint (both flagged split-day).
 2. **[SEM Landing Page Rebuild](projects/sem-landing-page-rebuild.md)** — A/B test launch target **Tue 2026-05-19**. Today: install PostHog. 7-day sprint; Thu/Mon conflict with Competitor Dissatisfaction.
-3. **[Ad Conversion Tracking](projects/ad-conversion-tracking.md)** — Travis finishing today 2026-05-12 (Segment → Google Ads + Bing audit).
+3. **[Ad Conversion Tracking](projects/ad-conversion-tracking.md)** — Diagnose + fix landed 2026-05-15. Next: observe a real event firing in Google Ads to verify.
 4. **The Cerkular** — HubSpot → Broadcast API integration is the gate to launch. Resolve Jira FUTURE-232 first.
 5. **Meta Ads Channel Launch** — unblocked 2026-05-14 (access restored). Phase 2 starts: audience / targeting strategy first, then ads.
 6. **[SEO Strategy & Plan](projects/seo-strategy-plan.md)** — Phase 1 nearly complete (pillars + sheet ingestion shipped 2026-05-12). Skills inventory (#3) is the last Phase 1 task; Phase 2 unblocked after.
@@ -24,7 +24,7 @@
 | Project | Next step | Priority | Due | On track | Owner |
 |---|---|---|---|---|---|
 | [Competitor Dissatisfaction Mining](projects/competitor-dissatisfaction-mining.md) | Kickoff Thu 2026-05-14 — lock competitor list, source surfaces, dissatisfaction signal taxonomy | High | 2026-05-14 | Yes | Travis |
-| [Ad Conversion Tracking](projects/ad-conversion-tracking.md) | Diagnose Segment → Google Ads + Bing conversion tracking — finishing today | High | 2026-05-12 | Yes | Travis |
+| [Ad Conversion Tracking](projects/ad-conversion-tracking.md) | Observe a real event firing in Google Ads (verify diagnose+fix from 2026-05-15) | High | — | Yes | Travis |
 | [The Cerkular](projects/the-cerkular.md) | Resolve personalization-link feasibility in Blast (Jira FUTURE-232) | High | — | Blocked | Travis |
 | [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Learn Meta's targeting system + define audience / targeting strategy (ICP-aligned) | High | — | Yes | Travis |
 | [SEO Strategy & Plan](projects/seo-strategy-plan.md) | Phase 1 #3 — inventory `marketing/skills/` vs SEO process steps; capture in `seo-process.md` | High | — | Yes | Travis |
@@ -44,7 +44,7 @@
 | [Pressure Prospecting](projects/pressure-prospecting.md) | Engage `sales/` to design Phase 1 methodology (signal taxonomy + buckets + emotional read + handoff schema) | Med | — | Yes | Travis |
 
 ## Calendar Anchors
-- **2026-05-12** — Webinar launch shipped AM ✅; Ad conversion tracking audit due EOD; PostHog install on cerkl.com
+- **2026-05-12** — Webinar launch shipped AM ✅; Ad conversion tracking audit due EOD (diagnose+fix landed 2026-05-15 ✅); PostHog install on cerkl.com
 - **2026-05-13** — SEM Sync w/ Joey 2:30pm — ✅ Meta Ads account access unblocked; LP audit + VOC + competitive (Steps 1–3)
 - **2026-05-14** — Competitor Dissatisfaction Mining — Phase 1 kickoff; LP Step 4 ICE backlog + hypothesis pick ⚠️ split day → **PA to schedule time-blocks**
 - **2026-05-15** — LP Step 5 Webflow variant build + Step 6 test-design

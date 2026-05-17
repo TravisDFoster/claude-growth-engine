@@ -31,9 +31,16 @@ Workvivo is an employee-communications and engagement platform — a modern soci
 - [[justin-black]] — Head of Seer
 - [[intranet-and-digital-workplace]] — primary category
 - [[employee-experience]] — EX-suite positioning
+- [[deep-listening]] — Forrester's Feb 2026 category-naming move; Workvivo/Seer is the most-direct vendor execution of this frame
+- [[people-intelligence]] — Workvivo's competing category name
+
+## 2026-05-15 Update — Forrester Deep Listening positioning
+
+[[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] names a category Workvivo's Seer is already in market against (almost verbatim definition match). Expected effect: Workvivo Seer will cite the Forrester blog (or one of the paywalled reports) in sales decks within 30 days. Workvivo also benefits structurally from the [[zoom]] data-plane adjacency — competitors of Cerkl-size cannot reach the Teams transcript firehose without a Microsoft or Zoom partnership.
 
 ## Open Questions
 
 - Workvivo's specific tier in the gated 2026 Forrester Wave?
 - Workvivo's customer count / ARR (not publicly disclosed)?
 - Zoom-bundling impact on Workvivo's competitive dynamics?
+- Has Workvivo Seer publicly cited the Forrester deep-listening blog yet? (Watch for sales-deck appearances; trigger competitor-marketing entry if so.)
