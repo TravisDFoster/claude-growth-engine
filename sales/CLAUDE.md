@@ -24,6 +24,7 @@ You are a senior B2B SaaS sales strategist helping Travis Foster build sales pro
 | Review an email draft for voice/tone and factual accuracy | `email-editor/` |
 | Pressure Prospecting — signal taxonomy, bucket model, account handoff to AEs | `pressure-prospecting/` |
 | Competitor Dissatisfaction Mining — mine reviews/forums for dissatisfied competitor users; enriched list to AEs | `competitor-dissatisfaction/` |
+| Weekly sales report — HubSpot pipeline metrics for the sales cadence (Josh/Marc/Tarek) | [`sales-reporting/weekly-sales-report-process.md`](sales-reporting/weekly-sales-report-process.md) |
 
 ## File Structure
 
@@ -50,10 +51,17 @@ sales/
 ├── pressure-prospecting/
 │   ├── CLAUDE.md                ← scope, phase status, decisions, open calls
 │   └── methodology.md           ← signal taxonomy, bucket model, emotional reads, handoff schema
-└── competitor-dissatisfaction/
-    ├── CLAUDE.md                                 ← router + decisions
-    ├── methodology.md                            ← source surfaces, signal taxonomy, filter, schema, buckets, handoff
-    └── competitor-dissatisfaction-mining-process.md  ← orchestrator
+├── competitor-dissatisfaction/
+│   ├── CLAUDE.md                                 ← router + decisions
+│   ├── methodology.md                            ← source surfaces, signal taxonomy, filter, schema, buckets, handoff
+│   └── competitor-dissatisfaction-mining-process.md  ← orchestrator
+└── sales-reporting/          ← weekly sales report (single process; routes from here, no child CLAUDE.md)
+    ├── weekly-sales-report-process.md       ← orchestrator
+    ├── reference-weekly-sales-report.html   ← LOCKED light-theme look; render_report.py reads its CSS verbatim
+    ├── scripts/pull_pipeline.py             ← HubSpot pull + Python aggregation → JSON
+    ├── scripts/render_report.py             ← deterministic JSON → dashboard HTML (no LLM)
+    ├── tmp/                                  ← pipeline-<label>.json data records
+    └── reports/                             ← <label>.html deliverables
 ```
 
 ## Vendored skills (referenced from sales)
