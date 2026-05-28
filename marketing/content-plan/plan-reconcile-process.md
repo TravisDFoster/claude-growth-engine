@@ -92,7 +92,7 @@ I'll confirm before reconciling:
 - **Produces:** `jira/imports/YYYY-Www.csv` (scaffold form — every row present, blog Task Descriptions carry `Slug: <slug>` and `[DRIVE_URL_PLACEHOLDER]`)
 - **What to do:** Invoke `jira-scaffold-process.md` with the target publish week. The scaffold process handles slug resolution, work-item-IDs, subtask layout, and column ordering.
 
-  After the scaffold runs, verify the LinkedIn coverage explicitly: every LinkedIn row in the locked week must produce exactly 1 Task + 4 subtasks (`LinkedIn – Copy`, `LinkedIn – Asset Creation`, `LinkedIn – Approval`, `LinkedIn – Implementation / Publishing`), and each `LinkedIn – Copy` subtask Description must carry the `[COPY_PLACEHOLDER]` token the LinkedIn drafting process expects. If any LinkedIn row is missing its Task, missing one of the 4 subtasks, or missing the placeholder, surface the gap in Step 6 so it can be patched before the LinkedIn drafting process runs.
+  After the scaffold runs, verify the LinkedIn coverage explicitly: every LinkedIn row in the locked week must produce exactly 1 Task + 4 subtasks (`LinkedIn – Copy`, `LinkedIn – Asset Creation`, `LinkedIn – Approval`, `LinkedIn – Implementation / Publishing`), and each LinkedIn Task Description must carry the `[COPY_PLACEHOLDER]` token (on its `Copy:` line) that the LinkedIn drafting process fills. If any LinkedIn row is missing its Task, missing one of the 4 subtasks, or missing the placeholder, surface the gap in Step 6 so it can be patched before the LinkedIn drafting process runs.
 
 ### Step 6 — Report and trigger
 
@@ -107,7 +107,7 @@ I'll confirm before reconciling:
   - **Inputs processed:** count promoted, converted, parked, pruned
   - **Locked week:** ISO week + row count + Jira CSV path
   - **Brief requests for SEO:** any TBD slots with deadlines
-  - **LinkedIn scaffold gaps (if any):** LinkedIn rows missing a Task, missing subtasks, or missing the `[COPY_PLACEHOLDER]` token — must be patched before the LinkedIn drafting process runs
+  - **LinkedIn scaffold gaps (if any):** LinkedIn rows missing a Task, missing subtasks, or missing the `[COPY_PLACEHOLDER]` token in the Task Description — must be patched before the LinkedIn drafting process runs
   - **Next action:** which writing+publishing pipeline runs next, with the channel + slug list
 
 ---

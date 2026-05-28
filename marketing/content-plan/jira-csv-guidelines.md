@@ -106,7 +106,7 @@ Description must include: topic, post type (static image, poll, video), prompt t
 
 **LinkedIn specifics (applied by `jira/jira-scaffold-process.md`):**
 
-- The `LinkedIn – Copy` subtask Description must contain a `[COPY_PLACEHOLDER]` token — the LinkedIn drafting process replaces it with the drafted caption + asset spec + hashtags.
+- The LinkedIn **Task** Description ends with a `Copy:` line followed by a `[COPY_PLACEHOLDER]` token — the LinkedIn drafting process replaces it (on the parent Task, not in a subtask) with the drafted caption + asset spec + hashtags. The `LinkedIn – Copy` subtask keeps its plain action description (`Draft the post copy.`); it is the production step, not where the copy is stored.
 - For `poll` post-type rows, the `LinkedIn – Asset Creation` subtask Description reads: `(N/A for polls — native poll widget; skip or mark done.)`. The subtask still exists for shape consistency; it just carries the explicit skip note.
 
 ### Marketing Email

@@ -237,3 +237,15 @@ Header format: `## [YYYY-MM-DD] operation | Title`. Parseable with `grep "^## \[
 - Index.md updated with 17 new entities, 12 new concepts, 3 new sources
 - Now: 12 topics, 64 entities, 40 concepts, 18 sources
 - All new pages cross-linked per the cross-reference rule
+
+## [2026-05-27] ingest | Ragan/Devlin — Whittle on Gartner Predicts 2026 comms strategies
+- Source URL: https://www.ragan.com/ai-hr-comms-gartner-2026/ (Sean Devlin, Ragan, 2025-10-09)
+- Surfaced via 2026-05-27 ic-trends daily recap + same-day deep-dive on the 75%-by-2028 chatbot prediction (deep-dive lives at ../ic-trends/deepdives/gartner-chatbots-over-intranets-2026-05-27.md and was NOT separately ingested per Travis's direction — ingest Ragan only)
+- Travis's framing direction: focus on what's actually in the Ragan article (Whittle's framework + verbatims), not the broader deep-dive synthesis
+- Created source: [[ragan-gartner-2026-comms-predictions-2025-10-09]]
+- Created entities: [[mark-whittle]] (Gartner VP Advisory, comms practice)
+- Updated entities: [[gartner]] (added Whittle + this source + tension on net-jobs posture), [[ragan-communications]] (added this source), [[sean-devlin]] (now has 2 sources; expanded Overview)
+- Created concepts: [[change-leadership-three-step]] (Whittle's Acknowledge / Regulate / Train framework)
+- Updated topics: [[ai-in-internal-comms]] (Sources Read row), [[change-management-communications]] (Current Thesis #6 + entities + concepts + Practitioner Voices + Sources Read), [[leadership-communications]] (Current Thesis + entities + concepts + Practitioner Voices + Sources Read)
+- Key surfacings: (1) Whittle three-step framework promoted to concept page — analyst-tier practitioner pair to Poitevin's people-amplification diagnosis; (2) verbatim "effective leadership today is change leadership" lifted for downstream Cerkl writing; (3) flagged tension between Gartner's October-Whittle "AI creates more net jobs" position and Gartner's May-Poitevin "80% cut / no AI-ROI correlation" finding — same firm, same year, reconcilable but not reconciled in either source; (4) Gartner now on the record explicitly linking layoff-comms quality to employer brand
+- Pages touched: ~10

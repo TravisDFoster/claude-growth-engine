@@ -63,6 +63,7 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[katie-satterlee]] — Internal & Editorial Communications Specialist, Roku; named practitioner case for audience-aware newsletter variants
 - [[linjuan-rita-men]] — UF Professor of Public Relations; author of *AI for Internal Communication* (PRR, n=20); articulates the [[co-piloting]] prescription
 - [[linkedin]] — Microsoft-owned professional network; May 2026 layoff-comms case 1 (~875 cuts, formulaic but acceptable)
+- [[mark-whittle]] — VP Advisory, Gartner (comms practice); coined [[change-leadership-three-step]]; primary public voice on Gartner's 2026 comms predictions
 - [[mckinsey]] — Management consulting / analyst firm; 2026 agentic-AI corpus; CIO-fronted change-comms-as-AI-gate frame ([[agents-as-coworkers]]); *Rewired 2.0* talent-transformation thesis
 - [[meltwater]] — Media intelligence / social listening platform; data partner on *A Quiet Shift* (2026 academic comms research)
 - [[meta]] — Social-media / AI platform vendor; 2026-05-20 Zuckerberg memo ("success isn't a given") — culture rating −39%
@@ -107,6 +108,7 @@ _Frameworks, theories, terms._
 - [[analyst-trio-comms-as-ai-gate]] — McKinsey + Gartner + Forrester convergence: communications is the binding constraint on AI ROI
 - [[boilerplate-layoff-language]] — 2026 pattern: "broader organizational change" euphemism (Oracle/GM/Sony/ProPublica); language-axis sibling to [[layoff-comms-choreography]]
 - [[change-fatigue]] — Dominant 2026 IC-trade-press counter-frame to Qualtrics; Gallagher/Perceptyx/Prosci-anchored
+- [[change-leadership-three-step]] — Whittle/Gartner three-step framework (Acknowledge / Regulate / Train); analyst-tier practitioner prescription pairing with [[people-amplification]]
 - [[change-saturation]] — Prosci threshold model; engagement inverts above cumulative-events threshold
 - [[co-piloting]] — Academic-grade prescription for AI in IC: humans draft relational content, AI for polish (Men et al., Cardon & Coman 2025)
 - [[cross-channel-benchmark]] — Structurally absent IC benchmark category; defensible content slot for vendors with multi-channel HRIS-synced telemetry
@@ -160,3 +162,4 @@ _One summary page per ingested source._
 - [[qualtrics-change-engagement-2026-05-21]] — Cerkl internal deep-dive (2026-05-21); triangulates Qualtrics n=33,831 finding against Gallup / Gallagher / Perceptyx / Prosci; Goldilocks zone, listening cadence, change saturation, change fatigue
 - [[mckinsey-rewired-2-2026-05-21]] — Cerkl internal deep-dive (2026-05-21); *Rewired 2.0* talent-transformation thesis; four levers (N-2/N-3, 70-30 flips, workplace, human-agentic); hypocrisy critique
 - [[layoff-memo-subgenre-2026-05-21]] — Cerkl internal deep-dive (2026-05-21); names the 2026 AI-restructure layoff-memo subgenre; six-anchor comparison + five emerging conventions + reference frameworks (Chesky/Sutton PUCC/Sucher)
+- [[ragan-gartner-2026-comms-predictions-2025-10-09]] — Ragan / Sean Devlin (2025-10-09); analyst-pickup of Mark Whittle (Gartner VP Advisory) on *Predicts 2026* (doc 7160430); anchors [[change-leadership-three-step]] framework + Gartner-tier layoff-comms-as-brand link

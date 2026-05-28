@@ -71,7 +71,9 @@ Answer the core question directly and early — within the first two paragraphs 
 
 Deliver in clean markdown for copy-paste into Webflow. The draft has three blocks in this order: **Body**, **FAQ**, **FAQ Schema**.
 
-1. **Body** — the H1 followed by the H2 sections. Write the body so it pivots cleanly from a problem / pain / diagnosis arc in the first half to an operational / "how to fix it" arc in the second half, closing with a forward-moving takeaway. The pivot does not need to be marked — `seo-blog-editing` finds it post-scoring and inserts the three CTA-marker comments (`<!-- Top CTA -->`, `<!-- Middle CTA -->`, `<!-- Bottom CTA -->`). Drafting's only job here is to make sure the pivot exists and is locatable; do not emit the markers yourself.
+1. **Body** — the H1 followed by the H2 sections. Write the body so it pivots cleanly from a problem / pain / diagnosis arc in the first half to an operational / "how to fix it" arc in the second half, closing with a forward-moving takeaway. The pivot does not need to be marked — `seo-blog-editing` finds it post-scoring and inserts five visible body markers (`**[Top CTA — variant]**`, `**[Content 1]**`, `**[Middle CTA — variant]**`, `**[Content 2]**`, `**[Bottom CTA — variant]**`). Drafting's only job here is to make sure the pivot exists and is locatable; do not emit the markers yourself.
+
+   **Why two halves matter:** Webflow's blog template splits the body across two Rich Text fields — Content 1 (first half, diagnosis arc) and Content 2 (second half, operational arc). Each half needs to stand as a coherent block, so balance them. Aim for a 30/70–70/30 word-count split between the halves, biased toward roughly 50/50. A 1,500-word draft that puts 1,300 words in the diagnosis arc and 200 in the operational arc forces the editor to rewrite the balance after the fact.
 
 2. **FAQ or How-to section** — see "FAQ vs. How-to" below.
 

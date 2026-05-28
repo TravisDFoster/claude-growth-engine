@@ -1,5 +1,7 @@
 # Canva Asset Checklist
 
+> This checklist is the **spec** for the [`canva-asset-pack`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md) skill (currently a placeholder). Once that skill is built, it automates this list; until then, build the assets manually as described here.
+
 Default visual assets to create for each webinar. Built in Canva using the Cerkl brand kit.
 
 ## Assets

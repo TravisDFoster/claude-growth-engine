@@ -36,6 +36,8 @@ Load and follow [`/Users/travisfoster/claude-code/cerkl/skills/md-to-drive/SKILL
 
 Capture the returned Drive Doc URL.
 
+**What Furqan sees in the Doc:** the five bold-bracket body markers from editing (`[Top CTA — variant]`, `[Content 1]`, `[Middle CTA — variant]`, `[Content 2]`, `[Bottom CTA — variant]`) render as visible bold text in the Drive Doc. They tell Furqan exactly which Webflow CTA component to insert at each spot and where the Content 1 → Content 2 Rich Text field split happens. The block between `[Content 1]` and `[Middle CTA]` pastes into Webflow's Content 1 field; the block between `[Content 2]` and `[Bottom CTA]` pastes into Content 2. Do not use HTML comments (`<!-- ... -->`) — Drive's markdown→Doc converter strips them and Furqan would see no markers at all.
+
 ### 2. Insert URL into Jira CSV
 
 - Open the target CSV at the path from input #3

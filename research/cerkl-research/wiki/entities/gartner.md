@@ -24,14 +24,17 @@ Gartner is the larger of the two major Western industry analyst firms (alongside
 
 - [[gartner-people-centric-ai-2026-05-15]] — "People-Centric AI Strategy / 50% AI Talent Loss by 2027" (2026-05-13)
 - [[gartner-ai-layoffs-no-returns-2026-05-15]] — "AI Layoffs Don't Deliver Returns" (2026-05-05)
+- [[ragan-gartner-2026-comms-predictions-2025-10-09]] — Ragan/Devlin pickup of Whittle on the *Predicts 2026: Top Predictions to Inform 2026 Comms Strategies* report (doc 7160430, 2026-02-13, paywalled); anchors [[change-leadership-three-step]]
 
 ## Connections
 
 - [[helen-poitevin]] — Distinguished VP Analyst; primary voice on the AI-layoffs frame
+- [[mark-whittle]] — VP Advisory, comms practice; primary public voice on the 2026 comms predictions; pairs Whittle's [[change-leadership-three-step]] prescription with Poitevin's [[people-amplification]] diagnosis
 - [[swagatam-basu]] — Senior Director Analyst, HR practice; co-author of the people-centric-AI release
 - [[diana-sanchez]] — Senior Director Analyst, HR practice; co-author of the people-centric-AI release
 - [[enablement-illusion]] — Gartner-coined concept
 - [[people-amplification]] — Poitevin-coined concept
+- [[change-leadership-three-step]] — Whittle-coined concept (Acknowledge / Regulate / Train)
 - [[shadow-ai-comms-problem]] — IC-relevant reframe Gartner introduced
 - [[forrester]] — peer analyst firm (complementary frames; Gartner = deploy-deliberately, Forrester = listen-deeply)
 
@@ -40,3 +43,4 @@ Gartner is the larger of the two major Western industry analyst firms (alongside
 - Does Cerkl have access to a Gartner subscription (CHRO HR Leaders / CIO IT Leaders) for underlying methodology?
 - Will Gartner publish a Magic Quadrant for Internal Communications Platforms — or stay on adjacent surfaces (Intranet, EX, Talent)?
 - The 2026 HR-practice "predicts" series is unusually frequent — are these warm-ups for a paid IC/EX product launch?
+- **Internal posture tension** — Gartner's October-Whittle "AI creates more net jobs than it eliminates" position vs Gartner's May-Poitevin "80% cut / no AI-ROI correlation" finding. Same firm, both stated publicly in the same six-month window. Reconcilable (macro net-positive vs micro org-level no-ROI) but no Gartner source explicitly performs the reconciliation. Worth tracking whether Gartner's next 2026 comms-predicts iteration aligns the two voices.

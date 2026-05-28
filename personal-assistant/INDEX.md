@@ -9,10 +9,10 @@
 > - On project close: move the file to `projects/archive/`.
 > - All dates absolute (YYYY-MM-DD). Convert "Thursday", "next week", "after launch" before writing.
 >
-> **Last refreshed:** 2026-05-22 (reconciled Meta Ads `## Update — 2026-05-21 (from marketing/)` block → Phase 2 learn-the-system completed, new blocker = Foundations Pixel + CAPI verification; SEM LP deprioritized — current LP performing well, launch pushed to 2026-06-03, dropped from Top of Mind. New projects: Downloadable Asset Emails, Canva-Connected Design Skills.)
+> **Last refreshed:** 2026-05-26 (W21 retro: ICPro Rich Results Test verified 5/22 → next step advances to schema rollout; Gartner listing pushed forward 5/22; SEM LP launch decision pushed to 6/03 already reflected; Meta Ads Phase 2 learn-the-system already reflected. No other state changes.)
 
 ## Top of Mind
-1. **[Meta Ads Channel Launch](projects/meta-ads-channel-launch.md)** — Phase 2 advances to build & launch test 1. **Hard-blocked** on Foundations sign-up event firing into Meta Pixel + Conversions API. Next: stand up `marketing/channels/paid-meta/` folder, then verify the conversion event.
+1. **[Meta Ads Channel Launch](projects/meta-ads-channel-launch.md)** — **Unblocked 2026-05-28** — Pixel + CAPI Foundations event is live. Phase 2 moves to build & launch the test-1 audiences (1% LAL, interest/targeting, retargeting). Next: build the `Meta Seed — Foundations Sign-ups` HubSpot list, export/upload to Meta Custom Audiences, then stand up the audiences.
 2. **[SEO Strategy & Plan](projects/seo-strategy-plan.md)** — Phase 1 complete (skills inventory landed 5/15). Phase 2 #1 starts: content planning process with explicit SEO linkage.
 3. **The Cerkular** — HubSpot → Broadcast API integration is the gate to launch. Resolve Jira FUTURE-232 first. No change.
 4. **[Ad Conversion Tracking](projects/ad-conversion-tracking.md)** — Now passive: diagnose+fix landed 5/15, waiting on a real event to fire in Google Ads. Demoted from active focus to monitor.
@@ -22,18 +22,20 @@
 
 | Project | Next step | Priority | Due | On track | Owner |
 |---|---|---|---|---|---|
-| [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Stand up `marketing/channels/paid-meta/` folder, then verify Foundations sign-up event firing in Meta Pixel + Conversions API | High | — | Blocked | Travis |
+| [Meta Ads Channel Launch](projects/meta-ads-channel-launch.md) | Build `Meta Seed — Foundations Sign-ups` HubSpot list → export/upload seed + exclusion CSVs → build & launch test-1 audiences (1% LAL, interest/targeting, retargeting) | High | — | Yes | Travis |
 | [SEM Landing Page Rebuild](projects/sem-landing-page-rebuild.md) | Resume Steps 4–6 (ICE hypothesis → Webflow variant → PostHog config) on revised timeline; launch 2026-06-03 | Med | 2026-06-03 | Yes | Travis |
 | [The Cerkular](projects/the-cerkular.md) | Resolve personalization-link feasibility in Blast (Jira FUTURE-232) | High | — | Blocked | Travis |
 | [Competitor Dissatisfaction Mining](projects/competitor-dissatisfaction-mining.md) | Re-investigate end of June — confirm budget for webscraping tools, reassess tooling, decide resume vs. shelve | Med | 2026-06-30 | Pending budget | Travis |
 | [SEO Strategy & Plan](projects/seo-strategy-plan.md) | Phase 2 #1 — define content planning process (esp. blogs) with explicit SEO linkage (keyword → angle → internal linking → CTA) | High | — | Yes | Travis |
+| [Weekly Sales Report](projects/weekly-sales-report.md) | Define V1 metric set + extract feature requests from week's deal/call notes; publish first report to Marc + Josh by Fri | High | 2026-05-29 | Yes | Travis |
 | [Ad Conversion Tracking](projects/ad-conversion-tracking.md) | Observe a real event firing in Google Ads (passive verification of 5/15 diagnose+fix) | Med | — | Yes | Travis |
 | [Webinars](projects/webinars.md) | Finish remaining YouTube snippets (rolling over next few weeks) | Low | — | Yes | Travis / Furqan |
-| [Press Release](projects/press-release.md) | Resume final approval cycle in late May (publish embargo 2026-06-01) | Med | 2026-06-01 | Yes | Travis |
+| [Webinar — Rachel Folz (June 2026)](projects/webinar-rachel-folz-june-2026.md) | Lock the 2026-06-04 setup & launch batch (Zoom + tracking URLs, registration page, Canva assets, Rachel bio/headshot, giveaway call, LinkedIn intro + pre-event blog) | Med | 2026-06-04 | Yes | Travis |
+| [Press Release](projects/press-release.md) | Final approval (due 2026-06-13), then implementation / publishing (due 2026-06-20) | Med | 2026-06-13 | Yes | Travis |
 | [Cerkl Website](projects/cerkl-website.md) | Email builder page — add WCAG compliance blurb | Low | — | Yes | Travis |
 | [Comparison SEO Pages](projects/comparison-seo-pages.md) | Build channel process for `comparison-seo` (page template, research inputs, production + refresh workflow) before drafting first new page | Med | — | Yes | Travis |
 | [Review Sites](projects/review-sites.md) | Gartner — push current in-progress listing forward (Product Hunt waits on 2026-06-01) | Med | — | Yes | Travis |
-| [ICPro SEO](projects/icpro-seo.md) | Verify Google Rich Results Test passes post-fix, then roll out schema to all blog posts | Med | — | Yes | Travis |
+| [ICPro SEO](projects/icpro-seo.md) | Roll out schema to all blog posts (Rich Results Test verified 2026-05-22) | Med | — | Yes | Travis |
 | [Design Tools](projects/design-tools.md) | Research AI video creation tools (HeyGen alternatives for Pains-concept ad video) | Low | — | n/a | Travis |
 | [Advertising](projects/advertising.md) | LinkedIn Ads — test with Rachel (Gallagher); explore Interest-Based Ads | Low | — | n/a | Travis |
 | [YouTube](projects/youtube.md) | Decide with TK — post product videos (Foundations, Audience Manager) to Cerkl YouTube? | Low | — | Pending | Travis / TK |
@@ -46,7 +48,11 @@
 | [Pressure Prospecting](projects/pressure-prospecting.md) | Review Phase 1 methodology ([`sales/pressure-prospecting/methodology.md`](../sales/pressure-prospecting/methodology.md) + child `CLAUDE.md`) — confirm tier defaults / voice rules / angle, pick Phase 2 owner + target pilot date | Med | — | Yes | Travis |
 
 ## Calendar Anchors
+- **2026-05-29** — Weekly Sales Report V1 first publish to Marc + Josh
 - **2026-06-03** — SEM Landing Page A/B test LAUNCH (deprioritized from 2026-05-20; current LP performing well)
-- **2026-06-13** — Insights 3.0 launch / press release embargo lifts (delayed: 2026-05-09 → 2026-06-01 → 2026-06-13)
+- **2026-06-04** — Rachel Folz webinar: setup & launch batch due (Zoom + tracking URLs, registration page, Canva assets, bio/headshot)
+- **2026-06-13** — Insights 3.0 launch / press release embargo lifts + final approval due (delayed: 2026-05-09 → 2026-06-01 → 2026-06-13)
+- **2026-06-20** — Press release implementation / publishing
 - **2026-06-24** — Earliest SEM LP A/B test readout (6/03 launch + 21-day minimum run)
+- **2026-06-25** — Rachel Folz webinar — LIVE (12:00 PM EDT)
 - **2026-06-30** — Re-investigate Competitor Dissatisfaction Mining (pending budget approval)

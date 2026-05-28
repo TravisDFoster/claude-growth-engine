@@ -1,0 +1,144 @@
+Work Item ID,Issue Type,Parent ID,Epic Link,Summary,Description,Owner,Channel,Start Date,Due Date
+T001,Task,,,Content - Blog (Cerkl.com) - SharePoint for Internal Communications — A 2026 Playbook,"Topic: SharePoint as an internal comms channel — limits, complementary strategies, where Cerkl Broadcast layers on top
+Slug: sharepoint-internal-communications
+Brief link: ../seo/briefs/sharepoint-internal-communications.md
+Primary keyword: SharePoint internal communications
+Secondary keywords: SharePoint personalization, SharePoint employee communications, SharePoint intranet communications, personalized SharePoint content
+Webflow CMS properties:
+  - Primary Category: mobile-employee-experience
+  - Primary Solution: Omni AI
+  - All Categories: Audience Segmentation, Remote/Hybrid
+Note: Appended into W23 scaffold because it was added to W22 after that CSV was imported to Jira. Lead-week compressed (Memorial Day); writing window Wed 5/27. Draft already produced — Drive URL populated below.
+Draft (Google Doc): https://docs.google.com/document/d/1Brz0hYU1352lv9KSW88Mhq5wcqk520_2_jNMMQfPVp0/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-05-22,2026-05-28
+S001,Subtask,T001,,Blog – Copy,Write the blog post copy from the brief / outline.,,Blog Posts,2026-05-22,2026-05-26
+S002,Subtask,T001,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-05-26,2026-05-27
+S003,Subtask,T001,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-05-27,2026-05-27
+S004,Subtask,T001,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,,Blog Posts,2026-05-27,2026-05-28
+T002,Task,,,Content - Blog (Cerkl.com) - Internal Communications in Manufacturing — A 2026 Frontline Playbook,"Topic: Vertical playbook on internal communications in manufacturing — frontline majority, shift work, safety-critical messaging, multi-site coordination
+Slug: internal-communications-in-manufacturing
+Brief link: ../seo/briefs/internal-communications-in-manufacturing.md
+Primary keyword: internal communications in manufacturing
+Secondary keywords: manufacturing internal comms, frontline employee communications, deskless manufacturing comms, factory floor communications, plant communications strategy
+Webflow CMS properties:
+  - Primary Category: internal-communication-strategy
+  - Primary Solution: Omni AI
+  - All Categories: Manufacturing, Industry verticals, Remote/Hybrid/Distributed
+Draft (Google Doc): https://docs.google.com/document/d/1ja2klq-EPkcRDl3fj15q-5Zeb1cdi1mqA7nViP-z9Co/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-05-26,2026-06-01
+S005,Subtask,T002,,Blog – Copy,Write the blog post copy from the brief / outline.,,Blog Posts,2026-05-26,2026-05-27
+S006,Subtask,T002,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-05-27,2026-05-28
+S007,Subtask,T002,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-05-28,2026-05-29
+S008,Subtask,T002,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,,Blog Posts,2026-05-29,2026-06-01
+T003,Task,,,Content - Blog (Cerkl.com) - The Cross-Channel Read Gap — What Cerkl Data Reveals About Real Employee Reach,"Topic: Cerkl-only research finding — the percentage of internal messages read on only one channel by recipients with access to multiple. Funnel top for the gated full report.
+Slug: cross-channel-read-gap
+Brief link: ../seo/briefs/cross-channel-read-gap.md
+Primary keyword: cross-channel read gap
+Secondary keywords: cross-channel attribution internal comms, internal communications attribution, single-channel measurement bias, internal comms cross-channel reach
+Webflow CMS properties:
+  - Primary Category: internal-communications-measurement
+  - Primary Solution: Omni AI
+  - All Categories: (set at Webflow publish — brief leaves this empty)
+Note: Coordinate with Cerkl product/data team to pull real aggregate stats before drafting — headline finding cannot be fabricated.
+Draft (Google Doc): https://docs.google.com/document/d/1_o6xBbFwjBF-ziYMUHfFa_XwB4WedMmLrs_sJrBfxPM/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-05-27,2026-06-03
+S009,Subtask,T003,,Blog – Copy,Write the blog post copy from the brief / outline.,,Blog Posts,2026-05-27,2026-05-28
+S010,Subtask,T003,,Blog – Image Creation,Create or source images per the post outline (data viz chart preview for hero).,,Blog Posts,2026-05-28,2026-05-29
+S011,Subtask,T003,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-05-29,2026-06-01
+S012,Subtask,T003,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,,Blog Posts,2026-06-01,2026-06-03
+T004,Task,,,"Content - Blog (ICP) - Pride Month internal comms: communicating inclusion all year, not just June","Topic: Inclusion comms as a year-round IC discipline — what shifts between June visibility moments and the rest of the year for internal communicators
+Slug: pride-month-internal-comms-communicating-inclusion-all
+Note: ICPro has no brief queue — slug synthesized from the deliverable title at scaffold time
+Draft (Google Doc): https://docs.google.com/document/d/14jdV9BMBdud-K8MbJSaGxrCim38McNt-SRhAh9VUJrw/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-05-26,2026-06-02
+S013,Subtask,T004,,Blog – Copy,Write the blog post copy from the outline.,,Blog Posts,2026-05-26,2026-05-27
+S014,Subtask,T004,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-05-27,2026-05-28
+S015,Subtask,T004,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-05-28,2026-06-01
+S016,Subtask,T004,,Blog – Implementation / Publishing,Stage in Wix with CMS properties; schedule publish.,,Blog Posts,2026-06-01,2026-06-02
+T005,Task,,,Social Media - LinkedIn - The frontline reach problem most internal comms teams haven't solved yet,"Topic: The structural reach problem on frontline / deskless workforces — why email-only IC misses most of the company
+Post type: static-theme
+Wraps: internal-communications-in-manufacturing
+Copy:
+[CAPTION]
+A typical mid-market manufacturer has 5,000 employees.
+
+70 to 90 percent of them work on the plant floor. They don't have corporate email. They don't log into SharePoint. They aren't on Teams.
+
+So when the internal comms team reports a 60 percent open rate on the latest safety bulletin, what does that actually mean? If the office is 20 percent of headcount, the real reach against the total workforce is closer to 12 percent.
+
+That's the frontline reach problem most internal comms teams haven't named, let alone solved.
+
+Gallup's 2026 State of the Global Workplace report puts on-site, non-remote-capable engagement at 17 percent. That's 13 percentage points behind exclusively-remote workers, and the widest cohort split in the report.
+
+A program that defaults to email-first measurement is reporting on the office and calling it the company.
+
+Full breakdown ↓
+
+(Link in comments.)
+
+[ASSET SPEC]
+Static graphic — stat callout card. Two stacked stats with a connecting line: 60% (reported open rate) -> 12% (actual reach against total headcount). Subhead: ""The frontline reach problem"". Cerkl primary palette, bold sans on numbers, square 1:1, logo bottom-right. Alt: pull-quote card — ""A program that defaults to email-first measurement is reporting on the office and calling it the company.""
+
+[HASHTAGS]
+#InternalCommunications #EmployeeEngagement #Manufacturing",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-05-29,2026-06-02
+S017,Subtask,T005,,LinkedIn – Copy,Draft the post copy.,,Social Media,2026-05-29,2026-06-01
+S018,Subtask,T005,,LinkedIn – Asset Creation,Create or source the static asset (typically a pull-quote card or stat callout).,,Social Media,2026-05-29,2026-06-01
+S019,Subtask,T005,,LinkedIn – Approval,Review post + asset; sign off.,,Social Media,2026-06-02,2026-06-02
+S020,Subtask,T005,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,,Social Media,2026-06-02,2026-06-02
+T006,Task,,,Social Media - LinkedIn - Link post: Internal Communications in Manufacturing,"Topic: Link post pointing to the manufacturing playbook blog
+Post type: static-blog
+Wraps: internal-communications-in-manufacturing
+Copy:
+[CAPTION]
+Manufacturing internal comms has its own constraints.
+
+The workforce is 70 to 90 percent frontline, working across 2 or 3 shifts at 10 to 20 sites. Most don't have corporate email. The audit trail for safety messaging carries OSHA and insurance consequences. The corporate intranet built at headquarters is, for the plant floor, a website they never visit.
+
+Our 2026 frontline playbook covers the 4 dimensions that make manufacturing IC structurally different, the 5-channel stack that replaces email-first delivery, and a 30-day plan any IC lead can run before the budget conversation.
+
+Full playbook:
+[BLOG URL — populate after Furqan publishes in Webflow]
+
+[ASSET SPEC]
+LinkedIn auto-rendered link card (renders from blog OG image + meta title + meta description). Verify before posting: (1) OG image is the manufacturing hero, (2) meta title truncates cleanly, (3) meta description matches the brief. Fallback pull-quote card: ""The corporate intranet built at headquarters is, for the plant floor, a website they never visit."" Link policy exception: link goes in the post body because the link card is the asset.
+
+[HASHTAGS]
+#InternalCommunications #EmployeeEngagement #Manufacturing",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-02,2026-06-03
+S021,Subtask,T006,,LinkedIn – Copy,Draft the post copy.,,Social Media,2026-06-02,2026-06-02
+S022,Subtask,T006,,LinkedIn – Asset Creation,Create or source the static asset (typically the blog hero or a pull-quote card).,,Social Media,2026-06-02,2026-06-03
+S023,Subtask,T006,,LinkedIn – Approval,Review post + asset; sign off.,,Social Media,2026-06-03,2026-06-03
+S024,Subtask,T006,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,,Social Media,2026-06-03,2026-06-03
+T007,Task,,,Social Media - LinkedIn - The 3 places your internal comms is silently leaking employees,"Topic: Short-video take on the 3 channel-handoff points where messages quietly fail to reach segments of the workforce
+Post type: short-video
+Wraps: cross-channel-read-gap",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-03,2026-06-04
+S025,Subtask,T007,,LinkedIn – Copy,"Draft the post copy (caption + script outline).
+
+[COPY_PLACEHOLDER]",,Social Media,2026-06-03,2026-06-03
+S026,Subtask,T007,,LinkedIn – Asset Creation,Produce or source the short-video asset (60-sec take with captions).,,Social Media,2026-06-03,2026-06-04
+S027,Subtask,T007,,LinkedIn – Approval,Review post + video; sign off.,,Social Media,2026-06-04,2026-06-04
+S028,Subtask,T007,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,,Social Media,2026-06-04,2026-06-04
+T008,Task,,,Social Media - LinkedIn - What percentage of your workforce reads every important company update,"Topic: LinkedIn poll on cross-channel read-coverage self-assessment
+Post type: poll
+Wraps: cross-channel-read-gap
+Copy:
+[CAPTION]
+Internal comms leaders, here's a question worth sitting with.
+
+When leadership asks ""did this land?"", you probably reach for an open rate or a page-view number. That number reflects the channel you can measure. The audience you need to reach lives somewhere else.
+
+If you publish across email, Teams, mobile, and intranet but only report from one of those channels, you have a structural blind spot. As of 2026, no public IC engagement benchmark even measures across channels.
+
+So the honest answer is rarely the one in the dashboard.
+
+What's your gut estimate?
+
+[POLL]
+Question: What % of your workforce reads every important company update?
+Options: Less than 30% | 30 to 50% | 50 to 80% | More than 80%
+Duration: 1 week
+
+[ASSET SPEC]
+N/A — native LinkedIn poll widget, no design asset needed.
+
+[HASHTAGS]
+#InternalCommunications #EmployeeEngagement #InternalComms",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-04,2026-06-05
+S029,Subtask,T008,,LinkedIn – Copy,Draft the poll question + answer options.,,Social Media,2026-06-04,2026-06-04
+S030,Subtask,T008,,LinkedIn – Asset Creation,(N/A for polls — native poll widget; skip or mark done.),,Social Media,2026-06-04,2026-06-04
+S031,Subtask,T008,,LinkedIn – Approval,Review poll question + options; sign off.,,Social Media,2026-06-05,2026-06-05
+S032,Subtask,T008,,LinkedIn – Implementation / Publishing,Publish poll natively on LinkedIn; confirm live.,,Social Media,2026-06-05,2026-06-05

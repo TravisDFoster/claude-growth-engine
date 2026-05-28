@@ -1,4 +1,4 @@
-# Claude Dashboard — Source Registry
+# Mission Control — Source Registry
 
 Authoritative list of what the dashboard surfaces. The refresh process reads this file, scans declared folders, extracts any pinned-content snippets, and regenerates `data.json`.
 
@@ -203,45 +203,21 @@ Each category has: `slug`, `label`, `path`, `match`, `home_recent`, `kind` (html
 - **cadence**: adhoc
 - **notes**: One-time batch — no `new_run` button.
 
----
-
-## Content Production
-
-Blog channels — high-volume publishing pipelines. Rendered in their own zone, NOT dimmed (these are published artifacts, not unrendered drafts). Items link to local `.md` working copies; live URLs live in Webflow / Wix.
-
-### marketing-blog-seo
-- **label**: Cerkl Blog (cerkl.com)
-- **kind**: blog
-- **path**: `/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/blog-posts-live/`
-- **match**: `*_live.md`
-- **home_recent**: 5
+### sales-reporting
+- **label**: Sales — Weekly Pipeline
+- **path**: `/Users/travisfoster/claude-code/cerkl/sales/sales-reporting/reports/`
+- **match**: `*.html`
+- **home_recent**: 2
 - **cadence**: weekly
-- **subtitle**: Webflow · primary growth channel
 - **new_run**:
   ```
-  Draft this week's planned Cerkl blog post(s) for cerkl.com.
+  Run the weekly sales report.
 
-  Check the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md
-  Process: /Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/seo-blog-process.md
+  Process: /Users/travisfoster/claude-code/cerkl/sales/sales-reporting/weekly-sales-report-process.md
   ```
+- **notes**: Title override (see process Step 3): `2026-W21` → "Week 21"; range labels like `2026-W19-W22` → "Weeks 19–22". Date is the Monday of the first ISO week. `reports/` holds only dated outputs; the locked `reference-weekly-sales-report.html` lives in the parent folder and is never scanned. Family color: `ops` (shared with HubSpot — revenue/ops grouping).
 
-### marketing-blog-icpro
-- **label**: Internal Comms Pro (internalcommspro.com)
-- **kind**: blog
-- **path**: `/Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/blog-posts-live/`
-- **match**: `*_live.md`
-- **home_recent**: 5
-- **cadence**: weekly
-- **subtitle**: Wix · ICP-aligned secondary
-- **new_run**:
-  ```
-  Draft this week's planned Internal Comms Pro blog post(s) for internalcommspro.com.
-
-  Check the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md
-  Process: /Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/icpro-blog-process.md
-  ```
-
-**Title parsing for blog files**: filename pattern is `YYYY-MM-DD_slug-with-dashes_state.md`. Strip the leading `YYYY-MM-DD_` and trailing `_state`, replace `-` with space, title-case. State is one of `live` / `draft` / `pre-writing` — for Content Production we only include `*_live.md`.
+> **Note (2026-05-25):** Blog channels (Content Production) and SEO Briefs are now surfaced on the dedicated **[content-dashboard](../content-dashboard/)** — they were removed from this registry to avoid duplication. This dashboard focuses on non-content artifacts (research, audits, IC trends, competitor profiles, leadership reports). The Content Reconcile and This Week's Blog Posts pinned actions remain as quick launchers.
 
 ---
 
@@ -262,19 +238,6 @@ These categories have `.md` outputs but no HTML siblings. They appear on the das
 - **match**: `*.md`
 - **home_recent**: 2
 - **cadence**: adhoc
-
-### marketing-seo-briefs
-- **label**: Marketing — SEO Briefs
-- **path**: `/Users/travisfoster/claude-code/cerkl/marketing/seo/briefs/`
-- **match**: `*.md`
-- **home_recent**: 2
-- **cadence**: adhoc
-- **new_run**:
-  ```
-  Produce SEO briefs from current gaps / refresh candidates.
-
-  Process: /Users/travisfoster/claude-code/cerkl/marketing/seo/seo-brief-production-process.md
-  ```
 
 ---
 

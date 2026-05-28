@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Dashboard · Cerkl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #18181d;
+    --panel: #1f1f26;
+    --panel-soft: #27272e;
+    --panel-hover: #2a2a32;
+    --ink: #f5f5fa;
+    --muted: #bfbfc7;
+    --faint: #8a8a93;
+    --line: #373740;
+    --line-soft: #2b2b34;
+    --accent: #4c60d9;
+    --accent-strong: #3547c4;
+    --accent-pale: #a7b3ed;
+    --accent-soft: rgba(76, 96, 217, 0.14);
+    --accent-border: rgba(167, 179, 237, 0.28);
+    --warm: #ffaa22;
+    --warm-pale: #ffbf57;
+    --warm-soft: rgba(255, 170, 34, 0.10);
+    --warm-border: rgba(255, 170, 34, 0.30);
+    --good: #6de4c9;
+    --good-soft: rgba(59, 197, 164, 0.10);
+    --good-border: rgba(109, 228, 201, 0.30);
+    --violet: #a869fd;
+    --violet-soft: rgba(168, 105, 253, 0.14);
+    --violet-border: rgba(168, 105, 253, 0.30);
+    --ruby: #f79499;
+    --ruby-soft: rgba(247, 148, 153, 0.10);
+    --ruby-border: rgba(247, 148, 153, 0.30);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+    /* Channel families for content-pipeline view */
+    --ch-seo: #a869fd;        /* cerkl.com blog */
+    --ch-seo-soft: rgba(168,105,253,0.12);
+    --ch-seo-border: rgba(168,105,253,0.28);
+    --ch-icpro: #6de4c9;      /* ICPro blog */
+    --ch-icpro-soft: rgba(109,228,201,0.10);
+    --ch-icpro-border: rgba(109,228,201,0.28);
+    --ch-linkedin: #4c60d9;   /* LinkedIn */
+    --ch-linkedin-soft: rgba(76,96,217,0.14);
+    --ch-linkedin-border: rgba(167,179,237,0.28);
+
+    /* Status semantic colors */
+    --st-planned: var(--faint);
+    --st-in-progress: var(--accent-pale);
+    --st-shipped: var(--good);
+    --st-blocked: var(--warm-pale);
+    --st-pulled: var(--ruby);
+
+    --pin-gradient:
+      radial-gradient(ellipse 90% 70% at 15% 20%, rgba(167,179,237,0.18) 0%, rgba(167,179,237,0) 60%),
+      radial-gradient(ellipse 60% 60% at 90% 85%, rgba(76,96,217,0.16) 0%, rgba(76,96,217,0) 65%),
+      linear-gradient(135deg, #1a1d3a 0%, #1c1c28 60%, #18181d 100%);
+    --cobalt-sweep: linear-gradient(90deg, #0c1159 0%, #3547c4 35%, #4c60d9 65%, #a7b3ed 100%);
+    --btn-primary-bg: linear-gradient(180deg, #4c60d9 0%, #3547c4 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: 14px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Topbar ---------- */
+  .topbar {
+    border-bottom: 1px solid var(--line-soft);
+    background: linear-gradient(180deg, #1c1c23 0%, #18181d 100%);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .topbar::before {
+    content: ""; display: block; height: 2px;
+    background: var(--cobalt-sweep);
+    opacity: 0.85;
+  }
+  .topbar-inner {
+    max-width: 1380px; margin: 0 auto;
+    padding: 14px 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .topbar .brand { display: flex; flex-direction: column; gap: 2px; }
+  .topbar .brand .title {
+    font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -0.005em;
+  }
+  .topbar .brand .crumb {
+    font-size: 11px; color: var(--accent-pale); letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .topbar .switch {
+    font-size: 10px; color: var(--faint);
+    text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+    padding: 4px 8px; border-radius: 6px;
+    border: 1px solid var(--line-soft);
+    transition: color 0.12s ease, border-color 0.12s ease;
+  }
+  .topbar .switch:hover { color: var(--accent-pale); border-color: var(--accent-border); }
+  .topbar .grow { flex: 1; }
+  .topbar .meta-pill {
+    font-size: 12px; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .topbar .meta-pill b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Wrap ---------- */
+  .wrap { max-width: 1380px; margin: 0 auto; padding: 24px 32px 80px; }
+  .zone { margin-bottom: 36px; }
+  .zone-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .zone-head h2 {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--muted); margin: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .zone-head h2::before {
+    content: ""; display: inline-block;
+    width: 8px; height: 8px; border-radius: 999px;
+    background: var(--accent-pale);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }
+  #zone-week .zone-head h2::before    { background: var(--accent-pale); box-shadow: 0 0 0 2px var(--accent-soft); }
+  #zone-stats .zone-head h2::before   { background: var(--good); box-shadow: 0 0 0 2px var(--good-soft); }
+  #zone-pipeline .zone-head h2::before{ background: var(--violet); box-shadow: 0 0 0 2px var(--violet-soft); }
+  #zone-briefs .zone-head h2::before  { background: var(--warm-pale); box-shadow: 0 0 0 2px var(--warm-soft); }
+  #zone-blogs .zone-head h2::before   { background: var(--ch-seo); box-shadow: 0 0 0 2px var(--ch-seo-soft); }
+  #zone-linkedin .zone-head h2::before{ background: var(--ch-linkedin); box-shadow: 0 0 0 2px var(--ch-linkedin-soft); }
+  .zone-head .lead {
+    font-size: 12px; color: var(--faint); font-weight: 500;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: inherit; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 7px 12px; border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer; user-select: none;
+    transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    text-decoration: none;
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn:hover { transform: translateY(-0.5px); }
+  .btn.btn-primary {
+    background: var(--btn-primary-bg);
+    color: #fff;
+    border-color: var(--accent-strong);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 1px 2px rgba(0,0,0,0.4);
+  }
+  .btn.btn-primary:hover {
+    background: linear-gradient(180deg, #5e72e8 0%, #4253ce 100%);
+    border-color: var(--accent);
+  }
+  .btn.btn-secondary {
+    background: var(--panel); color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn.btn-secondary:hover {
+    background: var(--panel-hover);
+    border-color: var(--accent-border);
+    color: var(--accent-pale);
+  }
+  .btn .icon { display: inline-block; width: 14px; height: 14px; line-height: 1; font-size: 14px; }
+
+  /* ---------- This Week (hero) ---------- */
+  .week-hero {
+    background: var(--pin-gradient);
+    border: 1px solid var(--accent-border);
+    border-radius: 14px;
+    padding: 22px 24px 20px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.25);
+  }
+  .week-hero::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--accent-pale);
+  }
+  .week-hero .eyebrow {
+    font-size: 10px; color: var(--accent-pale);
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+    margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .week-hero .lock-pill {
+    background: var(--good-soft); color: var(--good); border: 1px solid var(--good-border);
+    padding: 1px 7px; border-radius: 999px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+  }
+  .week-hero .jira-pill {
+    background: var(--accent-soft); color: var(--accent-pale); border: 1px solid var(--accent-border);
+    padding: 1px 7px; border-radius: 999px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+  }
+  .week-hero .week-title {
+    font-size: 19px; font-weight: 600; color: var(--ink);
+    letter-spacing: -0.005em; margin: 0;
+  }
+  .week-hero .week-range {
+    font-size: 12px; color: var(--muted); margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .week-hero .week-note {
+    font-size: 12px; color: var(--muted);
+    background: rgba(255,255,255,0.025);
+    border-left: 2px solid var(--accent-border);
+    padding: 8px 12px; margin: 12px 0 16px;
+    border-radius: 4px;
+    line-height: 1.5;
+  }
+  .week-hero table {
+    width: 100%; border-collapse: collapse;
+    margin-top: 6px;
+  }
+  .week-hero thead th {
+    font-size: 9px; color: var(--accent-pale);
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+    text-align: left; padding: 6px 10px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .week-hero tbody tr {
+    border-bottom: 1px solid var(--line-soft);
+    transition: background 0.12s ease;
+  }
+  .week-hero tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .week-hero tbody tr:last-child { border-bottom: none; }
+  .week-hero tbody td {
+    font-size: 13px; padding: 9px 10px; vertical-align: top;
+    color: var(--ink);
+  }
+  .week-hero td.col-deliverable { font-weight: 500; }
+  .week-hero td.col-channel { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .week-hero td.col-publish { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; white-space: nowrap; }
+  .week-hero td.col-owner { color: var(--faint); font-size: 12px; white-space: nowrap; }
+  .week-hero td.col-status { white-space: nowrap; }
+  .week-hero td.col-brief {
+    font-size: 11px; color: var(--faint);
+  }
+  .week-hero td.col-brief a {
+    color: var(--accent-pale); text-decoration: none;
+    border-bottom: 1px dotted var(--accent-border);
+  }
+  .week-hero td.col-brief a:hover { color: #fff; border-bottom-color: var(--accent-pale); }
+  .week-hero td.col-run { width: 28px; text-align: center; padding: 9px 6px; }
+  .run-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent-pale);
+    border: 1px solid var(--accent-border);
+    cursor: pointer; font-size: 11px;
+    transition: background 0.12s ease, color 0.12s ease, transform 0.08s ease;
+    padding: 0;
+  }
+  .run-btn:hover {
+    background: var(--accent-strong); color: #fff;
+    transform: translateY(-0.5px);
+  }
+  .run-btn[disabled] {
+    background: transparent; color: var(--line);
+    border-color: var(--line); cursor: not-allowed;
+  }
+
+  /* ---------- Stats strip ---------- */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 1100px) { .stats-strip { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px 10px;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .stat-card .stat-label {
+    font-size: 10px; color: var(--faint);
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+  }
+  .stat-card .stat-value {
+    font-size: 22px; font-weight: 600; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  .stat-card .stat-meta {
+    font-size: 11px; color: var(--muted);
+  }
+  .stat-card[data-tone="warm"] .stat-value { color: var(--warm-pale); }
+  .stat-card[data-tone="good"] .stat-value { color: var(--good); }
+  .stat-card[data-tone="accent"] .stat-value { color: var(--accent-pale); }
+  .stat-card[data-tone="violet"] .stat-value { color: var(--violet); }
+
+  /* ---------- Pipeline (4 columns) ---------- */
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 1100px) { .pipeline-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px)  { .pipeline-grid { grid-template-columns: 1fr; } }
+  .pipe-col {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+    display: flex; flex-direction: column;
+    min-height: 200px;
+    position: relative; overflow: hidden;
+  }
+  .pipe-col::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--violet);
+  }
+  .pipe-col[data-locked="true"]::before { background: var(--good); }
+  .pipe-col .pipe-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 8px; margin-bottom: 4px;
+  }
+  .pipe-col .pipe-label {
+    font-size: 12px; font-weight: 600; color: var(--ink);
+    line-height: 1.25;
+  }
+  .pipe-col .pipe-range {
+    font-size: 10px; color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .pipe-col .pipe-pills {
+    display: flex; gap: 4px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .pipe-col .mini-pill {
+    font-size: 9px; padding: 1px 6px; border-radius: 999px;
+    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    border: 1px solid;
+  }
+  .pipe-col .mini-pill.lock { background: var(--good-soft); color: var(--good); border-color: var(--good-border); }
+  .pipe-col .mini-pill.jira { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .pipe-col .pipe-rows {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .pipe-col .pipe-row {
+    font-size: 12px; line-height: 1.35;
+    padding: 6px 8px; border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid var(--faint);
+  }
+  .pipe-col .pipe-row.ch-cerkl { border-left-color: var(--ch-seo); }
+  .pipe-col .pipe-row.ch-icpro { border-left-color: var(--ch-icpro); }
+  .pipe-col .pipe-row.ch-linkedin { border-left-color: var(--ch-linkedin); }
+  .pipe-col .pipe-row.st-blocked { background: var(--warm-soft); }
+  .pipe-col .pipe-row .pr-deliverable { color: var(--ink); }
+  .pipe-col .pipe-row .pr-meta {
+    display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+    margin-top: 3px;
+    font-size: 10px; color: var(--faint);
+  }
+  .pipe-col .pipe-row .pr-channel { color: var(--muted); }
+  .pipe-col .pipe-row .pr-date { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Status badges (shared) ---------- */
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 999px;
+    border: 1px solid;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .status-badge::before { content: "●"; font-size: 6px; line-height: 1; }
+  .status-badge.planned     { background: transparent; color: var(--faint); border-color: var(--line); }
+  .status-badge.in-progress { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .status-badge.shipped     { background: var(--good-soft); color: var(--good); border-color: var(--good-border); }
+  .status-badge.blocked     { background: var(--warm-soft); color: var(--warm-pale); border-color: var(--warm-border); }
+  .status-badge.pulled      { background: var(--ruby-soft); color: var(--ruby); border-color: var(--ruby-border); }
+
+  /* ---------- Briefs Kanban ---------- */
+  .briefs-kanban {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 880px) { .briefs-kanban { grid-template-columns: 1fr; } }
+  .brief-col {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+    display: flex; flex-direction: column;
+  }
+  .brief-col[data-status="queued"]      { border-top: 3px solid var(--faint); }
+  .brief-col[data-status="scheduled"]   { border-top: 3px solid var(--accent-pale); }
+  .brief-col[data-status="in-progress"] { border-top: 3px solid var(--warm-pale); }
+  .brief-col .bc-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .brief-col .bc-label {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+  .brief-col[data-status="queued"]      .bc-label { color: var(--muted); }
+  .brief-col[data-status="scheduled"]   .bc-label { color: var(--accent-pale); }
+  .brief-col[data-status="in-progress"] .bc-label { color: var(--warm-pale); }
+  .brief-col .bc-count {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .brief-col .bc-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .brief-col .bc-list li {
+    padding: 8px 10px; border-radius: 6px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--line-soft);
+    transition: background 0.12s ease, border-color 0.12s ease;
+  }
+  .brief-col .bc-list li:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent-border);
+  }
+  .brief-col .bc-list a {
+    color: var(--ink); text-decoration: none;
+    font-size: 12px; line-height: 1.35;
+    display: block;
+  }
+  .brief-col .bc-list a:hover { color: var(--accent-pale); }
+  .brief-col .bc-list .bf-meta {
+    font-size: 10px; color: var(--faint);
+    margin-top: 4px; font-variant-numeric: tabular-nums;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .brief-col .bc-list .bf-when { color: var(--accent-pale); font-weight: 600; }
+  .brief-col .bc-empty {
+    font-size: 11px; color: var(--faint); font-style: italic;
+    padding: 8px 10px;
+  }
+
+  /* ---------- Blog swim-lanes ---------- */
+  .swim-lane {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px 14px;
+    margin-bottom: 14px;
+    position: relative; overflow: hidden;
+  }
+  .swim-lane::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--ch-seo);
+  }
+  .swim-lane[data-channel="icpro-blog"]::before { background: var(--ch-icpro); }
+  .swim-lane .sl-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 12px; margin-bottom: 12px;
+  }
+  .swim-lane .sl-title {
+    font-size: 15px; font-weight: 600; color: var(--ink);
+    line-height: 1.25;
+  }
+  .swim-lane .sl-subtitle {
+    font-size: 11px; color: var(--muted); margin-top: 2px;
+    letter-spacing: 0.02em;
+  }
+  .swim-lane .sl-meta {
+    font-size: 11px; color: var(--faint);
+    margin-top: 6px;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .swim-lane .sl-meta b { color: var(--ink); font-weight: 600; }
+  .swim-lane .sl-actions { display: flex; gap: 8px; }
+  .swim-lane .sl-buckets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 880px) { .swim-lane .sl-buckets { grid-template-columns: 1fr; } }
+  .sl-bucket {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 10px 12px 8px;
+    display: flex; flex-direction: column;
+    min-height: 100px;
+  }
+  .sl-bucket[data-bucket="pre_writing"] { border-left: 2px solid var(--faint); }
+  .sl-bucket[data-bucket="draft"]       { border-left: 2px solid var(--accent-pale); }
+  .sl-bucket[data-bucket="live"]        { border-left: 2px solid var(--good); }
+  .sl-bucket .sb-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .sl-bucket .sb-label {
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  }
+  .sl-bucket[data-bucket="live"] .sb-label { color: var(--good); }
+  .sl-bucket[data-bucket="draft"] .sb-label { color: var(--accent-pale); }
+  .sl-bucket .sb-count {
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .sl-bucket .sb-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .sl-bucket .sb-list li {
+    display: grid; grid-template-columns: 64px 1fr;
+    gap: 8px; align-items: baseline;
+    padding: 3px 0;
+    font-size: 12px;
+  }
+  .sl-bucket .sb-list .date {
+    color: var(--faint); font-variant-numeric: tabular-nums; font-size: 10px;
+  }
+  .sl-bucket .sb-list .date.tbd { color: var(--warm-pale); letter-spacing: 0.04em; }
+  .sl-bucket .sb-list a.title {
+    color: var(--ink); text-decoration: none;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .sl-bucket .sb-list a.title:hover { color: var(--accent-pale); }
+  .sl-bucket .sb-empty {
+    font-size: 11px; color: var(--faint); font-style: italic;
+  }
+
+  /* ---------- LinkedIn ---------- */
+  .li-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 880px) { .li-grid { grid-template-columns: 1fr; } }
+  .li-col {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+    display: flex; flex-direction: column;
+  }
+  .li-col[data-status="planned"]     { border-top: 3px solid var(--faint); }
+  .li-col[data-status="in_progress"] { border-top: 3px solid var(--accent-pale); }
+  .li-col[data-status="shipped"]     { border-top: 3px solid var(--good); }
+  .li-col .lc-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .li-col .lc-label {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .li-col[data-status="planned"]     .lc-label { color: var(--muted); }
+  .li-col[data-status="in_progress"] .lc-label { color: var(--accent-pale); }
+  .li-col[data-status="shipped"]     .lc-label { color: var(--good); }
+  .li-col .lc-count {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .li-col .lc-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .li-col .lc-list li {
+    padding: 8px 10px; border-radius: 6px;
+    background: rgba(255,255,255,0.025);
+    border-left: 2px solid var(--ch-linkedin);
+    font-size: 12px;
+  }
+  .li-col .lc-list .li-deliverable {
+    color: var(--ink); line-height: 1.35;
+  }
+  .li-col .lc-list .li-meta {
+    display: flex; gap: 8px; align-items: center;
+    margin-top: 4px;
+    font-size: 10px;
+  }
+  .li-col .lc-list .li-channel { color: var(--muted); }
+  .li-col .lc-list .li-date { color: var(--accent-pale); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .li-col .lc-empty {
+    font-size: 11px; color: var(--faint); font-style: italic;
+    padding: 8px 10px;
+  }
+
+  /* ---------- Actions zone (Next Actions + Current CSV + Recent CSVs) ---------- */
+  .actions-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 1000px) { .actions-grid { grid-template-columns: 1fr; } }
+
+  .csv-hero {
+    background: var(--pin-gradient);
+    border: 1px solid var(--accent-border);
+    border-radius: 14px;
+    padding: 20px 22px 18px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.25);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .csv-hero::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--accent-pale);
+  }
+  .csv-hero .csv-head {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  }
+  .csv-hero .csv-eyebrow {
+    font-size: 10px; color: var(--accent-pale);
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .csv-hero .csv-title {
+    font-size: 19px; font-weight: 600; color: var(--ink);
+    letter-spacing: -0.005em; margin: 0;
+    font-family: var(--mono);
+  }
+  .csv-hero .csv-sub {
+    font-size: 12px; color: var(--muted); margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .csv-hero .csv-status-pill {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; border: 1px solid;
+    white-space: nowrap;
+  }
+  .csv-status-pill[data-status="in-prep"]        { background: var(--warm-soft); color: var(--warm-pale); border-color: var(--warm-border); }
+  .csv-status-pill[data-status="ready-to-import"]{ background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .csv-status-pill[data-status="imported"]       { background: var(--good-soft); color: var(--good); border-color: var(--good-border); }
+
+  .progress-rows { display: flex; flex-direction: column; gap: 8px; }
+  .progress-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 56px;
+    gap: 12px; align-items: center;
+  }
+  .progress-row .progress-label {
+    font-size: 11px; color: var(--muted); font-weight: 500;
+  }
+  .progress-row .progress-track {
+    height: 8px; border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    border: 1px solid var(--line-soft);
+  }
+  .progress-row .progress-fill {
+    height: 100%; border-radius: 999px;
+    background: var(--accent-pale);
+    transition: width 0.3s ease;
+  }
+  .progress-row[data-tone="good"] .progress-fill { background: var(--good); }
+  .progress-row[data-tone="warm"] .progress-fill { background: var(--warm-pale); }
+  .progress-row[data-tone="empty"] .progress-fill { background: var(--faint); }
+  .progress-row .progress-value {
+    font-size: 12px; color: var(--ink); font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .csv-hero .csv-cta {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .csv-hero .csv-cta-text {
+    font-size: 12px; color: var(--muted); line-height: 1.4;
+  }
+  .csv-hero .csv-cta-text b { color: var(--ink); font-weight: 600; }
+  .csv-hero .csv-note {
+    font-size: 11px; color: var(--faint); font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* Ready Actions list */
+  .actions-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px 14px;
+    display: flex; flex-direction: column;
+  }
+  .actions-panel .ap-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .actions-panel .ap-label {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .actions-panel .ap-count {
+    font-size: 18px; font-weight: 700; color: var(--accent-pale);
+    font-variant-numeric: tabular-nums;
+  }
+  .actions-panel .ap-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .action-card {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 10px 12px; border-radius: 8px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--line-soft);
+    transition: background 0.12s ease, border-color 0.12s ease;
+    cursor: pointer;
+  }
+  .action-card:hover {
+    background: rgba(76,96,217,0.08);
+    border-color: var(--accent-border);
+  }
+  .action-card[data-ready="false"] {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .action-card[data-ready="false"]:hover {
+    background: rgba(255,255,255,0.025);
+    border-color: var(--line-soft);
+  }
+  .action-card .ac-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+  }
+  .action-card .ac-label {
+    font-size: 13px; color: var(--ink); font-weight: 500;
+    line-height: 1.3;
+  }
+  .action-card .ac-launch {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent-pale);
+    border: 1px solid var(--accent-border);
+    font-size: 11px; padding: 0;
+    cursor: pointer;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+  .action-card[data-ready="true"]:hover .ac-launch {
+    background: var(--accent-strong); color: #fff;
+  }
+  .action-card[data-ready="false"] .ac-launch {
+    background: transparent; color: var(--faint);
+    border-color: var(--line); cursor: not-allowed;
+  }
+  .action-card .ac-reason {
+    font-size: 11px; color: var(--faint);
+    line-height: 1.4;
+  }
+
+  /* Recent CSVs strip */
+  .csv-strip {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .csv-chip {
+    display: inline-flex; flex-direction: column; gap: 2px;
+    padding: 8px 12px; border-radius: 8px;
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    min-width: 140px;
+    position: relative;
+  }
+  .csv-chip::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; border-radius: 8px 0 0 8px;
+  }
+  .csv-chip[data-status="imported"]::before        { background: var(--good); }
+  .csv-chip[data-status="ready-to-import"]::before { background: var(--accent-pale); }
+  .csv-chip[data-status="in-prep"]::before         { background: var(--warm-pale); }
+  .csv-chip .cc-file {
+    font-size: 12px; font-weight: 600; color: var(--ink);
+    font-family: var(--mono);
+  }
+  .csv-chip .cc-meta {
+    font-size: 10px; color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .csv-chip .cc-status {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .csv-chip[data-status="imported"] .cc-status        { color: var(--good); }
+  .csv-chip[data-status="ready-to-import"] .cc-status { color: var(--accent-pale); }
+  .csv-chip[data-status="in-prep"] .cc-status         { color: var(--warm-pale); }
+
+  /* CSV pill (small inline tag for week cards) */
+  .csv-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 2px 7px; border-radius: 999px;
+    text-transform: uppercase;
+    border: 1px solid;
+    font-family: var(--mono);
+  }
+  .csv-pill[data-status="imported"]        { background: var(--good-soft); color: var(--good); border-color: var(--good-border); }
+  .csv-pill[data-status="ready-to-import"] { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .csv-pill[data-status="in-prep"]         { background: var(--warm-soft); color: var(--warm-pale); border-color: var(--warm-border); }
+  .csv-pill.csv-pill-missing { background: transparent; color: var(--faint); border-color: var(--line); }
+
+  /* All Actions drawer */
+  .actions-drawer { margin-top: 20px; }
+  .actions-drawer summary {
+    cursor: pointer; user-select: none;
+    font-size: 13px; font-weight: 600; color: var(--muted);
+    padding: 10px 14px; border-radius: 8px;
+    background: var(--panel-soft); border: 1px solid var(--line);
+    list-style: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+  .actions-drawer summary:hover { background: var(--panel-hover); color: var(--ink); }
+  .actions-drawer summary::before {
+    content: "▸"; display: inline-block;
+    transition: transform 0.15s ease;
+    font-size: 10px; color: var(--accent-pale);
+  }
+  .actions-drawer[open] summary::before { transform: rotate(90deg); }
+  .actions-drawer .ad-grid {
+    margin-top: 10px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+  }
+  @media (max-width: 800px) { .actions-drawer .ad-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Toast ---------- */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--accent-strong);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 100;
+    max-width: 360px;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Error ---------- */
+  .error {
+    background: var(--warm-soft);
+    border: 1px solid var(--warm-border);
+    color: var(--warm-pale);
+    padding: 16px 20px; border-radius: 10px;
+    font-size: 14px;
+  }
+  .error b { color: #fff; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center; font-size: 11px; color: var(--faint);
+    margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line-soft);
+  }
+  footer code { font-family: var(--mono); font-size: 10px; }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: #fff; color: #18181d; }
+    .topbar, .btn { display: none; }
+    .week-hero, .pipe-col, .brief-col, .swim-lane, .sl-bucket, .li-col, .stat-card {
+      background: #f5f5fa; color: #18181d; border-color: #d5d5db;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="crumb">cerkl · content-dashboard</span>
+      <span class="title">Content Dashboard</span>
+    </div>
+    <a class="switch" href="../mission-control/" title="Back to Mission Control">↗ mission-control</a>
+    <span class="meta-pill"><b>Last reconciled:</b> <span id="last-reconciled">—</span></span>
+    <span class="meta-pill"><b>Generated:</b> <span id="generated-at">—</span></span>
+    <span class="grow"></span>
+    <button class="btn btn-secondary" data-copy-prompt="refresh-dashboard" title="Copy a prompt to refresh this dashboard">
+      <span class="icon">⟳</span> Refresh
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="zone" id="zone-actions">
+    <div class="zone-head">
+      <h2>Next actions</h2>
+      <span class="lead">Jira CSV is the end-goal artifact · click any ready action to copy its prompt</span>
+    </div>
+    <div class="actions-grid">
+      <div id="current-csv"></div>
+      <div id="next-actions"></div>
+    </div>
+    <div id="csv-strip"></div>
+  </div>
+
+  <div class="zone" id="zone-week">
+    <div class="zone-head">
+      <h2>This week — locked</h2>
+      <span class="lead">in Jira · pulled straight from <code>rolling-4week.md</code></span>
+    </div>
+    <div id="this-week"></div>
+  </div>
+
+  <div class="zone" id="zone-stats">
+    <div class="zone-head">
+      <h2>State of the queue</h2>
+      <span class="lead">counts across briefs · blog states · LinkedIn pipeline</span>
+    </div>
+    <div class="stats-strip" id="stats"></div>
+  </div>
+
+  <div class="zone" id="zone-pipeline">
+    <div class="zone-head">
+      <h2>4-week pipeline</h2>
+      <span class="lead">W1 locked · W2–W4 planned · click a brief link to open</span>
+    </div>
+    <div class="pipeline-grid" id="pipeline"></div>
+  </div>
+
+  <div class="zone" id="zone-briefs">
+    <div class="zone-head">
+      <h2>Briefs in staging</h2>
+      <span class="lead">SEO briefs by frontmatter status · shipped briefs hidden</span>
+    </div>
+    <div class="briefs-kanban" id="briefs"></div>
+  </div>
+
+  <div class="zone" id="zone-blogs">
+    <div class="zone-head">
+      <h2>Blog channels</h2>
+      <span class="lead">pre-writing → draft → live · click [+ Draft new] to copy the channel prompt</span>
+    </div>
+    <div id="blogs"></div>
+  </div>
+
+  <div class="zone" id="zone-linkedin">
+    <div class="zone-head">
+      <h2>LinkedIn</h2>
+      <span class="lead">derived from rolling-4week rows · bucketed by status</span>
+    </div>
+    <div class="li-grid" id="linkedin"></div>
+  </div>
+
+  <details class="actions-drawer">
+    <summary>All actions — including blocked, with reasons</summary>
+    <div class="ad-grid" id="all-actions"></div>
+  </details>
+
+  <footer>
+    Source registry: <code>sources.md</code> · Data: <code>data.json</code> · Refresh process: <code>content-dashboard-process.md</code>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Copied! Paste into Claude.</div>
+
+<script>
+const REFRESH_PROMPT =
+  "Refresh my content dashboard.\n\nProcess: /Users/travisfoster/claude-code/cerkl/content-dashboard/content-dashboard-process.md";
+
+const WORKSPACE_ROOT = "/Users/travisfoster/claude-code";
+
+const CHANNEL_PROCESSES = {
+  cerkl_blog: {
+    label: "Cerkl blog post (cerkl.com)",
+    process: "/Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/seo-blog-process.md"
+  },
+  icpro_blog: {
+    label: "Internal Comms Pro blog post (internalcommspro.com)",
+    process: "/Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/icpro-blog-process.md"
+  },
+  linkedin: {
+    label: "LinkedIn post",
+    process: "/Users/travisfoster/claude-code/cerkl/marketing/channels/linkedin/linkedin-process.md"
+  }
+};
+
+function channelKey(channel) {
+  if (!channel) return null;
+  const c = channel.toLowerCase();
+  if (c.includes('cerkl.com')) return 'cerkl_blog';
+  if (c.includes('internalcommspro') || c.includes('icpro')) return 'icpro_blog';
+  if (c.startsWith('linkedin')) return 'linkedin';
+  return null;
+}
+
+function buildRowPrompt(row) {
+  const key = channelKey(row.channel);
+  if (!key) return null;
+  const cfg = CHANNEL_PROCESSES[key];
+  const lines = [`Draft this ${cfg.label}.`, ''];
+  lines.push(`Deliverable: ${row.deliverable}`);
+  if (row.channel) lines.push(`Channel: ${row.channel}`);
+  if (row.publish) lines.push(`Publish: ${row.publish}`);
+  if (row.source_brief_url) {
+    lines.push(`Source brief: ${WORKSPACE_ROOT}${row.source_brief_url}`);
+  } else if (row.source_brief && row.source_brief !== '—') {
+    lines.push(`Source: ${row.source_brief}`);
+  }
+  lines.push('');
+  lines.push(`Process: ${cfg.process}`);
+  return lines.join('\n');
+}
+
+async function copyToClipboard(text) {
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function statusBadge(status) {
+  if (!status) return '';
+  const s = String(status).toLowerCase();
+  return `<span class="status-badge ${s}">${escapeHtml(status)}</span>`;
+}
+function channelClass(channel) {
+  if (!channel) return '';
+  const c = channel.toLowerCase();
+  if (c.includes('cerkl.com')) return 'ch-cerkl';
+  if (c.includes('internalcommspro') || c.includes('icpro')) return 'ch-icpro';
+  if (c.startsWith('linkedin')) return 'ch-linkedin';
+  return '';
+}
+
+function statusLabel(status) {
+  return { 'in-prep': 'In prep', 'ready-to-import': 'Ready to import', 'imported': 'Imported' }[status] || status;
+}
+
+function progressRow(label, filled, total, tone) {
+  const pct = total > 0 ? Math.round((filled / total) * 100) : 0;
+  const t = tone || (filled === total && total > 0 ? 'good' : (filled === 0 ? 'empty' : 'warm'));
+  return `
+    <div class="progress-row" data-tone="${t}">
+      <span class="progress-label">${escapeHtml(label)}</span>
+      <div class="progress-track"><div class="progress-fill" style="width: ${pct}%"></div></div>
+      <span class="progress-value">${filled}/${total}</span>
+    </div>
+  `;
+}
+
+function renderCurrentCsv(data) {
+  const csv = (data.csvs || []).find(c => c.file === data.current_csv_file);
+  if (!csv) {
+    return `<div class="csv-hero"><div class="csv-eyebrow">Current Jira CSV</div><div class="csv-sub">No CSV in <code>jira/imports/</code></div></div>`;
+  }
+  const driveDone = csv.readiness.drive_urls.filled === csv.readiness.drive_urls.total;
+  const copyDone  = csv.readiness.linkedin_copy.filled === csv.readiness.linkedin_copy.total;
+  const blockers = [];
+  if (!driveDone) blockers.push(`${csv.readiness.drive_urls.total - csv.readiness.drive_urls.filled} blog draft URL(s)`);
+  if (!copyDone) blockers.push(`${csv.readiness.linkedin_copy.total - csv.readiness.linkedin_copy.filled} LinkedIn copy`);
+  const ctaText = csv.import_ready
+    ? `<b>Ready to import to Jira.</b> All placeholders filled.`
+    : `<b>Waiting on:</b> ${blockers.join(' · ')}`;
+  // Pick the most relevant launch action: bulk-write-linkedin if copy missing, else bulk-write-cerkl-blog
+  let launchKey = null, launchLabel = null;
+  if (!copyDone) { launchKey = 'action:bulk-write-linkedin'; launchLabel = 'Bulk-write LinkedIn copy'; }
+  else if (!driveDone) { launchKey = 'action:bulk-write-cerkl-blog'; launchLabel = 'Bulk-write blog drafts'; }
+  const launchBtn = launchKey
+    ? `<button class="btn btn-primary" data-copy-prompt="${launchKey}"><span class="icon">▶</span> ${escapeHtml(launchLabel)}</button>`
+    : `<a class="btn btn-secondary" href="${escapeHtml(csv.path)}" target="_blank"><span class="icon">↗</span> Open CSV</a>`;
+  const noteHtml = csv.note ? `<div class="csv-note">${escapeHtml(csv.note)}</div>` : '';
+  return `
+    <div class="csv-hero">
+      <div class="csv-head">
+        <div>
+          <div class="csv-eyebrow">Current Jira CSV · the end-goal artifact</div>
+          <h3 class="csv-title">${escapeHtml(csv.file)}</h3>
+          <div class="csv-sub">Publishes ${escapeHtml(csv.week_range)} · ${csv.counts.tasks_total} Task(s) · ${csv.counts.subtasks_total} subtask(s)</div>
+        </div>
+        <span class="csv-status-pill" data-status="${escapeHtml(csv.status)}">${escapeHtml(statusLabel(csv.status))}</span>
+      </div>
+      <div class="progress-rows">
+        ${progressRow('Blog Drive URLs', csv.readiness.drive_urls.filled, csv.readiness.drive_urls.total)}
+        ${progressRow('LinkedIn copy',   csv.readiness.linkedin_copy.filled, csv.readiness.linkedin_copy.total)}
+      </div>
+      ${noteHtml}
+      <div class="csv-cta">
+        <div class="csv-cta-text">${ctaText}</div>
+        ${launchBtn}
+      </div>
+    </div>
+  `;
+}
+
+function renderNextActions(actions) {
+  const ready = (actions || []).filter(a => a.ready);
+  if (ready.length === 0) {
+    return `
+      <div class="actions-panel">
+        <div class="ap-head">
+          <span class="ap-label">Ready to launch</span>
+          <span class="ap-count">0</span>
+        </div>
+        <div style="font-size:12px;color:var(--faint);font-style:italic;padding:8px 0;">— nothing ready. Open the All-actions drawer below to see what's blocked. —</div>
+      </div>
+    `;
+  }
+  const itemsHtml = ready.map(a => `
+    <li class="action-card" data-ready="true" data-copy-prompt="action:${escapeHtml(a.id)}">
+      <div class="ac-row">
+        <span class="ac-label">${escapeHtml(a.label)}</span>
+        <button class="ac-launch" data-copy-prompt="action:${escapeHtml(a.id)}" title="Copy prompt">▶</button>
+      </div>
+      <div class="ac-reason">${escapeHtml(a.reason)}</div>
+    </li>
+  `).join('');
+  return `
+    <div class="actions-panel">
+      <div class="ap-head">
+        <span class="ap-label">Ready to launch</span>
+        <span class="ap-count">${ready.length}</span>
+      </div>
+      <ul class="ap-list">${itemsHtml}</ul>
+    </div>
+  `;
+}
+
+function renderCsvStrip(csvs) {
+  if (!csvs || csvs.length === 0) return '';
+  const chips = csvs.map(c => {
+    const meta = c.readiness.drive_urls.total + c.readiness.linkedin_copy.total > 0
+      ? `${c.readiness.drive_urls.filled}/${c.readiness.drive_urls.total} drafts · ${c.readiness.linkedin_copy.filled}/${c.readiness.linkedin_copy.total} LI`
+      : '—';
+    return `
+      <div class="csv-chip" data-status="${escapeHtml(c.status)}">
+        <span class="cc-file">${escapeHtml(c.file)}</span>
+        <span class="cc-meta">${escapeHtml(c.week_range)} · ${meta}</span>
+        <span class="cc-status">${escapeHtml(statusLabel(c.status))}</span>
+      </div>
+    `;
+  }).join('');
+  return `<div class="csv-strip">${chips}</div>`;
+}
+
+function renderAllActions(actions) {
+  if (!actions) return '';
+  return (actions || []).map(a => `
+    <div class="action-card" data-ready="${a.ready}" ${a.ready ? 'data-copy-prompt="action:' + escapeHtml(a.id) + '"' : ''}>
+      <div class="ac-row">
+        <span class="ac-label">${escapeHtml(a.label)}</span>
+        <button class="ac-launch" ${a.ready ? 'data-copy-prompt="action:' + escapeHtml(a.id) + '"' : 'disabled'} title="${a.ready ? 'Copy prompt' : 'Not ready'}">${a.ready ? '▶' : '·'}</button>
+      </div>
+      <div class="ac-reason">${escapeHtml(a.reason)}</div>
+    </div>
+  `).join('');
+}
+
+// Map a pipeline week's Monday date to an ISO week string (e.g. "2026-W23")
+function isoWeekFromMondayDate(mondayDateStr) {
+  if (!mondayDateStr) return null;
+  const d = new Date(mondayDateStr + 'T00:00:00Z');
+  if (isNaN(d.getTime())) return null;
+  const target = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dayNum = (target.getUTCDay() + 6) % 7;  // 0 = Monday
+  target.setUTCDate(target.getUTCDate() - dayNum + 3);  // shift to Thursday of that week
+  const firstThursday = new Date(Date.UTC(target.getUTCFullYear(), 0, 4));
+  const firstThursdayDayNum = (firstThursday.getUTCDay() + 6) % 7;
+  firstThursday.setUTCDate(firstThursday.getUTCDate() - firstThursdayDayNum + 3);
+  const week = 1 + Math.round((target - firstThursday) / (7 * 24 * 60 * 60 * 1000));
+  return `${target.getUTCFullYear()}-W${String(week).padStart(2, '0')}`;
+}
+
+function csvForWeek(week, csvs) {
+  if (!week || !week.range || !csvs) return null;
+  const mondayStr = week.range.split(' → ')[0];
+  const wantedIso = isoWeekFromMondayDate(mondayStr);
+  return csvs.find(c => c.week_iso === wantedIso) || null;
+}
+
+function renderThisWeek(tw, csvs) {
+  if (!tw) return '';
+  const csv = csvForWeek({ range: tw.range }, csvs);
+  const csvPill = csv
+    ? `<span class="csv-pill" data-status="${escapeHtml(csv.status)}">${escapeHtml(csv.file)} · ${escapeHtml(statusLabel(csv.status))}</span>`
+    : `<span class="csv-pill csv-pill-missing">No CSV</span>`;
+  const pills = [
+    tw.locked ? '<span class="lock-pill">🔒 Locked</span>' : '',
+    tw.in_jira ? '<span class="jira-pill">In Jira</span>' : '',
+    csvPill
+  ].filter(Boolean).join(' ');
+  const noteHtml = tw.note ? `<div class="week-note">${escapeHtml(tw.note)}</div>` : '';
+  const rowsHtml = (tw.rows || []).map((r, idx) => {
+    const briefCell = r.source_brief_url
+      ? `<a href="${escapeHtml(r.source_brief_url)}">${escapeHtml(r.source_brief)}</a>`
+      : escapeHtml(r.source_brief || '');
+    const prompt = buildRowPrompt(r);
+    const isShipped = (r.status || '').toLowerCase() === 'shipped';
+    const runCell = (prompt && !isShipped)
+      ? `<button class="run-btn" data-copy-prompt="row:tw:${idx}" title="Copy prompt to write this — routes Claude to the channel process">▶</button>`
+      : `<button class="run-btn" disabled title="${isShipped ? 'Shipped' : 'No process mapped for this channel'}">·</button>`;
+    return `
+      <tr>
+        <td class="col-deliverable">${escapeHtml(r.deliverable)}</td>
+        <td class="col-channel">${escapeHtml(r.channel)}</td>
+        <td class="col-publish">${escapeHtml(r.publish)}</td>
+        <td class="col-owner">${escapeHtml(r.owner)}</td>
+        <td class="col-status">${statusBadge(r.status)}</td>
+        <td class="col-brief">${briefCell}</td>
+        <td class="col-run">${runCell}</td>
+      </tr>
+    `;
+  }).join('');
+  return `
+    <div class="week-hero">
+      <div class="eyebrow">
+        <span>${pills}</span>
+        <span>This week</span>
+      </div>
+      <h3 class="week-title">${escapeHtml(tw.label)}</h3>
+      <div class="week-range">${escapeHtml(tw.range)}</div>
+      ${noteHtml}
+      <table>
+        <thead>
+          <tr>
+            <th>Deliverable</th><th>Channel</th><th>Publish</th><th>Owner</th><th>Status</th><th>Brief</th><th></th>
+          </tr>
+        </thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderStats(stats) {
+  if (!stats) return '';
+  const cards = [
+    { label: 'Briefs scheduled', value: stats.briefs_scheduled, meta: `${stats.briefs_queued} queued`, tone: 'accent' },
+    { label: 'Posts in flight', value: stats.seo_blog_in_flight + stats.icpro_blog_in_flight,
+      meta: `${stats.seo_blog_in_flight} cerkl · ${stats.icpro_blog_in_flight} icpro`, tone: 'violet' },
+    { label: 'Live posts', value: stats.seo_blog_live_count + stats.icpro_blog_live_count,
+      meta: 'lifetime in repo', tone: 'good' },
+    { label: 'LinkedIn pipeline', value: stats.linkedin_planned + stats.linkedin_in_progress,
+      meta: `${stats.linkedin_in_progress} in-progress`, tone: 'accent' },
+    { label: 'Weeks planned', value: stats.weeks_planned, meta: 'W1 locked', tone: 'good' }
+  ];
+  return cards.map(c => `
+    <div class="stat-card" data-tone="${c.tone}">
+      <span class="stat-label">${escapeHtml(c.label)}</span>
+      <span class="stat-value">${c.value}</span>
+      <span class="stat-meta">${escapeHtml(c.meta)}</span>
+    </div>
+  `).join('');
+}
+
+function renderPipeline(weeks, csvs) {
+  return (weeks || []).map(w => {
+    const csv = csvForWeek(w, csvs);
+    const csvPill = csv
+      ? `<span class="csv-pill" data-status="${escapeHtml(csv.status)}">${escapeHtml(csv.file)} · ${escapeHtml(statusLabel(csv.status))}</span>`
+      : '';
+    const pills = [
+      w.locked ? '<span class="mini-pill lock">Locked</span>' : '',
+      w.in_jira ? '<span class="mini-pill jira">In Jira</span>' : '',
+      csvPill
+    ].filter(Boolean).join('');
+    const rowsHtml = (w.rows || []).map(r => {
+      const cc = channelClass(r.channel);
+      const sc = (r.status || '').toLowerCase();
+      const briefLink = r.source_brief_url
+        ? ` · <a href="${escapeHtml(r.source_brief_url)}" style="color:var(--accent-pale);text-decoration:none;border-bottom:1px dotted var(--accent-border);">brief</a>`
+        : '';
+      return `
+        <li class="pipe-row ${cc} st-${sc}">
+          <div class="pr-deliverable">${escapeHtml(r.deliverable)}</div>
+          <div class="pr-meta">
+            <span class="pr-date">${escapeHtml(r.publish)}</span>
+            <span class="pr-channel">${escapeHtml(r.channel)}</span>
+            ${statusBadge(r.status)}${briefLink ? '<span>' + briefLink + '</span>' : ''}
+          </div>
+        </li>
+      `;
+    }).join('');
+    return `
+      <div class="pipe-col" data-locked="${!!w.locked}">
+        <div class="pipe-head">
+          <div>
+            <div class="pipe-label">${escapeHtml(w.label)}</div>
+            <div class="pipe-range">${escapeHtml(w.range)}</div>
+          </div>
+        </div>
+        <div class="pipe-pills">${pills}</div>
+        <ul class="pipe-rows">${rowsHtml || '<li class="pipe-row"><span class="pr-channel">no rows</span></li>'}</ul>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderBriefs(briefs) {
+  if (!briefs) return '';
+  const cols = [
+    { key: 'queued',      label: 'Queued',      items: briefs.queued || [] },
+    { key: 'scheduled',   label: 'Scheduled',   items: briefs.scheduled || [] },
+    { key: 'in-progress', label: 'In progress', items: briefs.in_progress || [] }
+  ];
+  return cols.map(col => {
+    const itemsHtml = col.items.length === 0
+      ? '<div class="bc-empty">— none —</div>'
+      : `<ul class="bc-list">${col.items.map(b => `
+          <li>
+            <a href="${escapeHtml(b.url)}" title="${escapeHtml(b.title)}">${escapeHtml(b.title)}</a>
+            <div class="bf-meta">
+              ${b.scheduled_for ? '<span class="bf-when">' + escapeHtml(b.scheduled_for) + '</span>' : ''}
+              <span>${escapeHtml(b.target_channel || '')}</span>
+            </div>
+          </li>
+        `).join('')}</ul>`;
+    return `
+      <div class="brief-col" data-status="${col.key}">
+        <div class="bc-head">
+          <span class="bc-label">${escapeHtml(col.label)}</span>
+          <span class="bc-count">${col.items.length}</span>
+        </div>
+        ${itemsHtml}
+      </div>
+    `;
+  }).join('');
+}
+
+function renderBlogSwimLanes(lanes) {
+  return (lanes || []).map(lane => {
+    const buckets = ['pre_writing', 'draft', 'live'];
+    const bucketLabels = { pre_writing: 'Pre-writing', draft: 'Draft', live: 'Live' };
+    const totalInFlight = (lane.buckets.pre_writing || []).length + (lane.buckets.draft || []).length;
+    const bucketsHtml = buckets.map(b => {
+      const items = lane.buckets[b] || [];
+      const listHtml = items.length === 0
+        ? '<div class="sb-empty">— none —</div>'
+        : `<ul class="sb-list">${items.map(it => {
+            const isTbd = it.date === 'TBD' || !it.date;
+            return `
+              <li>
+                <span class="date ${isTbd ? 'tbd' : ''}">${escapeHtml(it.date || 'TBD')}</span>
+                <a class="title" href="${escapeHtml(it.url)}" title="${escapeHtml(it.title)}">${escapeHtml(it.title)}</a>
+              </li>
+            `;
+          }).join('')}</ul>`;
+      return `
+        <div class="sl-bucket" data-bucket="${b}">
+          <div class="sb-head">
+            <span class="sb-label">${escapeHtml(bucketLabels[b])}</span>
+            <span class="sb-count">${items.length}</span>
+          </div>
+          ${listHtml}
+        </div>
+      `;
+    }).join('');
+    return `
+      <div class="swim-lane" data-channel="${escapeHtml(lane.slug)}">
+        <div class="sl-head">
+          <div>
+            <div class="sl-title">${escapeHtml(lane.label)}</div>
+            <div class="sl-subtitle">${escapeHtml(lane.subtitle || '')}</div>
+            <div class="sl-meta">
+              <span><b>${totalInFlight}</b> in flight</span>
+              <span>·</span>
+              <span><b>${(lane.buckets.live || []).length}</b> live</span>
+            </div>
+          </div>
+          <div class="sl-actions">
+            ${lane.new_run_prompt ? `<button class="btn btn-primary" data-copy-prompt="blog:${escapeHtml(lane.slug)}"><span class="icon">＋</span> Draft new</button>` : ''}
+          </div>
+        </div>
+        <div class="sl-buckets">${bucketsHtml}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderLinkedin(li) {
+  if (!li) return '';
+  const cols = [
+    { key: 'in_progress', label: 'In progress', items: li.in_progress || [] },
+    { key: 'planned',     label: 'Planned',     items: li.planned || [] },
+    { key: 'shipped',     label: 'Shipped',     items: li.shipped || [] }
+  ];
+  return cols.map(col => {
+    const itemsHtml = col.items.length === 0
+      ? '<div class="lc-empty">— none —</div>'
+      : `<ul class="lc-list">${col.items.map(r => `
+          <li>
+            <div class="li-deliverable">${escapeHtml(r.deliverable)}</div>
+            <div class="li-meta">
+              <span class="li-date">${escapeHtml(r.publish)}</span>
+              <span class="li-channel">${escapeHtml(r.channel)}</span>
+            </div>
+          </li>
+        `).join('')}</ul>`;
+    return `
+      <div class="li-col" data-status="${col.key}">
+        <div class="lc-head">
+          <span class="lc-label">${escapeHtml(col.label)}</span>
+          <span class="lc-count">${col.items.length}</span>
+        </div>
+        ${itemsHtml}
+      </div>
+    `;
+  }).join('');
+}
+
+async function load() {
+  let data;
+  try {
+    const res = await fetch('data.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch (e) {
+    document.querySelector('.wrap').innerHTML =
+      '<div class="error"><b>Could not load data.json.</b> Make sure the page is served via HTTP (not file://) and that data.json exists in the same folder. Error: ' + e.message + '</div>';
+    return;
+  }
+
+  const promptMap = { 'refresh-dashboard': REFRESH_PROMPT };
+  for (const lane of data.blog_swimlanes || []) {
+    if (lane.new_run_prompt) promptMap['blog:' + lane.slug] = lane.new_run_prompt;
+  }
+  (data.this_week?.rows || []).forEach((r, i) => {
+    const p = buildRowPrompt(r);
+    if (p) promptMap['row:tw:' + i] = p;
+  });
+  (data.actions || []).forEach(a => {
+    if (a.prompt) promptMap['action:' + a.id] = a.prompt;
+  });
+  window.__promptMap = promptMap;
+
+  document.getElementById('last-reconciled').textContent = data.last_reconciled || '—';
+  document.getElementById('generated-at').textContent = data.generated_at || '—';
+
+  document.getElementById('current-csv').innerHTML = renderCurrentCsv(data);
+  document.getElementById('next-actions').innerHTML = renderNextActions(data.actions);
+  document.getElementById('csv-strip').innerHTML = renderCsvStrip(data.csvs);
+  document.getElementById('this-week').innerHTML = renderThisWeek(data.this_week, data.csvs);
+  document.getElementById('stats').innerHTML = renderStats(data.stats);
+  document.getElementById('pipeline').innerHTML = renderPipeline(data.weeks, data.csvs);
+  document.getElementById('briefs').innerHTML = renderBriefs(data.briefs);
+  document.getElementById('blogs').innerHTML = renderBlogSwimLanes(data.blog_swimlanes);
+  document.getElementById('linkedin').innerHTML = renderLinkedin(data.linkedin);
+  document.getElementById('all-actions').innerHTML = renderAllActions(data.actions);
+
+  document.body.addEventListener('click', async (ev) => {
+    const btn = ev.target.closest('[data-copy-prompt]');
+    if (!btn) return;
+    ev.preventDefault();
+    const key = btn.getAttribute('data-copy-prompt');
+    const prompt = window.__promptMap[key];
+    if (!prompt) { showToast('No prompt configured for ' + key); return; }
+    const ok = await copyToClipboard(prompt);
+    showToast(ok ? 'Copied! Paste into Claude.' : 'Copy failed.');
+  });
+}
+load();
+</script>
+</body>
+</html>

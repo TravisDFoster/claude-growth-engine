@@ -145,6 +145,7 @@ Expand the brief's "Angle / outline" section into a full H1 / H2 / H3 structure:
 - ≥1 H2 or H3 includes the primary keyword or a secondary keyword
 - Structure should commit to the search intent — for "how-to" intent, sections are steps; for "best X" intent, sections are options
 - Where the brief lists sibling links, note in the outline which H2/H3 will host the link (so the writer knows where to place it, not just that links exist)
+- **Mark the planned Content 1 / Content 2 split point** in the H2 list — typically the H2 where the post pivots from diagnosis to operational fixes. Webflow's blog template renders Content 1 (first half, diagnosis arc) and Content 2 (second half, operational arc) as separate Rich Text fields, and the editing skill drops a `**[Middle CTA — variant]**` marker at this boundary. Balance the two halves so each can stand alone — outlines with 5 diagnosis H2s and 1 operational H2 will force the writer to over- or under-build a half. See [`seo-blog-editing/SKILL.md`](../seo-blog-editing/SKILL.md#step-1--insert-the-five-visible-body-markers) for the full marker spec.
 
 ---
 

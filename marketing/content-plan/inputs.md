@@ -14,6 +14,10 @@
 
 ## Topic candidates
 
+### 2026-05-27 (from [competitor-marketing/weekly/2026-W22.md](../../research/competitor-marketing/weekly/2026-W22.md))
+
+- **"Best Poppulo Alternatives in 2026 (Post-Sociabble)" — conquest listicle blog post.** Time-the-attack against Poppulo's 2026-05-26 Sociabble acquisition (M&A captures Poppulo's marketing attention for 60–90 days). Frame around single-platform vs. acquired-product seams + Foundations free on-ramp ("Switch in an afternoon, free forever"). ContactMonkey's 5/22 "Best Poppulo Alternatives 2026" piece is the live competitor template. Slots cleanly into the existing [comparison-seo-pages](../../personal-assistant/projects/comparison-seo-pages.md) Phase 2 listicle queue. ([W22 digest §Ideas to steal](../../research/competitor-marketing/weekly/2026-W22.md))
+
 ### 2026-05-20 (from [team-update/2026-05-20.md](../../research/ic-trends/team-update/2026-05-20.md))
 
 - **A/B-test homepage hero on "the execution layer for internal comms" frame.** Cates + Workvivo using identical "execution problem" language inside 8 days; claim before it ossifies (~30–60 day window). ([team-update §1](../../research/ic-trends/team-update/2026-05-20.md))

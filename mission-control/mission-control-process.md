@@ -1,17 +1,17 @@
-# Claude Dashboard — Refresh Process
+# Mission Control — Refresh Process
 
-> Regenerate `data.json` so `index.html` (and `archive.html`) reflect: current pinned panels, recent activity across every report folder, per-category last-run + stale state. Output: `/Users/travisfoster/claude-code/cerkl/claude-dashboard/data.json`.
+> Regenerate `data.json` so `index.html` (and `archive.html`) reflect: current pinned panels, recent activity across every report folder, per-category last-run + stale state. Output: `/Users/travisfoster/claude-code/cerkl/mission-control/data.json`.
 
-Browse at: **http://127.0.0.1:3000/cerkl/claude-dashboard/**
+Browse at: **http://127.0.0.1:3000/cerkl/mission-control/**
 
 ## Trigger
 
 Routes here from `cerkl/CLAUDE.md`:
 
-- "Refresh my claude dashboard" / "Refresh the claude dashboard"
-- "Update my claude dashboard" / "Update the claude dashboard"
-- "Let's review the claude dashboard project"
-- "Rebuild the claude dashboard"
+- "Refresh Mission Control" / "Refresh the dashboard"
+- "Update Mission Control" / "Update the dashboard"
+- "Let's review Mission Control"
+- "Rebuild Mission Control"
 - "Sync the dashboard"
 
 ## Inputs
@@ -20,7 +20,7 @@ None to ask. Reads `sources.md` and scans the folders it declares.
 
 ## Context to load
 
-- [/Users/travisfoster/claude-code/cerkl/claude-dashboard/sources.md](sources.md) — pinned-item declarations + category registry
+- [/Users/travisfoster/claude-code/cerkl/mission-control/sources.md](sources.md) — pinned-item declarations + category registry
 
 ## Steps
 
@@ -60,6 +60,7 @@ find /Users/travisfoster/claude-code/cerkl/research/ic-trends/daily/ -maxdepth 1
     - `ic-trends-team-updates`: `"Team Update — {date}"`
     - `competitor-marketing-weekly`: `"Week {NN}"` from `YYYY-Www`
     - `competitor-marketing-profiles`: company name (strip trailing date)
+    - `sales-reporting`: `"Week {NN}"` from a single `YYYY-Www`; `"Weeks {NN}–{MM}"` from a `YYYY-Www-Wmm` range. Date = Monday of the **first** ISO week in the label.
     - `ic-trends-deepdives`: `"{Source} — {Topic}"` when filename starts with a known source token (`forrester`, `gartner`, `mckinsey`, `ragan`, `oracle`, `workshop`, `prdaily`, `hr-reporter`); otherwise default humanization
   - **url**: file path with `/Users/travisfoster/claude-code` stripped → server-relative path
   - **is_md**: ext is `.md`
@@ -95,7 +96,7 @@ For each pinned item with `extract_from` + `extract_section`:
 - `recent[]` = top 5 items across ALL `kind: html` categories, sorted by date desc (for the compact Recent strip — blog posts have their own zone)
 
 ### Step 9 — Write `data.json`
-- Path: [`/Users/travisfoster/claude-code/cerkl/claude-dashboard/data.json`](data.json)
+- Path: [`/Users/travisfoster/claude-code/cerkl/mission-control/data.json`](data.json)
 - Preserve the shape `index.html` expects. Schema reference at the bottom of this file.
 
 ### Step 10 — Summarize in chat
@@ -108,7 +109,7 @@ One paragraph; no file dump.
 
 ## Output
 
-- `cerkl/claude-dashboard/data.json` — overwritten in place
+- `cerkl/mission-control/data.json` — overwritten in place
 - Chat summary of what changed
 
 ## How to add a new category

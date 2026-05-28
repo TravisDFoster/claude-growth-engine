@@ -2,7 +2,7 @@
 
 > Living checklist of account-level prerequisites for Meta paid campaigns. Update inline as items change state — this file is loaded into context on every paid-meta task.
 
-**Last reviewed:** 2026-05-21
+**Last reviewed:** 2026-05-27
 
 ---
 
@@ -23,17 +23,22 @@
 | Domain verification (cerkl.com) | ❓ Verify | Required for accurate iOS 14.5+ aggregated event measurement |
 | Aggregated Event Measurement priority order | ❓ Verify | If domain is verified, confirm Foundations sign-up is priority 1 on the event list |
 
+## HubSpot source lists (CSV inputs to Meta)
+
+| Item | Status | Notes |
+|---|---|---|
+| HubSpot list — Meta Seed — Foundations Sign-ups | ⏳ Build in UI | Recipe in [audience-guidelines.md](audience-guidelines.md). ~115 contacts expected. Public Lists v3 API can't create cross-object contact lists; UI required. |
+| HubSpot list — Meta Exclusion — Demo Requests | ✅ Built 2026-05-27 (listId 1658) | 631 unique contacts. Active. Re-export monthly. |
+
 ## Audiences (Meta side)
 
 | Item | Status | Notes |
 |---|---|---|
-| Custom Audience — Foundations sign-up emails | ❓ To build | ~100 records; upload after CAPI verification |
-| Custom Audience — Demo-request emails | ❓ To build | ~15 records |
+| Custom Audience — Foundations sign-up emails | ❓ To build | Upload CSV exported from HubSpot list `Meta Seed — Foundations Sign-ups` after CAPI verification |
 | Lookalike — 1% US + CA from above | ❓ To build | Cell A in test 1 |
+| Custom Audience — Demo requests (exclusion) | ❓ To build | Upload CSV exported from HubSpot list `Meta Exclusion — Demo Requests` (listId 1658) |
 | Custom Audience — Pixel visitors 180d | ❓ To build (auto once Pixel is live) | Cell C in test 1 |
 | Custom Audience — IG / FB engagers 90d | ❓ To build (auto) | Cell C in test 1 |
-| Custom Audience — Existing Foundations users (exclusion) | ❓ To build | Exclusion for cells A, B |
-| Custom Audience — Paid customers (exclusion) | ❓ To build | Exclusion for cells A, B |
 
 ## Creative
 

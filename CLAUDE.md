@@ -13,11 +13,12 @@ Don't forget. Work is supposed to be fun! We take the task at hand seriously, bu
 |---|---|
 | Growth strategy, diagnosis, roadmap, strategic planning | `strategy/` |
 | Marketing programs, content, channels, demand gen, webinars | `marketing/` |
-| Outbound sequences, discovery, objection handling, sales enablement | `sales/` |
+| Outbound sequences, discovery, objection handling, sales enablement, weekly sales reporting | `sales/` |
 | HubSpot CRM — cleanup, enrichment, segments, workflows, audit, emails | `hubspot/` |
 | Travis's schedule, projects, meetings, task list, PA | `personal-assistant/` |
 | IC trends, market intel, horizon-scan research | `research/` |
-| Refresh / update / review the claude dashboard, sync / rebuild the dashboard | [`claude-dashboard/claude-dashboard-process.md`](claude-dashboard/claude-dashboard-process.md) |
+| Refresh / update / review Mission Control (ops dashboard), sync / rebuild the dashboard | [`mission-control/mission-control-process.md`](mission-control/mission-control-process.md) |
+| Refresh / update / sync / rebuild the content dashboard | [`content-dashboard/content-dashboard-process.md`](content-dashboard/content-dashboard-process.md) |
 | Build a new process / spin up a new workflow | [`skills/build-process/SKILL.md`](skills/build-process/SKILL.md) |
 | Upload `.md` files to Google Drive as native Google Docs (default destination: Claude-Uploads) | [`skills/md-to-drive/SKILL.md`](skills/md-to-drive/SKILL.md) |
 | Render a `.md` artifact (deep-dive, daily recap) as styled HTML sibling | [`skills/md-to-html/SKILL.md`](skills/md-to-html/SKILL.md) |
@@ -45,7 +46,8 @@ cerkl/
 ├── hubspot/                     ← CRM ops; 31 reusable skills + Python scripts
 ├── personal-assistant/          ← Travis's schedule, projects, meetings, task list
 ├── research/                    ← horizon-scan research (IC trends, market intel)
-└── claude-dashboard/            ← local browser index of all reports/audits/recaps across cerkl/
+├── mission-control/             ← ops command center: leadership reports, research, audits + launch actions
+└── content-dashboard/           ← local browser view of content pipeline: briefs · weeks · blogs · LinkedIn
 ```
 
 ## Git Sync

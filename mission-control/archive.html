@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Archive · Claude Dashboard</title>
+<title>Archive · Mission Control</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -185,7 +185,7 @@
 <div class="wrap">
 
   <header class="hero">
-    <div class="breadcrumb"><a href="index.html">claude-dashboard</a> · archive · <span id="bc-cat">…</span></div>
+    <div class="breadcrumb"><a href="index.html">mission-control</a> · archive · <span id="bc-cat">…</span></div>
     <h1 id="title">Archive</h1>
     <div class="meta-row" id="meta"></div>
   </header>
@@ -238,7 +238,7 @@ async function load() {
     return;
   }
 
-  document.title = cat.label + ' · Archive · Claude Dashboard';
+  document.title = cat.label + ' · Archive · Mission Control';
   document.getElementById('bc-cat').textContent = cat.label;
   document.getElementById('title').textContent = cat.label;
   document.getElementById('meta').innerHTML =

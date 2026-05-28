@@ -1,0 +1,323 @@
+{
+  "generated_at": "2026-05-27",
+  "last_reconciled": "2026-05-21",
+  "current_csv_file": "2026-W23.csv",
+  "stats": {
+    "briefs_total": 14,
+    "briefs_queued": 7,
+    "briefs_scheduled": 6,
+    "briefs_in_progress": 1,
+    "briefs_shipped": 0,
+    "seo_blog_in_flight": 13,
+    "seo_blog_live_count": 8,
+    "icpro_blog_in_flight": 8,
+    "icpro_blog_live_count": 4,
+    "linkedin_planned": 15,
+    "linkedin_in_progress": 1,
+    "linkedin_shipped": 0,
+    "linkedin_blocked": 0,
+    "weeks_planned": 4,
+    "csvs_in_prep": 1,
+    "csvs_ready": 0,
+    "csvs_imported": 2,
+    "current_csv_drive_fill": "4/4",
+    "current_csv_copy_fill": "3/4"
+  },
+  "csvs": [
+    {
+      "file": "2026-W21.csv",
+      "path": "/cerkl/marketing/content-plan/jira/imports/2026-W21.csv",
+      "week_iso": "2026-W21",
+      "week_monday": "2026-05-18",
+      "week_range": "2026-05-18 → 2026-05-22",
+      "status": "imported",
+      "counts": { "tasks_total": 2, "cerkl_blog_tasks": 1, "icpro_blog_tasks": 1, "linkedin_tasks": 0, "subtasks_total": 8 },
+      "readiness": {
+        "drive_urls":    { "filled": 2, "total": 2 },
+        "linkedin_copy": { "filled": 0, "total": 0 }
+      },
+      "import_ready": true
+    },
+    {
+      "file": "2026-W22.csv",
+      "path": "/cerkl/marketing/content-plan/jira/imports/2026-W22.csv",
+      "week_iso": "2026-W22",
+      "week_monday": "2026-05-25",
+      "week_range": "2026-05-25 → 2026-05-29",
+      "status": "imported",
+      "counts": { "tasks_total": 6, "cerkl_blog_tasks": 2, "icpro_blog_tasks": 1, "linkedin_tasks": 3, "subtasks_total": 24 },
+      "readiness": {
+        "drive_urls":    { "filled": 1, "total": 3 },
+        "linkedin_copy": { "filled": 0, "total": 3 }
+      },
+      "import_ready": false,
+      "note": "Already imported (publish week May 25–29). Predates the Task-level Copy: convention — LinkedIn copy was drafted/posted outside the CSV, so the in-CSV copy count reads 0/3. Readiness is informational for imported weeks."
+    },
+    {
+      "file": "2026-W23.csv",
+      "path": "/cerkl/marketing/content-plan/jira/imports/2026-W23.csv",
+      "week_iso": "2026-W23",
+      "week_monday": "2026-06-01",
+      "week_range": "2026-06-01 → 2026-06-05",
+      "status": "in-prep",
+      "counts": { "tasks_total": 8, "cerkl_blog_tasks": 3, "icpro_blog_tasks": 1, "linkedin_tasks": 4, "subtasks_total": 32 },
+      "readiness": {
+        "drive_urls":    { "filled": 4, "total": 4 },
+        "linkedin_copy": { "filled": 3, "total": 4 }
+      },
+      "import_ready": false,
+      "note": "All blog Drive URLs populated; 3 of 4 LinkedIn posts have copy drafted in the Task Description. T007 (short-video, wraps cross-channel-read-gap) is the only post still missing its Copy: block."
+    }
+  ],
+  "actions": [
+    {
+      "id": "reconcile",
+      "label": "Run Monday reconcile",
+      "ready": true,
+      "reason": "Last reconciled 2026-05-21; next publish week to lock is 2026-W24 (2026-06-08 → 2026-06-12)",
+      "prompt": "Run the Monday reconcile for the upcoming publish week (2026-W24, 2026-06-08 → 2026-06-12).\n\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/plan-reconcile-process.md"
+    },
+    {
+      "id": "generate-csv-scaffold",
+      "label": "Generate Jira CSV scaffold for 2026-W24",
+      "ready": true,
+      "reason": "No CSV exists yet for 2026-W24 (next publish week)",
+      "prompt": "Generate the Jira CSV scaffold for the next publish week (2026-W24).\n\nOutput: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira/imports/2026-W24.csv\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira/jira-scaffold-process.md"
+    },
+    {
+      "id": "bulk-write-linkedin",
+      "label": "Bulk-write LinkedIn copy for 2026-W23",
+      "ready": true,
+      "reason": "1 LinkedIn post in 2026-W23.csv still needs copy: T007 (short-video, wraps cross-channel-read-gap)",
+      "prompt": "Bulk-write the remaining LinkedIn copy in this week's Jira CSV.\n\nJira CSV: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira/imports/2026-W23.csv\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/linkedin/linkedin-process.md\n\nFor each LinkedIn Task whose Description has no Copy: block (or still contains [COPY_PLACEHOLDER]), draft the post and add a Copy: section to the Task Description with [CAPTION] / [POLL], [ASSET SPEC], and [HASHTAGS]. As of last refresh that's T007 (short-video, wraps cross-channel-read-gap)."
+    },
+    {
+      "id": "fill-brief-gaps",
+      "label": "Fill SEO brief gaps in rolling-4week",
+      "ready": true,
+      "reason": "Week 4 (2026-06-15 → 2026-06-19) has 2 TBD rows waiting on SEO briefs (deadline 2026-05-22 — past due)",
+      "prompt": "Write SEO briefs for the rolling-4week rows annotated `needs brief from SEO`.\n\nGaps right now (per /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md, Week 4):\n- TBD — Juneteenth + employee recognition communications (publish 2026-06-15)\n- TBD — DEI comms that land vs. the performative trap (publish 2026-06-17)\n\nOutput one brief per row in /Users/travisfoster/claude-code/cerkl/marketing/seo/briefs/, following _template.md."
+    },
+    {
+      "id": "refresh-dashboard",
+      "label": "Refresh this dashboard",
+      "ready": true,
+      "reason": "Always available",
+      "prompt": "Refresh my content dashboard.\n\nProcess: /Users/travisfoster/claude-code/cerkl/content-dashboard/content-dashboard-process.md"
+    },
+    {
+      "id": "bulk-write-cerkl-blog",
+      "label": "Bulk-write cerkl.com blog drafts for 2026-W23",
+      "ready": false,
+      "reason": "All 3 cerkl.com blog drafts in 2026-W23.csv already have Drive URLs filled in",
+      "prompt": "Bulk-write all cerkl.com blog drafts for rows with [DRIVE_URL_PLACEHOLDER] in this week's Jira CSV.\n\nJira CSV: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira/imports/2026-W23.csv\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/seo-blog-process.md\n\nFor each cerkl.com blog Task in the CSV with [DRIVE_URL_PLACEHOLDER], run the writing+publishing pipeline and replace the placeholder with the resulting Google Drive URL."
+    },
+    {
+      "id": "bulk-write-icpro-blog",
+      "label": "Bulk-write Internal Comms Pro blog drafts for 2026-W23",
+      "ready": false,
+      "reason": "The 1 ICPro blog draft in 2026-W23.csv already has its Drive URL filled in",
+      "prompt": "Bulk-write all Internal Comms Pro blog drafts for rows with [DRIVE_URL_PLACEHOLDER] in this week's Jira CSV.\n\nJira CSV: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira/imports/2026-W23.csv\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/icpro-blog-process.md\n\nFor each ICPro blog Task in the CSV with [DRIVE_URL_PLACEHOLDER], run the writing+publishing pipeline and replace the placeholder with the resulting Google Drive URL."
+    }
+  ],
+  "carryover": [
+    {
+      "deliverable": "Has your leadership ever asked you to justify comms spend?",
+      "channel": "LinkedIn poll",
+      "publish": "2026-05-21",
+      "owner": "Furqan",
+      "status": "in-progress",
+      "source_brief": "wraps case-investment blog",
+      "source_brief_url": null
+    }
+  ],
+  "this_week": {
+    "label": "Week 1 — May 25–29: Reinforce and Extend",
+    "range": "2026-05-25 → 2026-05-29",
+    "locked": true,
+    "in_jira": true,
+    "note": "Memorial Day May 25 — no sends. Publishing resumes Tuesday. Lead week compressed; writing pipeline runs Tue–Wed May 26–27. EXTRA cerkl.com blog (sharepoint) added this week per 2026-05-21 reconcile.",
+    "rows": [
+      { "deliverable": "From metrics to a leadership story: reporting on internal comms in a way that lands", "channel": "Blog — cerkl.com", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "—", "source_brief_url": null },
+      { "deliverable": "SharePoint for Internal Communications — A 2026 Playbook", "channel": "Blog — cerkl.com", "publish": "2026-05-28", "owner": "Furqan", "status": "in-progress", "source_brief": "sharepoint-internal-communications", "source_brief_url": "/cerkl/marketing/seo/briefs/sharepoint-internal-communications.md" },
+      { "deliverable": "Employee wellness comms: how segmentation helps you reach the right people", "channel": "Blog — internalcommspro.com", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "—", "source_brief_url": null },
+      { "deliverable": "Month recap: prove your impact with better analytics", "channel": "LinkedIn static/theme", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog", "source_brief_url": null },
+      { "deliverable": "Link post: metrics to leadership story blog", "channel": "LinkedIn static/blog", "publish": "2026-05-27", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog", "source_brief_url": null },
+      { "deliverable": "When reporting internal comms metrics to leadership, what's the hardest part?", "channel": "LinkedIn poll", "publish": "2026-05-28", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog", "source_brief_url": null }
+    ]
+  },
+  "weeks": [
+    {
+      "n": 1,
+      "label": "Week 1 — May 25–29: Reinforce and Extend",
+      "range": "2026-05-25 → 2026-05-29",
+      "locked": true,
+      "in_jira": true,
+      "rows": [
+        { "deliverable": "From metrics to a leadership story", "channel": "Blog — cerkl.com", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "—" },
+        { "deliverable": "SharePoint for Internal Communications", "channel": "Blog — cerkl.com", "publish": "2026-05-28", "owner": "Furqan", "status": "in-progress", "source_brief": "sharepoint-internal-communications", "source_brief_url": "/cerkl/marketing/seo/briefs/sharepoint-internal-communications.md" },
+        { "deliverable": "Employee wellness comms segmentation", "channel": "Blog — internalcommspro.com", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "—" },
+        { "deliverable": "Month recap: prove your impact", "channel": "LinkedIn static/theme", "publish": "2026-05-26", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog" },
+        { "deliverable": "Link post: metrics to leadership story", "channel": "LinkedIn static/blog", "publish": "2026-05-27", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog" },
+        { "deliverable": "When reporting metrics, what's hardest?", "channel": "LinkedIn poll", "publish": "2026-05-28", "owner": "Furqan", "status": "planned", "source_brief": "wraps leadership-story blog" }
+      ]
+    },
+    {
+      "n": 2,
+      "label": "Week 2 — June 1–5: Build the Problem",
+      "range": "2026-06-01 → 2026-06-05",
+      "locked": false,
+      "in_jira": false,
+      "rows": [
+        { "deliverable": "Internal Communications in Manufacturing", "channel": "Blog — cerkl.com", "publish": "2026-06-01", "owner": "Furqan", "status": "planned", "source_brief": "internal-communications-in-manufacturing", "source_brief_url": "/cerkl/marketing/seo/briefs/internal-communications-in-manufacturing.md" },
+        { "deliverable": "The Cross-Channel Read Gap", "channel": "Blog — cerkl.com", "publish": "2026-06-03", "owner": "Furqan", "status": "planned", "source_brief": "cross-channel-read-gap", "source_brief_url": "/cerkl/marketing/seo/briefs/cross-channel-read-gap.md" },
+        { "deliverable": "Pride Month internal comms", "channel": "Blog — internalcommspro.com", "publish": "2026-06-02", "owner": "Furqan", "status": "planned", "source_brief": "—" },
+        { "deliverable": "The frontline reach problem most teams haven't solved", "channel": "LinkedIn static/theme", "publish": "2026-06-02", "owner": "Furqan", "status": "planned", "source_brief": "wraps manufacturing blog" },
+        { "deliverable": "Link post: Internal Communications in Manufacturing", "channel": "LinkedIn static/blog", "publish": "2026-06-03", "owner": "Furqan", "status": "planned", "source_brief": "wraps manufacturing blog" },
+        { "deliverable": "The 3 places your internal comms is silently leaking employees", "channel": "LinkedIn short video", "publish": "2026-06-04", "owner": "Furqan", "status": "planned", "source_brief": "wraps cross-channel-read-gap blog" },
+        { "deliverable": "What % of your workforce reads every important update?", "channel": "LinkedIn poll", "publish": "2026-06-05", "owner": "Furqan", "status": "planned", "source_brief": "wraps cross-channel-read-gap blog" }
+      ]
+    },
+    {
+      "n": 3,
+      "label": "Week 3 — June 8–12: Show the Solution",
+      "range": "2026-06-08 → 2026-06-12",
+      "locked": false,
+      "in_jira": false,
+      "rows": [
+        { "deliverable": "Microsoft Teams for Internal Communications", "channel": "Blog — cerkl.com", "publish": "2026-06-08", "owner": "Furqan", "status": "planned", "source_brief": "microsoft-teams-internal-communications", "source_brief_url": "/cerkl/marketing/seo/briefs/microsoft-teams-internal-communications.md" },
+        { "deliverable": "Internal Communications in Financial Services", "channel": "Blog — cerkl.com", "publish": "2026-06-10", "owner": "Furqan", "status": "planned", "source_brief": "internal-communications-in-financial-services", "source_brief_url": "/cerkl/marketing/seo/briefs/internal-communications-in-financial-services.md" },
+        { "deliverable": "What inclusive internal comms actually looks like", "channel": "Blog — internalcommspro.com", "publish": "2026-06-09", "owner": "Furqan", "status": "planned", "source_brief": "—" },
+        { "deliverable": "Why Microsoft Teams alone isn't a strategy", "channel": "LinkedIn static/theme", "publish": "2026-06-09", "owner": "Furqan", "status": "planned", "source_brief": "wraps microsoft-teams blog" },
+        { "deliverable": "Link post: Microsoft Teams for Internal Communications", "channel": "LinkedIn static/blog", "publish": "2026-06-10", "owner": "Furqan", "status": "planned", "source_brief": "wraps microsoft-teams blog" },
+        { "deliverable": "Inside the comms challenges unique to financial services", "channel": "LinkedIn short video", "publish": "2026-06-11", "owner": "Furqan", "status": "planned", "source_brief": "wraps financial-services blog" },
+        { "deliverable": "Which channel does your workforce actually rely on?", "channel": "LinkedIn poll", "publish": "2026-06-12", "owner": "Furqan", "status": "planned", "source_brief": "wraps microsoft-teams blog" }
+      ]
+    },
+    {
+      "n": 4,
+      "label": "Week 4 — June 15–19: Juneteenth Anchor",
+      "range": "2026-06-15 → 2026-06-19",
+      "locked": false,
+      "in_jira": false,
+      "note": "Juneteenth Friday — no Friday sends. Two cerkl.com blog rows blocked pending SEO briefs by 2026-05-22.",
+      "rows": [
+        { "deliverable": "TBD — Juneteenth + employee recognition", "channel": "Blog — cerkl.com", "publish": "2026-06-15", "owner": "Furqan", "status": "blocked", "source_brief": "needs brief from SEO by 2026-05-22" },
+        { "deliverable": "TBD — DEI comms that land vs. the performative trap", "channel": "Blog — cerkl.com", "publish": "2026-06-17", "owner": "Furqan", "status": "blocked", "source_brief": "needs brief from SEO by 2026-05-22" },
+        { "deliverable": "Communicating DEI initiatives in ways that land", "channel": "Blog — internalcommspro.com", "publish": "2026-06-16", "owner": "Furqan", "status": "planned", "source_brief": "—" },
+        { "deliverable": "Juneteenth: communicate authentically, not performatively", "channel": "LinkedIn static/theme", "publish": "2026-06-17", "owner": "Furqan", "status": "planned", "source_brief": "wraps Juneteenth blog (TBD)" },
+        { "deliverable": "Link post: Juneteenth practical guide", "channel": "LinkedIn static/blog", "publish": "2026-06-18", "owner": "Furqan", "status": "planned", "source_brief": "wraps Juneteenth blog (TBD)" },
+        { "deliverable": "Juneteenth in 60 seconds: framework for internal comms", "channel": "LinkedIn short video", "publish": "2026-06-18", "owner": "Furqan", "status": "planned", "source_brief": "wraps Juneteenth blog (TBD)" },
+        { "deliverable": "How does your org typically recognize Juneteenth internally?", "channel": "LinkedIn poll", "publish": "2026-06-16", "owner": "Furqan", "status": "planned", "source_brief": "wraps Juneteenth blog (TBD)" }
+      ]
+    }
+  ],
+  "briefs": {
+    "queued": [
+      { "title": "The AI Execution Gap in Internal Communications", "slug": "ai-execution-internal-communications", "url": "/cerkl/marketing/seo/briefs/ai-execution-internal-communications.md", "target_channel": "seo-blog" },
+      { "title": "Cerkl vs ContactMonkey — Internal Communications Platform Comparison", "slug": "cerkl-vs-contactmonkey", "url": "/cerkl/marketing/seo/briefs/cerkl-vs-contactmonkey.md", "target_channel": "comparison-seo" },
+      { "title": "Cerkl vs Workshop — Email-First or Omni-Channel Internal Comms?", "slug": "cerkl-vs-workshop", "url": "/cerkl/marketing/seo/briefs/cerkl-vs-workshop.md", "target_channel": "comparison-seo" },
+      { "title": "How to Claim Your Strategic Seat in Internal Communications", "slug": "claim-strategic-seat-internal-communications", "url": "/cerkl/marketing/seo/briefs/claim-strategic-seat-internal-communications.md", "target_channel": "seo-blog" },
+      { "title": "Corporate Communications Tools — The 2026 Buyer's Guide", "slug": "corporate-communication-tools", "url": "/cerkl/marketing/seo/briefs/corporate-communication-tools.md", "target_channel": "website" },
+      { "title": "The 2026 Internal Communications Measurement Framework", "slug": "internal-communications-measurement-framework", "url": "/cerkl/marketing/seo/briefs/internal-communications-measurement-framework.md", "target_channel": "seo-blog" },
+      { "title": "From Metrics to a Leadership Story — Reporting on Internal Comms", "slug": "internal-communications-report-to-leadership", "url": "/cerkl/marketing/seo/briefs/internal-communications-report-to-leadership.md", "target_channel": "seo-blog" }
+    ],
+    "scheduled": [
+      { "title": "Internal Communications in Manufacturing — A 2026 Frontline Playbook", "slug": "internal-communications-in-manufacturing", "url": "/cerkl/marketing/seo/briefs/internal-communications-in-manufacturing.md", "scheduled_for": "2026-06-01", "target_channel": "seo-blog" },
+      { "title": "The Cross-Channel Read Gap — What Cerkl Data Reveals About Real Employee Reach", "slug": "cross-channel-read-gap", "url": "/cerkl/marketing/seo/briefs/cross-channel-read-gap.md", "scheduled_for": "2026-06-03", "target_channel": "seo-blog" },
+      { "title": "Microsoft Teams for Internal Communications — A 2026 Playbook", "slug": "microsoft-teams-internal-communications", "url": "/cerkl/marketing/seo/briefs/microsoft-teams-internal-communications.md", "scheduled_for": "2026-06-08", "target_channel": "seo-blog" },
+      { "title": "Internal Communications in Financial Services — A 2026 Playbook", "slug": "internal-communications-in-financial-services", "url": "/cerkl/marketing/seo/briefs/internal-communications-in-financial-services.md", "scheduled_for": "2026-06-10", "target_channel": "seo-blog" },
+      { "title": "10 Best Internal Newsletter Software Solutions for 2026 (Refresh)", "slug": "internal-email-newsletter-software", "url": "/cerkl/marketing/seo/briefs/internal-email-newsletter-software.md", "scheduled_for": "2026-06-22", "target_channel": "seo-blog" },
+      { "title": "7 Best Free Employee Newsletter Tools for 2026", "slug": "best-free-employee-newsletter-tools", "url": "/cerkl/marketing/seo/briefs/best-free-employee-newsletter-tools.md", "scheduled_for": "2026-06-24", "target_channel": "seo-blog" }
+    ],
+    "in_progress": [
+      { "title": "SharePoint for Internal Communications — A 2026 Playbook", "slug": "sharepoint-internal-communications", "url": "/cerkl/marketing/seo/briefs/sharepoint-internal-communications.md", "scheduled_for": "2026-05-28", "target_channel": "seo-blog" }
+    ]
+  },
+  "blog_swimlanes": [
+    {
+      "slug": "seo-blog",
+      "label": "Cerkl Blog (cerkl.com)",
+      "subtitle": "Webflow · primary growth channel",
+      "new_run_prompt": "Draft this week's planned Cerkl blog post(s) for cerkl.com.\n\nCheck the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/seo-blog-process.md",
+      "buckets": {
+        "pre_writing": [
+          { "title": "Sharepoint Internal Communications", "date": "2026-05-28", "slug": "sharepoint-internal-communications", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-28_sharepoint-internal-communications_pre-writing.md" },
+          { "title": "From Metrics to Leadership Story", "date": "2026-05-26", "slug": "from-metrics-to-leadership-story", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-26_from-metrics-to-leadership-story_pre-writing.md" },
+          { "title": "Employee Wellness Comms Segmentation — Reach Right People", "date": "2026-05-26", "slug": "employee-wellness-comms-segmentation-reach-right-people", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-26_employee-wellness-comms-segmentation-reach-right-people_pre-writing.md" },
+          { "title": "Building Case for Comms Investment Using Data", "date": "2026-05-19", "slug": "building-case-comms-investment-using-data", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-19_building-case-comms-investment-using-data_pre-writing.md" },
+          { "title": "Communicating Inclusively Across Diverse Workforces", "date": "2026-05-19", "slug": "communicating-inclusively-across-diverse-workforces", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-19_communicating-inclusively-across-diverse-workforces_pre-writing.md" },
+          { "title": "Hidden Cost Benefits Communication", "date": "2026-05-14", "slug": "hidden-cost-benefits-communication", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-14_hidden-cost-benefits-communication_pre-writing.md" },
+          { "title": "Mental Health Awareness Month — Wellness Programs Segmentation", "date": "2026-05-13", "slug": "mental-health-awareness-month-wellness-programs-segmentation", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-13_mental-health-awareness-month-wellness-programs-segmentation_pre-writing.md" },
+          { "title": "Using Engagement Data to Improve Internal Comms Messaging", "date": "2026-05-12", "slug": "using-engagement-data-to-improve-internal-comms-messaging", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-12_using-engagement-data-to-improve-internal-comms-messaging_pre-writing.md" },
+          { "title": "How to Benchmark Open Click Rates Employee Email", "date": "2026-05-06", "slug": "how-to-benchmark-open-click-rates-employee-email", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-06_how-to-benchmark-open-click-rates-employee-email_pre-writing.md" },
+          { "title": "What Good Internal Comms Analytics Actually Looks Like", "date": "2026-05-05", "slug": "what-good-internal-comms-analytics-actually-looks-like", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-pre-writing/2026-05-05_what-good-internal-comms-analytics-actually-looks-like_pre-writing.md" }
+        ],
+        "draft": [
+          { "title": "Sharepoint Internal Communications", "date": "2026-05-28", "slug": "sharepoint-internal-communications", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-draft/2026-05-28_sharepoint-internal-communications_draft.md" },
+          { "title": "Hidden Cost Benefits Communication", "date": "2026-05-21", "slug": "hidden-cost-benefits-communication", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-draft/2026-05-21_hidden-cost-benefits-communication_draft.md" },
+          { "title": "Hidden Cost Benefits Communication", "date": "2026-05-14", "slug": "hidden-cost-benefits-communication", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-draft/2026-05-14_hidden-cost-benefits-communication_draft.md" }
+        ],
+        "live": [
+          { "title": "Sharepoint Internal Communications", "date": "2026-05-28", "slug": "sharepoint-internal-communications", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-28_sharepoint-internal-communications_live.md" },
+          { "title": "From Metrics to Leadership Story", "date": "2026-05-26", "slug": "from-metrics-to-leadership-story", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-26_from-metrics-to-leadership-story_live.md" },
+          { "title": "Hidden Cost Benefits Communication", "date": "2026-05-21", "slug": "hidden-cost-benefits-communication", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-21_hidden-cost-benefits-communication_live.md" },
+          { "title": "Building Case for Comms Investment Using Data", "date": "2026-05-19", "slug": "building-case-comms-investment-using-data", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-19_building-case-comms-investment-using-data_live.md" },
+          { "title": "Hidden Cost Benefits Communication", "date": "2026-05-14", "slug": "hidden-cost-benefits-communication", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-14_hidden-cost-benefits-communication_live.md" },
+          { "title": "Using Engagement Data to Improve Internal Comms Messaging", "date": "2026-05-12", "slug": "using-engagement-data-to-improve-internal-comms-messaging", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-12_using-engagement-data-to-improve-internal-comms-messaging_live.md" },
+          { "title": "What Good Internal Comms Analytics Actually Looks Like", "date": "2026-05-05", "slug": "what-good-internal-comms-analytics-actually-looks-like", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-05_what-good-internal-comms-analytics-actually-looks-like_live.md" },
+          { "title": "Insights Update — What's New for Foundations Users", "date": "TBD", "slug": "insights-update-whats-new-foundations-users", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/TBD_insights-update-whats-new-foundations-users_live.md" }
+        ]
+      }
+    },
+    {
+      "slug": "icpro-blog",
+      "label": "Internal Comms Pro (internalcommspro.com)",
+      "subtitle": "Wix · ICP-aligned secondary",
+      "new_run_prompt": "Draft this week's planned Internal Comms Pro blog post(s) for internalcommspro.com.\n\nCheck the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/icpro-blog-process.md",
+      "buckets": {
+        "pre_writing": [
+          { "title": "Employee Wellness Comms Segmentation — Reach Right People", "date": "2026-05-26", "slug": "employee-wellness-comms-segmentation-reach-right-people", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-pre-writing/2026-05-26_employee-wellness-comms-segmentation-reach-right-people_pre-writing.md" },
+          { "title": "Communicating Inclusively Across Diverse Workforces", "date": "2026-05-19", "slug": "communicating-inclusively-across-diverse-workforces", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-pre-writing/2026-05-19_communicating-inclusively-across-diverse-workforces_pre-writing.md" },
+          { "title": "Mental Health Awareness Month — Wellness Programs Segmentation", "date": "2026-05-13", "slug": "mental-health-awareness-month-wellness-programs-segmentation", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-pre-writing/2026-05-13_mental-health-awareness-month-wellness-programs-segmentation_pre-writing.md" },
+          { "title": "Benchmark Open Click Rates Employee Email", "date": "2026-05-06", "slug": "benchmark-open-click-rates-employee-email", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-pre-writing/2026-05-06_benchmark-open-click-rates-employee-email_pre-writing.md" }
+        ],
+        "draft": [
+          { "title": "Employee Wellness Comms Segmentation — Reach Right People", "date": "2026-05-26", "slug": "employee-wellness-comms-segmentation-reach-right-people", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-draft/2026-05-26_employee-wellness-comms-segmentation-reach-right-people_draft.md" },
+          { "title": "Communicating Inclusively Across Diverse Workforces", "date": "2026-05-19", "slug": "communicating-inclusively-across-diverse-workforces", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-draft/2026-05-19_communicating-inclusively-across-diverse-workforces_draft.md" },
+          { "title": "Mental Health Awareness Month — Wellness Programs Segmentation", "date": "2026-05-13", "slug": "mental-health-awareness-month-wellness-programs-segmentation", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-draft/2026-05-13_mental-health-awareness-month-wellness-programs-segmentation_draft.md" },
+          { "title": "Benchmark Open Click Rates Employee Email", "date": "2026-05-06", "slug": "benchmark-open-click-rates-employee-email", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-draft/2026-05-06_benchmark-open-click-rates-employee-email_draft.md" }
+        ],
+        "live": [
+          { "title": "Employee Wellness Comms Segmentation — Reach Right People", "date": "2026-05-26", "slug": "employee-wellness-comms-segmentation-reach-right-people", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-26_employee-wellness-comms-segmentation-reach-right-people_live.md" },
+          { "title": "Communicating Inclusively Across Diverse Workforces", "date": "2026-05-19", "slug": "communicating-inclusively-across-diverse-workforces", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-19_communicating-inclusively-across-diverse-workforces_live.md" },
+          { "title": "Mental Health Awareness Month — Wellness Programs Segmentation", "date": "2026-05-13", "slug": "mental-health-awareness-month-wellness-programs-segmentation", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-13_mental-health-awareness-month-wellness-programs-segmentation_live.md" },
+          { "title": "Benchmark Open & Click Rates — Employee Email", "date": "2026-05-06", "slug": "benchmark-open-click-rates-employee-email", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-06_benchmark-open-click-rates-employee-email_live.md" }
+        ]
+      }
+    }
+  ],
+  "linkedin": {
+    "planned": [
+      { "deliverable": "Month recap: prove your impact with better analytics", "channel": "LinkedIn static/theme", "publish": "2026-05-26", "owner": "Furqan", "source_brief": "wraps leadership-story blog" },
+      { "deliverable": "Link post: metrics to leadership story blog", "channel": "LinkedIn static/blog", "publish": "2026-05-27", "owner": "Furqan", "source_brief": "wraps leadership-story blog" },
+      { "deliverable": "When reporting metrics, what's the hardest part?", "channel": "LinkedIn poll", "publish": "2026-05-28", "owner": "Furqan", "source_brief": "wraps leadership-story blog" },
+      { "deliverable": "The frontline reach problem most teams haven't solved", "channel": "LinkedIn static/theme", "publish": "2026-06-02", "owner": "Furqan", "source_brief": "wraps manufacturing blog" },
+      { "deliverable": "Link post: Internal Communications in Manufacturing", "channel": "LinkedIn static/blog", "publish": "2026-06-03", "owner": "Furqan", "source_brief": "wraps manufacturing blog" },
+      { "deliverable": "The 3 places your internal comms is silently leaking employees", "channel": "LinkedIn short video", "publish": "2026-06-04", "owner": "Furqan", "source_brief": "wraps cross-channel-read-gap blog" },
+      { "deliverable": "What % of your workforce reads every important update?", "channel": "LinkedIn poll", "publish": "2026-06-05", "owner": "Furqan", "source_brief": "wraps cross-channel-read-gap blog" },
+      { "deliverable": "Why Microsoft Teams alone isn't a strategy", "channel": "LinkedIn static/theme", "publish": "2026-06-09", "owner": "Furqan", "source_brief": "wraps microsoft-teams blog" },
+      { "deliverable": "Link post: Microsoft Teams for Internal Communications", "channel": "LinkedIn static/blog", "publish": "2026-06-10", "owner": "Furqan", "source_brief": "wraps microsoft-teams blog" },
+      { "deliverable": "Inside comms challenges unique to financial services", "channel": "LinkedIn short video", "publish": "2026-06-11", "owner": "Furqan", "source_brief": "wraps financial-services blog" },
+      { "deliverable": "Which channel does your workforce actually rely on?", "channel": "LinkedIn poll", "publish": "2026-06-12", "owner": "Furqan", "source_brief": "wraps microsoft-teams blog" },
+      { "deliverable": "How does your org typically recognize Juneteenth?", "channel": "LinkedIn poll", "publish": "2026-06-16", "owner": "Furqan", "source_brief": "wraps Juneteenth blog (TBD)" },
+      { "deliverable": "Juneteenth: communicate authentically, not performatively", "channel": "LinkedIn static/theme", "publish": "2026-06-17", "owner": "Furqan", "source_brief": "wraps Juneteenth blog (TBD)" },
+      { "deliverable": "Link post: Juneteenth practical guide", "channel": "LinkedIn static/blog", "publish": "2026-06-18", "owner": "Furqan", "source_brief": "wraps Juneteenth blog (TBD)" },
+      { "deliverable": "Juneteenth in 60 seconds: framework for internal comms", "channel": "LinkedIn short video", "publish": "2026-06-18", "owner": "Furqan", "source_brief": "wraps Juneteenth blog (TBD)" }
+    ],
+    "in_progress": [
+      { "deliverable": "Has your leadership ever asked you to justify comms spend?", "channel": "LinkedIn poll", "publish": "2026-05-21", "owner": "Furqan", "source_brief": "wraps case-investment blog" }
+    ],
+    "shipped": []
+  }
+}

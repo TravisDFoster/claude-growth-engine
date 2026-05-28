@@ -30,6 +30,7 @@ Invoke these in roughly the order the project moves through phases.
 | Kickoff | Set up new webinar project (folder + brief + plan + tracking URLs) | [`webinar-project-init`](skills/webinar-project-init/SKILL.md) |
 | Planning | Fill out the brief content with the partner | [`webinar-brief`](skills/webinar-brief/SKILL.md) |
 | Content Dev | Registration page copy + speaker bios | [`webinar-registration-page`](skills/webinar-registration-page/SKILL.md) |
+| Content Dev | Webinar Canva assets (banner, social cards, 2-days-to-go) from brand templates | [`canva-asset-pack`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md) — *placeholder; until built, follow [canva-asset-checklist.md](canva-asset-checklist.md)* |
 | Promotion | 3-email sequence × 2 voices (Cerkl + partner) | [`webinar-promo-emails`](skills/webinar-promo-emails/SKILL.md) |
 | Promotion | Push the 3 Cerkl-voice emails into HubSpot as new drafts (clone a recent webinar promo as template; user publishes from UI) | [`hubspot/skills/draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) |
 | Promotion | 5 LinkedIn posts (intro, mirror, thought-leadership, 2 boosts) | [`webinar-linkedin-posts`](skills/webinar-linkedin-posts/SKILL.md) |

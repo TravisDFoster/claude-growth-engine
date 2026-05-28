@@ -168,6 +168,31 @@ Layout-specific patterns:
 - Watchlist is *much* denser than top items — small font, one line each, multi-column where space allows
 - Don't include a "recommendation" block — daily recaps don't recommend
 
+**Required: bulk-action multi-select on top items + per-row deep-dive on watchlist.** The daily recap is an action surface — Travis selects items and fires bulk prompts at downstream processes. See `reference-daily-recap.html` for the full styles + JS.
+
+**Top items — multi-select pattern:**
+- The Top items `<section>` carries two data attributes that the JS reads at load: `data-recap-date="YYYY-MM-DD"` and `data-recap-path="research/ic-trends/daily/YYYY-MM-DD.md"`. REQUIRED — the bulk prompts reference these.
+- A sticky `<div class="sel-bar">` sits at the top of the section with a `.sel-count` element and **three primary action buttons** + a Clear button. Buttons stay disabled until at least one item is selected.
+  - `<button class="action-btn" data-action="deepdive">↗ Deep-dive</button>` — fires the deep-dive process for each selected item (sequential when N > 1).
+  - `<button class="action-btn" data-action="topic-ideas">＋ Topic ideas</button>` — appends entries to `content-plan/inputs.md` under `## Topic candidates`.
+  - `<button class="action-btn" data-action="wiki-ingest">» Wiki ingest</button>` — drops items into `cerkl-research/raw/` and creates source pages in `wiki/sources/`.
+  - `<button class="secondary" id="clearBtn">Clear</button>` — uncheck all.
+- Each top item is a `<label class="top-item">` (NOT `<article>`) with these data attributes — they are what the JS reads when building bulk prompts:
+  - `data-target` — the headline. REQUIRED.
+  - `data-url` — the source URL. Include when known.
+  - `data-date` — the item's publish date (used by wiki-ingest prompt).
+  - `data-why` — one sentence drawn from the item's body summary (NOT the "Why it matters for Cerkl" line — that's recap opinion and would prejudice independent downstream analysis).
+- First child of the label is `<input type="checkbox" class="item-cb">` (followed by the existing `.item-num` + content blocks). Checking the box adds `.selected` styling to the card.
+- The label-wrapping pattern means clicking anywhere on the card (except links) toggles the checkbox — same UX as `reference-hook-batch.html`.
+- The grid layout is `auto auto 1fr` (checkbox | num | content).
+
+**Watchlist — per-row deep-dive shortcut:**
+- Each `.watch-row` gets a compact `<button class="w-dd-btn">Deep-dive</button>` appended after `.w-date`, with `data-target` / `data-url` / `data-why` attributes. Single-click copies a one-item deep-dive prompt. Watchlist rows are too dense for checkboxes, and there's no clear bulk-action case for them.
+
+**JS, toast, print:**
+- The `<script>` + `<div class="toast">` live at the bottom of `<body>` and are copy-paste from the reference. ~120 lines, self-contained, no dependencies.
+- `.sel-bar`, `.item-cb`, `.w-dd-btn`, `.toast` are hidden in `@media print` — they're a screen-only affordance.
+
 ### `weekly-plan`
 
 See `reference-weekly-plan.html` for the canonical example. Used by the `personal-assistant` `plan-week` skill to render a sibling HTML of `current-week.md`. Scope is Mon–Fri work — not a personal life-plan (that artifact lives in `personal/` with a different theme).
@@ -307,8 +332,11 @@ Component classes available in the reference:
 | `.stats` / `.stat` | Numeric stats strip |
 | `.reco` / `.reco-cell` | Recommendation block (deep-dive only) |
 | `details.q` | Collapsible open questions / notes |
-| `.top-item` / `.cat-badge.*` | Numbered top-item card with category badge (daily-recap) |
+| `.top-item` / `.cat-badge.*` | Selectable label-wrapped top-item card with checkbox + category badge (daily-recap); reads `data-target` / `data-url` / `data-date` / `data-why` |
 | `.watchlist` / `.watch-row` | Compact multi-column watchlist (daily-recap) |
+| `.sel-bar` / `.action-btn` / `.item-cb` | Sticky bulk-action bar with three action buttons (deepdive / topic-ideas / wiki-ingest) + per-card checkbox (daily-recap); the parent `<section>` carries `data-recap-date` + `data-recap-path` |
+| `.w-dd-btn` | Compact per-row deep-dive shortcut on watchlist (daily-recap); reads `data-target` / `data-url` / `data-why` |
+| `.toast` (`.show`) | Toast notification after copy-to-clipboard (daily-recap, hook-batch) |
 | `.deadline-strip` / `.deadline-pill` | Hard-deadline pills in the hero (weekly-plan) |
 | `table.glance` | Week-at-a-glance table with today-row highlight (weekly-plan) |
 | `.day-card` / `.day-section` | Collapsible per-day card with Meetings / Free / Priorities sub-blocks (weekly-plan) |

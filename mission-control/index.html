@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claude Dashboard · Cerkl</title>
+<title>Mission Control · Cerkl</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -613,9 +613,10 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="brand">
-      <span class="crumb">cerkl · claude-dashboard</span>
-      <span class="title">Claude Dashboard</span>
+      <span class="crumb">cerkl · mission-control</span>
+      <span class="title">Mission Control</span>
     </div>
+    <a class="switch" href="../content-dashboard/" title="Switch to content dashboard">↗ content-dashboard</a>
     <a class="switch" href="http://127.0.0.1:3000/personal/claude-dashboard/" title="Switch to personal dashboard">↗ personal</a>
     <span class="meta-pill"><b>Last refreshed:</b> <span id="last-refreshed">—</span></span>
     <span class="grow"></span>
@@ -668,7 +669,7 @@
   </div>
 
   <footer>
-    Source registry: <code>sources.md</code> · Data: <code>data.json</code> · Refresh process: <code>claude-dashboard-process.md</code> · <a href="archive.html?category=ic-trends-daily">Open archive</a>
+    Source registry: <code>sources.md</code> · Data: <code>data.json</code> · Refresh process: <code>mission-control-process.md</code> · <a href="archive.html?category=ic-trends-daily">Open archive</a>
   </footer>
 
 </div>
@@ -678,7 +679,7 @@
 <script>
 // ----- Prompts (single place to read; data overrides for per-item prompts) -----
 const REFRESH_DASHBOARD_PROMPT =
-  "Refresh my claude dashboard.\n\nProcess: /Users/travisfoster/claude-code/cerkl/claude-dashboard/claude-dashboard-process.md";
+  "Refresh Mission Control.\n\nProcess: /Users/travisfoster/claude-code/cerkl/mission-control/mission-control-process.md";
 
 // ----- Clipboard / toast -----
 async function copyToClipboard(text) {
@@ -866,6 +867,7 @@ function familyFromSlug(slug) {
   if (!slug) return 'pa';
   if (slug.startsWith('personal-assistant')) return 'pa';
   if (slug.startsWith('hubspot')) return 'ops';
+  if (slug.startsWith('sales')) return 'ops';
   if (slug.startsWith('competitor')) return 'comp';
   if (slug.startsWith('ic-trends')) return 'research';
   if (slug.startsWith('marketing')) return 'mkt';

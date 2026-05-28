@@ -19,6 +19,7 @@ The 2026 picture, now anchored to a five-source cluster:
 - **Named-sender failure is a leadership-comms failure** ([[oracle-mass-email-layoff-lessons-2026-05-18]]). When Oracle's mass layoff email was signed *"Oracle Leadership"* with no named human, the absence of accountability *was* the failure (axis 1 of [[layoff-comms-choreography]]). The 2026 anti-pattern is leadership outsourcing both the writing and the signature to template/legal — see [[boilerplate-layoff-language]].
 - **Employee trust in managers vs other sources** — the underlying reason manager-cascade matters is that employees report higher trust in their direct managers than in distant executives, vendors, or HR comms. This puts the operational burden of leadership comms on line managers — and makes the manager-AI risk (above) particularly load-bearing.
 - **N-2/N-3 leader development is the analyst-named investment lever** ([[mckinsey-rewired-2-2026-05-21]]). McKinsey's *Rewired 2.0* Lever #1 ([[n-2-n-3-leader-development]]) puts the binding constraint on AI transformation at the layer two-and-three levels below the CEO — the same operational layer where leadership-comms cascades typically break. The development imperative and the comms imperative point at the same population; coherent strategy treats them as one program. Lever #4 ([[human-agentic-collaboration]]) explicitly names *"the emotional work of helping humans feel safe alongside machine colleagues"* as a manager responsibility — relational-comms work named at the consulting-tier level.
+- **Change-leadership-as-comms-discipline is the Gartner-named practitioner prescription** ([[ragan-gartner-2026-comms-predictions-2025-10-09]]). [[mark-whittle]] (VP Advisory, [[gartner]]) names a three-step framework — *Acknowledge / Regulate / Train* ([[change-leadership-three-step]]) — that pairs with Whittle's verbatim *"effective leadership today is change leadership."* Practitioner-level pair to Poitevin's organization-level [[people-amplification]]: Poitevin diagnoses what high-ROI cohorts *do*; Whittle prescribes how leaders *communicate* the doing. Useful as language convergence — analyst-tier vocabulary that practitioners and journalists will repeat unattributed.
 
 ## Key Entities
 
@@ -30,6 +31,8 @@ The 2026 picture, now anchored to a five-source cluster:
 - [[hr-reporter]] / [[sarah-dobson]] — trade-pub anchoring the manager-AI risk frame
 - [[peter-cardon]] / [[anthony-coman]] / [[linjuan-rita-men]] — academic anchors
 - [[mckinsey]] / [[eric-lamarre]] / [[kate-smaje]] / [[rob-levin]] — *Rewired 2.0* authors naming N-2/N-3 development + human-agentic collaboration as leadership-comms-adjacent levers
+- [[gartner]] / [[mark-whittle]] — analyst-tier prescription for change-leadership-as-comms-discipline; coined [[change-leadership-three-step]]
+- [[ragan-communications]] / [[sean-devlin]] — distribution venue for the Whittle pickup
 - [[cisco]] / [[chuck-robbins]] — 2026 strong-quarter layoff anchor
 - [[gitlab]] / [[bill-staples]] — 2026 high-transparency layoff memo template
 - [[microsoft]] — 2026 no-memo Rule-of-70 voluntary-first anchor
@@ -53,10 +56,12 @@ The 2026 picture, now anchored to a five-source cluster:
 - [[strong-quarter-layoff]] — Cisco-anchored tone-axis pattern
 - [[voluntary-first-default]] — GitLab + Microsoft emerging convention
 - [[pucc-framework]] — Sutton's psychological framework for difficult-decision comms
+- [[change-leadership-three-step]] — Whittle/Gartner three-step framework (Acknowledge / Regulate / Train); analyst-tier practitioner prescription
 
 ## Practitioner Voices
 
 - [[austin-roth-eagle]] — Head of AI Acceleration Office, Cisco
+- [[mark-whittle]] — VP Advisory, Gartner; comms-practice analyst voice prescribing change-leadership-as-comms-discipline
 
 ## Sources Read
 
@@ -68,6 +73,7 @@ The 2026 picture, now anchored to a five-source cluster:
 | [[oracle-mass-email-layoff-lessons-2026-05-18]] | 2026-05-18 | Named-sender failure anchor case ("Oracle Leadership" anonymous signature) |
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | N-2/N-3 leader development (Lever #1); human-agentic collaboration (Lever #4) — both directly leadership-comms-adjacent |
 | [[layoff-memo-subgenre-2026-05-21]] | 2026-05-21 | 2026 layoff-memo subgenre as a leadership-comms category; named-author + PUCC + reinvestment + voluntary-first + delivery-mechanism conventions; six-anchor reference set |
+| [[ragan-gartner-2026-comms-predictions-2025-10-09]] | 2025-10-09 | Whittle/Gartner three-step change-leadership framework (Acknowledge / Regulate / Train); *"effective leadership today is change leadership"* verbatim; Gartner-tier endorsement of layoff-comms-as-employer-brand link |
 
 ## Open Questions
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marketing &amp; Growth Ops — Portfolio Review</title>
+<title>Marketing &amp; Growth Ops — Portfolio Review · 2026-05-28</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -32,7 +32,8 @@
     --bad: #f79499;
     --bad-bg: rgba(242, 73, 95, 0.10);
     --bad-border: rgba(242, 73, 95, 0.30);
-    --violet: #a869fd;
+    --quote: #a869fd;
+    --violet: #802ee6;
     --code-bg: #27272e;
     --shadow: 0 1px 0 rgba(0,0,0,0.30), 0 8px 24px rgba(0,0,0,0.40);
     --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
@@ -84,7 +85,7 @@
   /* ---------- Hero stat strip ---------- */
   .hero-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin: 6px 0 4px;
   }
@@ -112,31 +113,7 @@
   }
   .h-stat.warm .h-num { color: var(--warm); }
   .h-stat.warm .h-num small { color: var(--warm-pale); }
-  .h-stat.bad  .h-num { color: var(--bad); }
-  .h-stat.bad  .h-num small { color: var(--bad); }
-
-  /* ---------- TL;DR strip ---------- */
-  .tldr-strip {
-    margin-top: 18px;
-    border-left: 3px solid var(--accent-pale);
-    padding: 6px 0 6px 16px;
-    font-size: 15px; line-height: 1.55;
-    color: rgba(255,255,255,0.92);
-    max-width: 80ch;
-  }
-  .tldr-strip b { color: #ffffff; }
-  .pending-flag {
-    display: inline-flex; align-items: center; gap: 8px;
-    margin-top: 14px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    background: var(--warn-bg);
-    border: 1px solid var(--warn-border);
-    color: var(--warn);
-    font-size: 13px; font-weight: 500;
-  }
-  .pending-flag::before { content: "●"; font-size: 8px; }
-  .pending-flag b { color: var(--warm-pale); font-weight: 600; }
+  .h-stat.bad .h-num { color: var(--bad); }
 
   /* ---------- Sections ---------- */
   section {
@@ -163,181 +140,307 @@
   p { margin: 0 0 10px; color: var(--ink); font-size: 15px; }
   a { color: var(--accent-pale); text-decoration: none; border-bottom: 1px solid var(--accent-border); }
   a:hover { color: #ffffff; border-bottom-color: var(--accent-pale); }
-  p code, td code, li code {
+  p code, td code {
     font-family: var(--mono); font-size: 0.9em;
     background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
     color: var(--accent-pale);
   }
 
-  /* ---------- Top of Mind — number-led pillar cards ---------- */
-  .pillars {
+  /* ---------- Horizontal bar chart ---------- */
+  .bar-chart { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+  .bar-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 6px;
-  }
-  @media (max-width: 820px) { .pillars { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .pillars { grid-template-columns: 1fr; } }
-  .pillar {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 16px 18px;
-    display: flex; flex-direction: column;
-    position: relative;
-  }
-  .pillar .p-num {
-    font-size: 11px; color: var(--accent-pale); font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;
-  }
-  .pillar h4 {
-    margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--ink);
-    letter-spacing: -0.0025em; line-height: 1.25;
-  }
-  .pillar .p-status {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 10px; font-weight: 600; padding: 2px 8px;
-    border-radius: 999px; border: 1px solid;
-    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
-    letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 10px;
-    align-self: flex-start;
-  }
-  .pillar .p-status::before { content: "●"; font-size: 7px; }
-  .pillar .p-status.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
-  .pillar .p-status.bad  { background: var(--bad-bg); color: var(--bad); border-color: var(--bad-border); }
-  .pillar .p-status.pending { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
-  .pillar .p-next {
-    font-size: 13px; color: var(--ink); line-height: 1.45; margin: 0 0 10px;
-  }
-  .pillar .p-next b { color: var(--accent-pale); font-weight: 600; }
-  .pillar .p-meta {
-    margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid var(--line);
-    font-size: 11px; color: var(--muted);
-    display: flex; gap: 12px; flex-wrap: wrap;
-  }
-  .pillar .p-meta b { color: var(--ink); font-weight: 600; }
-  .pillar .p-why {
-    font-size: 12px; color: var(--muted); line-height: 1.45;
-    margin: 0 0 10px; font-style: italic;
-  }
-
-  /* ---------- Upcoming Milestones — timeline strip ---------- */
-  .timeline {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 6px;
-  }
-  @media (max-width: 720px) { .timeline { grid-template-columns: 1fr; } }
-  .brief-chip {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--accent-strong);
-    border-radius: 8px;
-    padding: 14px 16px;
-    font-size: 13px;
-    display: flex; flex-direction: column;
-  }
-  .brief-chip .b-date {
-    font-size: 11px; color: var(--accent-pale); font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
-    font-variant-numeric: tabular-nums;
-  }
-  .brief-chip .b-title {
-    color: var(--ink); font-weight: 500; line-height: 1.35;
-    font-size: 14px;
-  }
-  .brief-chip .b-tag {
-    margin-top: 8px;
-    font-size: 10px; font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
-  .brief-chip.launch { border-left-color: var(--warm); }
-  .brief-chip.launch .b-date { color: var(--warm-pale); }
-  .brief-chip.readout { border-left-color: var(--violet); }
-  .brief-chip.readout .b-date { color: var(--violet); }
-
-  /* ---------- Project ledger — compact rows ---------- */
-  .ledger {
-    display: flex; flex-direction: column; gap: 6px;
-    margin-top: 6px;
-  }
-  .ledger-row {
-    display: grid;
-    grid-template-columns: 240px 1fr 200px;
+    grid-template-columns: 200px 1fr 140px;
     align-items: center;
     gap: 12px;
-    padding: 10px 14px;
+    font-size: 14px;
+  }
+  .bar-row .bar-label { color: var(--ink); font-weight: 600; }
+  .bar-track {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    font-size: 13px;
-    border-left: 3px solid var(--line);
+    border-radius: 6px;
+    height: 22px;
+    position: relative;
+    overflow: hidden;
   }
-  .ledger-row.high { border-left-color: var(--accent-strong); }
-  .ledger-row.med  { border-left-color: var(--accent-pale); }
-  .ledger-row.low  { border-left-color: var(--line); }
-  .ledger-row.blocked { border-left-color: var(--bad); }
-  .ledger-row.paused  { border-left-color: var(--warm); }
-  .ledger .l-name {
-    color: var(--ink); font-weight: 600; font-size: 13px;
+  .bar-fill {
+    background: var(--accent-strong);
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px;
+    color: #ffffff; font-size: 12px; font-weight: 600;
+    transition: width 0.4s ease;
+    white-space: nowrap;
   }
-  .ledger .l-next {
-    color: var(--muted); font-size: 12px; line-height: 1.4;
+  .bar-fill.thin {
+    color: var(--ink); justify-content: flex-start;
+    padding-left: 0; background: var(--accent-strong);
+    overflow: visible;
   }
-  .ledger .l-tags {
-    display: flex; gap: 6px; align-items: center; justify-content: flex-end;
-    flex-wrap: wrap;
+  .bar-fill.thin::after {
+    content: attr(data-label);
+    position: absolute;
+    left: calc(var(--bar-w, 0%) + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
   }
-  .pill {
+  .bar-meta {
+    font-size: 12px; color: var(--muted);
+    display: flex; align-items: center; gap: 8px;
+    justify-content: flex-end;
+  }
+  .badge {
     display: inline-flex; align-items: center;
     font-size: 10px; font-weight: 600; padding: 2px 8px;
     border-radius: 999px; border: 1px solid;
     letter-spacing: 0.04em; text-transform: uppercase;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
     white-space: nowrap;
   }
-  .pill.prio-high { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
-  .pill.prio-med  { background: var(--panel-soft); color: var(--muted); border-color: var(--line); }
-  .pill.prio-low  { background: transparent; color: var(--muted); border-color: var(--line); opacity: 0.7; }
-  .pill.ok       { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
-  .pill.warn     { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
-  .pill.bad      { background: var(--bad-bg); color: var(--bad); border-color: var(--bad-border); }
-  .pill.pending  { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
-  .pill.due      { background: var(--warn-bg); color: var(--warm-pale); border-color: var(--warn-border); font-variant-numeric: tabular-nums; }
-  @media (max-width: 820px) {
-    .ledger-row { grid-template-columns: 1fr; gap: 4px; }
-    .ledger .l-tags { justify-content: flex-start; }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .badge.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .badge.info { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  @media (max-width: 720px) {
+    .bar-row { grid-template-columns: 1fr; gap: 4px; }
+    .bar-meta { justify-content: flex-start; }
   }
 
-  /* ---------- Recently Shipped — flat dated list ---------- */
-  .shipped {
-    display: flex; flex-direction: column; gap: 0;
-    margin-top: 6px;
-  }
-  .shipped-row {
+  /* ---------- Donuts ---------- */
+  .donut-grid {
     display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 14px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--line);
-    align-items: baseline;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
   }
-  .shipped-row:last-child { border-bottom: none; }
-  .shipped-row .s-date {
-    font-size: 11px; color: var(--accent-pale); font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
+  @media (max-width: 820px) {
+    .donut-grid { grid-template-columns: 1fr; }
+  }
+  .donut-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .donut-card h3 { margin-top: 0; }
+  .donut-wrap {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+  @media (max-width: 520px) {
+    .donut-wrap { grid-template-columns: 1fr; justify-items: center; }
+  }
+  .donut-svg { width: 180px; height: 180px; }
+  .donut-center {
+    font-size: 12px; font-weight: 700; fill: var(--ink);
+    text-anchor: middle; dominant-baseline: central;
+  }
+  .legend { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+  .legend-item {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    align-items: center; gap: 10px;
+  }
+  .legend-swatch {
+    width: 12px; height: 12px; border-radius: 3px; display: inline-block;
+  }
+  .legend-label { color: var(--ink); }
+  .legend-value { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .donut-headline {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent-pale);
+  }
+  .donut-headline b { color: #ffffff; }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) {
+    .timeline { grid-template-columns: 1fr 1fr; }
+  }
+  .timeline-week {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 140px;
+    display: flex; flex-direction: column;
+  }
+  .week-label {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 8px;
+  }
+  .brief-chip {
+    background: var(--panel-soft);
+    border-left: 3px solid var(--accent-strong);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .brief-chip:last-child { margin-bottom: 0; }
+  .brief-chip .b-date {
+    font-size: 10px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;
     font-variant-numeric: tabular-nums;
   }
-  .shipped-row .s-body {
-    font-size: 14px; color: var(--ink); line-height: 1.45;
+  .brief-chip .b-title { color: var(--ink); font-weight: 500; line-height: 1.3; }
+  .brief-chip .b-pillar {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    margin-top: 4px; color: var(--muted);
   }
-  .shipped-row .s-body b { color: var(--accent-pale); font-weight: 600; }
-  @media (max-width: 720px) {
-    .shipped-row { grid-template-columns: 1fr; gap: 2px; }
+  .brief-chip.launch   { border-left-color: #802ee6; }
+  .brief-chip.deliver  { border-left-color: #3547c4; }
+  .brief-chip.readout  { border-left-color: #ffaa22; }
+
+  /* ---------- Strategic / top-of-mind cards ---------- */
+  .strat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 6px;
   }
+  @media (max-width: 820px) { .strat-grid { grid-template-columns: 1fr; } }
+  .strat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex; flex-direction: column;
+  }
+  .strat-card.bad  { border-color: var(--bad-border); }
+  .strat-card.warm { border-color: var(--warn-border); }
+  .strat-card .strat-eyebrow {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .strat-card .strat-title {
+    font-size: 16px; color: var(--ink); font-weight: 600; margin: 2px 0 8px;
+  }
+  .strat-card .strat-next {
+    font-size: 13px; color: var(--muted); margin: 0 0 10px;
+  }
+  .strat-card .strat-next b { color: var(--ink); font-weight: 600; }
+  .strat-card .strat-outcome {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--accent-pale); font-weight: 500;
+  }
+
+  /* ---------- Status pills / gauges ---------- */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; padding: 2px 10px;
+    border-radius: 999px; border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+  }
+  .status-pill.warn    { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .status-pill.bad     { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .status-pill.pending { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .status-pill::before { content: "●"; font-size: 7px; }
+
+  .gauge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 6px;
+  }
+  @media (max-width: 820px) { .gauge-grid { grid-template-columns: 1fr; } }
+  .gauge-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .gauge-card.bad  { border-color: var(--bad-border); }
+  .gauge-card.warn { border-color: var(--warn-border); }
+  .gauge-card.pending { border-color: var(--accent-border); }
+  .gauge-tool {
+    font-size: 15px; color: var(--ink); font-weight: 600; margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  }
+  .gauge-unlocks {
+    font-size: 12px; color: var(--muted); line-height: 1.45;
+  }
+  .gauge-unlocks b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- Actions / ledger table ---------- */
+  table.actions {
+    width: 100%; border-collapse: collapse; margin-top: 6px;
+    font-size: 13px;
+  }
+  table.actions th, table.actions td {
+    text-align: left; padding: 9px 10px; vertical-align: top;
+    border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  table.actions th {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent-pale); font-weight: 600; background: var(--panel);
+  }
+  table.actions tr:last-child td { border-bottom: none; }
+  table.actions tr:hover td { background: var(--panel); }
+  table.actions .proj { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  table.actions .effort { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .prio {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 1px 8px; border-radius: 999px; border: 1px solid;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .prio.high { background: var(--bad-bg); color: var(--bad); border-color: var(--bad-border); }
+  .prio.med  { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+  .prio.low  { background: var(--panel-soft); color: var(--muted); border-color: var(--line); }
+
+  /* ---------- Shipped list ---------- */
+  .shipped { display: flex; flex-direction: column; gap: 0; margin-top: 6px; }
+  .ship-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 170px;
+    gap: 12px;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .ship-row:last-child { border-bottom: none; }
+  @media (max-width: 720px) { .ship-row { grid-template-columns: 90px 1fr; } .ship-proj { grid-column: 1 / -1; } }
+  .ship-date {
+    color: var(--good); font-weight: 600; font-variant-numeric: tabular-nums;
+    font-size: 12px;
+  }
+  .ship-what { color: var(--ink); }
+  .ship-proj { color: var(--muted); font-size: 12px; text-align: right; }
+  @media (max-width: 720px) { .ship-proj { text-align: left; } }
+
+  /* ---------- TL;DR strip ---------- */
+  .tldr-strip {
+    margin-top: 18px;
+    border-left: 3px solid var(--accent-pale);
+    padding: 6px 0 6px 16px;
+    font-size: 15px; line-height: 1.55;
+    color: rgba(255,255,255,0.92);
+    max-width: 80ch;
+  }
+  .tldr-strip b { color: #ffffff; }
 
   /* ---------- Footer ---------- */
   footer {
@@ -360,42 +463,56 @@
     .h-stat { background: #f5f5fa; border-color: #d5d5db; backdrop-filter: none; }
     .h-stat .h-num { color: #18181d; }
     .h-stat.warm .h-num { color: #80550f; }
-    .h-stat.bad  .h-num { color: #b00045; }
+    .h-stat.bad .h-num { color: #b00045; }
     .h-stat .h-num small { color: #373740; }
     .h-stat .h-lbl { color: #373740; }
     .tldr-strip { color: #18181d; border-left-color: #3547c4; }
-    .pending-flag { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .pending-flag b { color: #80550f; }
 
     section { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; background: #ffffff; color: #18181d; }
-    h2, h3, p, td, th { color: #18181d; }
+    h2, h3, p, td, th, .gauge-tool, .gauge-unlocks b, .strat-card .strat-title { color: #18181d; }
     h2 .num { background: #ebebf0; color: #373740; border-color: #d5d5db; }
     h2 .lead { color: #373740; }
     h3 { color: #373740; }
 
-    .pillar, .brief-chip, .ledger-row { background: #f5f5fa; border-color: #d5d5db; }
-    .pillar h4, .pillar .p-next, .brief-chip .b-title, .ledger .l-name { color: #18181d; }
-    .pillar .p-meta b, .ledger .l-next b { color: #18181d; }
-    .pillar .p-num, .brief-chip .b-date, .shipped-row .s-date { color: #3547c4; }
-    .pillar .p-meta, .pillar .p-why, .brief-chip .b-tag, .ledger .l-next { color: #373740; }
-    .brief-chip.launch .b-date { color: #80550f; }
-    .brief-chip.readout .b-date { color: #802ee6; }
+    .bar-track { background: #ebebf0; border-color: #d5d5db; }
+    .bar-fill { background: #3547c4; color: #ffffff; }
+    .bar-fill.thin { color: #18181d; background: #3547c4; }
+    .bar-fill.thin::after { color: #18181d; }
 
-    .pill.ok { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
-    .pill.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .pill.bad  { background: #fcf0f0; color: #b00045; border-color: #b00045; }
-    .pill.pending { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
-    .pill.prio-high { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
-    .pill.prio-med { background: #ebebf0; color: #373740; border-color: #d5d5db; }
-    .pill.prio-low { background: #ffffff; color: #373740; border-color: #d5d5db; }
-    .pill.due { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .pillar .p-status { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
-    .pillar .p-status.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .pillar .p-status.bad  { background: #fcf0f0; color: #b00045; border-color: #b00045; }
-    .pillar .p-status.pending { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
+    .donut-card, .timeline-week, .strat-card, .gauge-card { background: #f5f5fa; border-color: #d5d5db; }
+    .donut-center { fill: #18181d; }
+    .legend-label { color: #18181d; }
+    .legend-value { color: #373740; }
+    .donut-headline { background: #f0f2fc; border-color: #d5d5db; color: #3547c4; }
+    .donut-headline b { color: #18181d; }
 
-    .shipped-row { border-bottom-color: #d5d5db; }
-    .shipped-row .s-body, .shipped-row .s-body b { color: #18181d; }
+    .brief-chip { background: #ffffff; }
+    .brief-chip .b-title { color: #18181d; }
+    .brief-chip .b-pillar, .brief-chip .b-date, .week-label { color: #373740; }
+
+    .strat-card .strat-eyebrow, .strat-card .strat-next { color: #373740; }
+    .strat-card .strat-next b { color: #18181d; }
+    .strat-card .strat-outcome { color: #3547c4; border-top-color: #d5d5db; }
+
+    .gauge-unlocks { color: #373740; }
+
+    table.actions th { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    table.actions td { color: #18181d; border-color: #d5d5db; }
+    table.actions .proj { color: #18181d; }
+    table.actions .effort { color: #373740; }
+
+    .ship-row { border-color: #d5d5db; }
+    .ship-date { color: #1a9979; }
+    .ship-what { color: #18181d; }
+    .ship-proj { color: #373740; }
+
+    .status-pill, .badge { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
+    .status-pill.warn, .badge.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
+    .status-pill.bad, .badge.bad { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .status-pill.pending, .badge.info { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
+    .prio.high { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .prio.med { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
+    .prio.low { background: #f5f5fa; color: #373740; border-color: #d5d5db; }
 
     footer { color: #373740; border-top-color: #d5d5db; }
     a { color: #18181d; }
@@ -410,387 +527,530 @@
     <div class="breadcrumb">personal assistant · growth project tracker</div>
     <h1>Marketing &amp; Growth Ops — Portfolio Review</h1>
     <div class="meta-row">
-      <span><b>Date:</b> 2026-05-21 (Thursday)</span>
+      <span><b>Date:</b> 2026-05-28 (Thu)</span>
       <span><b>Audience:</b> Tarek Kamil (CEO) + leadership</span>
       <span><b>Author:</b> Travis Foster, Head of Marketing &amp; Growth Ops</span>
     </div>
 
     <div class="hero-stats">
       <div class="h-stat">
-        <div class="h-num">19</div>
+        <div class="h-num">23</div>
         <div class="h-lbl">Active projects</div>
       </div>
       <div class="h-stat">
-        <div class="h-num">6</div>
+        <div class="h-num">5</div>
         <div class="h-lbl">Top of mind</div>
       </div>
       <div class="h-stat warm">
-        <div class="h-num">1</div>
-        <div class="h-lbl">Hard deadline ≤14d</div>
+        <div class="h-num">4</div>
+        <div class="h-lbl">Deadlines &lt; 14 days</div>
       </div>
       <div class="h-stat bad">
-        <div class="h-num">3</div>
-        <div class="h-lbl">Blocked / paused / pending</div>
+        <div class="h-num">4</div>
+        <div class="h-lbl">Blocked / at-risk</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num">13</div>
+        <div class="h-lbl">Shipped, last 2 wks</div>
       </div>
     </div>
 
     <p class="tldr-strip">
-      <b>Meta Ads promoted to top priority</b> (Phase 2 audience / targeting work active).
-      <b>SEO Phase 1 closed 5/15</b> — Phase 2 wires SEO into the content-planning workflow.
-      <b>Pressure Prospecting Phase 1 methodology delivered 5/14</b> — ready for Travis review before pilot.
-      <b>Competitor Dissatisfaction Mining paused 5/18</b> pending webscraping-tool budget (re-investigate 2026-06-30).
-      <b>The Cerkular still blocked on Jira FUTURE-232.</b>
-      Press release embargo confirmed at <b>2026-06-13</b> (delayed from 6/01).
+      The portfolio is in a <b>Friday-delivery crunch</b>: three items land <b>2026-05-29</b> — Weekly Sales Report V1,
+      the downloadable-asset CTA swap, and Canva design skills Phase 1 — with the <b>SEM Landing Page A/B test</b> launching
+      <b>2026-06-03</b>. Two flagship launches stay hard-blocked on external dependencies: <b>Meta Ads</b> on conversion-event
+      verification and <b>The Cerkular</b> on the HubSpot → Broadcast API (Jira FUTURE-232). Comp Dissatisfaction Mining is
+      paused on tooling budget until end of June. Momentum is strongest in SEO/schema and webinar follow-through.
     </p>
-
-    <div class="pending-flag">
-      <span><b>Confirm in meeting:</b>&nbsp; SEM LP A/B test was scheduled to launch Wed 2026-05-20 at the 2:30 SEM Sync with Joey. Launch status pending Travis confirmation — earliest readout 2026-06-10.</span>
-    </div>
   </header>
 
-  <!-- ============== SECTION 1: TOP OF MIND ============== -->
+  <!-- ============== SECTION 1: PORTFOLIO HEALTH ============== -->
   <section>
-    <h2><span class="num">01</span>Top of Mind<span class="lead">6 priority projects</span></h2>
-    <div class="pillars">
+    <h2><span class="num">01</span>Portfolio health — 23 active projects<span class="lead">15 on track · 4 blocked/at-risk · 4 exploratory</span></h2>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">On track</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 65.2%;">15 · 65.2%</div></div>
+        <div class="bar-meta"><span class="badge">Healthy</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Exploratory / n/a</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 17.4%;">4 · 17.4%</div></div>
+        <div class="bar-meta"><span class="badge info">Scoping</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Blocked</div>
+        <div class="bar-track"><div class="bar-fill thin" data-label="2 · 8.7%" style="width: 8.7%; --bar-w: 8.7%;"></div></div>
+        <div class="bar-meta"><span class="badge bad">External gate</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Pending budget / TK</div>
+        <div class="bar-track"><div class="bar-fill thin" data-label="2 · 8.7%" style="width: 8.7%; --bar-w: 8.7%;"></div></div>
+        <div class="bar-meta"><span class="badge warn">Awaiting input</span></div>
+      </div>
+    </div>
+  </section>
 
-      <div class="pillar">
-        <div class="p-num">01 · High priority</div>
-        <h4>SEM Landing Page Rebuild</h4>
-        <span class="p-status pending">Launch pending confirm</span>
-        <p class="p-next">
-          <b>Next:</b> Confirm Wed 2026-05-20 launch landed; if so, monitor PostHog through 2026-06-10 earliest readout.
-        </p>
-        <p class="p-why">Paid spend stabilized (CPC down, traffic up) but conversion + CTR haven't improved — landing pages are the weak link. First rebuild: <code>why-pay-for-internal-email</code>.</p>
-        <div class="p-meta">
-          <span><b>Launch:</b> 2026-05-20</span>
-          <span><b>Readout:</b> 2026-06-10</span>
+  <!-- ============== SECTION 2: STATUS + PRIORITY DONUTS ============== -->
+  <section>
+    <h2><span class="num">02</span>Portfolio mix<span class="lead">23 projects · status &amp; priority split</span></h2>
+
+    <div class="donut-grid">
+
+      <!-- Status donut -->
+      <div class="donut-card">
+        <h3>By status (23 projects)</h3>
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 42 42" aria-label="Status donut">
+            <circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#27272e" stroke-width="6"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#3547c4" stroke-width="6"
+              stroke-dasharray="65.2 34.8" stroke-dashoffset="25"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#f24a5f" stroke-width="6"
+              stroke-dasharray="8.7 91.3" stroke-dashoffset="-40.2"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#ffaa22" stroke-width="6"
+              stroke-dasharray="8.7 91.3" stroke-dashoffset="-48.9"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#a7b3ed" stroke-width="6"
+              stroke-dasharray="17.4 82.6" stroke-dashoffset="-57.6"
+              transform="rotate(-90 21 21)"></circle>
+            <text x="21" y="21" class="donut-center">23</text>
+          </svg>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#3547c4"></span>
+              <span class="legend-label">On track</span>
+              <span class="legend-value">15 · 65.2%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#f24a5f"></span>
+              <span class="legend-label">Blocked</span>
+              <span class="legend-value">2 · 8.7%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#ffaa22"></span>
+              <span class="legend-label">Pending budget / TK</span>
+              <span class="legend-value">2 · 8.7%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#a7b3ed"></span>
+              <span class="legend-label">Exploratory / n/a</span>
+              <span class="legend-value">4 · 17.4%</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="pillar">
-        <div class="p-num">02 · High priority — promoted 5/18</div>
-        <h4>Meta Ads Channel Launch</h4>
-        <span class="p-status">On track</span>
-        <p class="p-next">
-          <b>Next:</b> Phase 2 — learn Meta's targeting system + define audience / targeting strategy (ICP-aligned). Tue 5/19 was a blocked focus day.
-        </p>
-        <p class="p-why">Account access restored; Phase 2 stands up Meta as a working paid channel with a Pains-concept ad video → Foundations sign-up CTA.</p>
-        <div class="p-meta">
-          <span><b>Due:</b> —</span>
-        </div>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">03 · High priority</div>
-        <h4>SEO Strategy &amp; Plan</h4>
-        <span class="p-status">On track</span>
-        <p class="p-next">
-          <b>Next:</b> Phase 2 #1 — define content-planning process (esp. blogs) with explicit SEO linkage (keyword → angle → internal linking → CTA).
-        </p>
-        <p class="p-why">Phase 1 closed 2026-05-15 (pillars, sheet ingestion, skills inventory). Phase 2 wires SEO into content-planning so every post earns its keyword pull.</p>
-        <div class="p-meta">
-          <span><b>Phase 1 closed:</b> 2026-05-15</span>
-        </div>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">04 · High priority</div>
-        <h4>The Cerkular</h4>
-        <span class="p-status bad">Blocked</span>
-        <p class="p-next">
-          <b>Next:</b> Resolve personalization-link feasibility in Blast (Jira <code>FUTURE-232</code>), then upload HubSpot audience to Broadcast.
-        </p>
-        <p class="p-why">Cerkl's prospect nurture newsletter delivered via Broadcast. HubSpot → Broadcast API integration is the gate to launch — until FUTURE-232 lands, this can't ship.</p>
-        <div class="p-meta">
-          <span><b>Blocker:</b> Jira FUTURE-232</span>
-        </div>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">05 · Med priority — passive monitor</div>
-        <h4>Ad Conversion Tracking</h4>
-        <span class="p-status">On track — passive</span>
-        <p class="p-next">
-          <b>Next:</b> Observe a real event firing in Google Ads (passive verification of the 2026-05-15 diagnose+fix).
-        </p>
-        <p class="p-why">Conversion-attribution backbone for paid channels. Demoted from active focus to monitor after diagnose+fix landed 5/15.</p>
-        <div class="p-meta">
-          <span><b>Fix shipped:</b> 2026-05-15</span>
-        </div>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">06 · Med priority</div>
-        <h4>Competitor Dissatisfaction Mining</h4>
-        <span class="p-status warn">Paused — pending budget</span>
-        <p class="p-next">
-          <b>Next:</b> Re-investigate 2026-06-30 — confirm budget for webscraping tools, reassess tooling, decide resume vs. shelve.
-        </p>
-        <p class="p-why">Net-new sales pipeline from dissatisfied competitor users on review sites + forums. Scaffolded in <code>sales/</code> 5/14; paused 5/18 once scrape-and-enrich loop's tooling spend (Apify / BrightData class) wasn't approved.</p>
-        <div class="p-meta">
-          <span><b>Re-investigate:</b> 2026-06-30</span>
+      <!-- Priority donut -->
+      <div class="donut-card">
+        <h3>By priority (23 projects)</h3>
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 42 42" aria-label="Priority donut">
+            <circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#27272e" stroke-width="6"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#f24a5f" stroke-width="6"
+              stroke-dasharray="17.4 82.6" stroke-dashoffset="25"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#3547c4" stroke-width="6"
+              stroke-dasharray="47.8 52.2" stroke-dashoffset="7.6"
+              transform="rotate(-90 21 21)"></circle>
+            <circle cx="21" cy="21" r="15.9155" fill="transparent"
+              stroke="#bfbfc7" stroke-width="6"
+              stroke-dasharray="34.8 65.2" stroke-dashoffset="-40.2"
+              transform="rotate(-90 21 21)"></circle>
+            <text x="21" y="21" class="donut-center">23</text>
+          </svg>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#f24a5f"></span>
+              <span class="legend-label">High</span>
+              <span class="legend-value">4 · 17.4%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#3547c4"></span>
+              <span class="legend-label">Medium</span>
+              <span class="legend-value">11 · 47.8%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch" style="background:#bfbfc7"></span>
+              <span class="legend-label">Low</span>
+              <span class="legend-value">8 · 34.8%</span>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
+
+    <div class="donut-headline">
+      Two-thirds of the portfolio is moving; <b>both blockers are High priority</b> (Meta Ads, The Cerkular) and sit on
+      external engineering / verification gates outside Travis's direct control.
+    </div>
   </section>
 
-  <!-- ============== SECTION 2: UPCOMING MILESTONES ============== -->
+  <!-- ============== SECTION 3: UPCOMING MILESTONES TIMELINE ============== -->
   <section>
-    <h2><span class="num">02</span>Upcoming milestones<span class="lead">2026-05-21 → 2026-06-20</span></h2>
+    <h2><span class="num">03</span>Upcoming milestones<span class="lead">2026-05-28 → 2026-06-27</span></h2>
     <div class="timeline">
-      <div class="brief-chip">
-        <div class="b-date">Mon · Jun 1</div>
-        <div class="b-title">Press release — resume final approval cycle</div>
-        <div class="b-tag">Comms</div>
+      <div class="timeline-week">
+        <div class="week-label">Week of May 25</div>
+        <div class="brief-chip deliver">
+          <div class="b-date">Fri · May 29</div>
+          <div class="b-title">Weekly Sales Report V1 — first publish to Marc + Josh</div>
+          <div class="b-pillar">Deliverable</div>
+        </div>
+        <div class="brief-chip deliver">
+          <div class="b-date">Fri · May 29</div>
+          <div class="b-title">Downloadable Asset CTA swap · Canva Skills Phase 1</div>
+          <div class="b-pillar">Deliverable (×2)</div>
+        </div>
       </div>
-      <div class="brief-chip readout">
-        <div class="b-date">Wed · Jun 10</div>
-        <div class="b-title">Earliest SEM LP A/B test readout (5/20 launch + 21-day minimum run)</div>
-        <div class="b-tag">Paid · readout</div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 1</div>
+        <div class="brief-chip launch">
+          <div class="b-date">Wed · Jun 3</div>
+          <div class="b-title">SEM Landing Page A/B test LAUNCH (deprioritized from 5/20)</div>
+          <div class="b-pillar">Launch</div>
+        </div>
       </div>
-      <div class="brief-chip launch">
-        <div class="b-date">Sat · Jun 13</div>
-        <div class="b-title">Insights 3.0 launch — press release embargo lifts (delayed from 6/01)</div>
-        <div class="b-tag">Launch · embargo</div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 8</div>
+        <div class="brief-chip launch">
+          <div class="b-date">Sat · Jun 13</div>
+          <div class="b-title">Insights 3.0 launch · PR embargo lifts (5/09 → 6/01 → 6/13)</div>
+          <div class="b-pillar">Launch</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 22</div>
+        <div class="brief-chip readout">
+          <div class="b-date">Tue · Jun 24</div>
+          <div class="b-title">Earliest SEM LP A/B readout (6/03 + 21-day min run)</div>
+          <div class="b-pillar">Readout</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============== SECTION 3: FULL PROJECT LEDGER ============== -->
+  <!-- ============== SECTION 4: TOP OF MIND ============== -->
   <section>
-    <h2><span class="num">03</span>Full project ledger<span class="lead">19 active · sorted by priority</span></h2>
-    <div class="ledger">
-
-      <div class="ledger-row high">
-        <div class="l-name">SEM Landing Page Rebuild</div>
-        <div class="l-next">Confirm 2026-05-20 launch landed; monitor PostHog through readout</div>
-        <div class="l-tags">
-          <span class="pill prio-high">High</span>
-          <span class="pill due">2026-06-10</span>
-          <span class="pill pending">Pending</span>
-        </div>
+    <h2><span class="num">04</span>Top of mind — 5 focus items<span class="lead">2 blocked · 1 pending · 2 on track</span></h2>
+    <div class="strat-grid">
+      <div class="strat-card bad">
+        <div class="strat-eyebrow"><span>1 · New paid channel</span><span class="status-pill bad">Blocked</span></div>
+        <div class="strat-title">Meta Ads Channel Launch</div>
+        <p class="strat-next"><b>Next:</b> Stand up <code>marketing/channels/paid-meta/</code>, then verify the Foundations sign-up event firing in Meta Pixel + Conversions API.</p>
+        <div class="strat-outcome">Phase 1 + 2 locked; test 1 gated on end-to-end conversion verification.</div>
       </div>
-
-      <div class="ledger-row high">
-        <div class="l-name">Meta Ads Channel Launch</div>
-        <div class="l-next">Phase 2 — learn Meta targeting + define audience strategy (ICP-aligned)</div>
-        <div class="l-tags">
-          <span class="pill prio-high">High</span>
-          <span class="pill ok">On track</span>
-        </div>
+      <div class="strat-card">
+        <div class="strat-eyebrow"><span>2 · Organic pipeline</span><span class="status-pill">On track</span></div>
+        <div class="strat-title">SEO Strategy &amp; Plan</div>
+        <p class="strat-next"><b>Next:</b> Phase 2 #1 — define content planning process (esp. blogs) with explicit SEO linkage (keyword → angle → internal linking → CTA).</p>
+        <div class="strat-outcome">Phase 1 closed 2026-05-15; Phase 2 wires SEO into the content engine.</div>
       </div>
-
-      <div class="ledger-row blocked">
-        <div class="l-name">The Cerkular</div>
-        <div class="l-next">Resolve personalization-link feasibility in Blast (Jira FUTURE-232)</div>
-        <div class="l-tags">
-          <span class="pill prio-high">High</span>
-          <span class="pill bad">Blocked</span>
-        </div>
+      <div class="strat-card bad">
+        <div class="strat-eyebrow"><span>3 · Nurture newsletter</span><span class="status-pill bad">Blocked</span></div>
+        <div class="strat-title">The Cerkular</div>
+        <p class="strat-next"><b>Next:</b> Resolve personalization-link feasibility in a Blast (Jira FUTURE-232), then upload the HubSpot audience to Broadcast.</p>
+        <div class="strat-outcome">HubSpot → Broadcast API is the launch gate — engineering dependency.</div>
       </div>
-
-      <div class="ledger-row paused">
-        <div class="l-name">Competitor Dissatisfaction Mining</div>
-        <div class="l-next">Re-investigate end of June — confirm budget; reassess tooling; resume vs. shelve</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill due">2026-06-30</span>
-          <span class="pill warn">Pending budget</span>
-        </div>
+      <div class="strat-card">
+        <div class="strat-eyebrow"><span>4 · Attribution backbone</span><span class="status-pill">Monitor</span></div>
+        <div class="strat-title">Ad Conversion Tracking</div>
+        <p class="strat-next"><b>Next:</b> Observe a real event firing in Google Ads (passive verification of the 2026-05-15 diagnose + fix).</p>
+        <div class="strat-outcome">Fix landed 5/15; demoted from active focus to passive monitor.</div>
       </div>
-
-      <div class="ledger-row high">
-        <div class="l-name">SEO Strategy &amp; Plan</div>
-        <div class="l-next">Phase 2 #1 — define content-planning process with explicit SEO linkage</div>
-        <div class="l-tags">
-          <span class="pill prio-high">High</span>
-          <span class="pill ok">On track</span>
-        </div>
+      <div class="strat-card warm">
+        <div class="strat-eyebrow"><span>5 · Net-new pipeline</span><span class="status-pill warn">Pending budget</span></div>
+        <div class="strat-title">Competitor Dissatisfaction Mining</div>
+        <p class="strat-next"><b>Next:</b> Re-investigate end of June — confirm webscraping-tool budget, reassess tooling, decide resume vs. shelve.</p>
+        <div class="strat-outcome">First enriched list shipped 5/18; paused on Apify/BrightData-class spend. Gate: 2026-06-30.</div>
       </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Ad Conversion Tracking</div>
-        <div class="l-next">Observe a real event firing in Google Ads (passive verification of 5/15 fix)</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Press Release</div>
-        <div class="l-next">Resume final approval cycle (publish embargo 2026-06-13)</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill due">2026-06-13</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Comparison SEO Pages</div>
-        <div class="l-next">Build channel process for <code>comparison-seo</code> before drafting first new page</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Review Sites</div>
-        <div class="l-next">Gartner — push current in-progress listing forward (Product Hunt waits on 2026-06-13)</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">ICPro SEO</div>
-        <div class="l-next">Verify Google Rich Results Test passes post-fix; roll out schema to all blog posts</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Furqan — Backlinks Onboarding</div>
-        <div class="l-next">30-min sync on <code>marketing/seo/backlinks/</code>, confirm cadence (~25/mo), Ahrefs/Moz access</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row med">
-        <div class="l-name">Pressure Prospecting</div>
-        <div class="l-next">Review Phase 1 methodology — tier defaults, voice rules, angle; pick Phase 2 owner + pilot date</div>
-        <div class="l-tags">
-          <span class="pill prio-med">Med</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">Webinars</div>
-        <div class="l-next">Finish remaining YouTube snippets (rolling over next few weeks)</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">Cerkl Website</div>
-        <div class="l-next">Email builder page — add WCAG compliance blurb</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">Design Tools</div>
-        <div class="l-next">Research AI video creation tools (HeyGen alternatives for Pains-concept ad video)</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">Advertising</div>
-        <div class="l-next">LinkedIn Ads — test with Rachel (Gallagher); explore Interest-Based Ads</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">YouTube</div>
-        <div class="l-next">Decide with TK — post product videos (Foundations, Audience Manager) to Cerkl YouTube?</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-          <span class="pill pending">Pending TK</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">IC Trends Knowledge Base</div>
-        <div class="l-next">Decide scope option (topics-only / full wiki / full + outputs) before any restructure</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-        </div>
-      </div>
-
-      <div class="ledger-row low">
-        <div class="l-name">ICP Blog May Rewrites</div>
-        <div class="l-next">Decide: publish 3 Drive Docs to internalcommspro.com (Wix) or close as workspace-only</div>
-        <div class="l-tags">
-          <span class="pill prio-low">Low</span>
-          <span class="pill ok">On track</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- ============== SECTION 4: RECENTLY SHIPPED ============== -->
+  <!-- ============== SECTION 5: BLOCKED / AT-RISK GAUGES ============== -->
   <section>
-    <h2><span class="num">04</span>Recently shipped<span class="lead">9 items · last 10 days</span></h2>
+    <h2><span class="num">05</span>Blocked &amp; at-risk — the constraints<span class="lead">4 items · what each is waiting on</span></h2>
+    <div class="gauge-grid">
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Meta Ads Channel Launch <span class="status-pill bad">Blocked</span></div>
+        <div class="gauge-unlocks">Waiting on: <b>Foundations sign-up conversion verified end-to-end in Meta Pixel + Conversions API</b> before test 1 can go live.</div>
+      </div>
+      <div class="gauge-card bad">
+        <div class="gauge-tool">The Cerkular <span class="status-pill bad">Blocked</span></div>
+        <div class="gauge-unlocks">Waiting on: <b>HubSpot → Broadcast API integration</b> (Jira FUTURE-232) — engineering dependency outside Travis's control.</div>
+      </div>
+      <div class="gauge-card warn">
+        <div class="gauge-tool">Competitor Dissat. Mining <span class="status-pill warn">Pending budget</span></div>
+        <div class="gauge-unlocks">Waiting on: <b>webscraping-tool budget approval</b> (Apify / BrightData class). Re-investigation gate 2026-06-30.</div>
+      </div>
+      <div class="gauge-card pending">
+        <div class="gauge-tool">YouTube product videos <span class="status-pill pending">Pending TK</span></div>
+        <div class="gauge-unlocks">Waiting on: <b>TK decision</b> — post product videos (Foundations, Audience Manager) to Cerkl YouTube?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 6: FULL PROJECT LEDGER ============== -->
+  <section>
+    <h2><span class="num">06</span>Full project ledger<span class="lead">23 projects · next step · priority · due · status</span></h2>
+    <table class="actions">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Next step</th>
+          <th>Priority</th>
+          <th>Due</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="proj">Meta Ads Channel Launch</td>
+          <td>Stand up <code>marketing/channels/paid-meta/</code>, then verify Foundations sign-up event firing in Meta Pixel + Conversions API</td>
+          <td><span class="prio high">High</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill bad">Blocked</span></td>
+        </tr>
+        <tr>
+          <td class="proj">SEM Landing Page Rebuild</td>
+          <td>Resume Steps 4–6 (ICE hypothesis → Webflow variant → PostHog config); launch 2026-06-03</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">2026-06-03</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">The Cerkular</td>
+          <td>Resolve personalization-link feasibility in Blast (Jira FUTURE-232)</td>
+          <td><span class="prio high">High</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill bad">Blocked</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Competitor Dissatisfaction Mining</td>
+          <td>Re-investigate end of June — confirm budget for webscraping tools, reassess tooling, decide resume vs. shelve</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">2026-06-30</td>
+          <td><span class="status-pill warn">Pending budget</span></td>
+        </tr>
+        <tr>
+          <td class="proj">SEO Strategy &amp; Plan</td>
+          <td>Phase 2 #1 — define content planning process (esp. blogs) with explicit SEO linkage (keyword → angle → internal linking → CTA)</td>
+          <td><span class="prio high">High</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Weekly Sales Report</td>
+          <td>Define V1 metric set + extract feature requests from week's deal/call notes; publish first report to Marc + Josh by Fri</td>
+          <td><span class="prio high">High</span></td>
+          <td class="effort">2026-05-29</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Ad Conversion Tracking</td>
+          <td>Observe a real event firing in Google Ads (passive verification of 5/15 diagnose+fix)</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Webinars</td>
+          <td>Finish remaining YouTube snippets (rolling over next few weeks)</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Press Release</td>
+          <td>Resume final approval cycle in late May (publish embargo 2026-06-13)</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">2026-06-13</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Cerkl Website</td>
+          <td>Email builder page — add WCAG compliance blurb</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Comparison SEO Pages</td>
+          <td>Build channel process for <code>comparison-seo</code> (template, research inputs, production + refresh workflow) before drafting first new page</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Review Sites</td>
+          <td>Gartner — push current in-progress listing forward (Product Hunt waits on Insights 3.0, 2026-06-13)</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">ICPro SEO</td>
+          <td>Roll out schema to all blog posts (Rich Results Test verified 2026-05-22)</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Design Tools</td>
+          <td>Research AI video creation tools (HeyGen alternatives for Pains-concept ad video)</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill pending">n/a</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Advertising</td>
+          <td>LinkedIn Ads — test with Rachel (Gallagher); explore Interest-Based Ads</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill pending">n/a</span></td>
+        </tr>
+        <tr>
+          <td class="proj">YouTube</td>
+          <td>Decide with TK — post product videos (Foundations, Audience Manager) to Cerkl YouTube?</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td class="proj">IC Trends Knowledge Base</td>
+          <td>Decide scope option (topics-only / full wiki / full + outputs) before any restructure</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill pending">n/a</span></td>
+        </tr>
+        <tr>
+          <td class="proj">ICP Blog May Rewrites</td>
+          <td>Decide: publish 3 Drive Docs to internalcommspro.com (Wix) or close as workspace-only</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">PA System Refresh</td>
+          <td>Exploration — design notes captured; revisit when ready to prototype handoff-driven tracking</td>
+          <td><span class="prio low">Low</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill pending">n/a</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Furqan — Backlinks Onboarding</td>
+          <td>30-min sync to walk through <code>marketing/seo/backlinks/</code>, confirm monthly cadence (~25 prospects), decide on Ahrefs/Moz access</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Downloadable Asset Emails</td>
+          <td>Inventory downloadable-asset follow-up sequences and swap CTAs from book-a-meeting → Foundations</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">2026-05-29</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Canva-Connected Design Skills</td>
+          <td>Phase 1 — template discovery + connection for one-pager, blog-asset, and LinkedIn-asset skills</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">2026-05-29</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">Pressure Prospecting</td>
+          <td>Review Phase 1 methodology — confirm tier defaults / voice rules / angle, pick Phase 2 owner + target pilot date</td>
+          <td><span class="prio med">Med</span></td>
+          <td class="effort">—</td>
+          <td><span class="status-pill">On track</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============== SECTION 7: RECENTLY SHIPPED ============== -->
+  <section>
+    <h2><span class="num">07</span>Recently shipped<span class="lead">13 items · 2026-05-14 → 2026-05-26</span></h2>
     <div class="shipped">
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-20</div>
-        <div class="s-body"><b>Comparison SEO</b> — W21 competitor digest landed; ContactMonkey shipped first "Best [Competitor] Alternatives" listicles 5/15. Phase 2 scope-add proposed.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-26</span>
+        <span class="ship-what">SEO delta audit for cerkl.com completed; technical roadmap updated with verified meta descriptions + live-site findings</span>
+        <span class="ship-proj">SEO Strategy &amp; Plan</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-18</div>
-        <div class="s-body"><b>INDEX refresh</b> — W20 retro; Comp Dissat paused pending budget (re-investigate 2026-06-30); Meta Ads promoted to top priority; Insights embargo pushed 6/01 → 6/13.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-22</span>
+        <span class="ship-what">ICPro schema: Google Rich Results Test verified passing against live blog post</span>
+        <span class="ship-proj">ICPro SEO</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-15</div>
-        <div class="s-body"><b>Review Sites</b> — Sourceforge listing claimed + Foundations added.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-21</span>
+        <span class="ship-what">Meta Ads Phase 2: targeting mental model + 3-cell ABO audience cuts + TK-aligned decisions table locked</span>
+        <span class="ship-proj">Meta Ads Channel Launch</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-15</div>
-        <div class="s-body"><b>ICPro SEO</b> — schema markup fix landed; Rich Results Test verification pending.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-21</span>
+        <span class="ship-what">Matt Frost recap blog re-run (Draft + Edit), final score 42/50, real recording URL swapped in</span>
+        <span class="ship-proj">Webinars</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-15</div>
-        <div class="s-body"><b>Webinars</b> — Resources menu added to Webflow (Furqan-paired).</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-19</span>
+        <span class="ship-what">Matt Frost recap one-pager rebuilt with the dynamic-Lego-bricks component set</span>
+        <span class="ship-proj">Webinars</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-15</div>
-        <div class="s-body"><b>SEO Phase 1 #3</b> — skills inventory mapped to <code>seo-process.md</code>; Phase 1 closed.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-18</span>
+        <span class="ship-what">First enriched competitor-dissatisfaction list handed off to Marc + Josh</span>
+        <span class="ship-proj">Competitor Dissatisfaction Mining</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-14</div>
-        <div class="s-body"><b>Pressure Prospecting Phase 1</b> — methodology delivered by <code>sales/</code>: 12-signal taxonomy, 4-bucket model, 18-field handoff schema (ready for Travis review).</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-15</span>
+        <span class="ship-what">SEO Phase 1 closed: skills inventory mapped to <code>seo-process.md</code></span>
+        <span class="ship-proj">SEO Strategy &amp; Plan</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-14</div>
-        <div class="s-body"><b>Competitor Dissatisfaction Mining</b> — scaffolded in <code>sales/</code> (CLAUDE.md, methodology.md, process doc). Subsequently paused 5/18 pending tooling budget.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-15</span>
+        <span class="ship-what">Ad conversion tracking diagnose + fix landed</span>
+        <span class="ship-proj">Ad Conversion Tracking</span>
       </div>
-
-      <div class="shipped-row">
-        <div class="s-date">2026-05-12</div>
-        <div class="s-body"><b>Webinars</b> — Matt Frost webinar landing page launched (Webflow CMS) + audience follow-up email sent.</div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-15</span>
+        <span class="ship-what">ICPro schema fix landed (Rich Results Test failure diagnosed)</span>
+        <span class="ship-proj">ICPro SEO</span>
       </div>
-
+      <div class="ship-row">
+        <span class="ship-date">2026-05-15</span>
+        <span class="ship-what">Sourceforge listing claimed + Foundations added</span>
+        <span class="ship-proj">Review Sites</span>
+      </div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-15</span>
+        <span class="ship-what">Webinars added to Resources menu (Webflow CMS, with Furqan)</span>
+        <span class="ship-proj">Webinars</span>
+      </div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-14</span>
+        <span class="ship-what">Meta Ads Phase 1: account access restored, page ownership confirmed</span>
+        <span class="ship-proj">Meta Ads Channel Launch</span>
+      </div>
+      <div class="ship-row">
+        <span class="ship-date">2026-05-14</span>
+        <span class="ship-what">Pressure Prospecting Phase 1 methodology design complete</span>
+        <span class="ship-proj">Pressure Prospecting</span>
+      </div>
     </div>
   </section>
 
   <footer>
-    Source: <code>growth-project-tracker.md</code> · Prepared by Travis Foster · Cerkl Marketing &amp; Growth Ops
+    Source: <code>growth-project-tracker.md</code> · Source ledger: <a href="INDEX.md">INDEX.md</a> (refreshed 2026-05-26) · Date: 2026-05-28 · Cerkl Marketing &amp; Growth Ops
   </footer>
 
 </div>

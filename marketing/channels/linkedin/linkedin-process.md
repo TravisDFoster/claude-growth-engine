@@ -73,7 +73,7 @@ If multiple posts wrap the same source (typical for blog-wrap weeks), load it on
 - **Inputs:** Each post's `iso_week` and working title
 - **Produces:** Verified `{post → CSV Copy-subtask row}` mappings
 
-For each post, confirm the week's CSV at `../../content-plan/jira/imports/YYYY-Www.csv` has a Task row whose Summary matches the LinkedIn deliverable, with a `Copy` subtask whose Description contains a `[COPY_PLACEHOLDER]` token.
+For each post, confirm the week's CSV at `../../content-plan/jira/imports/YYYY-Www.csv` has a Task row whose Summary matches the LinkedIn deliverable, whose Description contains a `[COPY_PLACEHOLDER]` token (on its `Copy:` line).
 
 **If any LinkedIn Task row is missing:** stop and surface the gap. This process does not create CSV rows — Monday reconcile owns that.
 
@@ -99,10 +99,10 @@ The draft is the source of truth. It contains:
 ### Step 5 — Insert copy into the Jira CSV
 
 - **Owner:** Claude
-- **Inputs:** Draft file path + target CSV path + Copy subtask row
-- **Produces:** Updated CSV row
+- **Inputs:** Draft file path + target CSV path + the matching LinkedIn Task row
+- **Produces:** Updated CSV Task Description
 
-For each draft, find the Task row in the target week's CSV whose Summary matches the LinkedIn deliverable, then find its `Copy` subtask. Replace `[COPY_PLACEHOLDER]` in that subtask's Description with the draft contents (caption + asset spec + hashtags).
+For each draft, find the Task row in the target week's CSV whose Summary matches the LinkedIn deliverable. Replace `[COPY_PLACEHOLDER]` in that **Task's** Description (on its `Copy:` line) with the draft contents (caption + asset spec + hashtags). The `LinkedIn – Copy` subtask stays as the plain production step — don't write copy into it.
 
 Use a real CSV library (Python `csv`, or equivalent) — Description fields contain newlines.
 
@@ -111,7 +111,7 @@ Use a real CSV library (Python `csv`, or equivalent) — Description fields cont
 - **Owner:** Claude
 - **Produces:** Chat-printed summary
 
-Print one line per post: `[type] [slug] — drafts/YYYY-MM-DD_[type]_[slug].md → CSV Copy subtask updated in YYYY-Www.csv`. Flag any post that:
+Print one line per post: `[type] [slug] — drafts/YYYY-MM-DD_[type]_[slug].md → CSV Task Description updated in YYYY-Www.csv`. Flag any post that:
 - Couldn't find a matching CSV Task row (scaffold gap — surface back to Travis)
 - Couldn't find a matching template (post type not yet templated — future work)
 
@@ -120,7 +120,7 @@ Print one line per post: `[type] [slug] — drafts/YYYY-MM-DD_[type]_[slug].md �
 ## Output
 
 - `drafts/YYYY-MM-DD_[type]_[slug].md` — one per post
-- An updated Jira CSV at `../../content-plan/jira/imports/YYYY-Www.csv` with the LinkedIn `Copy` subtask filled in for each post
+- An updated Jira CSV at `../../content-plan/jira/imports/YYYY-Www.csv` with the LinkedIn Task Description filled in (copy inserted on the `Copy:` line) for each post
 - A chat-printed roll-up
 
 ## Push-update protocol
@@ -145,3 +145,4 @@ Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), app
 ## Learnings
 
 - 2026-05-21 — Monday reconcile now scaffolds LinkedIn Tasks + 4 social-media subtasks by default, with `Post type` lines on the Task and `[COPY_PLACEHOLDER]` tokens on the `LinkedIn – Copy` subtask. Step 3 no longer blocks on a hand-rolled fallback. Starts clean from the next reconcile (W23); W21/W22 stay on their hand-rolled state.
+- 2026-05-28 — Moved the `[COPY_PLACEHOLDER]` / drafted copy from the `LinkedIn – Copy` subtask to the parent Task Description (a `Copy:` line) so the caption + asset spec + hashtags are visible on the card itself; the Copy subtask reverts to a plain production step. Applied retroactively to W23's LinkedIn Tasks.

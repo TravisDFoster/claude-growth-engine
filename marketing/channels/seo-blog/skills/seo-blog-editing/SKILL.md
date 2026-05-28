@@ -115,25 +115,41 @@ Re-read the rewritten draft. Run the line-level checklist one more time, then sc
 
 Once the post scores 35/50 or higher:
 
-### Step 1 — Insert the three CTA markers into the edited body
+### Step 1 — Insert the five visible body markers
 
-The drafting skill does not emit CTA markers — it can't know where the natural pivot lands until the post is written. Editing owns marker placement, post-scoring. Walk the edited body and insert these three HTML comments:
+The drafting skill does not emit body markers — it can't know where the natural pivot lands until the post is written. Editing owns marker placement, post-scoring.
 
-- `<!-- Top CTA -->` — immediately after the H1, before the intro paragraph. No judgment needed.
+The markers serve two purposes at once:
+1. They tell Furqan where to insert Top / Middle / Bottom CTA components in Webflow.
+2. They label the **Content 1** and **Content 2** Rich Text field boundaries, since Webflow's blog template renders as: Top CTA → Content 1 → Middle CTA → Content 2 → Bottom CTA → FAQ.
 
-- `<!-- Middle CTA -->` — **past the structural midpoint, not at it.** The first half of the body is the problem / pain / diagnosis arc; the second half picks up the operational fixes. Place the marker after the H2 section that *completes* the diagnosis arc — typically the section after the one a naive midpoint pass would pick. Aim for roughly 55–65% of the way through the body by H2 count, biased later, not earlier. If the Middle CTA variant is thematically tied (e.g., `Email Analytics Middle` pairs with a measurement section), prefer placing the marker so that themed section is the *first* one of the second half.
+Use **bold-bracket markers**, not HTML comments. Google Drive's markdown→Doc converter silently strips HTML comments, so any `<!-- ... -->` syntax becomes invisible in the Doc that Furqan actually works from. Bold-bracket markers render as visible bold text in the Doc.
+
+Walk the edited body and insert these five markers in order. Pull the CTA variant names from the pre-writing file's Properties block — never invent them.
+
+- `**[Top CTA — <variant name>]**` — immediately after the H1, before the intro paragraph. If the variant is `Nothing` (Omni AI / Educational posts), still emit the marker with `Nothing` as the variant so Furqan knows to skip the insertion point. No judgment needed on placement.
+
+- `**[Content 1]**` — on its own line, immediately after the Top CTA marker. Marks where the Content 1 Rich Text field begins.
+
+- `**[Middle CTA — <variant name>]**` — **past the structural midpoint, not at it.** The first half of the body is the problem / pain / diagnosis arc; the second half picks up the operational fixes. Place the marker after the H2 section that *completes* the diagnosis arc — typically the section after the one a naive midpoint pass would pick. Aim for roughly 55–65% of the way through the body by H2 count, biased later, not earlier. If the Middle CTA variant is thematically tied (e.g., `Email Analytics Middle` pairs with a measurement section), prefer placing the marker so that themed section is the *first* one of the second half.
+
+  This marker is also the **Content 1 → Content 2 split**: everything between `**[Content 1]**` and `**[Middle CTA — ...]**` is Furqan's Content 1 Rich Text paste; everything between `**[Content 2]**` and `**[Bottom CTA — ...]**` is the Content 2 paste.
 
   **Sanity check:** count H2s in the body (excluding the FAQ and FAQ Schema H2s). For `n` body H2s, the Middle CTA should sit after H2 #⌈n × 0.55⌉ through #⌈n × 0.65⌉ — not earlier. If the natural pivot really is earlier, write a one-line note in the edit log explaining why (and aim to revisit on the next post in the same shape).
 
-- `<!-- Bottom CTA -->` — after the closing paragraph of the body, followed immediately by a `---` separator before the `## Frequently Asked Questions` heading.
+  **Content 1 / Content 2 balance check:** the two halves should be within roughly 30/70 to 70/30 of each other by word count. Lopsided splits (90/10) mean the Middle CTA marker is in the wrong place or the draft itself is unbalanced — fix before scoring.
+
+- `**[Content 2]**` — on its own line, immediately after the Middle CTA marker. Marks where the Content 2 Rich Text field begins.
+
+- `**[Bottom CTA — <variant name>]**` — after the closing paragraph of the body, followed immediately by a `---` separator before the `## Frequently Asked Questions` heading.
 
 ### Step 2 — Assemble the live file in this exact order
 
 1. **Properties block at the top.** Copy the `## Properties` section verbatim from the pre-writing file. The block carries the Webflow CMS fields downstream owners (Furqan, Webflow) need: Title, Slug, Top 3 Organic Search Keywords, Primary Solution, Top/Middle/Bottom CTA names, Primary Category, All Categories, Meta Title, Meta Description. Do not re-derive or re-word — pre-writing is canonical. (Legacy pre-writing files may use `Secondary Category` instead of `All Categories` — that's a historical single-value field; rename to `All Categories` when copying forward, since Webflow's actual CMS field is the multi-tag `All Categories`.)
 2. **A `---` separator** after the properties block.
-3. **The edited post body, with the three CTA markers inserted per Step 1.** The full body shape, top to bottom: `# H1` → `<!-- Top CTA -->` → first-half H2 sections (problem/diagnosis arc) → `<!-- Middle CTA -->` → second-half H2 sections (operational fixes, ending with forward-moving takeaway) → `<!-- Bottom CTA -->` → `---` → `## Frequently Asked Questions` (or `## How To`) → `## FAQ Schema` (or `## How-to Schema`) with the JSON-LD fenced code block. Recording-URL placeholders (e.g., `<RECORDING_URL>`) must be resolved to a real URL before saving; if you don't have one, stop and ask the user — do not ship a placeholder.
+3. **The edited post body, with the five body markers inserted per Step 1.** The full body shape, top to bottom: `# H1` → `**[Top CTA — <variant>]**` → `**[Content 1]**` → first-half H2 sections (problem/diagnosis arc) → `**[Middle CTA — <variant>]**` → `**[Content 2]**` → second-half H2 sections (operational fixes, ending with forward-moving takeaway) → `**[Bottom CTA — <variant>]**` → `---` → `## Frequently Asked Questions` (or `## How To`) → `## FAQ Schema` (or `## How-to Schema`) with the JSON-LD fenced code block. Recording-URL placeholders (e.g., `<RECORDING_URL>`) must be resolved to a real URL before saving; if you don't have one, stop and ask the user — do not ship a placeholder.
 
-   **Validation gate before saving:** if any of the three CTA-marker comments are missing, or the schema block is missing/doesn't parse, or the schema's Q&A count doesn't match the FAQ section's H3 count — **stop and fix.** The shape above is required, not optional.
+   **Validation gate before saving:** if any of the five body markers are missing, if any CTA marker is missing its variant name (e.g., `**[Top CTA]**` without the `— <variant>` suffix), if the Content 1 / Content 2 word-count split is outside the 30/70–70/30 band, or if the schema block is missing / doesn't parse / has a Q&A count that doesn't match the FAQ section's H3 count — **stop and fix.** The shape above is required, not optional.
 
 4. **A `---` separator** before the edit log.
 5. **The edit log block:**
@@ -144,7 +160,8 @@ The drafting skill does not emit CTA markers — it can't know where the natural
 - Major structural changes: <one line>
 - Notable phrase/structure fixes: <one line>
 - Middle CTA placement: after H2 "<section title>" (position N of M body H2s, ~XX%). <If outside the 55–65% band, one-line reason.>
-- Verification: <one line on em-dash count, banned-phrase count, recording URL filled, properties block verbatim from pre-writing, all 3 CTA markers present, FAQ-schema JSON-LD present and Q&A count matches FAQ count>
+- Content 1 / Content 2 balance: <Content 1 word count> / <Content 2 word count> (<ratio, e.g., 48/52>). <If outside 30/70–70/30, one-line reason.>
+- Verification: <one line on em-dash count, banned-phrase count, recording URL filled, properties block verbatim from pre-writing, all 5 body markers present and correctly named (Top CTA, Content 1, Middle CTA, Content 2, Bottom CTA — each CTA marker carrying its variant name), FAQ-schema JSON-LD present and Q&A count matches FAQ count>
 ```
 
 6. **The image candidates block** — appended right after the edit log (no new `---` separator; the publishing skill's strip recipe catches everything from `\n---\n**Edit log**...` to end of file, so this block stays QA-side and never reaches the Drive doc).

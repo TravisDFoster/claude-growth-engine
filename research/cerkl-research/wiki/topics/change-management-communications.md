@@ -18,6 +18,7 @@ The May 2026 source cluster locks in four observations:
 3. **Layoff-as-AI-narrative is the analyst counter-frame.** Gartner's May 2026 survey punctures the "cut to fund AI" CEO playbook: ~80% cut; cuts show **no correlation** with AI ROI. Cite [[people-amplification]] as the analyst-grade pushback ([[gartner-ai-layoffs-no-returns-2026-05-15]]).
 4. **Change-comms is the analyst-named gate to AI ROI.** [[mckinsey-agentic-ai-workforce-redesign-2026-05-18]] explicitly names top-down change management as the prerequisite for reskilling to land — *"reskilling efforts tend to remain ineffective"* without it. Paired with [[gartner-people-centric-ai-2026-05-15]] and [[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] this forms the **[[analyst-trio-comms-as-ai-gate]]**: communications is the binding constraint on AI ROI, from CIO (McKinsey) through CHRO (Gartner) to EX (Forrester).
 5. **The change-fatigue vs change-engagement debate is now open.** [[qualtrics-change-engagement-2026-05-21]] claims employees experiencing more change are *more* engaged ([[goldilocks-zone-of-change]] / n=33,831). The dominant IC-trade-press counter-frame is [[change-fatigue]] (Gallagher State of the Sector 2026 ranks fatigue as #2 IC barrier; [[perceptyx]] data: change-management effectiveness + leadership credibility displaced belonging as top engagement driver). The reconcilable position: Qualtrics' effect holds for *investment-coded* change with steady [[listening-cadence]], inverts above the [[change-saturation]] threshold — neither side captures the full curve alone.
+6. **Change-leadership-as-comms-discipline gets a Gartner-tier prescription.** [[mark-whittle]]'s [[change-leadership-three-step]] framework (Acknowledge / Regulate / Train) per [[ragan-gartner-2026-comms-predictions-2025-10-09]] is the analyst-tier prescriptive pair to Poitevin's [[people-amplification]] diagnosis. The accompanying *"effective leadership today is change leadership"* verbatim is the language Gartner is engineering for portability into CCO/CHRO buyer conversations. Gartner now occupies both ends of the change-comms vocabulary: org-level (people-amplification) and practitioner-level (Whittle three-step).
 
 The two failure modes worth naming explicitly:
 
@@ -28,10 +29,11 @@ The Cerkl-positioning thread: **"the way the message is shared is often just as 
 
 ## Key Entities
 
-- [[gartner]] — analyst frame: people-amplification, zero-correlation between cuts and AI ROI
+- [[gartner]] — analyst frame: people-amplification, zero-correlation between cuts and AI ROI, Whittle three-step prescriptive framework
 - [[helen-poitevin]] — Gartner Distinguished VP Analyst voicing the no-correlation finding
-- [[ragan-communications]] — primary IC trade pub publishing the case-study triangulation
-- [[sean-devlin]] — Ragan editor authoring the "Week in Comms" column
+- [[mark-whittle]] — Gartner VP Advisory (comms practice); coined the Whittle three-step prescription
+- [[ragan-communications]] — primary IC trade pub publishing the case-study triangulation and the Whittle pickup
+- [[sean-devlin]] — Ragan contributor authoring the "Week in Comms" column AND the Whittle/Gartner pickup
 - [[linkedin]] — 2026 layoff-comms case (formulaic but acceptable)
 - [[gm]] — 2026 layoff-comms case (anti-pattern; the literal anti-Cerkl case study)
 - [[gitlab]] — 2026 layoff-comms case (candid but stakeholder-blind)
@@ -77,11 +79,13 @@ The Cerkl-positioning thread: **"the way the message is shared is often just as 
 - [[pucc-framework]] — Sutton's underlying logic for what makes a "good" memo
 - [[talent-transformation-thesis]] — McKinsey's *Rewired 2.0* core thesis
 - [[human-agentic-collaboration]] — McKinsey's *Rewired 2.0* Lever #4
+- [[change-leadership-three-step]] — Whittle/Gartner three-step framework (Acknowledge / Regulate / Train); analyst-tier practitioner prescription pairing with [[people-amplification]]
 
 ## Practitioner Voices
 
-- [[sean-devlin]] / [[ragan-communications]] — IC trade-pub editorial throughline naming the 2026 pattern
+- [[sean-devlin]] / [[ragan-communications]] — IC trade-pub editorial throughline naming the 2026 pattern; also Devlin's Whittle pickup distributing the three-step framework
 - [[helen-poitevin]] / [[gartner]] — analyst-grade rebuttal to "cut to fund AI"
+- [[mark-whittle]] / [[gartner]] — analyst-grade prescription for change-leadership-as-comms-discipline
 
 ## Sources Read
 
@@ -96,6 +100,7 @@ The Cerkl-positioning thread: **"the way the message is shared is often just as 
 | [[qualtrics-change-engagement-2026-05-21]] | 2026-05-21 | Triangulates Qualtrics n=33,831 finding against Gallup / Gallagher / Perceptyx / Prosci / McKinsey counter-data; introduces Goldilocks-zone framing, listening-cadence moderator, change-saturation threshold |
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | *Rewired 2.0* talent-transformation thesis; four levers with Lever #4 ("emotional work of helping humans feel safe alongside machine colleagues") most directly change-comms-adjacent |
 | [[layoff-memo-subgenre-2026-05-21]] | 2026-05-21 | Names the 2026 AI-restructure layoff-memo subgenre as a discrete comms category; six-anchor comparison (Cisco/GitLab/GM/LinkedIn/Microsoft/Oracle + Meta extension); five emerging conventions; reference frameworks (Chesky/Collison/Niccol/Sutton PUCC/Sucher) |
+| [[ragan-gartner-2026-comms-predictions-2025-10-09]] | 2025-10-09 | Whittle/Gartner three-step change-leadership framework; analyst-tier prescriptive pair to Poitevin's diagnosis; *"effective leadership today is change leadership"* verbatim |
 
 ## Open Questions
 

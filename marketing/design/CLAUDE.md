@@ -41,6 +41,8 @@ design/
 │       ├── numbered-stack/            ← vertical: ordered list of 3-5 named concepts (ladders, frameworks)
 │       ├── letter-strip/              ← horizontal: 3-6 acronym letters or named pillars
 │       └── stat-hero/                 ← one dominant stat + framing (OG / social cards)
+├── canva-skills/                       ← Canva asset-generation skills (built on brand templates)
+│   └── canva-asset-pack/               ← PLACEHOLDER: generate a pack of on-brand Canva assets
 └── branding-assets/
     ├── Brand Guidelines/
     │   ├── brand-guidelines.md     ← routing index
@@ -115,6 +117,7 @@ design/
 
 | Task | Skill |
 |---|---|
+| Generating a pack of on-brand Canva assets from brand templates (webinar/campaign graphics) — **placeholder, not yet built** | `/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md` |
 | Generating or optimizing marketing images, OG images, hero graphics, mockups | `/Users/travisfoster/claude-code/cerkl/marketing/skills/image/SKILL.md` |
 | Producing video content with AI tools (Remotion, HeyGen, Veo, Runway) | `/Users/travisfoster/claude-code/cerkl/marketing/skills/video/SKILL.md` |
 | Writing copy for one-pagers, decks, banners, ad creative | `/Users/travisfoster/claude-code/cerkl/marketing/skills/copywriting/SKILL.md` |

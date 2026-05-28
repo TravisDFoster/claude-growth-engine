@@ -2,7 +2,40 @@
 
 > Audience definitions, exclusion rules, and the system for adding / promoting audiences as test data accumulates.
 
-**Last updated:** 2026-05-21
+**Last updated:** 2026-05-27
+
+---
+
+## HubSpot source lists (for Meta Custom Audience uploads)
+
+Active lists in HubSpot that drive Meta audience CSV exports. Re-export each list when refreshing Meta audiences (cadence per Source data inventory below).
+
+| HubSpot list | listId | Object | Type | Purpose | Count (2026-05-27) |
+|---|---|---|---|---|---|
+| Meta Seed — Foundations Sign-ups | *UI-built* | Contact | Dynamic | LAL seed (cell A) | ~115 expected |
+| Meta Exclusion — Demo Requests | 1658 | Contact | Dynamic | Exclusion for cells A, B | 631 |
+
+**Recommended export fields** (same set for both, for Meta match quality):
+`email, firstname, lastname, phone, city, state, country, zip, company, jobtitle`
+
+### Foundations seed — UI filter recipe
+
+The public Lists v3 API doesn't expose cross-object filtering on contact lists (ASSOCIATION filter type is rejected; only PROPERTY / IN_LIST / FORM_SUBMISSION / EVENT / etc. are allowed). Build this list in the HubSpot UI:
+
+1. Lists → Create list → **Active list** → Object: **Contacts**
+2. Name: `Meta Seed — Foundations Sign-ups`
+3. Filter group:
+   - Associated deal → **Pipeline** is any of → `Email Foundations`
+   - AND Associated deal → **Deal stage** is none of → `Abandoned Account`
+4. Expected count: **~115 contacts** (113 deals across 4 non-Abandoned stages, ~115 unique associated contacts)
+5. Paste this into the list description: `Used as Custom Audience SEED for Meta 1% US+CA Lookalike (cell A). Export fields: email, firstname, lastname, phone, city, state, country, zip, company, jobtitle.`
+
+### Demo exclusion — definition (already built via API, listId 1658)
+
+OR'd union of submissions on either demo form:
+- `Schedule a Chat (Webflow)` (id `c0af68f9-b9e5-4222-bc09-c7552fafe13b`) — current form, 77 submissions
+- `Schedule a Demo` (id `35ac2c2b-d2f5-440d-ac80-aa7a80102d62`) — legacy pre-Webflow, 904 historical submissions
+- *Excluded:* `Schedule a Demo - NO EMAIL FOLLOW UP (Paycor)` — 4 records, partner-specific, stale
 
 ---
 
@@ -43,9 +76,9 @@ Each test cycle, new audiences enter via one of three paths:
 
 | Source | Records | Freshness | Used for |
 |---|---|---|---|
-| Foundations sign-up emails | ~100 (as of 2026-05-21) | Refresh monthly from Foundations DB | LAL seed (cell A) |
-| Demo-request emails | ~15 (as of 2026-05-21) | Refresh monthly from CRM | LAL seed (cell A) — included because many demos convert to Foundations |
+| Foundations sign-ups (HubSpot — Email Foundations pipeline, non-Abandoned) | 115 (as of 2026-05-27) | Active list auto-refreshes; re-export to Meta monthly | LAL seed (cell A) |
+| Demo-request submissions (HubSpot — Schedule a Chat + Schedule a Demo forms) | 631 (as of 2026-05-27) | Active list auto-refreshes; re-export to Meta monthly | Exclusion from A, B |
 | Cerkl.com visitors (Pixel) | Continuous | Auto via Pixel; 180-day lookback | Retargeting (cell C) |
 | IG / FB account engagers | Continuous | Auto via Meta; 90-day lookback | Retargeting (cell C) |
-| Existing Foundations users (exclusion) | All-time list | Refresh monthly | Exclusion from A, B |
-| Paid customers (exclusion) | All-time list | Refresh quarterly | Exclusion from A, B |
+
+**Decision log (2026-05-27):** Demo-request contacts moved from seed to exclusion. Rationale — demo intent skews enterprise (sales pipeline) while Foundations is a free-product CTA; including demos in the LAL would muddy the seed shape. Paid-customer exclusion and existing-Foundations-user exclusion are out of scope for these two lists; revisit if Meta audience match-quality flags retargeting of current customers.

@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gartner — Chatbots Over Intranets (Predicts 2026) · IC Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 8px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); font-style: normal; }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco-cell ul { margin: 0; padding-left: 18px; font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative; padding-right: 40px;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Analyst Report Deep Dive</div>
+    <h1>Gartner: 75% of employees will use chatbots over traditional IC channels by 2028</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-05-27</span>
+      <span><b>Category:</b> Analyst report (Gartner Predicts 2026)</span>
+      <span><b>Author:</b> Mark Whittle, VP Advisory, Gartner</span>
+      <span class="verdict">Act on it — Yes</span>
+    </div>
+    <p class="tldr">
+      Gartner forecasts that by 2028, <b>75% of employees will rely on chatbots to obtain relevant internal communications, replacing traditional communications channels</b> — one of five predictions in a Feb 13, 2026 paywalled report led by VP Advisory Mark Whittle. The 2028 chatbot stat anchors a broader 4-year arc: PR budgets 2× by 2027, comms data/analytics spend doubling to 6% by 2029, and IC teams using employee digital-footprint analytics for personalized delivery. The strongest practitioner pushback — that "chatbots fail without information governance" — is exactly the wedge Cerkl already plays in: the delivery + measurement layer that feeds <em>both</em> the intranet and the chatbot.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      <p style="margin:0 0 6px;">Add a 2-line footnote to the <code>vs-Staffbase</code> / <code>vs-Simpplr</code> / <code>vs-LumApps</code> refresh-queue items in <code>competitors.md</code>, referencing Gartner Predicts 2026 (doc 7160430):</p>
+      <div class="code-row">
+        <code id="reframe-stat">Gartner forecasts 75% of employees will use chatbots to obtain internal comms by 2028, replacing traditional channels. The destination war is now between the intranet and the chatbot — Cerkl is upstream of both.</code>
+        <button class="copy-btn" data-copy="reframe-stat" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>The report</h3>
+        <p>
+          A Gartner Predicts report — <em>"Predicts 2026: Top Predictions to Inform 2026 Comms Strategies"</em>
+          (doc ID <a href="https://www.gartner.com/en/documents/7160430">7160430</a>, HTTP 403 to non-clients). Published
+          <b>2026-02-13</b> per Sociabble's pickup; written by <b>Mark Whittle</b>, VP Advisory at Gartner — the same
+          analyst who hosted <a href="https://www.gartner.com/en/webinar/798291/1797036-gartners-top-communications-predictions-for-2026-what-every-cco-must-know">Gartner's CCO-targeted webinar</a> on the same predictions.
+        </p>
+        <p>
+          The full report is paywalled to Gartner clients; trade-press pickup is concentrated in comms/PR outlets
+          (Ragan, Sociabble, CommsCollectiv, Sword &amp; the Script, CMOTech Asia, Stuart Bruce's PR Futurist) — <b>no SHRM,
+          HR Brew, HR Executive, Forbes, or CIO Dive coverage</b> has surfaced, which is itself a signal: this prediction
+          set hasn't hit HR press yet.
+        </p>
+      </div>
+      <div>
+        <h3>Source URLs</h3>
+        <ul>
+          <li>Gartner landing (paywalled): <a href="https://www.gartner.com/en/documents/7160430">gartner.com/en/documents/7160430</a></li>
+          <li>Ragan (Sean Devlin, 2025-10-09): <a href="https://www.ragan.com/ai-hr-comms-gartner-2026/">ragan.com</a></li>
+          <li>Sociabble (most complete IC-side enumeration): <a href="https://www.sociabble.com/blog/internal-communication/gartners-top-internal-communications-predictions/">sociabble.com</a></li>
+          <li>Stuart Bruce / PR Futurist (only public source with all 5): <a href="https://www.stuartbruce.biz/2026/02/gartner-predicts-pr-budgets-will-increase-2x-by-2027/">stuartbruce.biz</a></li>
+          <li>Whittle webinar (CCO-targeted): <a href="https://www.gartner.com/en/webinar/798291/1797036-gartners-top-communications-predictions-for-2026-what-every-cco-must-know">gartner.com/webinar</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it claims — the five predictions</h2>
+    <p>Verbatim where available:</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">By 2027</div>
+        <h4>PR budgets 2×</h4>
+        <p>"Mass adoption of public LLMs as a replacement for traditional search will drive a 2× increase in PR and earned media budgets."</p>
+      </div>
+      <div class="pillar" style="border-color: var(--accent); background: var(--accent-soft);">
+        <div class="n">By 2028 · headline</div>
+        <h4>75% chatbot replacement</h4>
+        <p style="color: var(--ink);">"75% of employees will rely on chatbots to obtain relevant internal communications, replacing traditional communications channels."</p>
+      </div>
+      <div class="pillar">
+        <div class="n">By 2029</div>
+        <h4>Narrative intelligence</h4>
+        <p>"45% of CCOs will adopt narrative intelligence technologies to support reputation monitoring amid an intensifying disinformation landscape."</p>
+      </div>
+      <div class="pillar">
+        <div class="n">By 2029</div>
+        <h4>Digital-footprint personalization</h4>
+        <p>"75% of Communications teams will use analyses of employee digital footprints to design and deliver personalized communications."</p>
+      </div>
+      <div class="pillar">
+        <div class="n">By 2029</div>
+        <h4>Analytics spend 2×</h4>
+        <p>"Communications' spending on data &amp; analytics will double to 6% of the function's budget to amplify decision-making speed and business impact."</p>
+      </div>
+    </div>
+
+    <h3>The chatbot prediction's mechanism</h3>
+    <div class="callout info">
+      <div class="callout-label">Per the report, via Sociabble</div>
+      <p style="margin:0; color: var(--ink); font-style: italic;">"Chatbots will improve information accessibility and provide personalized, relevant communications. For pull communications, employees will ask questions and get personalized, curated answers. For push communications, chatbots will send customized push alerts to specific employee segments."</p>
+    </div>
+
+    <p>Underpinning signal cited (per WebSearch surface of the report): <b>75% of employees already use AI tools at work</b> — Gartner extrapolates from current AI-usage rates to channel substitution. A separate Gartner finding referenced alongside the chatbot prediction: employees reporting high information overload are <b>52% less likely to report high intent to stay</b> and <b>30% less likely to report high strategic alignment</b>.</p>
+
+    <div class="callout warn">
+      <div class="callout-label">Methodology gap</div>
+      No sample size, survey instrument, or baseline year is disclosed in any public-facing pickup. Standard Gartner Predicts format — analyst extrapolation from internal panel surveys — but the 75%-by-2028 number doesn't come with showable math.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Chief Communications Officers, VP Comms, IC Directors at enterprises Gartner sells to. The webinar framing — "What Every CCO Must Know" — and the all-5-predictions framing (PR + IC + analytics) point to head-of-comms readers, not IC managers.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>A Cerkl ICP buyer (IC Director, Senior Director of Comms, SVP of IC) is presenting 2026 strategy to a CCO/CEO and needs an analyst anchor. Gartner predictions carry RFP-level weight; this is the kind of stat that ends up in board decks.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>SMB / Foundations buyers (office manager, chief of staff, operations lead, founder) — Gartner is not their reference set. For those buyers, the prediction lands abstract; the actionable framing is what their next vendor does, not what Gartner forecasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>How it slots into Cerkl's competitive positioning</h2>
+    <p>This is the cleanest external validation the category has produced for Cerkl's <b>existing reframe</b> — <em>"the intranet is the destination, not the comms strategy"</em> (from the vs-Staffbase positioning in <code>shared/competitors.md</code>). Gartner doesn't just say the intranet won't be the strategy; it forecasts that by 2028 <b>the intranet won't even be where 75% of employees go to find internal info</b>.</p>
+
+    <h3>The reframe gets sharper</h3>
+    <table class="cmp">
+      <thead>
+        <tr><th>Reframe (today)</th><th>Reframe (post-Gartner)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"We're the delivery + measurement layer across the channels you already have."</td>
+          <td>"We're the delivery + measurement layer across the channels your employees will actually use — and increasingly, that won't be the intranet."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Three direct implications for Cerkl positioning</h3>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1. Sharpens every "vs. intranet vendor" page</h4>
+        <p>vs-Staffbase, vs-Simpplr, vs-LumApps, vs-Workvivo refresh-queue items in <code>competitors.md</code> can now cite this Gartner stat — <em>"Gartner forecasts the intranet stops being the destination by 2028; you're being sold a destination, not a strategy."</em></p>
+        <p>Highest-authority analyst stat available for that reframe.</p>
+      </div>
+      <div class="stack-card">
+        <h4>2. Introduces a real measurement gap</h4>
+        <p>Today, Cerkl measures email opens, link clicks, read-through. If 75% of employees route around traditional channels to chatbots by 2028, what does Cerkl measure then? Chatbot interaction logs are a different signal class.</p>
+        <p><b>This is the first prediction in this set that points at a Cerkl roadmap question, not just a marketing one.</b> Worth a 2026-Q4 strategy conversation: does Cerkl need a "chatbot-side" measurement story by 2028, or does Cerkl federate signals from the org's existing chatbot (Slack-side bot, Teams Copilot, intranet-native)?</p>
+      </div>
+      <div class="stack-card">
+        <h4>3. Validates "delivery layer" over "destination" architecture</h4>
+        <p>Every competitor in <code>competitors.md</code> (Staffbase, Simpplr, LumApps, Firstup, Workvivo, Poppulo, Workshop) is investing in an intranet/portal that IS the destination — see today's recap: Poppulo just acquired Sociabble for advocacy + frontline + rewards; LumApps closed $650M Bridgepoint specifically to push "AI Employee Hub" further.</p>
+        <p><b>If Gartner is right, every one of those plays is investing in the wrong layer.</b> Cerkl's "feed the channels your employees use" architecture is structurally better positioned for the post-2028 landscape than any vendor in the named competitive set.</p>
+      </div>
+    </div>
+
+    <h3>Where to act</h3>
+    <ul>
+      <li>Add a footnoted "Gartner forecast" sidebar to the next refresh of <code>cerkl.com/broadcast/versus/staffbase</code>, <code>versus/simpplr</code>, <code>versus/lumapps</code>.</li>
+      <li>Lift the headline 75%-by-2028 stat into the next IC-leader cold outreach as the lead.</li>
+      <li>Write a Cerkular POV piece: <em>"When your employee asks the chatbot about open enrollment, who delivered them there?"</em> — frames Cerkl as the upstream content provider for chatbots, not the chatbot replacement.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How they differ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Forrester Wave: Intranet Platforms Q2 2026</td>
+          <td>Names Simpplr / Workvivo / Unily / LumApps as Leaders and frames intranets as <b>evolving INTO</b> AI employee hubs / agent management surfaces, not being replaced. Explicitly notes vendor AI "remains low" in customer adoption (~half of reference customers). Implicit counter-take to Gartner's 75%-by-2028 timeline. <a href="https://www.forrester.com/blogs/the-forrester-wave-intranet-platforms-q2-2026-our-evaluation-of-13-key-vendors/">forrester.com</a></td>
+        </tr>
+        <tr>
+          <td class="alt-name">McKinsey "20% of time searching" framing</td>
+          <td>Quantifies the problem Gartner predicts AI chat will solve, but <b>stops short of forecasting channel replacement.</b> Directionally supportive, no equivalent timeline. <a href="https://www.interactsoftware.com/blog/how-ai-is-changing-the-digital-workplace/">interactsoftware.com</a></td>
+        </tr>
+        <tr>
+          <td class="alt-name">Deloitte 2026 State of AI in the Enterprise</td>
+          <td>Worker AI access up 50% in 2025 — directionally supportive of Gartner's underlying signal, but <b>no 75%/2028 channel-substitution claim.</b> <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html">deloitte.com</a></td>
+        </tr>
+        <tr>
+          <td class="alt-name">LumApps / Simpplr / Staffbase vendor counter-frame</td>
+          <td>All three publicly arguing <b>"the intranet isn't replaced by chatbots, it's transformed by them"</b> — chatbot becomes a feature of the governed intranet, not a substitute. LumApps' homepage now reads "The leading AI Employee Hub"; Simpplr Comms AI sits on top of the intranet; Staffbase Navigator is intranet-permission-aware. <a href="https://staffbase.com/blog/ai-intranet">staffbase.com</a> / <a href="https://hrtechedge.com/lumapps-named-leader-in-forrester-wave-intranet-platforms-2026/">hrtechedge.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: stance on intranet survival.</b> Gartner says employees route <em>around</em> the intranet (chatbot replaces it). Forrester + every named intranet vendor say the intranet <em>absorbs</em> the chatbot (it becomes the chatbot's governed knowledge base). This single axis tells Cerkl whether to frame Broadcast as the delivery layer feeding both surfaces, or pick a side. <b>The right answer for Cerkl is almost certainly <em>feed both</em></b> — the destination war is between Staffbase/Simpplr/LumApps/Workvivo and the chatbot, and Cerkl doesn't need to win it; Cerkl needs to be upstream of whoever does.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">Methodology is opaque</div>
+      <p style="margin:0;">No sample size, survey instrument, baseline year, or extrapolation method is disclosed in public materials. The 75%-by-2028 number is analyst extrapolation, not measurement. Use the stat in positioning, but don't over-anchor strategy on the exact number — anchor on the directional reframe.</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">HR press hasn't picked this up</div>
+      <p style="margin:0;">Pickup is concentrated in comms/PR trade press only. CHRO/HR audiences (Cerkl's adjacent buyer for Foundations+) are not yet exposed to this prediction. That's both a risk (it might not actually land in CHRO conversations) and an opportunity (Cerkl could be the first to bridge the Gartner comms-predictions framing into HR conversations).</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">"Replacing managers" is a provocative framing not in the Gartner text</div>
+      <p style="margin:0;">The Ragan write-up (and the prompt that surfaced this deep-dive) glossed the prediction as employees turning to chatbots instead of <em>intranets/newsletters/managers</em>. The Gartner verbatim is <em>"replacing traditional communications channels"</em> — managers aren't named. Don't take the "managers" framing into customer-facing copy; it's a Ragan reframe and won't survive scrutiny.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Whittle's quoted lines are about change leadership, not the chatbot prediction</div>
+      <p style="margin:0;"><em>"Effective leadership today is change leadership"</em> — these are useful but tangential. Don't cite them as proof of the chatbot prediction; they're orthogonal.</p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">2028 is two years from now, not five</div>
+      <p style="margin:0;">The 2028 date sounds far but is two budget cycles. If a Cerkl IC-leader buyer signs in 2026 expecting their 2028 stack to look like their 2025 stack, the Gartner stat is the argument for <em>not</em> renewing the legacy intranet they're paying for. Use accordingly.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">75%</div><div class="lbl">employees on chatbots by 2028</div></div>
+      <div class="stat"><div class="num">2026-02-13</div><div class="lbl">report published</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">predictions in report</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">analysts publicly contesting</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">HR-press pickups</div></div>
+    </div>
+
+    <p><b>Signal density: moderate-to-low.</b> Heavy vendor + trade-press re-quoting, thin original practitioner debate. The "replace managers / replace channels" framing hasn't yet provoked the volume of pushback its provocativeness invites — <b>likely an opportunity window for an original IC POV.</b></p>
+
+    <ul>
+      <li><b>Most substantive practitioner pushback:</b> <a href="https://www.linkedin.com/posts/sarahpoulter_gartner-has-predicted-that-by-2028-75-of-activity-7431636595646033920-6x0P">Sarah Poulter (Strategic Communications &amp; Transformation Leader), LinkedIn — "Chatbots Fail Without Information Governance"</a> — calls the 75% number "magnificently optimistic" given current data hygiene.</li>
+      <li><b>Vendor responses framing as validation, not threat:</b> Sociabble positioned its "Ask AI Chat" as already addressing the 2028 forecast; Isentia launched a GenAI Insights Chatbot citing the same stat. No vendor has publicly contested it.</li>
+      <li><b>No Forrester / McKinsey / IDC / Constellation analyst</b> has directly contested the 75% number publicly. No Reddit chatter in r/internalcomms, r/HR, or r/sysadmin.</li>
+    </ul>
+
+    <h3>Practitioner quotes worth lifting</h3>
+    <div class="quotes">
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Any chatbot is only as good as the information it's trained on. Garbage in, hallucination out."</p>
+        <div class="who">— <b>Sarah Poulter</b>, Strategic Communications &amp; Transformation Leader · LinkedIn, Nov 2025 · <a href="https://www.linkedin.com/posts/sarahpoulter_gartner-has-predicted-that-by-2028-75-of-activity-7431636595646033920-6x0P">source</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"Until a chatbot can 'take responsibility' for bad policy interpretation, people will still be sliding into their favorite Comms or HR person's DMs."</p>
+        <div class="who">— <b>Liliana Biro</b>, commenter on Poulter's post</div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">"</span>
+        <p>"AI is a librarian — if the library is a mess, no one is getting their book."</p>
+        <div class="who">— <b>Zara Ramtohul-Akbur</b>, commenter on Poulter's post</div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">"</span>
+        <p>"We're about to lose our distribution advantage. When employees go straight to AI for answers, we lose the ability to frame, sequence, and contextualise the messages that matter most."</p>
+        <div class="who">— <b>Magdalena Gawlak</b>, Head of Global Communications, Aflatoun International · <a href="https://cmotech.asia/story/gartner-llms-to-reshape-pr-budgets-staff-chatbots">CMOTech Asia</a></div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top: 16px;">
+      <div class="callout-label">Why the Gawlak quote matters most</div>
+      <p style="margin:0;">It surfaces the <b>real IC strategist concern</b>: chatbots break the curated narrative that IC teams build. That's a more sophisticated objection than "the data is bad," and one Cerkl's "right message, right person, right channel, right time" pitch maps onto directly.</p>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">08</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Worth acting on? Yes.</b> Update <code>shared/competitors.md</code> (specifically the vs-Staffbase, vs-Simpplr, vs-LumApps reframe sections — all three of which can now cite this Gartner stat as analyst-level validation) AND draft a Cerkular POV blog post to claim the IC-strategist framing before someone else does.</p>
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Add a 2-line footnote to the vs-Staffbase / vs-Simpplr / vs-LumApps refresh-queue items in <code>competitors.md</code> referencing Gartner Predicts 2026 (doc 7160430). The destination war is now between the intranet and the chatbot — Cerkl is upstream of both.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>30 minutes to update <code>competitors.md</code>. 90 minutes for the Cerkular POV draft — the Gawlak "distribution advantage" angle writes itself.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <ul>
+          <li>Gartner publishes a methodology note clarifying the 75% number is based on weak signal — <em>unlikely</em>.</li>
+          <li>HR press (SHRM, HR Brew, Forbes) starts pushing back on the prediction in a way that diminishes its weight in CHRO conversations — <em>worth watching, no signal yet</em>.</li>
+          <li>A named intranet vendor (Staffbase, Simpplr, LumApps) publicly <b>contests</b> Gartner (vs. their current "we'll absorb the chatbot" posture) — would suggest the destination-vs-delivery framing is shifting.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Open questions</h2>
+
+    <details class="q">
+      <summary>What's the underlying Gartner survey behind the 75%?</summary>
+      <div class="q-body">
+        <p>Sample size, baseline year, panel composition all undisclosed. Worth a sales-team or analyst-relations ask if Cerkl has Gartner client access (or anyone in network does).</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Will the chatbot side of "2028" be the org's existing IT-deployed chatbot or a vendor-shipped IC-specific chatbot?</summary>
+      <div class="q-body">
+        <p>Material to Cerkl strategy — if it's the former (Teams Copilot, Slack AI, intranet-native), Cerkl needs a "feeds your existing chatbot" integration story; if the latter, the destination war reshuffles to include AI-IC vendors not yet in the named set.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does Cerkl's measurement story need a chatbot-side signal by 2028?</summary>
+      <div class="q-body">
+        <p>Email opens / link clicks / read-through don't map onto chatbot interactions. Either Cerkl federates from the chatbot, or measurement coverage drops as channel mix shifts. <b>This is the most strategic open question.</b></p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is anyone going to claim the IC-strategist "distribution advantage" frame (Gawlak quote) before Cerkl does?</summary>
+      <div class="q-body">
+        <p>Sociabble and Isentia already moved on the "validation" framing. The "we lose narrative control" framing is unclaimed.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does the 75% include knowledge workers only, or frontline + deskless too?</summary>
+      <div class="q-body">
+        <p>Per Firstup's recent research, 60% of frontline workers have never used AI and 64% lack access — Gartner's number can't plausibly include them at 75% by 2028. A methodology note that doesn't exist would resolve this.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-27 · Source markdown: <a href="gartner-chatbots-over-intranets-2026-05-27.md">gartner-chatbots-over-intranets-2026-05-27.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent.trim()).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -88,7 +88,7 @@ Print a checklist of next manual steps the user must take outside of Claude:
 
 1. **Mutual Action Plan** — create in Google Docs (manual; not a Claude skill).
 2. **Zoom webinar** — create in the Zoom portal. Then create one tracking registration URL per slug in `<speaker-slug>-tracking-urls.md` and paste them into the file. Reference: [tracking-urls-convention.md](../../tracking-urls-convention.md).
-3. **Canva assets** — see [canva-asset-checklist.md](../../canva-asset-checklist.md). Gather inputs first (partner logo, headshots).
+3. **Canva assets** — generate via the [`canva-asset-pack`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md) skill (placeholder until built; until then build manually per [canva-asset-checklist.md](../../canva-asset-checklist.md)). Gather inputs first (logo, headshots).
 
 Then list the **next Claude skills to invoke as the project progresses** (do not invoke them now):
 

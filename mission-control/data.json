@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-22",
-  "total_html": 48,
-  "total_blog_posts": 11,
-  "total_md_candidates": 17,
+  "generated_at": "2026-05-28",
+  "total_html": 55,
+  "total_blog_posts": 0,
+  "total_md_candidates": 4,
   "pinned": [
     {
       "slug": "growth-project-tracker",
@@ -32,7 +32,7 @@
       "label": "Current Week Calendar",
       "subtitle": "PA — Mon–Fri work plan",
       "url": "/cerkl/personal-assistant/calendar/current-week.html",
-      "last_updated": "2026-05-19",
+      "last_updated": "2026-05-26",
       "cadence": "weekly",
       "stale": false,
       "refresh_prompt": "Re-plan / materialize my current week.\n\nProcess: /Users/travisfoster/claude-code/cerkl/personal-assistant/skills/plan-week.md",
@@ -78,11 +78,11 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-05-21",
+      "last_run": "2026-05-26",
       "stale": false,
       "items": [
-        { "title": "Growth Project Tracker", "date": "2026-05-21", "url": "/cerkl/personal-assistant/growth-project-tracker.html", "is_md": false },
-        { "title": "Current Week Calendar", "date": "2026-05-19", "url": "/cerkl/personal-assistant/calendar/current-week.html", "is_md": false }
+        { "title": "Current Week Calendar", "date": "2026-05-26", "url": "/cerkl/personal-assistant/calendar/current-week.html", "is_md": false },
+        { "title": "Growth Project Tracker", "date": "2026-05-21", "url": "/cerkl/personal-assistant/growth-project-tracker.html", "is_md": false }
       ]
     },
     {
@@ -132,10 +132,13 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "daily",
-      "last_run": "2026-05-22",
+      "last_run": "2026-05-27",
       "stale": false,
       "new_run_prompt": "Run today's IC Trends daily recap.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/ic-trends/ic-trends-daily-process.md",
       "items": [
+        { "title": "Daily Recap — 2026-05-27", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/daily/2026-05-27.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-26", "date": "2026-05-26", "url": "/cerkl/research/ic-trends/daily/2026-05-26.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-25", "date": "2026-05-25", "url": "/cerkl/research/ic-trends/daily/2026-05-25.html", "is_md": false },
         { "title": "Daily Recap — 2026-05-22", "date": "2026-05-22", "url": "/cerkl/research/ic-trends/daily/2026-05-22.html", "is_md": false },
         { "title": "Daily Recap — 2026-05-21", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/daily/2026-05-21.html", "is_md": false },
         { "title": "Daily Recap — 2026-05-20", "date": "2026-05-20", "url": "/cerkl/research/ic-trends/daily/2026-05-20.html", "is_md": false },
@@ -170,13 +173,14 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "adhoc",
-      "last_run": "2026-05-21",
+      "last_run": "2026-05-27",
       "stale": false,
       "new_run_prompt": "Start a new IC Trends deep dive. I'll provide the source / topic when you ask.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/ic-trends/ic-trends-deepdive-process.md",
       "items": [
+        { "title": "Gartner — Chatbots Over Intranets", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/deepdives/gartner-chatbots-over-intranets-2026-05-27.html", "is_md": false },
         { "title": "Layoff Memo Subgenre", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/layoff-memo-subgenre-2026-05-21.html", "is_md": false },
         { "title": "McKinsey — Rewired 2", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/mckinsey-rewired-2-2026-05-21.html", "is_md": false },
-        { "title": "Qualtrics Change Engagement", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/qualtrics-change-engagement-2026-05-21.html", "is_md": false },
+        { "title": "Qualtrics — Change Engagement", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/qualtrics-change-engagement-2026-05-21.html", "is_md": false },
         { "title": "HR Reporter — AI Risks for IC", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/hr-reporter-ai-risks-ic-2026-05-18.html", "is_md": false },
         { "title": "McKinsey — Agentic AI Workforce Redesign", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/mckinsey-agentic-ai-workforce-redesign-2026-05-18.html", "is_md": false },
         { "title": "Oracle — Mass Email Layoff Lessons", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/oracle-mass-email-layoff-lessons-2026-05-18.html", "is_md": false },
@@ -196,10 +200,11 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-05-18",
+      "last_run": "2026-05-25",
       "stale": false,
       "new_run_prompt": "Run this week's competitor marketing weekly recap.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/competitor-marketing/competitor-marketing-weekly-process.md",
       "items": [
+        { "title": "Week 22", "date": "2026-05-25", "url": "/cerkl/research/competitor-marketing/weekly/2026-W22.html", "is_md": false },
         { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/research/competitor-marketing/weekly/2026-W21.html", "is_md": false },
         { "title": "Week 20", "date": "2026-05-11", "url": "/cerkl/research/competitor-marketing/weekly/2026-W20.html", "is_md": false }
       ]
@@ -227,6 +232,20 @@
       ]
     },
     {
+      "slug": "sales-reporting",
+      "label": "Sales — Weekly Pipeline",
+      "kind": "html",
+      "home_recent": 2,
+      "cadence": "weekly",
+      "last_run": "2026-05-18",
+      "stale": true,
+      "new_run_prompt": "Run the weekly sales report.\n\nProcess: /Users/travisfoster/claude-code/cerkl/sales/sales-reporting/weekly-sales-report-process.md",
+      "items": [
+        { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/sales/sales-reporting/reports/2026-W21.html", "is_md": false },
+        { "title": "Weeks 19–22", "date": "2026-05-04", "url": "/cerkl/sales/sales-reporting/reports/2026-W19-W22.html", "is_md": false }
+      ]
+    },
+    {
       "slug": "hubspot-audits",
       "label": "Ops — HubSpot Audits",
       "kind": "md",
@@ -245,81 +264,19 @@
       "kind": "md",
       "home_recent": 2,
       "cadence": "adhoc",
-      "last_run": "2026-05-11",
+      "last_run": "2026-05-26",
       "stale": false,
       "items": [
+        { "title": "Cerkl.com Delta Audit", "date": "2026-05-26", "url": "/cerkl/marketing/seo/audits/2026-05-26-cerkl-com-delta-audit.md", "is_md": true },
         { "title": "Cerkl.com Audit", "date": "2026-05-11", "url": "/cerkl/marketing/seo/audits/2026-05-11-cerkl-com-audit.md", "is_md": true }
-      ]
-    },
-    {
-      "slug": "marketing-seo-briefs",
-      "label": "Marketing — SEO Briefs",
-      "kind": "md",
-      "home_recent": 2,
-      "cadence": "adhoc",
-      "last_run": "2026-05-21",
-      "stale": false,
-      "new_run_prompt": "Produce SEO briefs from current gaps / refresh candidates.\n\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/seo/seo-brief-production-process.md",
-      "items": [
-        { "title": "Sharepoint Internal Communications", "date": "2026-05-21", "url": "/cerkl/marketing/seo/briefs/sharepoint-internal-communications.md", "is_md": true },
-        { "title": "Internal Communications Report to Leadership", "date": "2026-05-18", "url": "/cerkl/marketing/seo/briefs/internal-communications-report-to-leadership.md", "is_md": true },
-        { "title": "AI Execution Internal Communications", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/ai-execution-internal-communications.md", "is_md": true },
-        { "title": "Best Free Employee Newsletter Tools", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/best-free-employee-newsletter-tools.md", "is_md": true },
-        { "title": "Cerkl vs ContactMonkey", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/cerkl-vs-contactmonkey.md", "is_md": true },
-        { "title": "Cerkl vs Workshop", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/cerkl-vs-workshop.md", "is_md": true },
-        { "title": "Claim Strategic Seat Internal Communications", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/claim-strategic-seat-internal-communications.md", "is_md": true },
-        { "title": "Corporate Communication Tools", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/corporate-communication-tools.md", "is_md": true },
-        { "title": "Cross-Channel Read Gap", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/cross-channel-read-gap.md", "is_md": true },
-        { "title": "Internal Communications in Financial Services", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/internal-communications-in-financial-services.md", "is_md": true },
-        { "title": "Internal Communications in Manufacturing", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/internal-communications-in-manufacturing.md", "is_md": true },
-        { "title": "Internal Communications Measurement Framework", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/internal-communications-measurement-framework.md", "is_md": true },
-        { "title": "Internal Email Newsletter Software", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/internal-email-newsletter-software.md", "is_md": true },
-        { "title": "Microsoft Teams Internal Communications", "date": "2026-05-15", "url": "/cerkl/marketing/seo/briefs/microsoft-teams-internal-communications.md", "is_md": true }
-      ]
-    },
-    {
-      "slug": "marketing-blog-seo",
-      "label": "Cerkl Blog (cerkl.com)",
-      "subtitle": "Webflow · primary growth channel",
-      "kind": "blog",
-      "home_recent": 5,
-      "cadence": "weekly",
-      "last_run": "2026-05-26",
-      "stale": false,
-      "new_run_prompt": "Draft this week's planned Cerkl blog post(s) for cerkl.com.\n\nCheck the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/seo-blog/seo-blog-process.md",
-      "items": [
-        { "title": "From Metrics to Leadership Story", "date": "2026-05-26", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-26_from-metrics-to-leadership-story_live.md", "is_md": true, "state": "live" },
-        { "title": "Hidden Cost Benefits Communication", "date": "2026-05-21", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-21_hidden-cost-benefits-communication_live.md", "is_md": true, "state": "live" },
-        { "title": "Building Case for Comms Investment Using Data", "date": "2026-05-19", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-19_building-case-comms-investment-using-data_live.md", "is_md": true, "state": "live" },
-        { "title": "Hidden Cost Benefits Communication", "date": "2026-05-14", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-14_hidden-cost-benefits-communication_live.md", "is_md": true, "state": "live" },
-        { "title": "Using Engagement Data to Improve Internal Comms Messaging", "date": "2026-05-12", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-12_using-engagement-data-to-improve-internal-comms-messaging_live.md", "is_md": true, "state": "live" },
-        { "title": "What Good Internal Comms Analytics Actually Looks Like", "date": "2026-05-05", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/2026-05-05_what-good-internal-comms-analytics-actually-looks-like_live.md", "is_md": true, "state": "live" },
-        { "title": "Insights Update — What's New for Foundations Users", "date": "TBD", "url": "/cerkl/marketing/channels/seo-blog/blog-posts-live/TBD_insights-update-whats-new-foundations-users_live.md", "is_md": true, "state": "live" }
-      ]
-    },
-    {
-      "slug": "marketing-blog-icpro",
-      "label": "Internal Comms Pro (internalcommspro.com)",
-      "subtitle": "Wix · ICP-aligned secondary",
-      "kind": "blog",
-      "home_recent": 5,
-      "cadence": "weekly",
-      "last_run": "2026-05-26",
-      "stale": false,
-      "new_run_prompt": "Draft this week's planned Internal Comms Pro blog post(s) for internalcommspro.com.\n\nCheck the rolling 4-week plan: /Users/travisfoster/claude-code/cerkl/marketing/content-plan/rolling-4week.md\nProcess: /Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/icpro-blog-process.md",
-      "items": [
-        { "title": "Employee Wellness Comms Segmentation — Reach the Right People", "date": "2026-05-26", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-26_employee-wellness-comms-segmentation-reach-right-people_live.md", "is_md": true, "state": "live" },
-        { "title": "Communicating Inclusively Across Diverse Workforces", "date": "2026-05-19", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-19_communicating-inclusively-across-diverse-workforces_live.md", "is_md": true, "state": "live" },
-        { "title": "Mental Health Awareness Month — Wellness Programs Segmentation", "date": "2026-05-13", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-13_mental-health-awareness-month-wellness-programs-segmentation_live.md", "is_md": true, "state": "live" },
-        { "title": "Benchmark Open & Click Rates — Employee Email", "date": "2026-05-06", "url": "/cerkl/marketing/channels/icpro-blog/blog-posts-live/2026-05-06_benchmark-open-click-rates-employee-email_live.md", "is_md": true, "state": "live" }
       ]
     }
   ],
   "recent": [
-    { "title": "Daily Recap — 2026-05-22", "date": "2026-05-22", "url": "/cerkl/research/ic-trends/daily/2026-05-22.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
-    { "title": "Allcore MSP Premeeting", "date": "2026-05-22", "url": "/cerkl/marketing/design/one-pagers/pdfs/allcore-msp-premeeting-2026-05-22.html", "cat_label": "Marketing — One-Pagers", "cat_slug": "marketing-design-one-pagers", "is_md": false },
-    { "title": "Daily Recap — 2026-05-21", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/daily/2026-05-21.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
-    { "title": "Growth Project Tracker", "date": "2026-05-21", "url": "/cerkl/personal-assistant/growth-project-tracker.html", "cat_label": "Personal Assistant", "cat_slug": "personal-assistant", "is_md": false },
-    { "title": "Layoff Memo Subgenre", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/layoff-memo-subgenre-2026-05-21.html", "cat_label": "IC Trends — Deep Dives", "cat_slug": "ic-trends-deepdives", "is_md": false }
+    { "title": "Daily Recap — 2026-05-27", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/daily/2026-05-27.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
+    { "title": "Gartner — Chatbots Over Intranets", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/deepdives/gartner-chatbots-over-intranets-2026-05-27.html", "cat_label": "IC Trends — Deep Dives", "cat_slug": "ic-trends-deepdives", "is_md": false },
+    { "title": "Daily Recap — 2026-05-26", "date": "2026-05-26", "url": "/cerkl/research/ic-trends/daily/2026-05-26.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
+    { "title": "Current Week Calendar", "date": "2026-05-26", "url": "/cerkl/personal-assistant/calendar/current-week.html", "cat_label": "Personal Assistant", "cat_slug": "personal-assistant", "is_md": false },
+    { "title": "Week 22", "date": "2026-05-25", "url": "/cerkl/research/competitor-marketing/weekly/2026-W22.html", "cat_label": "Competitor Marketing — Weekly", "cat_slug": "competitor-marketing-weekly", "is_md": false }
   ]
 }

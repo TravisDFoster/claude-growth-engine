@@ -110,6 +110,7 @@ The AI-feature categories that [[forrester]] explicitly evaluates remain the 202
 | [[hr-reporter-ai-risks-ic-2026-05-18]] | 2025-12-08 (ingested 2026-05-18) | Academic-grade [[ai-anxious-buyer]] frame; Cardon & Coman 2025 (n=1,100) + Men et al.; [[co-piloting]] prescription |
 | [[mckinsey-agentic-ai-workforce-redesign-2026-05-18]] | 2026-04-06 | [[agents-as-coworkers]] workforce-design frame; CIO/CHRO co-buyer; change-comms named as AI ROI gate |
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | *Rewired 2.0* + talent-transformation thesis; 4 levers (N-2/N-3 + 70-30 flips + workplace + human-agentic); Lever #4 "emotional work" quote; hypocrisy critique |
+| [[ragan-gartner-2026-comms-predictions-2025-10-09]] | 2025-10-09 | Whittle/Gartner change-leadership three-step framework for AI-rollout comms; analyst-tier prescriptive pair to Poitevin/Gartner's diagnostic frames |
 
 ## Open Questions
 
