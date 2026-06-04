@@ -1,10 +1,10 @@
 # Prospect brand reverse-engineering process
 
-> How to stand up a working brand kit for a prospect we're selling to — colors, fonts, logo — by mining their public web presence. Encodes learnings from the [Prospect] kit (2026-06).
+> How to stand up a working brand kit for a prospect we're selling to — colors, fonts, logo — by mining their public web presence. Encodes learnings from the first live build (2026-06).
 >
 > **Used by:** sales presentations, outbound visual collateral, partner co-marketing, ABM landing pages, account-styled one-pagers, and anywhere we need to render a prospect's brand back to them.
 >
-> **Output:** a folder named `<prospect>-brand-guidelines/` (same shape as Cerkl's brand kit). One kit per prospect — placed alongside the **first** process that needs it, then referenced by every downstream process. Today the [Prospect] kit lives at `sales/presentations/[prospect]-brand-guidelines/` because the deck was the first use.
+> **Output:** a folder named `<prospect>-brand-guidelines/` (same shape as Cerkl's brand kit). One kit per prospect — placed alongside the **first** process that needs it, then referenced by every downstream process. These folders live local-only (gitignored under `sales/presentations/`).
 
 ---
 
@@ -40,7 +40,7 @@ curl -sL "https://www.<prospect>.com/path/to/site.css" | grep -oE '@font-face[^}
 
 The `@font-face src:` URLs tell you exact font files they self-host — confirming the family + which weights they use.
 
-**[Prospect] example:** found `TWK Everett` (display) + `Roboto` (body), with self-hosted weights 200/300/400/500/700/800.
+**Real example:** an enterprise prospect served `TWK Everett` (display) + `Roboto` (body), with self-hosted weights 200/300/400/500/700/800.
 
 ---
 
@@ -51,7 +51,7 @@ Many enterprises publish their design tokens publicly even when the brand guidel
 - GitHub: `<prospect> design system`, `<prospect>-design-system`, `<prospect>-foundation`
 - The repo's `tokens/` folder usually contains color JSON in W3C Design Token format
 
-**[Prospect] example:** [shidoka-foundation](https://github.com/[prospect]-design-system/shidoka-foundation) — full color palette in `tokens/Color Palette/Color.json`, including the explicit `50-brand: #ff462d` annotation that confirms which red is THE brand red.
+**Real example:** one enterprise prospect publishes a `*-foundation` design-system repo with the full color palette in `tokens/Color Palette/Color.json`, including an explicit `50-brand: #<hex>` annotation that confirms which color is THE brand color.
 
 If they don't have a public design system, fall back to:
 
@@ -82,7 +82,7 @@ Find the official asset URL in the homepage HTML:
 curl -sL "https://www.<prospect>.com" | grep -oE '(src|href)="[^"]*logo[^"]*"' | head
 ```
 
-Enterprise sites usually serve logos from a CDN like Scene7, Cloudflare Images, or Akamai. Download the SVG if available — it's tiny, infinitely scalable, and easy to recolor. Wikimedia Commons is a backup source (`[Prospect]_logo.svg` etc.).
+Enterprise sites usually serve logos from a CDN like Scene7, Cloudflare Images, or Akamai. Download the SVG if available — it's tiny, infinitely scalable, and easy to recolor. Wikimedia Commons is a backup source (`<Prospect>_logo.svg` etc.).
 
 **For PPTX use, also save a PNG** at 800–1600px wide, transparent background. python-pptx doesn't accept SVG.
 
@@ -133,7 +133,7 @@ Mirror the file shape from Cerkl's [`Brand Guidelines/`](../marketing/design/bra
 
 Other processes reference by relative path. If a prospect gets multiple touchpoints over time, leave the kit where it landed and link to it — **don't duplicate**.
 
-**Template:** copy the [`presentations/[prospect]-brand-guidelines/`](presentations/[prospect]-brand-guidelines/) folder structure exactly. Replace prospect-specific content; keep the section headings and table shapes.
+**Template:** copy the structure of any existing `<prospect>-brand-guidelines/` folder under `sales/presentations/` (local-only). Keep the section headings and table shapes; replace prospect-specific content.
 
 ---
 
@@ -145,7 +145,7 @@ Every prospect brand kit's `INDEX.md` should have these sections:
 2. **At-a-glance** — primary color, primary type, logo style, tone, tagline. One-line each.
 3. **Known gaps** — what you couldn't verify from public sources. Always honest. Examples: licensing details, exact clear-space spec, photography style, secondary palette tiers.
 
-See [`presentations/[prospect]-brand-guidelines/INDEX.md`](presentations/[prospect]-brand-guidelines/INDEX.md) as the canonical example.
+See the `INDEX.md` of any existing `<prospect>-brand-guidelines/` folder as the canonical example (local-only).
 
 ---
 
@@ -158,7 +158,7 @@ Most consuming processes will pair the prospect's brand with Cerkl's (decks, lan
 - **Color pairing rule** — usually each brand's primary color on light backgrounds; reversed-white versions on dark
 - **Minimum separation** — at least 2× the larger logo's clear-space rule
 
-See [`presentations/[prospect]-brand-guidelines/logo-guide.md`](presentations/[prospect]-brand-guidelines/logo-guide.md) — "Co-branding with Cerkl" section.
+Document this in the kit's `logo-guide.md` under a "Co-branding with Cerkl" section.
 
 ---
 

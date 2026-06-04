@@ -1,6 +1,6 @@
 # Presentation build process
 
-> How to assemble a branded sales deck end-to-end: from brief or seed file → branded PPTX → exported deliverable. Encodes learnings from the [Prospect] "Day in the Life" deck (2026-06).
+> How to assemble a branded sales deck end-to-end: from brief or seed file → branded PPTX → exported deliverable. Encodes learnings from the first live build (2026-06).
 
 ---
 
@@ -37,7 +37,7 @@ Two starting points:
 
 Either way: end this step with a **slide-by-slide content map** that's separated from styling. The map is what you rebuild from.
 
-Also write a roadmap doc — see [`[prospect]-day-in-the-life-ROADMAP.md`]([prospect]-day-in-the-life-ROADMAP.md) as the template. North star, status table, slide map with Broadcast feature links, open questions, next actions. Update it as the project moves.
+Also write a roadmap doc — `<prospect>-<deck-slug>-ROADMAP.md` in the same folder (local-only). North star, status table, slide map with Broadcast feature links, open questions, next actions. Update it as the project moves.
 
 ---
 
@@ -105,13 +105,13 @@ Route: [`Cerkl Photography/INDEX.md`](../../marketing/design/branding-assets/Cer
 
 ### Image embedding survives export
 
-PNG and JPG embed as binary parts inside the .pptx zip. They travel with the file: PowerPoint, Keynote, Google Slides, PDF export all preserve them. No path-reference fragility. Confirmed in the [Prospect]-styled deck — see [`[prospect]-day-in-the-life-ROADMAP.md`]([prospect]-day-in-the-life-ROADMAP.md).
+PNG and JPG embed as binary parts inside the .pptx zip. They travel with the file: PowerPoint, Keynote, Google Slides, PDF export all preserve them. No path-reference fragility. Confirmed in the first live build.
 
 ---
 
 ## Step 5 — Export and QA
 
-1. **Save the editable .pptx** as `<Deck_Name>_<variant>.pptx`. Variant tag captures the styling pass: `seed`, `cerkl-styled`, `[prospect]-styled`, `final`.
+1. **Save the editable .pptx** as `<Deck_Name>_<variant>.pptx`. Variant tag captures the styling pass: `seed`, `cerkl-styled`, `<prospect>-styled`, `final`.
 2. **Open in Keynote** (Mac default — double-click). This is the most honest preview because Keynote renders fonts and shadows differently than PowerPoint. If Keynote looks fine, PowerPoint will look fine.
 3. **Common rendering gotchas**:
    - **Font missing → falls back to system default.** If you used Inter/Roboto and the recipient doesn't have them installed, they'll see Helvetica. Embed fonts in the .pptx if licensing allows, or flatten headlines to outlines (right-click → Convert to Shape in PowerPoint).
@@ -136,7 +136,7 @@ PNG and JPG embed as binary parts inside the .pptx zip. They travel with the fil
 
 ## Conventions
 
-- **One ROADMAP.md per deck project.** Living overview, updated as the deck evolves. Use [`[prospect]-day-in-the-life-ROADMAP.md`]([prospect]-day-in-the-life-ROADMAP.md) as the template.
+- **One ROADMAP.md per deck project.** Living overview, updated as the deck evolves. Lives local-only alongside the deck.
 - **Variant naming.** `<Deck_Name>_seed.pptx` → `<Deck_Name>_<brand>-styled.pptx` → `<Deck_Name>_final.pptx`. Keep all variants in the folder; don't delete prior versions.
 - **Brand kits live with the deck, not with marketing/design/.** A prospect's brand isn't a Cerkl brand asset. Keep `<prospect>-brand-guidelines/` here in `sales/presentations/`.
 
