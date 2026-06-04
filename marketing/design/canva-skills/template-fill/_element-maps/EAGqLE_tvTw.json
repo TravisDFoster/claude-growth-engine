@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLE_tvTw",
+  "name": "Facebook_Linkedin post_style 3 (dup ID)",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWxihqJc",
+  "notes": "IDENTICAL to EAGqLFOg67s. Duplicate-of-record style-3 stat card.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWxihqJc"
+}

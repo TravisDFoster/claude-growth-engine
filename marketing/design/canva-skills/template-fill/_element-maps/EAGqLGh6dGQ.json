@@ -1,0 +1,182 @@
+{
+  "template_id": "EAGqLGh6dGQ",
+  "name": "Square Social_countdown_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Mar 6, 2025 1:00 pm est\" \u2014 date/time label",
+          "placeholder": "Mar 6, 2025 1:00 pm est",
+          "role_hint": "date/time label",
+          "element_id": "PBVJMfvttt00trcT-LBvCTTnZjv5xtztd",
+          "container_type": "TEXT",
+          "position": {
+            "top": 65.32105888550802,
+            "left": 95.37641924264636
+          },
+          "dimension": {
+            "width": 596.6821460527622,
+            "height": 43.66666
+          }
+        },
+        {
+          "raw": "\"Webinar\" \u2014 tag label",
+          "placeholder": "Webinar",
+          "role_hint": "tag label",
+          "element_id": "PBVJMfvttt00trcT-LBLx1sCL6VdynYh9-LB0WLYsBbc8y1cvj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 188.98771888550803,
+            "left": 95.37641924264639
+          },
+          "dimension": {
+            "width": 200.51041009727209,
+            "height": 43.66666
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 headline",
+          "placeholder": "Webinar title",
+          "role_hint": "headline",
+          "element_id": "PBVJMfvttt00trcT-LB91v9G7kcwQtFw4",
+          "container_type": "TEXT",
+          "position": {
+            "top": 282.65437888550804,
+            "left": 95.37641924264642
+          },
+          "dimension": {
+            "width": 896.1574206666533,
+            "height": 70
+          }
+        },
+        {
+          "raw": "\"X\" \u2014 large countdown numeral (212x331)",
+          "placeholder": "X",
+          "role_hint": "large countdown numeral (212x331)",
+          "element_id": "PBVJMfvttt00trcT-LBSgq7H91HWslHDj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 449.6543788855081,
+            "left": 82.29795498698836
+          },
+          "dimension": {
+            "width": 212.0107519772683,
+            "height": 330.5998
+          }
+        },
+        {
+          "raw": "\"DAYS TO GO\" \u2014 countdown label",
+          "placeholder": "DAYS TO GO",
+          "role_hint": "countdown label"
+        },
+        {
+          "raw": "\"Register Now\" \u2014 CTA pill (SHAPE)",
+          "placeholder": "Register Now",
+          "role_hint": "CTA pill (SHAPE)",
+          "element_id": "PBVJMfvttt00trcT-LBYjHdXLtNXxwsGR",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 848.2058914484892,
+            "left": 87.99999999999997
+          },
+          "dimension": {
+            "width": 285.71749226902756,
+            "height": 80.55179105719604
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAGg-3xM4lg`",
+          "current_asset_id": "MAGg-3xM4lg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBVJMfvttt00trcT-LBbthH375dCfDJ9B",
+          "occurrence": 1,
+          "parent_element_id": "PBVJMfvttt00trcT",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1080
+          },
+          "editable": true
+        },
+        {
+          "raw": "103x36, role: logo (Cerkl wordmark, top-right), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "103x36",
+          "role": "logo",
+          "element_id": "PBVJMfvttt00trcT-LB3zBF2ZxSQrBGQL-LBkXd4g7P3Fn2pbR",
+          "occurrence": 1,
+          "parent_element_id": "PBVJMfvttt00trcT-LB3zBF2ZxSQrBGQL",
+          "container_type": "RECT",
+          "position": {
+            "top": 68.91567032959509,
+            "left": 660.7025568713957
+          },
+          "dimension": {
+            "width": 102.81048960885975,
+            "height": 36.47743711182587
+          },
+          "editable": true
+        },
+        {
+          "raw": "32x32, role: icon (play icon next to \"Webinar\"), current asset_id: `MAGg-1Nbpjs`",
+          "current_asset_id": "MAGg-1Nbpjs",
+          "dimensions": "32x32",
+          "role": "icon",
+          "element_id": "PBVJMfvttt00trcT-LBLx1sCL6VdynYh9-LBxsrr6yQYS11L06",
+          "occurrence": 1,
+          "parent_element_id": "PBVJMfvttt00trcT-LBLx1sCL6VdynYh9",
+          "container_type": "RECT",
+          "position": {
+            "top": 195.25058448233173,
+            "left": 315.9165570212538
+          },
+          "dimension": {
+            "width": 31.689349589078464,
+            "height": 31.925837272579045
+          },
+          "editable": true
+        },
+        {
+          "raw": "390x390, role: decorative-badge (IC Thought Leadership round badge), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "390x390",
+          "role": "decorative-badge",
+          "element_id": "PBVJMfvttt00trcT-LBzwx2NC6XjkyMb4",
+          "occurrence": 1,
+          "parent_element_id": "PBVJMfvttt00trcT",
+          "container_type": "RECT",
+          "position": {
+            "top": 466.7874531568962,
+            "left": 667.7467397284081
+          },
+          "dimension": {
+            "width": 389.54762376618,
+            "height": 389.54762376618
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBVJMfvttt00trcT",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-countdown",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW5y1nMw",
+  "notes": "1-page countdown variant of the webinar speaker card series. Reuses Cerkl wordmark + play icon + Thought Leadership badge. Days-to-go numeral is text only (X placeholder). No headshot fills.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW5y1nMw"
+}

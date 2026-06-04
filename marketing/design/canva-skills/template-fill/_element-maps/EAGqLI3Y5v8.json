@@ -1,0 +1,321 @@
+{
+  "template_id": "EAGqLI3Y5v8",
+  "name": "Blog Image_in text_graphs",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + \"x label\" + \"y label\" (graph axis labels) + chart SHAPE.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBMRp5pbTBfgcGzN-LBWgVGxYVQCnKyxz",
+          "container_type": "TEXT",
+          "position": {
+            "top": 274.2301421865001,
+            "left": 600
+          },
+          "dimension": {
+            "width": 520.0019906809089,
+            "height": 63.666655
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr6sTTSaE`) \u2014 chart is drawn entirely via SHAPE + TEXT, no chart image fill.",
+          "current_asset_id": "MAFr6sTTSaE",
+          "role": "full-bg",
+          "element_id": "PBMRp5pbTBfgcGzN-LBQ9QYSSd3Njxx6x",
+          "occurrence": 1,
+          "parent_element_id": "PBMRp5pbTBfgcGzN",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBMRp5pbTBfgcGzN",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + \"xx%\" stat + chart SHAPE.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBWslMdjWlRkq51T-LBFMRCn6qj5Rv5q6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 266.12116275032054,
+            "left": 116.3246448868116
+          },
+          "dimension": {
+            "width": 506.31764693914874,
+            "height": 63.666655
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr60qHpbg`).",
+          "current_asset_id": "MAFr60qHpbg",
+          "role": "full-bg",
+          "element_id": "PBWslMdjWlRkq51T-LBM5pwy1h4SnZQ3G",
+          "occurrence": 1,
+          "parent_element_id": "PBWslMdjWlRkq51T",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBWslMdjWlRkq51T",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" stat + \"Add a subheading\" + \"Source\" pill (SHAPE).",
+          "placeholder": "xx%",
+          "element_id": "PBCttVPbhV1FdpTW-LBdfwf8MBKCCPNsb",
+          "container_type": "TEXT",
+          "position": {
+            "top": 262.53333,
+            "left": 146.4605880170031
+          },
+          "dimension": {
+            "width": 260.3856183793265,
+            "height": 101.93334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr60yRIlU`).",
+          "current_asset_id": "MAFr60yRIlU",
+          "role": "full-bg",
+          "element_id": "PBCttVPbhV1FdpTW-LBcH6WVKWncZ5Lby",
+          "occurrence": 1,
+          "parent_element_id": "PBCttVPbhV1FdpTW",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBCttVPbhV1FdpTW",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + \"xx%\" stat.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBT71HkZYhMWtHDS-LBnm6kJlCBBp8jXy",
+          "container_type": "TEXT",
+          "position": {
+            "top": 327.78174228547397,
+            "left": 110.70723972741382
+          },
+          "dimension": {
+            "width": 500.2572321795134,
+            "height": 51.133335
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7OguqLc`) + 328x328 chart illustration (`MAFr7RVtFNY`).",
+          "current_asset_id": "MAFr7OguqLc",
+          "dimensions": "328x328",
+          "role": "full-bg",
+          "element_id": "PBT71HkZYhMWtHDS-LB7vbfcxLT6Rb4YF",
+          "occurrence": 1,
+          "parent_element_id": "PBT71HkZYhMWtHDS",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBT71HkZYhMWtHDS",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + \"Source\" pill + 2 x \"text\" labels + 2 x \"xx%\" stats.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBLzMS8nLVmNqYjS-LBN9jZX8RRy6DLLK",
+          "container_type": "TEXT",
+          "position": {
+            "top": 234.58031792490362,
+            "left": 99.74276782048673
+          },
+          "dimension": {
+            "width": 500.2572321795134,
+            "height": 51.133335
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7aIw5_4`) + 2 x 899x205 chart bands (`MAFr7cGnvc4`) + 2 x 130x130 icon-circle (`MAFr7T1C0mA`).",
+          "current_asset_id": "MAFr7aIw5_4",
+          "dimensions": "899x205",
+          "role": "full-bg",
+          "element_id": "PBLzMS8nLVmNqYjS-LBQhFmKDLMWQZ8DT",
+          "occurrence": 1,
+          "parent_element_id": "PBLzMS8nLVmNqYjS",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBLzMS8nLVmNqYjS",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "2 x \"xx%\" stat + 2 x \"Add a little bit of body text\" + 2 SHAPE icon containers."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7V95H4o`) + 2 x 899x205 chart bands (`MAFr7l7umDE`) + 67x166 bar-chart glyph (`MAFr7q5FcpM`) + 156x156 donut/pie glyph (`MAFr7kKDwJQ`).",
+          "current_asset_id": "MAFr7V95H4o",
+          "dimensions": "899x205",
+          "role": "full-bg",
+          "element_id": "PB97bYjDRw7ZLPqs-LBD9J6VZYGF60ws8",
+          "occurrence": 1,
+          "parent_element_id": "PB97bYjDRw7ZLPqs",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB97bYjDRw7ZLPqs",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" hero stat + \"Add a little bit of body text\" + \"Source\" pill (SHAPE).",
+          "placeholder": "xx%",
+          "element_id": "PBtFcVpk36bm24B8-LB2mFnWdvt9TZldc",
+          "container_type": "TEXT",
+          "position": {
+            "top": 148.39121116373275,
+            "left": 440.0112454890661
+          },
+          "dimension": {
+            "width": 319.9775090218676,
+            "height": 151.668
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7s66NoY`) + 207x207 chart icon-circle (`MAFr7T1C0mA`).",
+          "current_asset_id": "MAFr7s66NoY",
+          "dimensions": "207x207",
+          "role": "full-bg",
+          "element_id": "PBtFcVpk36bm24B8-LBRTRrVv9v0NvYrS",
+          "occurrence": 1,
+          "parent_element_id": "PBtFcVpk36bm24B8",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBtFcVpk36bm24B8",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-inline-image-graphs",
+  "canvas": "1200x627",
+  "page_count": 7,
+  "inspection_design_id": "DAHLW9IeLks",
+  "notes": "stat-led / chart kit \u2014 pages 1-3 use SHAPE-only charts (no chart image fills), pages 4-7 mix chart imagery + stats. Source attribution pill is recurring (SHAPE + \"Source\" text). Layered frame: yes \u2014 chart bands + glyphs overlay full-bg on pages 5-7.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW9IeLks"
+}

@@ -80,6 +80,8 @@ The Cerkl-positioning thread: **"the way the message is shared is often just as 
 - [[talent-transformation-thesis]] — McKinsey's *Rewired 2.0* core thesis
 - [[human-agentic-collaboration]] — McKinsey's *Rewired 2.0* Lever #4
 - [[change-leadership-three-step]] — Whittle/Gartner three-step framework (Acknowledge / Regulate / Train); analyst-tier practitioner prescription pairing with [[people-amplification]]
+- [[manager-burnout-structural-thesis]] — Karian-coined; "responsibility without authority during change" is the manager-cascade-during-change failure mode
+- [[route-around-vs-enable]] — vendor-positioning split on the cascade response, with direct implications for change-program comms architecture
 
 ## Practitioner Voices
 

@@ -1,0 +1,107 @@
+{
+  "template_id": "EAGqLKvBCw0",
+  "name": "Twitter post_style 2",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad\" \u2014 title",
+          "placeholder": "Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad",
+          "role_hint": "title",
+          "element_id": "PBZDkNlxZswbFhsh-LBWqkHcJ5jvrggKB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 225.46741687455636,
+            "left": 62.799999999999955
+          },
+          "dimension": {
+            "width": 640.2350089825891,
+            "height": 216.066685
+          }
+        },
+        {
+          "raw": "\"Read the report\" \u2014 CTA button label (SHAPE-wrapped pill)",
+          "placeholder": "Read the report",
+          "role_hint": "CTA button label (SHAPE-wrapped pill)",
+          "element_id": "PBZDkNlxZswbFhsh-LBcgLtBCj4PYltDZ",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 480.80746577896866,
+            "left": 62.79999999999998
+          },
+          "dimension": {
+            "width": 279.6302995980497,
+            "height": 74.89253422103137
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg (blue backdrop with shape decor), current asset_id: `MAFZQNF_kII`",
+          "current_asset_id": "MAFZQNF_kII",
+          "role": "full-bg",
+          "element_id": "PBZDkNlxZswbFhsh",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "299x115, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "299x115",
+          "role": "logo",
+          "element_id": "PBZDkNlxZswbFhsh-LB4PNFV24knmFtPF",
+          "occurrence": 1,
+          "parent_element_id": "PBZDkNlxZswbFhsh",
+          "container_type": "RECT",
+          "position": {
+            "top": 98.61993963050418,
+            "left": 37.228301783494715
+          },
+          "dimension": {
+            "width": 298.99798037734627,
+            "height": 114.54032767847264
+          },
+          "editable": true
+        },
+        {
+          "raw": "414x414, role: decorative-badge (large circular illustration container right side), current asset_id: `MAFZLycTv8I`",
+          "current_asset_id": "MAFZLycTv8I",
+          "dimensions": "414x414",
+          "role": "decorative-badge",
+          "element_id": "PBZDkNlxZswbFhsh-LB5F2sWBfW25cxJ4",
+          "occurrence": 1,
+          "parent_element_id": "PBZDkNlxZswbFhsh",
+          "container_type": "RECT",
+          "position": {
+            "top": 130.56089722819422,
+            "left": 740.4172580991893
+          },
+          "dimension": {
+            "width": 413.87820554361156,
+            "height": 413.87820554361156
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBZDkNlxZswbFhsh",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW0nT4yc",
+  "notes": "CTA-led variant; SHAPE container hosts the \"Read the report\" pill button. Layered frame: yes \u2014 decorative-badge circle (with embedded document icon graphic) sits over the full-bg fill and behind the DELETE text label.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW0nT4yc"
+}

@@ -1,0 +1,277 @@
+{
+  "template_id": "EAGqLLgAXU0",
+  "name": "16:9 post_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" \u2014 kicker/category label",
+          "placeholder": "Webinar",
+          "role_hint": "kicker/category label",
+          "element_id": "PBRgB2DxP5xbkx6w-LBgKTzX8bNLDB8BQ-LBM6wn86Ggb5cVtJ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 87.84242795860115,
+            "left": 74.50539682539693
+          },
+          "dimension": {
+            "width": 150.75,
+            "height": 33.42008
+          }
+        },
+        {
+          "raw": "\"|   Mar 6, 2025 1:00 pm est\" \u2014 date+time",
+          "placeholder": "|   Mar 6, 2025 1:00 pm est",
+          "role_hint": "date+time",
+          "element_id": "PBRgB2DxP5xbkx6w-LBPKjLTql1y7YGKj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 87.84242795860115,
+            "left": 289.1394173345195
+          },
+          "dimension": {
+            "width": 460.13050350205305,
+            "height": 33.42008
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PBRgB2DxP5xbkx6w-LBmcrszrLbtbQcj4",
+          "container_type": "TEXT",
+          "position": {
+            "top": 180.24852798490406,
+            "left": 74.50539682539682
+          },
+          "dimension": {
+            "width": 617.5338598074745,
+            "height": 67
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 speaker-block label (inside white card)",
+          "placeholder": "Presented by:",
+          "role_hint": "speaker-block label (inside white card)",
+          "element_id": "PBRgB2DxP5xbkx6w-LBRgRc5cVQqgYjxN-LBvKXwZb05gXk8qT",
+          "container_type": "TEXT",
+          "position": {
+            "top": 82.55104627055391,
+            "left": 810.4370418093639
+          },
+          "dimension": {
+            "width": 190.4609375,
+            "height": 24.73332
+          }
+        },
+        {
+          "raw": "\"Register now\" \u2014 CTA button label",
+          "placeholder": "Register now",
+          "role_hint": "CTA button label",
+          "element_id": "PBRgB2DxP5xbkx6w-LByBmfSljPfN9Wpk-LBd0XQnW0pMJfjy7",
+          "container_type": "TEXT",
+          "position": {
+            "top": 534.577800345564,
+            "left": 108.50554319760154
+          },
+          "dimension": {
+            "width": 185.2320565644131,
+            "height": 34.56289656877921
+          }
+        },
+        {
+          "raw": "\"Name\" \u2014 speaker-1 name",
+          "placeholder": "Name",
+          "role_hint": "speaker-1 name",
+          "element_id": "PBRgB2DxP5xbkx6w-LB2Cwl29CxjJ8P04",
+          "container_type": "TEXT",
+          "position": {
+            "top": 286.4165682760614,
+            "left": 955.3985186681916
+          },
+          "dimension": {
+            "width": 177.10148133180837,
+            "height": 24.73334
+          }
+        },
+        {
+          "raw": "\"Title\" \u2014 speaker-1 title",
+          "placeholder": "Title",
+          "role_hint": "speaker-1 title",
+          "element_id": "PBRgB2DxP5xbkx6w-LBGY5zyGSlpGxYym",
+          "container_type": "TEXT",
+          "position": {
+            "top": 319.0927485953077,
+            "left": 955.3985186681916
+          },
+          "dimension": {
+            "width": 177.10148133180837,
+            "height": 20.13587
+          }
+        },
+        {
+          "raw": "\"Name\" \u2014 speaker-2 name",
+          "placeholder": "Name",
+          "role_hint": "speaker-2 name",
+          "element_id": "PBRgB2DxP5xbkx6w-LBPpdzWlb4ZMYqbC",
+          "container_type": "TEXT",
+          "position": {
+            "top": 458.4363610163375,
+            "left": 955.3985186681916
+          },
+          "dimension": {
+            "width": 177.10148133180826,
+            "height": 24.733340000000005
+          }
+        },
+        {
+          "raw": "\"Title\" \u2014 speaker-2 title",
+          "placeholder": "Title",
+          "role_hint": "speaker-2 title",
+          "element_id": "PBRgB2DxP5xbkx6w-LBBZ5Bcy0YV3Lm4Q",
+          "container_type": "TEXT",
+          "position": {
+            "top": 491.1125413355838,
+            "left": 955.3985186681916
+          },
+          "dimension": {
+            "width": 177.10148133180826,
+            "height": 20.13587
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1200x675, role: full-bg, current asset_id: `MAGg-wY0_sI`",
+          "current_asset_id": "MAGg-wY0_sI",
+          "dimensions": "1200x675",
+          "role": "full-bg",
+          "element_id": "PBRgB2DxP5xbkx6w-LBz10qLk1Qz0KnPb",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200.0000000000002,
+            "height": 675
+          },
+          "editable": true
+        },
+        {
+          "raw": "68x24, role: logo (Cerkl wordmark, inside presented-by card), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "68x24",
+          "role": "logo",
+          "element_id": "PBRgB2DxP5xbkx6w-LBRgRc5cVQqgYjxN-LB4lmVWF2V0ndKwn",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w-LBRgRc5cVQqgYjxN",
+          "container_type": "RECT",
+          "position": {
+            "top": 130.70171882141295,
+            "left": 810.437041809364
+          },
+          "dimension": {
+            "width": 68.34934857764063,
+            "height": 24.250531962842608
+          },
+          "editable": true
+        },
+        {
+          "raw": "150x150, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "150x150",
+          "role": "decorative-badge",
+          "element_id": "PBRgB2DxP5xbkx6w-LBgjJ4cw1tQ0GhbG",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w",
+          "container_type": "RECT",
+          "position": {
+            "top": 43.06203408673933,
+            "left": 1049.5857604405498
+          },
+          "dimension": {
+            "width": 150.4142395594503,
+            "height": 150.4142395594503
+          },
+          "editable": true
+        },
+        {
+          "raw": "24x24, role: icon (play icon next to \"Webinar\" kicker), current asset_id: `MAGg--nIQbc`",
+          "current_asset_id": "MAGg--nIQbc",
+          "dimensions": "24x24",
+          "role": "icon",
+          "element_id": "PBRgB2DxP5xbkx6w-LBgKTzX8bNLDB8BQ-LBSMFMKR0SfhKTc3",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w-LBgKTzX8bNLDB8BQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 92.55104627055391,
+            "left": 240.31437279824783
+          },
+          "dimension": {
+            "width": 23.82504453627154,
+            "height": 24.00284337609446
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBRgB2DxP5xbkx6w",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same as page 1 plus a third speaker row (3 Name/Title pairs total)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "identical full-bg + logo + badge + icon set (no per-speaker headshot fills; speaker thumbs render via SHAPE+TEXT not image fills).",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBs0QBjqsqk37N4w",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same plus a fourth speaker row (4 Name/Title pairs total)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "identical 4-image set (full-bg + logo + badge + icon).",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBl6d6S6ZRfbDgtb",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-share-card-16x9",
+  "canvas": "1200x675",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW3nL6mk",
+  "notes": "speaker-card area uses SHAPE containers with text-only labels \u2014 no per-speaker image fills are exposed, so headshot swaps must be done by adding fills manually. Pages 1/2/3 differ only by speaker count (2/3/4). Layered frame: yes \u2014 Presented-by card SHAPE overlays the full-bg image; presenter swap targets background fill, white card is decorative.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3nL6mk"
+}

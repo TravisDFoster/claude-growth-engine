@@ -1,0 +1,114 @@
+{
+  "template_id": "EAGqLD4Janc",
+  "name": "Square post_style 3",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a heading\" \u2014 main headline (864x108)",
+          "placeholder": "Add a heading",
+          "role_hint": "main headline (864x108)",
+          "element_id": "PB7QZktS4VKShNsc-LBVC1WgClHb17q1r",
+          "container_type": "TEXT",
+          "position": {
+            "top": 297.86422055581005,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 108.466665
+          }
+        },
+        {
+          "raw": "\"Your paragraph text\" \u2014 body",
+          "placeholder": "Your paragraph text",
+          "role_hint": "body",
+          "element_id": "PB7QZktS4VKShNsc-LBtqdrR41B0v6c73",
+          "container_type": "TEXT",
+          "position": {
+            "top": 432.793694527028,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 44.133265
+          }
+        },
+        {
+          "raw": "\"Position title\" \u2014 pill button SHAPE (open-position label)",
+          "placeholder": "Position title",
+          "role_hint": "pill button SHAPE (open-position label)",
+          "element_id": "PB7QZktS4VKShNsc-LBSqJGR60rgrKynh",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 596.5419252975953,
+            "left": 107.91596423237752
+          },
+          "dimension": {
+            "width": 820.0169674239737,
+            "height": 144.89347464854256
+          }
+        },
+        {
+          "raw": "\"View our other open positions\" \u2014 CTA text",
+          "placeholder": "View our other open positions",
+          "role_hint": "CTA text",
+          "element_id": "PB7QZktS4VKShNsc-LBMwM4bN21tHWDBy-LB9R6bsfnCr98FmY",
+          "container_type": "TEXT",
+          "position": {
+            "top": 828.8824319942802,
+            "left": 108
+          },
+          "dimension": {
+            "width": 496.0479139083417,
+            "height": 39.39858
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAFZiTukXmQ`",
+          "current_asset_id": "MAFZiTukXmQ",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PB7QZktS4VKShNsc",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "287x160, role: logo (Cerkl wordmark top-left), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "287x160",
+          "role": "logo",
+          "element_id": "PB7QZktS4VKShNsc-LBH5LTv9tdLWw25g",
+          "occurrence": 1,
+          "parent_element_id": "PB7QZktS4VKShNsc",
+          "container_type": "RECT",
+          "position": {
+            "top": 127.99999999999999,
+            "left": 55.09459459459458
+          },
+          "dimension": {
+            "width": 286.75644562198465,
+            "height": 159.86422055581025
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB7QZktS4VKShNsc",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWxxNPHw",
+  "notes": "Hiring/job-post card. Two image fills (bg + logo). CTA arrow visible in render appears to be part of bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWxxNPHw"
+}

@@ -1,0 +1,186 @@
+{
+  "template_id": "EAGqLAeuCc0",
+  "name": "Linkedin pdf post_style 2",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consecteur\" \u2014 title headline (864x155)",
+          "placeholder": "Lorem ipsum dolor sit amet, consecteur",
+          "role_hint": "title headline (864x155)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAFaAed19WI`",
+          "current_asset_id": "MAFaAed19WI",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBzb2NLzm3RV4qJC",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "380x146, role: logo (Broadcast powered by Cerkl lockup, top-left), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "380x146",
+          "role": "logo",
+          "element_id": "PBzb2NLzm3RV4qJC-LBFlXW4nDCjSKTSk",
+          "occurrence": 1,
+          "parent_element_id": "PBzb2NLzm3RV4qJC",
+          "container_type": "RECT",
+          "position": {
+            "top": 84.28378378378382,
+            "left": 71.51351351351354
+          },
+          "dimension": {
+            "width": 379.6278897474401,
+            "height": 145.54423888080768
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBzb2NLzm3RV4qJC",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"1\" \u2014 page-number numeral (over circle SHAPE)",
+          "placeholder": "1",
+          "role_hint": "page-number numeral (over circle SHAPE)",
+          "element_id": "PBFsSfY59MZySG2n-LBqqcdzhT8M7NDzy-LBMQ53c54PK4kVct",
+          "container_type": "TEXT",
+          "position": {
+            "top": 286.0705122399067,
+            "left": 147.95972945982624
+          },
+          "dimension": {
+            "width": 25.984375,
+            "height": 79.666695
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 section headline",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "section headline",
+          "element_id": "PBFsSfY59MZySG2n-LBHMwrkhDDYdkVB1",
+          "container_type": "TEXT",
+          "position": {
+            "top": 445.9224416997331,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 154.800025
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet... tincunt.\" \u2014 body (864x157)",
+          "placeholder": "Lorem ipsum dolor sit amet... tincunt.",
+          "role_hint": "body (864x157)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAFaAaDm0gc`",
+          "current_asset_id": "MAFaAaDm0gc",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBFsSfY59MZySG2n",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBFsSfY59MZySG2n",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"2\" numeral, section headline + body (same skeleton)",
+          "placeholder": "2",
+          "element_id": "PBK1VQ3CyJBLxY2z-LBsltX7HNPHnxFKT-LBn6sZWFVtQGjbtM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 285.13717723990675,
+            "left": 145.95972945982624
+          },
+          "dimension": {
+            "width": 25.984375,
+            "height": 79.666695
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAFaAZHrmAY`",
+          "current_asset_id": "MAFaAZHrmAY",
+          "role": "full-bg",
+          "element_id": "PBK1VQ3CyJBLxY2z",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBK1VQ3CyJBLxY2z",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"3\" numeral + section headline + body",
+          "placeholder": "3",
+          "element_id": "PBwcLyrGWttBvYq6-LB65Slg3X5JzTs73-LBgmRZzDv8s84CRB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 281.13717723990675,
+            "left": 145.95972945982624
+          },
+          "dimension": {
+            "width": 25.984375,
+            "height": 79.666695
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAFaAed19WI`",
+          "current_asset_id": "MAFaAed19WI",
+          "role": "full-bg",
+          "element_id": "PBwcLyrGWttBvYq6",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBwcLyrGWttBvYq6",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-pdf-carousel",
+  "canvas": "1080x1080",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW49F_BE",
+  "notes": "Lightweight 4-page text-only carousel \u2014 only page 1 (cover) has the Broadcast logo lockup image. Pages 2-4 are numbered content slides (1/2/3 numeral inside circle SHAPE). No editable photo slots besides full-bg per page. Body image visible in cover thumbnail is actually part of the bg fill (single full-bg asset).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW49F_BE"
+}

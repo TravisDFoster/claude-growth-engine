@@ -1,0 +1,113 @@
+{
+  "template_id": "EAGqLGbY8PI",
+  "name": "Blog post_video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Video title\" \u2014 title",
+          "placeholder": "Video title",
+          "role_hint": "title",
+          "element_id": "PBVl0gcnQ8qW6SSg-LBlnW4cQ2RZWg9L6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 169.0333300000004,
+            "left": 82
+          },
+          "dimension": {
+            "width": 620.7750669767747,
+            "height": 82.86674
+          }
+        },
+        {
+          "raw": "\"Add cover image from blog post\" \u2014 image instructional placeholder",
+          "placeholder": "Add cover image from blog post",
+          "role_hint": "image instructional placeholder",
+          "element_id": "PBVl0gcnQ8qW6SSg-LBFknbgTF1ZSS0yJ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 199.0333800000004,
+            "left": 796.6449030734116
+          },
+          "dimension": {
+            "width": 483.35509692658843,
+            "height": 144.8
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1757x728 (oversized, offset left), role: full-bg (blue brand backdrop), current asset_id: `MAFu0JOPNyc`",
+          "current_asset_id": "MAFu0JOPNyc",
+          "dimensions": "1757x728",
+          "role": "full-bg",
+          "element_id": "PBVl0gcnQ8qW6SSg-LBxQ5RlqBRPbWwYh",
+          "occurrence": 1,
+          "parent_element_id": "PBVl0gcnQ8qW6SSg",
+          "container_type": "RECT",
+          "position": {
+            "top": -4.162529182664741,
+            "left": -476.7639598761717
+          },
+          "dimension": {
+            "width": 1756.7639598761716,
+            "height": 728.3250583653295
+          },
+          "editable": true
+        },
+        {
+          "raw": "469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`",
+          "current_asset_id": "MAFbUrBeep4",
+          "dimensions": "469x92",
+          "role": "logo",
+          "element_id": "PBVl0gcnQ8qW6SSg-LBJ9fCWMvrpvQm9p",
+          "occurrence": 1,
+          "parent_element_id": "PBVl0gcnQ8qW6SSg",
+          "container_type": "RECT",
+          "position": {
+            "top": 500.8299630815691,
+            "left": 82.00000000000006
+          },
+          "dimension": {
+            "width": 469.3715126491787,
+            "height": 92.17003691843092
+          },
+          "editable": true
+        },
+        {
+          "raw": "2000x829 (oversized, offset), role: decorative-badge (large rounded shape revealing blog cover area on right), current asset_id: `MAFu0AlF_Z8`",
+          "current_asset_id": "MAFu0AlF_Z8",
+          "dimensions": "2000x829",
+          "role": "decorative-badge",
+          "element_id": "PBVl0gcnQ8qW6SSg-LBVV226qTcrPY6gm",
+          "occurrence": 1,
+          "parent_element_id": "PBVl0gcnQ8qW6SSg",
+          "container_type": "RECT",
+          "position": {
+            "top": -358.33028280132754,
+            "left": -19.960128535275317
+          },
+          "dimension": {
+            "width": 1999.9845126823634,
+            "height": 829.1602458828966
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBVl0gcnQ8qW6SSg",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-blog-post",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWw3UiAs",
+  "notes": "blog cover image area is a TEXT placeholder, not an exposed image fill \u2014 user must add the cover image manually. Layered frame: yes \u2014 large decorative shape image overlays the full-bg image; co-lockup overlays both.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWw3UiAs"
+}

@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLHXIMi0",
+  "name": "Facebook_Linkedin post_style 2",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWzwomTk",
+  "notes": "IDENTICAL to EAGqLM0FChA (\"Copy of style 2\"). The image well IS editable here (vs the placeholder-text-only wells in styles 3/5). Authoritative version of style 2.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWzwomTk"
+}

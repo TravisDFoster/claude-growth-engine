@@ -1,0 +1,373 @@
+{
+  "template_id": "EAGt2RCwGPw",
+  "name": "Blog image_in text_product",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + 3 x \"Add a subheading\" row labels.",
+          "placeholder": "Add a subheading",
+          "element_id": "PB46tgscWhpxlh8j-LBx64QkMtSKf2wFj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 85.83333000000002,
+            "left": 661.629789040559
+          },
+          "dimension": {
+            "width": 475.6702109594412,
+            "height": 51.133335
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsMyV_a6A`) + 3 x 90x90 icon-circle (`MAFsNRfs_E4`) + 3 x 64x64 glyph icons (`MAFsNfb-eps`) + 730x487 product screenshot (`MAFsd588Exo`) offset left.",
+          "current_asset_id": "MAFsMyV_a6A",
+          "dimensions": "90x90",
+          "role": "full-bg",
+          "element_id": "PB46tgscWhpxlh8j-LBRrWYRP6kflR5Lh",
+          "occurrence": 1,
+          "parent_element_id": "PB46tgscWhpxlh8j",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB46tgscWhpxlh8j",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same 4 subheadings."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsayG4wgQ`) + 3 x 90x90 icon-circle (`MAFsa4hSpZk`) + 3 x 64x64 glyph icons (`MAFsNfb-eps`).",
+          "current_asset_id": "MAFsayG4wgQ",
+          "dimensions": "90x90",
+          "role": "full-bg",
+          "element_id": "PBS77gM56xTGQXp6-LBVN2pK0yk678xnZ",
+          "occurrence": 1,
+          "parent_element_id": "PBS77gM56xTGQXp6",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBS77gM56xTGQXp6",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" header + 3 x row labels.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBLR19z0Z7ZPBG8H-LBscGdBPrd6JPl9W",
+          "container_type": "TEXT",
+          "position": {
+            "top": 86.64049724331636,
+            "left": 62.69999999999993
+          },
+          "dimension": {
+            "width": 1074.6000000000001,
+            "height": 51.133335
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsa9lVmyc`) + 770x314 large screenshot (`MAFsbLvOc9g`) + 3 x 50x50 check icon (`MAFsa72mIGk`).",
+          "current_asset_id": "MAFsa9lVmyc",
+          "dimensions": "770x314",
+          "role": "full-bg",
+          "element_id": "PBLR19z0Z7ZPBG8H-LBnkck3P3y433VJH",
+          "occurrence": 1,
+          "parent_element_id": "PBLR19z0Z7ZPBG8H",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBLR19z0Z7ZPBG8H",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "(none \u2014 illustration page)",
+          "role_hint": "illustration page)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsa_V-NKc`) + 215x60 logo strip (`MAFsd2mr7RY`) + 205x60 logo strip (`MAFsdyPniCc`) \u2014 appears to be partner-logos band.",
+          "current_asset_id": "MAFsa_V-NKc",
+          "dimensions": "215x60",
+          "role": "full-bg",
+          "element_id": "PB5Pwjn3L2Sgm09l-LBbvlyShNVpVfrM9",
+          "occurrence": 1,
+          "parent_element_id": "PB5Pwjn3L2Sgm09l",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB5Pwjn3L2Sgm09l",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Text\" tag (SHAPE pill) + \"Add a subheading\".",
+          "placeholder": "Text",
+          "element_id": "PB9ZW9RJ7Wfc6sX6-LB7XsNtwZ76gYLfs",
+          "container_type": "TEXT",
+          "position": {
+            "top": 142.01613644681197,
+            "left": 125.65195073661926
+          },
+          "dimension": {
+            "width": 86.25891674262584,
+            "height": 28.1999
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsa9QIhnk`) + 872x581 product screenshot (`MAFsd72otSQ`).",
+          "current_asset_id": "MAFsa9QIhnk",
+          "dimensions": "872x581",
+          "role": "full-bg",
+          "element_id": "PB9ZW9RJ7Wfc6sX6-LBvlQnjjqLB6VWqb",
+          "occurrence": 1,
+          "parent_element_id": "PB9ZW9RJ7Wfc6sX6",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB9ZW9RJ7Wfc6sX6",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsa_WxV2M`) + 941x627 large screenshot (`MAFsd4Cbncs`).",
+          "current_asset_id": "MAFsa_WxV2M",
+          "dimensions": "941x627",
+          "role": "full-bg",
+          "element_id": "PBmnzHm5XzLTyD1Z-LBVRcq1wz7hMHpTR",
+          "occurrence": 1,
+          "parent_element_id": "PBmnzHm5XzLTyD1Z",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBmnzHm5XzLTyD1Z",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg only (`MAFsa8B_yaE`).",
+          "current_asset_id": "MAFsa8B_yaE",
+          "role": "full-bg",
+          "element_id": "PB3WgPwk4mrlVqsR-LBVw106szVmDV340",
+          "occurrence": 1,
+          "parent_element_id": "PB3WgPwk4mrlVqsR",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB3WgPwk4mrlVqsR",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 8,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg only (`MAFsa2lkx_Q`).",
+          "current_asset_id": "MAFsa2lkx_Q",
+          "role": "full-bg",
+          "element_id": "PB6z3tprTbrZVlDn-LBpVRcNWWbgLTHmm",
+          "occurrence": 1,
+          "parent_element_id": "PB6z3tprTbrZVlDn",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB6z3tprTbrZVlDn",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 9,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg only (`MAFsazLNb5I`).",
+          "current_asset_id": "MAFsazLNb5I",
+          "role": "full-bg",
+          "element_id": "PBVF8694FYK3ZlQQ-LBDzwNPP5N7sj2PJ",
+          "occurrence": 1,
+          "parent_element_id": "PBVF8694FYK3ZlQQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBVF8694FYK3ZlQQ",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 10,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg only (`MAFsbAOw9qc`).",
+          "current_asset_id": "MAFsbAOw9qc",
+          "role": "full-bg",
+          "element_id": "PB1thDFznYl8Fsgy-LBzG2nRnS0q6dDBN",
+          "occurrence": 1,
+          "parent_element_id": "PB1thDFznYl8Fsgy",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB1thDFznYl8Fsgy",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-inline-image-product",
+  "canvas": "1200x627",
+  "page_count": 10,
+  "inspection_design_id": "DAHLW4vq2n8",
+  "notes": "product-showcase blog-inline kit \u2014 pages 1-5 are interactive layouts, pages 6-10 are screenshot-only \"swap the whole image\" slides. Page 4 dedicated to partner/integration logos. Layered frame: yes \u2014 icon glyphs overlay icon-circles overlay full-bg on pages 1/2; screenshots overlay full-bg elsewhere.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4vq2n8"
+}

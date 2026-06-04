@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLCaRTeM",
+  "name": "Copy of Facebook_Linkedin post_style 4",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW8GZUkY",
+  "notes": "IDENTICAL skeleton to EAGqLFFIvPs (\"Facebook_Linkedin post_style 4\") \u2014 same fills, same text slots. Treat as duplicate-of-record alongside EAGqLFFIvPs.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW8GZUkY"
+}

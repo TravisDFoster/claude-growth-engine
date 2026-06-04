@@ -1,0 +1,88 @@
+{
+  "template_id": "EAGqLKobc-w",
+  "name": "Twitter post_style 5 (dup ID)",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Euismod tincidunt ut laoreet dolore\" \u2014 title",
+          "placeholder": "Euismod tincidunt ut laoreet dolore",
+          "role_hint": "title",
+          "element_id": "PBylBQNfzxBgrqFc-LBpZjjdWyr5Wbnrc-LBvP6MCDPZpkWNHp",
+          "container_type": "TEXT",
+          "position": {
+            "top": 169.87749365206417,
+            "left": 62.80000000000001
+          },
+          "dimension": {
+            "width": 599.9239463694976,
+            "height": 154.800025
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat.\" \u2014 body",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat.",
+          "role_hint": "body",
+          "element_id": "PBylBQNfzxBgrqFc-LBpZjjdWyr5Wbnrc-LBlpLLrV05PdpL1G",
+          "container_type": "TEXT",
+          "position": {
+            "top": 346.9891063479359,
+            "left": 62.80000000000007
+          },
+          "dimension": {
+            "width": 599.9239463694975,
+            "height": 142.53335
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg, role: full-bg, current asset_id: `MAFZLtGE-Mo`",
+          "current_asset_id": "MAFZLtGE-Mo",
+          "role": "full-bg",
+          "element_id": "PBylBQNfzxBgrqFc",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "50x50, role: icon (Broadcast mark), current asset_id: `MAFZLu2JowY`",
+          "current_asset_id": "MAFZLu2JowY",
+          "dimensions": "50x50",
+          "role": "icon",
+          "element_id": "PBylBQNfzxBgrqFc-LB4651yrrv2wjPNB",
+          "occurrence": 1,
+          "parent_element_id": "PBylBQNfzxBgrqFc",
+          "container_type": "RECT",
+          "position": {
+            "top": 563.7707902261144,
+            "left": 1087.3415804522288
+          },
+          "dimension": {
+            "width": 49.85841954777132,
+            "height": 49.85841954777132
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBylBQNfzxBgrqFc",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWy4FC34",
+  "notes": "structurally identical to EAGqLChFVBg (same asset_ids and layout).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWy4FC34"
+}

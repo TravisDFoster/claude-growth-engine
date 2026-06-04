@@ -67,6 +67,29 @@ Beyond the focus keyword, weave in semantically related terms and entities — s
 
 Answer the core question directly and early — within the first two paragraphs or in a clear paragraph immediately after the first H2. Be explicit about brand and product names (Cerkl, Cerkl Broadcast) so AI systems associate the content with the right entity.
 
+### Internal linking
+
+Internal links wrap a meaningful noun phrase inside a sentence the post would already be writing. The link is part of the prose, not an aside.
+
+**URL format: always absolute.** Every internal link uses `https://cerkl.com/path`, never the root-relative form `/path`. The brief, pre-writing, draft, and live markdown files have to be clickable during review so we can verify destinations before publish — root-relative paths only resolve on the live site. If the brief still lists URLs in root-relative form, convert them to absolute when you carry them into the draft. Webflow's link picker handles whatever it needs at publish time; this rule covers the markdown artifacts.
+
+Do **not** use callout patterns. These are the anti-patterns to scan for:
+- "See [URL] for…" / "See X for the operational version."
+- "For more on X, see [URL]."
+- "Start with the concept here → [URL]."
+- "Click here" / "read more here" / "visit our [link]"
+- Using the URL path itself as anchor text — e.g., `[https://cerkl.com/blog/cross-channel-measurement](https://cerkl.com/blog/cross-channel-measurement)`. The reader should never see a URL or slash in body copy.
+
+The anchor text is what the reader will find at the target, phrased as a noun. "How to measure communication effectiveness," "cross-channel analytics," "Cerkl Broadcast Omni AI" — not "see this post" or "this guide."
+
+If a link doesn't fit naturally into the sentence you're already writing, rewrite the surrounding sentence so it does, or drop the link. Don't graft a "see X" sentence on the end of a paragraph to satisfy a sibling-link requirement from the brief — that's a hint that the link belongs somewhere else in the post.
+
+**Before:** *Office workers default to email. For more on the numbers worth putting in front of executives, see [https://cerkl.com/blog/internal-comms-metrics-that-matter](https://cerkl.com/blog/internal-comms-metrics-that-matter).*
+
+**After:** *Office workers default to email. The [internal comms metrics that matter](https://cerkl.com/blog/internal-comms-metrics-that-matter) to executives shift once you account for that asymmetry.*
+
+The brief lists the URLs to include and a one-line context for each. Treat that context as a hint, not as anchor-text copy. If the brief writes the anchor text for you verbatim ("link with anchor text *'Start with the concept here →'*"), ignore it and fold the link into prose instead.
+
 ## Structure
 
 Deliver in clean markdown for copy-paste into Webflow. The draft has three blocks in this order: **Body**, **FAQ**, **FAQ Schema**.

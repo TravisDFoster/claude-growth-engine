@@ -1,0 +1,79 @@
+{
+  "template_id": "EAGqLGVVV7I",
+  "name": "Overview_ video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Broadcast Suite for Internal Communicators\" \u2014 title",
+          "placeholder": "Broadcast Suite for Internal Communicators",
+          "role_hint": "title",
+          "element_id": "PBynpLnC0PkGDGSd-LBpRMkVtZ3hRD6PB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 159.0333300000004,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 617.7736378205127,
+            "height": 246.4667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1280x720, role: full-bg (blue brand backdrop with right-side reveal column), current asset_id: `MAFbVw8K69w`",
+          "current_asset_id": "MAFbVw8K69w",
+          "dimensions": "1280x720",
+          "role": "full-bg",
+          "element_id": "PBynpLnC0PkGDGSd-LB5wRBNfMpQYYdxl",
+          "occurrence": 1,
+          "parent_element_id": "PBynpLnC0PkGDGSd",
+          "container_type": "RECT",
+          "position": {
+            "top": 5.684341886080802e-14,
+            "left": 2.2737367544323206e-13
+          },
+          "dimension": {
+            "width": 1279.9999999999998,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`",
+          "current_asset_id": "MAFbUrBeep4",
+          "dimensions": "469x92",
+          "role": "logo",
+          "element_id": "PBynpLnC0PkGDGSd-LBzHQbrn6MH1Y78c",
+          "occurrence": 1,
+          "parent_element_id": "PBynpLnC0PkGDGSd",
+          "container_type": "RECT",
+          "position": {
+            "top": 500.8299630815691,
+            "left": 82.00000000000006
+          },
+          "dimension": {
+            "width": 469.3715126491787,
+            "height": 92.17003691843092
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBynpLnC0PkGDGSd",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-overview",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW2OGKfA",
+  "notes": "minimal overview thumbnail \u2014 title + co-lockup. Layered frame: no (logo overlays bg only).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW2OGKfA"
+}

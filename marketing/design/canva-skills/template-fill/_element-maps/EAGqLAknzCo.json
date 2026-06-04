@@ -1,0 +1,89 @@
+{
+  "template_id": "EAGqLAknzCo",
+  "name": "Twitter post_style 6",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Euismod tincidunt ut laoreet dolore\" \u2014 title (580x143)",
+          "placeholder": "Euismod tincidunt ut laoreet dolore",
+          "role_hint": "title (580x143)",
+          "element_id": "PB64VcCrXRmVQLSK-LBwvHZ7mKRpxPw3z-LBQVYy77wsRLtnsB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 137.3822536588267,
+            "left": 62.80000000000001
+          },
+          "dimension": {
+            "width": 580.3750741890465,
+            "height": 143.066685
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat.\" \u2014 body (580x143)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat.",
+          "role_hint": "body (580x143)",
+          "element_id": "PB64VcCrXRmVQLSK-LBwvHZ7mKRpxPw3z-LBLX4tPBcJDwrNbQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 302.7605263546984,
+            "left": 62.80000000000007
+          },
+          "dimension": {
+            "width": 580.3750741890464,
+            "height": 142.53335
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label (delete on use)",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label (delete on use)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1200x675, role: full-bg, current asset_id: `MAFZL5pLExM`",
+          "current_asset_id": "MAFZL5pLExM",
+          "dimensions": "1200x675",
+          "role": "full-bg",
+          "element_id": "PB64VcCrXRmVQLSK",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "336x129, role: logo (Broadcast lockup), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "336x129",
+          "role": "logo",
+          "element_id": "PB64VcCrXRmVQLSK-LB0ys22bVsqlCNj7",
+          "occurrence": 1,
+          "parent_element_id": "PB64VcCrXRmVQLSK",
+          "container_type": "RECT",
+          "position": {
+            "top": 490.87730442319355,
+            "left": 37.228301783494715
+          },
+          "dimension": {
+            "width": 335.54943793703603,
+            "height": 128.64515192474227
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB64VcCrXRmVQLSK",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW2lvT9M",
+  "notes": "secondary image area on right is described by a placeholder text element (\"DELETE place image or graphic here\") rather than a real image fill \u2014 user must add image manually or replace label.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW2lvT9M"
+}

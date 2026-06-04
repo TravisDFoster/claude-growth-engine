@@ -39,6 +39,11 @@ The 2026 layoff-comms reference set (continuously updated):
 | [[cisco]] (Robbins) | 2026-05-13 | ~4,000 (~5%) | Defensive ("strong-quarter layoff") | All-employee memo | Yes — tangible offer (Cisco U free year) | Mid praise; opener undermined warmth |
 | [[microsoft]] (Rule of 70) | 2026-04-23 / notif. 2026-05-07 | ~8,750 US eligible (~7%) | No memo; voluntary euphemism | Buyout program notification | None at CEO level | Labor-press critique; absence-of-memo is the choice |
 | [[meta]] (Zuckerberg) | 2026-05-20 | reported 8,000-cut restructure | Self-justifying ("success isn't a given") | All-employee memo + CPO operational memo | Implicit | Blind culture rating −39%, overall −25% |
+| [[cloudflare]] (Prince) | ~2026-05 (roundup 05-29) | undisclosed; "despite record growth" | Blunt value-hierarchy — "measurers" declared AI-obsolete | WSJ op-ed (external-first) | None; explicit de-valuing of cut functions | Refuses the "all valued" script as a deliberate culture-shift message; see [[measurers-vs-builders]] |
+| [[wix]] (Abrahami) | ~2026-05 (roundup 05-29) | ~20% | Regretful but AI-deterministic | Post on X | Implicit | "Flatter org / fewer layers" as structural justification |
+| [[clickup]] (Jones) | ~2026-05 (roundup 05-29) | 22% (despite "strongest ever") | Optimistic, people-centered | Post on X | Yes — "different work, new roles" | Closest of the three to [[people-amplification]]; [[strong-quarter-layoff]] variant |
+
+A 2026-05-29 tone-axis development ([[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]]): CEOs increasingly justify cuts via **external-first channels** (WSJ op-ed, X) and explicit AI-makes-X-obsolete language — with Cloudflare's "measurers" framing escalating the tone axis past the euphemistic norm into open de-valuing of specific functions.
 
 The diagnostic: **all four got the framing roughly right on their own terms; three of four broke at the delivery layer.** The thing communicators can fix is not the words — it's the choreography around them. Oracle is the high-scale anchor; the patterns scale to 30,000 just as they scale to 600.
 
@@ -54,6 +59,7 @@ The 2026 anti-pattern playbook to avoid:
 ## Seen In
 
 - [[ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15]] — concept founding source; three-case triangulation
+- [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] — adds Cloudflare/Wix/ClickUp; external-first channels + the [[measurers-vs-builders]] tone escalation
 - [[oracle-mass-email-layoff-lessons-2026-05-18]] — concept extension; high-scale anchor case (Oracle)
 - [[layoff-memo-subgenre-2026-05-21]] — full subgenre articulation; six-anchor comparison + five emerging conventions + reference frameworks
 - [[linkedin]] — 2026-05-13 case (acceptable but formulaic; split-messaging anti-template)
@@ -72,6 +78,7 @@ The 2026 anti-pattern playbook to avoid:
 ## Related Concepts
 
 - [[boilerplate-layoff-language]] — sibling concept at the *language* axis; the tells that signal a choreography failure before the choreography lands
+- [[measurers-vs-builders]] — 2026-05 tone-axis escalation: a CEO openly de-valuing a job category (Cloudflare)
 - [[ai-washing]] — what coverage calls layoffs framed-but-not-truly AI-driven; sibling failure mode
 - [[ai-rollout-comms]] — choreography is the layoff-message half of the chain (rollout-comms is the AI-launch-message half)
 - [[people-amplification]] — Gartner's analyst-grade reframe that supports the IC pushback against poorly choreographed AI-cuts

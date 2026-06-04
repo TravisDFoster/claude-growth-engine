@@ -92,6 +92,8 @@ Use [`references/examples.md`](references/examples.md) as before/after anchors w
 - Narrator-from-a-distance ("Nobody designed this")? Put the reader in the scene.
 - Meta-joiners ("The rest of this post...")? Delete.
 - Safe or opinion-free take? Add a clear point of view. Internal comms practitioners want a recommendation, not a survey of perspectives.
+- Any internal link doing a "See [URL]" / "Click here" / "→ [URL]" callout, or using the URL path as anchor text? Rewrite so the link wraps a meaningful noun phrase inside the existing sentence. See the Internal linking rules in [`../seo-blog-drafting/SKILL.md`](../seo-blog-drafting/SKILL.md#internal-linking).
+- Any internal link in root-relative form (`/blog/...`, `/broadcast/...`) instead of absolute (`https://cerkl.com/...`)? Convert. Markdown artifacts have to be clickable during review.
 
 ---
 

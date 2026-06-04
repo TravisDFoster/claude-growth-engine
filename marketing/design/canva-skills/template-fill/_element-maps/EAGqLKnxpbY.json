@@ -1,0 +1,83 @@
+{
+  "template_id": "EAGqLKnxpbY",
+  "name": "Employee highlight/interview_video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Broadcast Suite for Internal Communicators\" \u2014 title",
+          "placeholder": "Broadcast Suite for Internal Communicators",
+          "role_hint": "title",
+          "element_id": "PBs26d6hH1mMWhYW-LBGsd5nRMPV1qcQb",
+          "container_type": "TEXT",
+          "position": {
+            "top": 159.0333300000004,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 639.5619407498318,
+            "height": 246.4667
+          }
+        },
+        {
+          "raw": "\"Add cut-out photo\" \u2014 instructional placeholder (delete on use)",
+          "placeholder": "Add cut-out photo",
+          "role_hint": "instructional placeholder (delete on use)",
+          "element_id": "PBs26d6hH1mMWhYW-LBwx7YD1HvLNKZH2",
+          "container_type": "TEXT",
+          "position": {
+            "top": 415.1863410144116,
+            "left": 878.7425010561317
+          },
+          "dimension": {
+            "width": 305.75207915623287,
+            "height": 109.46666
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg (blue brand backdrop), current asset_id: `MAFbWGS_6Js`",
+          "current_asset_id": "MAFbWGS_6Js",
+          "role": "full-bg",
+          "element_id": "PBs26d6hH1mMWhYW",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "404x87, role: logo (Cerkl + tagline lockup), current asset_id: `MAFbWBISwhM`",
+          "current_asset_id": "MAFbWBISwhM",
+          "dimensions": "404x87",
+          "role": "logo",
+          "element_id": "PBs26d6hH1mMWhYW-LBctMNSh2G47FR0Z",
+          "occurrence": 1,
+          "parent_element_id": "PBs26d6hH1mMWhYW",
+          "container_type": "RECT",
+          "position": {
+            "top": 513.8400954735339,
+            "left": 95.28242264724642
+          },
+          "dimension": {
+            "width": 403.6723490393404,
+            "height": 87.3983780763654
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBs26d6hH1mMWhYW",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-employee-highlight",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW-oEHr0",
+  "notes": "cut-out photo zone exists only as a TEXT placeholder \u2014 user must add a real cut-out image manually. Layered frame: no real exposed layering.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW-oEHr0"
+}

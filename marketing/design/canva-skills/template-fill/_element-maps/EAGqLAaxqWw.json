@@ -1,0 +1,139 @@
+{
+  "template_id": "EAGqLAaxqWw",
+  "name": "Square post_style 5",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Feb 14th, 2023 @ 2:00 pm Est\" \u2014 date/time",
+          "placeholder": "Feb 14th, 2023 @ 2:00 pm Est",
+          "role_hint": "date/time",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBJwSR0HgJq3CmCy",
+          "container_type": "TEXT",
+          "position": {
+            "top": 118.00000000000001,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 47.00012
+          }
+        },
+        {
+          "raw": "\"Venue  |  Location\" \u2014 venue line",
+          "placeholder": "Venue  |  Location",
+          "role_hint": "venue line",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBYngGf7WxS5SJjN",
+          "container_type": "TEXT",
+          "position": {
+            "top": 191.80698015998757,
+            "left": 108.00000000000006
+          },
+          "dimension": {
+            "width": 260.296875,
+            "height": 35.13332
+          }
+        },
+        {
+          "raw": "\"Conference Title\" \u2014 main headline",
+          "placeholder": "Conference Title",
+          "role_hint": "main headline",
+          "element_id": "PBC5Bc1YXwQxmkx3-LB4h0CwJS11Lcnsj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 313.74716031997525,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 86
+          }
+        },
+        {
+          "raw": "\"Firstname Lastname\" \u2014 speaker name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "speaker name",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBjvhQDkPs8PBDpM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 723.8827351984949,
+            "left": 108
+          },
+          "dimension": {
+            "width": 357.0625,
+            "height": 44.53336
+          }
+        },
+        {
+          "raw": "\"Company  |  Position\" \u2014 speaker title",
+          "placeholder": "Company  |  Position",
+          "role_hint": "speaker title",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBbvb5t2Ry0Hqhln",
+          "container_type": "TEXT",
+          "position": {
+            "top": 778.5095909891357,
+            "left": 108
+          },
+          "dimension": {
+            "width": 257.015625,
+            "height": 33.39998
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1080x200 strip at top of speaker block, role: photo-slot (gradient strip behind speaker), current asset_id: `MAFZjeQawlc`",
+          "current_asset_id": "MAFZjeQawlc",
+          "dimensions": "1080x200",
+          "role": "photo-slot",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBzNPqwVJgyYXJLy",
+          "occurrence": 1,
+          "parent_element_id": "PBC5Bc1YXwQxmkx3",
+          "container_type": "RECT",
+          "position": {
+            "top": 668.6378230938153,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 200.25
+          },
+          "editable": true
+        },
+        {
+          "raw": "276x106, role: logo (Broadcast lockup bottom-left), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "276x106",
+          "role": "logo",
+          "element_id": "PBC5Bc1YXwQxmkx3-LBV3LDG05zVCRqst",
+          "occurrence": 1,
+          "parent_element_id": "PBC5Bc1YXwQxmkx3",
+          "container_type": "RECT",
+          "position": {
+            "top": 919.1260048977495,
+            "left": 80.99028905401107
+          },
+          "dimension": {
+            "width": 276.04631609633253,
+            "height": 105.74799020450088
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBC5Bc1YXwQxmkx3",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWwGZvs8",
+  "notes": "Conference promo card \u2014 bg is a SHAPE (1080x1080) not an image fill. Round photo decorative (582x582 SHAPE bottom-right) is also a SHAPE not editable image. Only two image fills: gradient strip (behind speaker block) and Broadcast logo lockup. NO speaker headshot fill \u2014 name/title is text only. This is a low-image template.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwGZvs8"
+}

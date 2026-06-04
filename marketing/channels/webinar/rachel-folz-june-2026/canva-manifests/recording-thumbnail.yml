@@ -1,0 +1,47 @@
+template_id: EAGqLKbOQ-E
+page_index: 1
+design_title: rachel-folz-recording-thumbnail-2026-06-25
+aspect_ratio: 16:9
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcLFzqDw"
+  edit_url: "https://www.canva.com/d/HFn4vn335-EW4ur"
+  view_url: "https://www.canva.com/d/S4CGA-Wk0TRvxeA"
+  ops_performed: 6
+  warnings: [
+    {
+        "warning": "no_text_match",
+        "placeholder": "Title",
+        "note": "Template uses Firstname/Lastname pills; no separate Title slot"
+    },
+    {
+        "warning": "no_text_match",
+        "placeholder": "date",
+        "note": "No date element on page 1"
+    },
+    {
+        "warning": "headshot_insert_layered",
+        "note": "Inserted as page-level RECT; manual drag-into-frame required"
+    }
+]
+  manual_drag_required: [
+    {
+        "role": "headshot",
+        "asset_id": "MAFZdaEt2Wc",
+        "subject": "Rachel Folz",
+        "instruction": "Drag headshot into speaker 1 placeholder frame (top-right)"
+    }
+]

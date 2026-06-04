@@ -23,6 +23,8 @@ Benchmark sources for IC measurement stratify by authority tier:
 
 **Measurement-of-change-comms is the 2026 lane the analyst voice is naming explicitly.** [[mckinsey-agentic-ai-workforce-redesign-2026-05-18]] argues that *"without top-down change management to communicate how agents can be coworkers, reskilling efforts tend to remain ineffective"* — a measurement claim wearing strategy-claim clothing. Pair with [[gartner-people-centric-ai-2026-05-15]] (depth-and-diversity-of-AI-engagement as the True ROI Index) and [[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] (deep listening as the new measurement surface) for [[analyst-trio-comms-as-ai-gate]]. The 2026 layoff-comms reference set — [[oracle-mass-email-layoff-lessons-2026-05-18]] in particular — makes the *measurement of delivery* operationally visible: read insights, segmentation analytics, retargeting metrics, pulse surveys are the receipts when leadership asks "did this land?" See [[delivery-as-comms-strategy]] for the unifying topic frame.
 
+**The 2026 counter-narrative to address: [[measurers-vs-builders]].** [[cloudflare]]'s [[matthew-prince]] publicly framed "measurers" (much of marketing and finance) as the functions AI makes obsolete, while "builders and sellers" stay ([[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]]). This is the sharpest live attack on the measurement discipline IC's value case rests on. The defensible rebuttal concedes the strawman (vanity dashboards nobody acts on *are* automatable overhead) and reframes toward **action-driving measurement** — the delivery-and-measurement loop that changes the next send is builder-work, not measurer-overhead. Two complements arm the rebuttal: [[gartner-information-integrity-risk-2026-05-13]] (when AI-content trust is the #1 *enterprise* risk, "can we prove what was communicated?" becomes a governance requirement) and [[why-employees-right-not-to-trust-ic]] (Karian/IKB show **candour↔trust is measurable** — IC should measure whether messages are *believed*, not just opened). See [[trust-and-credibility]].
+
 For blog citation discipline: anchor headline stats with primary-research where possible. Use practitioner-survey or vendor-tier benchmarks for channel-specific numbers (email open rates, channel-effectiveness ratings) with the source and methodology explicitly named. Cross-vendor numbers measuring different denominators are not contradictory and shouldn't be presented as such (see [[ai-in-internal-comms]] for an example: 49% vendor-AI adoption (Forrester) vs 73% weekly+ AI use (Workshop)).
 
 ## Citable Stat Anchors (curated for blog use)
@@ -80,6 +82,7 @@ Other Cerkl competitors (per the hardcoded list in [CLAUDE.md](../../CLAUDE.md))
 - [[politemail]] — vendor-tier source for email benchmarks (66/7); distributed via [[ragan-communications]]
 - [[workshop]] — vendor-tier source for practitioner-priority data
 - [[oracle]] — anti-case anchor for measurement-of-change-comms (the receipts that didn't exist)
+- [[cloudflare]] / [[matthew-prince]] — the antagonist: "measurers" framed as AI-automatable overhead
 
 ## Key Concepts
 
@@ -93,7 +96,9 @@ Other Cerkl competitors (per the hardcoded list in [CLAUDE.md](../../CLAUDE.md))
 - [[newsletter-format-audit]] — practitioner-tactical concept anchoring per-section measurement
 - [[layoff-comms-choreography]] — change-comms measurement framework
 - [[analyst-trio-comms-as-ai-gate]] — McKinsey + Gartner + Forrester synthesis of change-comms as the AI ROI gate
+- [[measurers-vs-builders]] — Cloudflare's 2026 counter-narrative that measurement is automatable overhead; the frame this topic must rebut
 - [[delivery-as-comms-strategy]] — unifying topic-level frame
+- [[trust-and-credibility]] — adjacent topic: measuring whether messages are *believed*, and info-integrity as enterprise risk
 
 ## Practitioner Voices
 
@@ -110,6 +115,9 @@ Other Cerkl competitors (per the hardcoded list in [CLAUDE.md](../../CLAUDE.md))
 | [[six-internal-comms-trends-2026]] | 2026-04-14 | Vendor-tier practitioner-priority signal: manager cascade, AI usage, channel effectiveness, resource constraints |
 | [[mckinsey-agentic-ai-workforce-redesign-2026-05-18]] | 2026-04-06 | Change-comms named as AI ROI gate; CIO/CHRO co-buyer; framework for measuring agentic-AI workforce reshape |
 | [[oracle-mass-email-layoff-lessons-2026-05-18]] | 2026-05-18 | Anti-case for measurement-of-change-comms (no receipts, no segmentation, no follow-up) |
+| [[gartner-information-integrity-risk-2026-05-13]] | 2026-05-13 | Info-integrity = #1 enterprise risk (n=337); "verifiable comms" becomes a governance requirement |
+| [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] | 2026-05-29 | The [[measurers-vs-builders]] counter-narrative — measurement publicly framed as automatable overhead |
+| [[why-employees-right-not-to-trust-ic]] | 2026-05-26 | Candour↔trust is measurable (IKB); measure whether messages are *believed*, not just opened |
 
 ## Open Questions
 

@@ -1,0 +1,284 @@
+{
+  "template_id": "EAGqLIWzZTY",
+  "name": "Zoom Banner_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" \u2014 kicker",
+          "placeholder": "Webinar",
+          "role_hint": "kicker",
+          "element_id": "PBzz7lBfMjZlm1km-LBYz3z6n3QRwgxjP-LBJm8VWtGYr228tB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 26.155163983415015,
+            "left": 20.00000000000003
+          },
+          "dimension": {
+            "width": 66.33996968549576,
+            "height": 12.24003825
+          }
+        },
+        {
+          "raw": "\"|   Mar 6, 2025 1:00 pm est\" \u2014 date+time",
+          "placeholder": "|   Mar 6, 2025 1:00 pm est",
+          "role_hint": "date+time",
+          "element_id": "PBzz7lBfMjZlm1km-LBZ1yjPS5CPNb9jl",
+          "container_type": "TEXT",
+          "position": {
+            "top": 26.15516398341502,
+            "left": 107.19773228924213
+          },
+          "dimension": {
+            "width": 212.8022677107579,
+            "height": 12.240019105023913
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PBzz7lBfMjZlm1km-LB3lDw0LG2V2KRGY",
+          "container_type": "TEXT",
+          "position": {
+            "top": 56.9056176563206,
+            "left": 20
+          },
+          "dimension": {
+            "width": 284.2217765968805,
+            "height": 25
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 speaker-block label (SHAPE pill)",
+          "placeholder": "Presented by:",
+          "role_hint": "speaker-block label (SHAPE pill)",
+          "element_id": "PBzz7lBfMjZlm1km-LBY66h59Zy3vm51m-LBD4wBPkDPstlSsw",
+          "container_type": "TEXT",
+          "position": {
+            "top": 27.003400054218943,
+            "left": 332.1909418167354
+          },
+          "dimension": {
+            "width": 87.67632852426898,
+            "height": 10.54354696341606
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 2 speaker rows",
+          "placeholder": "Name",
+          "role_hint": "2 speaker rows",
+          "element_id": "PBzz7lBfMjZlm1km-LBG7GZvzlFKttxxG",
+          "container_type": "TEXT",
+          "position": {
+            "top": 145.26285618206964,
+            "left": 361.2054370109173
+          },
+          "dimension": {
+            "width": 100.01612865080364,
+            "height": 12.84440666666667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "640x200, role: full-bg, current asset_id: `MAGg-4jxTu8`",
+          "current_asset_id": "MAGg-4jxTu8",
+          "dimensions": "640x200",
+          "role": "full-bg",
+          "element_id": "PBzz7lBfMjZlm1km-LBVffzCGQhYbrgpK",
+          "occurrence": 1,
+          "parent_element_id": "PBzz7lBfMjZlm1km",
+          "container_type": "RECT",
+          "position": {
+            "top": -4.263256414560601e-14,
+            "left": 0
+          },
+          "dimension": {
+            "width": 640,
+            "height": 200
+          },
+          "editable": true
+        },
+        {
+          "raw": "9x9, role: icon (play icon), current asset_id: `MAGg--nIQbc`",
+          "current_asset_id": "MAGg--nIQbc",
+          "role": "icon",
+          "element_id": "PBzz7lBfMjZlm1km-LBYz3z6n3QRwgxjP-LBJrnw2JJkg7pqWx",
+          "occurrence": 1,
+          "parent_element_id": "PBzz7lBfMjZlm1km-LBYz3z6n3QRwgxjP",
+          "container_type": "RECT",
+          "position": {
+            "top": 27.68442084573392,
+            "left": 87.91096726969415
+          },
+          "dimension": {
+            "width": 9.113513232581726,
+            "height": 9.181524525362185
+          },
+          "editable": true
+        },
+        {
+          "raw": "72x72, role: headshot (speaker 1), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "72x72",
+          "role": "headshot",
+          "element_id": "PBzz7lBfMjZlm1km-LBrrcYMdzNs8bT2X-LBYczzR3z6FCXvvy",
+          "occurrence": 1,
+          "parent_element_id": "PBzz7lBfMjZlm1km-LBrrcYMdzNs8bT2X",
+          "container_type": "RECT",
+          "position": {
+            "top": 66.40561765632062,
+            "left": 361.2054370109172
+          },
+          "dimension": {
+            "width": 72.49108367788236,
+            "height": 72.49108367788236
+          },
+          "editable": true
+        },
+        {
+          "raw": "37x13, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "37x13",
+          "role": "logo",
+          "element_id": "PBzz7lBfMjZlm1km-LBY66h59Zy3vm51m-LB3YkBL4zKN6pkJ5",
+          "occurrence": 1,
+          "parent_element_id": "PBzz7lBfMjZlm1km-LBY66h59Zy3vm51m",
+          "container_type": "RECT",
+          "position": {
+            "top": 25.185918355998204,
+            "left": 423.99162161010446
+          },
+          "dimension": {
+            "width": 37.229944051616485,
+            "height": 13.209283877416777
+          },
+          "editable": true
+        },
+        {
+          "raw": "82x82, role: decorative-badge (Thought Leadership round badge), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "82x82",
+          "role": "decorative-badge",
+          "element_id": "PBzz7lBfMjZlm1km-LBVLNtmdgSTXrBlQ",
+          "occurrence": 1,
+          "parent_element_id": "PBzz7lBfMjZlm1km",
+          "container_type": "RECT",
+          "position": {
+            "top": -3.3878142169650616,
+            "left": 560.8224070813134
+          },
+          "dimension": {
+            "width": 82.42309977463505,
+            "height": 82.42309977463505
+          },
+          "editable": true
+        },
+        {
+          "raw": "72x72, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "72x72",
+          "role": "headshot",
+          "element_id": "PBzz7lBfMjZlm1km-LBSBZXDDqzyS8S4Q-LBxfqwdTbF9c06cD",
+          "occurrence": 2,
+          "parent_element_id": "PBzz7lBfMjZlm1km-LBSBZXDDqzyS8S4Q",
+          "container_type": "RECT",
+          "position": {
+            "top": 66.40561765632062,
+            "left": 485.4662268144968
+          },
+          "dimension": {
+            "width": 72.49108367788236,
+            "height": 72.49108367788236
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBzz7lBfMjZlm1km",
+      "dimension": {
+        "width": 640,
+        "height": 200
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same + 3 Name/Title rows."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + play-icon + Cerkl logo + TL badge + 3 x 59x59 headshots (`MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "59x59",
+          "role": "full-bg",
+          "element_id": "PBptSnpNM3df0bn2-LB6vSwt1VRCmQmH1-LBmBkxv8fZ7Bx4t6",
+          "occurrence": 1,
+          "parent_element_id": "PBptSnpNM3df0bn2-LB6vSwt1VRCmQmH1",
+          "container_type": "RECT",
+          "position": {
+            "top": 81.23486800411575,
+            "left": 331.201173452834
+          },
+          "dimension": {
+            "width": 58.661833330087205,
+            "height": 58.661833330087205
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBptSnpNM3df0bn2",
+      "dimension": {
+        "width": 640,
+        "height": 200
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same + 4 Name/Title rows (2x2 grid)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + play-icon + Cerkl logo + TL badge + 4 x 52x52 headshots (`MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "52x52",
+          "role": "full-bg",
+          "element_id": "PB8QhdMPGwZTWnS0-LB4hDbZgK6htd6fy-LB9VVTHZ9gVVF5vg",
+          "occurrence": 1,
+          "parent_element_id": "PB8QhdMPGwZTWnS0-LB4hDbZgK6htd6fy",
+          "container_type": "RECT",
+          "position": {
+            "top": 73.65168199850265,
+            "left": 331.20117345283404
+          },
+          "dimension": {
+            "width": 51.67415900074869,
+            "height": 51.67415900074869
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB8QhdMPGwZTWnS0",
+      "dimension": {
+        "width": 640,
+        "height": 200
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-zoom-banner",
+  "canvas": "640x200",
+  "page_count": 3,
+  "inspection_design_id": "DAHLWwhndv8",
+  "notes": "structurally a 640-wide twin of EAGqLERK1oE (same speaker logic / asset families). Layered frame: yes \u2014 same Presented-by pill SHAPE over full-bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwhndv8"
+}

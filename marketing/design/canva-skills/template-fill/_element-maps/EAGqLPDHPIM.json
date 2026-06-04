@@ -1,0 +1,145 @@
+{
+  "template_id": "EAGqLPDHPIM",
+  "name": "Newsletter Cover image Template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Title\" \u2014 title",
+          "placeholder": "Title",
+          "role_hint": "title",
+          "element_id": "PBSkdrj2Nc1mNNPx-LBgHn2MZnrjTZzX1",
+          "container_type": "TEXT",
+          "position": {
+            "top": 204.76423332247597,
+            "left": 111.94348265222538
+          },
+          "dimension": {
+            "width": 611.35599986897,
+            "height": 101.53334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1000x1500 (offset top:-250 left:250 \u2014 extends past canvas), role: photo-slot (right-side vertical photo column overlay), current asset_id: `MAFsazLNb5I`",
+          "current_asset_id": "MAFsazLNb5I",
+          "dimensions": "1000x1500",
+          "role": "photo-slot",
+          "element_id": "PBSkdrj2Nc1mNNPx-LBrFplgMlvFdmy7q",
+          "occurrence": 1,
+          "parent_element_id": "PBSkdrj2Nc1mNNPx",
+          "container_type": "RECT",
+          "position": {
+            "top": -250,
+            "left": 250
+          },
+          "dimension": {
+            "width": 1000,
+            "height": 1500
+          },
+          "editable": true
+        },
+        {
+          "raw": "187x56, role: logo (Cerkl wordmark bottom-left), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "187x56",
+          "role": "logo",
+          "element_id": "PBSkdrj2Nc1mNNPx-LBRG8mSNHTLXtFdp",
+          "occurrence": 1,
+          "parent_element_id": "PBSkdrj2Nc1mNNPx",
+          "container_type": "RECT",
+          "position": {
+            "top": 768.6880606714999,
+            "left": 111.94348265222538
+          },
+          "dimension": {
+            "width": 186.93148226095747,
+            "height": 56.11193932850007
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSkdrj2Nc1mNNPx",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Title\" \u2014 title",
+          "placeholder": "Title",
+          "role_hint": "title",
+          "element_id": "PBLWPNMBPPMnyBlR-LBVHJwdw9yJKzkr8",
+          "container_type": "TEXT",
+          "position": {
+            "top": 334.4582176504164,
+            "left": 111.94348265222538
+          },
+          "dimension": {
+            "width": 611.35599986897,
+            "height": 101.53334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1500x1000, role: full-bg, current asset_id: `MAFsayG4wgQ`",
+          "current_asset_id": "MAFsayG4wgQ",
+          "dimensions": "1500x1000",
+          "role": "full-bg",
+          "element_id": "PBLWPNMBPPMnyBlR-LBQ8F1VnydYsYbCB",
+          "occurrence": 1,
+          "parent_element_id": "PBLWPNMBPPMnyBlR",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": -1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1500.0000000000002,
+            "height": 1000
+          },
+          "editable": true
+        },
+        {
+          "raw": "197x60, role: logo (Cerkl wordmark beside title), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "197x60",
+          "role": "logo",
+          "element_id": "PBLWPNMBPPMnyBlR-LB1dV0TdXzhhdkbH",
+          "occurrence": 1,
+          "parent_element_id": "PBLWPNMBPPMnyBlR",
+          "container_type": "RECT",
+          "position": {
+            "top": 199.764233322476,
+            "left": 107.32591076279597
+          },
+          "dimension": {
+            "width": 196.76363353972297,
+            "height": 59.69398432794036
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBLWPNMBPPMnyBlR",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "newsletter-cover",
+  "canvas": "1500x1000",
+  "page_count": 2,
+  "inspection_design_id": "DAHLW1iSbJc",
+  "notes": "two layout variants \u2014 page 1 has a right-column hero photo over a colored backdrop, page 2 uses a full-bg photo with logo near the title. Layered frame: yes (page 1) \u2014 vertical photo image overlays the page-level color fill; logo overlays both.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW1iSbJc"
+}

@@ -19,6 +19,8 @@
 - **Slide N-1 — Payoff:** The thesis the carousel resolves to. Short. The "so what."
 - **Slide N — CTA:** Where to go next. For a blog-wrap carousel: "Full breakdown in our latest post → Link in comments."
 
+**Asset ID (optional per slide):** When using a carousel template with content-bearing photo-slots (product, downloadable, photo+text — see [`asset-packs.md`](../asset-packs.md)), declare the Canva asset ID per affected slide. Omit for fully text-led carousels (problem-solution, N-part list).
+
 **Hashtags:** 2–3 per [`../linkedin-writing-guide.md`](../linkedin-writing-guide.md#hashtag-policy).
 
 ## Voice

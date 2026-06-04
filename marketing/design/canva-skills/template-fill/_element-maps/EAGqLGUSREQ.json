@@ -1,0 +1,154 @@
+{
+  "template_id": "EAGqLGUSREQ",
+  "name": "Vlog Series_Video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Perspectives\" \u2014 kicker",
+          "placeholder": "Perspectives",
+          "role_hint": "kicker",
+          "element_id": "PBzHGH9w1cd54g12-LBmQlPFWzSXVBBDd",
+          "container_type": "TEXT",
+          "position": {
+            "top": 132.39075928741732,
+            "left": 72
+          },
+          "dimension": {
+            "width": 306.375,
+            "height": 41.06676
+          }
+        },
+        {
+          "raw": "\"  Strategic internal\" \u2014 title line 1 (SHAPE-wrapped highlight)",
+          "placeholder": "  Strategic internal",
+          "role_hint": "title line 1 (SHAPE-wrapped highlight)",
+          "element_id": "PBzHGH9w1cd54g12-LBY2cVg4BmHrPCGX",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 193.1055624874849,
+            "left": 72
+          },
+          "dimension": {
+            "width": 545.0497852234028,
+            "height": 96.34810879999999
+          }
+        },
+        {
+          "raw": "\"  communications -\" \u2014 title line 2 (SHAPE highlight)",
+          "placeholder": "  communications -",
+          "role_hint": "title line 2 (SHAPE highlight)",
+          "element_id": "PBzHGH9w1cd54g12-LB4mjyr3R7ppM5KQ",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 301.10537764374243,
+            "left": 72.00000000000011
+          },
+          "dimension": {
+            "width": 567.9999999999999,
+            "height": 96.34810879999999
+          }
+        },
+        {
+          "raw": "\"  an approach\" \u2014 title line 3 (SHAPE highlight)",
+          "placeholder": "  an approach",
+          "role_hint": "title line 3 (SHAPE highlight)",
+          "element_id": "PBzHGH9w1cd54g12-LB8WL4gpQp1fpV2Y",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 409.4534864437424,
+            "left": 72.00000000000009
+          },
+          "dimension": {
+            "width": 400.95973899959205,
+            "height": 96.34810879999999
+          }
+        },
+        {
+          "raw": "\"Name\" \u2014 speaker name",
+          "placeholder": "Name",
+          "role_hint": "speaker name",
+          "element_id": "PBzHGH9w1cd54g12-LBjFZJTJZMHLgsbB-LBJTLwW9ntRzNjBv",
+          "container_type": "TEXT",
+          "position": {
+            "top": 579.8224371314376,
+            "left": 246.1334260664845
+          },
+          "dimension": {
+            "width": 299.74268386843937,
+            "height": 24.73332
+          }
+        },
+        {
+          "raw": "\"Title\" \u2014 speaker title",
+          "placeholder": "Title",
+          "role_hint": "speaker title",
+          "element_id": "PBzHGH9w1cd54g12-LBjFZJTJZMHLgsbB-LBNThB4gbkmFyHPx",
+          "container_type": "TEXT",
+          "position": {
+            "top": 612.0961114839995,
+            "left": 246.1334260664845
+          },
+          "dimension": {
+            "width": 299.74268386843937,
+            "height": 22.069205
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1280x720, role: full-bg (illustrated landscape), current asset_id: `MAFbhP_EeWE`",
+          "current_asset_id": "MAFbhP_EeWE",
+          "dimensions": "1280x720",
+          "role": "full-bg",
+          "element_id": "PBzHGH9w1cd54g12-LB69flxw43jKWwzK",
+          "occurrence": 1,
+          "parent_element_id": "PBzHGH9w1cd54g12",
+          "container_type": "RECT",
+          "position": {
+            "top": -1.1368683772161603e-13,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "135x40, role: logo (Cerkl wordmark bottom-left), current asset_id: `MAFbOsxqlcA`",
+          "current_asset_id": "MAFbOsxqlcA",
+          "dimensions": "135x40",
+          "role": "logo",
+          "element_id": "PBzHGH9w1cd54g12-LBPTpVXx2FRrq6KB",
+          "occurrence": 1,
+          "parent_element_id": "PBzHGH9w1cd54g12",
+          "container_type": "RECT",
+          "position": {
+            "top": 587.9877536154374,
+            "left": 72.00000000000003
+          },
+          "dimension": {
+            "width": 135.00315192348597,
+            "height": 40.01224638456257
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBzHGH9w1cd54g12",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-vlog",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWxyVN4E",
+  "notes": "highlighted-title layout \u2014 each title line is its own SHAPE-wrapped TEXT with leading whitespace for the highlight inset. No speaker headshot fill exposed. Layered frame: yes \u2014 three SHAPE highlight blocks overlay full-bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWxyVN4E"
+}

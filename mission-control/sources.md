@@ -118,7 +118,7 @@ Each category has: `slug`, `label`, `path`, `match`, `home_recent`, `kind` (html
 
 ### marketing-design-one-pagers
 - **label**: Marketing — One-Pagers
-- **path**: `/Users/travisfoster/claude-code/cerkl/marketing/design/one-pagers/pdfs/`
+- **path**: `/Users/travisfoster/claude-code/cerkl/marketing/design/one-pagers/output/`
 - **match**: `*.html`
 - **home_recent**: 2
 - **exclude**: `reference-one-pager.html`

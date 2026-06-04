@@ -1,0 +1,99 @@
+{
+  "template_id": "EAGqLKYVlQs",
+  "name": "Square post_style 6",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"XX%\" \u2014 large stat (346x200)",
+          "placeholder": "XX%",
+          "role_hint": "large stat (346x200)",
+          "element_id": "PBBXrsf3lyCRSLqD-LBnLBF0wFsng20t9",
+          "container_type": "TEXT",
+          "position": {
+            "top": 169.1458090394518,
+            "left": 108
+          },
+          "dimension": {
+            "width": 346.3125,
+            "height": 199.6696
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 statement (864x176)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "statement (864x176)",
+          "element_id": "PBBXrsf3lyCRSLqD-LBnHzqBtc4n0Mbmv",
+          "container_type": "TEXT",
+          "position": {
+            "top": 458.3732597794346,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 176.4
+          }
+        },
+        {
+          "raw": "\"Learn more at Cerkl.com\" \u2014 CTA text",
+          "placeholder": "Learn more at Cerkl.com",
+          "role_hint": "CTA text",
+          "element_id": "PBBXrsf3lyCRSLqD-LBmShh6ZPM4kb2HT-LBgzlWRRTvhl0DJB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 732.1932428050908,
+            "left": 108
+          },
+          "dimension": {
+            "width": 395.710076070504,
+            "height": 39.39858
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAFZifQs_is`",
+          "current_asset_id": "MAFZifQs_is",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBBXrsf3lyCRSLqD",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "380x146, role: logo (Broadcast powered by Cerkl), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "380x146",
+          "role": "logo",
+          "element_id": "PBBXrsf3lyCRSLqD-LBCSNlhKNTxkmB9B",
+          "occurrence": 1,
+          "parent_element_id": "PBBXrsf3lyCRSLqD",
+          "container_type": "RECT",
+          "position": {
+            "top": 848.2800854435166,
+            "left": 71.51351351351354
+          },
+          "dimension": {
+            "width": 379.6278897474401,
+            "height": 145.54423888080768
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBBXrsf3lyCRSLqD",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW5Uxsdg",
+  "notes": "Minimal 1-page stat card. No CTA arrow image (arrow is part of bg or absent). Just full-bg + Broadcast logo image. Cleanest skeleton in this set.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW5Uxsdg"
+}

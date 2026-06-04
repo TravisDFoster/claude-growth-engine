@@ -109,11 +109,27 @@ Use a real CSV library (Python `csv`, or equivalent) — Description fields cont
 ### Step 6 — Roll up and report
 
 - **Owner:** Claude
-- **Produces:** Chat-printed summary
+- **Produces:** Chat-printed summary + next-step suggestion
 
 Print one line per post: `[type] [slug] — drafts/YYYY-MM-DD_[type]_[slug].md → CSV Task Description updated in YYYY-Www.csv`. Flag any post that:
 - Couldn't find a matching CSV Task row (scaffold gap — surface back to Travis)
 - Couldn't find a matching template (post type not yet templated — future work)
+
+After the roll-up, walk the drafted posts and classify each by asset-route (matches [`linkedin-asset-process.md`](linkedin-asset-process.md) Step 1):
+
+- **`render`** — `carousel` or `static-theme` not wrapping a webinar → needs `linkedin-asset-process.md` to scaffold a manifest + dispatch `template-fill`
+- **`webinar-lookup`** — any type wrapping a webinar event folder → needs `linkedin-asset-process.md` to look up the rendered URL from the webinar's `canva-manifests/` (no render)
+- **`skip-*`** — `static-blog` (LinkedIn auto-renders link card), `poll` (native widget), `short-video` (video pipeline)
+
+If any post is `render` or `webinar-lookup`, suggest running `linkedin-asset-process.md` next, naming the eligible slugs and which route each falls into. Use this phrasing:
+
+> Next: run `linkedin-asset-process.md` with `commit_mode: auto` to render Canva assets for:
+> - **Render** (template-fill dispatch): `<slug1>`, `<slug2>`
+> - **Webinar lookup**: `<slug3>` (from `<webinar-event-folder>`)
+>
+> Skipped this week: `<slug4>` (static-blog), `<slug5>` (poll).
+
+If every drafted post is `skip-*`, no asset process needed — the roll-up ends here.
 
 ---
 

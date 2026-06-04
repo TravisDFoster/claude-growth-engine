@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLFFIvPs",
+  "name": "Facebook_Linkedin post_style 4",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW8y77-U",
+  "notes": "Dark testimonial card. Round headshot well (small, bottom-left) is SHAPE placeholder with image-placeholder text \u2014 no editable headshot fill. Only 3 image elements (bg + Broadcast lockup + decorative gradient).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW8y77-U"
+}

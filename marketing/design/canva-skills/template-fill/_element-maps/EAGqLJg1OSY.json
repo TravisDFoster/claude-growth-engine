@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLJg1OSY",
+  "name": "1200 x 628px_Employee spotlight 2",
+  "pages": [],
+  "use_case": "linkedin-employee-spotlight-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW371Pkg",
+  "notes": "Headshot visible in render (round image left of quote) is baked into bg fill \u2014 NOT a separate image element. Cerkl HWSB logo also part of bg. Only 1 editable image fill (the full-bg). Lightweight share card.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW371Pkg"
+}

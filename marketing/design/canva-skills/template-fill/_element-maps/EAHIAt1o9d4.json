@@ -1,0 +1,422 @@
+{
+  "template_id": "EAHIAt1o9d4",
+  "name": "LinkedIn Carousel_Problem Solution_1",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Why Yor Messages Aren't Driving Action\" headline + \"Lets break it down\" CTA + \"Example COVER DELETE BEFOR EXPORT\" tag",
+          "placeholder": "Why Yor Messages Aren't Driving Action",
+          "element_id": "PBJv0Mmw0vrpQJ6r-LBdyT7s8zyfpBMMf",
+          "container_type": "TEXT",
+          "position": {
+            "top": 885.3349449725579,
+            "left": 107.99999999999972
+          },
+          "dimension": {
+            "width": 934.0000000000001,
+            "height": 167.600015
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_KXbtUA`",
+          "current_asset_id": "MAHH_KXbtUA",
+          "role": "full-bg",
+          "element_id": "PBJv0Mmw0vrpQJ6r",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "1080x1080 hero photo `MAG8AFv60Gg` (top, layered)",
+          "current_asset_id": "MAG8AFv60Gg",
+          "dimensions": "1080x1080",
+          "layered": true
+        },
+        {
+          "raw": "1080x929 gradient overlay `MAHH_YnT_7Q` (over photo, layered)",
+          "current_asset_id": "MAHH_YnT_7Q",
+          "dimensions": "1080x929",
+          "layered": true
+        },
+        {
+          "raw": "CTA bar `MAHH_YEVO1o` (936x111); Broadcast lockup `MAHG2o30xY0`; Cerkl wordmark `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHH_YEVO1o",
+          "dimensions": "936x111",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PBJv0Mmw0vrpQJ6r",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "headline + CTA (same pattern)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + gradient `MAHH_YnT_7Q` + CTA bar + Broadcast + Cerkl lockups (NO hero photo on p2)",
+          "current_asset_id": "MAHH_YnT_7Q",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBThgYCJJWtFqsvd",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"The Problem\" label",
+          "placeholder": "The Problem",
+          "element_id": "PBksJTXCyB2qc78T-LBBYlRRlNmJRx5tH",
+          "container_type": "TEXT",
+          "position": {
+            "top": 136.09644419550273,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 89
+          }
+        },
+        {
+          "raw": "\"Your messages are being seen\u2014but not acted on\" headline (864x168)",
+          "placeholder": "Your messages are being seen\u2014but not acted on",
+          "role_hint": "but not acted on\" headline (864x168)",
+          "element_id": "PBksJTXCyB2qc78T-LBLXckQPH3Rm8Whv",
+          "container_type": "TEXT",
+          "position": {
+            "top": 234.598602773109,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 167.6
+          }
+        },
+        {
+          "raw": "\"Because they:\" sub-label",
+          "placeholder": "Because they:",
+          "role_hint": "sub-label",
+          "element_id": "PBksJTXCyB2qc78T-LBPKRLr9C6WRqr15",
+          "container_type": "TEXT",
+          "position": {
+            "top": 475.5986027731092,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 63.333345
+          }
+        },
+        {
+          "raw": "3 bullet items: \"Try to reach everyone\" / \"Lack a clear next step\" / \"Arrive at the wrong time\""
+        },
+        {
+          "raw": "\"Even strong content gets ignored\" closing line",
+          "placeholder": "Even strong content gets ignored",
+          "element_id": "PBksJTXCyB2qc78T-LB8Btj9dj2HMS2wV",
+          "container_type": "TEXT",
+          "position": {
+            "top": 869.2749233936328,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 167.600005
+          }
+        },
+        {
+          "raw": "\"How do you fix it\" CTA pill",
+          "placeholder": "How do you fix it",
+          "element_id": "PBksJTXCyB2qc78T-LBxHmPv8XsYR1Hqv",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1114.470017941593,
+            "left": 122.83362467296774
+          },
+          "dimension": {
+            "width": 687.7295990359045,
+            "height": 53.93334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_MIHqOQ`",
+          "current_asset_id": "MAHH_MIHqOQ",
+          "role": "full-bg",
+          "element_id": "PBksJTXCyB2qc78T",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "CTA bar"
+        },
+        {
+          "raw": "3x 40x40 bullet icons `MAHH_szrDxo`",
+          "current_asset_id": "MAHH_szrDxo",
+          "dimensions": "40x40",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBksJTXCyB2qc78T",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Solution:\" + \"Start with the Audience\" + body",
+          "placeholder": "Solution:",
+          "element_id": "PBMRfHV2mqTzNHgc-LBxD4BPmny75DpvW",
+          "container_type": "TEXT",
+          "position": {
+            "top": 215.44293001547805,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 89
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_GAjL4g` only",
+          "current_asset_id": "MAHH_GAjL4g",
+          "role": "full-bg",
+          "element_id": "PBMRfHV2mqTzNHgc",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBMRfHV2mqTzNHgc",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Solution:\" + \"Make the Message Actionable\" + body",
+          "placeholder": "Solution:",
+          "element_id": "PBrvtnNCdnxkrzP0-LBmsNcXjkwVkz9xD",
+          "container_type": "TEXT",
+          "position": {
+            "top": 215.44293001547805,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 89
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_MMzQA0` only",
+          "current_asset_id": "MAHH_MMzQA0",
+          "role": "full-bg",
+          "element_id": "PBrvtnNCdnxkrzP0",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBrvtnNCdnxkrzP0",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "\"Solution:\" + \"Improve Timing\" + body (864x402)",
+          "placeholder": "Solution:",
+          "element_id": "PBBlPPZTtZmdRzlD-LBjKGsxMsYVTx5Z1",
+          "container_type": "TEXT",
+          "position": {
+            "top": 215.44293001547805,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 89
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_DfUAJw` only",
+          "current_asset_id": "MAHH_DfUAJw",
+          "role": "full-bg",
+          "element_id": "PBBlPPZTtZmdRzlD",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBBlPPZTtZmdRzlD",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [
+        {
+          "raw": "\"How can Broadcast Help?\" headline (864x226)",
+          "placeholder": "How can Broadcast Help?",
+          "element_id": "PBnxHrfBQ8F1mZWL-LBZqBWldf13DwbBp",
+          "container_type": "TEXT",
+          "position": {
+            "top": 114.59860277310926,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 225.8666
+          }
+        },
+        {
+          "raw": "3 feature rows: \"Reach the right audience with targeted messaging\" / \"Deliver at the right time for higher engagement\" / \"Improve performance with real-time insights\""
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_Ia1UR8`",
+          "current_asset_id": "MAHH_Ia1UR8",
+          "role": "full-bg",
+          "element_id": "PBnxHrfBQ8F1mZWL",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "3x 67x67 CTA arrow icons `MAHIAo1en1s`",
+          "current_asset_id": "MAHIAo1en1s",
+          "dimensions": "67x67",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBnxHrfBQ8F1mZWL",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 8,
+      "text_slots": [
+        {
+          "raw": "\"Reach the right audience with the right message at the right time\" \u2014 final headline (878x461)",
+          "placeholder": "Reach the right audience with the right message at the right time",
+          "role_hint": "final headline (878x461)",
+          "element_id": "PBCht9Z1Xvx97g5m-LBKklqymc8RXCQnm",
+          "container_type": "TEXT",
+          "position": {
+            "top": 311.35465340511644,
+            "left": 108
+          },
+          "dimension": {
+            "width": 878.118608293048,
+            "height": 460.99998
+          }
+        },
+        {
+          "raw": "\"Get started today with Broadcast\" \u2014 closing CTA headline (864x168)",
+          "placeholder": "Get started today with Broadcast",
+          "role_hint": "closing CTA headline (864x168)",
+          "element_id": "PBCht9Z1Xvx97g5m-LB14kbqDBfR8jRvP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 945.3349449725579,
+            "left": 107.99999999999989
+          },
+          "dimension": {
+            "width": 864.0000000000002,
+            "height": 167.600015
+          }
+        },
+        {
+          "raw": "\"Schedule a Chat\" \u2014 CTA pill",
+          "placeholder": "Schedule a Chat",
+          "role_hint": "CTA pill",
+          "element_id": "PBCht9Z1Xvx97g5m-LBPsr6b1d3XMxKw9-LBmKVQJvGBc8Hq6q",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1181.3303407311698,
+            "left": 157.69919982098617
+          },
+          "dimension": {
+            "width": 366.94860386497305,
+            "height": 53.93334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHH_DB06Y0`",
+          "current_asset_id": "MAHH_DB06Y0",
+          "role": "full-bg",
+          "element_id": "PBCht9Z1Xvx97g5m",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "60x60 arrow `MAHIAo1en1s`",
+          "current_asset_id": "MAHIAo1en1s",
+          "dimensions": "60x60"
+        },
+        {
+          "raw": "352x72 Broadcast lockup",
+          "dimensions": "352x72",
+          "role": "logo"
+        },
+        {
+          "raw": "207x72 Cerkl wordmark",
+          "dimensions": "207x72",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PBCht9Z1Xvx97g5m",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-carousel-problem-solution",
+  "canvas": "1080x1350",
+  "page_count": 8,
+  "inspection_design_id": "DAHLWxVooZw",
+  "notes": "8-page problem-solution carousel \u2014 sister template to EAHIEGj_L3s. Pages 1-3 share \"intro/setup/problem\" pattern with consistent CTA bar; pages 4-6 are 3 solution slides (text-only, full-bg); page 7 is feature recap; page 8 outro CTA. Hero photo on cover (`MAG8AFv60Gg`) has overlaid gradient mask `MAHH_YnT_7Q` \u2014 layered swap means: replace photo, keep gradient. No layered product UI screenshots on solution pages 4-6 (text-only). Bullet icon and CTA arrow ID library matches EAHIEGj_L3s.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWxVooZw"
+}

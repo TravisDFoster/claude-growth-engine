@@ -75,7 +75,8 @@ I'll confirm before generating:
 - **Produces:** in-memory list of ICPro blog topics + LinkedIn wrap posts per week
 - **What to do:**
   - For each week, draft one ICPro blog topic that fits the week's theme + the month's awareness-month angle (typically the DEI/inclusion lens of the annual plan).
-  - For each cerkl.com blog, draft the 4 LinkedIn wrap rows (theme, link, poll, short video) using the blog as anchor. Use a `wraps <blog-shorthand> blog` annotation in the `Source brief` column.
+  - For each cerkl.com blog, draft the 3 LinkedIn wrap rows (theme, link, poll) using the blog as anchor. Use a `wraps <blog-shorthand> blog` annotation in the `Source brief` column.
+  - Add one **barebones** LinkedIn short video row per week (Deliverable: `— (planned out-of-band)`, Source brief: `— (out-of-band, barebones Jira row)`). Short videos are planned outside the content-plan system as of 2026-06-01 — the row exists for Jira capacity tracking; the topic/wrap/copy is owned by Furqan at publish time. See [`jira-csv-guidelines.md` §Short video — out-of-band](jira-csv-guidelines.md#short-video--out-of-band).
   - Check `inputs.md` for anything that fits the month — promote any timely items into draft rows.
 
 ### Step 5 — Write the plan file

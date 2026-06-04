@@ -1,0 +1,83 @@
+{
+  "template_id": "EAGqLGG2TYI",
+  "name": "Shorts thumbnail template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet consectetur adipiscing elit\" \u2014 large title (655x474, stacked in 4 white text bars)",
+          "placeholder": "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+          "role_hint": "large title (655x474, stacked in 4 white text bars)",
+          "element_id": "PBHZq2b4yprpVCgW-LBlMTYr0Gv2XDfsY",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1057.0754352631575,
+            "left": 175.78885415679127
+          },
+          "dimension": {
+            "width": 655.1785962074745,
+            "height": 473.813342
+          }
+        },
+        {
+          "raw": "Plus 4 white-strip SHAPEs + a vertical accent bar SHAPE \u2014 these are the highlighter banners behind the title text",
+          "role_hint": "these are the highlighter banners behind the title text"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1139x1962, slightly oversized) `MAD4Qd-CYbs` (non-editable \u2014 the illustrated landscape)",
+          "current_asset_id": "MAD4Qd-CYbs",
+          "dimensions": "1139x1962",
+          "role": "full-bg",
+          "editable": false,
+          "element_id": "PBHZq2b4yprpVCgW-LBv0fWCNVW8FBRrf",
+          "occurrence": 1,
+          "parent_element_id": "PBHZq2b4yprpVCgW",
+          "container_type": "SHAPE",
+          "position": {
+            "top": -21.133191288666467,
+            "left": -29.62567572573346
+          },
+          "dimension": {
+            "width": 1139.251351451467,
+            "height": 1962.266382577333
+          }
+        },
+        {
+          "raw": "251x140, role: logo (Cerkl wordmark top-right), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "251x140",
+          "role": "logo",
+          "element_id": "PBHZq2b4yprpVCgW-LB5m8bKVJ14x1tl9",
+          "occurrence": 1,
+          "parent_element_id": "PBHZq2b4yprpVCgW",
+          "container_type": "RECT",
+          "position": {
+            "top": 46.999999999999986,
+            "left": 783.5766874214862
+          },
+          "dimension": {
+            "width": 251.36460412082806,
+            "height": 140.13357721021774
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBHZq2b4yprpVCgW",
+      "dimension": {
+        "width": 1080,
+        "height": 1920
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "shorts-thumbnail",
+  "canvas": "1080x1920",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW382yhk",
+  "notes": "Shorts thumbnail \u2014 designed for vertical video preview. Background image is non-editable (locked landscape). Title fills 4 striped white text-banners. Only the logo and title text are user-customizable per slide.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW382yhk"
+}

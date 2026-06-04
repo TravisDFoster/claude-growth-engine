@@ -1,0 +1,310 @@
+{
+  "template_id": "EAHG3Ty0I9Y",
+  "name": "1080x1350_Photo + text 1",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Why Employees Ignore Internal Emails (And How to Fix It)\" \u2014 headline (864x259)",
+          "placeholder": "Why Employees Ignore Internal Emails (And How to Fix It)",
+          "role_hint": "headline (864x259)"
+        },
+        {
+          "raw": "\"It's not about attention spans...\" body (864x235)",
+          "placeholder": "It's not about attention spans..."
+        },
+        {
+          "raw": "\"Learn More\" \u2014 CTA text",
+          "placeholder": "Learn More",
+          "role_hint": "CTA text",
+          "element_id": "PBk3W4vLZVLBCdKg-LBWMSd0FVhpsJmZM-LBX6ZQtczg0q5W0r",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1198.8746129924968,
+            "left": 617.9500629056984
+          },
+          "dimension": {
+            "width": 253.25375839951778,
+            "height": 53.93334
+          }
+        },
+        {
+          "raw": "\"Example post\" \u2014 top tag SHAPE",
+          "placeholder": "Example post",
+          "role_hint": "top tag SHAPE",
+          "element_id": "PBk3W4vLZVLBCdKg-LB74YcbVdmjxhbYy",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 385.59162292815313
+          },
+          "dimension": {
+            "width": 308.81675414369374,
+            "height": 69.47033204314903
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG2dLGpEc`",
+          "current_asset_id": "MAHG2dLGpEc",
+          "role": "full-bg",
+          "element_id": "PBk3W4vLZVLBCdKg",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "957x529, role: photo-slot (top half hero photo), current asset_id: `MAG8AJy7khI` \u2014 layered",
+          "current_asset_id": "MAG8AJy7khI",
+          "dimensions": "957x529",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBk3W4vLZVLBCdKg-LBkGGfn17bMXNglz",
+          "occurrence": 1,
+          "parent_element_id": "PBk3W4vLZVLBCdKg",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 61.597021681580316
+          },
+          "dimension": {
+            "width": 957.1311580031933,
+            "height": 529.4552645644039
+          },
+          "editable": true
+        },
+        {
+          "raw": "1080x987, role: photo-slot (large mid-bottom content panel), current asset_id: `MAHG2UepKQk` \u2014 layered",
+          "current_asset_id": "MAHG2UepKQk",
+          "dimensions": "1080x987",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBk3W4vLZVLBCdKg-LB7xs9MvSmMn47Sm",
+          "occurrence": 1,
+          "parent_element_id": "PBk3W4vLZVLBCdKg",
+          "container_type": "RECT",
+          "position": {
+            "top": 363.15000000000003,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 986.85
+          },
+          "editable": true
+        },
+        {
+          "raw": "346x71, role: logo (Broadcast lockup, bottom-left), current asset_id: `MAHG2o30xY0`",
+          "current_asset_id": "MAHG2o30xY0",
+          "dimensions": "346x71",
+          "role": "logo",
+          "element_id": "PBk3W4vLZVLBCdKg-LBJ10BvmKWw03Fbx",
+          "occurrence": 1,
+          "parent_element_id": "PBk3W4vLZVLBCdKg",
+          "container_type": "RECT",
+          "position": {
+            "top": 1194.4122114301556,
+            "left": 118.23229419819657
+          },
+          "dimension": {
+            "width": 346.42052550261286,
+            "height": 70.54381610235026
+          },
+          "editable": false
+        },
+        {
+          "raw": "56x56, role: icon (CTA arrow), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "56x56",
+          "role": "icon",
+          "element_id": "PBk3W4vLZVLBCdKg-LBWMSd0FVhpsJmZM-LBK2TJ2rgmhdbX1g",
+          "occurrence": 1,
+          "parent_element_id": "PBk3W4vLZVLBCdKg-LBWMSd0FVhpsJmZM",
+          "container_type": "RECT",
+          "position": {
+            "top": 1198.8746129924968,
+            "left": 895.6936316756214
+          },
+          "dimension": {
+            "width": 55.619012977667694,
+            "height": 55.619012977667694
+          },
+          "editable": false
+        }
+      ],
+      "page_id": "PBk3W4vLZVLBCdKg",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum...\" headline + body + \"Learn More\" CTA (no top tag)",
+          "placeholder": "Lorem ipsum..."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG2dLGpEc`",
+          "current_asset_id": "MAHG2dLGpEc",
+          "role": "full-bg",
+          "element_id": "PBxsNyV9HsV75szc",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "1080x987 content panel `MAHG2UepKQk` (layered)",
+          "current_asset_id": "MAHG2UepKQk",
+          "dimensions": "1080x987",
+          "layered": true,
+          "element_id": "PBxsNyV9HsV75szc-LBbq3sVbwqC6jllk",
+          "occurrence": 1,
+          "parent_element_id": "PBxsNyV9HsV75szc",
+          "container_type": "RECT",
+          "position": {
+            "top": 363.15000000000003,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 986.85
+          },
+          "editable": true
+        },
+        {
+          "raw": "Broadcast lockup",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow (NO hero photo on p2)"
+        }
+      ],
+      "page_id": "PBxsNyV9HsV75szc",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG2YeVAII`",
+          "current_asset_id": "MAHG2YeVAII",
+          "role": "full-bg",
+          "element_id": "PBpsDyl08Z95R9Z7",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "hero photo `MAG8AOi6pmo` (layered)",
+          "current_asset_id": "MAG8AOi6pmo",
+          "layered": true,
+          "element_id": "PBpsDyl08Z95R9Z7-LBZStJnGTQHmF5CH",
+          "occurrence": 1,
+          "parent_element_id": "PBpsDyl08Z95R9Z7",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 61.597021681580316
+          },
+          "dimension": {
+            "width": 957.1311580031933,
+            "height": 529.4552645644039
+          },
+          "editable": true
+        },
+        {
+          "raw": "content panel `MAHG2ec8tYU` (layered)",
+          "current_asset_id": "MAHG2ec8tYU",
+          "layered": true,
+          "element_id": "PBpsDyl08Z95R9Z7-LBqgn5Z82fyjRJ8c",
+          "occurrence": 1,
+          "parent_element_id": "PBpsDyl08Z95R9Z7",
+          "container_type": "RECT",
+          "position": {
+            "top": 363.15000000000003,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 986.85
+          },
+          "editable": true
+        },
+        {
+          "raw": "Broadcast lockup",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow"
+        }
+      ],
+      "page_id": "PBpsDyl08Z95R9Z7",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG2YeVAII`",
+          "current_asset_id": "MAHG2YeVAII",
+          "role": "full-bg",
+          "element_id": "PBC85Fl7t6Xt46w6",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "content panel `MAHG2ec8tYU` (layered)",
+          "current_asset_id": "MAHG2ec8tYU",
+          "layered": true,
+          "element_id": "PBC85Fl7t6Xt46w6-LBt1K7H8MM7VRrNM",
+          "occurrence": 1,
+          "parent_element_id": "PBC85Fl7t6Xt46w6",
+          "container_type": "RECT",
+          "position": {
+            "top": 363.15000000000003,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 986.85
+          },
+          "editable": true
+        },
+        {
+          "raw": "Broadcast lockup",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow"
+        }
+      ],
+      "page_id": "PBC85Fl7t6Xt46w6",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-portrait-photo-text",
+  "canvas": "1080x1350",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW-cGLeM",
+  "notes": "4-page portrait carousel: 2 cover variants (with hero photo) + 2 secondary variants (text-only). Hero photo (957x529, top) is layered atop full-bg. Content panel fill `MAHG2UepKQk` / `MAHG2ec8tYU` is a large 1080x987 overlay covering bottom 73% \u2014 likely the white text panel.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW-cGLeM"
+}

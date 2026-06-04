@@ -1,0 +1,79 @@
+{
+  "template_id": "EAGqLK6kDP0",
+  "name": "Broadcast Channels_video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Broadcast Suite for Internal Communicators\" \u2014 title",
+          "placeholder": "Broadcast Suite for Internal Communicators",
+          "role_hint": "title",
+          "element_id": "PBR8RgYgQGkzwgpf-LBz4R4XBtP5CZgK4",
+          "container_type": "TEXT",
+          "position": {
+            "top": 159.0333300000004,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 685.4659455128206,
+            "height": 246.4667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "856x720 (covers ~67% of canvas, left), role: full-bg (blue brand panel), current asset_id: `MAFbWOE6Z_s`",
+          "current_asset_id": "MAFbWOE6Z_s",
+          "dimensions": "856x720",
+          "role": "full-bg",
+          "element_id": "PBR8RgYgQGkzwgpf-LBxgFkwvwpFysjd9",
+          "occurrence": 1,
+          "parent_element_id": "PBR8RgYgQGkzwgpf",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 3.410605131648481e-13
+          },
+          "dimension": {
+            "width": 856.4102564102561,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`",
+          "current_asset_id": "MAFbUrBeep4",
+          "dimensions": "469x92",
+          "role": "logo",
+          "element_id": "PBR8RgYgQGkzwgpf-LBS8q09PtwYm7gQL",
+          "occurrence": 1,
+          "parent_element_id": "PBR8RgYgQGkzwgpf",
+          "container_type": "RECT",
+          "position": {
+            "top": 500.8299630815691,
+            "left": 82.00000000000006
+          },
+          "dimension": {
+            "width": 469.3715126491787,
+            "height": 92.17003691843092
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBR8RgYgQGkzwgpf",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-broadcast-channels",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWygIYlA",
+  "notes": "minimal Broadcast Channels variant \u2014 same as Overview thumbnail but with the brand panel sized to only the left ~67% of canvas (right side reveals page color/illustration). Layered frame: no (logo overlays panel only).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWygIYlA"
+}

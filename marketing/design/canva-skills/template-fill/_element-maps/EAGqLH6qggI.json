@@ -1,0 +1,44 @@
+{
+  "template_id": "EAGqLH6qggI",
+  "name": "Video question / transition template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a heading\" \u2014 title/question text",
+          "placeholder": "Add a heading",
+          "role_hint": "title/question text",
+          "element_id": "PBBt0rsC5ZJCwRdY-LB4HdZhFXKc7Y8tS",
+          "container_type": "TEXT",
+          "position": {
+            "top": 489.0333299999994,
+            "left": 230.86873408685528
+          },
+          "dimension": {
+            "width": 1458.2625318262892,
+            "height": 115
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "(none)"
+        }
+      ],
+      "page_id": "PBBt0rsC5ZJCwRdY",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-transition",
+  "canvas": "1920x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW3LsbUY",
+  "notes": "minimal solid-color transition card; no fills at all. Title-only. Layered frame: no.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3LsbUY"
+}

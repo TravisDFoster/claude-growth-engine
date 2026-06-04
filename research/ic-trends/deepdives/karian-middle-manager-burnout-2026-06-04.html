@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karian — Middle Manager Burnout (Deep Dive, 2026-06-04)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+  }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 17px; line-height: 1.6; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+  .tldr p { margin: 0 0 10px; max-width: none; }
+  .tldr p:last-child { margin-bottom: 0; }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout p { max-width: none; margin: 0 0 6px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9;
+    margin-bottom: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0 0 6px; font-size: 14px; }
+  .stack-card p:last-child { margin-bottom: 0; }
+  .stack-card .vendor-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 2px 8px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    margin-right: 6px; margin-bottom: 4px;
+  }
+  .stack-card .vendor-tag.counter { background: var(--warn-bg); color: var(--warn); }
+
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); }
+  .quote.skeptic { border-left-color: var(--warn); }
+  .quote.skeptic .q-mark { color: var(--warn); }
+
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--good-border);
+    border-left: 3px solid var(--good);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { margin: 0; max-width: none; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Deep Dive · Analyst POV</div>
+    <h1>Karian: &ldquo;Middle managers are becoming the most burned-out role in the western economy&rdquo;</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-06-04</span>
+      <span><b>Category:</b> Analyst report / Trend POV</span>
+      <span><b>Source:</b> isitworking (Substack, personal)</span>
+      <span class="verdict">Worth profiling — Yes</span>
+    </div>
+    <div class="tldr">
+      <p>
+        Ghassan Karian (founder, now non-Exec Chairman of <b>Ipsos Karian and Box</b>) argues that middle management has become <b>&ldquo;structurally impossible&rdquo;</b> &mdash; a role-design failure, not a resilience problem &mdash; and the fix is redesign, not wellness theatre. Independently corroborated by Gallup, Gartner, McKinsey, HBR, and BCG data published in the last 60 days.
+      </p>
+      <p>
+        But the load-bearing <b>&ldquo;12.1 direct reports&rdquo;</b> stat circulating with the piece is <b>from Gallup, not Karian</b> &mdash; and is distributionally misleading (median is still 5&ndash;6). For Cerkl, the structural finding hardens the <i>direct-to-employee delivery</i> argument, but the route-around lane is crowded. The cleaner buyer-language hook is the Ragan ECCC 2026 gap: <b>56% of communicators rank manager comms as a top-2026 focus; only 4% rate managers &ldquo;very effective&rdquo;</b> at cascading.
+      </p>
+    </div>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do (90 min)</div>
+      <p>
+        Draft a one-page Cerkl positioning note: <i>&ldquo;Manager cascade is structurally broken &mdash; what we do about it.&rdquo;</i> Anchor on the Ragan ECCC <b>56% / 4%</b> gap (not the 12.1 stat). Cite Karian + Gallup + Gartner as the credibility stack. Deliver to Sales for the next 5 deals where Firstup or Workvivo is the alternative.
+      </p>
+      <div class="code-row">
+        <code id="reco-title">Manager cascade is structurally broken — what we do about it</code>
+        <button class="copy-btn" data-copy="reco-title" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>The piece</h3>
+        <p>
+          A Substack essay published <b>2026-06-04</b> by <b>Ghassan Karian</b> on <b>isitworking</b> &mdash; a personal-capacity publication separate from his Ipsos Karian and Box role. The article runs a structural argument backed by <b>Ipsos Karian and Box&apos;s employee-experience benchmark database</b> (described in-article as &ldquo;one of the largest in Europe&rdquo;). No external URLs cited in the body.
+        </p>
+        <p>
+          The opener: <i>&ldquo;If you were asked to guess the most exhausted population in the modern workforce, you might aim high: CEOs, CFOs, founders, tech engineers. You&apos;d be wrong.&rdquo;</i>
+        </p>
+      </div>
+      <div>
+        <h3>Source URLs</h3>
+        <ul>
+          <li>Article: <a href="https://isitworking.substack.com/p/why-middle-managers-are-becoming">isitworking.substack.com/p/why-middle-managers-are-becoming</a></li>
+          <li>Publication home: <a href="https://isitworking.substack.com/">isitworking.substack.com</a></li>
+          <li>About the author: <a href="https://isitworking.substack.com/about">isitworking.substack.com/about</a></li>
+          <li>Ipsos Karian and Box: <a href="https://ipsoskarianandbox.com/">ipsoskarianandbox.com</a></li>
+          <li>IC Index 2026 (IoIC × Karian): <a href="https://www.ioic.org.uk/knowledge-hub/thought-leadership-research/ic-index.html">ioic.org.uk &mdash; IC Index</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Karian&apos;s five root causes of structural burnout</h3>
+    <div class="pillars">
+      <div class="pillar"><div class="n">CAUSE 1</div><h4>Responsibility without authority</h4><p>Own outcomes without the decision rights to deliver them.</p></div>
+      <div class="pillar"><div class="n">CAUSE 2</div><h4>Hybrid-work coordination tax</h4><p>Distributed teams multiply scheduling, alignment, and rework load.</p></div>
+      <div class="pillar"><div class="n">CAUSE 3</div><h4>Emotional absorption</h4><p>Buffer downward anxiety from frontline and upward pressure from execs.</p></div>
+      <div class="pillar"><div class="n">CAUSE 4</div><h4>Administrative bloat</h4><p>Reporting, compliance, status, and tooling overhead eat manager hours.</p></div>
+      <div class="pillar"><div class="n">CAUSE 5</div><h4>Outdated role design</h4><p>Built for a different operating model and never redesigned.</p></div>
+    </div>
+
+    <h3 style="margin-top:22px;">Headline evidence (in-house data)</h3>
+    <ul>
+      <li>Work-life-balance scores for middle managers <b>deteriorated 2023&ndash;2025</b>; in 2025 executives&apos; scores improved while middle managers stayed &ldquo;comparatively squeezed.&rdquo; <i>Source: Ipsos Karian and Box employee-experience benchmark.</i></li>
+      <li>Middle managers score significantly lower than other levels on <b>manageable workload, decision influence, and wellbeing</b>.</li>
+    </ul>
+
+    <h3>Prescription</h3>
+    <p>Reduce span of control, strip admin load, grant real decision rights, deploy AI for reporting/scheduling, fewer + clearer priorities from the top, practical support tools over resilience training.</p>
+
+    <div class="callout warn">
+      <div class="callout-label">Provenance flag &mdash; important</div>
+      <p>
+        The often-repeated <b>&ldquo;average manager has 12.1 direct reports (+50% since 2013); spends less than half their time managing&rdquo;</b> stat <b>is not in this article</b>. It originates from Gallup&apos;s span-of-control research: <a href="https://www.gallup.com/workplace/700718/span-control-optimal-team-size-managers.aspx">Gallup, &ldquo;Span of Control&rdquo;</a> &mdash; 8.2 (2013) → 10.9 (2024) → 12.1 (2025).
+      </p>
+      <p>The two are commonly conflated. Pair them deliberately, but cite Gallup for the stat.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Who it&apos;s for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user / ICP overlap</h4>
+        <p>Senior IC / EX leaders thinking about <b>manager comms strategy</b> &mdash; particularly the Paid ICP (Foundations+/Omni AI) where manager bandwidth is a delivery-system constraint. Also a credible analyst signal for board-level audiences questioning org design.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>The buyer is litigating manager-cascade-vs-direct-to-employee comms strategy; running RTO, AI-rollout, or layoff comms where manager bandwidth is the rate-limiter; building a 2026 IC strategy deck.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>The buyer wants tactical playbook content (this is a frame, not a how-to); the buyer&apos;s lived experience is 5&ndash;6 direct reports (most are) and the &ldquo;12.1&rdquo; headline will read as outlier framing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How it slots into Cerkl&apos;s competitive set</h2>
+    <p>
+      The structural finding (<b>manager-cascade is broken</b>) is a tailwind for Cerkl&apos;s positioning &mdash; direct-to-employee personalized delivery is increasingly viable as the channel-of-record, with manager cascade as a <i>contextualizing</i> layer rather than the <i>delivery</i> layer. Three nuances matter:
+    </p>
+
+    <h3>The route-around lane is getting crowded</h3>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <span class="vendor-tag">Firstup</span>
+        <p>Strongest route-around stance. <i>&ldquo;Manager-as-communicator model was built for a different era.&rdquo;</i> Backed by 6,200-employee research showing managers overextended, untrained, miss messages.</p>
+        <p style="font-size:13px;"><a href="https://firstup.io/blog/internal-communications-failure-2026-research/">firstup.io research</a></p>
+      </div>
+      <div class="stack-card">
+        <span class="vendor-tag">Workvivo</span>
+        <p>Cites 84% reliance on managers / 60% rated below expectations; positions exec-direct video + targeted messaging as the fix.</p>
+        <p style="font-size:13px;"><a href="https://www.workvivo.com/internal-communications/benchmarks/">workvivo.com benchmarks</a></p>
+      </div>
+      <div class="stack-card">
+        <span class="vendor-tag">Staffbase</span>
+        <p>Hybrid framing &mdash; corporate message goes direct, manager contextualizes.</p>
+        <p style="font-size:13px;"><a href="https://staffbase.com/blog/ai-tools-for-internal-comms">staffbase.com blog</a></p>
+      </div>
+      <div class="stack-card">
+        <span class="vendor-tag">ContactMonkey / Workshop</span>
+        <p>Route-around by product design &mdash; bypass manager relay via direct send.</p>
+      </div>
+      <div class="stack-card">
+        <span class="vendor-tag counter">Simpplr (counterpoint)</span>
+        <p>The <i>only</i> major vendor explicitly positioning to <b>enable managers</b> as transformation leaders.</p>
+        <p style="font-size:13px;"><a href="https://www.simpplr.com/blog/manager-enablement-ai-initiatives/">simpplr.com manager enablement</a></p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px;">The buyer-language hook is the Ragan ECCC 2026 gap, not 12.1</h3>
+    <p>
+      <b>56% of communicators rank manager comms as their top 2026 focus, but only 4% rate managers &ldquo;very effective&rdquo;</b> at cascading (<a href="https://www.ragan.com/ragan-insider-eccc-2026-manager-comms/">Ragan ECCC 2026 coverage</a>). That gap names the pain in IC-team language. The 12.1 mean is a credibility-risk if the buyer&apos;s lived experience is 6.
+    </p>
+
+    <h3>Cerkl can hold both sides</h3>
+    <div class="callout info">
+      <p>
+        <i>&ldquo;Enable managers with delivery measurement (so they&apos;re not the bottleneck), and route around them where they are.&rdquo;</i>
+      </p>
+      <p>
+        Differentiated stance vs. the route-around-only chorus and the enable-only Simpplr counterpoint. The Cerkl pitch becomes: <b>we are the only platform that lets you do both</b> &mdash; the same delivery infrastructure with the same measurement layer, channel-agnostic to whether the message goes via cascade, direct, or both.
+      </p>
+    </div>
+
+    <p style="font-size:14px; color:var(--muted); margin-top:14px;">
+      <b>Suggested <code>shared/competitors.md</code> updates</b> &mdash; see &ldquo;Cross-reference check&rdquo; in the chat summary.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Comparison to alternatives</h2>
+    <p style="font-size:14px; color:var(--muted);">Corroborating and contradicting data sources for the structural-burnout thesis.</p>
+    <table class="cmp">
+      <thead>
+        <tr><th>Source</th><th>Headline</th><th>How they differ from Karian</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Gallup &mdash; <a href="https://www.gallup.com/workplace/700718/span-control-optimal-team-size-managers.aspx">Span of Control</a></td>
+          <td>8.2 → 12.1 direct reports (2013 → 2025); engagement peaks at 8&ndash;9</td>
+          <td>Pure span-of-control data; <i>median is still 5&ndash;6</i>; only 13% oversee 25+ &mdash; the &ldquo;12.1 average&rdquo; is pulled by a tail. <b>The actual source of the often-quoted stat.</b></td>
+        </tr>
+        <tr>
+          <td class="alt-name">Gartner Q1 2026 HR survey &mdash; <a href="https://www.gartner.com/en/newsroom/press-releases/2026-04-29-gartner-hr-survey-finds-47-percent-of-managers-say-they-are-working-harder-than-1-year-ago">press release 2026-04-29</a></td>
+          <td>47% of managers work harder than a year ago; 66% say people-mgmt primary duty; ~25% of time on emotional issues</td>
+          <td>Quantifies the <i>time-allocation</i> squeeze Karian describes qualitatively.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">McKinsey &mdash; <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations">State of Organizations 2026</a></td>
+          <td>2/3 of 2,500+ leaders say orgs overly complex; &ldquo;hourglass&rdquo; structure squeezes the middle</td>
+          <td>Names the structural pressure as an org-design problem.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">McKinsey &mdash; <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/the-rewired-2-point-0-talent-plan">Rewired 2.0 Talent Plan</a></td>
+          <td>Managers shift from supervising tasks to orchestrating hybrid human/agent systems</td>
+          <td>Reframes the role itself &mdash; Karian&apos;s prescription #5 (redesign), with an AI angle.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">HBR &mdash; <a href="https://hbr.org/2026/05/managers-are-struggling-to-keep-up-with-the-ai-productivity-boom">Managers Struggling with AI Productivity Boom</a> (Fosslien &amp; Duffy, 2026-05-25)</td>
+          <td>Managers are the new bottleneck: &ldquo;every 30 min someone creates something I have to look at&rdquo;</td>
+          <td>AI-specific cut on the same cascade-overload thesis. Paywall.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">HBR / BCG &mdash; <a href="https://hbr.org/2026/05/designing-organizational-change-that-actually-sticks">Designing Org Change That Sticks</a> (Dhar &amp; Ellmer, 2026-05-29)</td>
+          <td>Change fails on manager-level behavior gaps, not strategy</td>
+          <td>Pins manager bandwidth as the change-program rate-limiter. Paywall.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Gallup AI Indicator &mdash; <a href="https://www.gallup.com/699797/indicator-artificial-intelligence.aspx">indicator</a> (2026-05-26)</td>
+          <td>Reports of managers who actively support AI use → reports 8.7× more likely to say AI transformed their work; only 21% of employees see that support</td>
+          <td>Quantifies the manager-cascade dependency for AI rollouts specifically.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">CNBC / industry &mdash; <a href="https://www.cnbc.com/2024/12/15/amazon-and-the-endangered-future-of-the-middle-manager.html">Endangered Middle Manager</a></td>
+          <td>Public-company manager headcount fell 6.1% May 2022–May 2025; Amazon targeted +15% IC:manager ratio</td>
+          <td><b>Partial contradiction.</b> Wider spans concentrated in Big-Tech flattening events, not universal economy-wide shift. Weakens &ldquo;every manager everywhere&rdquo; framing.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: where you stand on cascade-vs-direct.</b> Five of six corroborating sources reinforce the structural-failure framing; the CNBC angle complicates &ldquo;universal&rdquo; framing. For Cerkl&apos;s deck, the safe stack is Karian (frame) + Gallup (data) + Gartner (US/quant) + Ragan ECCC (buyer language).
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Gotchas</h2>
+
+    <div class="callout warn">
+      <div class="callout-label">The 12.1 stat ≠ Karian&apos;s article</div>
+      <p>Conflating them creates a provenance problem if cited in published writing. Pair Karian (role-design argument) with Gallup (span-of-control data) deliberately.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">Median vs. mean</div>
+      <p>Gallup&apos;s 12.1 <i>mean</i> sits on a long tail (13% of managers oversee 25+). The median is still 5&ndash;6 &mdash; the buyer&apos;s lived experience for most ICs and team leads. &ldquo;Average manager has 12.1 reports&rdquo; sounds compelling in a deck but invites pushback in a room of practitioners who oversee 6.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">isitworking is personal, not corporate</div>
+      <p>Karian publishes in personal capacity &mdash; useful for &ldquo;credible voice from the IC research industry&rdquo; framing, <i>not</i> citable as official Ipsos Karian and Box research. The corporate research lives at <a href="https://ipsoskarianandbox.com/insights/">ipsoskarianandbox.com/insights</a> and the IoIC IC Index (<a href="https://www.ioic.org.uk/knowledge-hub/thought-leadership-research/ic-index.html">ic-index.html</a>).</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-label">UK-centric</div>
+      <p>Karian and Box&apos;s panel is largely UK; IC Index 2026 surveyed 5,000 UK employees. US/EU buyer rooms will ask for US data &mdash; pair with Gallup/Gartner for the US side.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">56%</div><div class="lbl">communicators rank manager comms top-2026 focus</div></div>
+      <div class="stat"><div class="num">4%</div><div class="lbl">rate managers &ldquo;very effective&rdquo; at cascading</div></div>
+      <div class="stat"><div class="num">47%</div><div class="lbl">managers work harder than 1 yr ago (Gartner)</div></div>
+      <div class="stat"><div class="num">12.1</div><div class="lbl">avg direct reports — but median 5–6 (Gallup)</div></div>
+      <div class="stat"><div class="num">5,000</div><div class="lbl">UK employees surveyed (IC Index 2026)</div></div>
+      <div class="stat"><div class="num">2026-06-04</div><div class="lbl">Karian article published</div></div>
+    </div>
+
+    <h3>Practitioner takes (last 12 months)</h3>
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>Employees call IC &ldquo;scripted, insincere, patronising, cold&rdquo; &mdash; undermines the assumption that fixing the cascade alone fixes trust.</p>
+        <div class="who">— Karian, <a href="https://isitworking.substack.com/p/why-employees-are-right-not-to-trust">&ldquo;Why employees are right not to trust IC&rdquo;</a> · isitworking</div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>Wellbeing/burnout moving from background to unavoidable; IC pulled between tactical delivery and trust/culture work.</p>
+        <div class="who">— Jenni Field, <a href="https://redefiningcomms.com/blog/navigating-the-internal-communication-identity-crisis-in-2026/">Navigating the IC identity crisis in 2026</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>Fatigue is intent-failure, not volume. &ldquo;Prime, don&apos;t just inform&rdquo; managers.</p>
+        <div class="who">— Ragan, <a href="https://www.ragan.com/a-practical-guide-to-fatigue-proof-internal-comms-cascades/">A practical guide to fatigue-proof cascades</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>56% of communicators say manager comms is top 2026 focus; only 4% rate managers &ldquo;very effective.&rdquo; <b>Load-bearing buyer-language stat.</b></p>
+        <div class="who">— Ragan ECCC 2026, <a href="https://www.ragan.com/ragan-insider-eccc-2026-manager-comms/">manager-comms takeaway</a></div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">&ldquo;</span>
+        <p>Gap signal: no indexable threads surfaced on burnout/cascade/span-of-control via WebSearch on Reddit r/internalcomms (largely noindex/blocked).</p>
+        <div class="who">— r/internalcomms, search gap (2026-06-04)</div>
+      </div>
+      <div class="quote skeptic">
+        <span class="q-mark">&ldquo;</span>
+        <p>No recent named post on cascade fatigue from Joel Schwartzberg&apos;s &ldquo;All Hands&rdquo; &mdash; common-voice gap in the discussion.</p>
+        <div class="who">— gap check, Joel Schwartzberg (2026-06-04)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">07</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Worth profiling? Yes</b> &mdash; both the Karian/isitworking voice and the broader &ldquo;manager-cascade is structurally broken&rdquo; thesis.</p>
+
+    <p>
+      Add Karian (and Ipsos Karian and Box) as a tracked practitioner voice; thread Gallup&apos;s span-of-control data into Cerkl&apos;s manager-comms messaging; update <code>shared/competitors.md</code> to flag the enable-vs-route-around vendor split.
+    </p>
+
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Draft a one-page Cerkl positioning note: <i>&ldquo;Manager cascade is structurally broken &mdash; what we do about it.&rdquo;</i> Anchored on the Ragan ECCC <b>56% / 4%</b> gap (not the 12.1 stat). Cite Karian + Gallup + Gartner. <b>Time-box: 90 minutes.</b> Deliver to Sales for the next 5 deals where Firstup or Workvivo is the alternative.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>Decide within <b>2 weeks</b> whether to commission a Cerkl-authored POV essay or LinkedIn post off the back of this synthesis. The category-language window is open right now &mdash; Karian, Field, Cates, Black, Pielsticker have all converged on &ldquo;execution problem&rdquo; / &ldquo;structural failure&rdquo; framing in 30 days.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind</h4>
+        <p>If Gallup&apos;s underlying span-of-control panel changes methodology and the +50% trend weakens, or a major competitor (Staffbase, Firstup) publishes a <i>primary</i> manager-bandwidth dataset that becomes the citable benchmark.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Open questions</h2>
+
+    <details class="q">
+      <summary>What&apos;s Cerkl&apos;s product-level position on a &ldquo;manager-context layer&rdquo; feature?</summary>
+      <div class="q-body">
+        <p>E.g., &ldquo;here&apos;s the message your team is about to receive, pre-briefed for your manager.&rdquo; Does Foundations+ or Omni AI have this surface today, or is it on the roadmap?</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Does the Ragan ECCC 2026 56%/4% data hold up under primary-source check?</summary>
+      <div class="q-body">
+        <p>The number is too clean &mdash; worth confirming the survey methodology (sample size, geography, year). The 56% / 4% delta is the load-bearing stat in the proposed positioning note; verify before publishing.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is there a Foundations-tier message for SMB buyers where &ldquo;managers&rdquo; are team leads with 4–6 reports?</summary>
+      <div class="q-body">
+        <p>The Karian/Gallup frame is enterprise-coded; the SMB equivalent might be &ldquo;founder/COO&rdquo; as the bottleneck, not middle manager. Worth a separate angle for Foundations-tier collateral.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Could Cerkl run a small primary-research piece off Karian&apos;s questions using HubSpot list segmentation?</summary>
+      <div class="q-body">
+        <p>Work-life-balance scores by org level, run against the Cerkl customer base. Would give us a citable internal stat the competitive set doesn&apos;t have &mdash; differentiation lever for the next 6 months of category conversation.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-06-04 · Source markdown: <a href="karian-middle-manager-burnout-2026-06-04.md">karian-middle-manager-burnout-2026-06-04.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, () => fallback());
+      } else {
+        fallback();
+      }
+      function fallback() {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

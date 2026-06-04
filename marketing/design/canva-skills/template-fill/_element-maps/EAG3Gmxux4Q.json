@@ -1,0 +1,538 @@
+{
+  "template_id": "EAG3Gmxux4Q",
+  "name": "Product_carousel",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Introducing Calendar Invites\" \u2014 headline (864x225)",
+          "placeholder": "Introducing Calendar Invites",
+          "role_hint": "headline (864x225)",
+          "element_id": "PBlq0SHrwQRCSL9y-LBsttrn9sRZs1FHn",
+          "container_type": "TEXT",
+          "position": {
+            "top": 271.2500834709699,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 224.800105
+          }
+        },
+        {
+          "raw": "\"Send meetings directly...\" subhead (864x166)",
+          "placeholder": "Send meetings directly..."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1350) `MAGq6DpUVaU`",
+          "current_asset_id": "MAGq6DpUVaU",
+          "dimensions": "1080x1350",
+          "role": "full-bg",
+          "element_id": "PBlq0SHrwQRCSL9y-LBNBQCGPwKPcYjMy",
+          "occurrence": 1,
+          "parent_element_id": "PBlq0SHrwQRCSL9y",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1349.9999999999998
+          },
+          "editable": true
+        },
+        {
+          "raw": "627x143, role: logo (Cerkl x Broadcast lockup), current asset_id: `MAFvNRVZhsQ`",
+          "current_asset_id": "MAFvNRVZhsQ",
+          "dimensions": "627x143",
+          "role": "logo",
+          "element_id": "PBlq0SHrwQRCSL9y-LBN2SV97Pds5Mbpb",
+          "occurrence": 1,
+          "parent_element_id": "PBlq0SHrwQRCSL9y",
+          "container_type": "RECT",
+          "position": {
+            "top": 108.00000000000001,
+            "left": 226.43854782167568
+          },
+          "dimension": {
+            "width": 627.1229043566486,
+            "height": 143.35465340511652
+          },
+          "editable": true
+        },
+        {
+          "raw": "1036x657, role: photo-slot (large product UI hero), current asset_id: `MAGq6YLVt50` \u2014 layered",
+          "current_asset_id": "MAGq6YLVt50",
+          "dimensions": "1036x657",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBlq0SHrwQRCSL9y-LBMJzxp24hqTV8nt",
+          "occurrence": 1,
+          "parent_element_id": "PBlq0SHrwQRCSL9y",
+          "container_type": "RECT",
+          "position": {
+            "top": 709.8512120659518,
+            "left": 22.057051967513644
+          },
+          "dimension": {
+            "width": 1035.8858960649727,
+            "height": 656.9243057545367
+          },
+          "editable": true
+        },
+        {
+          "raw": "230x220, role: decorative (sparkle icon), current asset_id: `MAGq0aWoUGM`",
+          "current_asset_id": "MAGq0aWoUGM",
+          "dimensions": "230x220",
+          "role": "decorative",
+          "element_id": "PBlq0SHrwQRCSL9y-LBn8ZNZJgYTqyHQX",
+          "occurrence": 1,
+          "parent_element_id": "PBlq0SHrwQRCSL9y",
+          "container_type": "RECT",
+          "position": {
+            "top": 1133.7172649561223,
+            "left": 889.241898101171
+          },
+          "dimension": {
+            "width": 229.52175189080342,
+            "height": 220.2940257021898
+          },
+          "editable": true
+        },
+        {
+          "raw": "87x87, role: icon (small badge), current asset_id: `MAGq6BXXtU0`",
+          "current_asset_id": "MAGq6BXXtU0",
+          "dimensions": "87x87",
+          "role": "icon",
+          "element_id": "PBlq0SHrwQRCSL9y-LBwfSc44lhFssTxN",
+          "occurrence": 1,
+          "parent_element_id": "PBlq0SHrwQRCSL9y",
+          "container_type": "RECT",
+          "position": {
+            "top": 1040.0759667289012,
+            "left": -1.8907071574040586
+          },
+          "dimension": {
+            "width": 87.48977255823719,
+            "height": 87.23739821431921
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBlq0SHrwQRCSL9y",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"No more missed invites. Deliver meetings right to employee calendars.\" \u2014 headline (807x266)",
+          "placeholder": "No more missed invites. Deliver meetings right to employee calendars.",
+          "role_hint": "headline (807x266)",
+          "element_id": "PBYKRRKHPWJMSYhX-LBKVpqQw3KsV2gLh",
+          "container_type": "TEXT",
+          "position": {
+            "top": 178.13605362089112,
+            "left": 136.65965372428195
+          },
+          "dimension": {
+            "width": 806.6806925514363,
+            "height": 266.4
+          }
+        },
+        {
+          "raw": "CTA pill SHAPE"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGq6O9Uo3Y`",
+          "current_asset_id": "MAGq6O9Uo3Y",
+          "role": "full-bg",
+          "element_id": "PBYKRRKHPWJMSYhX",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "928x618, role: photo-slot (product UI screenshot), current asset_id: `MAGq6ODLqHc` \u2014 layered",
+          "current_asset_id": "MAGq6ODLqHc",
+          "dimensions": "928x618",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBYKRRKHPWJMSYhX-LBLCrQ6wGwczFsHk",
+          "occurrence": 1,
+          "parent_element_id": "PBYKRRKHPWJMSYhX",
+          "container_type": "RECT",
+          "position": {
+            "top": 521.8251805455956,
+            "left": 79.69362119691482
+          },
+          "dimension": {
+            "width": 927.6683025920008,
+            "height": 618.4455350613341
+          },
+          "editable": true
+        },
+        {
+          "raw": "200x200, role: decorative (Athos brand circle), current asset_id: `MAGAiOQqcE0`",
+          "current_asset_id": "MAGAiOQqcE0",
+          "dimensions": "200x200",
+          "role": "decorative",
+          "element_id": "PBYKRRKHPWJMSYhX-LBNHqpdsdr6mW6bm",
+          "occurrence": 1,
+          "parent_element_id": "PBYKRRKHPWJMSYhX",
+          "container_type": "RECT",
+          "position": {
+            "top": 781.4372700452334,
+            "left": 58.44776572500662
+          },
+          "dimension": {
+            "width": 200.4663077955228,
+            "height": 200.4663077955228
+          },
+          "editable": true
+        },
+        {
+          "raw": "164x164, role: decorative (sparkle badge), current asset_id: `MAF8ni2huLk`",
+          "current_asset_id": "MAF8ni2huLk",
+          "dimensions": "164x164",
+          "role": "decorative",
+          "element_id": "PBYKRRKHPWJMSYhX-LBgcQt3YBcTXF8S1",
+          "occurrence": 1,
+          "parent_element_id": "PBYKRRKHPWJMSYhX",
+          "container_type": "RECT",
+          "position": {
+            "top": 479.9890168113553,
+            "left": 842.8906485535745
+          },
+          "dimension": {
+            "width": 164.47127523534112,
+            "height": 164.47127523534112
+          },
+          "editable": true
+        },
+        {
+          "raw": "158x158, role: decorative (sparkle badge), current asset_id: `MAGq5hpDvvI`",
+          "current_asset_id": "MAGq5hpDvvI",
+          "dimensions": "158x158",
+          "role": "decorative",
+          "element_id": "PBYKRRKHPWJMSYhX-LB4WXGHjrFQmdSdv",
+          "occurrence": 1,
+          "parent_element_id": "PBYKRRKHPWJMSYhX",
+          "container_type": "RECT",
+          "position": {
+            "top": 981.9035778407562,
+            "left": 845.9427172881583
+          },
+          "dimension": {
+            "width": 158.36713776617339,
+            "height": 158.36713776617339
+          },
+          "editable": true
+        },
+        {
+          "raw": "293x100, role: photo-slot (CTA pill image, \"Send Invite\" button), current asset_id: `MAGq58HuBhA`",
+          "current_asset_id": "MAGq58HuBhA",
+          "dimensions": "293x100",
+          "role": "photo-slot",
+          "element_id": "PBYKRRKHPWJMSYhX-LBnmTRkTL1k6K9kL-LB6btpCHxRL5vSqD",
+          "occurrence": 1,
+          "parent_element_id": "PBYKRRKHPWJMSYhX-LBnmTRkTL1k6K9kL",
+          "container_type": "RECT",
+          "position": {
+            "top": 1192.0230799813537,
+            "left": 393.31475214562533
+          },
+          "dimension": {
+            "width": 293.3704957087493,
+            "height": 99.95384003729214
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBYKRRKHPWJMSYhX",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Send invites from key leaders to give the your events visibility and importance.\" \u2014 body (887x356)",
+          "placeholder": "Send invites from key leaders to give the your events visibility and importance.",
+          "role_hint": "body (887x356)",
+          "element_id": "PBZ5j7FS67dGrwpB-LBkL5BY7mfMn7WQs",
+          "container_type": "TEXT",
+          "position": {
+            "top": 755.6681782053435,
+            "left": 96.54889816577884
+          },
+          "dimension": {
+            "width": 886.9022036684426,
+            "height": 356.399995
+          }
+        },
+        {
+          "raw": "CTA pill SHAPE"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGq6Dg5iXg`",
+          "current_asset_id": "MAGq6Dg5iXg",
+          "role": "full-bg",
+          "element_id": "PBZ5j7FS67dGrwpB-LBwnWGYz4dvRbMCH",
+          "occurrence": 1,
+          "parent_element_id": "PBZ5j7FS67dGrwpB",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1349.9999999999998
+          },
+          "editable": true
+        },
+        {
+          "raw": "913x608 product UI `MAGq6FfWs7E` (layered)",
+          "current_asset_id": "MAGq6FfWs7E",
+          "dimensions": "913x608",
+          "layered": true,
+          "element_id": "PBZ5j7FS67dGrwpB-LBWg34ftXGnk6ynb",
+          "occurrence": 1,
+          "parent_element_id": "PBZ5j7FS67dGrwpB",
+          "container_type": "RECT",
+          "position": {
+            "top": 103.44282454589495,
+            "left": 83.64306037029752
+          },
+          "dimension": {
+            "width": 912.713879259405,
+            "height": 608.4759195062702
+          },
+          "editable": true
+        },
+        {
+          "raw": "293x100 Send Invite pill `MAGq58HuBhA`",
+          "current_asset_id": "MAGq58HuBhA",
+          "dimensions": "293x100",
+          "element_id": "PBZ5j7FS67dGrwpB-LBfzCvPskbtkzTNb-LBf2t03xwCkbT3kh",
+          "occurrence": 1,
+          "parent_element_id": "PBZ5j7FS67dGrwpB-LBfzCvPskbtkzTNb",
+          "container_type": "RECT",
+          "position": {
+            "top": 1192.0230799813537,
+            "left": 393.31475214562533
+          },
+          "dimension": {
+            "width": 293.3704957087493,
+            "height": 99.95384003729214
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBZ5j7FS67dGrwpB",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Include all relevant info\u2014who, what, when, where\u2014directly in the calendar item.\" (807x356)",
+          "placeholder": "Include all relevant info\u2014who, what, when, where\u2014directly in the calendar item.",
+          "role_hint": "who, what, when, where\u2014directly in the calendar item.\" (807x356)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGq6MfxffA`",
+          "current_asset_id": "MAGq6MfxffA",
+          "role": "full-bg",
+          "element_id": "PBV7W0Pnmsj2y4GH",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "972x648 product UI `MAGq6BW1-DQ` (layered)",
+          "current_asset_id": "MAGq6BW1-DQ",
+          "dimensions": "972x648",
+          "layered": true,
+          "element_id": "PBV7W0Pnmsj2y4GH-LBsqlGzmwXKpgtHp",
+          "occurrence": 1,
+          "parent_element_id": "PBV7W0Pnmsj2y4GH",
+          "container_type": "RECT",
+          "position": {
+            "top": 523.8586623591675,
+            "left": 53.87668678336041
+          },
+          "dimension": {
+            "width": 972.2466264332792,
+            "height": 648.1644176221863
+          },
+          "editable": true
+        },
+        {
+          "raw": "Send Invite pill"
+        }
+      ],
+      "page_id": "PBV7W0Pnmsj2y4GH",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Update or cancel events, swap attendees, and keep calendars accurate\u2014without starting over.\" (887x356)",
+          "placeholder": "Update or cancel events, swap attendees, and keep calendars accurate\u2014without starting over.",
+          "role_hint": "without starting over.\" (887x356)",
+          "element_id": "PBK8SHRMfrs83jr7-LBtkKrkXR2nDXcRX",
+          "container_type": "TEXT",
+          "position": {
+            "top": 765.6681782053435,
+            "left": 96.54889816577884
+          },
+          "dimension": {
+            "width": 886.9022036684426,
+            "height": 356.399995
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGq6HWmP5E`",
+          "current_asset_id": "MAGq6HWmP5E",
+          "role": "full-bg",
+          "element_id": "PBK8SHRMfrs83jr7",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "913x608 product UI `MAGq7N0NuQY` (layered)",
+          "current_asset_id": "MAGq7N0NuQY",
+          "dimensions": "913x608",
+          "layered": true,
+          "element_id": "PBK8SHRMfrs83jr7-LBcnVGMy7z74KzTd",
+          "occurrence": 1,
+          "parent_element_id": "PBK8SHRMfrs83jr7",
+          "container_type": "RECT",
+          "position": {
+            "top": 113.44282454589495,
+            "left": 83.64306037029752
+          },
+          "dimension": {
+            "width": 912.713879259405,
+            "height": 608.4759195062702
+          },
+          "editable": true
+        },
+        {
+          "raw": "Send Invite pill"
+        }
+      ],
+      "page_id": "PBK8SHRMfrs83jr7",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "\"Boost event turnout and cut the noise. \\n\\n Get critical meetings on the calendars of employees who need them\u2014automatically.\" \u2014 closing headline (878x699)",
+          "placeholder": "Boost event turnout and cut the noise. \\n\\n Get critical meetings on the calendars of employees who need them\u2014automatically.",
+          "role_hint": "automatically.\" \u2014 closing headline (878x699)"
+        },
+        {
+          "raw": "\"Learn more at Cerkl.com\" \u2014 CTA pill SHAPE",
+          "placeholder": "Learn more at Cerkl.com",
+          "role_hint": "CTA pill SHAPE",
+          "element_id": "PBJCyHQ53GybGKyf-LBmDHTFH4Vmpp91c",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 1001.8717726575858,
+            "left": 108
+          },
+          "dimension": {
+            "width": 597.7419638393419,
+            "height": 133.60491290363146
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGq6DpUVaU`",
+          "current_asset_id": "MAGq6DpUVaU",
+          "role": "full-bg",
+          "element_id": "PBJCyHQ53GybGKyf-LB5qbjtFJDSQ3yLw",
+          "occurrence": 1,
+          "parent_element_id": "PBJCyHQ53GybGKyf",
+          "container_type": "RECT",
+          "position": {
+            "top": -2.529838836942531,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1349.9999999999998
+          },
+          "editable": true
+        },
+        {
+          "raw": "615x615 decorative compass badge `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "dimensions": "615x615",
+          "role": "decorative-badge",
+          "element_id": "PBJCyHQ53GybGKyf-LBbF324tpWQ9zBwp",
+          "occurrence": 1,
+          "parent_element_id": "PBJCyHQ53GybGKyf",
+          "container_type": "RECT",
+          "position": {
+            "top": 627.0851787163406,
+            "left": 654.5425893581703
+          },
+          "dimension": {
+            "width": 614.9148212836594,
+            "height": 614.9148212836594
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBJCyHQ53GybGKyf",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "product-carousel-portrait",
+  "canvas": "1080x1350",
+  "page_count": 6,
+  "inspection_design_id": "DAHLW7jqcT8",
+  "notes": "6-page Broadcast feature product carousel (\"Calendar Invites\"). Each content page has a large layered product UI screenshot (913-1036px wide) \u2014 these are the primary feature swap targets. Pages 2 reuses Athos brand badge + 2 sparkle decoratives. \"Send Invite\" button image (`MAGq58HuBhA`, 293x100) appears on pages 2-5 as a stylized CTA element layered over the UI. Outro is large gradient bg + compass mark.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW7jqcT8"
+}

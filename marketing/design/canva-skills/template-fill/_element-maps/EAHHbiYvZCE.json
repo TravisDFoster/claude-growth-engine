@@ -1,0 +1,261 @@
+{
+  "template_id": "EAHHbiYvZCE",
+  "name": "1350x1080_Text only post",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Clarity is the Real Goal of Internal Comms\" \u2014 headline (864x196)",
+          "placeholder": "Clarity is the Real Goal of Internal Comms",
+          "role_hint": "headline (864x196)",
+          "element_id": "PBrPbDKsDBx3rY53-LBthbYTnVth13ghv",
+          "container_type": "TEXT",
+          "position": {
+            "top": 250.77943734509273,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 196.199985
+          }
+        },
+        {
+          "raw": "\"It's not about how many messages you send. It's about how well they're understood.\" \u2014 subhead (864x104)",
+          "placeholder": "It's not about how many messages you send. It's about how well they're understood.",
+          "role_hint": "subhead (864x104)",
+          "element_id": "PBrPbDKsDBx3rY53-LBX1dgWymqN0VxYj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 479.59860277310906,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 103.866665
+          }
+        },
+        {
+          "raw": "3 bullets: \"Send targeted messages\" / \"Prioritize clarity over volume\" / \"Measure engagement beyond open rates\""
+        },
+        {
+          "raw": "\"Start free with Foundations\" \u2014 CTA pill SHAPE + text",
+          "placeholder": "Start free with Foundations",
+          "role_hint": "CTA pill SHAPE + text",
+          "element_id": "PBrPbDKsDBx3rY53-LByF4PbVTvyXbMdD-LBnFjlmx9vYjpWYk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 902.3810068956852,
+            "left": 157.6991998209865
+          },
+          "dimension": {
+            "width": 583.1044855103906,
+            "height": 53.93334
+          }
+        },
+        {
+          "raw": "\"Example post\" \u2014 top tag SHAPE",
+          "placeholder": "Example post",
+          "role_hint": "top tag SHAPE",
+          "element_id": "PBrPbDKsDBx3rY53-LBNHktLZzj3LJmfh",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 385.59162292815313
+          },
+          "dimension": {
+            "width": 308.81675414369374,
+            "height": 69.47033204314903
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHHaO6osJ4`",
+          "current_asset_id": "MAHHaO6osJ4",
+          "role": "full-bg",
+          "element_id": "PBrPbDKsDBx3rY53",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "320x65 Broadcast lockup `MAHG2o30xY0`",
+          "current_asset_id": "MAHG2o30xY0",
+          "dimensions": "320x65",
+          "role": "logo"
+        },
+        {
+          "raw": "188x65 Cerkl wordmark `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "188x65",
+          "role": "logo"
+        },
+        {
+          "raw": "3x 36x36 bullet icons `MAHHaQSgp6I`",
+          "current_asset_id": "MAHHaQSgp6I",
+          "dimensions": "36x36",
+          "role": "icon"
+        },
+        {
+          "raw": "56x56 CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "56x56"
+        }
+      ],
+      "page_id": "PBrPbDKsDBx3rY53",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetur\" headline + subhead + 3 Lorem bullets + same CTA",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetur",
+          "element_id": "PBvCNZfhZs0sG0ml-LB6kzF9mTP4DgNjm",
+          "container_type": "TEXT",
+          "position": {
+            "top": 250.7794373450928,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 196.199985
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same image set as page 1"
+        }
+      ],
+      "page_id": "PBvCNZfhZs0sG0ml",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"If Your Message Isn't Clear It Won't Drive Action\" \u2014 headline (864x326)",
+          "placeholder": "If Your Message Isn't Clear It Won't Drive Action",
+          "role_hint": "headline (864x326)",
+          "element_id": "PB2fPQbs1fKp88s7-LBPY3d9fdN2J4nXM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 241.8082163242519,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 325.66664
+          }
+        },
+        {
+          "raw": "2 bullets: \"Too many competing updates reduce understanding\" / \"Clear intent leads to better engagement\""
+        },
+        {
+          "raw": "\"See Broadcast in Action\" \u2014 CTA pill (different SHAPE)",
+          "placeholder": "See Broadcast in Action",
+          "role_hint": "CTA pill (different SHAPE)",
+          "element_id": "PB2fPQbs1fKp88s7-LB2f02QFXDCcsjKt-LBV6clDs1jhqGFBw",
+          "container_type": "TEXT",
+          "position": {
+            "top": 925.2840643640925,
+            "left": 157.69919982098642
+          },
+          "dimension": {
+            "width": 507.4161578232948,
+            "height": 53.93334
+          }
+        },
+        {
+          "raw": "\"Example post\" tag SHAPE",
+          "placeholder": "Example post",
+          "element_id": "PB2fPQbs1fKp88s7-LBcl0yzC7FGBWv22",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 385.59162292815313
+          },
+          "dimension": {
+            "width": 308.81675414369374,
+            "height": 69.47033204314903
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHHaCQJL64`",
+          "current_asset_id": "MAHHaCQJL64",
+          "role": "full-bg",
+          "element_id": "PB2fPQbs1fKp88s7",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "Broadcast lockup + Cerkl wordmark",
+          "role": "logo"
+        },
+        {
+          "raw": "2x 36x36 bullet icons",
+          "dimensions": "36x36",
+          "role": "icon"
+        },
+        {
+          "raw": "56x56 CTA arrow",
+          "dimensions": "56x56"
+        }
+      ],
+      "page_id": "PB2fPQbs1fKp88s7",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet adipiscing elit sed do\" headline + 2 Lorem bullets + \"See Broadcast in Action\" CTA",
+          "placeholder": "Lorem ipsum dolor sit amet adipiscing elit sed do",
+          "element_id": "PBZgr7KTthVSqcrR-LB1LCWCybZTWtv89",
+          "container_type": "TEXT",
+          "position": {
+            "top": 241.8082163242519,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 325.66664
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same image set as page 3"
+        }
+      ],
+      "page_id": "PBZgr7KTthVSqcrR",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-landscape-text-only",
+  "canvas": "1080x1350 (despite name \"1350x1080\", aspect is portrait 4:5)",
+  "page_count": 4,
+  "inspection_design_id": "DAHLWxPtVOk",
+  "notes": "4-page text-only portrait carousel: pages 1-2 share \"Foundations\" CTA skeleton (3 bullets); pages 3-4 share \"See Broadcast in Action\" CTA skeleton (2 bullets). New radio-bullet icon `MAHHaQSgp6I` (vs the check `MAHHTkSOnB8` seen elsewhere). No photo slots \u2014 entirely text + bg + repeated icons.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWxPtVOk"
+}

@@ -1,0 +1,109 @@
+{
+  "template_id": "EAGqLBc3p_w",
+  "name": "Copy of Facebook_Linkedin post_style 1",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet\" \u2014 headline (580x155)",
+          "placeholder": "Lorem ipsum dolor sit amet",
+          "role_hint": "headline (580x155)",
+          "element_id": "PBs5klhcl00LYNjJ-LBQJ5h9vlP4MBSSD-LBqbWK39wl3pnNs6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 242.1311870585767,
+            "left": 62.80000000000001
+          },
+          "dimension": {
+            "width": 579.7684150629516,
+            "height": 154.800025
+          }
+        },
+        {
+          "raw": "\"Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna\" \u2014 body (580x82)",
+          "placeholder": "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna",
+          "role_hint": "body (580x82)",
+          "element_id": "PBs5klhcl00LYNjJ-LBQJ5h9vlP4MBSSD-LBSyWJQr55pBPmwV",
+          "container_type": "TEXT",
+          "position": {
+            "top": 419.2427997544484,
+            "left": 62.80000000000007
+          },
+          "dimension": {
+            "width": 579.7684150629515,
+            "height": 81.60008
+          }
+        },
+        {
+          "raw": "\"DELETE place image or graphic here\" \u2014 image-placeholder instruction text",
+          "placeholder": "DELETE place image or graphic here",
+          "delete_hint": true,
+          "role_hint": "image-placeholder instruction text"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAFZLn9aDBo`",
+          "current_asset_id": "MAFZLn9aDBo",
+          "role": "full-bg",
+          "element_id": "PBs5klhcl00LYNjJ",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "450x296, role: photo-slot (round image placeholder, right side), current asset_id: `MAFZLpnoBN4` \u2014 layered",
+          "current_asset_id": "MAFZLpnoBN4",
+          "dimensions": "450x296",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBs5klhcl00LYNjJ-LB3Hz2rz8VX755nB",
+          "occurrence": 1,
+          "parent_element_id": "PBs5klhcl00LYNjJ",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 749.9008737218284
+          },
+          "dimension": {
+            "width": 450.09912627817147,
+            "height": 295.9942062163341
+          },
+          "editable": true
+        },
+        {
+          "raw": "336x129, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "336x129",
+          "role": "logo",
+          "element_id": "PBs5klhcl00LYNjJ-LBjdmkXRdGb4hX1x",
+          "occurrence": 1,
+          "parent_element_id": "PBs5klhcl00LYNjJ",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.11993963050418,
+            "left": 37.228301783494715
+          },
+          "dimension": {
+            "width": 335.54943793703603,
+            "height": 128.64515192474227
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBs5klhcl00LYNjJ",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW3y0tD0",
+  "notes": "Light style-1 share card with right-side circular image well. Image slot is editable + placeholder text instructs \"DELETE place image or graphic here\".",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3y0tD0"
+}

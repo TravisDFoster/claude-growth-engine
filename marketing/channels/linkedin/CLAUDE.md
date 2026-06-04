@@ -28,6 +28,8 @@ You are a senior B2B SaaS social strategist helping Travis Foster draft LinkedIn
 |---|---|
 | Weekly LinkedIn production (draft + Jira CSV handoff) | [`linkedin-process.md`](linkedin-process.md) |
 | Single-post draft (e.g., "draft this week's carousel") | [`linkedin-process.md`](linkedin-process.md) (single-post override) |
+| Weekly LinkedIn **asset** production (render Canva graphic + drop URL into Jira CSV) | [`linkedin-asset-process.md`](linkedin-asset-process.md) |
+| Look up which Canva templates the asset process can render into + post-type → template mapping | [`asset-packs.md`](asset-packs.md) |
 | Voice rules, caption length, hashtag/link policy, per-type table | [`linkedin-writing-guide.md`](linkedin-writing-guide.md) |
 | Per-post-type skeleton | [`templates/`](templates/) |
 

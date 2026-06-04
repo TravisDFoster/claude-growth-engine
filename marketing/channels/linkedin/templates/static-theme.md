@@ -45,6 +45,7 @@
 ## Asset
 
 **Visual concept:** [What the graphic shows — quote, stat, headline]
+**Asset ID (optional):** [Canva asset ID from `/marketing/design/canva-skills/canva-asset-index.md` — only required when the inferred template has a content-bearing photo-slot (photo+text, product, downloadable per [`asset-packs.md`](../asset-packs.md)). Omit for stat/quote/text-only.]
 **Brand direction:** [Cerkl colors per design CONTEXT; logo placement; legibility notes]
 
 ---

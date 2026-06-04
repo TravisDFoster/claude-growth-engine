@@ -1,0 +1,32 @@
+template_id: EAGqLERK1oE
+page_index: 1
+design_title: rachel-folz-email-banner-2026-06-25
+aspect_ratio: 3:1
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcMs1Ups"
+  edit_url: "https://www.canva.com/d/csgoBDNMuYe5cwe"
+  view_url: "https://www.canva.com/d/GSrdJgCzA01zpe7"
+  ops_performed: 8
+  warnings: []
+  manual_drag_required: [
+    {
+        "role": "headshot",
+        "asset_id": "MAFZdaEt2Wc",
+        "subject": "Rachel Folz",
+        "instruction": "Drag headshot into speaker 1 placeholder frame at top=67.19 left=356.48 (page 1)"
+    }
+]

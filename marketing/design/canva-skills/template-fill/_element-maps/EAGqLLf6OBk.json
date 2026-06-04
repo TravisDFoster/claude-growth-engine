@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLLf6OBk",
+  "name": "1200 x 628px_Employee spotlight",
+  "pages": [],
+  "use_case": "linkedin-employee-spotlight-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW49ol6Y",
+  "notes": "Dark-mode variant of EAGqLJg1OSY. Headshot frame is a separate image fill (vs baked into bg in v2) but is editable=false, matching the headshot-frame pattern in EAGqLEqOaM4 / EAGqLOWcIHY. Swap likely requires workaround.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW49ol6Y"
+}

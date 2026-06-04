@@ -1,0 +1,47 @@
+template_id: EAGqLEylplk
+page_index: 1
+design_title: rachel-folz-recap-blog-cover-2026-06-25
+aspect_ratio: 3:2
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcA6Bzkc"
+  edit_url: "https://www.canva.com/d/aNSF3ZvZSfHp8J6"
+  view_url: "https://www.canva.com/d/6SeP5N1Ki05VAb-"
+  ops_performed: 7
+  warnings: [
+    {
+        "warning": "no_text_match",
+        "placeholder": "Webinar Recap",
+        "note": "Manifest had no key; kept template default"
+    },
+    {
+        "warning": "no_text_match",
+        "placeholder": "date",
+        "note": "No date element on page 1; date implied by Webinar Recap kicker"
+    },
+    {
+        "warning": "shape_only_slot_skipped",
+        "note": "Headshot circle is SHAPE-only; insert_fill at SHAPE coords (222.63, 486.87, 280x280) \u2014 Furqan drags in UI"
+    }
+]
+  manual_drag_required: [
+    {
+        "role": "headshot",
+        "asset_id": "MAFZdaEt2Wc",
+        "subject": "Rachel Folz",
+        "instruction": "Drag headshot rectangle onto speaker-1 circle SHAPE at top=486.87 left=222.63"
+    }
+]

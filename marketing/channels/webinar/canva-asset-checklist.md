@@ -1,23 +1,30 @@
 # Canva Asset Checklist
 
-> This checklist is the **spec** for the [`canva-asset-pack`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md) skill (currently a placeholder). Once that skill is built, it automates this list; until then, build the assets manually as described here.
+> **What this file is now:** the **inputs-to-gather pre-flight** — what you need on hand before rendering can run cleanly (headshot, partner logo if any, finalized title, etc.).
+>
+> **What this file is NOT:** the list of assets to render. That list now lives in [`asset-packs.md`](asset-packs.md) (the 9-template IC Thought Leadership pack + 5-template Generic pack). The [`template-fill`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/template-fill/SKILL.md) skill renders each role from a manifest written at init into `<event-folder>/canva-manifests/`.
 
-Default visual assets to create for each webinar. Built in Canva using the Cerkl brand kit.
+## Inputs to gather before rendering
 
-## Assets
+- [ ] **Speaker headshot** — raw file uploaded as a Canva asset; resolve to an asset ID via the canva-asset-index. Manifests are written at init with `headshot: ["TBD"]`; fill the asset ID once available.
+- [ ] **Partner logo** — only for partner webinars (solo/internal: N/A)
+- [ ] **Final webinar title** — working title is OK at init; refine via `webinar-brief` and re-render if the title shifts materially
+- [ ] **Date, time, timezone** — already on the brief metadata header
+- [ ] **Speaker role string** — e.g. "Head of Product, Cerkl" (used in the speaker-card "Title" slot)
 
-- [ ] **Banner** — registration page hero image
-- [ ] **Social rectangle** — 1200×628 (LinkedIn feed, OG image, email header reuse)
-- [ ] **Social square** — 1080×1080 (Instagram, LinkedIn carousels, repeat shares)
-- [ ] **2-days-to-go reminder** — countdown graphic for late-stage promo
+## Output flow
 
-## Inputs to gather before designing
+1. `webinar-project-init` writes 9 (or 5) manifest YAMLs to `<event-folder>/canva-manifests/` at scaffold.
+2. Once inputs are gathered, invoke `template-fill` per manifest. Each invocation returns a Canva edit URL.
+3. Paste each returned URL into the matching row of the Drive MAP and the markdown project-plan task row.
 
-- [ ] **Partner logo** (preferably SVG or transparent PNG)
-- [ ] **Speaker headshot(s)** — partner + Cerkl presenter
-- [ ] Final webinar title
-- [ ] Date and time
+## Legacy default-4 list (retained for cross-reference)
 
-## Output
+Pre-2026-06-02, this checklist listed 4 manual default assets. The 9-template IC Thought Leadership pack supersedes them; the mapping:
 
-Save final exports inside the event folder under `canva-exports/` (or paste Canva design links into the brief). Suggested filenames: `banner.png`, `social-rectangle.png`, `social-square.png`, `2-days-to-go.png`.
+| Legacy asset | Replaced by role |
+|---|---|
+| Banner (reg page hero) | `share-1200x628` |
+| Social rectangle (1200×628) | `share-1200x628` |
+| Social square (1080×1080) | `speaker-card` |
+| 2-days-to-go reminder | `countdown` |

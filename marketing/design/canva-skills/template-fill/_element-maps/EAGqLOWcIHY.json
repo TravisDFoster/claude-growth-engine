@@ -1,0 +1,133 @@
+{
+  "template_id": "EAGqLOWcIHY",
+  "name": "Linkedin pdf post_Employee Spotlight",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight\" headline + CTA arrow SHAPE",
+          "placeholder": "Employee Spotlight",
+          "element_id": "PBzzpqDFqGS1yfJw-LBgMFvfxL0Gtszhz",
+          "container_type": "TEXT",
+          "position": {
+            "top": 434.42883216216205,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 351.333
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAFZ0-rZy4Y` (dark)",
+          "current_asset_id": "MAFZ0-rZy4Y",
+          "role": "full-bg",
+          "element_id": "PBzzpqDFqGS1yfJw",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBzzpqDFqGS1yfJw",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Firstname Lastname\" + \"Position\" + \"Cerkl always prioritizes...\" quote",
+          "placeholder": "Firstname Lastname",
+          "element_id": "PBRTLbvsjPfpcMwH-LBtn0GXbmlLVMm97",
+          "container_type": "TEXT",
+          "position": {
+            "top": 494.2630308752505,
+            "left": 364.046875
+          },
+          "dimension": {
+            "width": 351.90625,
+            "height": 41.066739999999996
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAFZ0yn26Cs`",
+          "current_asset_id": "MAFZ0yn26Cs",
+          "role": "full-bg",
+          "element_id": "PBRTLbvsjPfpcMwH",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "335x335 round headshot frame `MABw6X6WEUY` (editable:false, layered)",
+          "current_asset_id": "MABw6X6WEUY",
+          "dimensions": "335x335",
+          "role": "headshot",
+          "layered": true,
+          "editable": false,
+          "element_id": "PBRTLbvsjPfpcMwH-LBNVRvtVHrtsPN0W",
+          "occurrence": 1,
+          "parent_element_id": "PBRTLbvsjPfpcMwH",
+          "container_type": "RECT",
+          "position": {
+            "top": 126.63729082833387,
+            "left": 372.5033669784276
+          },
+          "dimension": {
+            "width": 334.99326604314496,
+            "height": 334.99326604314496
+          }
+        }
+      ],
+      "page_id": "PBRTLbvsjPfpcMwH",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Join our Team!\" + body + \"View open opportunities\" CTA pill",
+          "placeholder": "Join our Team!",
+          "element_id": "PBJ59jkHWhyy9Hm0-LBl4sGJz7c5GDMpj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 337.31097155057716,
+            "left": 107.99999999999989
+          },
+          "dimension": {
+            "width": 864,
+            "height": 135.667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "SHAPE bg only, no editable image"
+        }
+      ],
+      "page_id": "PBJ59jkHWhyy9Hm0",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-pdf-carousel-employee-spotlight",
+  "canvas": "1080x1080",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW7P8r8s",
+  "notes": "IDENTICAL structure to EAGqLEqOaM4 (`Copy of...` variant). Same dark cover + centered headshot + outro CTA. Headshot fill non-editable here too. Treat as duplicate-of-record alongside EAGqLEqOaM4.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW7P8r8s"
+}

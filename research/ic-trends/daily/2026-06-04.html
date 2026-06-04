@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ic-trends Daily — 2026-06-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+    --cat-competitor:  #3547c4;
+    --cat-competitor-bg:  #f0f2fc;
+    --cat-competitor-border: #ccd5f7;
+    --cat-publication: #1a9979;
+    --cat-publication-bg: #e8fffa;
+    --cat-publication-border: #aaf7e6;
+    --cat-analyst:     #802ee6;
+    --cat-analyst-bg:  #f7f2ff;
+    --cat-analyst-border: #d5b2ff;
+    --cat-community:   #80550f;
+    --cat-community-bg: #fff9f2;
+    --cat-community-border: #ffeccd;
+    --cat-policy:      #b00045;
+    --cat-policy-bg:   #fcf0f0;
+    --cat-policy-border: #fbc2c4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 16px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+
+  .top-items { display: grid; gap: 14px; }
+  .top-item {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px 16px;
+    display: grid; grid-template-columns: auto auto 1fr; gap: 14px;
+    align-items: start;
+  }
+  .item-num {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--code-bg); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    letter-spacing: -0.005em;
+  }
+  .item-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+  .item-head h3 { margin: 0; font-size: 18px; line-height: 1.3; flex: 1; min-width: 200px; font-weight: 600; letter-spacing: -0.0025em; }
+  .cat-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+    border: 1px solid;
+    flex-shrink: 0;
+  }
+  .cat-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .cat-badge.cat-competitor  { color: var(--cat-competitor);  border-color: var(--cat-competitor-border);  background: var(--cat-competitor-bg); }
+  .cat-badge.cat-publication { color: var(--cat-publication); border-color: var(--cat-publication-border); background: var(--cat-publication-bg); }
+  .cat-badge.cat-analyst     { color: var(--cat-analyst);     border-color: var(--cat-analyst-border);     background: var(--cat-analyst-bg); }
+  .cat-badge.cat-community   { color: var(--cat-community);   border-color: var(--cat-community-border);   background: var(--cat-community-bg); }
+  .cat-badge.cat-policy      { color: var(--cat-policy);      border-color: var(--cat-policy-border);      background: var(--cat-policy-bg); }
+  .item-meta {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 8px;
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .item-meta .sep { opacity: 0.45; }
+  .item-body p { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+  .item-body p:last-child { margin-bottom: 0; }
+  .item-body ul { font-size: 14px; margin: 6px 0 10px; }
+  .item-body ul li { margin-bottom: 4px; }
+  .why-callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .why-callout .label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+    margin-right: 8px;
+  }
+
+  .sel-bar {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .sel-count {
+    font-size: 14px; color: var(--ink); font-weight: 500;
+    flex: 1; min-width: 130px;
+  }
+  .sel-count b { color: var(--accent); font-weight: 700; }
+  .sel-bar button {
+    font-size: 13px; padding: 7px 12px; border-radius: 7px;
+    border: 1px solid var(--accent); background: var(--accent);
+    color: #ffffff; cursor: pointer; font-weight: 600;
+    font-family: inherit;
+    transition: background 120ms ease, transform 80ms ease;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .sel-bar button:hover:not(:disabled) { background: #2a3aa8; }
+  .sel-bar button:active:not(:disabled) { transform: translateY(1px); }
+  .sel-bar button:disabled {
+    opacity: 0.4; cursor: not-allowed;
+    background: var(--code-bg); color: var(--muted); border-color: var(--line);
+  }
+  .sel-bar button.secondary {
+    background: transparent; color: var(--accent);
+  }
+  .sel-bar button.secondary:hover:not(:disabled) {
+    background: var(--info-bg);
+  }
+  .sel-bar .icon { font-size: 13px; line-height: 1; }
+
+  label.top-item { cursor: pointer; }
+  .top-item.selected {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+  }
+  .item-cb {
+    appearance: none; -webkit-appearance: none;
+    width: 22px; height: 22px;
+    border: 2px solid var(--muted);
+    border-radius: 6px;
+    background: var(--panel);
+    cursor: pointer;
+    margin: 4px 0 0 0;
+    position: relative;
+    transition: background 120ms ease, border-color 120ms ease;
+    justify-self: start;
+    flex-shrink: 0;
+  }
+  .item-cb:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .item-cb:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 6px; height: 12px;
+    border: solid #ffffff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+
+  .w-dd-btn {
+    margin-left: 6px;
+    padding: 2px 8px; border-radius: 4px;
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--info-border);
+    cursor: pointer;
+    font-family: inherit; font-weight: 600; font-size: 10.5px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    transition: background 120ms ease;
+  }
+  .w-dd-btn:hover { background: var(--info-bg); }
+
+  .toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--ink); color: #ffffff;
+    padding: 10px 16px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    opacity: 0; pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media print {
+    .sel-bar, .item-cb, .w-dd-btn, .toast { display: none !important; }
+    .top-item.selected { background: var(--panel-soft); box-shadow: none; }
+  }
+
+  .watch-group { margin-top: 18px; }
+  .watch-group:first-of-type { margin-top: 6px; }
+  .watch-group h3 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600;
+    margin: 0 0 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .watchlist {
+    display: grid; gap: 8px 24px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+  .watch-row {
+    font-size: 13.5px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .watch-row:last-child { border-bottom: none; }
+  .watch-row .w-title { font-weight: 600; color: var(--ink); }
+  .watch-row .w-src { color: var(--muted); font-size: 12px; }
+  .watch-row .w-date { color: var(--muted); font-size: 12px; margin-left: auto; }
+
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent);
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+  details.q .q-body ul { font-size: 14px; }
+
+  code, pre { font-family: var(--mono); }
+  p code, li code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q[open] .q-body { display: block !important; }
+  }
+
+  @media (max-width: 640px) {
+    .top-item { grid-template-columns: 1fr; }
+    .item-num { width: 28px; height: 28px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Daily Recap</div>
+    <h1>2026-06-04</h1>
+    <div class="meta-row">
+      <span><b>Top items:</b> 8</span>
+      <span><b>Watchlist:</b> 10</span>
+    </div>
+    <p class="tldr">
+      LumApps stacks a Cargill marquee + a Beekeeper-ecosystem POV + a 52-integration Marketplace
+      in a single week to cement the "AI Employee Hub" frame as an <em>integration</em> story, not a
+      comms story. In parallel, fresh Karian data quantifies the manager-burnout crisis (12.1 direct
+      reports, +50% since 2013) — sharpening the manager-cascade-vs-direct-to-employee debate IC teams own.
+    </p>
+  </header>
+
+  <section data-recap-date="2026-06-04" data-recap-path="research/ic-trends/daily/2026-06-04.md">
+    <h2><span class="num">TOP</span>Items</h2>
+
+    <div class="sel-bar" id="selBar" role="region" aria-label="Bulk-action selection bar">
+      <span class="sel-count" id="selCount"><b>0</b> selected — pick top items to act on in bulk</span>
+      <button class="action-btn" data-action="deepdive" disabled aria-label="Deep-dive selected items">
+        <span class="icon">↗</span> Deep-dive
+      </button>
+      <button class="action-btn" data-action="topic-ideas" disabled aria-label="Add selected to content-plan inputs">
+        <span class="icon">＋</span> Topic ideas
+      </button>
+      <button class="action-btn" data-action="wiki-ingest" disabled aria-label="Ingest selected to cerkl-research wiki">
+        <span class="icon">»</span> Wiki ingest
+      </button>
+      <button class="secondary" id="clearBtn" aria-label="Clear selection">Clear</button>
+    </div>
+
+    <div class="top-items">
+
+      <label class="top-item"
+             data-target="LumApps triple-tap: Cargill case study + Beekeeper ecosystem POV + 52-integration Marketplace"
+             data-url="https://www.lumapps.com/insights/blog/beekeeper-new-marketplace"
+             data-date="2026-06-01"
+             data-why="Coordinated week: marquee frontline win (Cargill) + ecosystem-as-connective-tissue POV + Marketplace with 52 integrations + 27 first-party apps. Operational follow-on to last week's 'AI Employee Hub' launch.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 1">
+        <div class="item-num">1</div>
+        <div>
+          <div class="item-head">
+            <h3>LumApps triple-tap: Cargill case study + Beekeeper ecosystem POV + 52-integration Marketplace</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span>LumApps blog (3 posts, 5 days)</span>
+            <span class="sep">·</span>
+            <span>2026-05-30 → 2026-06-01</span>
+          </div>
+          <div class="item-body">
+            <ul>
+              <li><a href="https://www.lumapps.com/insights/blog/cargill">Bridging the Frontline Communication Gap at Cargill</a> — 2026-05-30</li>
+              <li><a href="https://www.lumapps.com/insights/blog/the-beekeeper-ecosystem-the-missing-link-for-hr-it-communications-and-leadership">The Beekeeper ecosystem: the missing link for HR, IT, communications, and leadership</a> — 2026-05-30</li>
+              <li><a href="https://www.lumapps.com/insights/blog/beekeeper-new-marketplace">Meet Beekeeper's Snazzy New Marketplace</a> — 2026-06-01</li>
+            </ul>
+            <p>Coordinated week: marquee frontline win (Cargill) + ecosystem-as-connective-tissue POV + Marketplace with 52 integrations + 27 first-party apps. Reads as the operational follow-on to last week's "AI Employee Hub" launch video — narrative is shifting from "we have AI agents" to "we are the integration surface."</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>This is LumApps' direct counter to the "platform-as-destination" critique. The Marketplace makes integration breadth (not channel reach) the wedge metric. Cerkl reframe holds — <em>"LumApps asks employees to come to a new hub; we meet employees in the inbox they already have"</em> — but expect more "integrations" language in deals where LumApps is the alternative. Refresh <code>cerkl.com/broadcast/versus/lumapps</code> to address the Marketplace + Cargill case directly.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="Karian: middle managers now the most burned-out role in the western economy — 12.1 direct reports, +50% since 2013"
+             data-url="https://isitworking.substack.com/p/why-middle-managers-are-becoming"
+             data-date="2026-06-04"
+             data-why="Average manager span grown from ~8 to 12.1 direct reports since 2013 (+50%); managers spend less than half their time managing. Karian frames this as the structural reason manager-cascade IC model is breaking down.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 2">
+        <div class="item-num">2</div>
+        <div>
+          <div class="item-head">
+            <h3>Karian: middle managers now the most burned-out role in the western economy — 12.1 direct reports, +50% since 2013</h3>
+            <span class="cat-badge cat-community">Community</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://isitworking.substack.com/p/why-middle-managers-are-becoming">isitworking.substack.com</a> (Karian)</span>
+            <span class="sep">·</span>
+            <span>2026-06-04</span>
+          </div>
+          <div class="item-body">
+            <p>Average manager span has grown from ~8 to 12.1 direct reports since 2013 (+50%); managers now spend less than half their time actually managing. Karian frames this as the structural reason the manager-cascade IC model is breaking down.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Hardens the data case for <em>direct-to-employee</em> personalized delivery as a complement (not a replacement) to manager cascades. Manager bandwidth is finite and shrinking — the channel-of-record argument for IC tooling gets stronger, not weaker. Worth a Foundations-positioned LinkedIn post + a stat for the Omni AI deck.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="HBR / BCG: 'Designing Organizational Change That Actually Sticks' — a 5-phase model"
+             data-url="https://hbr.org/2026/05/designing-organizational-change-that-actually-sticks"
+             data-date="2026-05-29"
+             data-why="BCG's Dhar & Ellmer argue most transformations fail on misread employee experience, not strategy. Proposes a five-phase model (decide → plan → start → persist → end) IC can anchor change-comms programs to. Paywalled.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 3">
+        <div class="item-num">3</div>
+        <div>
+          <div class="item-head">
+            <h3>HBR / BCG: "Designing Organizational Change That Actually Sticks" — a 5-phase model</h3>
+            <span class="cat-badge cat-analyst">Analyst</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://hbr.org/2026/05/designing-organizational-change-that-actually-sticks">hbr.org</a> (BCG's Dhar &amp; Ellmer)</span>
+            <span class="sep">·</span>
+            <span>2026-05-29</span>
+          </div>
+          <div class="item-body">
+            <p>Argues most transformations fail on <em>misread employee experience</em>, not strategy. Proposes a five-phase model (decide → plan → start → persist → end) IC can anchor change-comms programs to. Paywalled.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Change comms is core ICP territory. The 5-phase frame is concrete enough to slot into an Omni AI "how-Cerkl-supports-each-phase" enablement asset — and credible (BCG + HBR) for any change-program buyer comparison.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="Ragan × Highwire: CEO-transition comms research — employees cross-check internal announcements against the press release and LinkedIn post"
+             data-url="https://www.ragan.com/ragan-highwire-ceo-transition-report-2026/"
+             data-date="2026-06-04"
+             data-why="Employees triangulate the internal CEO-transition memo against the external press release and the new CEO's LinkedIn post. Misalignment between the three erodes trust faster than the transition itself.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 4">
+        <div class="item-num">4</div>
+        <div>
+          <div class="item-head">
+            <h3>Ragan × Highwire: CEO-transition comms research — employees cross-check internal announcements against the press release and LinkedIn post</h3>
+            <span class="cat-badge cat-publication">Publication</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.ragan.com/ragan-highwire-ceo-transition-report-2026/">ragan.com</a> (Highwire report)</span>
+            <span class="sep">·</span>
+            <span>2026-06-04</span>
+          </div>
+          <div class="item-body">
+            <p>New research: employees triangulate the internal CEO-transition memo against the external press release and the new CEO's LinkedIn post. Misalignment between the three erodes trust faster than the transition itself.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Direct argument for Cerkl's "single source of truth" delivery + read-attribution story in exec-comms playbooks. Use this stat ("employees check 3 sources within minutes") in any leadership-comms deck or webinar pitch.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="Ragan: news now bubbles bottom-up from comments and posts — the '3 categories of online chatter'"
+             data-url="https://www.ragan.com/understanding-the-3-categories-of-online-chatter/"
+             data-date="2026-06-04"
+             data-why="Reframes narrative-risk monitoring: gatekeepers no longer set the agenda; comments and posts on adjacent threads do. IC teams need to monitor bottom-up chatter, not just headlines.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 5">
+        <div class="item-num">5</div>
+        <div>
+          <div class="item-head">
+            <h3>Ragan: news now bubbles bottom-up from comments and posts — the "3 categories of online chatter"</h3>
+            <span class="cat-badge cat-publication">Publication</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.ragan.com/understanding-the-3-categories-of-online-chatter/">ragan.com</a></span>
+            <span class="sep">·</span>
+            <span>2026-06-04</span>
+          </div>
+          <div class="item-body">
+            <p>Reframes narrative-risk monitoring: gatekeepers no longer set the agenda; comments and posts on adjacent threads do. IC teams need to monitor bottom-up chatter, not just headlines.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Reinforces the <em>measurement</em> half of Cerkl's positioning — "what's getting read, by whom" matters more when the external narrative is now a bottom-up signal. Modest connection, but a useful framing line.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="ContactMonkey teases conversational campaign analytics — third vendor on natural-language reporting in three weeks"
+             data-url="https://www.contactmonkey.com/blog/your-questions-about-campaign-performance-answered-instantly"
+             data-date="2026-05-28"
+             data-why="ContactMonkey teases a natural-language analytics interface ('ask your questions, get answers instantly') — paired with 2026-06-01 Approval Workflows ship. NL analytics is becoming table stakes across IC vendors.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 6">
+        <div class="item-num">6</div>
+        <div>
+          <div class="item-head">
+            <h3>ContactMonkey teases conversational campaign analytics — third vendor on natural-language reporting in three weeks</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://www.contactmonkey.com/blog/your-questions-about-campaign-performance-answered-instantly">contactmonkey.com</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-28</span>
+          </div>
+          <div class="item-body">
+            <p>ContactMonkey teases a natural-language analytics interface ("ask your questions, get answers instantly") — paired with the 2026-06-01 Approval Workflows ship. Pattern is converging across IC vendors: NL analytics is becoming table stakes.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>The convergence ("conversational analytics" as the new vendor-AI surface) is the signal — Cates' "execution problem" frame from W21 was the positioning layer; this is the product layer. Cerkl should publicly stake an NL-analytics surface on Foundations+/Omni AI within 60 days, or risk being the lone "dashboards-only" vendor.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="HBR: 'What Really Gets in the Way of Change' — exec teams mistake politeness for alignment"
+             data-url="https://hbr.org/2026/05/what-really-gets-in-the-way-of-change"
+             data-date="2026-05-19"
+             data-why="Exec teams routinely confuse politeness for alignment and never explicitly agree on the why/what/how of a change. Cascading messages without that alignment is what breaks the program. Paywalled.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 7">
+        <div class="item-num">7</div>
+        <div>
+          <div class="item-head">
+            <h3>HBR: "What Really Gets in the Way of Change" — exec teams mistake politeness for alignment</h3>
+            <span class="cat-badge cat-analyst">Analyst</span>
+          </div>
+          <div class="item-meta">
+            <span><a href="https://hbr.org/2026/05/what-really-gets-in-the-way-of-change">hbr.org</a></span>
+            <span class="sep">·</span>
+            <span>2026-05-19</span>
+          </div>
+          <div class="item-body">
+            <p>Argues exec teams routinely confuse politeness for alignment and never explicitly agree on the why/what/how of a change. Cascading messages without that alignment is what breaks the program. Paywalled.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Reinforces the "pressure-test leadership message coherence before cascade" mandate — pairs naturally with #3 (BCG 5-phase) and #4 (CEO transitions) as a three-pack of change-comms credibility for an Omni AI enablement asset.</div>
+          </div>
+        </div>
+      </label>
+
+      <label class="top-item"
+             data-target="Staffbase pushes 4 customer-story videos in one day (3 German-language) — coordinated post-event campaign"
+             data-url="https://www.youtube.com/watch?v=1EX5J1xvMZo"
+             data-date="2026-06-02"
+             data-why="Four customer-story videos in 36 hours, three in German. Pattern smells like post-event content drop. Mubea video explicitly surfaces Navigator AI search + Staffbase On Air — AI-quality-layer narrative told through customers.">
+        <input type="checkbox" class="item-cb" aria-label="Select item 8">
+        <div class="item-num">8</div>
+        <div>
+          <div class="item-head">
+            <h3>Staffbase pushes 4 customer-story videos in one day (3 German-language) — coordinated post-event campaign</h3>
+            <span class="cat-badge cat-competitor">Competitor</span>
+          </div>
+          <div class="item-meta">
+            <span>Staffbase YouTube channel</span>
+            <span class="sep">·</span>
+            <span>2026-06-01 → 2026-06-02</span>
+          </div>
+          <div class="item-body">
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=1EX5J1xvMZo">Tabcorp: connecting 3,000 frontline employees</a> — 2026-06-01</li>
+              <li><a href="https://www.youtube.com/watch?v=q4k_jqwDdSU">Flughafen München: how the airport stays connected</a> — 2026-06-02 (DE)</li>
+              <li><a href="https://www.youtube.com/watch?v=jJqVNuBhhjo">Mubea: from AI to shopfloor</a> — 2026-06-02 (DE)</li>
+              <li><a href="https://www.youtube.com/watch?v=MGmxPbokMSI">Sparda-Bank Berlin: what an employee app can really deliver</a> — 2026-06-02 (DE)</li>
+            </ul>
+            <p>Four customer-story videos in 36 hours, three in German. Pattern smells like post-event content drop (Staffbase VOICES Europe, or similar). Mubea video explicitly surfaces Navigator AI search + Staffbase On Air (audio podcasts) — the AI-quality-layer narrative is being told <em>through customers</em> now, not just product launches.</p>
+            <div class="why-callout"><span class="label">Why it matters for Cerkl</span>Two reads: (1) Staffbase's EU/DACH GTM machine is operating at higher cadence than its English-language one — DACH stays the strongest geography. (2) The shift from "here's our AI" to "here's how our customer uses our AI" is the maturity tell. Watch whether Simpplr/Firstup mirror this customer-story cadence over the next 4–6 weeks.</div>
+          </div>
+        </div>
+      </label>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">WATCH</span>Watchlist</h2>
+
+    <div class="watch-group">
+      <h3>Analyst &amp; publication</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">HBR: "Midcareer Work Needs to Change" (Lynda Gratton)</span>
+          <span class="w-src">· fresh angle for IC audience segmentation beyond generational buckets</span>
+          <span class="w-date">2026-05-27</span>
+          <button class="w-dd-btn"
+                  data-target="HBR: 'Midcareer Work Needs to Change' (Lynda Gratton)"
+                  data-url="https://hbr.org/2026/05/research-as-careers-get-longer-midcareer-work-needs-to-change"
+                  data-why="Fresh angle for IC audience segmentation beyond generational buckets.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">McKinsey: "Rewired 2.0 — The Talent Plan"</span>
+          <span class="w-src">· "two-pizza team collapses to product-owner + full-stack-engineer + agents" — strongest manager-identity reframe of the year</span>
+          <span class="w-date">2026-05-04</span>
+          <button class="w-dd-btn"
+                  data-target="McKinsey: 'Rewired 2.0 — The Talent Plan'"
+                  data-url="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/the-rewired-2-point-0-talent-plan"
+                  data-why="Two-pizza team collapses to product-owner + full-stack-engineer + agents — strongest manager-identity reframe of the year.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Karian: "Mutual ownership delivers for all"</span>
+          <span class="w-src">· counter-narrative to trust-collapse + layoff-comms thread</span>
+          <span class="w-date">2026-06-01</span>
+          <button class="w-dd-btn"
+                  data-target="Karian: 'Mutual ownership delivers for all'"
+                  data-url="https://isitworking.substack.com/p/why-mutual-ownership-of-the-many"
+                  data-why="Counter-narrative to the trust-collapse + layoff-comms thread dominating community discussion.">
+            Deep-dive
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="watch-group">
+      <h3>Competitor signal</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">Poppulo: "Common Mistakes When Switching Digital Signage Providers"</span>
+          <span class="w-src">· post-Sociabble defensive content; signals competitive pressure</span>
+          <span class="w-date">2026-05-28</span>
+          <button class="w-dd-btn"
+                  data-target="Poppulo: 'Common Mistakes When Switching Digital Signage Providers'"
+                  data-url="https://www.poppulo.com/digital-signage/blog/digital-signage-migration-mistakes"
+                  data-why="Post-Sociabble defensive content; signals where Poppulo expects competitive pressure (digital-signage migration).">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Firstup: "AI paradox — frontline workers want it most, get it the least"</span>
+          <span class="w-src">· sustained follow-on to their 2026 IC engagement research</span>
+          <span class="w-date">2026-05-21</span>
+          <button class="w-dd-btn"
+                  data-target="Firstup: 'AI paradox — frontline workers want it most, get it the least'"
+                  data-url="https://firstup.io/blog/ai-for-frontline-workers-access-gap"
+                  data-why="Just outside the 7-day window but reads as a sustained follow-on to Firstup's 2026 IC engagement research.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">Simpplr: "Sustaining your employee wellness program beyond the launch"</span>
+          <span class="w-src">· 4-pillar wellness frame; HR-co-buyer reference</span>
+          <span class="w-date">2026-06-01</span>
+          <button class="w-dd-btn"
+                  data-target="Simpplr: 'Sustaining your employee wellness program beyond the launch'"
+                  data-url="https://www.simpplr.com/blog/how-to-sustain-your-employee-wellness-program/"
+                  data-why="4-pillar wellness frame; useful reference for HR-co-buyer wellness conversations.">
+            Deep-dive
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="watch-group">
+      <h3>Industry &amp; practitioner</h3>
+      <div class="watchlist">
+        <div class="watch-row">
+          <span class="w-title">Oracle layoffs: "inbox to LinkedIn in minutes" (HR Executive)</span>
+          <span class="w-src">· recirculating as Oracle's 30k cuts enter sign-the-release phase; IC discussion thread is the signal</span>
+          <span class="w-date">2026-04-07</span>
+          <button class="w-dd-btn"
+                  data-target="Oracle layoffs: 'inbox to LinkedIn in minutes' (HR Executive)"
+                  data-url="https://hrexecutive.com/oracles-layoffs-from-inbox-to-linkedin-in-minutes/"
+                  data-why="Original article 2026-04-07, recirculating this week as Oracle's 30k cuts enter sign-the-release phase; the IC discussion thread (not the article) is the signal.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily: "4 truths to know about PR in the AI era"</span>
+          <span class="w-src">· counter-narrative to AI-replaces-comms hype</span>
+          <span class="w-date">2026-06-02</span>
+          <button class="w-dd-btn"
+                  data-target="PR Daily: '4 truths to know about PR in the AI era'"
+                  data-url="https://www.prdaily.com/4-truths-to-know-about-pr-in-the-ai-era/"
+                  data-why="Counter-narrative to AI-replaces-comms hype; useful framing line.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily: "60 Minutes wages war of leaks as new EP and existing staff clash"</span>
+          <span class="w-src">· classic internal-conflict-leaking-externally case; reinforces IC's role in leadership-transition comms</span>
+          <span class="w-date">2026-06-03</span>
+          <button class="w-dd-btn"
+                  data-target="PR Daily: '60 Minutes wages war of leaks as new EP and existing staff clash'"
+                  data-url="https://www.prdaily.com/the-scoop-60-minutes-wages-war-of-leaks-as-new-ep-existing-staff-clash/"
+                  data-why="Classic internal-conflict-leaking-externally case; reinforces IC's role in leadership-transition comms.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">PR Daily: "Best way to pitch Business Insider — direct from their editors"</span>
+          <span class="w-src">· exec-as-storyteller framing creeping into pitch culture — relevant for exec-visibility programs</span>
+          <span class="w-date">2026-06-04</span>
+          <button class="w-dd-btn"
+                  data-target="PR Daily: 'Best way to pitch Business Insider — direct from their editors'"
+                  data-url="https://www.prdaily.com/the-best-way-to-pitch-business-insider-direct-from-their-editors/"
+                  data-why="Exec-as-storyteller framing creeping into pitch culture (first-person POV, even wardrobe); relevant for exec-visibility programs.">
+            Deep-dive
+          </button>
+        </div>
+        <div class="watch-row">
+          <span class="w-title">FIFA Chief People Officer keynote: "Alliance HR — driving purpose &amp; performance across borders"</span>
+          <span class="w-src">· global-comms practitioner POV from NAHRES26</span>
+          <span class="w-date">2026-05-28</span>
+          <button class="w-dd-btn"
+                  data-target="FIFA Chief People Officer keynote: 'Alliance HR — driving purpose & performance across borders'"
+                  data-url="https://www.youtube.com/watch?v=sDBjAz0KqPM"
+                  data-why="Global-comms practitioner POV from NAHRES26.">
+            Deep-dive
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">NOTES</span>Gaps &amp; infrastructure</h2>
+
+    <details class="q">
+      <summary>Already-covered (skipped from top cut, surfaced this week but in rolling-7day)</summary>
+      <div class="q-body">
+        <p>Simpplr "shadow AI" governance post appeared in 2b as 2026-06-04 — it's the same article already promoted on 2026-06-03; not re-promoted. Ragan "Beyond AI Hype" webinar and "toughest critics" piece both already in the week's top cut; not re-promoted.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Source gaps this week</summary>
+      <div class="q-body">
+        <ul>
+          <li><b>r/internalcomms:</b> Reddit blocked to WebFetch; WebSearch returned no indexed threads for the 7-day window. Recurring known gap.</li>
+          <li><b>LinkedIn:</b> no individual viral IC-practitioner post surfaced in WebSearch. LinkedIn remains largely inaccessible.</li>
+          <li><b>Joel Schwartzberg "All Hands" Substack:</b> redirected to profile shell; no new posts visible. Either silent week or paywall/render issue.</li>
+          <li><b>Workvivo, Haiilo, AxiosHQ, Workshop:</b> no qualifying blog activity in the 7-day window (last meaningful posts dated 2026-05-06, 2026-04-14, 2026-05-06, 2026-05-01 respectively).</li>
+          <li><b>Staffbase RSS in_window = 0:</b> expected (biweekly cadence), not a feed failure.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Forrester / SHRM</summary>
+      <div class="q-body">
+        <p>Produced no qualifying <em>new</em> analyst items in the window beyond what's already on the rolling-7day skip list.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Heavy HBR week</summary>
+      <div class="q-body">
+        <p>Three pieces qualified (BCG, "What Gets in the Way," Gratton); promoted the two strongest, watch-listed the third. Suggests HBR is currently running a change-management editorial wave.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Prompt-injection scan</summary>
+      <div class="q-body">
+        <p>No prompt-injection attempts detected in any fetched material across all five buckets.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-06-04 · Source markdown: <a href="./2026-06-04.md">daily/2026-06-04.md</a>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Copied! Paste into Claude.</div>
+
+<script>
+(function () {
+  const DEEPDIVE_PROCESS = '/Users/travisfoster/claude-code/cerkl/research/ic-trends/ic-trends-deepdive-process.md';
+  const INPUTS_PATH = '/Users/travisfoster/claude-code/cerkl/marketing/content-plan/inputs.md';
+  const WIKI_RULES = '/Users/travisfoster/claude-code/cerkl/research/cerkl-research/CLAUDE.md';
+
+  const selBar = document.querySelector('.sel-bar');
+  const topSection = selBar ? selBar.closest('section') : null;
+  const RECAP_DATE = topSection ? topSection.getAttribute('data-recap-date') || '' : '';
+  const RECAP_PATH = topSection ? topSection.getAttribute('data-recap-path') || '' : '';
+
+  function getSelectedItems() {
+    const labels = document.querySelectorAll('label.top-item');
+    const picks = [];
+    labels.forEach(lbl => {
+      const cb = lbl.querySelector('.item-cb');
+      if (cb && cb.checked) {
+        picks.push({
+          target: lbl.getAttribute('data-target') || '',
+          url: lbl.getAttribute('data-url') || '',
+          date: lbl.getAttribute('data-date') || '',
+          why: lbl.getAttribute('data-why') || ''
+        });
+      }
+    });
+    return picks;
+  }
+
+  function buildDeepdivePrompt(items) {
+    const L = [];
+    const plural = items.length === 1 ? 'item' : 'items';
+    L.push('Run deep-dives on these ' + items.length + ' ' + plural + ' from the ic-trends daily recap ' + RECAP_DATE + '.');
+    L.push('');
+    L.push('Process: ' + DEEPDIVE_PROCESS);
+    L.push('');
+    if (items.length > 1) {
+      L.push('Run them sequentially — complete each deep-dive (markdown + HTML) before starting the next. Use the slug convention and template the process file defines.');
+      L.push('');
+    }
+    items.forEach((it, i) => {
+      L.push((i + 1) + '. Target name: ' + it.target);
+      if (it.url) L.push('   Target URL: ' + it.url);
+      if (it.why) L.push('   Why now: ' + it.why);
+      L.push('');
+    });
+    return L.join('\n').replace(/\n+$/, '');
+  }
+
+  function buildTopicIdeasPrompt(items) {
+    const L = [];
+    const plural = items.length === 1 ? 'idea' : 'ideas';
+    L.push('Add these ' + items.length + ' topic ' + plural + ' to ' + INPUTS_PATH + '.');
+    L.push('');
+    L.push('Source: ic-trends daily recap ' + RECAP_DATE + '. Append under "## Topic candidates" at the **top** of the section.');
+    L.push('');
+    L.push('Use the established entry shape — a dated heading "### ' + RECAP_DATE + ' (from [' + RECAP_PATH + '](../../' + RECAP_PATH + '))" followed by one bullet per item. For each item, compose a **bold-title** bullet that translates the headline + summary into a Cerkl content angle (blog/Cerkular/LinkedIn idea), with a short implication and a markdown link back to the source URL. Do NOT just paste the headline — write the content idea.');
+    L.push('');
+    L.push('If a heading for ' + RECAP_DATE + ' already exists in Topic candidates, append the bullets there instead of creating a duplicate.');
+    L.push('');
+    L.push('Items:');
+    L.push('');
+    items.forEach((it, i) => {
+      L.push((i + 1) + '. Headline: ' + it.target);
+      if (it.url) L.push('   URL: ' + it.url);
+      if (it.why) L.push('   Summary: ' + it.why);
+      L.push('');
+    });
+    return L.join('\n').replace(/\n+$/, '');
+  }
+
+  function buildWikiIngestPrompt(items) {
+    const L = [];
+    const plural = items.length === 1 ? 'item' : 'items';
+    L.push('Ingest these ' + items.length + ' ' + plural + ' as sources into the cerkl-research wiki.');
+    L.push('');
+    L.push('Vault rules: ' + WIKI_RULES);
+    L.push('');
+    L.push('For each item:');
+    L.push('1. Fetch the URL → save the article body to raw/<slug>.md (immutable after save).');
+    L.push('2. Create wiki/sources/<slug>.md per the vault\'s source-page schema.');
+    L.push('3. Update or lazy-create the relevant wiki/entities/, wiki/concepts/, and wiki/topics/ pages.');
+    L.push('4. Append an ingest entry to wiki/log.md.');
+    L.push('');
+    L.push('Source context: ic-trends daily recap ' + RECAP_DATE + '.');
+    L.push('');
+    L.push('Items:');
+    L.push('');
+    items.forEach((it, i) => {
+      L.push((i + 1) + '. Title: ' + it.target);
+      if (it.url) L.push('   URL: ' + it.url);
+      if (it.date) L.push('   Date: ' + it.date);
+      if (it.why) L.push('   Why interesting: ' + it.why);
+      L.push('');
+    });
+    return L.join('\n').replace(/\n+$/, '');
+  }
+
+  function buildSingleDeepdivePrompt(target, url, why) {
+    const L = [];
+    L.push('Deep-dive on ' + target + '.');
+    L.push('');
+    L.push('Process: ' + DEEPDIVE_PROCESS);
+    L.push('');
+    L.push('Target name: ' + target);
+    if (url) L.push('Target URL: ' + url);
+    if (why) L.push('Why now: ' + why);
+    return L.join('\n');
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
+  }
+
+  function refresh() {
+    const items = getSelectedItems();
+    const n = items.length;
+    const countEl = document.getElementById('selCount');
+    if (countEl) {
+      countEl.innerHTML = n === 0
+        ? '<b>0</b> selected — pick top items to act on in bulk'
+        : '<b>' + n + '</b> selected';
+    }
+    document.querySelectorAll('.action-btn').forEach(b => b.disabled = n === 0);
+    document.querySelectorAll('label.top-item').forEach(lbl => {
+      const cb = lbl.querySelector('.item-cb');
+      lbl.classList.toggle('selected', !!(cb && cb.checked));
+    });
+  }
+
+  document.querySelectorAll('label.top-item .item-cb').forEach(cb => {
+    cb.addEventListener('change', refresh);
+  });
+
+  const clearBtn = document.getElementById('clearBtn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      document.querySelectorAll('.item-cb').forEach(cb => cb.checked = false);
+      refresh();
+    });
+  }
+
+  document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const items = getSelectedItems();
+      if (!items.length) return;
+      const action = btn.getAttribute('data-action');
+      let text = '';
+      let label = '';
+      if (action === 'deepdive')    { text = buildDeepdivePrompt(items);   label = 'deep-dive prompt'; }
+      if (action === 'topic-ideas') { text = buildTopicIdeasPrompt(items); label = 'topic-ideas prompt'; }
+      if (action === 'wiki-ingest') { text = buildWikiIngestPrompt(items); label = 'wiki-ingest prompt'; }
+      if (!text) { showToast('Unknown action.'); return; }
+      const ok = await copyToClipboard(text);
+      showToast(ok ? ('Copied ' + label + ' — paste into Claude.') : 'Copy failed.');
+    });
+  });
+
+  document.querySelectorAll('.w-dd-btn').forEach(btn => {
+    btn.addEventListener('click', async (ev) => {
+      ev.preventDefault();
+      const target = btn.getAttribute('data-target') || '';
+      const url = btn.getAttribute('data-url') || '';
+      const why = btn.getAttribute('data-why') || '';
+      if (!target) { showToast('No target on this row.'); return; }
+      const ok = await copyToClipboard(buildSingleDeepdivePrompt(target, url, why));
+      showToast(ok ? 'Copied deep-dive prompt — paste into Claude.' : 'Copy failed.');
+    });
+  });
+
+  refresh();
+})();
+</script>
+
+</body>
+</html>

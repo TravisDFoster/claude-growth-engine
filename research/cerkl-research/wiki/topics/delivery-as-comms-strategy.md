@@ -30,7 +30,10 @@ Four distinct evidence streams converged in May 2026 on the same operational the
 **5. Engagement under change** — *listening cadence is the moderator* ([[listening-cadence]], [[goldilocks-zone-of-change]]).
 [[qualtrics-change-engagement-2026-05-21]] / [[benjamin-granger]]: Qualtrics' 2026 EX Trends (n=33,831) finds the change-engagement relationship is mediated by **listening frequency**, not comms quality — 87% engagement at high-cadence orgs vs 44% at low-cadence orgs, up to 4x EX-metric lift. The moderator is operational and quantitative, not aspirational. Counter-research from [[gallup]], [[gallagher]], [[perceptyx]], [[prosci]] frames the same data through the [[change-fatigue]] lens (Gallagher: change fatigue is the #2 IC barrier; Perceptyx: leadership credibility displaced belonging as top engagement driver). The synthesis: listening cadence is necessary inside the [[goldilocks-zone-of-change]] but doesn't override the [[change-saturation]] threshold above which engagement inverts.
 
-**The unifying claim:** In every domain examined — tactical newsletters, layoff comms, AI rollout, executive-level workforce reshape, engagement-under-change — IC succeeds or fails at the *delivery* layer, not the authoring layer. Better writing doesn't fix a wrong channel, wrong moment, wrong audience, missing follow-up, absent listening, or absent measurement. Delivery choreography *is* the message.
+**6. Trust / credibility** — *how comms feels is a performance variable* ([[trust-and-credibility]], [[context-delivery]], [[ic-credibility-deficit]]).
+[[why-employees-right-not-to-trust-ic]] ([[ghassan-karian]] / [[ipsos-karian-and-box]]): across "millions of employee responses," where comms is experienced as authentic/warm, leadership-trust confidence rises "into the eighties and nineties"; where it's euphemistic, spun, or late, trust collapses. Style is "not cosmetic… a performance variable." This is the delivery thesis stated at the level of *belief*: a perfectly-written message delivered as sanitized PR fails on trust. [[edelman-trust-barometer-2026]] supplies the institutional backdrop ([[trust-brokering]]): employers are most-trusted (78%) but trust is "experienced and modeled," not "announced into existence." The counter-frame to neutralize is [[measurers-vs-builders]] — Cloudflare's claim that measurement is automatable overhead; the rebuttal is that *verifiable, candid, well-targeted delivery* is exactly how trust is built and proven.
+
+**The unifying claim:** In every domain examined — tactical newsletters, layoff comms, AI rollout, executive-level workforce reshape, engagement-under-change, trust/credibility — IC succeeds or fails at the *delivery* layer, not the authoring layer. Better writing doesn't fix a wrong channel, wrong moment, wrong audience, missing follow-up, absent listening, or absent measurement. Delivery choreography *is* the message.
 
 ## How Cerkl's positioning maps
 
@@ -86,6 +89,10 @@ Cerkl's existing positioning (per `shared/competitors.md`) is *"the personalized
 - [[pucc-framework]] — Sutton's psychological framework
 - [[talent-transformation-thesis]] — McKinsey's *Rewired 2.0* thesis
 - [[human-agentic-collaboration]] — *Rewired 2.0* Lever #4
+- [[context-delivery]] — Karian's "context not reputation management"; delivery stated at the level of belief
+- [[ic-credibility-deficit]] — the three trust-killers (euphemism / spin / timing) that break delivery before it lands
+- [[trust-brokering]] — Edelman institutional-trust backdrop
+- [[measurers-vs-builders]] — the counter-frame that delivery+measurement must rebut
 
 ## Practitioner Voices
 
@@ -112,6 +119,9 @@ Cerkl's existing positioning (per `shared/competitors.md`) is *"the personalized
 | [[qualtrics-change-engagement-2026-05-21]] | 2026-05-21 | Listening-cadence as the 5th evidence stream; 87/44 engagement gap; Goldilocks-zone framing; change-fatigue counter-frame |
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | Strengthens the McKinsey leg of [[analyst-trio-comms-as-ai-gate]]; Lever #4 (human-agentic collaboration) explicitly names "emotional work of helping humans feel safe alongside machine colleagues" |
 | [[layoff-memo-subgenre-2026-05-21]] | 2026-05-21 | Crystallizes layoff-comms choreography as a 2026 subgenre; five emerging conventions all point at delivery quality + measurement; reference frameworks (Chesky / Sutton PUCC / Sucher) |
+| [[why-employees-right-not-to-trust-ic]] | 2026-05-26 | 6th evidence stream: "style is a performance variable"; candour↔trust measurable; IC as context delivery |
+| [[edelman-trust-barometer-2026]] | 2026-02-12 | Institutional-trust backdrop; trust is "experienced and modeled," not announced |
+| [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] | 2026-05-29 | 3 more layoff cases; the [[measurers-vs-builders]] counter-frame delivery must answer |
 
 ## Open Questions
 

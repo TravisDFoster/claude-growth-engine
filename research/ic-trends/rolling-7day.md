@@ -6,6 +6,60 @@
 
 ---
 
+## 2026-06-04
+
+1. **LumApps triple-tap: Cargill frontline case study + Beekeeper ecosystem POV + 52-integration Marketplace** — Competitor — https://www.lumapps.com/insights/blog/cargill
+2. **Karian: "middle managers are becoming the most burned-out role in the western economy" — structural role-design argument (NOT the 12.1 stat — that's Gallup; see deep-dive)** — Community — https://isitworking.substack.com/p/why-middle-managers-are-becoming
+3. **HBR / BCG: "Designing Organizational Change That Actually Sticks" — a 5-phase model** — Analyst — https://hbr.org/2026/05/designing-organizational-change-that-actually-sticks
+4. **Ragan × Highwire: CEO-transition comms — employees cross-check internal announcement against press release and LinkedIn post** — Publication — https://www.ragan.com/ragan-highwire-ceo-transition-report-2026/
+5. **Ragan: news now bubbles bottom-up — the "3 categories of online chatter"** — Publication — https://www.ragan.com/understanding-the-3-categories-of-online-chatter/
+6. **ContactMonkey teases conversational campaign analytics — third vendor on NL reporting in 3 weeks** — Competitor — https://www.contactmonkey.com/blog/your-questions-about-campaign-performance-answered-instantly
+7. **HBR: "What Really Gets in the Way of Change" — exec teams mistake politeness for alignment** — Analyst — https://hbr.org/2026/05/what-really-gets-in-the-way-of-change
+8. **Staffbase drops 4 customer-story videos in one day (3 German-language) — coordinated post-event campaign** — Competitor — https://www.youtube.com/watch?v=1EX5J1xvMZo
+
+## 2026-06-03
+
+1. **Simpplr: "Three strategies to stop shadow AI without killing productivity"** — Competitor — https://www.simpplr.com/blog/govern-shadow-ai/
+2. **ContactMonkey: "Best Staffbase Alternatives in 2026" (4th conquest listicle in 14 days)** — Competitor — https://www.contactmonkey.com/blog/staffbase-alternatives
+3. **PR Daily: "How to prepare for more declines in traditional Google search traffic"** — Publication — https://www.prdaily.com/how-to-prepare-for-more-declines-in-traditional-google-search-traffic/
+4. **HBR: "Employees Are Relying on AI for Personal Support. That's Risky."** — Analyst — https://hbr.org/2026/05/employees-are-relying-on-ai-for-personal-support-thats-risky
+5. **McKinsey: State of Organizations 2026 — 75% fail to build high-performance cultures (new cut)** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations
+6. **Ragan webinar pitch: 78% of IC teams use AI but only 9% of frontline employees are very satisfied with comms** — Publication — https://www.ragan.com/store/beyond-ai-hype-what-actually-moves-the-needle-in-internal-communications/
+
+## 2026-06-02
+
+1. **LumApps publishes "The AI Employee Hub" launch video** — Competitor — https://www.youtube.com/watch?v=jOhO2gs6F0o
+2. **Gartner: AI will create more jobs than it eliminates beginning in 2028** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-hr-research-reveals-ai-will-create-more-jobs-than-it-eliminates-beginning-in-2028
+3. **HBR: Leading the Human-AI Organization** — Analyst — https://hbr.org/2026/05/leading-the-human-ai-organization
+4. **Ragan: 3 tactics to protect brand trust when AI is threatening it** — Publication — https://www.ragan.com/3-tactics-to-protect-brand-trust-when-ai-is-threatening-it/
+5. **Forrester: AI will rewrite employee experience — deep listening shows how** — Analyst — https://www.forrester.com/blogs/ai-will-rewrite-employee-experience-deep-listening-shows-how/
+6. **Jenni Field: Navigating the internal-communication identity crisis in 2026** — Community — https://redefiningcomms.com/blog/navigating-the-internal-communication-identity-crisis-in-2026/
+7. **Ragan Consulting: 3 big questions facing communicators in 2026** — Community — https://raganconsulting.com/3-big-questions-facing-internal-communications-in-2026/
+8. **Ragan: Blood Cancer United took a "big risk" trusting employees with its rebrand** — Publication — https://www.ragan.com/blood-cancer-united-took-a-major-risk-trusting-employees-with-its-rebrand-it-paid-off/
+9. **isitworking: 2026 workplace predictions — monitoring/surveillance is the next IC fault line** — Community — https://isitworking.substack.com/p/2026-workplace-predictions-fewer
+10. **Simpplr publishes 2026 Employee Experience Excellence Awards winners** — Competitor — https://www.simpplr.com/blog/winners-of-employee-experience-excellence-awards/
+
+## 2026-06-01
+
+1. **ContactMonkey ships Approval Workflows + teases natural-language campaign analytics (same day)** — Competitor — https://www.contactmonkey.com/blog/approval-workflows
+2. **Mt. Sinai's ECCC playbook for reaching deskless workers** — Publication — https://www.ragan.com/ragan-insider-eccc2026-mt-sinai-deskless/
+3. **Gartner: AI layoffs create budget room but no ROI** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-05-gartner-says-autonomous-business-and-artificial-intelligence-layoffs-may-create-budget-room-but-do-not-deliver-returns
+4. **Firstup: 2026 IC Engagement Research — up to 75% miss critical updates** — Competitor — https://firstup.io/blog/internal-communications-failure-2026-research/
+5. **Ragan: How communicators can productively say no to message requests** — Publication — https://www.ragan.com/internal-communications-how-to-say-no-requests/
+6. **IC Index 2026 (Ipsos Karian / IoIC): UK "excellent" comms rating drops 9 points YoY** — Community — https://isitworking.substack.com/p/latest-ic-research-is-a-reality-check
+7. **PR Daily: 5 ways the Clinton Foundation is reclaiming trust in an age of attack** — Publication — https://www.prdaily.com/5-ways-the-clinton-foundation-is-reclaiming-trust-in-an-age-of-attack/
+8. **Staffbase × Haver & Boecker: 5-year frontline app case study** — Competitor — https://www.youtube.com/watch?v=hXC3TmehE0Y
+
+## 2026-05-29
+
+1. **Ragan Week in Comms: Cloudflare CEO says he "doesn't need measurers"; Wix ties cuts to AI** — Publication — https://www.ragan.com/the-week-in-comms-cloudflare-wix-clickup/
+2. **Gartner: information-integrity risk is now the #1 concern among risk leaders** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-survey-finds-information-integrity-risk-now-the-top-concern-among-risk-leaders
+3. **Edelman Trust Barometer 2026: employers remain the most-trusted institution, but "insularity" is rising** — Publication — https://www.ragan.com/by-the-numbers-edelman-trust-barometer-2026/
+4. **"Why employees are right not to trust Internal Communication" (isitworking Substack)** — Community — https://isitworking.substack.com/p/why-employees-are-right-not-to-trust
+5. **Ragan: your toughest internal critics might be your most valuable comms resources** — Publication — https://www.ragan.com/ragan-eccc-2026-employee-critic-advocate/
+6. **Gartner: CFOs risk falling behind without a scalable AI strategy** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-27-gartner-says-cfos-risk-falling-behind-without-a-scalable-ai-strategy
+7. **2026 RTO tracker: 54% of Fortune 100 employees now on 5-day mandates** — Policy — https://daysattheoffice.com/tools/rto-tracker/
+
 ## 2026-05-28
 
 1. **Nvidia's Jensen Huang calls AI a "lazy" excuse for layoffs** — Community — https://www.fastcompany.com/91548397/nvidia-ceo-jensen-huang-calls-ai-a-lazy-excuse-for-layoffs
@@ -27,60 +81,3 @@
 6. **Meta all-hands leak: Zuckerberg "studying you to figure out how to make this all more effective"** — Community — https://247wallst.com/investing/2026/05/23/were-studying-you-to-figure-out-how-to-make-this-all-more-effective-zuckerbergs-leaked-comment-sparks-job-loss-fears/
 7. **JPMorgan disables comments on internal RTO post after employee pushback** — Community — https://www.entrepreneur.com/business-news/jpmorgans-return-to-office-mandate-spurs-internal-pushback/485483
 8. **WPP four-day RTO petition nears 10,000 signatures; CEO calls dissent unrepresentative** — Community — https://www.cityam.com/petition-against-wpp-four-day-office-policy-nears-10000-signatures/
-
-## 2026-05-26
-
-1. **Forrester Wave: Intranet Platforms Q2 2026 — vendor AI is largely shelfware (17 of 35 reference customers)** — Analyst — https://www.forrester.com/blogs/the-forrester-wave-intranet-platforms-q2-2026-our-evaluation-of-13-key-vendors/
-2. **Gallagher State of the Sector 2026 — 61% of orgs have no formal change-comms strategy** — Publication — https://www.ajg.com/employeeexperience/state-of-the-sector/
-3. **Standard Chartered CEO Bill Winters apologizes for "lower-value human capital" remark** — Community — https://www.bloomberg.com/news/articles/2026-05-22/stanchart-ceo-apologizes-for-lower-value-comments-after-outcry
-4. **GM layoff comms — 15-min warning, scripted HR statement, no Q&A** — Community — https://www.ragan.com/the-week-in-comms-linkedin-gm-gitlab/
-5. **PR Daily: LinkedIn throttling AI-generated content** — Publication — https://www.prdaily.com/social-media-updates-and-new-features-to-know-this-week-43/
-6. **Ragan: Manager feedback is the engine of strongest internal comms** — Publication — https://www.ragan.com/ragan-insider-eccc-2026-manager-comms/
-7. **Gallup: Manager support is the 8.7x multiplier on AI adoption** — Analyst — https://www.gallup.com/workplace/704252/workplace-separates-adopters-holdouts.aspx
-8. **Staffbase: "Narrative Leadership — the human antidote to the 2026 visibility gap"** — Competitor — https://staffbase.com/blog/narrative-leadership-2026-visibility-gap
-9. **McKinsey: State of Organizations 2026 — "business as change" is permanent** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations
-10. **Ragan: 3 qualities companies want in their next CCO (CCO-to-CEO reporting now 47%)** — Publication — https://www.ragan.com/the-3-qualities-companies-want-in-their-next-chief-communications-officer/
-
-## 2026-05-25
-
-1. **Simpplr launches AI Control Center — governance-first IT play** — Competitor — https://www.simpplr.com/blog/ai-control-center/
-2. **Staffbase publishes "Staffbase vs Unily" — the AI-native intranet category fight goes public** — Competitor — https://staffbase.com/blog/staffbase-vs-unily
-3. **ContactMonkey ships External Sending Governance — internal-comms tool sends externally now** — Competitor — https://www.contactmonkey.com/blog/external-sending
-4. **ContactMonkey publishes "Best Poppulo Alternatives" — 3rd conquest listicle in 8 days** — Competitor — https://www.contactmonkey.com/blog/poppulo-alternatives
-5. **Firstup blog: AI access gap on the frontline (42% want it / 60% never used it)** — Competitor — https://firstup.io/blog/ai-for-frontline-workers-access-gap/
-6. **PR Daily: 3 ways to prepare for a crisis before disaster strikes** — Publication — https://www.prdaily.com/3-ways-to-prepare-for-a-crisis-before-disaster-strikes/
-7. **PR Daily: When the media hit headline isn't what you expected** — Publication — https://www.prdaily.com/you-landed-the-media-hit-the-headline-isnt-what-you-expected-now-what/
-8. **Poppulo: Mazda receives Poppulo Impact Award (digital signage customer story)** — Competitor — https://www.poppulo.com/digital-signage/blog/mazda-retail-evolution-award
-
-## 2026-05-22
-
-1. **Meta's 8,000-cut restructure — Zuckerberg comms admission + CPO operational memo (dual-memo IC pattern)** — Community — https://www.cnbc.com/2026/05/20/meta-layoffs-zuckerberg-says-success-isnt-a-given-in-memo.html
-2. **Firstup AI paradox: 60% of hourly workers have never used AI; 64% lack access (6,000+ employee survey)** — Competitor — https://firstup.io/blog/ai-for-frontline-workers-access-gap/
-3. **Ragan Week in Comms: Meta 4am layoff emails, Standard Chartered "low value" gaffe, Vox sale** — Publication — https://www.ragan.com/the-week-in-comms-meta-standard-chartered-vox/
-4. **PR Daily: The most important skills for communicators right now (EQ + business acumen lead)** — Publication — https://www.prdaily.com/these-are-the-most-important-skills-for-communicators-right-now/
-5. **LumApps × Beekeeper "Bright" Conference (Paris, May 19-20) — first joint post-acquisition event** — Competitor — https://bright.lumapps.com/
-6. **HBR: Do You Recognize Burnout in Your Organization? (CHRO Daisy Auger-Domínguez)** — Analyst — https://hbr.org/2026/05/do-you-recognize-burnout-in-your-organization
-7. **Ragan: Strategies comms pros need to help AI writing become more human** — Publication — https://www.ragan.com/ragan-insider-ai-writing-human-perspective/
-8. **Staffbase "EXperts on EXperts" — CIO/CHRO/CCO panel on hardcoding trust into AI-native workplace** — Competitor — https://www.youtube.com/watch?v=Lb2fy47SOXI
-
-## 2026-05-21
-
-1. **Ragan / Qualtrics: Employees experiencing more change are *more* engaged** — Publication — https://www.ragan.com/employees-experiencing-more-change-are-more-engaged/
-2. **McKinsey: Rewired 2.0 — every AI transformation is a talent transformation** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/the-rewired-2-point-0-talent-plan
-3. **Cisco's "strong-quarter layoff" memo (Chuck Robbins, 4,000 cuts + record $15.8B Q)** — Community — https://dnyuz.com/2026/05/13/read-the-memo-cisco-to-cut-about-4000-jobs-in-ai-driven-restructuring/
-4. **HBR: Empathetic Leadership Can Make or Break AI Adoption** — Analyst — https://hbr.org/2026/04/empathetic-leadership-can-make-or-break-ai-adoption
-5. **Forrester Predictions 2026: "Coasting" + half of AI layoffs will be quietly reversed** — Analyst — https://www.forrester.com/blogs/future-of-work-predictions-2026-whats-coming-for-work-and-the-workforce/
-6. **Haiilo: The 2026 Gallagher report's "Readiness Gap" (73% aspire / 18% are strategic)** — Competitor — https://blog.haiilo.com/blog/gallagher-employee-comms-2026/
-7. **Ragan: 4 ways to test AI readiness before engineers take over your workflows** — Publication — https://www.ragan.com/4-ways-to-test-ai-readiness-before-engineers-take-over-your-workflows/
-8. **Staffbase Q2 release webinar — "Lattes with Laura" (Employee AI + email)** — Competitor — https://www.youtube.com/watch?v=mDV8sQH4nDw
-
-## 2026-05-20
-
-1. **Gallup: Global employee engagement continues to decline — manager collapse is the driver** — Analyst — https://www.gallup.com/workplace/708071/global-employee-engagement-continues-decline.aspx
-2. **HBR: Employees are relying on AI for personal support — and that's risky** — Analyst — https://hbr.org/2026/05/employees-are-relying-on-ai-for-personal-support-thats-risky
-3. **Staffbase keynote double-drop: AI-as-org-design narrative entrenches** — Competitor — https://www.youtube.com/watch?v=ipLXABqXcEA
-4. **Joel Schwartzberg: "LinkedIn's own team says stop doing this immediately"** — Community — https://www.inc.com/joel-schwartzberg/the-linkedin-advice-youve-been-hearing-might-be-wrong/91341128
-5. **HBR: Why effective leaders get branded as problems** — Analyst — https://hbr.org/2026/05/why-effective-leaders-get-branded-as-problems
-6. **SHRM: AI hasn't lived up to the hype — but companies aren't giving up** — Analyst — https://www.shrm.org/topics-tools/news/hr-trends/ai-hype
-7. **PR Daily: Social teams are the early-warning sensors for a crisis** — Publication — https://www.prdaily.com/social-teams-are-early-detectors-of-a-crisis/
-8. **Ragan: The "Mount Everest mindset" every crisis communicator needs (Oshkosh's Tim Gilman)** — Publication — https://www.ragan.com/the-mount-everest-mindset-every-crisis-communicator-needs/

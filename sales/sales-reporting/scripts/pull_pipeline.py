@@ -49,6 +49,12 @@ FOUNDATIONS_PIPELINE = "800251979"
 FOUNDATIONS_LABEL = "Email Foundations"
 ALL_PIPELINES = {**DOLLAR_PIPELINES, FOUNDATIONS_PIPELINE: FOUNDATIONS_LABEL}
 
+# Demo-request forms (HubSpot form submissions counted top-of-funnel, no owner filter).
+# Add a row here if a new demo form goes live.
+DEMO_FORMS = {
+    "c0af68f9-b9e5-4222-bc09-c7552fafe13b": "Schedule a Chat (Webflow)",
+}
+
 OWNERS = {
     "77450212": "Josh Mandelman",
     "206074297": "Marc Fregoe",
@@ -142,6 +148,59 @@ def fetch_stage_meta(tok):
     return meta
 
 
+def fetch_form_submissions(tok, form_guid, start_ms, end_ms):
+    """Pull submissions for one form within the window. Newest-first; stop paging
+    once the page's oldest entry is older than the window start."""
+    headers = {"Authorization": f"Bearer {tok}"}
+    url = f"{BASE}/form-integrations/v1/submissions/forms/{form_guid}"
+    out, offset = [], None
+    while True:
+        params = {"limit": 50}
+        if offset:
+            params["after"] = offset
+        r = requests.get(url, headers=headers, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        results = data.get("results", [])
+        for s in results:
+            ts = s.get("submittedAt", 0)
+            if start_ms <= ts <= end_ms:
+                out.append(s)
+        # newest-first ordering: if we've fallen below the window start, no more.
+        if results and results[-1].get("submittedAt", 0) < start_ms:
+            break
+        offset = data.get("paging", {}).get("next", {}).get("after")
+        if not offset:
+            break
+        time.sleep(0.2)
+    return out
+
+
+def fetch_demos(tok, start_ms, end_ms):
+    """Aggregate demo-request form submissions across DEMO_FORMS in the window.
+
+    No owner filter — these are top-of-funnel demand signal."""
+    submissions, by_form = [], {}
+    for guid, name in DEMO_FORMS.items():
+        rows = fetch_form_submissions(tok, guid, start_ms, end_ms)
+        by_form[name] = len(rows)
+        for s in rows:
+            vals = {v["name"]: v.get("value", "") for v in s.get("values", [])}
+            submissions.append({
+                "submitted_at": dt.datetime.fromtimestamp(s["submittedAt"] / 1000).isoformat(timespec="seconds"),
+                "form": name,
+                "first_name": vals.get("firstname", ""),
+                "last_name": vals.get("lastname", ""),
+                "email": vals.get("email", ""),
+                "company": vals.get("company", ""),
+                "company_size": vals.get("contact_company_size", ""),
+                "page_url": s.get("pageUrl", ""),
+                "message": vals.get("message", ""),
+            })
+    submissions.sort(key=lambda r: r["submitted_at"], reverse=True)
+    return {"total": len(submissions), "by_form": by_form, "submissions": submissions}
+
+
 def search(tok, filters, properties, obj="deals"):
     """Run a CRM-object search, following pagination. Returns list of result dicts."""
     headers = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json"}
@@ -232,6 +291,9 @@ def main():
         {"propertyName": "hubspot_owner_id", "operator": "IN", "values": OWNER_IDS},
         {"propertyName": "hs_is_closed", "operator": "EQ", "value": "false"},
     ], base_props)
+
+    # 4a) Demo-request form submissions in period — NO owner filter (top-of-funnel demand).
+    demos = fetch_demos(tok, start_ms, end_ms)
 
     # 4) New Foundations deals in period — NO owner filter (the PLG funnel is mostly
     #    unowned, so owner-filtering would undercount it). Count-only, reported separately.
@@ -380,6 +442,7 @@ def main():
         "activity": activity,
         "feature_gaps_rollup": feature_gaps_rollup,
         "foundations": agg_foundations(),
+        "demos": demos,
     }
 
     out_path = args.out or os.path.join(
@@ -405,6 +468,7 @@ def main():
     print(f'  Closed-lost  : {cl["count"]} · ${cl["amount"]:,.0f}')
     print(f'  Active open  : {op["count"]} deals · ${op["amount"]:,.0f}')
     print(f'  Foundations  : {summary["foundations"]["new_in_period"]} new (no owner filter)')
+    print(f'  Demos req’d : {summary["demos"]["total"]} (no owner filter)')
     print(f'  HTML : {html_path}')
     print(f'  JSON : {out_path}')
 

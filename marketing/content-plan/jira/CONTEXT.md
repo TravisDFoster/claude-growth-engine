@@ -52,6 +52,8 @@ Each blog Task row has:
 
 Subtask rows reference their parent Task via `Parent ID = T###`. Subtask names follow the channel templates in `../jira-csv-guidelines.md`. Subtask owner IDs are blank at scaffold time — filled at import.
 
+**LinkedIn short video — barebones rows (as of 2026-06-01):** the weekly short-video Task is a single row with a generic Summary (`Social Media - LinkedIn - Short Video (out-of-band)`), a one-line Description, and **no subtasks**. Videos are planned and produced outside the content-plan system; the Task exists for capacity tracking only. See [`../jira-csv-guidelines.md` §Short video — out-of-band](../jira-csv-guidelines.md#short-video--out-of-band).
+
 A complete shape with placeholders for one cerkl blog + one icpro blog + one LinkedIn lives at [`_template.csv`](_template.csv).
 
 ---

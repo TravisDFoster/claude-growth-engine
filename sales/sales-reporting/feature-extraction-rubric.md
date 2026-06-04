@@ -21,6 +21,10 @@ Write `tmp/feature-requests-<label>.json`:
       "mapped_gap": "<taxonomy label> | novel: <short>",
       "already_ships": true | false | "unsure",
       "competitor": "<name or null>"
+      // already_ships=true → a capability we HAVE that the prospect cares about
+      //   (the AE is recording a priority, naming it because they know we have it).
+      //   Recorded, but NOT a gap — excluded from the report's Feature-gaps section.
+      // already_ships=false/"unsure" → a real gap (capability we lack) — the gap signal.
     }
   ],
   "summary": "<2-3 sentences: signals found vs notes scanned, themes, ambiguous calls>"
@@ -37,12 +41,12 @@ Write `tmp/feature-requests-<label>.json`:
 - Prospecting research: LinkedIn URLs, person names, "garbage site", "junk?", "site cannot be reached".
 - Call/meeting logistics, internal reminders, generic next-steps, head-count/pricing-only notes (unless they state a capability need).
 
-## Product gap vs. positioning gap (the `already_ships` call)
+## Real gap vs. sought-after capability we ship (the `already_ships` call)
 Check the asked-for capability against `broadcast.md`:
-- **Cerkl already ships it → `already_ships: true`** = a *positioning gap* (the prospect/AE didn't know we do it). Routes to sales enablement, not product.
-- **Cerkl does NOT ship it → `already_ships: false`** = a real *product gap* (roadmap signal).
-- Genuinely unclear → `already_ships: "unsure"`.
-This split is the most valuable output — be deliberate about it.
+- **Cerkl does NOT ship it → `already_ships: false`** = a real *product gap* (roadmap signal). This is what the report's Feature-gaps section shows.
+- **Cerkl already ships it → `already_ships: true`** = NOT a gap. The AE is recording a capability the prospect cares about that we *have* (they name it explicitly because they know we have it). **Still extract and record it** — it's valuable demand/marketing signal — but the report excludes it from the Feature-gaps section and reserves it for the planned "most-requested capabilities we ship" view (see the process Future work).
+- Genuinely unclear → `already_ships: "unsure"` (treated as a possible gap).
+Be deliberate about this call — it decides gap vs. sought-after.
 
 ## Mapping rules
 - One row per **distinct** ask (a note listing several asks → several rows).

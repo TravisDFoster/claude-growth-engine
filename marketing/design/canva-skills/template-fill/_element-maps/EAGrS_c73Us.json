@@ -1,0 +1,237 @@
+{
+  "template_id": "EAGrS_c73Us",
+  "name": "HeyGen Video Thumbnail Template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Best Employee Communication Platforms \" \u2014 title",
+          "placeholder": "Best Employee Communication Platforms ",
+          "role_hint": "title",
+          "element_id": "PBmkrg93mxhVHRbq-LB6f8wKQgj9Bxqdq",
+          "container_type": "TEXT",
+          "position": {
+            "top": 180.88942566663127,
+            "left": 72
+          },
+          "dimension": {
+            "width": 645.1310993533216,
+            "height": 267.866675
+          }
+        },
+        {
+          "raw": "\"Who Actually Personalizes?\" \u2014 subtitle pill (SHAPE)",
+          "placeholder": "Who Actually Personalizes?",
+          "role_hint": "subtitle pill (SHAPE)",
+          "element_id": "PBmkrg93mxhVHRbq-LBssjXbylhKmRvbT",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 479.21857575637836,
+            "left": 72
+          },
+          "dimension": {
+            "width": 486.899470899471,
+            "height": 73.06589540552625
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1280x720, role: full-bg (blue backdrop), current asset_id: `MAGrSjyT1tY`",
+          "current_asset_id": "MAGrSjyT1tY",
+          "dimensions": "1280x720",
+          "role": "full-bg",
+          "element_id": "PBmkrg93mxhVHRbq-LBYYZlp9l2rCm9y7",
+          "occurrence": 1,
+          "parent_element_id": "PBmkrg93mxhVHRbq",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "784x698, role: photo-slot (right-side AI avatar / presenter cutout), current asset_id: `MAGrSgVCW6c`",
+          "current_asset_id": "MAGrSgVCW6c",
+          "dimensions": "784x698",
+          "role": "photo-slot",
+          "element_id": "PBmkrg93mxhVHRbq-LBhtQgktp5h4j9HC",
+          "occurrence": 1,
+          "parent_element_id": "PBmkrg93mxhVHRbq",
+          "container_type": "RECT",
+          "position": {
+            "top": 21.712191333263092,
+            "left": 576.771240204632
+          },
+          "dimension": {
+            "width": 783.8487654598944,
+            "height": 698.2878086667369
+          },
+          "editable": true
+        },
+        {
+          "raw": "483x110, role: logo (Cerkl + Broadcast co-lockup top-left), current asset_id: `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "dimensions": "483x110",
+          "role": "logo",
+          "element_id": "PBmkrg93mxhVHRbq-LBTFwZMsZmlYFGK1",
+          "occurrence": 1,
+          "parent_element_id": "PBmkrg93mxhVHRbq",
+          "container_type": "RECT",
+          "position": {
+            "top": 52.73600825874248,
+            "left": 51.57871329066157
+          },
+          "dimension": {
+            "width": 482.57356246496266,
+            "height": 110.31197442964778
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBmkrg93mxhVHRbq",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same title + subtitle."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "alternate bg (`MAGrSrQDuLg`) + same logo + same presenter cutout.",
+          "current_asset_id": "MAGrSrQDuLg",
+          "role": "logo",
+          "element_id": "PBtS91KcW7svdpcX-LBy6VFtrky3KQv0b",
+          "occurrence": 1,
+          "parent_element_id": "PBtS91KcW7svdpcX",
+          "container_type": "RECT",
+          "position": {
+            "top": 0.2666666666666515,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 719.4666666666667
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBtS91KcW7svdpcX",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Title\" + \"Subtitle\" placeholders.",
+          "placeholder": "Title",
+          "element_id": "PBYjj3zfD3kSLl9B-LBz0xgCdDMRzvfYt",
+          "container_type": "TEXT",
+          "position": {
+            "top": 180.88942566663127,
+            "left": 72
+          },
+          "dimension": {
+            "width": 645.1310993533216,
+            "height": 91.866675
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "bg (`MAGrSjyT1tY`) + co-lockup only \u2014 no presenter cutout (text-only variant).",
+          "current_asset_id": "MAGrSjyT1tY",
+          "role": "logo",
+          "element_id": "PBYjj3zfD3kSLl9B-LB8NdvR0l49zVJZ4",
+          "occurrence": 1,
+          "parent_element_id": "PBYjj3zfD3kSLl9B",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 720
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBYjj3zfD3kSLl9B",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Title\" + \"Subtitle\" placeholders.",
+          "placeholder": "Title",
+          "element_id": "PBB3SS4MKwjKD63d-LBgY4Y1K2fdcPM51",
+          "container_type": "TEXT",
+          "position": {
+            "top": 180.88942566663127,
+            "left": 72
+          },
+          "dimension": {
+            "width": 645.1310993533216,
+            "height": 91.866675
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "alternate bg (`MAGrSrQDuLg`) + co-lockup only.",
+          "current_asset_id": "MAGrSrQDuLg",
+          "role": "logo",
+          "element_id": "PBB3SS4MKwjKD63d-LBjXnv32gRDzMhTn",
+          "occurrence": 1,
+          "parent_element_id": "PBB3SS4MKwjKD63d",
+          "container_type": "RECT",
+          "position": {
+            "top": 0.2666666666666515,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 719.4666666666667
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBB3SS4MKwjKD63d",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-heygen",
+  "canvas": "1280x720",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW5Boqwo",
+  "notes": "pages 1/2 are example-filled with the presenter cutout; pages 3/4 are blank starter variants. Layered frame: yes \u2014 presenter cutout image overlays full-bg; subtitle SHAPE pill overlays both.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW5Boqwo"
+}

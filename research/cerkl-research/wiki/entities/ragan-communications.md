@@ -26,6 +26,9 @@ Ragan Communications is the trade-publishing and training company that owns [[pr
 - [[cisco-comms-leader-ai-content]] — published via PR Daily, the Ragan IC/PR property
 - [[six-internal-comms-trends-2026]] — published via PR Daily
 - [[ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15]] — Sean Devlin's three-case layoff-comms triangulation (May 2026)
+- [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] — Devlin's Cloudflare/Wix/ClickUp roundup (2026-05-29); the "measurers" framing
+- [[edelman-trust-barometer-2026]] — Devlin's "By the Numbers" Edelman Trust Barometer pickup (2026-02-12)
+- [[ragan-toughest-internal-critics-2026-05-29]] — Devlin's ECCC 2026 critics-as-resource piece (partial/paywalled; Ragan Insider)
 - [[qualtrics-change-engagement-2026-05-21]] — 2026-05-21 article surfacing the Qualtrics change-engagement finding for IC trade audience (added the "comms quality" framing on top of Qualtrics' "listening cadence" moderator)
 - [[ragan-gartner-2026-comms-predictions-2025-10-09]] — Sean Devlin's 2025-10-09 piece anchoring [[mark-whittle]]'s [[change-leadership-three-step]] framework via Gartner's *Predicts 2026* doc 7160430
 

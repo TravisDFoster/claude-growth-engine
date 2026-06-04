@@ -1,0 +1,112 @@
+{
+  "template_id": "EAGqLMNBS7U",
+  "name": "Twitter post_style 4",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\\\"\" \u2014 quote (large pull-quote)",
+          "placeholder": "\\",
+          "role_hint": "quote (large pull-quote)"
+        },
+        {
+          "raw": "\"Firstname Lastname\" \u2014 attribution name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "attribution name",
+          "element_id": "PBb5hSqsxFTD4kZm-LBgbgb46Tc3qNwlR",
+          "container_type": "TEXT",
+          "position": {
+            "top": 524.4493101800933,
+            "left": 200.22442352367852
+          },
+          "dimension": {
+            "width": 270.734375,
+            "height": 31.6667
+          }
+        },
+        {
+          "raw": "\"Company / Position\" \u2014 attribution title",
+          "placeholder": "Company / Position",
+          "role_hint": "attribution title",
+          "element_id": "PBb5hSqsxFTD4kZm-LByFxMZDQMhByg92",
+          "container_type": "TEXT",
+          "position": {
+            "top": 563.058503665369,
+            "left": 200.22442352367852
+          },
+          "dimension": {
+            "width": 185.234375,
+            "height": 24.73334
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label (delete on use)",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label (delete on use)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg, role: full-bg (page-level fill), current asset_id: `MAFZLhIFSzQ`",
+          "current_asset_id": "MAFZLhIFSzQ",
+          "role": "full-bg",
+          "element_id": "PBb5hSqsxFTD4kZm",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "299x115, role: logo (Broadcast lockup bottom-right), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "299x115",
+          "role": "logo",
+          "element_id": "PBb5hSqsxFTD4kZm-LBgW8LM0RychfvXf",
+          "occurrence": 1,
+          "parent_element_id": "PBb5hSqsxFTD4kZm",
+          "container_type": "RECT",
+          "position": {
+            "top": 500.22062910452365,
+            "left": 862.6008206779461
+          },
+          "dimension": {
+            "width": 298.99798037734627,
+            "height": 114.54032767847264
+          },
+          "editable": true
+        },
+        {
+          "raw": "450x296, role: decorative-badge (orange swoop graphic top-right), current asset_id: `MAFZLjrDtjk`",
+          "current_asset_id": "MAFZLjrDtjk",
+          "dimensions": "450x296",
+          "role": "decorative-badge",
+          "element_id": "PBb5hSqsxFTD4kZm-LBvT6tgPT5bLM6Ds",
+          "occurrence": 1,
+          "parent_element_id": "PBb5hSqsxFTD4kZm",
+          "container_type": "RECT",
+          "position": {
+            "top": 23.5,
+            "left": 749.7721951668068
+          },
+          "dimension": {
+            "width": 450.2278048331933,
+            "height": 295.9243787636013
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBb5hSqsxFTD4kZm",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW2Dw9h0",
+  "notes": "testimonial/quote layout \u2014 attribution row sits left of Broadcast lockup. Small DELETE label marks a circular headshot spot (no actual fill). Layered frame: yes \u2014 decorative-badge graphic overlays the full-bg fill in upper right.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW2Dw9h0"
+}

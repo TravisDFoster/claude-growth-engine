@@ -1,0 +1,99 @@
+{
+  "template_id": "EAGqLLyZJpc",
+  "name": "Linkedin pdf post_style 3",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 headline (829x298)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "headline (829x298)"
+        },
+        {
+          "raw": "\"Learn more\" \u2014 CTA pill SHAPE",
+          "placeholder": "Learn more",
+          "role_hint": "CTA pill SHAPE",
+          "element_id": "PBXKMF9WmXPWlkMY-LB3LdPGqB6Xm6Yyr",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 856.0011200473645,
+            "left": 107.9999999999998
+          },
+          "dimension": {
+            "width": 325.1776994319502,
+            "height": 100.66149355318545
+          }
+        },
+        {
+          "raw": "CTA round arrow SHAPE (110x110) bottom-right (decorative)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAFaAUH0Qnw`",
+          "current_asset_id": "MAFaAUH0Qnw",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBXKMF9WmXPWlkMY",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "352x135, role: logo (Broadcast lockup top-right), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "352x135",
+          "role": "logo",
+          "element_id": "PBXKMF9WmXPWlkMY-LBrzNVnPXMjbDHS1",
+          "occurrence": 1,
+          "parent_element_id": "PBXKMF9WmXPWlkMY",
+          "container_type": "RECT",
+          "position": {
+            "top": 108,
+            "left": 650.1794782432005
+          },
+          "dimension": {
+            "width": 352.47888135143745,
+            "height": 135.0278236621628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBXKMF9WmXPWlkMY",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "3x \"XX%\" stat numerals (210x115 each) inside circular SHAPE"
+        },
+        {
+          "raw": "3x \"Sed do eiusmod tempor incididunt ut labore et dolore.\" captions"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "no image fills \u2014 page 2 is text-only stat grid"
+        }
+      ],
+      "page_id": "PB39G0GXQYsQyWbr",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-pdf-carousel",
+  "canvas": "1080x1080",
+  "page_count": 2,
+  "inspection_design_id": "DAHLW5FdQ2U",
+  "notes": "2-page mini carousel: cover + stat-grid. Page 2 has 3 stat tiles (each = circle SHAPE + XX% text + caption text). Round headshot in page 1 thumbnail is baked into bg fill. Only 2 editable images (bg + logo) on p1; zero editable images on p2.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW5FdQ2U"
+}

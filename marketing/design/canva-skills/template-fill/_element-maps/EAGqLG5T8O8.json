@@ -1,0 +1,88 @@
+{
+  "template_id": "EAGqLG5T8O8",
+  "name": "Twitter post_style 3 (dup ID)",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"XX%\" \u2014 stat",
+          "placeholder": "XX%",
+          "role_hint": "stat",
+          "element_id": "PBy7wzqSNv4xWGDF-LB56nzlq886H04vD",
+          "container_type": "TEXT",
+          "position": {
+            "top": 164.16660502069496,
+            "left": 557.4315849370485
+          },
+          "dimension": {
+            "width": 280.0546875,
+            "height": 153.401
+          }
+        },
+        {
+          "raw": "\"Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna\" \u2014 body",
+          "placeholder": "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna",
+          "role_hint": "body",
+          "element_id": "PBy7wzqSNv4xWGDF-LBmQ2pnmBpcbfkng",
+          "container_type": "TEXT",
+          "position": {
+            "top": 366.83339497930484,
+            "left": 557.4315849370485
+          },
+          "dimension": {
+            "width": 579.7684150629515,
+            "height": 132
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg, role: full-bg, current asset_id: `MAFZQNritPQ`",
+          "current_asset_id": "MAFZQNritPQ",
+          "role": "full-bg",
+          "element_id": "PBy7wzqSNv4xWGDF",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "50x50, role: icon (Broadcast mark), current asset_id: `MAFZLu2JowY`",
+          "current_asset_id": "MAFZLu2JowY",
+          "dimensions": "50x50",
+          "role": "icon",
+          "element_id": "PBy7wzqSNv4xWGDF-LBCSSMhg8MJHntVw",
+          "occurrence": 1,
+          "parent_element_id": "PBy7wzqSNv4xWGDF",
+          "container_type": "RECT",
+          "position": {
+            "top": 563.7707902261144,
+            "left": 1087.3415804522288
+          },
+          "dimension": {
+            "width": 49.85841954777132,
+            "height": 49.85841954777132
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBy7wzqSNv4xWGDF",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW6gKquQ",
+  "notes": "structurally identical to EAGqLMr1Kxw (same asset_ids and layout).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6gKquQ"
+}

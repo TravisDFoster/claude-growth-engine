@@ -1,0 +1,285 @@
+{
+  "template_id": "EAGqLELBS7Q",
+  "name": "Employee feature_Video thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Customer Success Spotlight\" \u2014 kicker (SHAPE pill)",
+          "placeholder": "Customer Success Spotlight",
+          "role_hint": "kicker (SHAPE pill)",
+          "element_id": "PB3JhNGQdXyLC1Tt-LB8prbHk5LylpcKW",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 221.38178560191486,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 581.0022516692384,
+            "height": 69.7082371285813
+          }
+        },
+        {
+          "raw": "\"Meet Cerkl's Customer Success Team\" \u2014 title",
+          "placeholder": "Meet Cerkl's Customer Success Team",
+          "role_hint": "title",
+          "element_id": "PB3JhNGQdXyLC1Tt-LBZlFMkp6d5SBpK2",
+          "container_type": "TEXT",
+          "position": {
+            "top": 309.44009846464644,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 639.5619407498318,
+            "height": 256.00002
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1280x720, role: full-bg, current asset_id: `MAGS5TKSaRg`",
+          "current_asset_id": "MAGS5TKSaRg",
+          "dimensions": "1280x720",
+          "role": "full-bg",
+          "element_id": "PB3JhNGQdXyLC1Tt-LBtq2wcbJrwNb80f",
+          "occurrence": 1,
+          "parent_element_id": "PB3JhNGQdXyLC1Tt",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "135x40, role: logo (Cerkl wordmark top-left), current asset_id: `MAFbOsxqlcA`",
+          "current_asset_id": "MAFbOsxqlcA",
+          "dimensions": "135x40",
+          "role": "logo",
+          "element_id": "PB3JhNGQdXyLC1Tt-LBNwqcGqpdbQQCVv",
+          "occurrence": 1,
+          "parent_element_id": "PB3JhNGQdXyLC1Tt",
+          "container_type": "RECT",
+          "position": {
+            "top": 153.86051680771914,
+            "left": 82.00000000000011
+          },
+          "dimension": {
+            "width": 135.00315192348597,
+            "height": 40.01224638456257
+          },
+          "editable": true
+        },
+        {
+          "raw": "6 x 180x180, role: headshot (3-row x 2-col grid of round headshots), current asset_ids: `MAGS5YHGrFc, MAGS5famiKM, MAGS5Y1uKKQ, MAF9QtgfBmI, MAGLbbRaLb0, MAGS5bDcmjU`",
+          "dimensions": "180x180",
+          "role": "headshot"
+        }
+      ],
+      "page_id": "PB3JhNGQdXyLC1Tt",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight \" kicker (SHAPE) + \"Title\" placeholder.",
+          "placeholder": "Employee Spotlight ",
+          "element_id": "PB1b52w9rQrjm8bw-LB5bvL0Szh48BSCf",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 139.01252143570977,
+            "left": 237.4136653327407
+          },
+          "dimension": {
+            "width": 436.5161096802063,
+            "height": 69.7082371285813
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9eVcvc` (oversized photo) + foreground overlay (`MAGSjPTxses`) + Cerkl logo.",
+          "current_asset_id": "MAGRO9eVcvc",
+          "role": "full-bg",
+          "element_id": "PB1b52w9rQrjm8bw-LBQ0RNFF7W7G33LV",
+          "occurrence": 1,
+          "parent_element_id": "PB1b52w9rQrjm8bw",
+          "container_type": "RECT",
+          "position": {
+            "top": -1.7053025658242404e-13,
+            "left": -45.71428571428578
+          },
+          "dimension": {
+            "width": 1371.4285714285713,
+            "height": 720.0000000000001
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB1b52w9rQrjm8bw",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight \" kicker + \"Title\" + 4 round headshot SHAPE containers (no fills).",
+          "placeholder": "Employee Spotlight ",
+          "element_id": "PBrLzPmFLJqsF5Dz-LBZ8Qg1HCkdtlyCs",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 139.01252143570977,
+            "left": 237.4136653327407
+          },
+          "dimension": {
+            "width": 436.5161096802063,
+            "height": 69.7082371285813
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAGS6HcTmAI`) + Cerkl logo only \u2014 4 round circles are SHAPE-only (no image fills exposed for these heads).",
+          "current_asset_id": "MAGS6HcTmAI",
+          "role": "full-bg",
+          "element_id": "PBrLzPmFLJqsF5Dz-LBvMSwVwPLfHz9Jm",
+          "occurrence": 1,
+          "parent_element_id": "PBrLzPmFLJqsF5Dz",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 719.4666666666667
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBrLzPmFLJqsF5Dz",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight \" kicker + \"TItle\" + 2 round SHAPE containers.",
+          "placeholder": "Employee Spotlight ",
+          "element_id": "PBXz4z4VJ2G2cY7k-LBKbgZXScrxJvXLK",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 139.01252143570977,
+            "left": 237.4136653327407
+          },
+          "dimension": {
+            "width": 436.5161096802063,
+            "height": 69.7082371285813
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + Cerkl logo only \u2014 2 round circles are SHAPE-only.",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBXz4z4VJ2G2cY7k",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight \" kicker + \"Title\" + 1 large round SHAPE.",
+          "placeholder": "Employee Spotlight ",
+          "element_id": "PB09f6HXVqq3MHks-LBXyY4cDccgPPgqW",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 139.01252143570977,
+            "left": 237.4136653327407
+          },
+          "dimension": {
+            "width": 436.5161096802063,
+            "height": 69.7082371285813
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + Cerkl logo only \u2014 large round circle is SHAPE-only.",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PB09f6HXVqq3MHks",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "(none)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg only (`MAGS6HcTmAI`) \u2014 blank starter.",
+          "current_asset_id": "MAGS6HcTmAI",
+          "role": "full-bg",
+          "element_id": "PBSkM2VTT3JnqZBk-LBm6sYCv8p6hR7pP",
+          "occurrence": 1,
+          "parent_element_id": "PBSkM2VTT3JnqZBk",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 719.4666666666667
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSkM2VTT3JnqZBk",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-thumbnail-employee-feature",
+  "canvas": "1280x720",
+  "page_count": 6,
+  "inspection_design_id": "DAHLW1OQ4NI",
+  "notes": "pages 1/2 = filled example variants with real headshot fills; pages 3/4/5 = blank starter variants with SHAPE placeholders for 4/2/1 headshots (no image fills exposed \u2014 must be added). Page 6 = blank starter, no kicker. Layered frame: yes \u2014 kicker SHAPE + headshot SHAPEs overlay full-bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW1OQ4NI"
+}

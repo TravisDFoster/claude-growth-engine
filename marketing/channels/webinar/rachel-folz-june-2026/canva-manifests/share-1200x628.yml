@@ -1,0 +1,49 @@
+template_id: EAGqLHFNucs
+page_index: 1
+design_title: rachel-folz-share-1200x628-2026-06-25
+aspect_ratio: 1.91:1
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcBLqkUc"
+  edit_url: "https://www.canva.com/d/RGOp9WRG77abZzo"
+  view_url: "https://www.canva.com/d/x5Y3grkTwLfrlNJ"
+  ops_performed: 6
+  warnings: [
+    {
+        "warning": "headshot_slot_not_addressable",
+        "note": "Page 1 has no editable headshot image_slot; placeholder SHAPE remains"
+    },
+    {
+        "warning": "unused_speaker2_frame_visible",
+        "note": "Speaker 2 text deleted but SHAPE/illustration not exposed for direct deletion; Furqan deletes in UI"
+    }
+]
+  manual_drag_required: [
+    {
+        "role": "headshot",
+        "asset_id": "MAFZdaEt2Wc",
+        "subject": "Rachel Folz",
+        "instruction": "Manually insert headshot at ~top=240 left=830 (top-right of card); delete unused speaker 2 placeholder below"
+    }
+]
+
+  followup_fixes:
+    - applied_at: "2026-06-02T16:20:00Z"
+      design_id: "DAHLcBLqkUc"
+      ops_added: 1
+      reason: "First render skipped headshot insertion because template-fill SKILL Step 5 / Constraint #4 says DELETE-placeholder slots are unsupported in v1. Orchestrator brief didn't override."
+      fix: "insert_fill at speaker-1 area (top=250, left=830, 90x90) with MAFZdaEt2Wc + manual_drag_required for Furqan to drop into the SHAPE frame."
+      process_change: "webinar-canva-render Step 4 subagent brief should add: 'If a no_image_match warning fires for a headshot role AND you can identify the target position from richtexts[] / fills[] (e.g. DELETE-placeholder text, empty SHAPE), emit insert_fill at those coords as a layered-frame pattern instead of punting.' (Same pattern as the speaker-card layered case.)"

@@ -1,0 +1,272 @@
+{
+  "template_id": "EAHK4xxpksA",
+  "name": "Quotes and testimonials",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Firstname Lastname / Title, Company\" \u2014 name/title block (in pill shape)",
+          "placeholder": "Firstname Lastname / Title, Company",
+          "role_hint": "name/title block (in pill shape)"
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, ...\" \u2014 quote body",
+          "placeholder": "Lorem ipsum dolor sit amet, ...",
+          "role_hint": "quote body"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHK4W0nNeI`",
+          "current_asset_id": "MAHK4W0nNeI",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBpgFCC4M2gB9FVx",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "192x67, role: logo (Cerkl wordmark), current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "192x67",
+          "role": "logo"
+        },
+        {
+          "raw": "230x188, role: decorative (quote-mark graphic), current asset_id: `MAHK4uDIWU8`",
+          "current_asset_id": "MAHK4uDIWU8",
+          "dimensions": "230x188",
+          "role": "decorative"
+        }
+      ],
+      "page_id": "PBpgFCC4M2gB9FVx",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Optional Frame for headshot photo / DELETE IF UNUSED\" \u2014 headshot frame label (shape)",
+          "placeholder": "Optional Frame for headshot photo / DELETE IF UNUSED",
+          "delete_hint": true,
+          "role_hint": "headshot frame label (shape)"
+        },
+        {
+          "raw": "\"Firstname Lastname / Title, Company\" \u2014 name/title block",
+          "placeholder": "Firstname Lastname / Title, Company",
+          "role_hint": "name/title block"
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, ...\" \u2014 quote body",
+          "placeholder": "Lorem ipsum dolor sit amet, ...",
+          "role_hint": "quote body"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHK4l-S0UA`",
+          "current_asset_id": "MAHK4l-S0UA",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBG0WrxGTzH0k4Dr",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "224x181, role: decorative (quote-mark), current asset_id: `MAHK4m7Ag_M`",
+          "current_asset_id": "MAHK4m7Ag_M",
+          "dimensions": "224x181",
+          "role": "decorative"
+        },
+        {
+          "raw": "192x67, role: logo, current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "192x67",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PBG0WrxGTzH0k4Dr",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Optional Frame for headshot photo / DELETE IF UNUSED\" \u2014 headshot frame label",
+          "placeholder": "Optional Frame for headshot photo / DELETE IF UNUSED",
+          "delete_hint": true,
+          "role_hint": "headshot frame label"
+        },
+        {
+          "raw": "\"Firstname Lastname\" \u2014 name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "name",
+          "element_id": "PBJW6wR2xVNYmT4R-LBGSVjFTFmbV9l8k",
+          "container_type": "TEXT",
+          "position": {
+            "top": 734.2250051162571,
+            "left": 108.00000000000011
+          },
+          "dimension": {
+            "width": 431.9999999999999,
+            "height": 126
+          }
+        },
+        {
+          "raw": "\"Title, Company\" \u2014 title",
+          "placeholder": "Title, Company",
+          "role_hint": "title",
+          "element_id": "PBJW6wR2xVNYmT4R-LBDGSry2mZ3jpDv9",
+          "container_type": "TEXT",
+          "position": {
+            "top": 879.677269437668,
+            "left": 108
+          },
+          "dimension": {
+            "width": 431.9999999999999,
+            "height": 44
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, ...\" \u2014 quote body",
+          "placeholder": "Lorem ipsum dolor sit amet, ...",
+          "role_hint": "quote body"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHK4drp8mg`",
+          "current_asset_id": "MAHK4drp8mg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBJW6wR2xVNYmT4R",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "192x67, role: logo, current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "192x67",
+          "role": "logo"
+        },
+        {
+          "raw": "162x132, role: decorative (quote-mark), current asset_id: `MAHK4yRWFzA`",
+          "current_asset_id": "MAHK4yRWFzA",
+          "dimensions": "162x132",
+          "role": "decorative"
+        }
+      ],
+      "page_id": "PBJW6wR2xVNYmT4R",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Optional Frame for headshot photo / DELETE IF UNUSED\" \u2014 headshot frame label",
+          "placeholder": "Optional Frame for headshot photo / DELETE IF UNUSED",
+          "delete_hint": true,
+          "role_hint": "headshot frame label"
+        },
+        {
+          "raw": "\"OPTIONAL SPACE FOR LOGO\" \u2014 logo placeholder shape",
+          "placeholder": "OPTIONAL SPACE FOR LOGO",
+          "role_hint": "logo placeholder shape",
+          "element_id": "PBvP5BmfmKmxJLP7-LBfcmBTKGFNgzqvn",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 1100.251881953853,
+            "left": 143.34408730408066
+          },
+          "dimension": {
+            "width": 349.8458589776921,
+            "height": 126.65766261012823
+          }
+        },
+        {
+          "raw": "\"Firstname Lastname\" \u2014 name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "name",
+          "element_id": "PBvP5BmfmKmxJLP7-LB3FlYlxygS8t522",
+          "container_type": "TEXT",
+          "position": {
+            "top": 734.2250051162571,
+            "left": 108.00000000000011
+          },
+          "dimension": {
+            "width": 431.9999999999999,
+            "height": 126
+          }
+        },
+        {
+          "raw": "\"Title, Company\" \u2014 title",
+          "placeholder": "Title, Company",
+          "role_hint": "title",
+          "element_id": "PBvP5BmfmKmxJLP7-LBPZRjl7l548DTsQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 879.677269437668,
+            "left": 108
+          },
+          "dimension": {
+            "width": 431.9999999999999,
+            "height": 44
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, ...\" \u2014 quote body",
+          "placeholder": "Lorem ipsum dolor sit amet, ...",
+          "role_hint": "quote body"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1350), role: full-bg, current asset_id: `MAHK4UJw0oU`",
+          "current_asset_id": "MAHK4UJw0oU",
+          "dimensions": "1080x1350",
+          "role": "full-bg",
+          "element_id": "PBvP5BmfmKmxJLP7",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "192x67, role: logo, current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "192x67",
+          "role": "logo"
+        },
+        {
+          "raw": "191x155, role: decorative (quote-mark), current asset_id: `MAHK4m7Ag_M`",
+          "current_asset_id": "MAHK4m7Ag_M",
+          "dimensions": "191x155",
+          "role": "decorative"
+        }
+      ],
+      "page_id": "PBvP5BmfmKmxJLP7",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-quotes-testimonials",
+  "canvas": "1080x1080 (pages 1-3); 1080x1350 (page 4)",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW7G5Img",
+  "notes": "4 distinct quote-card variants (page 4 is portrait 1080x1350 not square). Each page has its own full-bg image fill (different backgrounds). Cerkl wordmark logo asset MAHHJ8ab-yI repeats on every page. Headshot frames are optional decorative SHAPE placeholders with \"DELETE IF UNUSED\" instructions \u2014 no separate image fill bound to them, so a runtime headshot insert would need to add a fill or use the SHAPE's container. No layered image-on-image frames detected; quote-mark graphics are non-editable decorative fills.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW7G5Img"
+}

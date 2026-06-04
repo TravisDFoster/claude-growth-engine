@@ -89,6 +89,7 @@ def stat_cards(s):
         ("Closed-won", s["closed_won"]["total"]["count"], money(s["closed_won"]["total"]["amount"])),
         ("Closed-lost", s["closed_lost"]["total"]["count"], money(s["closed_lost"]["total"]["amount"])),
         ("Active open pipeline", s["open_snapshot"]["total"]["count"], money(s["open_snapshot"]["total"]["amount"])),
+        ("Demos requested", s.get("demos", {}).get("total", 0), "form submissions"),
         ("Foundations entries", s["foundations"]["new_in_period"], "new free-funnel"),
     ]
     cards = []
@@ -119,9 +120,12 @@ def tldr(s):
         found_clause = "and <b>no new Foundations free-funnel entries</b>"
     else:
         found_clause = f'plus <b>{f} new Foundations free-funnel {plural(f, "entry")}</b>'
+    dm = s.get("demos", {}).get("total", 0)
+    demo_clause = (f' <b>{dm} {plural(dm, "demo")} requested</b> top-of-funnel.' if dm
+                   else " <b>No demos requested</b> top-of-funnel.")
     o = s["open_snapshot"]["total"]
     open_clause = f'Active open pipeline holds at <b>{o["count"]} deals · {money(o["amount"])}</b>.'
-    return f"{lead}: {new_clause}. {closed_clause}, {found_clause}. {open_clause}"
+    return f"{lead}: {new_clause}. {closed_clause}, {found_clause}.{demo_clause} {open_clause}"
 
 
 def hero(s):
@@ -286,30 +290,33 @@ def section_feature(s, feature_requests):
     reqs = feature_requests or []
     if not reqs and not rollup["by_option"]:
         return ""
-    product = [r for r in reqs if r.get("already_ships") is not True]
-    positioning = [r for r in reqs if r.get("already_ships") is True]
+    gaps = [r for r in reqs if r.get("already_ships") is not True]   # false / unsure = real gaps
+    sought = [r for r in reqs if r.get("already_ships") is True]      # capabilities we ship — recorded, not gaps
 
     def gap_table(rows):
         return ('<table class="data"><thead><tr><th>Capability</th><th>Source</th>'
                 '<th>Owner</th><th>Signal</th></tr></thead>'
                 f'<tbody>{_gap_rows(rows)}</tbody></table>')
 
-    prod = ('<h3>Product gaps — roadmap signal</h3>' + gap_table(product)) if product else \
-           '<h3>Product gaps — roadmap signal</h3><p class="note-italic">No new product gaps surfaced in notes this period.</p>'
-    pos = ('<h3>Positioning gaps — Cerkl ships it (enablement)</h3>' + gap_table(positioning)) if positioning else ""
+    gaps_block = ('<h3>Gaps surfaced in notes — roadmap signal</h3>' + gap_table(gaps)) if gaps else \
+                 '<h3>Gaps surfaced in notes — roadmap signal</h3><p class="note-italic">No real product gaps surfaced in notes this period.</p>'
     roll = ""
     if rollup["by_option"]:
         rr = "".join(f'<tr><td>{esc(k)}</td><td class="num">{v}</td></tr>' for k, v in rollup["by_option"].items())
         roll = (f'<h3>Flagged in HubSpot — structured <code>feature_gaps</code> ({rollup["deal_count"]} AE deals)</h3>'
                 '<table class="data"><thead><tr><th>Feature gap</th><th class="num">Deals</th></tr></thead>'
                 f'<tbody>{rr}</tbody></table>')
+    sought_note = ""
+    if sought:
+        sought_note = (f'<p class="note-italic">{len(sought)} note mention(s) of capabilities Cerkl already ships '
+                       '(prospect priorities, not gaps) were recorded — reserved for the planned most-requested-capabilities view.</p>')
 
-    lead = f'{len(product)} product · {len(positioning)} positioning · {rollup["deal_count"]} flagged'
+    lead = f'{len(gaps)} from notes · {rollup["deal_count"]} flagged in HubSpot'
     return (
-        f'<section><h2><span class="num">05</span>Feature gaps &amp; requests<span class="lead">{lead}</span></h2>'
-        f'{prod}{pos}{roll}'
-        '<p class="note-italic">From AE notes (classified) + the structured feature_gaps property. '
-        'Note signal is sparse — best read over a multi-week window.</p></section>'
+        f'<section><h2><span class="num">05</span>Feature gaps<span class="lead">{lead}</span></h2>'
+        f'{gaps_block}{roll}{sought_note}'
+        '<p class="note-italic">Real gaps only (capabilities Cerkl lacks), from AE notes + the structured feature_gaps property. '
+        'Signal is sparse — best read over a multi-week window.</p></section>'
     )
 
 
@@ -333,6 +340,40 @@ def section_foundations(f):
     )
 
 
+def section_demos(d):
+    if not d:
+        return ""
+    n = d["total"]
+    if n == 0:
+        return ('<section><h2><span class="num">07</span>Demos requested'
+                '<span class="lead">No activity</span></h2>'
+                '<div class="empty-card"><div class="e-num">0</div>'
+                '<div class="e-body"><span class="e-status">No activity</span>'
+                '<p class="note-italic">No demo-request form submissions in this period.</p></div></div></section>')
+    rows = []
+    for s in d["submissions"]:
+        name = (s.get("first_name", "") + " " + s.get("last_name", "")).strip() or "&mdash;"
+        rows.append(
+            f'<tr><td>{esc(s["submitted_at"][:10])}</td>'
+            f'<td>{name if name == "&mdash;" else esc(name)}</td>'
+            f'<td>{esc(s.get("company", "") or "—")}</td>'
+            f'<td>{esc(s.get("company_size", "") or "—")}</td>'
+            f'<td>{esc(s.get("email", ""))}</td></tr>'
+        )
+    table = (
+        '<table class="data"><thead><tr><th>Date</th><th>Name</th>'
+        '<th>Company</th><th>Company size</th><th>Email</th></tr></thead>'
+        f'<tbody>{"".join(rows)}</tbody></table>'
+    )
+    lead = f'{n} {plural(n, "request")}'
+    return (
+        f'<section><h2><span class="num">07</span>Demos requested<span class="lead">{lead}</span></h2>'
+        f'{table}'
+        '<p class="note-italic">Source: HubSpot form submissions on the configured demo form(s). All submissions in the window, regardless of owner.</p>'
+        '</section>'
+    )
+
+
 def footer(s):
     return (
         '<footer>Source: HubSpot — Sales Pipeline, RFP Process, Email Foundations. '
@@ -350,7 +391,8 @@ def render_html(s, style_block=None, feature_requests=None):
     body = "\n".join([
         hero(s), section_new(s["new_deals"]), section_closed(s["closed_won"], s["closed_lost"]),
         section_open(s["open_snapshot"]), section_activity(s.get("activity")),
-        section_feature(s, feature_requests), section_foundations(s["foundations"]), footer(s),
+        section_feature(s, feature_requests), section_foundations(s["foundations"]),
+        section_demos(s.get("demos")), footer(s),
     ])
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'

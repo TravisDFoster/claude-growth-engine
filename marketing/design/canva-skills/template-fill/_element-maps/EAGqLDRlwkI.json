@@ -1,0 +1,517 @@
+{
+  "template_id": "EAGqLDRlwkI",
+  "name": "TEMPLATE: Downloadable resource/Email template promo_square",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Heading\" \u2014 headline (864x76)",
+          "placeholder": "Heading",
+          "role_hint": "headline (864x76)",
+          "element_id": "PBHj0145HWFrgn5S-LB2mySyLKLSFpxCL",
+          "container_type": "TEXT",
+          "position": {
+            "top": 227.24574721029438,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 76.4
+          }
+        },
+        {
+          "raw": "\"Benefit 1 / Benefit 2 / Benefit 3\" \u2014 bullet list (555x212)",
+          "placeholder": "Benefit 1 / Benefit 2 / Benefit 3",
+          "role_hint": "bullet list (555x212)"
+        },
+        {
+          "raw": "\"Access Now\" \u2014 CTA pill (SHAPE)",
+          "placeholder": "Access Now",
+          "role_hint": "CTA pill (SHAPE)",
+          "element_id": "PBHj0145HWFrgn5S-LB2yXl0fwN9ss5gx",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 844.3245848324431,
+            "left": 108.00000000000003
+          },
+          "dimension": {
+            "width": 308.28890547294594,
+            "height": 102.38643387857566
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAGi11H7iek`",
+          "current_asset_id": "MAGi11H7iek",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBHj0145HWFrgn5S",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "579x132, role: logo (Cerkl x Broadcast lockup at top), current asset_id: `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "dimensions": "579x132",
+          "role": "logo",
+          "element_id": "PBHj0145HWFrgn5S-LBhvvZ2mkxDl7HPF",
+          "occurrence": 1,
+          "parent_element_id": "PBHj0145HWFrgn5S",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "703x703, role: photo-slot (resource preview, right side), current asset_id: `MAGi16981As` \u2014 layered frame: yes \u2014 image swap targets this large fill atop the full-bg",
+          "current_asset_id": "MAGi16981As",
+          "dimensions": "703x703",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBHj0145HWFrgn5S-LB22LfvSFfxtH4gm",
+          "occurrence": 1,
+          "parent_element_id": "PBHj0145HWFrgn5S",
+          "container_type": "RECT",
+          "position": {
+            "top": 387.67766098219664,
+            "left": 511.28130101667847
+          },
+          "dimension": {
+            "width": 703.3223390178033,
+            "height": 703.3223390178033
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBHj0145HWFrgn5S",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi17MbIqI`",
+          "current_asset_id": "MAGi17MbIqI",
+          "role": "full-bg",
+          "element_id": "PBSmfr5FYvwGbqKz",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNRVZhsQ` (579x132)",
+          "current_asset_id": "MAFvNRVZhsQ",
+          "dimensions": "579x132",
+          "role": "logo",
+          "element_id": "PBSmfr5FYvwGbqKz-LB0gBQPKJRmsl9p8",
+          "occurrence": 1,
+          "parent_element_id": "PBSmfr5FYvwGbqKz",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "resource preview `MAGi16981As` (703x703, layered)",
+          "current_asset_id": "MAGi16981As",
+          "dimensions": "703x703",
+          "layered": true,
+          "element_id": "PBSmfr5FYvwGbqKz-LBsGrbBxWhd2fZ1f",
+          "occurrence": 1,
+          "parent_element_id": "PBSmfr5FYvwGbqKz",
+          "container_type": "RECT",
+          "position": {
+            "top": 387.67766098219664,
+            "left": 511.28130101667847
+          },
+          "dimension": {
+            "width": 703.3223390178033,
+            "height": 703.3223390178033
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSmfr5FYvwGbqKz",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi16BlaWM`",
+          "current_asset_id": "MAGi16BlaWM",
+          "role": "full-bg",
+          "element_id": "PBT3vfmt2kS0gMbh",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "role": "logo",
+          "element_id": "PBT3vfmt2kS0gMbh-LBBJ640BVzWQ1pJk",
+          "occurrence": 1,
+          "parent_element_id": "PBT3vfmt2kS0gMbh",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "resource preview `MAGi16981As` (703x703, layered)",
+          "current_asset_id": "MAGi16981As",
+          "dimensions": "703x703",
+          "layered": true,
+          "element_id": "PBT3vfmt2kS0gMbh-LB1FMVLxD5BS2trD",
+          "occurrence": 1,
+          "parent_element_id": "PBT3vfmt2kS0gMbh",
+          "container_type": "RECT",
+          "position": {
+            "top": 387.67766098219664,
+            "left": 511.28130101667847
+          },
+          "dimension": {
+            "width": 703.3223390178033,
+            "height": 703.3223390178033
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBT3vfmt2kS0gMbh",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi1wZ2Lkc`",
+          "current_asset_id": "MAGi1wZ2Lkc",
+          "role": "full-bg",
+          "element_id": "PBMlvB8wqSzKCRDH",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "role": "logo",
+          "element_id": "PBMlvB8wqSzKCRDH-LB9yF5RsgbfxjcrG",
+          "occurrence": 1,
+          "parent_element_id": "PBMlvB8wqSzKCRDH",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "resource preview `MAGi16981As` (703x703, layered, positioned left)",
+          "current_asset_id": "MAGi16981As",
+          "dimensions": "703x703",
+          "layered": true,
+          "element_id": "PBMlvB8wqSzKCRDH-LBl18WVYn2FN7XB2",
+          "occurrence": 1,
+          "parent_element_id": "PBMlvB8wqSzKCRDH",
+          "container_type": "RECT",
+          "position": {
+            "top": 386.70302330782425,
+            "left": -159.40476966939224
+          },
+          "dimension": {
+            "width": 703.3223390178033,
+            "height": 703.3223390178033
+          },
+          "editable": true
+        },
+        {
+          "raw": "\"Heading\" \u2014 headline"
+        },
+        {
+          "raw": "\"Body\" \u2014 body line (864x44)",
+          "dimensions": "864x44"
+        },
+        {
+          "raw": "\"Access Now\" \u2014 bottom-strip SHAPE"
+        }
+      ],
+      "page_id": "PBMlvB8wqSzKCRDH",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi11H7iek`",
+          "current_asset_id": "MAGi11H7iek",
+          "role": "full-bg",
+          "element_id": "PBD4XpqY4RM1FZ6T",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "role": "logo",
+          "element_id": "PBD4XpqY4RM1FZ6T-LBpGjXKXhvtTvhNw",
+          "occurrence": 1,
+          "parent_element_id": "PBD4XpqY4RM1FZ6T",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "oversized preview `MAGi1xwRXTw` (579x1865, extends beyond canvas, layered)",
+          "current_asset_id": "MAGi1xwRXTw",
+          "dimensions": "579x1865",
+          "layered": true,
+          "element_id": "PBD4XpqY4RM1FZ6T-LB5x6S6XK7jll6XK",
+          "occurrence": 1,
+          "parent_element_id": "PBD4XpqY4RM1FZ6T",
+          "container_type": "RECT",
+          "position": {
+            "top": 520.5696883078243,
+            "left": 250.32156273845305
+          },
+          "dimension": {
+            "width": 578.6729305269969,
+            "height": 1865.1302087421461
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBD4XpqY4RM1FZ6T",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi17MbIqI`",
+          "current_asset_id": "MAGi17MbIqI",
+          "role": "full-bg",
+          "element_id": "PBNRZVlKrgqfBYDm",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNRVZhsQ`",
+          "current_asset_id": "MAFvNRVZhsQ",
+          "role": "logo",
+          "element_id": "PBNRZVlKrgqfBYDm-LBGyGq5SR8cHLcV6",
+          "occurrence": 1,
+          "parent_element_id": "PBNRZVlKrgqfBYDm",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "oversized preview `MAGi1xwRXTw` (layered)",
+          "current_asset_id": "MAGi1xwRXTw",
+          "layered": true,
+          "element_id": "PBNRZVlKrgqfBYDm-LBZR5jWl87wY0Gqt",
+          "occurrence": 1,
+          "parent_element_id": "PBNRZVlKrgqfBYDm",
+          "container_type": "RECT",
+          "position": {
+            "top": 527.5696883078243,
+            "left": 250.32156273845305
+          },
+          "dimension": {
+            "width": 578.6729305269969,
+            "height": 1865.1302087421461
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBNRZVlKrgqfBYDm",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi16BlaWM`",
+          "current_asset_id": "MAGi16BlaWM",
+          "role": "full-bg",
+          "element_id": "PBP7z97YlH97ZhFr",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "role": "logo",
+          "element_id": "PBP7z97YlH97ZhFr-LBKl2Z0LRpHMrRhX",
+          "occurrence": 1,
+          "parent_element_id": "PBP7z97YlH97ZhFr",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "oversized preview `MAGi1xwRXTw` (layered)",
+          "current_asset_id": "MAGi1xwRXTw",
+          "layered": true,
+          "element_id": "PBP7z97YlH97ZhFr-LBqvKyZN3hGb4vH4",
+          "occurrence": 1,
+          "parent_element_id": "PBP7z97YlH97ZhFr",
+          "container_type": "RECT",
+          "position": {
+            "top": 520.5696883078243,
+            "left": 250.32156273845305
+          },
+          "dimension": {
+            "width": 578.6729305269969,
+            "height": 1865.1302087421461
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBP7z97YlH97ZhFr",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 8,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGi1wZ2Lkc`",
+          "current_asset_id": "MAGi1wZ2Lkc",
+          "role": "full-bg",
+          "element_id": "PBB0MjctstrFR9gG",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo lockup `MAFvNSHHFmY`",
+          "current_asset_id": "MAFvNSHHFmY",
+          "role": "logo",
+          "element_id": "PBB0MjctstrFR9gG-LBPvxmm3cJTL0Ny5",
+          "occurrence": 1,
+          "parent_element_id": "PBB0MjctstrFR9gG",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.80997845084757,
+            "left": 250.321562738453
+          },
+          "dimension": {
+            "width": 579.356874523094,
+            "height": 132.4357687594467
+          },
+          "editable": true
+        },
+        {
+          "raw": "oversized preview `MAGi1wOQsw4` (578x1865, layered)",
+          "current_asset_id": "MAGi1wOQsw4",
+          "dimensions": "578x1865",
+          "layered": true,
+          "element_id": "PBB0MjctstrFR9gG-LBJSX6wPh9QDdvlR",
+          "occurrence": 1,
+          "parent_element_id": "PBB0MjctstrFR9gG",
+          "container_type": "RECT",
+          "position": {
+            "top": 495.5696883078243,
+            "left": 250.32156273845305
+          },
+          "dimension": {
+            "width": 578.6729305269969,
+            "height": 1865.1302087421461
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBB0MjctstrFR9gG",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "downloadable-resource-email-promo-square",
+  "canvas": "1080x1080",
+  "page_count": 8,
+  "inspection_design_id": "DAHLW_wSA80",
+  "notes": "Largest template so far \u2014 8 pages = 4 color variants \u00d7 2 layouts (3-bullet vs body-only). Logo lockup `MAFvNSHHFmY` (or `MAFvNRVZhsQ` for darker variant) anchors every page. Resource preview fill is heavily layered (703x703 square or 579x1865 vertical) \u2014 all swaps must target the specific preview element_id, NOT the bg. Pages 5-8 use bottom CTA strip SHAPE rather than top-left pill button. The pre-existing oversized preview height (1865px) suggests intentional crop \u2014 content extends below the canvas.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW_wSA80"
+}

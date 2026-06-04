@@ -1,0 +1,219 @@
+{
+  "template_id": "EAGqLDVthiA",
+  "name": "Blog cover image_list",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh\" \u2014 title",
+          "placeholder": "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh",
+          "role_hint": "title",
+          "element_id": "PBSRHckMnFsBqhZ0-LBl0S3dB3KhgNqtK",
+          "container_type": "TEXT",
+          "position": {
+            "top": 421.6507783399006,
+            "left": 136.96338595811653
+          },
+          "dimension": {
+            "width": 1211.5821025116556,
+            "height": 313.733385
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`",
+          "current_asset_id": "MAFZjn0iEmM",
+          "role": "full-bg",
+          "element_id": "PBSRHckMnFsBqhZ0",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "756x1000, role: photo-slot (right column hero), current asset_id: `MAFZjoKq-GY`",
+          "current_asset_id": "MAFZjoKq-GY",
+          "dimensions": "756x1000",
+          "role": "photo-slot",
+          "element_id": "PBSRHckMnFsBqhZ0-LBKbQjQJwPT726nM",
+          "occurrence": 1,
+          "parent_element_id": "PBSRHckMnFsBqhZ0",
+          "container_type": "RECT",
+          "position": {
+            "top": -1.1368683772161603e-13,
+            "left": 744.4592924421784
+          },
+          "dimension": {
+            "width": 755.5407075578219,
+            "height": 999.9999999999999
+          },
+          "editable": true
+        },
+        {
+          "raw": "187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "187x56",
+          "role": "logo",
+          "element_id": "PBSRHckMnFsBqhZ0-LBHz9Rlc0Fxn44ql",
+          "occurrence": 1,
+          "parent_element_id": "PBSRHckMnFsBqhZ0",
+          "container_type": "RECT",
+          "position": {
+            "top": 278.327786139443,
+            "left": 133
+          },
+          "dimension": {
+            "width": 186.93148226095747,
+            "height": 56.11193932850007
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSRHckMnFsBqhZ0",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same title."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg, current asset_id: `MAF66xoDd4A`",
+          "current_asset_id": "MAF66xoDd4A",
+          "role": "full-bg",
+          "element_id": "PBJCbN290PcmDT9G",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "1500x1000, role: full-bg (overlay photo), current asset_id: `MAF668KFz3c`",
+          "current_asset_id": "MAF668KFz3c",
+          "dimensions": "1500x1000",
+          "role": "full-bg",
+          "element_id": "PBJCbN290PcmDT9G-LBHrwZDwsJC5zcsh",
+          "occurrence": 1,
+          "parent_element_id": "PBJCbN290PcmDT9G",
+          "container_type": "RECT",
+          "position": {
+            "top": -5.684341886080802e-14,
+            "left": 3.410605131648481e-13
+          },
+          "dimension": {
+            "width": 1499.9999999999998,
+            "height": 999.9999999999999
+          },
+          "editable": true
+        },
+        {
+          "raw": "187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "187x56",
+          "role": "logo",
+          "element_id": "PBJCbN290PcmDT9G-LBhP8YPqctrLtkGd",
+          "occurrence": 1,
+          "parent_element_id": "PBJCbN290PcmDT9G",
+          "container_type": "RECT",
+          "position": {
+            "top": 278.327786139443,
+            "left": 133
+          },
+          "dimension": {
+            "width": 186.93148226095747,
+            "height": 56.11193932850007
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBJCbN290PcmDT9G",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Top 10\" \u2014 list-count badge (SHAPE pill)",
+          "placeholder": "Top 10",
+          "role_hint": "list-count badge (SHAPE pill)",
+          "element_id": "PBSKNlKLfpwzWkvx-LB3Bz6SnkLZbSb3R",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 258.36382480369303,
+            "left": 557.5464357029948
+          },
+          "dimension": {
+            "width": 238.9172594533884,
+            "height": 86.03986199999997
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed\" \u2014 title",
+          "placeholder": "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed",
+          "role_hint": "title",
+          "element_id": "PBSKNlKLfpwzWkvx-LBQqSx997krdXsSb",
+          "container_type": "TEXT",
+          "position": {
+            "top": 421.7523843551744,
+            "left": 133
+          },
+          "dimension": {
+            "width": 1082.9097755385317,
+            "height": 345
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`",
+          "current_asset_id": "MAFZjn0iEmM",
+          "role": "full-bg",
+          "element_id": "PBSKNlKLfpwzWkvx",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "187x56",
+          "role": "logo",
+          "element_id": "PBSKNlKLfpwzWkvx-LBDVCnQk5kTn1LTD",
+          "occurrence": 1,
+          "parent_element_id": "PBSKNlKLfpwzWkvx",
+          "container_type": "RECT",
+          "position": {
+            "top": 278.327786139443,
+            "left": 133
+          },
+          "dimension": {
+            "width": 186.93148226095747,
+            "height": 56.11193932850007
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSKNlKLfpwzWkvx",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-cover-list",
+  "canvas": "1500x1000",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW8e24LA",
+  "notes": "3 layout variants \u2014 right-column photo / full-photo overlay / text-only with \"Top 10\" badge. Layered frame: yes (page 1 right column overlays full-bg; page 2 overlay image covers page-level fill).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW8e24LA"
+}

@@ -69,7 +69,7 @@ Cerkl.com posts are out of scope — they have their own production path under [
 - **Inputs:** `iso_week` and `slug` for each post; [`../../content-plan/jira/imports/`](../../content-plan/jira/imports/)
 - **Produces:** a verified set of `{slug → CSV path}` mappings
 
-For each distinct ISO week in the batch, confirm a CSV scaffold exists at `../../content-plan/jira/imports/YYYY-Www.csv` and that it contains a row for each post in the batch (look for `Slug: <slug>` in the Description column of a Task row where `Channel = Blog — internalcommspro.com`).
+For each distinct ISO week in the batch, confirm a CSV scaffold exists at `../../content-plan/jira/imports/YYYY-Www.csv` and that it contains a row for each post in the batch. **Row-matching rule:** `Issue Type = Task` AND `Summary` starts with `Content - Blog (ICP) -` AND `Description` contains `Slug: <slug>`. (The `Channel` column in these scaffolds is `Blog Posts` for both Cerkl and ICP rows; the `(ICP)` marker in `Summary` is what differentiates them — see [`channels/icpro-blog/CONTEXT.md`](CONTEXT.md#source-of-truth-for-what-to-write).)
 
 If any CSV is missing or any expected row is absent: **stop and surface the gap.** Monday reconcile creates the scaffold; this skill does not. If a row exists for the ICPro channel/week but the slug doesn't match, the scaffold creator and this orchestrator have synthesized different slugs — surface both for diagnosis.
 
@@ -137,7 +137,7 @@ Editing **does not** upload to Drive anymore — that moves to Step 2d.
 **Sub-agent brief (or inline run) must:**
 - Take the live file path, slug, and target CSV path as inputs
 - Upload the live file to Drive with `YYYY-MM-DD — ICP — <H1 title>` naming (the `ICP` segment distinguishes ICPro from Cerkl posts in the shared folder)
-- Find the Task row in the target CSV (Channel = `Blog — internalcommspro.com`) whose Description contains `Slug: <slug>` and replace `[DRIVE_URL_PLACEHOLDER]` with the actual Drive URL
+- Find the Task row in the target CSV (`Issue Type = Task`, `Summary` starts with `Content - Blog (ICP) -`) whose `Description` contains `Slug: <slug>` and replace `[DRIVE_URL_PLACEHOLDER]` with the actual Drive URL
 - Preserve all other rows and fields; CSV must still parse cleanly
 - Return: Drive Doc URL + CSV row updated confirmation + score line + brand-mention check result
 
@@ -189,3 +189,5 @@ Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), app
 ## Learnings
 
 Append "what broke / what we changed" notes here as the process matures.
+
+- **2026-06-01 — CSV row-matching rule corrected.** Step 1.5, Step 2d sub-agent brief, and the publishing skill (pre-flight + Step 2) all instructed matching on `Channel = Blog — internalcommspro.com`. The actual Jira CSV scaffold uses `Channel = Blog Posts` for both Cerkl and ICP rows and differentiates ICP rows via the `Content - Blog (ICP) -` prefix in the `Summary` column (per [`CONTEXT.md`](CONTEXT.md#source-of-truth-for-what-to-write)). Surfaced when publishing the 2026-06-09 single-post override failed to find row T002 in 2026-W24.csv. All four match locations updated to `Issue Type = Task AND Summary starts with "Content - Blog (ICP) -" AND Description contains "Slug: <slug>"`.

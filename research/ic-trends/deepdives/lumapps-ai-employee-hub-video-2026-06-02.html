@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LumApps "The AI Employee Hub" Launch Video — IC Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 70ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 999px;
+    font-weight: 600; font-size: 13px;
+    border: 1px solid;
+    background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border);
+  }
+  .verdict.good { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
+  .verdict.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .verdict::before { content: "●"; font-size: 10px; }
+  .tldr {
+    font-size: 17px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 14px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  h3 { font-size: 18px; margin: 18px 0 8px; letter-spacing: -0.0025em; font-weight: 600; }
+  h4 { margin: 0 0 6px; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  li { margin-bottom: 6px; }
+
+  .cols-2 { display: grid; gap: 24px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 720px) { .cols-2 { grid-template-columns: 1fr; } }
+
+  /* Pillar grid (the four-pillar architecture) */
+  .pillars {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 12px;
+  }
+  .pillar {
+    background: var(--panel-soft); border: 1px solid var(--line);
+    padding: 14px 16px; border-radius: 10px;
+  }
+  .pillar .n { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pillar h4 { margin: 4px 0 4px; font-size: 14px; font-weight: 600; }
+  .pillar p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid;
+    margin: 12px 0;
+  }
+  .callout.try { background: var(--accent-soft); border-color: var(--info-border); color: var(--accent); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn); }
+  .callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info); }
+  .callout.bad  { background: var(--bad-bg);  border-color: var(--bad-border);  color: var(--bad); }
+  .callout p { max-width: none; margin: 0 0 6px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout a { color: inherit; border-bottom-color: currentColor; opacity: 0.85; }
+  .callout a:hover { opacity: 1; }
+  .callout-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.9; margin-bottom: 4px;
+  }
+
+  /* Code + copy */
+  code { font-family: var(--mono); }
+  .code-row {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .code-row code {
+    flex: 1; padding: 10px 14px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.5; white-space: pre-wrap;
+    color: var(--ink); background: transparent;
+  }
+  .copy-btn {
+    border: none; background: var(--accent); color: #ffffff;
+    padding: 0 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.04em;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: #4c60d9; }
+  .copy-btn.copied { background: var(--good); }
+  p code, li code, td code, summary code {
+    font-family: var(--mono); font-size: 0.88em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+  }
+
+  /* Transcript block — monospace, scrollable */
+  .transcript {
+    background: var(--code-bg); border: 1px solid var(--line);
+    border-radius: 10px; padding: 0; margin: 14px 0;
+    overflow: hidden;
+  }
+  .transcript-head {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 8px 14px;
+    font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+  }
+  .transcript-head b { color: var(--ink); font-weight: 600; }
+  .transcript pre {
+    margin: 0; padding: 16px 18px;
+    font-family: var(--mono);
+    font-size: 13px; line-height: 1.6;
+    color: var(--ink);
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-height: 540px; overflow-y: auto;
+  }
+  .transcript pre code { background: transparent; padding: 0; font-size: inherit; }
+
+  /* Personas grid */
+  .personas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .persona {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; background: var(--panel-soft);
+  }
+  .persona h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .persona p { margin: 0; font-size: 14px; }
+
+  /* Stack cards */
+  .stack-cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 8px; }
+  .stack-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stack-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stack-card p { margin: 0; font-size: 14px; }
+
+  /* Comparison table */
+  table.cmp {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    font-size: 14px;
+  }
+  table.cmp th, table.cmp td {
+    text-align: left; padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  table.cmp th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--panel-soft);
+  }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr:hover td { background: var(--panel-soft); }
+  table.cmp .alt-name { font-weight: 600; }
+  .axis-note {
+    background: var(--info-bg); border-left: 3px solid var(--info);
+    padding: 10px 14px; border-radius: 0 8px 8px 0;
+    font-size: 14px; margin-top: 12px;
+  }
+
+  /* Stats strip */
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 14px; }
+  .stat {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .num { font-size: 20px; font-weight: 700; color: var(--accent); letter-spacing: -0.005em; }
+  .stat .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  /* Quote cards */
+  .quotes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 12px; }
+  .quote {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; position: relative;
+    border-left: 3px solid var(--quote);
+  }
+  .quote .q-mark { position: absolute; top: 4px; right: 12px; font-size: 28px; color: var(--quote); opacity: 0.35; line-height: 1; }
+  .quote p { margin: 0 0 8px; font-style: italic; font-size: 14px; line-height: 1.55; max-width: none; }
+  .quote .who { font-size: 12px; color: var(--muted); font-style: normal; }
+
+  /* Frame breakdown card — used in section 02 for each video frame */
+  .frame-card {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin: 12px 0;
+  }
+  .frame-card .timecode {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px; color: var(--accent); font-weight: 600;
+    background: var(--accent-soft); padding: 2px 8px; border-radius: 4px;
+    letter-spacing: 0.04em; margin-bottom: 4px;
+  }
+  .frame-card h4 { margin: 4px 0 8px; font-size: 15px; font-weight: 600; }
+  .frame-card blockquote {
+    margin: 8px 0 12px; padding: 8px 14px;
+    border-left: 3px solid var(--quote); background: #fff;
+    border-radius: 0 8px 8px 0;
+    font-style: italic; font-size: 14px; color: var(--ink);
+  }
+  .frame-card .read {
+    font-size: 14px; color: var(--muted);
+  }
+  .frame-card .read b { color: var(--ink); }
+  .frame-card .read strong { color: var(--ink); }
+
+  /* Recommendation block */
+  .reco {
+    background: var(--panel);
+    border: 1px solid var(--warn-border);
+    border-left: 3px solid var(--warn);
+    border-radius: 14px; padding: 22px 26px;
+  }
+  .reco h2 { margin-top: 0; }
+  .reco-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 12px; }
+  .reco-cell {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .reco-cell h4 { margin: 0 0 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .reco-cell p { margin: 0; font-size: 14px; }
+  .reco-cell ul { margin: 4px 0 0; padding-left: 18px; }
+  .reco-cell li { font-size: 13.5px; }
+
+  /* Open questions: collapsibles */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent); transition: transform 0.15s;
+  }
+  details.q[open] summary::before { content: "−"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero, .reco { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    .copy-btn, .code-row .copy-btn { display: none; }
+    a { color: #18181d; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { padding: 0 16px 14px; }
+    details.q[open] .q-body { display: block !important; }
+    .transcript pre { max-height: none; overflow: visible; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Competitor Deep Dive</div>
+    <h1>LumApps &ldquo;The AI Employee Hub&rdquo; — Launch Video Deep Dive</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-06-02</span>
+      <span><b>Category:</b> Competitor (vendor launch artifact)</span>
+      <span class="verdict warn">Worry signal — Update positioning</span>
+    </div>
+    <p class="tldr">
+      A 2:54 corporate launch video published 2026-06-01 crystallizes LumApps' 10-month rebrand from &ldquo;Google-friendly intranet&rdquo; to <b>&ldquo;the leading AI Employee Hub&rdquo;</b> — explicitly timed to the
+      <a href="https://www.lumapps.com/platform/meet-agent-hub">Agent Hub + Agent Studio June 2026 GA</a>.
+      The narrative architecture is a clean four-pillar Lego (Align → Act → People → AI Power). The line that should worry Cerkl is <em>not</em> the AI pitch — it's the <b>&ldquo;we don't replace your stack, we bring it together&rdquo;</b> frame that directly mirrors Cerkl's &ldquo;delivery layer on top of channels you already have&rdquo; positioning, inverted to make LumApps the hub the stack feeds <em>into</em> rather than the layer that sits <em>on top</em>.
+    </p>
+
+    <div class="callout try">
+      <div class="callout-label">First thing to do</div>
+      <p>Update <code>shared/competitors.md</code> immediately with the AI Employee Hub video as the new canonical reference, and sharpen the Cerkl vs. LumApps positioning around the counter-line:</p>
+      <div class="code-row">
+        <code id="counter-line">Cerkl meets employees in the inbox they already have, not in a new hub they have to adopt.</code>
+        <button class="copy-btn" data-copy="counter-line" type="button">Copy</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>What it is</h2>
+    <div class="cols-2">
+      <div>
+        <h3>The artifact</h3>
+        <p>
+          A scripted, animated <b>2-minute 54-second</b> corporate launch video published to LumApps' YouTube channel on <b>2026-06-01</b>
+          (<a href="https://www.youtube.com/watch?v=jOhO2gs6F0o">video link</a>).
+          16 views and 0 comments at the time of this deep-dive (24 hours post-publication) — corporate distribution, not organic content.
+          Visual style is clean B2B SaaS: animated isometric workspace illustrations, soft palette, voice-over narrator. No customer logos in-frame.
+        </p>
+      </div>
+      <div>
+        <h3>Why it ships now</h3>
+        <p>The video itself is the launch artifact for two converging milestones:</p>
+        <ul>
+          <li><b>Agent Hub + Agent Studio June 2026 GA</b> — moving from select-customer early access (Dec 2025) to general availability this month (<a href="https://www.lumapps.com/platform/meet-agent-hub">product page modified 2026-05-22</a>).</li>
+          <li><b>The &ldquo;AI Employee Hub&rdquo; category claim consolidation</b> — first staked at <a href="https://www.lumapps.com/insights/press-releases/lumapps-launches-agent-hub-defining-the-ai-powered-employee-hub-category">the Agent Hub launch on 2025-11-06</a>, echoed in the W20 homepage H1 swap, confirmed live as of 2026-06-02 (&ldquo;The leading AI Employee Hub&rdquo;). This video ties the category claim to a single watchable narrative.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Source URLs</h3>
+    <ul>
+      <li>Video: <a href="https://www.youtube.com/watch?v=jOhO2gs6F0o">youtube.com/watch?v=jOhO2gs6F0o</a></li>
+      <li>LumApps homepage (as of 2026-06-02): <a href="https://www.lumapps.com/">lumapps.com</a></li>
+      <li>Agent Hub product page: <a href="https://www.lumapps.com/platform/meet-agent-hub">lumapps.com/platform/meet-agent-hub</a></li>
+      <li>Foundational press release (2025-11-06): <a href="https://www.lumapps.com/insights/press-releases/lumapps-launches-agent-hub-defining-the-ai-powered-employee-hub-category">lumapps.com press release</a></li>
+      <li>Comeen acquisition (2026-04-21, closes May 2026): <a href="https://www.prnewswire.com/news-releases/lumapps-to-acquire-comeen-to-expand-its-ai-employee-hub-into-workplace-experience-302747935.html">prnewswire.com</a></li>
+      <li>2026-05-10 LumApps competitor profile: <code>competitor-marketing/Competitors/lumapps-2026-05-10.md</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>What it claims — the four-pillar architecture</h2>
+    <p>
+      The video is a tight Lego stack. Each pillar runs ~30 seconds. The architecture itself is the message — LumApps is teaching the buyer to think of the AI Employee Hub as a four-module platform.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar"><div class="n">PILLAR 1</div><h4>Align</h4><p>Communications — leadership updates, team conversations, knowledge.</p></div>
+      <div class="pillar"><div class="n">PILLAR 2</div><h4>Act</h4><p>Micro-Apps — approvals, service requests, shift coordination.</p></div>
+      <div class="pillar"><div class="n">PILLAR 3</div><h4>People</h4><p>Onboarding, learning, recognition, employee journeys.</p></div>
+      <div class="pillar"><div class="n">PILLAR 4</div><h4>AI Power</h4><p>Agent Hub + Agent Studio — agents that act, not just answer.</p></div>
+    </div>
+
+    <h3>Frame-by-frame breakdown</h3>
+
+    <div class="frame-card">
+      <span class="timecode">0:00 → 0:31</span>
+      <h4>Frame 1 — Problem: &ldquo;Work today is fragmented&rdquo;</h4>
+      <blockquote>&ldquo;Information lives in multiple systems. Tasks live in multiple tools. Updates come from everywhere&hellip; employees spend too much time searching, switching, and reconnecting the dots instead of moving work forward.&rdquo;</blockquote>
+      <blockquote>&ldquo;And a new layer is adding to this fractured feeling — Artificial intelligence. More tools, more agents, more complexity.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> The most important 30 seconds in the video. LumApps is framing <strong>AI sprawl itself as the problem</strong> — and positioning their AI Employee Hub as the answer to AI fragmentation, not just legacy-tool fragmentation. This is a structural shot at point-solution AI vendors (AxiosHQ, Workshop's Cici, ContactMonkey's CoAuthor, Firstup's agentic suite — and yes, Cerkl Omni AI if read uncharitably). The implicit pitch: &ldquo;buying AI tool-by-tool is making your workplace worse.&rdquo;</p>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">0:31 → 0:55</span>
+      <h4>Frame 2 — Category claim: &ldquo;LumApps brings work together&rdquo;</h4>
+      <blockquote>&ldquo;LumApps is the AI employee hub — a single platform that brings communication, workflows, and tools together, creating one place where work happens. From frontline teams to corporate offices, LumApps is built for the entire workforce and built for any workplace too.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> &ldquo;One place where work happens&rdquo; is the new category claim. Note the explicit frontline-to-corporate scope claim — this is the Beekeeper integration cashing in. They're no longer two products; the marketing now treats <strong>the entire workforce as the unit of buy</strong>.</p>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">0:55 → 1:18</span>
+      <h4>Frame 3 — The anti-replacement frame: &ldquo;Instead of replacing your stack&rdquo;</h4>
+      <blockquote>&ldquo;LumApps seamlessly integrates into the systems your company already relies on, including Microsoft 365, Google Workspace, HR systems, IT platforms, and operational tools. So <strong>instead of replacing your Stack, LumApps brings it together</strong>, giving employees a central platform to find information, take action, and get work done.&rdquo;</blockquote>
+      <div class="callout bad" style="margin-top:8px;">
+        <div class="callout-label">⚠ Worry signal for Cerkl</div>
+        <p>This is the line that should worry Cerkl most. It is mechanically identical to Cerkl's &ldquo;we don't replace what you have, we sit on top of it&rdquo; positioning — but <em>inverted</em>. LumApps doesn't claim to be a layer on top; it claims to be the <em>hub the stack feeds into</em>. The buyer comes away with the same emotional reassurance (&ldquo;I don't have to rip and replace&rdquo;) but a different mental model: LumApps becomes the <em>destination</em>, the things they already use become <em>connected sources</em>.</p>
+        <p>Cerkl Foundations' counter: <em>&ldquo;You don't need a new destination. We meet employees in the inboxes they already have.&rdquo;</em> That distinction has to be explicit in any Cerkl-vs-LumApps refresh — otherwise the buyer hears &ldquo;both vendors say they don't replace my stack&rdquo; and decides on price/scope.</p>
+      </div>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">1:18 → 1:48</span>
+      <h4>Frame 4 — Pillar 1, Align (Communications)</h4>
+      <blockquote>&ldquo;With LumApps, company communications all live in one connected environment. Leadership updates, team conversations, operational announcements, and trusted company knowledge — even culture-building communities. Employees receive the information they need when they need it, whether they're on mobile, web, email, and more. Now communications are visible, personalized, and consistent across the organization.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> The <strong>direct Cerkl-encroachment frame</strong>. The exact verbs Cerkl uses to describe Broadcast — <em>personalized, visible, consistent, right person right time across channels</em> — are now LumApps language too. The Lego brick they're snapping onto the hub <em>is</em> the comms layer, described the way Cerkl's website does. The substantive difference (LumApps' &ldquo;connected environment&rdquo; is a destination employees navigate to; Cerkl Broadcast's is the inbox employees already check) is invisible in 30 seconds of voice-over.</p>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">1:48 → 2:15</span>
+      <h4>Frame 5 — Pillar 2, Act (Micro-Apps)</h4>
+      <blockquote>&ldquo;LumApps connects tasks, workflows, and operational systems directly into the AI Hub through Micro-Apps. So instead of switching between platforms, employees complete work where they already are — handling approvals, service requests, operational checklists, and shift coordination. When automation removes friction, work moves faster.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> <strong>Micro-Apps</strong> is the new product surface to track. The 2026-05-10 profile didn't have visibility into this — it's the workflow-execution layer that lets employees complete tasks (PTO requests, approvals, safety checklists) without leaving the hub. This is also the <em>Firstup overlap</em>: Firstup's March 2026 agentic suite shipped an &ldquo;Actions&rdquo; agent for the same use cases. The category is converging.</p>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">2:15 → 2:38</span>
+      <h4>Frame 6 — Pillar 3, People (HR / EX)</h4>
+      <blockquote>&ldquo;LumApps brings onboarding, learning, recognition, and employee journeys into the flow of work, making it easy to listen, measure, and respond to employee feedback. Now HR can spend less time on paperwork and more time helping people grow.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> Standard HRIS-overlap pitch — Beekeeper + Learning Agent acquisitions cashed in as a &ldquo;People&rdquo; module. The &ldquo;listen, measure, respond to employee feedback&rdquo; line is the implicit Workvivo Seer / Forrester deep-listening counter. LumApps is now claiming all three of: comms delivery, workflow execution, <em>and</em> EX measurement on a single platform.</p>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">2:38 → 3:08</span>
+      <h4>Frame 7 — Pillar 4, AI Power (Agent Hub + Agent Studio)</h4>
+      <blockquote>&ldquo;And when we say AI powered, we mean <strong>power — not assistance</strong> that simply surface information. Through Agent Hub, LumApps brings trusted and powerful AI agents into the Employee Hub. Now employees know which ones to use, and organizations keep <strong>governance and control</strong>. With Agent Studio, organizations can create and deploy their own agents that are connected to company knowledge and to all the tools that employees rely on every day. The workplace stops being a collection of AI tools and, instead, a focused resource that works for employees.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> Two tells in this segment:</p>
+      <ol style="margin:6px 0 0; padding-left: 20px; font-size: 14px; color: var(--muted);">
+        <li><strong>&ldquo;Power, not assistance that simply surfaces information&rdquo;</strong> is a direct shot at <strong>Staffbase Navigator</strong> (retrieval-only permission-aware AI search) and arguably at Simpplr Comms AI. LumApps is claiming the agentic/action half of the AI wave; Staffbase has claimed the knowledge/search half. <strong>The IC-AI category is splitting in two.</strong></li>
+        <li><strong>&ldquo;Governance and control&rdquo;</strong> — third vendor in 30 days to lead with governance language (Simpplr AI Control Center 2026-05-27, Staffbase AI Navigator narrative since Q1 2026, now LumApps). This is now a <strong>category-language shift</strong>; the Cerkl counter (<em>&ldquo;Governance is what you market when you don't trust your AI; we market what we measure&rdquo;</em> — already in <code>shared/competitors.md</code> vs. Simpplr) applies to LumApps too.</li>
+      </ol>
+    </div>
+
+    <div class="frame-card">
+      <span class="timecode">3:08 → 3:24</span>
+      <h4>Frame 8 — Close</h4>
+      <blockquote>&ldquo;When work is organized around people instead of systems, teams stay aligned, decisions move faster, AI works alongside employees to help move work forward, and organizations perform at their best. That's LumApps, and that's where work comes together.&rdquo;</blockquote>
+      <p class="read"><b>Read:</b> &ldquo;Where work comes together&rdquo; is the new tagline — the <em>defensible</em> version of &ldquo;AI Employee Hub.&rdquo; Short enough for a homepage, abstract enough to outlive the AI cycle. Watch for it on sales decks and trade-show booths over the next 90 days.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Full annotated transcript (primary evidence)</h2>
+    <p>
+      Pulled 2026-06-02 via <code>youtube_transcript_api</code> (auto-generated captions). Section markers are mine.
+      Full raw transcript also at <code>/tmp/lumapps-aieh-transcript.txt</code> for the session.
+    </p>
+    <div class="transcript">
+      <div class="transcript-head">
+        <span><b>Source:</b> youtube.com/watch?v=jOhO2gs6F0o</span>
+        <span>~2:54 runtime · auto-captions</span>
+      </div>
+<pre><code>[0:00 — Problem]
+- Work today is fragmented.
+Information lives in multiple systems.
+Tasks live in multiple tools.
+Updates come from everywhere.
+As a result, employees spend too much time searching,
+switching, and reconnecting the dots instead of moving work forward.
+
+[0:31 — AI escalation]
+And a new layer is adding to this fractured feeling -
+Artificial intelligence.
+More tools, more agents, more complexity.
+Organizations don't need more technology.
+They need a connected way to work.
+That's why LumApps brings work together.
+
+[0:55 — Category claim]
+LumApps is the AI employee hub - a single platform
+that brings communication, workflows, and tools together,
+creating one place where work happens.
+From frontline teams to corporate offices,
+LumApps is built for the entire workforce
+and built for any workplace too.
+
+[1:18 — Anti-replacement frame]
+LumApps seamlessly integrates into the systems your
+company already relies on, including Microsoft 365,
+Google Workspace, HR systems, IT platforms, and operational tools.
+So instead of replacing your Stack, LumApps brings it together,
+giving employees a central platform to find information,
+take action, and get work done.
+
+[1:48 — Pillar 1: Align (Communications)]
+But before work can get done, everyone needs to be aligned first.
+With LumApps, company communications all live in one connected environment.
+Leadership updates, team conversations, operational announcements,
+and trusted company knowledge - even culture building communities.
+Employees receive the information they need when they need it,
+whether they're on mobile, web, email, and more.
+Now communications are visible, personalized, and consistent across the organization.
+
+[2:15 — Pillar 2: Act (Micro-Apps)]
+And from alignment comes action.
+LumApps connects tasks, workflows, and operational systems
+directly into the AI Hub through Micro-Apps.
+So instead of switching between platforms, employees
+complete work where they already are - handling approvals,
+service requests, operational checklists, and shift coordination.
+When automation removes friction, work moves faster.
+
+[2:38 — Pillar 3: People (HR)]
+But behind this hard work are your people.
+LumApps brings onboarding, learning, recognition,
+and employee journeys into the flow of work, making it easy
+to listen, measure, and respond to employee feedback.
+Now HR can spend less time on paperwork
+and more time helping people grow.
+
+[2:50 — Pillar 4: AI Power (Agent Hub + Agent Studio)]
+And when we say AI powered, we mean power - not assistance
+that simply surface information.
+Through Agent Hub, LumApps brings trusted and powerful AI agents
+into the Employee Hub.
+Now employees know which ones to use,
+and organizations keep governance and control.
+With Agent Studio, organizations can create and deploy their own
+agents that are connected to company knowledge and to all the tools
+that employees rely on every day.
+The workplace stops being a collection of AI tools
+and, instead, a focused resource that works for employees.
+
+[3:08 — Close]
+When work is organized around people instead of systems,
+teams stay aligned, decisions move faster,
+AI works alongside employees to help move work forward,
+and organizations perform at their best.
+That's LumApps, and that's where work comes together.</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Who it's for</h2>
+    <div class="personas">
+      <div class="persona">
+        <h4>Primary user (the video's target)</h4>
+        <p>Director-to-VP-level IT + IC + HR co-buyer at a <b>5,000+ employee org</b> running mixed Google Workspace + Microsoft 365 with a meaningful frontline workforce. The frontline-to-corporate-offices line is for the buyer with both populations under the same roof.</p>
+      </div>
+      <div class="persona">
+        <h4>Strong fit when</h4>
+        <p>Buyer is <em>already considering</em> a hub-class platform consolidation, has IT bandwidth for 8–24-week implementation, has a <b>$150k+ annual budget envelope</b>, and wants AI agents (not just AI editor) as part of the buy.</p>
+      </div>
+      <div class="persona">
+        <h4>Weak fit when</h4>
+        <p>Buyer wants a delivery layer on top of existing channels (<b>Cerkl's wedge</b>), is under 2,000 employees, has IC owning the budget without IT alignment, or needs to launch in weeks. The video isn't <em>for</em> these buyers — but they may see it anyway and need a Cerkl counter-narrative pre-loaded.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>How it slots into Cerkl's competitive set / positioning</h2>
+    <div class="stack-cards">
+      <div class="stack-card">
+        <h4>1 · AI Employee Hub claim is operational</h4>
+        <p>The 2026-05-10 profile said the <em>positioning</em> was live but the product wasn't (Agent Hub still in early access). The 2026-06-01 video confirms: Agent Hub + Agent Studio hit GA this month, and LumApps is now actively running the buyer-facing campaign for the category claim. <code>shared/competitors.md</code> should treat this as the present-tense LumApps, not a forecast.</p>
+      </div>
+      <div class="stack-card">
+        <h4>2 · &ldquo;We don't replace your stack&rdquo; — Cerkl must out-flank</h4>
+        <p>Both vendors are now claiming the same emotional reassurance. The substantive difference — <em>Cerkl meets employees in the inbox/channel they already use; LumApps asks employees to adopt a new hub as the destination</em> — needs to be the explicit talk track in any Cerkl AE response to a LumApps mention, and explicit copy on <code>cerkl.com/broadcast/versus/lumapps</code>. <b>Until then, Cerkl loses the messaging tie on this dimension.</b></p>
+      </div>
+      <div class="stack-card">
+        <h4>3 · &ldquo;Power, not assistance&rdquo; bifurcates the IC-AI market</h4>
+        <p>Staffbase Navigator + Simpplr Comms AI are now bracketed as <em>assistance</em> (search and content generation). LumApps Agent Hub + Firstup's Actions agent are <em>power</em> (workflow execution). Cerkl Omni AI sits in a third bucket — <strong>delivery intelligence</strong> (right message, right person, right channel, right time). This is the bucket Cerkl should claim out loud in 2026-Q3 content.</p>
+      </div>
+      <div class="stack-card">
+        <h4>4 · Governance is now a three-vendor cliché</h4>
+        <p>Staffbase, Simpplr, and now LumApps all lead with governance/control language in the AI segment. The Cerkl counter — <em>&ldquo;we market what we measure: delivered, opened, read, by employee&rdquo;</em> — was already added vs. Simpplr in W22; it should be lifted to a workspace-wide AI talking point and applied vs. LumApps too.</p>
+      </div>
+      <div class="stack-card">
+        <h4>5 · Micro-Apps is a new surface to track</h4>
+        <p>The 2026-05-10 profile flagged Agent Hub as the AI orchestration story but didn't have Micro-Apps named. Treat Micro-Apps as the LumApps response to <b>Firstup's Actions agent</b> and <b>ContactMonkey's Approval Workflows</b>. The workflow-execution category is now contested across at least four vendors.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Comparison to alternatives</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>Alternative</th><th>How their messaging compares to this video</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-name">Staffbase</td>
+          <td>Same buyer demo, <em>opposite</em> AI lane. Staffbase Navigator = &ldquo;permission-aware AI search&rdquo; (knowledge/retrieval). LumApps video explicitly rejects this — <em>&ldquo;power, not assistance that simply surfaces information.&rdquo;</em> Buyer who watches both videos in one sitting hears &ldquo;do you want AI that <em>finds</em> things or AI that <em>does</em> things?&rdquo; — useful frame for sales to weaponize: Cerkl is closer to <em>&ldquo;makes sure things get to the right people&rdquo;</em> which doesn't fit either side.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Simpplr <span style="font-weight:400; color:var(--muted)">(Comms AI + AI Control Center)</span></td>
+          <td>Same governance pitch; Simpplr leans into IT co-buyer reassurance (&ldquo;AI Control Center&rdquo;), LumApps leans into <em>worker reassurance</em> (&ldquo;employees know which ones to use&rdquo;). LumApps' framing is more end-user-warm; Simpplr's is more IT-procurement-cold. Both are betting the buyer needs to be told the AI is safe.</td>
+        </tr>
+        <tr>
+          <td class="alt-name">Firstup <span style="font-weight:400; color:var(--muted)">(March 2026 agentic suite)</span></td>
+          <td>The <em>closest direct parallel</em>. Both are claiming the action/orchestration half of the AI wave. Firstup is more comms-personalization-shaped (Audience Builder, Content Creator, Insights); LumApps is more workplace-OS-shaped (Micro-Apps for approvals, shift coordination, service requests). LumApps owns &ldquo;people complete work in the hub&rdquo;; Firstup owns &ldquo;comms get delivered intelligently.&rdquo; Cerkl's lane is between/under them — <strong>delivery measurement across whatever the buyer already runs.</strong></td>
+        </tr>
+        <tr>
+          <td class="alt-name">Workvivo <span style="font-weight:400; color:var(--muted)">(Seer + Workvivo AI)</span></td>
+          <td>Engagement-first; LumApps now claims the engagement/EX pillar too (&ldquo;People&rdquo; module). Workvivo wins when KPI is engagement/culture; LumApps now claims engagement <em>as a byproduct of platform consolidation</em>, which is harder to measure but easier to sell to IT.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="axis-note">
+      <b>Decision-relevant axis: where the employee experiences work.</b> LumApps wants the hub to be the destination. Cerkl's wedge is that the employee already has a destination — their inbox — and the right answer is to deliver to <em>it</em>, not to ask them to adopt a new one.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Gotchas</h2>
+    <div class="callout warn">
+      <div class="callout-label">/products/ URL pattern in script doesn't exist</div>
+      <p>Agent Hub lives at <code>/platform/meet-agent-hub</code>, not <code>/products/ai-hub</code>. Micro-Apps doesn't have its own page yet (only mentioned in the video and inside the Agent Hub page). Suggests <strong>Micro-Apps is a feature-of-Agent-Hub branding, not a separate SKU</strong> — useful for AEs to know if a prospect asks (&ldquo;Is Micro-Apps something I have to buy separately? No, it's part of Agent Hub&rdquo;).</p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">&ldquo;Frontline to corporate offices&rdquo; — Beekeeper integration is mid-flight</div>
+      <p>The 2026-05-10 profile flagged that the technical integration is still mid-flight 10 months post-merger (single-sign-on, unified analytics, content workflows). A Cerkl AE in a competitive deal should ask the prospect: <em>&ldquo;If LumApps loses Beekeeper integration parity tomorrow, do you still have a deal?&rdquo;</em></p>
+    </div>
+    <div class="callout warn">
+      <div class="callout-label">Agent Hub GA is June 2026 — this month</div>
+      <p>No field-tested customer base at GA; the buyer who closes in June is the proof-of-concept customer. <strong>Cerkl Foundations is GA-and-proven.</strong></p>
+    </div>
+    <div class="callout info">
+      <div class="callout-label">Errata from today's daily recap</div>
+      <p>The W22 SEO refresh flagged in the daily recap was actually a 2026-04-02 publish modified 2026-05-22, not a 2026-05-27 new piece. Sub-agent 2a in today's recap reported the wrong publish date. The piece is still strategically relevant (LumApps defending intranet as their owned category alongside the AI Employee Hub rebrand), but the daily recap watchlist should be corrected on the next regeneration. Not load-bearing for the deep-dive's conclusions.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Community signal</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">16</div><div class="lbl">YouTube views (24h)</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">comments</div></div>
+      <div class="stat"><div class="num">2:54</div><div class="lbl">runtime</div></div>
+      <div class="stat"><div class="num">$650M</div><div class="lbl">Bridgepoint, closing 2026-05-27</div></div>
+      <div class="stat"><div class="num">2026-06-01</div><div class="lbl">published</div></div>
+    </div>
+    <ul>
+      <li><b>Video itself:</b> 16 views, 0 comments, 24 hours old at time of write — corporate distribution video, not organic. No practitioner reception data yet.</li>
+      <li><b>Recent LumApps press cycle (last 60 days):</b> Bridgepoint $650M closing 2026-05-27, Comeen acquisition closing May 2026, Forrester Wave Leader Q2 2026, Agent Hub GA June 2026 — heavy, coordinated cadence. The video sits inside a 6-week launch arc, not a standalone artifact.</li>
+      <li><b>Practitioner sentiment</b> (from the 2026-05-10 profile, still valid): G2 Niche status persists; implementation complexity remains the top complaint. The video doesn't address either gap — it's a top-of-funnel category-claim asset, not an answer to known objections.</li>
+      <li><b>No prompt-injection content detected</b> in the YouTube transcript, the product page, or any of today's fetched LumApps surfaces.</li>
+    </ul>
+
+    <div class="quotes">
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>&ldquo;Instead of replacing your Stack, LumApps brings it together, giving employees a central platform to find information, take action, and get work done.&rdquo;</p>
+        <div class="who">— LumApps voice-over, 1:18 mark · <a href="https://www.youtube.com/watch?v=jOhO2gs6F0o">video source</a></div>
+      </div>
+      <div class="quote">
+        <span class="q-mark">&ldquo;</span>
+        <p>&ldquo;When we say AI powered, we mean power — not assistance that simply surface information.&rdquo;</p>
+        <div class="who">— LumApps voice-over, 2:50 mark · the agentic/retrieval split, on record · <a href="https://www.youtube.com/watch?v=jOhO2gs6F0o">video source</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2><span class="num">09</span>Recommendation</h2>
+    <p style="font-size:16px;"><b>Worry signal — update positioning.</b> Not a panic, but the &ldquo;don't replace your stack&rdquo; frame is the most directly competitive messaging move LumApps has made against Cerkl in 2026, and the AE team needs the counter-line in their pocket this week.</p>
+
+    <div class="reco-grid">
+      <div class="reco-cell">
+        <h4>Primary action</h4>
+        <p>Update <code>shared/competitors.md</code> LumApps row. Roll up the two prior W20/W21 entries into a single 2026-06-02 entry that cites this video as the canonical reference for the AI Employee Hub category claim. Add the four-pillar architecture (Align / Act / People / AI Power) as the messaging map, and add the &ldquo;<em>meets employees in the inbox they already have, not in a new hub they have to adopt</em>&rdquo; Cerkl counter-line.</p>
+      </div>
+      <div class="reco-cell">
+        <h4>First thing to do</h4>
+        <p>Send the video link + transcript section + the Cerkl counter-line to the AE team in a Slack note this week. <em>&ldquo;LumApps just shipped the canonical version of the AI Employee Hub pitch. Here's the 30-second counter.&rdquo;</em></p>
+      </div>
+      <div class="reco-cell">
+        <h4>Time-box</h4>
+        <p>30 minutes for the <code>competitors.md</code> update; 15 minutes for the AE note; optional 90-minute block in next 2 weeks to refresh <code>cerkl.com/broadcast/versus/lumapps</code> (still likely talking about LumApps-as-intranet per the 2026-05-10 profile's open question).</p>
+      </div>
+      <div class="reco-cell">
+        <h4>What would change my mind / escalate</h4>
+        <ul>
+          <li>LumApps publishes a &ldquo;vs. Cerkl&rdquo; or &ldquo;vs. delivery layer&rdquo; page.</li>
+          <li>A net-new LumApps customer announcement names Cerkl as the displaced incumbent.</li>
+          <li>Agent Hub + Micro-Apps at GA gets a &ldquo;Comms Orchestrator&rdquo; agent that does cross-channel delivery + segmentation — direct Cerkl Omni AI encroachment.</li>
+          <li>Forrester / Gartner names LumApps a Leader in a <em>comms-specific</em> (not intranet-specific) category in 2026-Q3.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Open questions</h2>
+
+    <details class="q">
+      <summary>Does the video describe a product that's actually GA on 2026-06-01, or is Micro-Apps still pre-GA?</summary>
+      <div class="q-body">
+        Product page (modified 2026-05-22) describes Agent Hub + Agent Studio as if shipping; Micro-Apps doesn't have its own page. Worth a follow-up sub-agent on the actual GA scope of Micro-Apps.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What does the video's mid-funnel sibling look like?</summary>
+      <div class="q-body">
+        Corporate launch videos like this usually have a 60-second cut for paid ads and a 6-minute walkthrough for sales decks. Worth checking if either has shipped — those will be more direct competitive intel than the brand video.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is the Cerkl vs. LumApps SEO page now stale enough to actively cost deals?</summary>
+      <div class="q-body">
+        Open question from the 2026-05-10 profile still unanswered. Worth a 15-minute audit by Travis or content team.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>What happens to the LumApps &ldquo;Why LumApps&rdquo; nav-first compression (noted in W22)?</summary>
+      <div class="q-body">
+        Now that the video and homepage both lead with the AI Employee Hub claim, are buyers being routed straight to a product surface, or to a longer narrative page? Worth a follow-up nav audit in W24.
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Is Comeen (workplace experience / signage) part of the AI Employee Hub as defined in the video?</summary>
+      <div class="q-body">
+        No public confirmation yet. The video doesn't mention rooms, desks, or signage. Either Comeen integration is a 2027 story, or LumApps is intentionally keeping &ldquo;AI Employee Hub&rdquo; narrower than &ldquo;the whole company.&rdquo; Worth tracking.
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2><span class="num">11</span>Security note</h2>
+    <p>
+      Web content fetched for this deep-dive (LumApps homepage, Agent Hub product page, YouTube transcript) was treated as untrusted data. No prompt-injection attempts were observed in any fetched page or in the transcript itself. The YouTube transcript was retrieved via the public <code>youtube-transcript-api</code> library, not the YouTube Data API caption endpoint (which requires OAuth).
+    </p>
+  </section>
+
+  <footer>
+    Generated 2026-06-02 · Source markdown: <a href="lumapps-ai-employee-hub-video-2026-06-02.md">lumapps-ai-employee-hub-video-2026-06-02.md</a>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      const text = target.textContent.trim();
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch(e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>

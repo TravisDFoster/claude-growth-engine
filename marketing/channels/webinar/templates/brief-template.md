@@ -6,8 +6,59 @@
 **Featuring:** [Cerkl presenter] and [Partner name + role]
 **Giveaway:** [What one attendee will receive — typically offered by the partner]
 **Slidedeck:** [Link once created]
-**Mutual Action Plan:** [Title or Google Docs link]
+**Mutual Action Plan:** [Drive link — filled in by `webinar-project-init`, Step 4a]
+**Google Doc Brief:** [Drive link — filled in by `webinar-project-init`, Step 4b]
 **Generic (untracked) Registration Link:** [Zoom registration URL — base, no source tag]
+
+---
+
+## What we need from you, [SPEAKER_FIRST_NAME] — for the [EVENT_DATE] launch
+
+This brief drives the registration page, promo emails, outline, and on-stage flow. Most of it depends on **your POV**. Please respond to the prompts below — either type answers directly under each item, or free-write your take on the blocks and I'll structure them into the brief sections below.
+
+If you're not sure on any single item, leave it blank — we'll fill it in together.
+
+**Working deadline: [CONTENT_DEV_DATE]** — the registration page, Canva assets, and pre-event blog post all lock that day, so the earlier the better.
+
+### Quick orientation
+
+- **Audience:** Foundations ICP — HR generalists / ops leads at 50–500 person companies. Pre-evaluation, not yet category-aware.
+- **CTA:** Foundations free sign-up (frictionless). Not "request a demo." This shapes the framing throughout.
+
+### Logistics
+
+1. **Confirm date & time** — currently [EVENT_DATE] at [EVENT_TIME]. Does this still work?
+2. **Updated bio + headshot** (current is fine if recent).
+3. **Preferred webinar title** — current working title: "[WORKING_TITLE]". Replace if you'd call it something different.
+
+### Topic & POV
+
+4. Your **one-sentence thesis** on the topic — what do most teams get wrong?
+5. If attendees leave believing **one thing**, what is it?
+6. **2–4 supporting pillars** or sub-themes that hold up your thesis.
+
+### Concrete substance
+
+7. **3–5 specific failure points** you see in the field — concrete examples (dashboards your audience asks for that teams can't deliver; metrics teams chase that don't matter; reports that hide rather than reveal).
+8. **Three learning areas, with 2–3 concrete takeaways per area** — what should attendees be able to *do* differently after?
+9. **Demo or live moment** — anything on-screen you'd show? If yes: what, and for how long?
+
+### Engagement
+
+10. **2–3 polling questions** for live audience self-diagnosis (these double as audience data + a structural pivot in the talk).
+11. **Giveaway / offer** — yes/no? What and what's the value?
+
+### Voice
+
+12. **3–5 paragraphs of synopsis in your voice** — what you'd actually say if asked "what's this webinar about?" Don't sanitize.
+
+### Anything else
+
+13. Anything I haven't asked about that you want attendees to walk away with?
+
+---
+
+*Sections below are the structured brief that will get populated from your answers above. Skim if useful, otherwise jump straight to filling in the blocks.*
 
 ---
 

@@ -35,6 +35,8 @@ For IC strategy: the decline rebuts the comfortable narrative that engagement pr
 - [[listening-cadence]] — Qualtrics-named moderator (87/44 gap)
 - [[change-fatigue]] — competing 2026 frame
 - [[change-saturation]] — Prosci's threshold model
+- [[span-of-control]] — Gallup-anchored; weekly meaningful feedback triples engagement regardless of span
+- [[manager-burnout-structural-thesis]] — manager bandwidth is upstream of any engagement-program effectiveness
 
 ## Practitioner Voices
 
@@ -47,6 +49,7 @@ For IC strategy: the decline rebuts the comfortable narrative that engagement pr
 |---|---|---|
 | [[state-of-the-global-workplace-2026]] | 2026-04 | 2025 global engagement at 20%, declining for second year; 13pp remote-vs-frontline gap |
 | [[qualtrics-change-engagement-2026-05-21]] | 2026-05-21 | n=33,831 finding that more change = more engaged; conditional on type + cadence; counter-research from Gallup / Gallagher / Perceptyx / Prosci |
+| [[gallup-span-of-control-2026]] | 2026-01-14 | Span time series + manager-talent + weekly-feedback moderators; 3x engagement multiplier on weekly meaningful feedback |
 
 ## Open Questions
 

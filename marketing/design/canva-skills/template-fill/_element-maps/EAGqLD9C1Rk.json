@@ -1,0 +1,69 @@
+{
+  "template_id": "EAGqLD9C1Rk",
+  "name": "Square post_style 1",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 body (864x155)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "body (864x155)",
+          "element_id": "PBlcp1xc1X7PKrSJ-LB2Tj7rrYGVP8Xb6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 265.9224416997331,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 154.800025
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAFZiXCGoq8`",
+          "current_asset_id": "MAFZiXCGoq8",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBlcp1xc1X7PKrSJ",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "380x146, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "380x146",
+          "role": "logo",
+          "element_id": "PBlcp1xc1X7PKrSJ-LBb5Zx43xyj2sQKR",
+          "occurrence": 1,
+          "parent_element_id": "PBlcp1xc1X7PKrSJ",
+          "container_type": "RECT",
+          "position": {
+            "top": 84.28378378378382,
+            "left": 71.51351351351354
+          },
+          "dimension": {
+            "width": 379.6278897474401,
+            "height": 145.54423888080768
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBlcp1xc1X7PKrSJ",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW0_vRp0",
+  "notes": "Bare minimum 1-page text post. The illustration shown in render is baked into full-bg fill. No CTA or button \u2014 just headline + logo.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW0_vRp0"
+}

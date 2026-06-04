@@ -1,0 +1,46 @@
+template_id: EAGqLMN8_Po
+page_index: 1
+design_title: rachel-folz-speaker-card-2026-06-25
+aspect_ratio: 1:1 1080x1080
+
+# Solo render: fill speaker 1, delete speaker 2 entirely.
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]   # Rachel Folz canonical headshot — speaker 1 only
+
+delete_slots:
+  - {role: headshot, occurrence: 2}                       # remove speaker 2 frame group + decorative SHAPE
+  - {element_id: "PBCV6H4c0hBh21lc-LBzjddjR0DYNwzNR"}    # remove speaker 2 "Name" text
+  - {element_id: "PBCV6H4c0hBh21lc-LBwpcbfPcXVQW3df"}    # remove speaker 2 "Title" text
+
+commit_mode: auto
+
+# Note: this template has layered placeholder frames.
+# template-fill will return manual_drag_required[] for the headshot —
+# Furqan drags the inserted image into the placeholder frame in Canva's UI.
+
+# === Render result (written by webinar-canva-render) ===
+result:
+  rendered_at: "2026-06-02T15:30:00Z"
+  design_id: "DAHLcB5p1Xs"
+  edit_url: "https://www.canva.com/design/DAHLcB5p1Xs/edit"
+  view_url: "https://www.canva.com/design/DAHLcB5p1Xs/view"
+  ops_performed: 8   # 7 original + 1 follow-up replace_text for Title
+  warnings: []
+  followup_fixes:
+    - applied_at: "2026-06-02T15:48:00Z"
+      transaction_id: "1470930436371443206"
+      reason: "First render skipped 'Title' due to an over-cautious orchestrator brief. Live richtexts[] had the exact-match element (text='Title', element_id PBCV6H4c0hBh21lc-LBGKGm5BDH3KpyTq, distinct position/size from the 'Webinar title' headline) — the subagent could have disambiguated and just done it."
+      fix: "replace_text on element_id PBCV6H4c0hBh21lc-LBGKGm5BDH3KpyTq → 'Head of Product, Cerkl'"
+      process_change: "webinar-canva-render Step 4 subagent brief updated 2026-06-02 to drop the blind skip-on-substring rule and instead use live richtexts[] (exact text + position + dimension + font size) for context-based disambiguation. Future renders shouldn't need follow-up Title fixes."
+  manual_drag_required:
+    - role: "headshot"
+      asset_id: "MAFZdaEt2Wc"
+      subject: "Rachel Folz"
+      instruction: "In Canva, drag the inserted image into the speaker 1 placeholder frame. Canva auto-fits it to the rounded frame."

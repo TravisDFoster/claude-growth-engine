@@ -1,0 +1,129 @@
+{
+  "template_id": "EAGqLEHWJkk",
+  "name": "Square post_style 4",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Firstname Lastname\" \u2014 speaker name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "speaker name",
+          "element_id": "PBy45nxw5mcY9l9P-LBB7Vz3P4sZkhWVM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 415.20606693685,
+            "left": 178.33253163178665
+          },
+          "dimension": {
+            "width": 365.3125,
+            "height": 44.53336
+          }
+        },
+        {
+          "raw": "\"Company / Position\" \u2014 speaker title",
+          "placeholder": "Company / Position",
+          "role_hint": "speaker title",
+          "element_id": "PBy45nxw5mcY9l9P-LBKRbydms9yQ04YQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 467.8329227274909,
+            "left": 178.33253163178665
+          },
+          "dimension": {
+            "width": 254.703125,
+            "height": 35.13332
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet...\" \u2014 testimonial quote (724x286)",
+          "placeholder": "Lorem ipsum dolor sit amet...",
+          "role_hint": "testimonial quote (724x286)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAFZibaLuGo`",
+          "current_asset_id": "MAFZibaLuGo",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBy45nxw5mcY9l9P",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "449x295, role: decorative (curved corner shape top-right), current asset_id: `MAFZjd4R99g` \u2014 layered",
+          "current_asset_id": "MAFZjd4R99g",
+          "dimensions": "449x295",
+          "role": "decorative",
+          "layered": true,
+          "element_id": "PBy45nxw5mcY9l9P-LBFMWgz84R1hf9lJ",
+          "occurrence": 1,
+          "parent_element_id": "PBy45nxw5mcY9l9P",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 630.9007581139867
+          },
+          "dimension": {
+            "width": 449.0992418860133,
+            "height": 295.1022680242645
+          },
+          "editable": true
+        },
+        {
+          "raw": "381x146, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "381x146",
+          "role": "logo",
+          "element_id": "PBy45nxw5mcY9l9P-LB0rfGfcQLRFMdPQ",
+          "occurrence": 1,
+          "parent_element_id": "PBy45nxw5mcY9l9P",
+          "container_type": "RECT",
+          "position": {
+            "top": 108,
+            "left": 73.69299175671378
+          },
+          "dimension": {
+            "width": 380.7424251245919,
+            "height": 145.85503915387397
+          },
+          "editable": true
+        },
+        {
+          "raw": "566x288, role: decorative (curved shape bottom-right), current asset_id: `MAFZjU488WI` \u2014 layered",
+          "current_asset_id": "MAFZjU488WI",
+          "dimensions": "566x288",
+          "role": "decorative",
+          "layered": true,
+          "element_id": "PBy45nxw5mcY9l9P-LB2kXnG5fc3Njncm",
+          "occurrence": 1,
+          "parent_element_id": "PBy45nxw5mcY9l9P",
+          "container_type": "RECT",
+          "position": {
+            "top": 792.1349616807838,
+            "left": 630.9007581139867
+          },
+          "dimension": {
+            "width": 565.8280851483362,
+            "height": 287.86503831921607
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBy45nxw5mcY9l9P",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW-fc51M",
+  "notes": "Testimonial card with curved orange decorative shapes flanking. Quote card SHAPE (864x590) and round headshot frame (324x324 SHAPE) are NOT image fills \u2014 they are SHAPE-only placeholders. Headshot insertion would require adding a fill into the round SHAPE. No editable headshot photo-slot fill currently. Decorative corner shapes are images.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW-fc51M"
+}

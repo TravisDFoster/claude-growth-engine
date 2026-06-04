@@ -48,6 +48,7 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 - [[goldilocks-zone-of-change]] — Granger / Qualtrics conditional engagement frame
 - [[change-fatigue]] — competing frame; Gallagher / Perceptyx anchored
 - [[change-saturation]] — Prosci threshold model
+- [[manager-burnout-structural-thesis]] — Karian-coined; 2023→2025 WLB divergence between middle managers and executives is an EX-measurement signal worth surfacing
 
 ## Practitioner Voices
 

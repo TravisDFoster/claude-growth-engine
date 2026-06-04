@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLFOg67s",
+  "name": "Facebook_Linkedin post_style 3",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW3VFy5Y",
+  "notes": "Stat-card variant for 1200x628. Left-side circular image well is SHAPE only (no editable fill).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3VFy5Y"
+}

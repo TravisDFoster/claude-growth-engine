@@ -1,0 +1,154 @@
+{
+  "template_id": "EAGqLE7tM_8",
+  "name": "Shorts interview question template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "none (empty placeholder slide)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "none"
+        }
+      ],
+      "page_id": "PBTGTwrNYG6QBkH9",
+      "dimension": {
+        "width": 1080,
+        "height": 1920
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Question\" \u2014 question text (943x75) inside top banner SHAPE",
+          "placeholder": "Question",
+          "role_hint": "question text (943x75) inside top banner SHAPE",
+          "element_id": "PBKrCvlyrkcM4VhJ-LBgB1VCH10D793fP-LBcLYm6sZWcpHgxr",
+          "container_type": "TEXT",
+          "position": {
+            "top": 241.06225683623694,
+            "left": 68.22648083623676
+          },
+          "dimension": {
+            "width": 943.5470383275265,
+            "height": 75.133285
+          }
+        },
+        {
+          "raw": "\"Name\" \u2014 speaker name (353x77, bottom-left card)",
+          "placeholder": "Name",
+          "role_hint": "speaker name (353x77, bottom-left card)",
+          "element_id": "PBKrCvlyrkcM4VhJ-LBfgN0WpDbjRMrRp-LBhH3MT667WwNX2h",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1476.9058256294506,
+            "left": 134.23038116055454
+          },
+          "dimension": {
+            "width": 352.5140902523251,
+            "height": 77.235245
+          }
+        },
+        {
+          "raw": "\"Title\" \u2014 speaker title (469x46, bottom-left card)",
+          "placeholder": "Title",
+          "role_hint": "speaker title (469x46, bottom-left card)",
+          "element_id": "PBKrCvlyrkcM4VhJ-LBfgN0WpDbjRMrRp-LBcq15kqqXsQ4X6l",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1556.1704813696606,
+            "left": 138.88716070211555
+          },
+          "dimension": {
+            "width": 468.8264316514556,
+            "height": 45.575553557157164
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "251x140, role: logo (Cerkl wordmark top-right), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "251x140",
+          "role": "logo",
+          "element_id": "PBKrCvlyrkcM4VhJ-LB3DfqWd6kLftv4y",
+          "occurrence": 1,
+          "parent_element_id": "PBKrCvlyrkcM4VhJ",
+          "container_type": "RECT",
+          "position": {
+            "top": 46.999999999999986,
+            "left": 783.5766874214862
+          },
+          "dimension": {
+            "width": 251.36460412082806,
+            "height": 140.13357721021774
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBKrCvlyrkcM4VhJ",
+      "dimension": {
+        "width": 1080,
+        "height": 1920
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "none"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1920) `MAFn5Wxw57k`",
+          "current_asset_id": "MAFn5Wxw57k",
+          "dimensions": "1080x1920",
+          "role": "full-bg",
+          "element_id": "PBBf2h65Jnc2LRgd",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "622x313, role: photo-slot (decorative bar/lockup), current asset_id: `MAFn5OsB4OY` \u2014 layered",
+          "current_asset_id": "MAFn5OsB4OY",
+          "dimensions": "622x313",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBBf2h65Jnc2LRgd-LBwtTRPJZQwkBHk9",
+          "occurrence": 1,
+          "parent_element_id": "PBBf2h65Jnc2LRgd",
+          "container_type": "RECT",
+          "position": {
+            "top": 652.1932137378701,
+            "left": 228.98949444569428
+          },
+          "dimension": {
+            "width": 622.0210111086114,
+            "height": 312.57023727724606
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBBf2h65Jnc2LRgd",
+      "dimension": {
+        "width": 1080,
+        "height": 1920
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "shorts-interview-question",
+  "canvas": "1080x1920",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW5KMqnE",
+  "notes": "9:16 vertical Shorts template \u2014 VERY minimal. Page 1 is intentionally empty (for video footage overlay). Page 2 is the question card overlay (title bar + speaker name/title). Page 3 is an end-card with bg + a decorative content card. Designed to overlay short-form video; most \"image\" content comes from video footage layered behind. Layered-frame: yes for p3 (the 622x313 card sits atop bg).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW5KMqnE"
+}

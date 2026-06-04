@@ -1,0 +1,107 @@
+{
+  "template_id": "EAGqLPaOVTE",
+  "name": "Twitter post_style 2 (dup ID)",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad\" \u2014 title",
+          "placeholder": "Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad",
+          "role_hint": "title",
+          "element_id": "PBpy8b8smlg8pbvN-LBwSKsY3hyTqCz9q",
+          "container_type": "TEXT",
+          "position": {
+            "top": 225.46741687455636,
+            "left": 62.799999999999955
+          },
+          "dimension": {
+            "width": 640.2350089825891,
+            "height": 216.066685
+          }
+        },
+        {
+          "raw": "\"Read the report\" \u2014 CTA pill (SHAPE)",
+          "placeholder": "Read the report",
+          "role_hint": "CTA pill (SHAPE)",
+          "element_id": "PBpy8b8smlg8pbvN-LB1YzxHTtpmQPvMS",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 480.80746577896866,
+            "left": 62.79999999999998
+          },
+          "dimension": {
+            "width": 279.6302995980497,
+            "height": 74.89253422103137
+          }
+        },
+        {
+          "raw": "\"DELETE\\nplace image or graphic here\" \u2014 image-slot instructional label",
+          "placeholder": "DELETE\\nplace image or graphic here",
+          "role_hint": "image-slot instructional label"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg, role: full-bg, current asset_id: `MAFZQNF_kII`",
+          "current_asset_id": "MAFZQNF_kII",
+          "role": "full-bg",
+          "element_id": "PBpy8b8smlg8pbvN",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "299x115, role: logo (Broadcast lockup), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "299x115",
+          "role": "logo",
+          "element_id": "PBpy8b8smlg8pbvN-LBSdQ9jzw0fWH5vm",
+          "occurrence": 1,
+          "parent_element_id": "PBpy8b8smlg8pbvN",
+          "container_type": "RECT",
+          "position": {
+            "top": 98.61993963050418,
+            "left": 37.228301783494715
+          },
+          "dimension": {
+            "width": 298.99798037734627,
+            "height": 114.54032767847264
+          },
+          "editable": true
+        },
+        {
+          "raw": "414x414, role: decorative-badge (circular illustration), current asset_id: `MAFZLycTv8I`",
+          "current_asset_id": "MAFZLycTv8I",
+          "dimensions": "414x414",
+          "role": "decorative-badge",
+          "element_id": "PBpy8b8smlg8pbvN-LBMDcNSM3h1j7hF9",
+          "occurrence": 1,
+          "parent_element_id": "PBpy8b8smlg8pbvN",
+          "container_type": "RECT",
+          "position": {
+            "top": 130.56089722819422,
+            "left": 740.4172580991893
+          },
+          "dimension": {
+            "width": 413.87820554361156,
+            "height": 413.87820554361156
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBpy8b8smlg8pbvN",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "twitter-post-1200x675",
+  "canvas": "1200x675",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW513qSU",
+  "notes": "structurally identical to EAGqLKvBCw0 (same asset_ids and layout).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW513qSU"
+}

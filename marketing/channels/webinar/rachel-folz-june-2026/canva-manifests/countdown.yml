@@ -1,0 +1,32 @@
+template_id: EAGqLGh6dGQ
+page_index: 1
+design_title: rachel-folz-countdown-2026-06-25
+aspect_ratio: 1:1 1080x1080
+
+# countdown is the LinkedIn 2-days-to-go boost asset — X is always "2".
+# Per-role overrides applied (see asset-packs.md): no speaker slots, no headshot, date placeholder has no leading pipe.
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Mar 6, 2025 1:00 pm est": "Jun 25, 2026 12:00 PM EDT"
+  "X": "2"
+
+# image_assets intentionally omitted — countdown has no headshot slot.
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcBw6PGk"
+  edit_url: "https://www.canva.com/d/iLTzua7J3cwCuvC"
+  view_url: "https://www.canva.com/d/GY5-ZNASj6Gk5sj"
+  ops_performed: 3   # 2 original + 1 followup X→2 fix
+  warnings: []
+  manual_drag_required: []
+  followup_fixes:
+    - applied_at: "2026-06-02T16:55:00Z"
+      transaction_id: "1491196644450121970"
+      reason: "Countdown 'X' was left as literal in the first render (manifest had no X mapping). Countdown role is always the LinkedIn 2-days-to-go boost — X is constant at 2."
+      fix: "replace_text on element_id PBVJMfvttt00trcT-LBSgq7H91HWslHDj → '2'"
+      process_change: "asset-packs.md 'Per-role manifest overrides' now locks countdown's text_values to {Webinar title, date, X:2} and drops Name/Title/headshot. webinar-project-init Step 5b applies these overrides — future webinars get a clean countdown manifest without the vestigial keys."

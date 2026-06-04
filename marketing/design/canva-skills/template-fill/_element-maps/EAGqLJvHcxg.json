@@ -1,0 +1,98 @@
+{
+  "template_id": "EAGqLJvHcxg",
+  "name": "Blog cover image_Webinar",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"webinar\" \u2014 kicker pill (SHAPE)",
+          "placeholder": "webinar",
+          "role_hint": "kicker pill (SHAPE)",
+          "element_id": "PB2v0WJ8mkfzzS1C-LB3G5XphQ7CsRf3X-LBPxnsv6sKpYZ7mr",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 211.85622109381896,
+            "left": 100
+          },
+          "dimension": {
+            "width": 232.14074341840956,
+            "height": 65.83292289240359
+          }
+        },
+        {
+          "raw": "\"recap & summary\" \u2014 sub-kicker / category",
+          "placeholder": "recap & summary",
+          "role_hint": "sub-kicker / category",
+          "element_id": "PB2v0WJ8mkfzzS1C-LB3G5XphQ7CsRf3X-LBHkTs84RvrxlpJF",
+          "container_type": "TEXT",
+          "position": {
+            "top": 342.98612915626904,
+            "left": 100
+          },
+          "dimension": {
+            "width": 802.1944073977921,
+            "height": 44.53568
+          }
+        },
+        {
+          "raw": "\"Audience management webinar - what did we learn?\" \u2014 title",
+          "placeholder": "Audience management webinar - what did we learn?",
+          "role_hint": "title",
+          "element_id": "PB2v0WJ8mkfzzS1C-LB3G5XphQ7CsRf3X-LBS2vl49hG3Jk2JN",
+          "container_type": "TEXT",
+          "position": {
+            "top": 430.14377890618107,
+            "left": 100
+          },
+          "dimension": {
+            "width": 802.1944073977922,
+            "height": 258
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg (dark navy backdrop), current asset_id: `MAFZj_VBN48`",
+          "current_asset_id": "MAFZj_VBN48",
+          "role": "full-bg",
+          "element_id": "PB2v0WJ8mkfzzS1C",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "390x37, role: logo (InnerCerkl Webinars lockup bottom-left), current asset_id: `MAFZi1OGzmM`",
+          "current_asset_id": "MAFZi1OGzmM",
+          "dimensions": "390x37",
+          "role": "logo",
+          "element_id": "PB2v0WJ8mkfzzS1C-LByRKjLKzdSWZ1LQ",
+          "occurrence": 1,
+          "parent_element_id": "PB2v0WJ8mkfzzS1C",
+          "container_type": "RECT",
+          "position": {
+            "top": 863.0887797613169,
+            "left": 99.99999999999997
+          },
+          "dimension": {
+            "width": 389.91180970381066,
+            "height": 36.911220238683015
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB2v0WJ8mkfzzS1C",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-blog-cover-generic",
+  "canvas": "1500x1000",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW8dWFc0",
+  "notes": "hero photo/illustration area on the right is implied by background art (no exposed image fill). Only one editable image fill (the logo) + page background. Layered frame: no \u2014 clean stacking.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW8dWFc0"
+}

@@ -1,0 +1,227 @@
+{
+  "template_id": "EAGqLFziaCE",
+  "name": "Linkedin pdf post_style 1",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor\" \u2014 large headline (864x300)",
+          "placeholder": "Lorem ipsum dolor",
+          "role_hint": "large headline (864x300)",
+          "element_id": "PBpFxxCHs8qVfQxk-LBS5ztVKKJWP5yhQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 356.99999999999994,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 300.4
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet... aliqua.\" \u2014 body (711x227)",
+          "placeholder": "Lorem ipsum dolor sit amet... aliqua.",
+          "role_hint": "body (711x227)"
+        },
+        {
+          "raw": "feature-tag SHAPE (583x85, no text) \u2014 Broadcast feature tag container",
+          "role_hint": "Broadcast feature tag container"
+        },
+        {
+          "raw": "CTA round SHAPE (110x110) bottom-right \u2014 arrow button",
+          "role_hint": "arrow button"
+        },
+        {
+          "raw": "bottom bar SHAPE (1080x30) \u2014 slim accent strip",
+          "role_hint": "slim accent strip"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "497x44, role: icon (feature-tag label image inside top pill \u2014 e.g. \"Broadcast Email Blasts\"), current asset_id: `MAFZ10vmjv8`",
+          "current_asset_id": "MAFZ10vmjv8",
+          "dimensions": "497x44",
+          "role": "icon",
+          "element_id": "PBpFxxCHs8qVfQxk-LBWjB2gf6MbV0WCZ",
+          "occurrence": 1,
+          "parent_element_id": "PBpFxxCHs8qVfQxk",
+          "container_type": "RECT",
+          "position": {
+            "top": 227.30207049385368,
+            "left": 151.14094081554322
+          },
+          "dimension": {
+            "width": 496.6237450002884,
+            "height": 44.48921048960917
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBpFxxCHs8qVfQxk",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" headline (829x174)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "element_id": "PB55lQ40HSc267Br-LBbGkhL5HNMVwCjS",
+          "container_type": "TEXT",
+          "position": {
+            "top": 750,
+            "left": 107.99999999999983
+          },
+          "dimension": {
+            "width": 829.17109265221,
+            "height": 173.733335
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "840x560, role: photo-slot (large content image, top half), current asset_id: `MAFZ18uJOMw`",
+          "current_asset_id": "MAFZ18uJOMw",
+          "dimensions": "840x560",
+          "role": "photo-slot",
+          "element_id": "PB55lQ40HSc267Br-LBnVyRVNMp0RjZ0g",
+          "occurrence": 1,
+          "parent_element_id": "PB55lQ40HSc267Br",
+          "container_type": "RECT",
+          "position": {
+            "top": 116.50864775035393,
+            "left": 120.04961627104751
+          },
+          "dimension": {
+            "width": 839.900767457905,
+            "height": 559.5838863188292
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB55lQ40HSc267Br",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Customer name\" \u2014 name",
+          "placeholder": "Customer name",
+          "role_hint": "name",
+          "element_id": "PBZ6BXL5bd1N5QfH-LB1F4HGXXbMHhKgB",
+          "container_type": "TEXT",
+          "position": {
+            "top": 832.1806448586749,
+            "left": 275.42442352367857
+          },
+          "dimension": {
+            "width": 244.828125,
+            "height": 37.60006
+          }
+        },
+        {
+          "raw": "\"Company / Position\" \u2014 title",
+          "placeholder": "Company / Position",
+          "role_hint": "title",
+          "element_id": "PBZ6BXL5bd1N5QfH-LB93FWPcZ8V064Zj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 880.7898383439506,
+            "left": 275.42442352367857
+          },
+          "dimension": {
+            "width": 231.515625,
+            "height": 31.6667
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet... consequat.\" \u2014 testimonial quote (864x404)",
+          "placeholder": "Lorem ipsum dolor sit amet... consequat.",
+          "role_hint": "testimonial quote (864x404)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "no editable fills \u2014 headshot frame is missing (would need add)",
+          "role": "headshot"
+        }
+      ],
+      "page_id": "PBZ6BXL5bd1N5QfH",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 outro headline (829x298)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "outro headline (829x298)"
+        },
+        {
+          "raw": "\"Learn more at Cerkl.com\" \u2014 CTA pill SHAPE",
+          "placeholder": "Learn more at Cerkl.com",
+          "role_hint": "CTA pill SHAPE",
+          "element_id": "PBpzLsPly60L2SgL-LBFNDd5xckFK08lX",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 811.278418470567,
+            "left": 107.99999999999983
+          },
+          "dimension": {
+            "width": 529.5020237562746,
+            "height": 100.66149355318545
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "352x135, role: logo (Broadcast lockup), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "352x135",
+          "role": "logo",
+          "element_id": "PBpzLsPly60L2SgL-LBsMGCSVCFQ0m3GH",
+          "occurrence": 1,
+          "parent_element_id": "PBpzLsPly60L2SgL",
+          "container_type": "RECT",
+          "position": {
+            "top": 176.06569709764992,
+            "left": 69.31259161024286
+          },
+          "dimension": {
+            "width": 352.47888135143745,
+            "height": 135.0278236621628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBpzLsPly60L2SgL",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-pdf-carousel",
+  "canvas": "1080x1080",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW2lQGII",
+  "notes": "4-page carousel: cover (feature tag + body), photo slide, testimonial slide, outro CTA. Bottom bar SHAPE appears on every page (decorative accent). Almost everything is SHAPE-based \u2014 only 3 editable image fills total across all 4 pages: feature-tag label (p1), content photo (p2), Broadcast logo (p4). p3 testimonial has NO image \u2014 just text on bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW2lQGII"
+}

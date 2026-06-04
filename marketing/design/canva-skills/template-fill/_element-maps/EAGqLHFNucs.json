@@ -1,0 +1,203 @@
+{
+  "template_id": "EAGqLHFNucs",
+  "name": "1200x628 post_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" | \"Mar 6, 2025 1:00 pm est\" \u2014 date/time header",
+          "placeholder": "Webinar",
+          "role_hint": "date/time header",
+          "element_id": "PBRgB2DxP5xbkx6w-LB5RXBk7Wg4qh6kl-LBnzdQ31SZDCsCkR",
+          "container_type": "TEXT",
+          "position": {
+            "top": 81.72599223407639,
+            "left": 78.59539141681387
+          },
+          "dimension": {
+            "width": 140.25333333333333,
+            "height": 31.0930522074074
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 main headline (575x62)",
+          "placeholder": "Webinar title",
+          "role_hint": "main headline (575x62)",
+          "element_id": "PBRgB2DxP5xbkx6w-LBT31S3BlJlSdST5",
+          "container_type": "TEXT",
+          "position": {
+            "top": 167.69788974002927,
+            "left": 78.59539141681375
+          },
+          "dimension": {
+            "width": 574.5352058653244,
+            "height": 62.334814814814806
+          }
+        },
+        {
+          "raw": "\"Register now\" \u2014 CTA pill SHAPE + text",
+          "placeholder": "Register now",
+          "role_hint": "CTA pill SHAPE + text",
+          "element_id": "PBRgB2DxP5xbkx6w-LBDfPrrgJwZZGCkC-LBk5sst1l921g49G",
+          "container_type": "TEXT",
+          "position": {
+            "top": 487.35534609928027,
+            "left": 110.22812018976867
+          },
+          "dimension": {
+            "width": 172.3344170702984,
+            "height": 32.156294881767906
+          }
+        },
+        {
+          "raw": "\"Presented by:\" label + Cerkl logo bg SHAPE",
+          "placeholder": "Presented by:",
+          "element_id": "PBRgB2DxP5xbkx6w-LB1nYXHQFkVG2pv8-LBplkFcQYNk0dxbk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 86.18635460928596,
+            "left": 828.2843885278232
+          },
+          "dimension": {
+            "width": 177.19921296296292,
+            "height": 23.011148088888888
+          }
+        },
+        {
+          "raw": "2x \"Name\" / \"Title\" speaker pairs"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1200x628) `MAGg-3XLg1s`",
+          "current_asset_id": "MAGg-3XLg1s",
+          "dimensions": "1200x628",
+          "role": "full-bg",
+          "element_id": "PBRgB2DxP5xbkx6w-LB42dByMvDYG5X1R",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627.9999999999999
+          },
+          "editable": true
+        },
+        {
+          "raw": "64x23, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "64x23",
+          "role": "logo",
+          "element_id": "PBRgB2DxP5xbkx6w-LB1nYXHQFkVG2pv8-LByFvnNF1jRZtp3R",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w-LB1nYXHQFkVG2pv8",
+          "container_type": "RECT",
+          "position": {
+            "top": 130.59184182942212,
+            "left": 828.2843885278234
+          },
+          "dimension": {
+            "width": 63.59020875075304,
+            "height": 22.56197640394838
+          },
+          "editable": true
+        },
+        {
+          "raw": "164x164, role: decorative-badge (IC Thought Leadership), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "164x164",
+          "role": "decorative-badge",
+          "element_id": "PBRgB2DxP5xbkx6w-LBWdBQMNR1h4v0fz",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w",
+          "container_type": "RECT",
+          "position": {
+            "top": 40.06364060218128,
+            "left": 1036.4324339999193
+          },
+          "dimension": {
+            "width": 164.2897882223035,
+            "height": 164.28978822230354
+          },
+          "editable": true
+        },
+        {
+          "raw": "22x22, role: icon (play icon next to \"Webinar\"), current asset_id: `MAGg--nIQbc`",
+          "current_asset_id": "MAGg--nIQbc",
+          "dimensions": "22x22",
+          "role": "icon",
+          "element_id": "PBRgB2DxP5xbkx6w-LB5RXBk7Wg4qh6kl-LBXN7ldVkGkM5Dvc",
+          "occurrence": 1,
+          "parent_element_id": "PBRgB2DxP5xbkx6w-LB5RXBk7Wg4qh6kl",
+          "container_type": "RECT",
+          "position": {
+            "top": 86.10675119690057,
+            "left": 232.85914980340698
+          },
+          "dimension": {
+            "width": 22.16611550930152,
+            "height": 22.33153428175899
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBRgB2DxP5xbkx6w",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same with 3 Name/Title pairs"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same as page 1 (full-bg + Cerkl + IC badge + play icon)",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBQkJxn7kBmDlT06",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same with 4 Name/Title pairs"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same image set"
+        }
+      ],
+      "page_id": "PB34k4QdTMdrxNCY",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW1yESRI",
+  "notes": "1200x628 landscape variant of the IC Thought Leadership webinar series. Like EAGqLMN8_Po (square version) but headshots are NOT separate image fills here \u2014 they're rendered through bg or SHAPE placeholders. The only editable images per page are: full-bg, small Cerkl wordmark, big IC badge, small play icon. 2/3/4 speaker variants.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW1yESRI"
+}

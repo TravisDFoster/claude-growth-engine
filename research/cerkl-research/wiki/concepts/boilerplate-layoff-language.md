@@ -27,6 +27,9 @@ The 2026 pattern phrases (collected so far, May 2026):
 | *"Reinvent how we work / agile teams"* | [[linkedin]] (2026-05-13 Shapero) | Strategy-flavored evasion (Devlin flagged as a tell) |
 | *"This is not AI cost-cutting"* | [[gitlab]] (2026-05-12 Staples) | Anticipatory-denial → [[ai-washing]] coverage |
 | *"Position for the future"* | [[gm]] (2026-05-12) | Future-pacing evasion |
+| *"Strategic realignment"* / *"rebalancing of capacity"* / *"valuable learning cycle"* | [[ghassan-karian]] catalog ([[why-employees-right-not-to-trust-ic]], 2026-05-26) | Euphemism-as-trust-killer; practitioner-named tells |
+
+[[ghassan-karian]]'s [[ic-credibility-deficit]] thesis names euphemism as failure-mode #1 of IC trust, with IKB ([[ipsos-karian-and-box]]) data showing a direct candour↔trust relationship: "nothing kills trust faster than euphemism." This puts a *measured* mechanism under the boilerplate critique — it's not just that the phrase reads as a tell, it's that over-curation provably depresses trust.
 
 The diagnostic shape: **whenever a phrase appears in three+ public layoff announcements within 30 days, treat it as boilerplate** and pressure-test the message against it. If the message reads better without the phrase, drop it; if the phrase is doing real work, name the underlying reality more specifically.
 
@@ -41,6 +44,7 @@ The 2026 anti-pattern playbook (companion to [[layoff-comms-choreography]]):
 
 - [[oracle-mass-email-layoff-lessons-2026-05-18]] — *"broader organizational change"* anchor case
 - [[ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15]] — *"reinvent how we work"*, *"this is not AI cost-cutting"*, *"position for the future"* anchors
+- [[why-employees-right-not-to-trust-ic]] — Karian's euphemism catalog + the candour↔trust measurement mechanism ([[ic-credibility-deficit]])
 - [[oracle]], [[gm]], [[linkedin]], [[gitlab]] — entity cases
 - [[layoff-comms-choreography]] — parent concept
 - [[ai-washing]] — companion concept (the anticipatory-denial subset)
@@ -49,6 +53,8 @@ The 2026 anti-pattern playbook (companion to [[layoff-comms-choreography]]):
 
 - [[layoff-comms-choreography]] — boilerplate is one axis (tone) of the four-axis framework
 - [[ai-washing]] — what coverage calls the anticipatory-denial subset
+- [[ic-credibility-deficit]] — euphemism is Karian's failure-mode #1; gives boilerplate a measured trust mechanism
+- [[context-delivery]] — the radical-honesty cure that boilerplate is the antithesis of
 - [[delivery-as-comms-strategy]] — topic page; boilerplate fails *before* delivery
 
 ## Tensions / Criticisms

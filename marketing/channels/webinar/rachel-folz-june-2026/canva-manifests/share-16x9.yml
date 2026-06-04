@@ -1,0 +1,49 @@
+template_id: EAGqLLgAXU0
+page_index: 1
+design_title: rachel-folz-share-16x9-2026-06-25
+aspect_ratio: 16:9
+
+text_values:
+  "Webinar title": "Insights / Measurements"
+  "Name": ["Rachel Folz"]
+  "Title": ["Head of Product, Cerkl"]
+  "|   Mar 6, 2025 1:00 pm est": "|   Jun 25, 2026 12:00 PM EDT"
+
+image_assets:
+  headshot: ["MAFZdaEt2Wc"]
+
+commit_mode: auto
+
+# === Render result (written by webinar-canva-render, parallel batch) ===
+result:
+  rendered_at: "2026-06-02T16:05:00Z"
+  design_id: "DAHLcJgY0bg"
+  edit_url: "https://www.canva.com/d/D-A4UiHNWS_49bb"
+  view_url: "https://www.canva.com/d/ZyR4t2qlFtWxrHW"
+  ops_performed: 7
+  warnings: [
+    {
+        "warning": "headshot_asset_not_used",
+        "note": "No exposed headshot image_slot on page 1; SHAPE+TEXT placeholders not in fills[]"
+    },
+    {
+        "warning": "speaker_2_thumb_shape_visible",
+        "note": "No parent_element_id exposed for direct MCP deletion; manual UI delete needed"
+    }
+]
+  manual_drag_required: [
+    {
+        "role": "headshot",
+        "asset_id": "MAFZdaEt2Wc",
+        "subject": "Rachel Folz",
+        "instruction": "Drag headshot into speaker-1 thumb placeholder (top right); delete empty speaker-2 thumb placeholder below"
+    }
+]
+
+  followup_fixes:
+    - applied_at: "2026-06-02T16:20:00Z"
+      design_id: "DAHLcJgY0bg"
+      ops_added: 1
+      reason: "Same as share-1200x628 — DELETE-placeholder slot, template-fill v1 doesn't auto-insert, orchestrator brief didn't override."
+      fix: "insert_fill at speaker-1 area (top=270, left=860, 80x80) with MAFZdaEt2Wc."
+      process_change: "Same brief-update as share-1200x628; will apply on next render."

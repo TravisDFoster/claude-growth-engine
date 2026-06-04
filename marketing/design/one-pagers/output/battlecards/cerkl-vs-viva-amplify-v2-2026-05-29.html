@@ -1,0 +1,246 @@
+<!doctype html>
+<!--
+  One-pager v2 (LANDSCAPE): Cerkl Broadcast vs. Viva Amplify  (client/prospect-agnostic)
+  Artifact type: one-pager (print-format, LETTER LANDSCAPE, light theme only)
+  Source of copy: Customer Success battlecard images (Viva-Amplify.png) — full 6-criterion framework + explicit voice.
+  v2 is a NEW file; the live portrait files (cerkl-vs-viva-amplify-2026-05-29.*) are untouched.
+  Corrections vs. CS images: removed SMS + digital signage (NOT Cerkl channels per shared/broadcast.md);
+    corrected Cerkl channel list (email, intranet/SharePoint, mobile app, Teams, Slack, web, microsites);
+    AI framed opt-in/assistive for the algorithm-skeptic; injected verified Amplify measurement specifics
+    (aggregate "unique viewers"; distribution-group send can register as one viewer — Microsoft Q&A).
+  Brand: freeform Cobalt gradient on summary bar + solid Cobalt 60 Cerkl column cap; print-color-adjust:exact so it survives PDF.
+  Recipe: hero -> 6-criterion battlecard (criterion rail | Viva | Cerkl·Omni AI) -> slim Crawl/Walk/Run strip -> summary band -> footer. No CTA.
+  Self-contained (inline CSS, no JS, Google Fonts link only). .md sync deferred until final sign-off.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerkl Broadcast vs. Viva Amplify — v2 (landscape)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --paper: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --subtle: #6f6f78;
+    --line: #d5d5db;
+    --line-soft: #ebebf0;
+    --accent: #3547c4;
+    --accent-dark: #0c1159;
+    --accent-soft: #f0f2fc;
+    --accent-mid: #ccd5f7;
+    --good: #1a9979;
+    --amber: #b37715;
+    --body-size: 14px;
+  }
+
+  @page { size: letter landscape; margin: 0.35in 0.6in; }
+  html, body { height: 100%; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: var(--body-size);
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;   /* keep brand colors + gradient in the printed PDF */
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 9.8in; height: 7.8in;
+    background: var(--paper);
+    display: grid; grid-template-rows: auto 1fr; row-gap: 10px;
+    page-break-after: always; break-after: page;
+    position: relative; overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page-body { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .page-body.stretch > * { flex: 0 0 auto; }
+  .page-body.stretch > .grow { flex: 1 0 auto; }
+
+  @media screen {
+    body { padding: 24px 0; }
+    .page {
+      margin: 24px auto; padding: 0.35in 0.6in;
+      width: 11in; height: 8.5in;
+      box-shadow: 0 1px 0 rgba(24,24,29,0.04), 0 8px 24px rgba(24,24,29,0.08);
+    }
+  }
+  @media print { body { background: white; } }
+
+  h1 { margin: 0; letter-spacing: -0.01em; font-weight: 700; }
+
+  /* Hero */
+  .hero-compact { padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+  .hero-compact .logos { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .hero-compact .wordmark-ph img { height: 31px; width: auto; display: block; }
+  .hero-compact h1 { font-size: 22px; color: var(--accent-dark); margin: 8px 0 2px; }
+  .hero-compact .sub { margin: 0; color: var(--muted); font-size: 12.5px; }
+
+  /* Battlecard: criterion rail | Viva | Cerkl (Omni AI, emphasized) */
+  .battlecard {
+    display: grid; grid-template-columns: 0.92fr 1.4fr 1.5fr;
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+    font-size: 12px;
+  }
+  .battlecard > div { padding: 7px 11px; border-top: 1px solid var(--line-soft); }
+  .battlecard > div:nth-child(-n+3) { border-top: none; }              /* header row */
+  .battlecard > div:nth-child(3n)   { background: var(--accent-soft); } /* Cerkl column */
+  .battlecard .crit { background: var(--panel-soft); box-shadow: inset 3px 0 0 var(--accent-mid); }
+  .battlecard .hcell { padding-top: 9px; padding-bottom: 9px; }
+  .battlecard .hcell.viva  { background: var(--panel-soft); }
+  .battlecard .hcell.cerkl { background: var(--accent); }              /* solid Cobalt 60 column cap */
+  .battlecard .hcell .pname { font-weight: 700; font-size: 12.5px; line-height: 1.16; }
+  .battlecard .hcell.viva .pname { color: var(--muted); }
+  .battlecard .hcell.cerkl .pname { color: #ffffff; }
+  .battlecard .hcell .pdesc { font-size: 9.5px; color: var(--subtle); line-height: 1.22; margin-top: 2px; }
+  .battlecard .hcell.cerkl .pdesc { color: #dbe1fb; }
+  .battlecard .crit .cname { font-weight: 700; color: var(--ink); font-size: 11.5px; line-height: 1.2; }
+  .battlecard .crit .cdef { font-size: 9.5px; color: var(--subtle); line-height: 1.22; margin-top: 1px; }
+  .battlecard .vcell { line-height: 1.24; }
+  .battlecard .vcell .hl { font-weight: 700; display: block; margin-bottom: 1px; }
+  .battlecard .vcell.viva .hl { color: var(--muted); }
+  .battlecard .vcell.cerkl .hl { color: var(--accent-dark); }
+  .battlecard .vcell .body { display: block; color: var(--muted); font-size: 10.5px; }
+  .battlecard .mk { font-weight: 800; margin-right: 4px; }
+  .battlecard .mk.dash { color: var(--amber); }
+  .battlecard .mk.ck { color: var(--good); }
+
+  /* Slim Crawl / Walk / Run strip */
+  .cwr {
+    display: flex; align-items: center; gap: 16px;
+    padding: 6px 14px; border: 1px solid var(--accent-mid); border-radius: 11px;
+    background: var(--accent-soft);
+  }
+  .cwr .lead { font-weight: 700; color: var(--accent-dark); font-size: 12px; line-height: 1.18; flex-shrink: 0; max-width: 145px; }
+  .cwr .lead span { display: block; font-weight: 600; color: var(--accent); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
+  .cwr .steps { display: flex; align-items: center; gap: 10px; flex: 1; }
+  .cwr .step { display: flex; align-items: center; gap: 7px; flex: 1; }
+  .cwr .step .n {
+    width: 21px; height: 21px; border-radius: 50%; flex-shrink: 0;
+    background: #fff; border: 2px solid var(--accent); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10.5px;
+  }
+  .cwr .step .t { font-size: 10.5px; color: var(--muted); line-height: 1.22; }
+  .cwr .step .t b { color: var(--accent-dark); }
+  .cwr .arrow { color: var(--accent-mid); font-weight: 700; flex-shrink: 0; }
+
+  /* Summary band — brand freeform Cobalt gradient (one gradient per design), 3 columns */
+  .summary-bar {
+    display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 18px;
+    padding: 11px 16px; border-radius: 12px; color: #fff;
+    background:
+      radial-gradient(ellipse 100% 80% at 14% 18%, rgba(167,179,237,0.30) 0%, rgba(167,179,237,0) 60%),
+      radial-gradient(ellipse 80% 70% at 92% 96%, rgba(76,96,217,0.38) 0%, rgba(76,96,217,0) 55%),
+      linear-gradient(120deg, #1b269e 0%, #0c1159 70%);
+  }
+  .summary-bar .s-title { font-weight: 700; font-size: 12px; margin-bottom: 2px; }
+  .summary-bar .s-body { font-size: 10.5px; color: #cdd5f7; line-height: 1.34; }
+  .summary-bar .s-goal .s-title { color: #ffffff; }
+  .summary-bar .s-viva { padding-left: 18px; border-left: 1px solid rgba(255,255,255,0.18); }
+  .summary-bar .s-viva .s-title { color: #a7b3ed; }
+  .summary-bar .s-cerkl { padding-left: 18px; border-left: 1px solid rgba(255,255,255,0.18); }
+
+  /* Footer */
+  .footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 7px; border-top: 1px solid var(--line-soft);
+    color: var(--subtle); font-size: 11px; line-height: 1.4;
+  }
+  .footer .addr { max-width: 64%; }
+  .footer .brand-wordmark img { height: 23px; width: auto; display: block; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Hero: Cerkl Broadcast lockup (client/prospect-agnostic) + comparison title -->
+  <div class="hero-compact">
+    <div class="logos">
+      <span class="wordmark-ph"><img src="../../../branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/Medium (160px)/cerkl_broadcast_horizontal_lockup_full_color_medium.png" alt="Cerkl Broadcast"></span>
+    </div>
+    <h1>Cerkl Broadcast vs. Viva Amplify</h1>
+    <p class="sub">Deliver consistent communications, prioritize what matters, and get deep insights across every channel.</p>
+  </div>
+
+  <div class="page-body stretch">
+
+    <div class="battlecard">
+      <!-- header row -->
+      <div class="hcell crit"></div>
+      <div class="hcell viva"><div class="pname">Viva Amplify</div><div class="pdesc">A native Microsoft 365 add-on for campaign-based communications</div></div>
+      <div class="hcell cerkl"><div class="pname">Cerkl Broadcast &middot; Omni AI</div><div class="pdesc">An AI-powered communications platform built for the enterprise</div></div>
+
+      <!-- 1. Communication Consistency -->
+      <div class="crit"><div class="cname">Communication Consistency</div><div class="cdef">One message, delivered the right way, every time.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Limited consistency controls</span><span class="body">Relies on decentralized publishing across multiple M365 tools and sites, making it harder to maintain brand, governance and message alignment.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>Enterprise-wide consistency by design</span><span class="body">Centralized content hub, templates, approval workflows and brand guardrails keep every message on-brand and aligned across channels and locations.</span></div>
+
+      <!-- 2. Prioritizing What Matters -->
+      <div class="crit"><div class="cname">Prioritizing What Matters</div><div class="cdef">Cut through the noise; focus on what&rsquo;s important.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Basic targeting and prioritization</span><span class="body">Audiences and campaigns are limited and don&rsquo;t optimize or elevate messages based on importance or engagement.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>AI-driven prioritization</span><span class="body">Omni AI surfaces the right content, at the right time, to the right people&mdash;so your most important messages get seen and acted on.</span></div>
+
+      <!-- 3. In-Depth Insights & Analytics (the wedge; verified specifics) -->
+      <div class="crit"><div class="cname">In-Depth Insights &amp; Analytics</div><div class="cdef">Understand impact across every channel.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Siloed, surface-level reporting</span><span class="body">Stays inside Microsoft 365 and reports anonymized aggregate &ldquo;unique viewers,&rdquo; not per-recipient reads&mdash;a send via a distribution group can register as a single viewer.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>Comprehensive, cross-channel analytics</span><span class="body">Deep, unified insights across email, intranet, Teams, Slack and mobile&mdash;per-employee opens, reads and acknowledgments: what resonates, and who still needs it.</span></div>
+
+      <!-- 4. Reach Across Every Channel (corrected channel list) -->
+      <div class="crit"><div class="cname">Reach Across Every Channel</div><div class="cdef">Meet employees where they are.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Microsoft-centric reach</span><span class="body">Best within M365 channels; limited ability to reach employees outside the Microsoft ecosystem or on non-Microsoft platforms.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>Truly omnichannel</span><span class="body">Publish once and reach everywhere&mdash;email, intranet/SharePoint, mobile app, Teams, Slack and microsites&mdash;your entire workforce, not just M365 users.</span></div>
+
+      <!-- 5. AI & Intelligence (opt-in framing for the skeptic) -->
+      <div class="crit"><div class="cname">AI &amp; Intelligence</div><div class="cdef">Use AI to save time and improve results.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Basic AI capabilities</span><span class="body">Limited AI for content creation and summarization within Viva Amplify; no cross-channel personalization or recommendations.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>Omni AI: your advantage, opt-in by design</span><span class="body">AI that works for you&mdash;content creation, personalization, audience intelligence and recommendations you switch on when ready. Assistive, never on autopilot.</span></div>
+
+      <!-- 6. Total Value -->
+      <div class="crit"><div class="cname">Total Value</div><div class="cdef">Maximize impact and realize ROI.</div></div>
+      <div class="vcell viva"><span class="hl"><span class="mk dash">&minus;</span>Add-on with limitations</span><span class="body">Additional licensing for a tool with limits that often needs other solutions to fill the gaps.</span></div>
+      <div class="vcell cerkl"><span class="hl"><span class="mk ck">&#10003;</span>Stronger ROI, faster impact</span><span class="body">A purpose-built platform that drives higher engagement, better outcomes and clear ROI&mdash;without stitching together multiple tools.</span></div>
+    </div>
+
+    <!-- Slim Crawl / Walk / Run strip -->
+    <div class="cwr">
+      <div class="lead">Scale on your terms<span>Not all-or-nothing</span></div>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><span class="t"><b>Crawl</b> &mdash; stand up measured email</span></div>
+        <span class="arrow">&rsaquo;</span>
+        <div class="step"><span class="n">2</span><span class="t"><b>Walk</b> &mdash; add channels when ready</span></div>
+        <span class="arrow">&rsaquo;</span>
+        <div class="step"><span class="n">3</span><span class="t"><b>Run</b> &mdash; layer in AI, opt-in</span></div>
+      </div>
+    </div>
+
+    <!-- Summary band: goal | Viva | Cerkl -->
+    <div class="summary-bar">
+      <div class="s-goal">
+        <div class="s-title">The goal</div>
+        <div class="s-body">Consistency, prioritization, and deep insights across every channel employees use.</div>
+      </div>
+      <div class="s-viva">
+        <div class="s-title">Viva Amplify</div>
+        <div class="s-body">Built for Microsoft&mdash;not for how modern teams communicate today, or need to tomorrow.</div>
+      </div>
+      <div class="s-cerkl">
+        <div class="s-title">Cerkl Broadcast + Omni AI</div>
+        <div class="s-body">Brings consistency, prioritization and measurable insight together&mdash;so every message matters and every channel counts.</div>
+      </div>
+    </div>
+
+  </div><!-- /.page-body -->
+</div>
+
+</body>
+</html>

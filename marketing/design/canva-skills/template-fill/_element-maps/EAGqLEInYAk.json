@@ -1,0 +1,57 @@
+{
+  "template_id": "EAGqLEInYAk",
+  "name": "Shorts endcard template - Broadcast",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "none"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1920) `MAFn5Wxw57k` (Broadcast blue)",
+          "current_asset_id": "MAFn5Wxw57k",
+          "dimensions": "1080x1920",
+          "role": "full-bg",
+          "element_id": "PB8ZblYMfW5MvMd2",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "864x319, role: logo (Broadcast lockup centered), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "864x319",
+          "role": "logo",
+          "element_id": "PB8ZblYMfW5MvMd2-LBkTHHPnfljrm5Dp",
+          "occurrence": 1,
+          "parent_element_id": "PB8ZblYMfW5MvMd2",
+          "container_type": "RECT",
+          "position": {
+            "top": 662.1932137378701,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 318.80514960091875
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB8ZblYMfW5MvMd2",
+      "dimension": {
+        "width": 1080,
+        "height": 1920
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "shorts-endcard-broadcast",
+  "canvas": "1080x1920",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW4FVR_s",
+  "notes": "Brand-only end-card. No text \u2014 just centered Broadcast logo on blue bg. Both fills editable (rare). For shorts video end frame.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4FVR_s"
+}

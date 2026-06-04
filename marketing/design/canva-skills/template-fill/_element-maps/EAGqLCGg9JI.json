@@ -1,0 +1,132 @@
+{
+  "template_id": "EAGqLCGg9JI",
+  "name": "Video name card template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Name\" \u2014 speaker name",
+          "placeholder": "Name",
+          "role_hint": "speaker name",
+          "element_id": "PBw7ZYbR6pzv46xT-LBBH5n51Q18DWbKc-LBxvCCKYLqhq5VQm",
+          "container_type": "TEXT",
+          "position": {
+            "top": 750.6400917371285,
+            "left": 171.4060298376931
+          },
+          "dimension": {
+            "width": 363.578125,
+            "height": 79.66658
+          }
+        },
+        {
+          "raw": "\"Title\" \u2014 speaker title (inside lower-third SHAPE pill)",
+          "placeholder": "Title",
+          "role_hint": "speaker title (inside lower-third SHAPE pill)",
+          "element_id": "PBw7ZYbR6pzv46xT-LBvgFV4lRprs36Qn-LBjDrk6yHrfFGBcc",
+          "container_type": "TEXT",
+          "position": {
+            "top": 877.1698095220559,
+            "left": 42.572633821929344
+          },
+          "dimension": {
+            "width": 417.703125,
+            "height": 37.59988
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "124x51, role: icon (small icon inside lower-third, NOT editable), current asset_id: `MAFX5e3L0vY`",
+          "current_asset_id": "MAFX5e3L0vY",
+          "dimensions": "124x51",
+          "role": "icon",
+          "element_id": "PBw7ZYbR6pzv46xT-LBvgFV4lRprs36Qn-LBXCksq2GwJCR1g4",
+          "occurrence": 1,
+          "parent_element_id": "PBw7ZYbR6pzv46xT-LBvgFV4lRprs36Qn",
+          "container_type": "RECT",
+          "position": {
+            "top": 870.3980869508584,
+            "left": 474.20274786145893
+          },
+          "dimension": {
+            "width": 123.9155454991943,
+            "height": 51.14332514239473
+          },
+          "editable": false
+        },
+        {
+          "raw": "147x82, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "147x82",
+          "role": "logo",
+          "element_id": "PBw7ZYbR6pzv46xT-LBvgFV4lRprs36Qn-LBTpR4h5g6VLFQsv",
+          "occurrence": 1,
+          "parent_element_id": "PBw7ZYbR6pzv46xT-LBvgFV4lRprs36Qn",
+          "container_type": "RECT",
+          "position": {
+            "top": 854.8627117875434,
+            "left": 460.2757588219293
+          },
+          "dimension": {
+            "width": 147.47149787256362,
+            "height": 82.214075469025
+          },
+          "editable": true
+        },
+        {
+          "raw": "741x129, role: decorative-badge (name-plate gradient, off-canvas left), current asset_id: `MAFojMZQho4`",
+          "current_asset_id": "MAFojMZQho4",
+          "dimensions": "741x129",
+          "role": "decorative-badge",
+          "element_id": "PBw7ZYbR6pzv46xT-LBBH5n51Q18DWbKc-LB0Vt3Q8Q9GDhgkl",
+          "occurrence": 1,
+          "parent_element_id": "PBw7ZYbR6pzv46xT-LBBH5n51Q18DWbKc",
+          "container_type": "RECT",
+          "position": {
+            "top": 726.0840516867133,
+            "left": -145.24869477883487
+          },
+          "dimension": {
+            "width": 741.1411031060662,
+            "height": 128.77866010083017
+          },
+          "editable": true
+        },
+        {
+          "raw": "438x168, role: logo (Broadcast lockup, off-canvas right), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "438x168",
+          "role": "logo",
+          "element_id": "PBw7ZYbR6pzv46xT-LBySZ1ZnBlFX9vlQ",
+          "occurrence": 1,
+          "parent_element_id": "PBw7ZYbR6pzv46xT",
+          "container_type": "RECT",
+          "position": {
+            "top": 854.8627117875435,
+            "left": 1430.5733606731135
+          },
+          "dimension": {
+            "width": 437.59208164368135,
+            "height": 167.63304005504156
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBw7ZYbR6pzv46xT",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-name-card",
+  "canvas": "1920x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW654vB4",
+  "notes": "standalone lower-third name card variant of EAGqLKCh5Is page 2. No background photo \u2014 lives on solid color. Layered frame: yes \u2014 name-plate SHAPE underlines Name/Title text, with multiple branding image fills overlapping.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW654vB4"
+}

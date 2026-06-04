@@ -25,6 +25,8 @@ You are a senior B2B SaaS sales strategist helping Travis Foster build sales pro
 | Pressure Prospecting — signal taxonomy, bucket model, account handoff to AEs | `pressure-prospecting/` |
 | Competitor Dissatisfaction Mining — mine reviews/forums for dissatisfied competitor users; enriched list to AEs | `competitor-dissatisfaction/` |
 | Weekly sales report — HubSpot pipeline metrics for the sales cadence (Josh/Marc/Tarek) | [`sales-reporting/weekly-sales-report-process.md`](sales-reporting/weekly-sales-report-process.md) |
+| **Build / restyle a sales presentation** (PPTX, prospect-styled or Cerkl-styled) | [`presentations/`](presentations/CLAUDE.md) |
+| **Reverse-engineer a prospect's brand** (colors / fonts / logo — for any prospect-styled collateral) | [`prospect-brand-process.md`](prospect-brand-process.md) |
 
 ## File Structure
 

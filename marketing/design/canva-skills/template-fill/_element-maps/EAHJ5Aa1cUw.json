@@ -1,0 +1,332 @@
+{
+  "template_id": "EAHJ5Aa1cUw",
+  "name": "Downloadable Asset Promotion Template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"AI-Powered Internal Communications Strategy Template\" \u2014 headline (800x216)",
+          "placeholder": "AI-Powered Internal Communications Strategy Template",
+          "role_hint": "headline (800x216)",
+          "element_id": "PBJKm2VzwCYry0cH-LBV9K1mp9r8mLLps",
+          "container_type": "TEXT",
+          "position": {
+            "top": 79.97539872150843,
+            "left": 77.22141150642483
+          },
+          "dimension": {
+            "width": 800.4514754310067,
+            "height": 216.40005
+          }
+        },
+        {
+          "raw": "\"Define communication objectives\" \u2014 bullet 1",
+          "placeholder": "Define communication objectives",
+          "role_hint": "bullet 1",
+          "element_id": "PBJKm2VzwCYry0cH-LBL1TVHjsQNpZSQn",
+          "container_type": "TEXT",
+          "position": {
+            "top": 318.7216460229961,
+            "left": 148.2761027773654
+          },
+          "dimension": {
+            "width": 729.3967841600661,
+            "height": 50.866665
+          }
+        },
+        {
+          "raw": "\"Map audiences and channels\" \u2014 bullet 2",
+          "placeholder": "Map audiences and channels",
+          "role_hint": "bullet 2",
+          "element_id": "PBJKm2VzwCYry0cH-LBh6W1NrWsmSFhbN",
+          "container_type": "TEXT",
+          "position": {
+            "top": 388.12990441662896,
+            "left": 148.2761027773654
+          },
+          "dimension": {
+            "width": 729.3967841600661,
+            "height": 50.866665
+          }
+        },
+        {
+          "raw": "\"Improve message consistency\" \u2014 bullet 3",
+          "placeholder": "Improve message consistency",
+          "role_hint": "bullet 3",
+          "element_id": "PBJKm2VzwCYry0cH-LBlCQZ7HZ7FHjnmk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 457.53816281026184,
+            "left": 148.2761027773654
+          },
+          "dimension": {
+            "width": 729.3967841600661,
+            "height": 50.866665
+          }
+        },
+        {
+          "raw": "\"Access Now\" \u2014 CTA button label (inside pill SHAPE)",
+          "placeholder": "Access Now",
+          "role_hint": "CTA button label (inside pill SHAPE)",
+          "element_id": "PBJKm2VzwCYry0cH-LBZh7J3k4s6v5kNc-LBVBhQprBsMy0NLs",
+          "container_type": "TEXT",
+          "position": {
+            "top": 842.4757558215792,
+            "left": 604.3290819937546
+          },
+          "dimension": {
+            "width": 276.58041498853004,
+            "height": 58.1165880907114
+          }
+        },
+        {
+          "raw": "\"Example Image\" \u2014 top label SHAPE (decorative banner)",
+          "placeholder": "Example Image",
+          "role_hint": "top label SHAPE (decorative banner)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHJ40A0LrI`",
+          "current_asset_id": "MAHJ40A0LrI",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBJKm2VzwCYry0cH",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "930x516, role: photo-slot (lower half asset preview), current asset_id: `MAHJ41v7nMA` \u2014 layered frame: yes \u2014 image swap targets this lower-half fill, sits over the full-bg",
+          "current_asset_id": "MAHJ41v7nMA",
+          "dimensions": "930x516",
+          "role": "photo-slot",
+          "layered": true
+        },
+        {
+          "raw": "240x83, role: logo (Cerkl wordmark), current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "240x83",
+          "role": "logo"
+        },
+        {
+          "raw": "60x60, role: icon (CTA arrow), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "60x60",
+          "role": "icon"
+        },
+        {
+          "raw": "three 45x45 icons (check marks at bullets), role: icon, current asset_id: `MAHHTkSOnB8`",
+          "current_asset_id": "MAHHTkSOnB8",
+          "dimensions": "45x45",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBJKm2VzwCYry0cH",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same skeleton with \"Excepteur sint occaecat...\" headline + 3 Lorem bullets + \"Access Now\" CTA"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHJ40A0LrI`",
+          "current_asset_id": "MAHJ40A0LrI",
+          "role": "full-bg",
+          "element_id": "PBySfLhTycyVV1w0",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo `MAHHJ8ab-yI` (240x83)",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "240x83",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw` (60x60)",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "60x60"
+        },
+        {
+          "raw": "3 check icons `MAHHTkSOnB8` (45x45) \u2014 NOTE: no editable photo-slot on page 2 (text-only variant)",
+          "current_asset_id": "MAHHTkSOnB8",
+          "dimensions": "45x45",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBySfLhTycyVV1w0",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\" \u2014 large headline (733x323)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+          "role_hint": "large headline (733x323)",
+          "element_id": "PBLVqzDNMx33XLd2-LB59gcnpqNK9s7fr",
+          "container_type": "TEXT",
+          "position": {
+            "top": 76.67080559768485,
+            "left": 77.32619953052222
+          },
+          "dimension": {
+            "width": 733.112745176547,
+            "height": 323.20003
+          }
+        },
+        {
+          "raw": "\"Access Now\" \u2014 CTA text (602x58, full-width style)",
+          "placeholder": "Access Now",
+          "role_hint": "CTA text (602x58, full-width style)",
+          "element_id": "PBLVqzDNMx33XLd2-LBwJblYjZB3lTZjM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 973.8164193446717,
+            "left": 77.22141150642483
+          },
+          "dimension": {
+            "width": 602.2239421930328,
+            "height": 58.1165880907114
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHJ40Y4_Kg`",
+          "current_asset_id": "MAHJ40Y4_Kg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBLVqzDNMx33XLd2",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "60x60, role: icon (CTA arrow), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "60x60",
+          "role": "icon"
+        },
+        {
+          "raw": "204x71, role: logo (Cerkl wordmark, smaller variant), current asset_id: `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "204x71",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PBLVqzDNMx33XLd2",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "same skeleton as page 2 (3-bullet variant)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHJ4_OUDcM`",
+          "current_asset_id": "MAHJ4_OUDcM",
+          "role": "full-bg",
+          "element_id": "PBdnSsPXn9CYz1kv",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo `MAHHJ8ab-yI` (240x83)",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "240x83",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw` (60x60)",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "60x60"
+        },
+        {
+          "raw": "3 check icons `MAHHTkSOnB8` (45x45)",
+          "current_asset_id": "MAHHTkSOnB8",
+          "dimensions": "45x45",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBdnSsPXn9CYz1kv",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\" headline + \"Access Now\" CTA",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+          "element_id": "PBK6H8cbXm6MtC2T-LBlpLrnmsBkWSJVQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 79.97539872150841,
+            "left": 77.22141150642483
+          },
+          "dimension": {
+            "width": 800.4514754310067,
+            "height": 286.40005
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHJ46i86FI`",
+          "current_asset_id": "MAHJ46i86FI",
+          "role": "full-bg",
+          "element_id": "PBK6H8cbXm6MtC2T",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "logo `MAHHJ8ab-yI` (204x71)",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "204x71",
+          "role": "logo"
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw` (60x60)",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "60x60"
+        }
+      ],
+      "page_id": "PBK6H8cbXm6MtC2T",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "downloadable-asset-promo-square",
+  "canvas": "1080x1080",
+  "page_count": 5,
+  "inspection_design_id": "DAHLW6bco3c",
+  "notes": "5 variants for downloadable-asset promo carousel. Pages 1+2+4 share the \"headline + 3 bullets + CTA\" skeleton with full-bg + decorative check icons. Page 1 alone has the editable photo-slot (covers lower half \u2014 clearly layered atop full-bg, so image swap must target element_id `PBJKm2VzwCYry0cH-LB2n9TTS4PgkvYKG`). Pages 3+5 are headline-only variants. Cerkl wordmark `MAHHJ8ab-yI` repeats on every page. CTA arrow icon `MAHG2X6g4mw` and check icon `MAHHTkSOnB8` are NON-editable.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6bco3c"
+}

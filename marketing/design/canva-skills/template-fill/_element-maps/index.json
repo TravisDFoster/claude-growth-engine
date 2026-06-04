@@ -1,0 +1,674 @@
+[
+  {
+    "template_id": "EAHK4xxpksA",
+    "name": "Quotes and testimonials",
+    "use_case": "social-quotes-testimonials",
+    "page_count": 4,
+    "path": "_element-maps/EAHK4xxpksA.json"
+  },
+  {
+    "template_id": "EAHJ5Aa1cUw",
+    "name": "Downloadable Asset Promotion Template",
+    "use_case": "downloadable-asset-promo-square",
+    "page_count": 5,
+    "path": "_element-maps/EAHJ5Aa1cUw.json"
+  },
+  {
+    "template_id": "EAGqLOHvqK8",
+    "name": "Square post_ Webinar",
+    "use_case": "webinar-square-generic",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLOHvqK8.json"
+  },
+  {
+    "template_id": "EAGqLMN8_Po",
+    "name": "Square Social_speakers_Thought Leadership_Webinar Series",
+    "use_case": "webinar-speaker-card",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLMN8_Po.json"
+  },
+  {
+    "template_id": "EAGqLDRlwkI",
+    "name": "TEMPLATE: Downloadable resource/Email template promo_square",
+    "use_case": "downloadable-resource-email-promo-square",
+    "page_count": 8,
+    "path": "_element-maps/EAGqLDRlwkI.json"
+  },
+  {
+    "template_id": "EAHJPZD93P8",
+    "name": "Title + CTA + Product image_Square post",
+    "use_case": "social-square-cta-product",
+    "page_count": 4,
+    "path": "_element-maps/EAHJPZD93P8.json"
+  },
+  {
+    "template_id": "EAHG3Tpp4CI",
+    "name": "Square_Data / IC Fact post",
+    "use_case": "linkedin-stat-card",
+    "page_count": 4,
+    "path": "_element-maps/EAHG3Tpp4CI.json"
+  },
+  {
+    "template_id": "EAGqLAeuCc0",
+    "name": "Linkedin pdf post_style 2",
+    "use_case": "linkedin-pdf-carousel",
+    "page_count": 4,
+    "path": "_element-maps/EAGqLAeuCc0.json"
+  },
+  {
+    "template_id": "EAGqLKYVlQs",
+    "name": "Square post_style 6",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLKYVlQs.json"
+  },
+  {
+    "template_id": "EAGqLGh6dGQ",
+    "name": "Square Social_countdown_Thought Leadership_Webinar Series",
+    "use_case": "webinar-countdown",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLGh6dGQ.json"
+  },
+  {
+    "template_id": "EAGqLAaxqWw",
+    "name": "Square post_style 5",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLAaxqWw.json"
+  },
+  {
+    "template_id": "EAGqLD4Janc",
+    "name": "Square post_style 3",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLD4Janc.json"
+  },
+  {
+    "template_id": "EAGqLEHWJkk",
+    "name": "Square post_style 4",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLEHWJkk.json"
+  },
+  {
+    "template_id": "EAGqLJyJqD0",
+    "name": "Square post_style 2",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLJyJqD0.json"
+  },
+  {
+    "template_id": "EAGqLD9C1Rk",
+    "name": "Square post_style 1",
+    "use_case": "social-square-style",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLD9C1Rk.json"
+  },
+  {
+    "template_id": "EAGqLFziaCE",
+    "name": "Linkedin pdf post_style 1",
+    "use_case": "linkedin-pdf-carousel",
+    "page_count": 4,
+    "path": "_element-maps/EAGqLFziaCE.json"
+  },
+  {
+    "template_id": "EAGqLLyZJpc",
+    "name": "Linkedin pdf post_style 3",
+    "use_case": "linkedin-pdf-carousel",
+    "page_count": 2,
+    "path": "_element-maps/EAGqLLyZJpc.json"
+  },
+  {
+    "template_id": "EAGqLAfjcls",
+    "name": "Linkedin pdf post_Employee Spotlight 2",
+    "use_case": "linkedin-pdf-carousel-employee-spotlight",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLAfjcls.json"
+  },
+  {
+    "template_id": "EAGqLEqOaM4",
+    "name": "Copy of Linkedin pdf post_Employee Spotlight",
+    "use_case": "linkedin-pdf-carousel-employee-spotlight",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLEqOaM4.json"
+  },
+  {
+    "template_id": "EAGqLOWcIHY",
+    "name": "Linkedin pdf post_Employee Spotlight",
+    "use_case": "linkedin-pdf-carousel-employee-spotlight",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLOWcIHY.json"
+  },
+  {
+    "template_id": "EAHIEGj_L3s",
+    "name": "LinkedIn Carousel_Problem Solution_2",
+    "use_case": "linkedin-carousel-problem-solution",
+    "page_count": 7,
+    "path": "_element-maps/EAHIEGj_L3s.json"
+  },
+  {
+    "template_id": "EAHI2RC4_s8",
+    "name": "Foundations and Product Images Templates",
+    "use_case": "foundations-product-images",
+    "page_count": 4,
+    "path": "_element-maps/EAHI2RC4_s8.json"
+  },
+  {
+    "template_id": "EAHHKqwQjWM",
+    "name": "LinkedIn Carousel_3 Part List",
+    "use_case": "linkedin-carousel-3-part-list",
+    "page_count": 7,
+    "path": "_element-maps/EAHHKqwQjWM.json"
+  },
+  {
+    "template_id": "EAHIAt1o9d4",
+    "name": "LinkedIn Carousel_Problem Solution_1",
+    "use_case": "linkedin-carousel-problem-solution",
+    "page_count": 8,
+    "path": "_element-maps/EAHIAt1o9d4.json"
+  },
+  {
+    "template_id": "EAHHbiYvZCE",
+    "name": "1350x1080_Text only post",
+    "use_case": "social-landscape-text-only",
+    "page_count": 4,
+    "path": "_element-maps/EAHHbiYvZCE.json"
+  },
+  {
+    "template_id": "EAHG3Ty0I9Y",
+    "name": "1080x1350_Photo + text 1",
+    "use_case": "social-portrait-photo-text",
+    "page_count": 4,
+    "path": "_element-maps/EAHG3Ty0I9Y.json"
+  },
+  {
+    "template_id": "EAHHb4dbs1Y",
+    "name": "LinkedIn Carousel_5 Part List",
+    "use_case": "linkedin-carousel-5-part-list",
+    "page_count": 9,
+    "path": "_element-maps/EAHHb4dbs1Y.json"
+  },
+  {
+    "template_id": "EAG3Gmxux4Q",
+    "name": "Product_carousel",
+    "use_case": "product-carousel-portrait",
+    "page_count": 6,
+    "path": "_element-maps/EAG3Gmxux4Q.json"
+  },
+  {
+    "template_id": "EAGqLE7tM_8",
+    "name": "Shorts interview question template",
+    "use_case": "shorts-interview-question",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLE7tM_8.json"
+  },
+  {
+    "template_id": "EAGqLEInYAk",
+    "name": "Shorts endcard template - Broadcast",
+    "use_case": "shorts-endcard-broadcast",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLEInYAk.json"
+  },
+  {
+    "template_id": "EAGqLGG2TYI",
+    "name": "Shorts thumbnail template",
+    "use_case": "shorts-thumbnail",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLGG2TYI.json"
+  },
+  {
+    "template_id": "EAGqLHnssQU",
+    "name": "Shorts endcard template - HWSB",
+    "use_case": "shorts-endcard-hwsb",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLHnssQU.json"
+  },
+  {
+    "template_id": "EAGqLE12g5c",
+    "name": "Facebook_Linkedin post_Webinar",
+    "use_case": "webinar-linkedin-share-generic",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLE12g5c.json"
+  },
+  {
+    "template_id": "EAGqLHFNucs",
+    "name": "1200x628 post_Thought Leadership_Webinar Series",
+    "use_case": "webinar-share-card-1200x628",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLHFNucs.json"
+  },
+  {
+    "template_id": "EAGqLBc3p_w",
+    "name": "Copy of Facebook_Linkedin post_style 1",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLBc3p_w.json"
+  },
+  {
+    "template_id": "EAGqLM0FChA",
+    "name": "Copy of Facebook_Linkedin post_style 2",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLM0FChA.json"
+  },
+  {
+    "template_id": "EAGqLJg1OSY",
+    "name": "1200 x 628px_Employee spotlight 2",
+    "use_case": "linkedin-employee-spotlight-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLJg1OSY.json"
+  },
+  {
+    "template_id": "EAGqLFFIvPs",
+    "name": "Facebook_Linkedin post_style 4",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLFFIvPs.json"
+  },
+  {
+    "template_id": "EAGqLCaRTeM",
+    "name": "Copy of Facebook_Linkedin post_style 4",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLCaRTeM.json"
+  },
+  {
+    "template_id": "EAGqLBhKYtg",
+    "name": "Facebook_Linkedin post_style 5",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLBhKYtg.json"
+  },
+  {
+    "template_id": "EAGqLFOg67s",
+    "name": "Facebook_Linkedin post_style 3",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLFOg67s.json"
+  },
+  {
+    "template_id": "EAGqLPtHbaY",
+    "name": "Facebook_Linkedin post_style 5 (dup ID)",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLPtHbaY.json"
+  },
+  {
+    "template_id": "EAGqLPtZFC0",
+    "name": "Facebook_Linkedin post_style 4 (dup ID)",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLPtZFC0.json"
+  },
+  {
+    "template_id": "EAGqLHXIMi0",
+    "name": "Facebook_Linkedin post_style 2",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLHXIMi0.json"
+  },
+  {
+    "template_id": "EAGqLLf6OBk",
+    "name": "1200 x 628px_Employee spotlight",
+    "use_case": "linkedin-employee-spotlight-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLLf6OBk.json"
+  },
+  {
+    "template_id": "EAGqLE_tvTw",
+    "name": "Facebook_Linkedin post_style 3 (dup ID)",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLE_tvTw.json"
+  },
+  {
+    "template_id": "EAGqLPO8k5c",
+    "name": "Facebook_Linkedin post_style 6",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLPO8k5c.json"
+  },
+  {
+    "template_id": "EAGqLAh0VTQ",
+    "name": "Facebook_Linkedin post_style 1",
+    "use_case": "linkedin-share-card-1200x628",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLAh0VTQ.json"
+  },
+  {
+    "template_id": "EAGqLAknzCo",
+    "name": "Twitter post_style 6",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLAknzCo.json"
+  },
+  {
+    "template_id": "EAGqLHxOpsg",
+    "name": "Twitter post_style 6 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLHxOpsg.json"
+  },
+  {
+    "template_id": "EAGqLLgAXU0",
+    "name": "16:9 post_Thought Leadership_Webinar Series",
+    "use_case": "webinar-share-card-16x9",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLLgAXU0.json"
+  },
+  {
+    "template_id": "EAGqLJan-Ck",
+    "name": "16:9 post_Webinar",
+    "use_case": "webinar-share-16x9-generic",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLJan-Ck.json"
+  },
+  {
+    "template_id": "EAGzQKpzwhM",
+    "name": "LinkedIn Newsletter_banner templates",
+    "use_case": "linkedin-newsletter-banner",
+    "page_count": 2,
+    "path": "_element-maps/EAGzQKpzwhM.json"
+  },
+  {
+    "template_id": "EAGqLChFVBg",
+    "name": "Twitter post_style 5",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLChFVBg.json"
+  },
+  {
+    "template_id": "EAGqLMr1Kxw",
+    "name": "Twitter post_style 3",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLMr1Kxw.json"
+  },
+  {
+    "template_id": "EAGqLMNBS7U",
+    "name": "Twitter post_style 4",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLMNBS7U.json"
+  },
+  {
+    "template_id": "EAGqLKobc-w",
+    "name": "Twitter post_style 5 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLKobc-w.json"
+  },
+  {
+    "template_id": "EAGqLICXfBg",
+    "name": "Twitter post_style 4 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLICXfBg.json"
+  },
+  {
+    "template_id": "EAGqLKm0rEY",
+    "name": "Twitter post_style 1",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLKm0rEY.json"
+  },
+  {
+    "template_id": "EAGqLKvBCw0",
+    "name": "Twitter post_style 2",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLKvBCw0.json"
+  },
+  {
+    "template_id": "EAGqLG5T8O8",
+    "name": "Twitter post_style 3 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLG5T8O8.json"
+  },
+  {
+    "template_id": "EAGqLPc6brc",
+    "name": "Twitter post_style 1 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLPc6brc.json"
+  },
+  {
+    "template_id": "EAGqLPaOVTE",
+    "name": "Twitter post_style 2 (dup ID)",
+    "use_case": "twitter-post-1200x675",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLPaOVTE.json"
+  },
+  {
+    "template_id": "EAGqLERK1oE",
+    "name": "Email Blast Banner_Thought Leadership_Webinar Series",
+    "use_case": "webinar-email-banner",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLERK1oE.json"
+  },
+  {
+    "template_id": "EAGqLIWzZTY",
+    "name": "Zoom Banner_Thought Leadership_Webinar Series",
+    "use_case": "webinar-zoom-banner",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLIWzZTY.json"
+  },
+  {
+    "template_id": "EAGqLJvHcxg",
+    "name": "Blog cover image_Webinar",
+    "use_case": "webinar-blog-cover-generic",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLJvHcxg.json"
+  },
+  {
+    "template_id": "EAGqLL_MWfw",
+    "name": "InnerCerkl Cover/Blog Cover_Thought Leadership_Webinar Series",
+    "use_case": "webinar-blog-cover",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLL_MWfw.json"
+  },
+  {
+    "template_id": "EAGqLPDHPIM",
+    "name": "Newsletter Cover image Template",
+    "use_case": "newsletter-cover",
+    "page_count": 2,
+    "path": "_element-maps/EAGqLPDHPIM.json"
+  },
+  {
+    "template_id": "EAGqLJA3MGo",
+    "name": "Blog cover image_photography",
+    "use_case": "blog-cover-photography",
+    "page_count": 5,
+    "path": "_element-maps/EAGqLJA3MGo.json"
+  },
+  {
+    "template_id": "EAGqLMnkadI",
+    "name": "Blog Post Cover_Industry Specific_Healthcare",
+    "use_case": "blog-cover-industry-healthcare",
+    "page_count": 2,
+    "path": "_element-maps/EAGqLMnkadI.json"
+  },
+  {
+    "template_id": "EAGqLOGn2ko",
+    "name": "Blog Post Cover_Industry Specific_Higher Ed",
+    "use_case": "blog-cover-industry-higher-ed",
+    "page_count": 2,
+    "path": "_element-maps/EAGqLOGn2ko.json"
+  },
+  {
+    "template_id": "EAGqLDVthiA",
+    "name": "Blog cover image_list",
+    "use_case": "blog-cover-list",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLDVthiA.json"
+  },
+  {
+    "template_id": "EAGqLEylplk",
+    "name": "Webinar Recap Blog Cover_Thought Leadership_Webinar Series",
+    "use_case": "webinar-recap-blog-cover",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLEylplk.json"
+  },
+  {
+    "template_id": "EAGqLNbZEEc",
+    "name": "Blog cover image_product",
+    "use_case": "blog-cover-product",
+    "page_count": 2,
+    "path": "_element-maps/EAGqLNbZEEc.json"
+  },
+  {
+    "template_id": "EAGqLK6_xYo",
+    "name": "Blog post cover_resource",
+    "use_case": "blog-cover-resource",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLK6_xYo.json"
+  },
+  {
+    "template_id": "EAHJUVpBsz4",
+    "name": "Blog Post Promo",
+    "use_case": "blog-post-promo",
+    "page_count": 2,
+    "path": "_element-maps/EAHJUVpBsz4.json"
+  },
+  {
+    "template_id": "EAGqLJI22iM",
+    "name": "Blog image_in text_photography",
+    "use_case": "blog-inline-image-photo",
+    "page_count": 9,
+    "path": "_element-maps/EAGqLJI22iM.json"
+  },
+  {
+    "template_id": "EAGqLF2Ksbw",
+    "name": "Blog image_in text_illustrated",
+    "use_case": "blog-inline-image-illustrated",
+    "page_count": 14,
+    "path": "_element-maps/EAGqLF2Ksbw.json"
+  },
+  {
+    "template_id": "EAGt2RCwGPw",
+    "name": "Blog image_in text_product",
+    "use_case": "blog-inline-image-product",
+    "page_count": 10,
+    "path": "_element-maps/EAGt2RCwGPw.json"
+  },
+  {
+    "template_id": "EAGqLI3Y5v8",
+    "name": "Blog Image_in text_graphs",
+    "use_case": "blog-inline-image-graphs",
+    "page_count": 7,
+    "path": "_element-maps/EAGqLI3Y5v8.json"
+  },
+  {
+    "template_id": "EAGqLEt38SQ",
+    "name": "Blog Image_in text_miscellaneous",
+    "use_case": "blog-inline-image-misc",
+    "page_count": 4,
+    "path": "_element-maps/EAGqLEt38SQ.json"
+  },
+  {
+    "template_id": "EAGrS_c73Us",
+    "name": "HeyGen Video Thumbnail Template",
+    "use_case": "video-thumbnail-heygen",
+    "page_count": 4,
+    "path": "_element-maps/EAGrS_c73Us.json"
+  },
+  {
+    "template_id": "EAGqLKbOQ-E",
+    "name": "Recording Video thumbnail_Thought Leadership_Webinar Series",
+    "use_case": "webinar-recording-thumbnail",
+    "page_count": 3,
+    "path": "_element-maps/EAGqLKbOQ-E.json"
+  },
+  {
+    "template_id": "EAGqLELBS7Q",
+    "name": "Employee feature_Video thumbnail",
+    "use_case": "video-thumbnail-employee-feature",
+    "page_count": 6,
+    "path": "_element-maps/EAGqLELBS7Q.json"
+  },
+  {
+    "template_id": "EAGqLGUSREQ",
+    "name": "Vlog Series_Video thumbnail",
+    "use_case": "video-thumbnail-vlog",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLGUSREQ.json"
+  },
+  {
+    "template_id": "EAGqLKnxpbY",
+    "name": "Employee highlight/interview_video thumbnail",
+    "use_case": "video-thumbnail-employee-highlight",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLKnxpbY.json"
+  },
+  {
+    "template_id": "EAGqLKCh5Is",
+    "name": "Video Interview Template",
+    "use_case": "video-interview",
+    "page_count": 5,
+    "path": "_element-maps/EAGqLKCh5Is.json"
+  },
+  {
+    "template_id": "EAGqLH6qggI",
+    "name": "Video question / transition template",
+    "use_case": "video-transition",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLH6qggI.json"
+  },
+  {
+    "template_id": "EAGqLHIx6Pc",
+    "name": "Video endcard template - HWSB",
+    "use_case": "video-endcard-hwsb",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLHIx6Pc.json"
+  },
+  {
+    "template_id": "EAGqLN17b_0",
+    "name": "Case study_video thumbnail",
+    "use_case": "video-thumbnail-case-study",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLN17b_0.json"
+  },
+  {
+    "template_id": "EAGqLCGg9JI",
+    "name": "Video name card template",
+    "use_case": "video-name-card",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLCGg9JI.json"
+  },
+  {
+    "template_id": "EAGqLGbY8PI",
+    "name": "Blog post_video thumbnail",
+    "use_case": "video-thumbnail-blog-post",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLGbY8PI.json"
+  },
+  {
+    "template_id": "EAGqLDCHyRM",
+    "name": "Webinar Video Thumbnail",
+    "use_case": "webinar-video-thumbnail-generic",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLDCHyRM.json"
+  },
+  {
+    "template_id": "EAGqLFCzRhM",
+    "name": "Video endcard template - Broadcast",
+    "use_case": "video-endcard-broadcast",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLFCzRhM.json"
+  },
+  {
+    "template_id": "EAGqLGVVV7I",
+    "name": "Overview_ video thumbnail",
+    "use_case": "video-thumbnail-overview",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLGVVV7I.json"
+  },
+  {
+    "template_id": "EAGqLK6kDP0",
+    "name": "Broadcast Channels_video thumbnail",
+    "use_case": "video-thumbnail-broadcast-channels",
+    "page_count": 1,
+    "path": "_element-maps/EAGqLK6kDP0.json"
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "template_id": "EAGqLJyJqD0",
+  "name": "Square post_style 2",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetuer\" \u2014 body (864x135)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetuer",
+          "role_hint": "body (864x135)",
+          "element_id": "PBmX9LQV3YdHVYHd-LBbMVDFCZZc7P7z4",
+          "container_type": "TEXT",
+          "position": {
+            "top": 730.6933306069918,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 135.200015
+          }
+        },
+        {
+          "raw": "\"Read the report\" \u2014 CTA pill SHAPE",
+          "placeholder": "Read the report",
+          "role_hint": "CTA pill SHAPE",
+          "element_id": "PBmX9LQV3YdHVYHd-LBZJt04QGxyFGcp0",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 919.8313119386285,
+            "left": 400.1848502009751
+          },
+          "dimension": {
+            "width": 279.6302995980497,
+            "height": 70.01380590648954
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAFZiSmozos`",
+          "current_asset_id": "MAFZiSmozos",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBmX9LQV3YdHVYHd",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "352x135, role: logo (Broadcast lockup top-center), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "352x135",
+          "role": "logo",
+          "element_id": "PBmX9LQV3YdHVYHd-LBv8m3qH6ZbYJC5C",
+          "occurrence": 1,
+          "parent_element_id": "PBmX9LQV3YdHVYHd",
+          "container_type": "RECT",
+          "position": {
+            "top": 85.29602283993867,
+            "left": 363.7605593242813
+          },
+          "dimension": {
+            "width": 352.47888135143745,
+            "height": 135.0278236621628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBmX9LQV3YdHVYHd",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "social-square-style",
+  "canvas": "1080x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWwDoKCg",
+  "notes": "Minimal 1-page. Center image visible in render is part of full-bg fill (not a separate editable slot). Just 2 image fills total.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwDoKCg"
+}

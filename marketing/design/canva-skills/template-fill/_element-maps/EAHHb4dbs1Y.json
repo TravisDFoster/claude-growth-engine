@@ -1,0 +1,191 @@
+{
+  "template_id": "EAHHb4dbs1Y",
+  "name": "LinkedIn Carousel_5 Part List",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet elit, sed do et dolore magna\" headline + \"Example COVER DELETE BEFOR EXPORT\" tag",
+          "placeholder": "Lorem ipsum dolor sit amet elit, sed do et dolore magna"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHHTYoxE18`",
+          "current_asset_id": "MAHHTYoxE18",
+          "role": "full-bg",
+          "element_id": "PB64r7XT14DYlr4Z",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "926x768 hero photo `MAG8ANMAVHI` (layered)",
+          "current_asset_id": "MAG8ANMAVHI",
+          "dimensions": "926x768",
+          "layered": true,
+          "element_id": "PB64r7XT14DYlr4Z-LBgQZjCNwzvVL7jJ",
+          "occurrence": 1,
+          "parent_element_id": "PB64r7XT14DYlr4Z",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": -5.684341886080802e-14
+          },
+          "dimension": {
+            "width": 926.2870533753999,
+            "height": 768.2170725072723
+          },
+          "editable": true
+        },
+        {
+          "raw": "CTA arrow-circle icon `MAHHI0qJPoA` (157x112)",
+          "current_asset_id": "MAHHI0qJPoA",
+          "dimensions": "157x112",
+          "role": "icon"
+        },
+        {
+          "raw": "Broadcast lockup",
+          "role": "logo"
+        },
+        {
+          "raw": "Cerkl wordmark",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PB64r7XT14DYlr4Z",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same headline + tag"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + 926x768 hero photo `MAHA2RshL_k` (layered) + same icons/lockups",
+          "current_asset_id": "MAHA2RshL_k",
+          "dimensions": "926x768",
+          "role": "full-bg",
+          "layered": true,
+          "element_id": "PBmb6GfJ4bfRKH7t-LBrsS5Yrs45VSsbv",
+          "occurrence": 1,
+          "parent_element_id": "PBmb6GfJ4bfRKH7t",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": -5.684341886080802e-14
+          },
+          "dimension": {
+            "width": 926.2870533753999,
+            "height": 768.2170725072723
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBmb6GfJ4bfRKH7t",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "headline only"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + icons/lockups (no hero photo)",
+          "role": "full-bg"
+        },
+        {
+          "raw": "\"xxx #N\" \u2014 list-item number tag SHAPE"
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetur\" \u2014 item headline (864x204)",
+          "dimensions": "864x204"
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet... aliqua.\" \u2014 item body (864x186)",
+          "dimensions": "864x186"
+        },
+        {
+          "raw": "page-indicator dot cluster SHAPE row"
+        }
+      ],
+      "page_id": "PBjK0WT028jTVySL",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 9,
+      "text_slots": [
+        {
+          "raw": "\"Duis aute dolor in reprehenderit\" closing headline + 2 feature lines + \"Start using a tool built for communicators\" CTA",
+          "placeholder": "Duis aute dolor in reprehenderit",
+          "element_id": "PBxY6Vpz9vHlLzNB-LBbpglLcSRRJttCH",
+          "container_type": "TEXT",
+          "position": {
+            "top": 271.35465340511644,
+            "left": 108
+          },
+          "dimension": {
+            "width": 878.118608293048,
+            "height": 232.99998
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHHTfiq3_4`",
+          "current_asset_id": "MAHHTfiq3_4",
+          "role": "full-bg",
+          "element_id": "PBxY6Vpz9vHlLzNB",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "92x92 CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "92x92"
+        },
+        {
+          "raw": "Broadcast lockup + Cerkl wordmark",
+          "role": "logo"
+        },
+        {
+          "raw": "2x 52x52 check icons `MAHHTkSOnB8`",
+          "current_asset_id": "MAHHTkSOnB8",
+          "dimensions": "52x52",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBxY6Vpz9vHlLzNB",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-carousel-5-part-list",
+  "canvas": "1080x1350",
+  "page_count": 9,
+  "inspection_design_id": "DAHLW6Q52TE",
+  "notes": "9-page extension of the 3-Part List template (EAHHKqwQjWM) \u2014 same skeleton but with 5 item slides instead of 3. Page-indicator dot SHAPE cluster (5 dots) tracks current item. Hero photos on cover (p1+p2) are the only photo swap targets \u2014 p4-p8 are pure list items with bg color alternation. Outro is identical to EAHHKqwQjWM.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6Q52TE"
+}

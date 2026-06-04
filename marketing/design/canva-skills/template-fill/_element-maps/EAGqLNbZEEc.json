@@ -1,0 +1,87 @@
+{
+  "template_id": "EAGqLNbZEEc",
+  "name": "Blog cover image_product",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed \" \u2014 title",
+          "placeholder": "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed ",
+          "role_hint": "title",
+          "element_id": "PBrkMCjrN6C8TpbV-LBbjSPnFyjmzbjwd",
+          "container_type": "TEXT",
+          "position": {
+            "top": 421.65077833990114,
+            "left": 136.96338595811653
+          },
+          "dimension": {
+            "width": 508.91159891453344,
+            "height": 273.200015
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg, current asset_id: `MAFZjojYvQs`",
+          "current_asset_id": "MAFZjojYvQs",
+          "role": "full-bg",
+          "element_id": "PBrkMCjrN6C8TpbV",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "420x161, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "420x161",
+          "role": "logo",
+          "element_id": "PBrkMCjrN6C8TpbV-LB2lHGjHLtfs7kkt",
+          "occurrence": 1,
+          "parent_element_id": "PBrkMCjrN6C8TpbV",
+          "container_type": "RECT",
+          "position": {
+            "top": 199.99999999999994,
+            "left": 100.00000000000003
+          },
+          "dimension": {
+            "width": 419.6701917584475,
+            "height": 160.76751160738613
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBrkMCjrN6C8TpbV",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same title."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "identical structure (same assets)."
+        }
+      ],
+      "page_id": "PBMDqdNp3SXqytwk",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-cover-product",
+  "canvas": "1500x1000",
+  "page_count": 2,
+  "inspection_design_id": "DAHLWzTN1TQ",
+  "notes": "minimal layout \u2014 only title + Broadcast lockup + page bg. Hero product visual is intended to be added manually OR is part of the bg art. Layered frame: no real layering beyond logo over bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWzTN1TQ"
+}

@@ -1,0 +1,346 @@
+{
+  "template_id": "EAGqLJI22iM",
+  "name": "Blog image_in text_photography",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "one paragraph body (\"DEI communications are a critical component...\")"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "oversized full-bg photo (asset `MAE7D0Z7i08`, NOT editable) + decorative 320x320 brand-shape overlay (`MAGRUFQ9SHQ`).",
+          "current_asset_id": "MAE7D0Z7i08",
+          "dimensions": "320x320",
+          "role": "full-bg",
+          "element_id": "PBXfDx4fwCr3S6s0-LBrxxhS9hbyN42Pw",
+          "occurrence": 1,
+          "parent_element_id": "PBXfDx4fwCr3S6s0",
+          "editable": false
+        }
+      ],
+      "page_id": "PBXfDx4fwCr3S6s0",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "one paragraph body about effective communication."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "293x292 decorative brand-shape (`MAGRTXlqHRk`) on full-bg page color.",
+          "current_asset_id": "MAGRTXlqHRk",
+          "dimensions": "293x292",
+          "role": "full-bg",
+          "element_id": "PB6Rlhsdrprt28Tg-LBVBZ1qy0xqt20vj",
+          "occurrence": 1,
+          "parent_element_id": "PB6Rlhsdrprt28Tg",
+          "container_type": "RECT",
+          "position": {
+            "top": 401.69832688093464,
+            "left": 906.9376621520472
+          },
+          "dimension": {
+            "width": 293.06233784795336,
+            "height": 292.32968200333346
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB6Rlhsdrprt28Tg",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "paragraph on employee experience."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "230x200 decorative brand-shape (`MAGRTXlqHRk`).",
+          "current_asset_id": "MAGRTXlqHRk",
+          "dimensions": "230x200",
+          "role": "decorative",
+          "element_id": "PBNgHTb6jtBDlddb-LB6w6wR2hFZJRmm2",
+          "occurrence": 1,
+          "parent_element_id": "PBNgHTb6jtBDlddb",
+          "container_type": "RECT",
+          "position": {
+            "top": 364.44701601467585,
+            "left": 907.3030924660029
+          },
+          "dimension": {
+            "width": 229.9969075339971,
+            "height": 199.85298398532416
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBNgHTb6jtBDlddb",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "pull-quote/long quote about effectiveness."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "320x320 decorative brand-shape (`MAGRUFQ9SHQ`) on right.",
+          "current_asset_id": "MAGRUFQ9SHQ",
+          "dimensions": "320x320",
+          "role": "decorative",
+          "element_id": "PB92P8ffNV9hRrMF-LBGSKgrfxCjJMS7C",
+          "occurrence": 1,
+          "parent_element_id": "PB92P8ffNV9hRrMF",
+          "container_type": "RECT",
+          "position": {
+            "top": -27.564760099977207,
+            "left": 905.532512781517
+          },
+          "dimension": {
+            "width": 320.38488954732213,
+            "height": 320.38488954732213
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB92P8ffNV9hRrMF",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "two-paragraph body about GDPR + a thin SHAPE divider."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "619x619 large decorative brand-shape (`MAGRUFQ9SHQ`) on right.",
+          "current_asset_id": "MAGRUFQ9SHQ",
+          "dimensions": "619x619",
+          "role": "decorative",
+          "element_id": "PBLGrxp5B7nkJNkv-LBnTC7JW1TMJTSX0",
+          "occurrence": 1,
+          "parent_element_id": "PBLGrxp5B7nkJNkv",
+          "container_type": "RECT",
+          "position": {
+            "top": 7.525572376404909,
+            "left": 610.6381378258204
+          },
+          "dimension": {
+            "width": 619.474427623595,
+            "height": 619.474427623595
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBLGrxp5B7nkJNkv",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "\"List title\" + 10 numbered \"x\" placeholder list rows (10 numeric labels 1-10 + 10 \"x\" text rows).",
+          "placeholder": "List title",
+          "role_hint": "+ 10 numbered \"x\" placeholder list rows (10 numeric labels 1-10 + 10 \"x\" text rows).",
+          "element_id": "PBqrXmPbQqFZwm7M-LBDkszWRWL2BHhm2",
+          "container_type": "TEXT",
+          "position": {
+            "top": 93.36352225064542,
+            "left": 44.475745913769174
+          },
+          "dimension": {
+            "width": 441.62631560214265,
+            "height": 54.266665
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg image (`MAFsMyV_a6A`) \u2014 the number-led list canvas.",
+          "current_asset_id": "MAFsMyV_a6A",
+          "role": "full-bg",
+          "element_id": "PBqrXmPbQqFZwm7M-LBvRkt0v6yYgND77",
+          "occurrence": 1,
+          "parent_element_id": "PBqrXmPbQqFZwm7M",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBqrXmPbQqFZwm7M",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [
+        {
+          "raw": "paragraph on engaging newsletters."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "230x200 decorative brand-shape (`MAGRTXlqHRk`)",
+          "current_asset_id": "MAGRTXlqHRk",
+          "dimensions": "230x200",
+          "role": "decorative",
+          "element_id": "PBrZrHcVj9wmNLJ9-LBx9Rx7nplGslMPS",
+          "occurrence": 1,
+          "parent_element_id": "PBrZrHcVj9wmNLJ9",
+          "container_type": "RECT",
+          "position": {
+            "top": 364.44701601467585,
+            "left": 395.99718071092275
+          },
+          "dimension": {
+            "width": 229.9969075339971,
+            "height": 199.85298398532416
+          },
+          "editable": true
+        },
+        {
+          "raw": "large SHAPE container on left for body card."
+        }
+      ],
+      "page_id": "PBrZrHcVj9wmNLJ9",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 8,
+      "text_slots": [
+        {
+          "raw": "paragraph on lunch dates + SHAPE bottom card container."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-canvas SHAPE-hosted image (`MAGeuPH2-8M`).",
+          "current_asset_id": "MAGeuPH2-8M",
+          "element_id": "PBHP8hkzxGRcNgCK-LBcMGGxYzHzj99F8",
+          "occurrence": 1,
+          "parent_element_id": "PBHP8hkzxGRcNgCK",
+          "container_type": "SHAPE",
+          "position": {
+            "top": -1.7053025658242404e-13,
+            "left": 2.2737367544323206e-13
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627.0000000000001
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBHP8hkzxGRcNgCK",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 9,
+      "text_slots": [
+        {
+          "raw": "\"Effective Internal Communications:\" \u2014 title",
+          "placeholder": "Effective Internal Communications:",
+          "role_hint": "title",
+          "element_id": "PBZYlx8kbp4zDmpG-LBzrw77KG8rySJMg",
+          "container_type": "TEXT",
+          "position": {
+            "top": 72.70000000000002,
+            "left": 72.70000000000002
+          },
+          "dimension": {
+            "width": 503.1211442767017,
+            "height": 112.399995
+          }
+        },
+        {
+          "raw": "4 bullet labels (alignment, consistency, brand image, trust) each beside a check-circle SHAPE"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM4Hag30`) + 4 x 35x35 check-icon images (`MAF49bRGRc4`) + right-side 495x495 decorative SHAPE.",
+          "current_asset_id": "MAFsM4Hag30",
+          "dimensions": "35x35",
+          "role": "full-bg",
+          "element_id": "PBZYlx8kbp4zDmpG-LBdRrSHwrHvvtJFL",
+          "occurrence": 1,
+          "parent_element_id": "PBZYlx8kbp4zDmpG",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": -4.547473508864641e-13
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBZYlx8kbp4zDmpG",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-inline-image-photo",
+  "canvas": "1200x627",
+  "page_count": 9,
+  "inspection_design_id": "DAHLWwm0YXw",
+  "notes": "this is a 9-page inline-illustration kit covering paragraph/quote/list/checklist layouts. Many decorative pieces are SHAPE-only (no fills). Page 6's numbered list uses 10 separate SHAPE bullets + literal \"x\" placeholders to be replaced. Layered frame: yes (multiple pages) \u2014 body card SHAPE overlays page-bg SHAPE on most pages; circle/check icons overlay full-bg on page 9.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwm0YXw"
+}

@@ -23,6 +23,16 @@ None to ask. Reads [`sources.md`](sources.md) and parses the sources it declares
 
 - [`sources.md`](sources.md) — source registry
 
+## Execution
+
+Steps 1–9 are mechanized in [`refresh.py`](refresh.py). Run it, then do Step 10 in chat.
+
+```bash
+python3 /Users/travisfoster/claude-code/cerkl/content-dashboard/refresh.py
+```
+
+The script writes `data.json` and copies the prior file to `data.previous.json` so Step 10 can diff. The Steps 1–9 below are the contract the script implements — keep them in sync when changing parsing logic.
+
 ## Steps
 
 ### Step 1 — Read the registry
@@ -143,6 +153,7 @@ Sort `actions[]` so ready actions come first; within ready, sort by the order in
 Path: [`data.json`](data.json). Overwrite in place. Schema reference below.
 
 ### Step 10 — Summarize in chat
+Diff `data.json` against `data.previous.json` (written by the script) to identify what changed. Narrate:
 - CSV state changes (placeholders filled since last refresh; new CSVs in `jira/imports/`)
 - New briefs since prior refresh; status changes
 - Blog posts that moved between states (e.g., draft → live)
@@ -277,4 +288,6 @@ One paragraph; no file dump.
 
 ## Learnings
 
-(Append as the process matures: what broke, what we changed, why.)
+- **2026-06-02 — mechanized Steps 1–9 into `refresh.py`.** Hand-refreshes were burning ~3k output tokens writing `data.json` and were error-prone on long CSV Description cells (a manual scan miscounted W24 LinkedIn copy as 0/4 filled when it was actually 3/4; the script parsed the same file correctly). Script also persists `data.previous.json` so Step 10 has a real diff to narrate.
+- **2026-06-02 — out-of-band LinkedIn rows skip copy-fill totals.** Rows with `(out-of-band)` in the Summary are placeholders for Jira capacity tracking; copy is filled at publish time outside the content-plan system. Counting them as unfilled meant CSVs could never flip to `ready-to-import`. Now `copy.total` excludes them.
+- **2026-06-02 — `fill-brief-gaps` reason notes candidate queued briefs.** When a rolling-4week row says `needs brief from SEO`, the script checks the queued-briefs bucket for slug-tokens that overlap the deliverable text (≥2 tokens of length ≥4). If a candidate is found, the action prompt tells the next agent to confirm fit + schedule rather than write a duplicate brief.

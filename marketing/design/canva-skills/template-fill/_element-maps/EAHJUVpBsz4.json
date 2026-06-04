@@ -1,0 +1,100 @@
+{
+  "template_id": "EAHJUVpBsz4",
+  "name": "Blog Post Promo",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor \" \u2014 title",
+          "placeholder": "Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor ",
+          "role_hint": "title",
+          "element_id": "PBnShqV5HCtpLJdr-LB0Qk7qJ88kHPbGk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 201.60978131315716,
+            "left": 67.5
+          },
+          "dimension": {
+            "width": 555.2737467474196,
+            "height": 270.933365
+          }
+        },
+        {
+          "raw": "\"Read More\" \u2014 CTA button label",
+          "placeholder": "Read More",
+          "role_hint": "CTA button label",
+          "element_id": "PBnShqV5HCtpLJdr-LBj3DXm8Yztp7nj6-LBSBkv4qs3Yk0j8S",
+          "container_type": "TEXT",
+          "position": {
+            "top": 584.3761664888339,
+            "left": 100.07083507640492
+          },
+          "dimension": {
+            "width": 202.97469287784273,
+            "height": 46.26664
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg, current asset_id: `MAHJUA4UVOY`",
+          "current_asset_id": "MAHJUA4UVOY",
+          "role": "full-bg",
+          "element_id": "PBnShqV5HCtpLJdr",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "46x46, role: icon (arrow icon inside CTA, NOT editable), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "46x46",
+          "role": "icon"
+        },
+        {
+          "raw": "351x55, role: logo (Cerkl + Blog Post lockup, NOT editable), current asset_id: `MAHJUGCy-_A`",
+          "current_asset_id": "MAHJUGCy-_A",
+          "dimensions": "351x55",
+          "role": "logo"
+        }
+      ],
+      "page_id": "PBnShqV5HCtpLJdr",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same title + Read More."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same full-bg variant (`MAHJUCDd4Hg`) + same icon + lockup.",
+          "current_asset_id": "MAHJUCDd4Hg",
+          "role": "full-bg",
+          "element_id": "PB77JkMHd1gN1LPW",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PB77JkMHd1gN1LPW",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-post-promo",
+  "canvas": "1200x675",
+  "page_count": 2,
+  "inspection_design_id": "DAHLW0CXETg",
+  "notes": "CTA SHAPE pill wraps the Read More button. Two of the three image fills are locked editable=false (icon + lockup). Layered frame: yes \u2014 CTA SHAPE overlays full-bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW0CXETg"
+}

@@ -6,10 +6,56 @@
 **Featuring:** Rachel Folz, Head of Product, Cerkl
 **Giveaway:** [What one attendee will receive — optional for an internal webinar]
 **Slidedeck:** [Link once created]
-**Mutual Action Plan:** N/A — internal solo webinar
+**Mutual Action Plan:** [Cerkl Webinar Internal MAP — Rachel Folz, June 2026](https://docs.google.com/spreadsheets/d/12-d4oC27mMfr384G01u8PVn8b3n3Fo7Kj2B18aZIDJ0/edit)
+**Google Doc Brief:** [Cerkl Webinar Brief — Rachel Folz, June 2026](https://docs.google.com/document/d/1oav1DePRF4jaffRvCB9t8lCRHrc5Y5fAJ4hD5lo_U08/edit)
 **Generic (untracked) Registration Link:** [Zoom registration URL — base, no source tag]
 
 > **Format:** Solo / internal webinar — Rachel Folz (Cerkl) presenting alone. There is **no external partner**, so partner-specific sections below (Partner's Perspective, partner-led giveaway, partner amplification) are **N/A** unless a co-presenter is added. The `webinar-brief` skill should populate the remaining placeholders as a single-presenter Cerkl event.
+
+---
+
+## What we need from you, Rachel — for the June 25 launch
+
+This brief drives the registration page, promo emails, outline, and on-stage flow. Most of it depends on **your POV**. Please respond to the prompts below — either typing answers directly under each item, or free-writing your take on the blocks and I'll structure it into the brief sections below.
+
+**Working deadline: this week.** Content-dev locks **2026-06-04** (registration page, Canva assets, blog post), so the earlier the better.
+
+### Quick orientation (so the asks land right)
+
+- **Audience:** Foundations ICP — HR generalists / ops leads at 50–500 person companies. Pre-evaluation, not yet category-aware.
+- **CTA:** Foundations free sign-up (frictionless). Not "request a demo." This shapes the framing throughout.
+- **Why anchored on you:** Insights / Measurement is your product surface, and the May 2026 redesign is fresh and worth featuring.
+
+### A. Topic & POV
+
+1. Your **one-sentence thesis** on measurement in internal comms — what do most IC teams get wrong?
+2. If attendees leave believing **one thing**, what is it?
+3. **2–4 supporting pillars** or sub-themes that hold up your thesis.
+
+### B. Concrete substance
+
+4. **3–5 specific failure points** you see in the field. (Examples: dashboards CFOs/CHROs ask for that teams can't deliver; metrics teams chase that don't actually matter; reports that hide rather than reveal.)
+5. **Three learning areas, with 2–3 concrete takeaways per area** — what should attendees be able to *do* differently Monday morning?
+6. **Product demo moment** — the May 2026 Insights redesign is a natural candidate. What would you actually show on-screen, and for how long?
+
+### C. Engagement
+
+7. **2–3 polling questions** for live audience self-diagnosis. Good polls do two things at once: give attendees a mirror, and give you a data point to pivot the talk around.
+8. **Giveaway** — optional for an internal webinar. Candidate ideas: a measurement-readiness audit, a 1:1 with you, early access to something. Yes/no, and what?
+
+### D. Voice & bio
+
+9. **Your preferred webinar title.** The current "Insights / Measurements" is a working placeholder — replace it with what *you'd* call this talk.
+10. **3–5 paragraphs of synopsis in your voice** — what you'd actually say if someone asked "what's this webinar about?" Don't sanitize; we want the version that sounds like you, not the marketing version.
+11. **Updated bio + headshot** (current photo is fine if recent).
+
+### E. Anything else
+
+12. Anything I haven't asked about that you want the audience to walk away with?
+
+---
+
+*Sections below are the structured brief that will get populated from your answers above. Skim if useful, otherwise jump straight to filling in the blocks.*
 
 ---
 

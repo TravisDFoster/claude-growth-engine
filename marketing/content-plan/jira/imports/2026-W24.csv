@@ -1,0 +1,109 @@
+Work Item ID,Issue Type,Parent ID,Epic Link,Summary,Description,Owner,Channel,Start Date,Due Date
+T001,Task,,,Content - Blog (Cerkl.com) - Microsoft Teams for Internal Communications — A 2026 Playbook,"Topic: Practical playbook for using Microsoft Teams in internal communications, where Teams works well, and where an IC platform extends it
+Slug: microsoft-teams-internal-communications
+Brief link: ../seo/briefs/microsoft-teams-internal-communications.md
+Primary keyword: Microsoft Teams internal communications
+Secondary keywords: Teams for employee comms, Microsoft Teams internal communications app, Teams company-wide announcements, Microsoft Teams omni-channel internal comms, Teams plus internal comms platform
+Webflow CMS properties:
+  - Primary Category: mobile-employee-experience
+  - Primary Solution: Omni AI
+  - All Categories: AI in IC
+Draft (Google Doc): https://docs.google.com/document/d/1m5y1K2HXbmDbBS6MdWkkdInyjqKdNBBZgkwUXLWmQ1I/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-02,2026-06-08
+S001,Subtask,T001,,Blog – Copy,Write the blog post copy from the brief / outline.,,Blog Posts,2026-06-02,2026-06-03
+S002,Subtask,T001,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-06-03,2026-06-04
+S003,Subtask,T001,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-06-04,2026-06-05
+S004,Subtask,T001,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,,Blog Posts,2026-06-05,2026-06-08
+T002,Task,,,Content - Blog (ICP) - What inclusive internal comms actually looks like (beyond box-checking),"Topic: Inclusive internal comms as a practical discipline beyond surface-level DEI messaging
+Slug: what-inclusive-internal-comms-actually-looks-like-beyond
+Note: ICPro has no brief queue — slug synthesized from the deliverable title at scaffold time
+Draft (Google Doc): https://docs.google.com/document/d/1D9hXqHdBfQ1GGNUBm-insrmRcKkGlWXV1c9SXEh73jw/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-02,2026-06-09
+S005,Subtask,T002,,Blog – Copy,Write the blog post copy from the outline.,,Blog Posts,2026-06-02,2026-06-03
+S006,Subtask,T002,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-06-03,2026-06-04
+S007,Subtask,T002,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-06-04,2026-06-08
+S008,Subtask,T002,,Blog – Implementation / Publishing,Stage in Wix with CMS properties; schedule publish.,,Blog Posts,2026-06-08,2026-06-09
+T003,Task,,,Social Media - LinkedIn - Financial services IC's double mandate,"Topic: Static theme post on the double mandate of financial services IC (engagement + audit evidence) and the architecture that serves both from the same send
+Post type: static-theme
+Wraps: internal-communications-in-financial-services
+Copy:
+Asset: https://www.canva.com/d/MLkpEOjWTb04j6W
+
+A regulator asks for all internal communications sent to a specific audience over a specific date range. The IC team has the open rate. That is not the answer to the question.
+
+For financial services internal comms teams, every message has to do two jobs at once. Land with employees (read, understand, act) and produce audit-grade evidence (who received, who acknowledged, when, on what device). Same send, same stack.
+
+The trap most teams fall into is defaulting to one mandate and letting the other slip. Compliance-first programs become legal newsletters nobody reads. Engagement-first programs produce read-but-not-acknowledged content that surfaces at the next exam. Neither version holds up.
+
+The 2026 architecture serves both from the same send. Dynamic audience segmentation that mirrors information-barrier topology. Channel-preference handling across email, mobile, Teams, SharePoint. Audit-grade record-keeping that feeds Smarsh, Global Relay, or Microsoft Purview cleanly. Receipt evidence as a first-class output, not an afterthought.
+
+The leading indicator the compliance team should be asking about is the acknowledgment completion rate, not the open rate. ""We sent the new code of conduct to 4,000 employees, 3,200 acknowledged within 14 days"" is a number that holds up under examination. The follow-up cadence to chase the remaining 800 is the operational discipline that makes the compliance side of the program work.
+
+A financial services IC team designing for engagement only is a team waiting for an exam finding. A team designing for compliance only is a team whose program nobody reads.
+
+Both jobs. Same send. Same stack.
+
+#InternalCommunications #FinancialServices #EmployeeEngagement",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-05,2026-06-09
+S009,Subtask,T003,,LinkedIn – Copy,Draft the post copy.,,Social Media,2026-06-05,2026-06-08
+S010,Subtask,T003,,LinkedIn – Asset Creation,Create or source the static asset (typically a pull-quote card or stat callout).,,Social Media,2026-06-05,2026-06-08
+S011,Subtask,T003,,LinkedIn – Approval,Review post + asset; sign off.,,Social Media,2026-06-08,2026-06-08
+S012,Subtask,T003,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,,Social Media,2026-06-09,2026-06-09
+T004,Task,,,Content - Blog (Cerkl.com) - Internal Communications in Financial Services — A 2026 Compliance + Engagement Playbook,"Topic: Financial services internal communications playbook framed around the double mandate of compliance and engagement
+Slug: internal-communications-in-financial-services
+Brief link: ../seo/briefs/internal-communications-in-financial-services.md
+Primary keyword: internal communications in financial services
+Secondary keywords: banking internal communications, financial services comms, compliance communications financial, internal communications regulated industries, investment banking internal comms
+Webflow CMS properties:
+  - Primary Category: internal-communication-strategy
+  - Primary Solution: Foundations
+  - All Categories: Financial Services, Industry verticals
+Draft (Google Doc): https://docs.google.com/document/d/1YWdI5Ftu-QjmXZpsoa6KJ-7RwKhKCAYRRsAWbZOqCLg/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-03,2026-06-10
+S013,Subtask,T004,,Blog – Copy,Write the blog post copy from the brief / outline.,,Blog Posts,2026-06-03,2026-06-04
+S014,Subtask,T004,,Blog – Image Creation,Create or source images per the post outline.,,Blog Posts,2026-06-04,2026-06-05
+S015,Subtask,T004,,Blog – Approval,Review draft + edit pass; sign off for publishing.,,Blog Posts,2026-06-08,2026-06-09
+S016,Subtask,T004,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,,Blog Posts,2026-06-09,2026-06-10
+T005,Task,,,Social Media - LinkedIn - Link post: Microsoft Teams for Internal Communications,"Topic: Link post pointing to the Microsoft Teams internal communications playbook
+Post type: static-blog
+Wraps: microsoft-teams-internal-communications
+Copy:
+Microsoft is shipping a lot of AI into Teams in 2026. Copilot, intelligent recap, suggested replies, Loop components, Decisions. All real, all worth the licenses an enterprise is paying for.
+
+It is also calibrated for the individual employee at their desk, not for the company-wide question of who needs to hear what, on which channel, in which language, and whether the message landed.
+
+The new playbook walks through where Teams AI helps for internal communications, the four hard limits it hits (segmentation beyond AD groups, cross-channel read attribution, personalization at scale, orchestration), the integration patterns that extend it, and a 30-day plan to generate the data that funds the architecture upgrade.
+
+The honest read: keep Teams as the collaboration spine. Layer the delivery and measurement system above it.
+
+Full breakdown:
+
+https://cerkl.com/blog/microsoft-teams-internal-communications
+
+#InternalCommunications #EmployeeEngagement #HRTech",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-08,2026-06-10
+S017,Subtask,T005,,LinkedIn – Copy,Draft the post copy.,,Social Media,2026-06-08,2026-06-08
+S018,Subtask,T005,,LinkedIn – Asset Creation,Create or source the static asset (typically the blog hero or a pull-quote card).,,Social Media,2026-06-08,2026-06-09
+S019,Subtask,T005,,LinkedIn – Approval,Review post + asset; sign off.,,Social Media,2026-06-09,2026-06-09
+S020,Subtask,T005,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,,Social Media,2026-06-10,2026-06-10
+T006,Task,,,Social Media - LinkedIn - Short Video (out-of-band),"Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-09,2026-06-11
+T007,Task,,,Social Media - LinkedIn - Financial services IC teams: which mandate eats most of your week?,"Topic: LinkedIn poll on the operational mandate that eats most of a financial services IC team's week — regulatory compliance, audience segmentation, or speed of approvals
+Post type: poll
+Wraps: internal-communications-in-financial-services
+Copy:
+For financial services IC teams, every internal message is an engagement artifact and an audit artifact at the same time. The split between those two jobs sets the operational shape of the week.
+
+Some weeks the heavy lift is regulatory compliance: feeding retention systems, evidencing receipt on attestations, chasing acknowledgment rates to 100. Some weeks it is audience segmentation: making sure information barriers held, that the AD groups still match the org chart, that no list quietly spans a restricted population. Some weeks it is the approvals queue: legal, compliance, and risk all reviewing the same send before it goes out.
+
+All three are real work. Most weeks one of them is the bottleneck, and which one says a lot about where the IC architecture has gaps.
+
+Curious which mandate is eating your time this quarter.
+
+Poll:
+Question: Financial services IC: which mandate eats most of your week?
+Options:
+1. Regulatory compliance (receipts, retention, audit)
+2. Audience segmentation (info barriers, dynamic lists)
+3. Approval cycles (legal, compliance, risk)
+Duration: 1 week
+
+#InternalCommunications #FinancialServices #ComplianceCommunications",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-10,2026-06-12
+S021,Subtask,T007,,LinkedIn – Copy,Draft the poll question + answer options.,,Social Media,2026-06-10,2026-06-10
+S022,Subtask,T007,,LinkedIn – Asset Creation,(N/A for polls — native poll widget; skip or mark done.),,Social Media,2026-06-10,2026-06-10
+S023,Subtask,T007,,LinkedIn – Approval,Review poll question + options; sign off.,,Social Media,2026-06-11,2026-06-11
+S024,Subtask,T007,,LinkedIn – Implementation / Publishing,Publish poll natively on LinkedIn; confirm live.,,Social Media,2026-06-12,2026-06-12

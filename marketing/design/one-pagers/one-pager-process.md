@@ -1,6 +1,6 @@
 # One-Pager
 
-> Produce a print-ready letter-portrait PDF from a brief. Output: `pdfs/<slug>-YYYY-MM-DD.{md,html,pdf}` trio in this folder.
+> Produce a print-ready PDF from a brief. Output: a `.{md,html,pdf}` trio under `output/<family>/` (e.g. `output/battlecards/<slug>-YYYY-MM-DD.*`). Letter-portrait by default; competitive battlecards are letter-landscape.
 
 ## Trigger
 
@@ -41,12 +41,40 @@ If the one-pager names specific Broadcast features (Audience Manager, Email Blas
 ## Output path convention
 
 ```
-cerkl/marketing/design/one-pagers/pdfs/<slug>-YYYY-MM-DD.md
-cerkl/marketing/design/one-pagers/pdfs/<slug>-YYYY-MM-DD.html
-cerkl/marketing/design/one-pagers/pdfs/<slug>-YYYY-MM-DD.pdf
+cerkl/marketing/design/one-pagers/output/<family>/<slug>-YYYY-MM-DD.md
+cerkl/marketing/design/one-pagers/output/<family>/<slug>-YYYY-MM-DD.html
+cerkl/marketing/design/one-pagers/output/<family>/<slug>-YYYY-MM-DD.pdf
 ```
 
+**Folder layout.** Artifacts live in `output/`, grouped by family: `output/battlecards/` (competitor comparisons; `…/research/` holds supporting notes), `output/recaps/` (webinar/event), `output/leave-behinds/` (sales handouts). Add a new family folder when a new artifact type recurs. Shared input assets — partner logos, CS source images, screenshots — live in `one-pagers/assets/`. The `reference-one-pager.html`/`.pdf` template stays at the `one-pagers/` root (the skills path to it there).
+
 The `.pdf` is the deliverable. The `.md` and `.html` are the audit trail — keep them. Revisions are 100× easier when the markdown source is on disk.
+
+---
+
+## Workflow phases (pause at each gate)
+
+Run the build in three phases with an explicit **pause at each gate**. The framing of a competitive/sales one-pager is contingent on context and facts that often arrive mid-build — pausing prevents the re-work we hit when we drafted before verifying.
+
+**Phase 1 — Pull & intake.** Gather the brief (intake block above) *and* the soft context from Sales/CS: the specific objections raised in the room, stakeholder sentiment, and what the prospect already owns or values. Pull any competitor/product facts you'll need.
+
+**▸ Gate 1 — Verify against research & source of truth (PAUSE).** Reconcile every factual claim against `shared/broadcast.md` (Cerkl) and verified research (competitors → Microsoft Learn / official docs, captured in `shared/competitors.md`). **The source of truth wins over any external or Sales/CS material** — even trusted internal collateral has shipped errors (a CS battlecard listed SMS + digital signage as Cerkl channels; neither is real). Scope every capability claim to the exact plan/tier being pitched. Do not start drafting until claims are verified.
+
+**Phase 2 — Build & refine (HTML).** Draft → render HTML → iterate on the HTML with feedback and fine-tuning (see *Iteration workflow* below). Do **not** render the PDF during this phase, and don't re-sync the `.md` on every change.
+
+**▸ Gate 2 — Sign-off (PAUSE).** Get explicit approval of the HTML before rendering.
+
+**Phase 3 — Render & finalize.** Render the PDF through the verify gate, confirm it (incl. a human eyeball of the *actual PDF*, not just the detector), then reconcile the `.md` source to match what shipped.
+
+## Principles (competitive battlecards & one-pagers)
+
+- **Build prospect-agnostic first, personalize last.** Default to channel- and client-agnostic copy; layer account specifics (logo, name, "their goal") as a final optional pass. (We built TMNAS-specific and had to strip it back out — reverse that order.)
+- **Pull objections & sentiment from Sales/CS, not just facts.** The framing-defining steers ("leadership dislikes 'social media'," "wary of algorithms," "why not use what's already in our license") were political/emotional and lived only in the reps' heads.
+- **Verify every claim against the source of truth** — including Sales/CS materials (see Gate 1). Adopt their *voice and structure*; trust nothing factual until reconciled with `broadcast.md`.
+- **Scope claims to the tier being pitched.** Foundations vs. Foundations+ vs. Omni AI differ (e.g., mobile app / microsites / cross-channel publishing are Omni AI–only). Tier-inaccurate claims are an easy own-goal.
+- **Position honestly and diplomatically.** Use an amber "limited" mark (not a red ✗), concede the competitor's genuine strengths (e.g., "Engage is great for community"), and never attack a dimension the buyer has already bought (the cost angle backfires once they own the competitor).
+- **Print-fidelity checklist.** (1) `print-color-adjust: exact` on any colored/gradient background, or Chrome drops it in the PDF. (2) Never pin content to the page edge — leave a bottom margin (an edge-pinned footer clipped in print even though the detector passed). (3) The overflow detector is necessary but not sufficient — eyeball the actual PDF's bottom edge.
+- **A battlecard is a reusable system, not a one-off.** The 6-criterion framework (Consistency · Prioritization · Insights · Reach · AI · Total Value) is competitor-agnostic — it spins up Staffbase, Simpplr, Workvivo, etc. Verified competitor facts belong in `shared/competitors.md` so they're reused, not re-researched.
 
 ---
 
@@ -76,6 +104,7 @@ The `.pdf` is the deliverable. The `.md` and `.html` are the audit trail — kee
 | **Sales leave-behind** | in-person handouts, conference takeaways | hero-compact → number-row (3 stats) → feature-grid.cols-3 (6 features) → pill-row → cta-strip |
 | **IT pre-meeting** | stakeholder pre-call brief | hero-compact → grid-2 (purpose) → pill-row → bullet-grid.cols-4 → footer |
 | **Guide chapter** | long-form interior page | running-header → display-h1 → callout-card (thesis) → icon-row-list → footer |
+| **Competitive battlecard** (landscape) | head-to-head vs. a named competitor, scored on buyer criteria | hero (agnostic or co-branded) → criterion-matrix (criterion rail \| Competitor \| Cerkl·plan) → slim diagram-flow (Crawl/Walk/Run) → brand-gradient summary band. **Framework-led, not number-led; letter LANDSCAPE.** Working reference: `output/battlecards/cerkl-vs-viva-amplify-v2-2026-05-29.html` + `…-engage-v2-…` |
 
 **Co-branded hero (partner one-pagers).** When the brief calls for a partner / co-marketing logo alongside the Cerkl Broadcast lockup (MSP partnerships, prospect pre-meetings, customer handouts):
 
@@ -83,7 +112,7 @@ The `.pdf` is the deliverable. The `.md` and `.html` are the audit trail — kee
 - **Anti-pattern: stacked-column hero** (logos row + H1 row + lead paragraph). Adds ~80px to the hero — the single biggest cause of single-page overflow in dense recipe shapes (learned the hard way on allcore-msp-premeeting-2026-05-22).
 - **H1 budget compresses to ≤4 words.** Logos eat horizontal real estate. If the brief locks a longer title, drop H1 font-size from the default 28px to 20–22px and let it run on a single line.
 - **Partner logo height:** ~28–32px to roughly match the 26px Cerkl medium lockup. Tune by eye.
-- **Partner logo asset location:** TBD. Anticipate `sales/prospects/<account>/` folders once that channel matures. For now, drop the file in `one-pagers/<slug>-logo.png` and reference as `../<slug>-logo.png` from `pdfs/`.
+- **Partner logo asset location:** keep partner/co-brand logos in `one-pagers/assets/` (alongside `tmnas-logo.png`, `allcore-logo.png`). From an `output/<family>/` HTML, reference them as `../../assets/<logo>.png`. (Anticipate `sales/prospects/<account>/` folders once that channel matures.)
 
 **Anti-pattern: stacking two of the same component.** Two `feature-grid.cols-2` back-to-back, or two `bullet-grid` back-to-back, reads as a textbook page. Default to ≥3 distinct component types per body page. If a brief seems to call for stacking, propose a recipe with mixed components first; only stack with explicit user sign-off.
 
@@ -110,31 +139,31 @@ The `.pdf` is the deliverable. The `.md` and `.html` are the audit trail — kee
 - **Owner:** Claude
 - **Needs:** `cerkl/marketing/skills/copywriting/SKILL.md` (auto-triggers on copy work). For sales-enablement angles, also `cerkl/marketing/skills/sales-enablement/SKILL.md`.
 - **Inputs:** approved outline from Step 2; loaded brand context (incl. `shared/broadcast.md` and any relevant `shared/features/*.md`)
-- **Produces:** `pdfs/<slug>-YYYY-MM-DD.md` — markdown copy with one section per component, ordered to match the outline, written within each variant's word budget
+- **Produces:** `output/<family>/<slug>-YYYY-MM-DD.md` — markdown copy with one section per component, ordered to match the outline, written within each variant's word budget
 - **What to do:** Write Cerkl-voice copy. Mark each section with an HTML comment naming its target component (e.g., `<!-- component: feature-grid.cols-3 -->`) so md-to-html knows what to render. Stay at or under each variant's word budget — if a section runs over, pick a roomier variant in Step 2 rather than forcing CSS to absorb it.
 
-Before writing, skim the most recent file in `pdfs/` whose recipe matches yours — it's the working precedent for the markdown→HTML convention the renderer parses (e.g., matt-frost-recap-2026-05-19.md for hero + number-row + callout + cta shapes; allcore-msp-premeeting-2026-05-22.md for co-branded hero + feature-grid.cols-2 shapes).
+Before writing, skim the most recent file in the matching `output/<family>/` folder whose recipe matches yours — it's the working precedent for the markdown→HTML convention the renderer parses (e.g., `output/recaps/matt-frost-recap-2026-05-19.md` for hero + number-row + callout + cta shapes; `output/leave-behinds/allcore-msp-premeeting-2026-05-22.md` for co-branded hero + feature-grid.cols-2 shapes; `output/battlecards/cerkl-vs-viva-amplify-v2-2026-05-29.html` for the landscape competitive battlecard).
 
 **Asset paths** — when the outline includes:
-- `.logo-strip.logos` → reference files from `cerkl/marketing/design/branding-assets/Customer Logos/`. Current inventory (2026-05-15): Church & Dwight, Novant Health, UC, Paycor, Roivant, St. Elizabeth. Output HTML lives in `pdfs/`, so `<img>` src is `../../branding-assets/Customer Logos/<filename>.png` (URL-encode spaces). If the brief names a customer not in the folder, fall back to `.logo-strip.names` OR flag for asset acquisition.
+- `.logo-strip.logos` → reference files from `cerkl/marketing/design/branding-assets/Customer Logos/`. Current inventory (2026-05-15): Church & Dwight, Novant Health, UC, Paycor, Roivant, St. Elizabeth. **Output HTML now lives in `output/<family>/` (one level deeper than the old `pdfs/`), so `<img>` src is `../../../branding-assets/Customer Logos/<filename>.png`** (three `../`; URL-encode spaces). If the brief names a customer not in the folder, fall back to `.logo-strip.names` OR flag for asset acquisition.
 - `.photo-ph` (hero / image cards) → `cerkl/marketing/design/branding-assets/Cerkl Photography/INDEX.md` — read the searchable per-photo index and pick from there (Office / Culture / Group Photos subfolders)
 - `.wordmark-ph` (Broadcast logo) → `cerkl/marketing/design/branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/`
 
 ### Step 4 — Render HTML
 - **Owner:** Claude (sub-agent OK to keep parent context light)
 - **Needs:** `cerkl/skills/md-to-html/SKILL.md` with `artifact-type=one-pager`
-- **Inputs:** `pdfs/<slug>-YYYY-MM-DD.md`
-- **Produces:** `pdfs/<slug>-YYYY-MM-DD.html`
+- **Inputs:** `output/<family>/<slug>-YYYY-MM-DD.md`
+- **Produces:** `output/<family>/<slug>-YYYY-MM-DD.html`
 - **What to do:** Invoke md-to-html with `artifact-type=one-pager`. The skill reads `cerkl/marketing/design/one-pagers/reference-one-pager.html` (not the daily-recap or deep-dive references) and composes HTML using the variant tags in the markdown source.
 
 **Asset substitution checklist — verify before returning the HTML.** Two prior renders shipped the reference's CSS placeholder squares instead of the real brand assets (matt-frost-recap, foundations-post-webinar). The reference uses ::before pseudo-elements as visual stand-ins; they only swap out when the markdown source includes an actual `<img>` and the renderer keeps it.
 
 | Slot | Reference placeholder | Required substitution |
 |---|---|---|
-| `.hero-cover .wordmark-ph` | cobalt square + "Broadcast" text | `<img src="../../branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/Medium (160px)/cerkl_broadcast_horizontal_lockup_full_color_medium.png">` |
-| `.hero-cover .photo-block` | "[ HERO PHOTO ]" gradient | `<img src="../../branding-assets/Cerkl Photography/<subfolder>/<file>.jpg">` filling the block |
+| `.hero-cover .wordmark-ph` | cobalt square + "Broadcast" text | `<img src="../../../branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/Medium (160px)/cerkl_broadcast_horizontal_lockup_full_color_medium.png">` |
+| `.hero-cover .photo-block` | "[ HERO PHOTO ]" gradient | `<img src="../../../branding-assets/Cerkl Photography/<subfolder>/<file>.jpg">` filling the block |
 | `.hero-compact .wordmark-ph` | cobalt square + "Broadcast" text | Same 160px lockup OR 80px small, depending on hero size |
-| `.footer .brand` | "Cerkl" text | `<img src="../../branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/Small (80px)/cerkl_broadcast_horizontal_lockup_full_color_small.png">` |
+| `.footer .brand` | "Cerkl" text | `<img src="../../../branding-assets/Broadcast/Cerkl Broadcast Horizontal Lockup/Small (80px)/cerkl_broadcast_horizontal_lockup_full_color_small.png">` |
 | `.image-card .photo-ph` | "[ PHOTO ]" gradient | `<img>` per Step 3 asset paths (or leave empty if the card is decorative) |
 
 If any required slot is still showing a placeholder in the rendered HTML, re-render with the substitution explicit in the markdown source (see matt-frost-recap-2026-05-19.md for an example of the wordmark/photo path comments). Do not advance to Step 5 with placeholders in the customer-facing artifact.
@@ -142,8 +171,8 @@ If any required slot is still showing a placeholder in the rendered HTML, re-ren
 ### Step 5 — Render PDF (with built-in verify gate)
 - **Owner:** Claude
 - **Needs:** `cerkl/skills/html-to-pdf/SKILL.md`
-- **Inputs:** `pdfs/<slug>-YYYY-MM-DD.html`
-- **Produces:** `pdfs/<slug>-YYYY-MM-DD.pdf` (only if verify gate PASS)
+- **Inputs:** `output/<family>/<slug>-YYYY-MM-DD.html`
+- **Produces:** `output/<family>/<slug>-YYYY-MM-DD.pdf` (only if verify gate PASS)
 - **What to do:** Invoke html-to-pdf. The skill runs html-overflow-detector first. If detector FAIL → drop to Step 6 (remediate). If PASS → PDF is written; continue to Step 7.
 
 ### Step 6 — Remediate (only on verify FAIL)
@@ -236,6 +265,12 @@ Read in detail at the top of `reference-one-pager.html`. Summary:
 - Add evals/ folder with 2–3 gold-standard examples to anchor the variant picker's choices.
 - Print-mode page-count check: assert `<.page> div count == PDF page count` after render (catches the rare class of overflows the screen detector misses).
 - A `--max-remediations=N` flag on html-to-pdf so Tier A/B can run autonomously without going back through this orchestrator.
+- **Formalize the landscape competitive-battlecard reference** (a sibling to `reference-one-pager.html`: letter-landscape `@page`, the battlecard/criterion-rail/summary-band/CWR-strip components with content budgets, the brand-gradient + solid-cobalt-column-cap + `print-color-adjust` rules baked in) and an agent skill — "spin up a battlecard for competitor X" → pull verified facts → fill the 6-criterion framework → render-verify. Until then, the `cerkl-vs-viva-*-v2-2026-05-29` files are the working reference.
+- **Persist verified competitor facts** (Viva Engage + Amplify: paid-Viva licensing, 200-recipient publication cap, distribution-group-breaks-open-rate analytics, aggregate-only measurement) into `shared/competitors.md` — they aren't there yet, so each use re-researches them.
+
+## Iteration workflow (drafting → final)
+
+After the first full md → html → pdf pass, **iterate on the `.html` directly.** Travis reviews and gives feedback on the rendered HTML/PDF, so apply copy tweaks, layout changes, logo swaps, and remediation to the HTML and re-run the overflow/PDF gate each round. **Defer reconciling the `.md` source** (and writing remediation-note comments into it) until the draft is final/approved — the `.md` is the audit trail; it needs to match the shipped PDF at the end, not on every intermediate edit. Don't trigger a fresh md-to-html sub-agent render for small iterative changes.
 
 ## Learnings (append-only)
 

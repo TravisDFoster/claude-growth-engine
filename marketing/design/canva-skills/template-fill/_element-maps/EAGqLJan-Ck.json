@@ -1,0 +1,190 @@
+{
+  "template_id": "EAGqLJan-Ck",
+  "name": "16:9 post_Webinar",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"live webinar\" \u2014 kicker pill (SHAPE-wrapped)",
+          "placeholder": "live webinar",
+          "role_hint": "kicker pill (SHAPE-wrapped)",
+          "element_id": "PBfKLMyDsKWVDxBp-LBt7wz8Shd7sr36w",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 123.6295426382309,
+            "left": 64.5053968253969
+          },
+          "dimension": {
+            "width": 191.22474689579167,
+            "height": 42.0578154351919
+          }
+        },
+        {
+          "raw": "\"Date and Time\" \u2014 date+time",
+          "placeholder": "Date and Time",
+          "role_hint": "date+time",
+          "element_id": "PBfKLMyDsKWVDxBp-LB54sCl1P3YSNvCP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 222.81910795860114,
+            "left": 64.50539682539693
+          },
+          "dimension": {
+            "width": 248.9140625,
+            "height": 33.42008
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PBfKLMyDsKWVDxBp-LBfmdP54GS8kM04M",
+          "container_type": "TEXT",
+          "position": {
+            "top": 299.7318127886722,
+            "left": 64.50539682539687
+          },
+          "dimension": {
+            "width": 602.6400364776964,
+            "height": 73
+          }
+        },
+        {
+          "raw": "\"Register now\" \u2014 CTA button label",
+          "placeholder": "Register now",
+          "role_hint": "CTA button label",
+          "element_id": "PBfKLMyDsKWVDxBp-LBZdNxshyPT1RrQ7-LBV0TXVZwPtnjmlC",
+          "container_type": "TEXT",
+          "position": {
+            "top": 532.2526276268356,
+            "left": 64.50539682539683
+          },
+          "dimension": {
+            "width": 185.2320565644131,
+            "height": 34.56289656877921
+          }
+        },
+        {
+          "raw": "\"Hosted by:\" \u2014 speaker-block label",
+          "placeholder": "Hosted by:",
+          "role_hint": "speaker-block label",
+          "element_id": "PBfKLMyDsKWVDxBp-LB6Jm8MNvVT6zrsr",
+          "container_type": "TEXT",
+          "position": {
+            "top": 222.81910795860114,
+            "left": 810.4370418093639
+          },
+          "dimension": {
+            "width": 127.2578125,
+            "height": 22.28004
+          }
+        },
+        {
+          "raw": "\"INsert logo(s)\" \u2014 logo placeholder instruction",
+          "placeholder": "INsert logo(s)",
+          "role_hint": "logo placeholder instruction",
+          "element_id": "PBfKLMyDsKWVDxBp-LBGchnVWcDlZM1bW",
+          "container_type": "TEXT",
+          "position": {
+            "top": 134.55246795860114,
+            "left": 813.2602773576099
+          },
+          "dimension": {
+            "width": 171.484375,
+            "height": 22.26664
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 2 speaker rows",
+          "placeholder": "Name",
+          "role_hint": "2 speaker rows",
+          "element_id": "PBfKLMyDsKWVDxBp-LB5sjH9qCjbgwTbw",
+          "container_type": "TEXT",
+          "position": {
+            "top": 286.4165682760614,
+            "left": 955.3985186681916
+          },
+          "dimension": {
+            "width": 177.10148133180837,
+            "height": 23.90804
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "429x675, role: photo-slot (right-side panel, NOT full-bg \u2014 covers right ~36% of canvas), current asset_id: `MAFZiZb7uOs`",
+          "current_asset_id": "MAFZiZb7uOs",
+          "dimensions": "429x675",
+          "role": "photo-slot",
+          "element_id": "PBfKLMyDsKWVDxBp-LBMsjtl88rgJSSqN",
+          "occurrence": 1,
+          "parent_element_id": "PBfKLMyDsKWVDxBp",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 769.2808888888887
+          },
+          "dimension": {
+            "width": 428.8143492063493,
+            "height": 675
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBfKLMyDsKWVDxBp",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same kicker/date/title/CTA/hosted-by + \"INsert logo(s)\" + 3 Name/Title rows."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same single 429x675 right panel fill.",
+          "dimensions": "429x675"
+        }
+      ],
+      "page_id": "PBFfqg5X4RV51Z0y",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same plus 4 Name/Title rows."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same single 429x675 right panel fill.",
+          "dimensions": "429x675"
+        }
+      ],
+      "page_id": "PBDCbRsRJKGqnrQg",
+      "dimension": {
+        "width": 1200,
+        "height": 675
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-share-16x9-generic",
+  "canvas": "1200x675",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW4DuC-c",
+  "notes": "only ONE image fill (the right-side colored panel); no headshot fills, no logo fills \u2014 speaker thumbs and partner logos must be added manually. Pages differ only by speaker-row count (2/3/4). Layered frame: yes \u2014 kicker is a SHAPE with embedded text overlay; right panel image fill underlies the speaker-card text stack.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4DuC-c"
+}

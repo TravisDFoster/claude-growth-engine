@@ -1,0 +1,299 @@
+{
+  "template_id": "EAGqLERK1oE",
+  "name": "Email Blast Banner_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" \u2014 kicker",
+          "placeholder": "Webinar",
+          "role_hint": "kicker",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBsljpqRmh44w0Gp-LBDDtyYWrStcfMk6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 28.44109861240449,
+            "left": 28.000000000000032
+          },
+          "dimension": {
+            "width": 63.865653861019176,
+            "height": 11.783515274819997
+          }
+        },
+        {
+          "raw": "\"|   Mar 6, 2025 1:00 pm est\" \u2014 date+time",
+          "placeholder": "|   Mar 6, 2025 1:00 pm est",
+          "role_hint": "date+time",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBT2CL6Ry4nc3pvh",
+          "container_type": "TEXT",
+          "position": {
+            "top": 28.441098612404495,
+            "left": 111.94547381091307
+          },
+          "dimension": {
+            "width": 204.86527254815158,
+            "height": 11.78349684390389
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBTZq3ytsyhPCPHn",
+          "container_type": "TEXT",
+          "position": {
+            "top": 58.044636866243515,
+            "left": 27.99999999999997
+          },
+          "dimension": {
+            "width": 273.62101143481465,
+            "height": 24.06756219658872
+          }
+        },
+        {
+          "raw": "\"Register Now\" \u2014 CTA pill (SHAPE-wrapped)",
+          "placeholder": "Register Now",
+          "role_hint": "CTA pill (SHAPE-wrapped)",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBX33CYCXqr6kPNy-LBNc0CJ1r48665SR",
+          "container_type": "TEXT",
+          "position": {
+            "top": 152.7384678849559,
+            "left": 40.497024722638066
+          },
+          "dimension": {
+            "width": 83.11830510697091,
+            "height": 13.90364910132935
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 speaker-block label (SHAPE-wrapped pill)",
+          "placeholder": "Presented by:",
+          "role_hint": "speaker-block label (SHAPE-wrapped pill)",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBgJsR2VHcVyQ0Dz-LBmCP2v1t7N7BC6Y",
+          "container_type": "TEXT",
+          "position": {
+            "top": 29.257697588063046,
+            "left": 328.5469963754356
+          },
+          "dimension": {
+            "width": 84.40621959705558,
+            "height": 10.150298892586807
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 2 speaker rows",
+          "placeholder": "Name",
+          "role_hint": "2 speaker rows",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBqZT20gq0Gj12KK",
+          "container_type": "TEXT",
+          "position": {
+            "top": 143.10637021573513,
+            "left": 356.4793230829795
+          },
+          "dimension": {
+            "width": 96.28577587860943,
+            "height": 12.365342253131155
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "600x200, role: full-bg, current asset_id: `MAGg-9EbU4I`",
+          "current_asset_id": "MAGg-9EbU4I",
+          "dimensions": "600x200",
+          "role": "full-bg",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBJNKsF5HyD1RW8T",
+          "occurrence": 1,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq",
+          "container_type": "RECT",
+          "position": {
+            "top": 4.263256414560601e-14,
+            "left": 5.684341886080802e-14
+          },
+          "dimension": {
+            "width": 600,
+            "height": 199.99999999999997
+          },
+          "editable": true
+        },
+        {
+          "raw": "9x9, role: icon (play icon next to kicker), current asset_id: `MAGg--nIQbc`",
+          "current_asset_id": "MAGg--nIQbc",
+          "role": "icon",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBsljpqRmh44w0Gp-LBfJ7wdjjK5kQLn6",
+          "occurrence": 1,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq-LBsljpqRmh44w0Gp",
+          "container_type": "RECT",
+          "position": {
+            "top": 29.913317998341306,
+            "left": 93.3780571437546
+          },
+          "dimension": {
+            "width": 8.773601862183801,
+            "height": 8.839076502946366
+          },
+          "editable": true
+        },
+        {
+          "raw": "70x70, role: headshot (speaker 1, square frame), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "70x70",
+          "role": "headshot",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBr9MSHW6M0Pkbvp-LBTHWhwkV8BwgW9m",
+          "occurrence": 1,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq-LBr9MSHW6M0Pkbvp",
+          "container_type": "RECT",
+          "position": {
+            "top": 67.19031050094722,
+            "left": 356.47932308297936
+          },
+          "dimension": {
+            "width": 69.78734660462203,
+            "height": 69.78734660462203
+          },
+          "editable": true
+        },
+        {
+          "raw": "36x13, role: logo (Cerkl wordmark inside presented-by pill), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "36x13",
+          "role": "logo",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBgJsR2VHcVyQ0Dz-LBF09C2cLfrpzzKM",
+          "occurrence": 1,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq-LBgJsR2VHcVyQ0Dz",
+          "container_type": "RECT",
+          "position": {
+            "top": 27.508003435539464,
+            "left": 416.92373920007697
+          },
+          "dimension": {
+            "width": 35.841359761511924,
+            "height": 12.716610451684996
+          },
+          "editable": true
+        },
+        {
+          "raw": "70x70, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "70x70",
+          "role": "headshot",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBWWkJrchhQ46SCB-LBCGn2FY8c4hP95f",
+          "occurrence": 2,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq-LBWWkJrchhQ46SCB",
+          "container_type": "RECT",
+          "position": {
+            "top": 67.19031050094722,
+            "left": 476.1054945707751
+          },
+          "dimension": {
+            "width": 69.78734660462203,
+            "height": 69.78734660462203
+          },
+          "editable": true
+        },
+        {
+          "raw": "77x77, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "77x77",
+          "role": "decorative-badge",
+          "element_id": "PB6Nw7Vz8s3hkzHq-LBjylch2vFm5KtQH",
+          "occurrence": 1,
+          "parent_element_id": "PB6Nw7Vz8s3hkzHq",
+          "container_type": "RECT",
+          "position": {
+            "top": -3.821336576632625,
+            "left": 525.7561651155133
+          },
+          "dimension": {
+            "width": 77.38650220983638,
+            "height": 77.38650220983638
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB6Nw7Vz8s3hkzHq",
+      "dimension": {
+        "width": 600,
+        "height": 200
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same kicker/date/title/CTA/Presented-by + 3 Name + 3 Title."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + play-icon + Cerkl wordmark + thought-leadership badge + 3 x 59x59 headshot squares (asset `MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "59x59",
+          "role": "full-bg",
+          "element_id": "PBmv138LnFZfSb2V-LB4Xn9rxDPVvhSwc-LBLrmpf02qcMcXb1",
+          "occurrence": 1,
+          "parent_element_id": "PBmv138LnFZfSb2V-LB4Xn9rxDPVvhSwc",
+          "container_type": "RECT",
+          "position": {
+            "top": 79.11219906283223,
+            "left": 325.7267459528888
+          },
+          "dimension": {
+            "width": 58.661833330087205,
+            "height": 58.661833330087205
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBmv138LnFZfSb2V",
+      "dimension": {
+        "width": 600,
+        "height": 200
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same kicker/date/title/CTA/Presented-by + 4 Name + 4 Title (2x2 grid)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg + play-icon + Cerkl wordmark + thought-leadership badge + 4 x 46x46 headshot squares (asset `MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "46x46",
+          "role": "full-bg",
+          "element_id": "PBrPCDG7sXZBTWh6-LBDNGsGg30S5CvT8-LBthQz62H4mWVsg3",
+          "occurrence": 1,
+          "parent_element_id": "PBrPCDG7sXZBTWh6-LBDNGsGg30S5CvT8",
+          "container_type": "RECT",
+          "position": {
+            "top": 70.07841796453788,
+            "left": 325.1013764806114
+          },
+          "dimension": {
+            "width": 45.73275392397823,
+            "height": 45.73275392397823
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBrPCDG7sXZBTWh6",
+      "dimension": {
+        "width": 600,
+        "height": 200
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-email-banner",
+  "canvas": "600x200",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW6FUqEs",
+  "notes": "speaker count drives page choice (2/3/4). Headshot fills ARE exposed in this template (unlike its 16:9 sibling). Layered frame: yes \u2014 Presented-by SHAPE pill overlays the full-bg image; headshot squares overlay the full-bg as well.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6FUqEs"
+}

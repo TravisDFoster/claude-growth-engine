@@ -93,13 +93,15 @@ Load the linked file for full detail on whichever feature is relevant.
 
 | Feature Area | What It Does | Plans | Detail |
 |---|---|---|---|
-| **Dynamic audience sync & segmentation** | Pulls live employee data from HRIS/IdP; auto-updating segments without IT dependency | All | [features/audience-segmentation.md](features/audience-segmentation.md) |
-| **Email workflow (Blasts)** | Drag-and-drop builder, templates, retargeting, translation, compliance — built for internal comms | All | [features/email-blasts.md](features/email-blasts.md) |
-| **Pulse surveys & acknowledgments** | Surveys and timestamped read receipts embedded directly in blasts | All | [features/pulse-surveys-acknowledgments.md](features/pulse-surveys-acknowledgments.md) |
-| **Analytics & Insights** | Email analytics on all plans; omni-channel analytics on Omni AI; redesigned May 2026 | All / Omni AI | [features/analytics-insights.md](features/analytics-insights.md) |
-| **AI personalization (News Digest)** | ML-curated personalized newsletters per employee; subject line generator | Omni AI | [features/ai-personalization.md](features/ai-personalization.md) |
-| **Omni-channel publishing** | Publish once across Teams, Slack, SharePoint, mobile, microsites | Omni AI | [features/omni-channel-publishing.md](features/omni-channel-publishing.md) |
-| **Content Management (CMS)** | Single system to plan, create, approve, and schedule content for every channel | Omni AI | [features/content-management.md](features/content-management.md) |
+| **Dynamic audience sync & segmentation** | Pulls live employee data from HRIS/IdP; auto-updating segments, attributes, opt-in/bounce handling, privacy controls | All | [features/audience-segmentation.md](features/audience-segmentation.md) |
+| **Email workflow (Blasts)** | Drag-and-drop builder, templates, sender profiles, retargeting, translation, scheduling, compliance — built for internal comms | All | [features/email-blasts.md](features/email-blasts.md) |
+| **Calendar Invites** | Real Outlook/Google Calendar events (not ICS), rules-based targeting, update propagation, leadership send | Foundations+ / Omni AI | [features/calendar-invites.md](features/calendar-invites.md) |
+| **Pulse surveys & acknowledgments** | Surveys and timestamped read receipts embedded directly in blasts; closes the loop on noisy open rates | All | [features/pulse-surveys-acknowledgments.md](features/pulse-surveys-acknowledgments.md) |
+| **Image Gallery** | Shared image library used across Blasts and Content; in-product cropper | All | [features/image-gallery.md](features/image-gallery.md) |
+| **Analytics & Insights** | Per-blast, channel, audience, content, and category dashboards; custom dashboards on Omni AI | All / Omni AI | [features/analytics-insights.md](features/analytics-insights.md) |
+| **AI personalization (News Digest & Welcome Email)** | ML-curated personalized newsletters per employee; subject line generator; auto Welcome Email | Omni AI | [features/ai-personalization.md](features/ai-personalization.md) |
+| **Omni-channel publishing** | Publish once across Mobile, Teams, Slack, SharePoint, microsites | Omni AI | [features/omni-channel-publishing.md](features/omni-channel-publishing.md) |
+| **Content Management (CMS)** | Content Hub for Stories and Events: author once, distribute everywhere; governance, distribution settings, News Digest Simulator | Omni AI | [features/content-management.md](features/content-management.md) |
 
 ---
 

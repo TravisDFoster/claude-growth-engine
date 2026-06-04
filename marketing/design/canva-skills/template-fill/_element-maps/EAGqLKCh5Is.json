@@ -1,0 +1,267 @@
+{
+  "template_id": "EAGqLKCh5Is",
+  "name": "Video Interview Template",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a heading\" \u2014 lower-third title.",
+          "placeholder": "Add a heading",
+          "role_hint": "lower-third title.",
+          "element_id": "PBDqkZwNPLLHhvYY-LBMmMLLFDZPnG7c8",
+          "container_type": "TEXT",
+          "position": {
+            "top": 489.0333299999994,
+            "left": 230.86873408685528
+          },
+          "dimension": {
+            "width": 1458.2625318262892,
+            "height": 115
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "(none)"
+        }
+      ],
+      "page_id": "PBDqkZwNPLLHhvYY",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Sam Huber\" \u2014 interview-name (centered)",
+          "placeholder": "Sam Huber",
+          "role_hint": "interview-name (centered)",
+          "element_id": "PBvYGSpqwmKhSdpc-LB8NTKgcrqjn687g-LB5DQ5sz8HLBgFvy",
+          "container_type": "TEXT",
+          "position": {
+            "top": 750.6400917371285,
+            "left": 171.4060298376931
+          },
+          "dimension": {
+            "width": 363.578125,
+            "height": 79.66658
+          }
+        },
+        {
+          "raw": "\"Principal Product Designer\" \u2014 role (inside SHAPE lower-third pill)",
+          "placeholder": "Principal Product Designer",
+          "role_hint": "role (inside SHAPE lower-third pill)",
+          "element_id": "PBvYGSpqwmKhSdpc-LBCzKbgjBQsw4nmB-LBB4B2RDz2wM9bNX",
+          "container_type": "TEXT",
+          "position": {
+            "top": 877.1698095220559,
+            "left": 42.572633821929344
+          },
+          "dimension": {
+            "width": 417.703125,
+            "height": 37.59988
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "124x51, role: icon (small icon inside lower-third, NOT editable), current asset_id: `MAFX5e3L0vY`",
+          "current_asset_id": "MAFX5e3L0vY",
+          "dimensions": "124x51",
+          "role": "icon",
+          "element_id": "PBvYGSpqwmKhSdpc-LBCzKbgjBQsw4nmB-LBTwwZYp74zMhGZj",
+          "occurrence": 1,
+          "parent_element_id": "PBvYGSpqwmKhSdpc-LBCzKbgjBQsw4nmB",
+          "container_type": "RECT",
+          "position": {
+            "top": 870.3980869508584,
+            "left": 474.20274786145893
+          },
+          "dimension": {
+            "width": 123.9155454991943,
+            "height": 51.14332514239473
+          },
+          "editable": false
+        },
+        {
+          "raw": "147x82, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "147x82",
+          "role": "logo",
+          "element_id": "PBvYGSpqwmKhSdpc-LBCzKbgjBQsw4nmB-LBT4W3n01BqcnXMk",
+          "occurrence": 1,
+          "parent_element_id": "PBvYGSpqwmKhSdpc-LBCzKbgjBQsw4nmB",
+          "container_type": "RECT",
+          "position": {
+            "top": 854.8627117875434,
+            "left": 460.2757588219293
+          },
+          "dimension": {
+            "width": 147.47149787256362,
+            "height": 82.214075469025
+          },
+          "editable": true
+        },
+        {
+          "raw": "741x129, role: decorative-badge (name-plate underline gradient, off-canvas left), current asset_id: `MAFojMZQho4`",
+          "current_asset_id": "MAFojMZQho4",
+          "dimensions": "741x129",
+          "role": "decorative-badge",
+          "element_id": "PBvYGSpqwmKhSdpc-LB8NTKgcrqjn687g-LBRGbZX7RfGzNmcy",
+          "occurrence": 1,
+          "parent_element_id": "PBvYGSpqwmKhSdpc-LB8NTKgcrqjn687g",
+          "container_type": "RECT",
+          "position": {
+            "top": 726.0840516867133,
+            "left": -145.24869477883487
+          },
+          "dimension": {
+            "width": 741.1411031060662,
+            "height": 128.77866010083017
+          },
+          "editable": true
+        },
+        {
+          "raw": "438x168, role: logo (Broadcast lockup, off-canvas right), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "438x168",
+          "role": "logo",
+          "element_id": "PBvYGSpqwmKhSdpc-LBl5l8WsV09xXkYl",
+          "occurrence": 1,
+          "parent_element_id": "PBvYGSpqwmKhSdpc",
+          "container_type": "RECT",
+          "position": {
+            "top": 854.8627117875435,
+            "left": 1430.5733606731135
+          },
+          "dimension": {
+            "width": 437.59208164368135,
+            "height": 167.63304005504156
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBvYGSpqwmKhSdpc",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Add a heading\" \u2014 alternate lower-third title.",
+          "placeholder": "Add a heading",
+          "role_hint": "alternate lower-third title.",
+          "element_id": "PBBC4Lql0cDlmZzj-LBmy24RYxG8c9MbG",
+          "container_type": "TEXT",
+          "position": {
+            "top": 489.0333299999994,
+            "left": 230.86873408685528
+          },
+          "dimension": {
+            "width": 1458.2625318262892,
+            "height": 115
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "(none)"
+        }
+      ],
+      "page_id": "PBBC4Lql0cDlmZzj",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "(none \u2014 likely end-card)",
+          "role_hint": "likely end-card)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "438x168, role: logo (Broadcast lockup off-canvas right), current asset_id: `MAFYs2RusE8`",
+          "current_asset_id": "MAFYs2RusE8",
+          "dimensions": "438x168",
+          "role": "logo",
+          "element_id": "PBzY0G7LvLjJhDlQ-LB2njl1CjLfVlC7N",
+          "occurrence": 1,
+          "parent_element_id": "PBzY0G7LvLjJhDlQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 854.8627117875435,
+            "left": 1430.5733606731135
+          },
+          "dimension": {
+            "width": 437.59208164368135,
+            "height": 167.63304005504156
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBzY0G7LvLjJhDlQ",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Add a little bit of body text\" \u2014 caption.",
+          "placeholder": "Add a little bit of body text",
+          "role_hint": "caption.",
+          "element_id": "PBNVc31XXvmd9XY7-LB6sFl10DhGJ49lQ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 623.3581248008952,
+            "left": 535.6169502959674
+          },
+          "dimension": {
+            "width": 848.7660994080652,
+            "height": 60
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFaAed19WI`) + 910x198 logo/brand strip (`MAFn5cT5Krw`).",
+          "current_asset_id": "MAFaAed19WI",
+          "dimensions": "910x198",
+          "role": "full-bg",
+          "element_id": "PBNVc31XXvmd9XY7",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBNVc31XXvmd9XY7",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-interview",
+  "canvas": "1920x1080",
+  "page_count": 5,
+  "inspection_design_id": "DAHLW3_phyo",
+  "notes": "video interview kit \u2014 title cards (1,3), filled lower-third with attribution (2), endcard (4), branded body slide (5). Layered frame: yes (page 2) \u2014 name-plate SHAPE underline overlays attribution row; multiple logo + icon image fills overlap. Canvas is 1920x1080 (HD video).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3_phyo"
+}

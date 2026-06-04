@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLPtZFC0",
+  "name": "Facebook_Linkedin post_style 4 (dup ID)",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLWwuimXc",
+  "notes": "IDENTICAL skeleton to EAGqLFFIvPs / EAGqLCaRTeM. Third duplicate of the style-4 testimonial card.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwuimXc"
+}

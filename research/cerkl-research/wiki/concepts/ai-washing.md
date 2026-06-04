@@ -43,6 +43,7 @@ The IC playbook to *avoid* AI-washing:
 - [[gitlab]] — the disclaimer case
 - [[gm]] — the implicit case (no AI claim, employee fill-in)
 - [[linkedin]] — the side-channel case (CPO outed the AI rationale Shapero's memo omitted)
+- [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] — 2026-05 cluster of *explicit* AI-attribution: [[wix]] (~20%, AI "rewiring") and [[clickup]] (22% despite strength, "100x company") both pin cuts to AI openly; [[cloudflare]] goes furthest, naming AI as what makes "measurers" obsolete ([[measurers-vs-builders]]). The 2026 norm is shifting from *disclaiming* AI (GitLab) to *foregrounding* it.
 
 ## Related Concepts
 

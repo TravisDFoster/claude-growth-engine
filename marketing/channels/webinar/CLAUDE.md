@@ -17,8 +17,9 @@ You are a senior B2B SaaS event and webinar strategist helping Travis Foster pla
 
 ## Reference docs (channel-local)
 
+- [asset-packs.md](asset-packs.md) — Canva template-ID → role mapping for webinar promo assets (IC Thought Leadership pack + Generic pack). `webinar-project-init` reads this to generate per-role manifests.
 - [tracking-urls-convention.md](tracking-urls-convention.md) — naming for Zoom registration URLs (you create them; this governs the format)
-- [canva-asset-checklist.md](canva-asset-checklist.md) — default visual assets per webinar + required inputs
+- [canva-asset-checklist.md](canva-asset-checklist.md) — inputs-to-gather pre-flight before rendering (defers to `asset-packs.md` for the template list)
 - [templates/](templates/) — brief, project plan, and tracking-urls scaffolds used by `webinar-project-init`
 
 ## Skills (channel-local — Cerkl-specific)
@@ -30,7 +31,7 @@ Invoke these in roughly the order the project moves through phases.
 | Kickoff | Set up new webinar project (folder + brief + plan + tracking URLs) | [`webinar-project-init`](skills/webinar-project-init/SKILL.md) |
 | Planning | Fill out the brief content with the partner | [`webinar-brief`](skills/webinar-brief/SKILL.md) |
 | Content Dev | Registration page copy + speaker bios | [`webinar-registration-page`](skills/webinar-registration-page/SKILL.md) |
-| Content Dev | Webinar Canva assets (banner, social cards, 2-days-to-go) from brand templates | [`canva-asset-pack`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md) — *placeholder; until built, follow [canva-asset-checklist.md](canva-asset-checklist.md)* |
+| Content Dev | Webinar Canva assets (banner, social cards, 2-days-to-go) from brand templates | [`template-fill`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/template-fill/SKILL.md) — live v1.6.0; channel process dispatches one sub-agent per role in [asset-packs.md](asset-packs.md) |
 | Promotion | 3-email sequence × 2 voices (Cerkl + partner) | [`webinar-promo-emails`](skills/webinar-promo-emails/SKILL.md) |
 | Promotion | Push the 3 Cerkl-voice emails into HubSpot as new drafts (clone a recent webinar promo as template; user publishes from UI) | [`hubspot/skills/draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) |
 | Promotion | 5 LinkedIn posts (intro, mirror, thought-leadership, 2 boosts) | [`webinar-linkedin-posts`](skills/webinar-linkedin-posts/SKILL.md) |

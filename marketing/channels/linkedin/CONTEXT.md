@@ -3,8 +3,9 @@
 ## What this channel does
 Organic posts on LinkedIn — the primary professional network for reaching internal comms and HR buyers. Posts wrap other Cerkl assets (blogs, press releases, webinars, case studies) per the weekly content plan. Paid ads run separately and are out of scope for this channel.
 
-## Current state (2026-05-21)
-- Posting cadence is driven by [`../../content-plan/rolling-4week.md`](../../content-plan/rolling-4week.md). A typical week wraps a single blog with 4–5 LinkedIn posts (theme, carousel, link post, poll, sometimes a short video).
+## Current state (2026-06-01)
+- Posting cadence is driven by [`../../content-plan/rolling-4week.md`](../../content-plan/rolling-4week.md). A typical week produces 4 LinkedIn posts: 3 that wrap a blog (theme, link, poll) and 1 short video that's **planned outside the content-plan system** (out-of-band). Carousels can substitute for any static slot when used.
+- Short video out-of-band rule (2026-06-01): the weekly short video is owned end-to-end by Furqan — topic, wrap, and copy are not planned in the rolling-4week or monthly plans. The Jira CSV still has a barebones short-video Task for capacity tracking. See [`../../content-plan/jira-csv-guidelines.md` §Short video — out-of-band](../../content-plan/jira-csv-guidelines.md#short-video--out-of-band).
 - Furqan owns publishing in LinkedIn. This channel produces the copy + handoff into the week's Jira CSV.
 - Process scaffolded 2026-05-21. First carousel produced under this process: 5 metrics every internal communicator should track (2026-05-20), wrapping the case-investment blog.
 

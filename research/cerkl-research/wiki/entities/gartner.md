@@ -24,6 +24,8 @@ Gartner is the larger of the two major Western industry analyst firms (alongside
 
 - [[gartner-people-centric-ai-2026-05-15]] — "People-Centric AI Strategy / 50% AI Talent Loss by 2027" (2026-05-13)
 - [[gartner-ai-layoffs-no-returns-2026-05-15]] — "AI Layoffs Don't Deliver Returns" (2026-05-05)
+- [[gartner-information-integrity-risk-2026-05-13]] — "Information Integrity Risk Now the Top Concern Among Risk Leaders" (2026-05-13; risk practice, n=337) — AI-content trust as the #1 enterprise risk; anchors [[trust-and-credibility]]
+- [[gartner-managers-working-harder-2026-04-29]] — Q1 2026 HR survey: 47% of managers working harder than 1 year ago; 66% say people-mgmt primary duty; ~25% of time on emotional issues. **PARTIAL** (WebFetch 403) — anchors the bandwidth side of [[manager-cascade]] + [[manager-burnout-structural-thesis]]
 - [[ragan-gartner-2026-comms-predictions-2025-10-09]] — Ragan/Devlin pickup of Whittle on the *Predicts 2026: Top Predictions to Inform 2026 Comms Strategies* report (doc 7160430, 2026-02-13, paywalled); anchors [[change-leadership-three-step]]
 
 ## Connections
@@ -36,6 +38,9 @@ Gartner is the larger of the two major Western industry analyst firms (alongside
 - [[people-amplification]] — Poitevin-coined concept
 - [[change-leadership-three-step]] — Whittle-coined concept (Acknowledge / Regulate / Train)
 - [[shadow-ai-comms-problem]] — IC-relevant reframe Gartner introduced
+- [[trust-and-credibility]] — Gartner's risk-practice info-integrity data anchors the topic at enterprise-risk level
+- [[manager-cascade]] — Q1 2026 HR survey quantifies the bandwidth squeeze on cascade carriers
+- [[manager-burnout-structural-thesis]] — Q1 2026 HR survey is the analyst-tier corroboration
 - [[forrester]] — peer analyst firm (complementary frames; Gartner = deploy-deliberately, Forrester = listen-deeply)
 
 ## Open Questions

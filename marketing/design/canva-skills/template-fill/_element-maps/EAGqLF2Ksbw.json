@@ -1,0 +1,557 @@
+{
+  "template_id": "EAGqLF2Ksbw",
+  "name": "Blog image_in text_illustrated",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + 3 x \"Your paragraph text\" (checklist rows).",
+          "placeholder": "Add a subheading",
+          "element_id": "PB5W6FwSln6nK7Z3-LB17Ng6Tbsh8ncNy",
+          "container_type": "TEXT",
+          "position": {
+            "top": 123.16107685639076,
+            "left": 62.70000000000002
+          },
+          "dimension": {
+            "width": 478.6245462797554,
+            "height": 43.866675
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsMyV_a6A`) + 3 x 478x64 row pills (`MAFsNP1430w`) + 410x410 illustration character (`MAFsNpUv-b4`).",
+          "current_asset_id": "MAFsMyV_a6A",
+          "dimensions": "478x64",
+          "role": "full-bg",
+          "element_id": "PB5W6FwSln6nK7Z3-LBlT2Pnz3kT2cMGc",
+          "occurrence": 1,
+          "parent_element_id": "PB5W6FwSln6nK7Z3",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB5W6FwSln6nK7Z3",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + 2 x \"Your paragraph text\" (two SHAPE pill rows).",
+          "placeholder": "Add a subheading",
+          "element_id": "PB6lLBPnJb0J0VKD-LB0cjDBVWjxpV2Pc",
+          "container_type": "TEXT",
+          "position": {
+            "top": 126.29440685639076,
+            "left": 62.70000000000002
+          },
+          "dimension": {
+            "width": 478.6245462797554,
+            "height": 37.600015
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM4Hag30`) + 2 x 147x147 check-icon (`MAFr7T1C0mA`) + 623x528 illustration (`MAFsZXyAeDQ`).",
+          "current_asset_id": "MAFsM4Hag30",
+          "dimensions": "147x147",
+          "role": "full-bg",
+          "element_id": "PB6lLBPnJb0J0VKD-LBh3t3sZgP2Q1Fzx",
+          "occurrence": 1,
+          "parent_element_id": "PB6lLBPnJb0J0VKD",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB6lLBPnJb0J0VKD",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" stat + \"Add a subheading\".",
+          "placeholder": "xx%",
+          "element_id": "PBbKGws1yz6q0q68-LBRcgktr42gR95lk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 204.84926197374438,
+            "left": 95.27239524449675
+          },
+          "dimension": {
+            "width": 225.32356097482568,
+            "height": 101.93343999999999
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM7ylVpc`) + 472x462 illustration (`MAFsNPcboG8`) + 258x258 inner illustration (`MAFsNKpVmM8`).",
+          "current_asset_id": "MAFsM7ylVpc",
+          "dimensions": "472x462",
+          "role": "full-bg",
+          "element_id": "PBbKGws1yz6q0q68-LBMsp3bLwnCpqPVD",
+          "occurrence": 1,
+          "parent_element_id": "PBbKGws1yz6q0q68",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBbKGws1yz6q0q68",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + \"xx%\" stat (stat-led inverse layout).",
+          "placeholder": "Add a subheading",
+          "role_hint": "+ \"xx%\" stat (stat-led inverse layout).",
+          "element_id": "PBSrcTbCVbpThQgV-LBTtwTczvY2D51zg",
+          "container_type": "TEXT",
+          "position": {
+            "top": 291.5666625,
+            "left": 561.2905558095488
+          },
+          "dimension": {
+            "width": 564.8997732407638,
+            "height": 43.866675
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM-blb8c`) + 899x287 illustration band (`MAFsNEOI96k`) + 380x380 round portrait/illustration (`MAFsN2yuNaU`).",
+          "current_asset_id": "MAFsM-blb8c",
+          "dimensions": "899x287",
+          "role": "full-bg",
+          "element_id": "PBSrcTbCVbpThQgV-LBGjgHlCp8dHVKRf",
+          "occurrence": 1,
+          "parent_element_id": "PBSrcTbCVbpThQgV",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSrcTbCVbpThQgV",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 5,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" only.",
+          "placeholder": "Add a subheading",
+          "element_id": "PBRxCs8rtM8JtFr3-LBYVvF0Rm7bhMtN9",
+          "container_type": "TEXT",
+          "position": {
+            "top": 291.5666625,
+            "left": 62.69999999999999
+          },
+          "dimension": {
+            "width": 564.8997732407638,
+            "height": 43.866675
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM6-CFvQ`) + 667x565 illustration (`MAFsZQf7vzQ`).",
+          "current_asset_id": "MAFsM6-CFvQ",
+          "dimensions": "667x565",
+          "role": "full-bg",
+          "element_id": "PBRxCs8rtM8JtFr3-LBRspTK5StbvY0Gk",
+          "occurrence": 1,
+          "parent_element_id": "PBRxCs8rtM8JtFr3",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBRxCs8rtM8JtFr3",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 6,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" stat + \"Add a subheading\" (left column).",
+          "placeholder": "xx%",
+          "element_id": "PBzXvK9rkKFlLRND-LByDsVFMSJQvN6cP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 167.11987686863216,
+            "left": 70.67523659241289
+          },
+          "dimension": {
+            "width": 389.9051976945026,
+            "height": 143.001
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM7oCqfY`) + 756x640 illustration (`MAFsZXAusXA`).",
+          "current_asset_id": "MAFsM7oCqfY",
+          "dimensions": "756x640",
+          "role": "full-bg",
+          "element_id": "PBzXvK9rkKFlLRND-LBrVr6c2zsByBxwd",
+          "occurrence": 1,
+          "parent_element_id": "PBzXvK9rkKFlLRND",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBzXvK9rkKFlLRND",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 7,
+      "text_slots": [
+        {
+          "raw": "4 x \"Add a subheading\" (1 large + 3 row labels)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsMw8ExqQ`) + 3 x 90x90 icon-circle (`MAFsNRfs_E4`) + 3 x 64x64 inner-glyph icons + 589x570 main illustration (`MAFvNsbYET8`).",
+          "current_asset_id": "MAFsMw8ExqQ",
+          "dimensions": "90x90",
+          "role": "full-bg",
+          "element_id": "PBlC3PLDtRh6hT9W-LBSZ8hGYrCDbC22w",
+          "occurrence": 1,
+          "parent_element_id": "PBlC3PLDtRh6hT9W",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBlC3PLDtRh6hT9W",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 8,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + 3 x \"Your paragraph text\" pill rows.",
+          "placeholder": "Add a subheading",
+          "element_id": "PB2xVyq42FvshZsW-LBjHH2qf1f52D0gP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 119.95413536912756,
+            "left": 62.700000000000045
+          },
+          "dimension": {
+            "width": 537.3,
+            "height": 40.733345
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM66uG_k`) + 3 x 629x64 row pills (`MAFsNAeTASE`) + 704x596 illustration (`MAFsTdb-j4s`).",
+          "current_asset_id": "MAFsM66uG_k",
+          "dimensions": "629x64",
+          "role": "full-bg",
+          "element_id": "PB2xVyq42FvshZsW-LBQvlP8KkHW8z3dG",
+          "occurrence": 1,
+          "parent_element_id": "PB2xVyq42FvshZsW",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB2xVyq42FvshZsW",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 9,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM8Bp0I4`) + 1369x1526 oversized scene (`MAFsZZl0PKo`).",
+          "current_asset_id": "MAFsM8Bp0I4",
+          "dimensions": "1369x1526",
+          "role": "full-bg",
+          "element_id": "PBYtN9XsnHNP42bP-LB9N4Fx1TMzXMgWv",
+          "occurrence": 1,
+          "parent_element_id": "PBYtN9XsnHNP42bP",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBYtN9XsnHNP42bP",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 10,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM7DIBSQ`) + 1663x1738 oversized scene (`MAFsSx-qAd0`).",
+          "current_asset_id": "MAFsM7DIBSQ",
+          "dimensions": "1663x1738",
+          "role": "full-bg",
+          "element_id": "PBC4CPwwcRSRf5NV-LBg4st5z6rLhjtN0",
+          "occurrence": 1,
+          "parent_element_id": "PBC4CPwwcRSRf5NV",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBC4CPwwcRSRf5NV",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 11,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM7FOvGQ`) + 1549x1619 oversized scene (`MAFsZQl1PpU`).",
+          "current_asset_id": "MAFsM7FOvGQ",
+          "dimensions": "1549x1619",
+          "role": "full-bg",
+          "element_id": "PBYx96R83ljDJwyf-LBvsnDJb9pXbr1r8",
+          "occurrence": 1,
+          "parent_element_id": "PBYx96R83ljDJwyf",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBYx96R83ljDJwyf",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 12,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM0zKvTg`) + 1108x938 illustration (`MAFsTW3RHrc`).",
+          "current_asset_id": "MAFsM0zKvTg",
+          "dimensions": "1108x938",
+          "role": "full-bg",
+          "element_id": "PBSgN88k7zSk1lXq-LBThQdDwFc8VdlpD",
+          "occurrence": 1,
+          "parent_element_id": "PBSgN88k7zSk1lXq",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSgN88k7zSk1lXq",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 13,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM68lSsE`) + 879x735 illustration (`MAFsTZ6OoEA`).",
+          "current_asset_id": "MAFsM68lSsE",
+          "dimensions": "879x735",
+          "role": "full-bg",
+          "element_id": "PBXTyK5rkFLSxJJk-LB5mrnnqmwBRypqW",
+          "occurrence": 1,
+          "parent_element_id": "PBXTyK5rkFLSxJJk",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBXTyK5rkFLSxJJk",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 14,
+      "text_slots": [],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFsM0djxQ8`) + 656x812 illustration (`MAFsZslsR-o`) + 600x700 illustration (`MAFsTZ6OoEA`).",
+          "current_asset_id": "MAFsM0djxQ8",
+          "dimensions": "656x812",
+          "role": "full-bg",
+          "element_id": "PBVrPKlR69XRLJrR-LBSQdhcr6pYf4vFr",
+          "occurrence": 1,
+          "parent_element_id": "PBVrPKlR69XRLJrR",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBVrPKlR69XRLJrR",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-inline-image-illustrated",
+  "canvas": "1200x627",
+  "page_count": 14,
+  "inspection_design_id": "DAHLWwV8aKE",
+  "notes": "14-page inline illustration kit \u2014 mix of text-driven (pages 1-8) and illustration-only (pages 9-14). Many pill SHAPE rows host both image fills and overlapping text. Layered frame: yes throughout \u2014 illustration assets overlay full-bg fills; pill SHAPEs overlay both.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWwV8aKE"
+}

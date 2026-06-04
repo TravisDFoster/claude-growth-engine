@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLPO8k5c",
+  "name": "Facebook_Linkedin post_style 6",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW3ejVrk",
+  "notes": "Light-mode share card with right-side large image placeholder (no editable fill \u2014 SHAPE only). Only 2 editable images. Sister to EAGqLBhKYtg but with light bg + Broadcast lockup.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3ejVrk"
+}

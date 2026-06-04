@@ -1,0 +1,465 @@
+<!doctype html>
+<!--
+  Matt Frost webinar recap one-pager — Recap recipe.
+  Source: matt-frost-recap-2026-05-19.md
+  Components: hero-cover (page 1); hero-compact + number-row.cols-3 + diagram-flow
+              + callout-card.violet + cta-strip (ruby) + footer (page 2).
+  Demonstrates the new number-led + visually-diverse component set added to the
+  reference on 2026-05-19 — see reference-one-pager.html PAGE 6.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hidden Cost of Benefits Communication — Matt Frost recap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --paper: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --subtle: #6f6f78;
+    --line: #d5d5db;
+    --line-soft: #ebebf0;
+    --accent: #3547c4;
+    --accent-dark: #0c1159;
+    --accent-soft: #f0f2fc;
+    --accent-mid: #ccd5f7;
+    --accent-tint: #e3e9fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --stat-violet: #802ee6;
+    --stat-violet-bg: #f7f2ff;
+    --stat-violet-border: #d5b2ff;
+    --stat-ruby: #dd0e4e;
+    --stat-ruby-bg: #fcf0f0;
+    --stat-ruby-border: #fbc2c4;
+    --butter: #ffaa22;
+  }
+
+  @page {
+    size: letter portrait;
+    margin: 0.5in 0.6in;
+  }
+  html, body { height: 100%; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root { --body-size: 16px; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: var(--body-size);
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 7.3in;
+    height: 10in;
+    background: var(--paper);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 22px;
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: 0;
+  }
+  .page-body.stretch > * { flex: 0 0 auto; }
+  .page-body.stretch > .grow { flex: 1 0 auto; }
+  .feature-grid.grow,
+  .bullet-grid.grow { grid-auto-rows: minmax(min-content, 1fr); align-items: stretch; }
+
+  @media screen {
+    body { padding: 24px 0; }
+    .page {
+      margin: 24px auto;
+      padding: 0.5in 0.6in;
+      width: 8.5in;
+      height: 11in;
+      box-shadow: 0 1px 0 rgba(24,24,29,0.04), 0 8px 24px rgba(24,24,29,0.08);
+    }
+  }
+  @media print {
+    body { background: white; }
+  }
+
+  h1, h2, h3, h4 { margin: 0; letter-spacing: -0.005em; }
+  h1 { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); }
+  h2 { font-size: 24px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+  h3 { font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  h4 { font-size: 16px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  p  { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol { margin: 8px 0; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-mid); }
+  strong { font-weight: 600; }
+  .lead { font-size: 17px; color: var(--muted); line-height: 1.55; }
+  .small { font-size: 13px; color: var(--subtle); }
+  .overline {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+
+  /* Hero cover */
+  .hero-cover {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    row-gap: 36px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+  }
+  .hero-cover .arc-blob {
+    position: absolute;
+    top: -15%; right: -30%;
+    width: 110%; height: 75%;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .hero-cover .photo-block {
+    position: relative; z-index: 1;
+    width: 100%;
+    min-height: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(12, 17, 89, 0.10);
+  }
+  .hero-cover .photo-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-cover .title-block {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .hero-cover .wordmark-ph {
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .hero-cover .wordmark-ph img {
+    height: 26px; width: auto; display: block;
+  }
+  .hero-cover .cover-title {
+    font-size: 44px; font-weight: 700; line-height: 1.1;
+    color: var(--accent-dark);
+    letter-spacing: -0.015em;
+    max-width: 26ch;
+    margin: 0;
+  }
+  .hero-cover .cover-subtitle {
+    font-size: 22px; font-weight: 400; line-height: 1.4;
+    color: var(--muted);
+    max-width: 38ch;
+    margin: 0;
+  }
+
+  /* Compact hero */
+  .hero-compact {
+    display: flex; align-items: center; gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-compact .wordmark-ph {
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .hero-compact .wordmark-ph img {
+    height: 22px; width: auto; display: block;
+  }
+  .hero-compact .divider { width: 1px; height: 32px; background: var(--line); }
+  .hero-compact h1 { font-size: 28px; }
+
+  /* Feature grid */
+  .feature-grid {
+    display: grid; gap: 28px 36px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .feature-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .feature-grid.cols-2 { grid-template-columns: repeat(2, 1fr); gap: 24px 32px; }
+  .feature-grid.cols-1 { grid-template-columns: 1fr; gap: 20px; }
+  .feature-grid .feat {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 10px;
+    align-items: start;
+  }
+  .feature-grid .feat .ic {
+    color: var(--good);
+    margin-top: 2px;
+  }
+  .feature-grid .feat h4 { font-size: 16px; margin: 0 0 6px; color: var(--accent-dark); }
+  .feature-grid .feat p  { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0; }
+
+  /* Stat panel */
+  .stat-panel {
+    background: var(--stat-violet-bg);
+    border: 1px solid var(--stat-violet-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .stat-panel.ruby { background: var(--stat-ruby-bg); border-color: var(--stat-ruby-border); }
+  .stat-panel .stat-num {
+    font-size: 46px; font-weight: 700; line-height: 1; color: var(--stat-violet);
+    letter-spacing: -0.015em;
+  }
+  .stat-panel.ruby .stat-num { color: var(--stat-ruby); }
+  .stat-panel .stat-label {
+    font-size: calc(var(--body-size) - 2px); font-weight: 600; color: var(--ink); margin-top: 4px; line-height: 1.4;
+  }
+  .stat-panel p { font-size: calc(var(--body-size) - 2.5px); color: var(--muted); margin: 6px 0 0; line-height: 1.55; }
+
+  /* Number row */
+  .number-row {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .number-row .num-cell {
+    padding: 18px 20px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-mid);
+    border-radius: 12px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .number-row .num-cell .big {
+    font-size: 38px; font-weight: 700; line-height: 1.05;
+    color: var(--accent-dark);
+    letter-spacing: -0.015em;
+  }
+  .number-row .num-cell .lbl {
+    font-size: calc(var(--body-size) - 2px);
+    font-weight: 600; color: var(--ink); line-height: 1.35;
+  }
+  .number-row .num-cell .sub {
+    font-size: calc(var(--body-size) - 3px);
+    color: var(--muted); line-height: 1.45;
+    margin-top: 2px;
+  }
+  .number-row .num-cell.violet { background: var(--stat-violet-bg); border-color: var(--stat-violet-border); }
+  .number-row .num-cell.violet .big { color: var(--stat-violet); }
+  .number-row .num-cell.ruby { background: var(--stat-ruby-bg); border-color: var(--stat-ruby-border); }
+  .number-row .num-cell.ruby .big { color: var(--stat-ruby); }
+
+  /* Diagram flow */
+  .diagram-flow {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+    align-items: start; gap: 0;
+    padding: 14px 0 4px;
+  }
+  .diagram-flow .step {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 8px; padding: 0 8px;
+    position: relative;
+  }
+  .diagram-flow .step .ic-wrap {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+    font-size: 20px; font-weight: 700;
+  }
+  .diagram-flow .step + .step::before {
+    content: ""; position: absolute;
+    top: 28px; left: calc(-50% + 28px); width: calc(100% - 56px);
+    height: 2px; background: var(--accent-mid);
+    z-index: 0;
+  }
+  .diagram-flow .step .num {
+    font-size: 10px; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .diagram-flow .step .lbl {
+    font-size: calc(var(--body-size) - 2px); font-weight: 600;
+    color: var(--accent-dark); line-height: 1.3;
+  }
+  .diagram-flow .step .desc {
+    font-size: calc(var(--body-size) - 3.5px);
+    color: var(--muted); line-height: 1.45;
+    max-width: 22ch;
+  }
+
+  /* Callout card */
+  .callout-card {
+    padding: 22px 26px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .callout-card.violet { background: var(--stat-violet-bg); border-left-color: var(--stat-violet); }
+  .callout-card.ruby { background: var(--stat-ruby-bg); border-left-color: var(--stat-ruby); }
+  .callout-card .quote {
+    font-size: calc(var(--body-size) + 3px);
+    font-weight: 500; line-height: 1.4;
+    color: var(--accent-dark);
+    letter-spacing: -0.005em;
+  }
+  .callout-card.violet .quote { color: var(--stat-violet); }
+  .callout-card.ruby .quote { color: var(--stat-ruby); }
+  .callout-card .attribution {
+    font-size: calc(var(--body-size) - 3px);
+    color: var(--muted); font-weight: 600; letter-spacing: 0.02em;
+  }
+  .callout-card .attribution::before { content: "— "; }
+
+  /* CTA strip */
+  .cta-strip {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    border-top: 2px solid var(--accent);
+    padding-top: 18px;
+  }
+  .cta-strip .pitch h3 { font-size: calc(var(--body-size) + 2px); color: var(--accent-dark); margin-bottom: 8px; }
+  .cta-strip .pitch p  { font-size: calc(var(--body-size) - 2px); color: var(--muted); line-height: 1.55; }
+
+  /* Footer */
+  .footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--subtle); font-size: 12.5px; line-height: 1.55;
+  }
+  .footer .addr { max-width: 60%; }
+  .footer .addr .small { color: var(--subtle); }
+  .footer .brand {
+    text-align: right;
+    font-weight: 700; font-size: 15px; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .footer .brand img { height: 20px; width: auto; display: inline-block; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 — Hero cover -->
+<div class="page">
+  <div class="hero-cover">
+    <div class="arc-blob"></div>
+    <div class="photo-block">
+      <img src="../../../branding-assets/Cerkl%20Photography/Office%20Photos/cerkl%20stock_20.png" alt="Cerkl office">
+    </div>
+    <div class="title-block">
+      <div class="wordmark-ph">
+        <img src="../../../branding-assets/Broadcast/Cerkl%20Broadcast%20Horizontal%20Lockup/Medium%20(160px)/cerkl_broadcast_horizontal_lockup_full_color_medium.png" alt="Cerkl Broadcast">
+      </div>
+      <h1 class="cover-title">The Hidden Cost of Benefits Communication</h1>
+      <p class="cover-subtitle">Matt Frost on benefits communication in 2026 — compliance, clarity, and proving it worked.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 2 — Recap recipe body: number-row → diagram-flow → callout → cta + footer -->
+<!-- Tier A applied: --body-size:15px to absorb 24px footer overrun from the smoother copy revision. -->
+<div class="page" style="--body-size:15px">
+
+  <div class="hero-compact">
+    <span class="wordmark-ph"><img src="../../../branding-assets/Broadcast/Cerkl%20Broadcast%20Horizontal%20Lockup/Small%20(80px)/cerkl_broadcast_horizontal_lockup_full_color_small.png" alt="Cerkl Broadcast"></span>
+    <span class="divider"></span>
+    <h1>From compliance to connection</h1>
+  </div>
+
+  <div class="page-body stretch">
+
+  <!-- Number row — 3 lead-with-a-number stats -->
+  <div class="number-row">
+    <div class="num-cell ruby">
+      <div class="big">$30K</div>
+      <div class="lbl">Avg US benefits spend per employee, per year</div>
+      <div class="sub">Most employees can't connect the dollars being spent on their behalf to what's actually in the plan.</div>
+    </div>
+    <div class="num-cell">
+      <div class="big">90%</div>
+      <div class="lbl">Of benefits communication comes from vendors</div>
+      <div class="sub">Their branding, their narrative — the company funds the benefit, and the vendor takes the credit.</div>
+    </div>
+    <div class="num-cell violet">
+      <div class="big">84M</div>
+      <div class="lbl">US employees, plus 74M dependents on the plan</div>
+      <div class="sub">Roughly half of plan members aren't employees — and almost no team is communicating with them.</div>
+    </div>
+  </div>
+
+  <!-- Diagram flow — the 4-stage ladder -->
+  <div class="diagram-flow">
+    <div class="step">
+      <div class="ic-wrap">1</div>
+      <div class="num">Stage 1</div>
+      <div class="lbl">Compliance</div>
+      <div class="desc">We communicate because we have to, and the result reads like a legal notice. Most teams stay parked here.</div>
+    </div>
+    <div class="step">
+      <div class="ic-wrap">2</div>
+      <div class="num">Stage 2</div>
+      <div class="lbl">Clarity</div>
+      <div class="desc">Time taken to explain the what, when, and why — written for the employee, not the approval chain.</div>
+    </div>
+    <div class="step">
+      <div class="ic-wrap">3</div>
+      <div class="num">Stage 3</div>
+      <div class="lbl">Relevance</div>
+      <div class="desc">The same message in different shapes, segmented by life stage, role, and geography so it lands.</div>
+    </div>
+    <div class="step">
+      <div class="ic-wrap">4</div>
+      <div class="num">Stage 4</div>
+      <div class="lbl">Connection</div>
+      <div class="desc">Benefits become tangible proof of the EVP — the receipt of the promise, not just the promise itself.</div>
+    </div>
+  </div>
+
+  <!-- Callout card — pulled quote, violet -->
+  <div class="callout-card violet">
+    <div class="quote">"Companies are already paying for benefits. Communication is the difference between whether that spend is seen as an investment, or just a cost."</div>
+    <div class="attribution">Matt Frost, closing manifesto</div>
+  </div>
+
+  <!-- CTA strip with ruby stat-panel -->
+  <div class="cta-strip">
+    <div class="pitch">
+      <h3>Start with Foundations — free, forever</h3>
+      <p>Outlook, Gmail, and HRIS broadcast tools weren't built for compliance, segmentation, or measurable benefits communication. Foundations is — no card, no contract, no setup fees.</p>
+    </div>
+    <div class="stat-panel ruby">
+      <div class="stat-num">Free</div>
+      <div class="stat-label">Forever — no card, no contract, no setup fees</div>
+      <p>Audience Manager, drag-and-drop builder, analytics, surveys, acknowledgments — included.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="addr">
+      <div>Get started at <a href="https://app.cerkl.com/signup/foundations?utm_source=webinage&amp;utm_medium=matt_frost_pdf">app.cerkl.com/signup/foundations</a></div>
+    </div>
+    <div class="brand"><img src="../../../branding-assets/Broadcast/Cerkl%20Broadcast%20Horizontal%20Lockup/Small%20(80px)/cerkl_broadcast_horizontal_lockup_full_color_small.png" alt="Cerkl Broadcast"></div>
+  </div>
+  </div><!-- /.page-body -->
+</div>
+
+</body>
+</html>

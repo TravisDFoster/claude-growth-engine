@@ -12,14 +12,16 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 | Month | Theme | Anchor |
 |---|---|---|
-| May | Prove Your Impact | Insights Update launch |
+| May | Prove Your Impact | Insights Update launch *(deferred to July — see May note)* |
 | June | Reach Every Employee | Deskless/frontline + DEI comms season |
-| July | Work Smarter with AI | AI-assistant launch |
-| August | Ditch the Manual Stack | Foundations free plan positioning |
+| July | Foundations: Free + Insights | Insights Update launch (early July) + Foundations Free push |
+| August | Back-to-Work Operations | RTO + onboarding + fall planning kickoff |
 | September | Plan Ahead | Q4 / annual planning season |
 | October | Benefits Season Ready | Open enrollment comms |
-| November | Communicate Through Change | End-of-year engagement |
+| November | AI-Assisted Internal Comms | AI-assistant product launch (mid-Q4) |
 | December | Year in Review | Year-end + 2027 planning |
+
+> **2026-06-01 plan revision:** AI-assistant launch slipped to mid-Q4 (was July anchor) → November now owns the AI launch. Insights Update slipped from May to early July (per Tarek 2026-05-18) → May theme stays valid as an analytics-positioning month, but the launch announcement shifts to July. July's freed-up anchor pulls August's Foundations Free push forward (so the launch month doubles as Foundations Free positioning), and August rebuilds around back-to-work operational themes (RTO, onboarding, fall planning).
 
 ---
 
@@ -27,7 +29,7 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 **Campaign Epic:** May Campaigns
 
-**Anchor:** Insights Update product launch
+**Anchor:** Insights Update product launch *(deferred to July 2026 per Tarek 2026-05-18 — May content theme stays valid as analytics positioning; launch announcement moved to July plan)*
 
 **ICP pain points**
 - Sending emails blind — no way to know if anyone opened, clicked, or read
@@ -73,53 +75,62 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ---
 
-## July 2026 — Work Smarter with AI
+## July 2026 — Foundations: Free + Insights
 
 **Campaign Epic:** July Campaigns
 
-**Anchor:** AI-assistant product launch
+**Anchor:** Insights Update product launch (target 2026-07-06, first full publishing week post-July 4) + Foundations Free push (pulled forward from August's original slot)
 
 **ICP pain points**
-- Communicators are overwhelmed writing every message from scratch
-- Inconsistent tone and quality across sends, especially when multiple people contribute
-- Content creation is a bottleneck — teams want to communicate more but don't have capacity
+- Sending company-wide email out of Outlook/Gmail with no analytics — no way to prove what's reaching whom
+- Internal comms tools feel out of budget reach for SMB teams; "real" platforms are enterprise-priced
+- Switching tools mid-year feels too disruptive — teams stay on bad workflows to avoid the lift
+- Analytics in their current setup are guesswork; no benchmark for "good" open or click rates
 
 **Key topics**
-- How AI is changing internal communications (accessible, not hype-forward)
-- Using AI to draft faster without losing your organization's voice
-- What the Broadcast AI assistant does and why Foundations users get access
-- AI-assisted comms: practical use cases for small and mid-size teams
-- The internal communicator's guide to AI tools in 2026
+- Announcing the Insights Update — what's new for Foundations users, why analytics matters for free-tier teams
+- Foundations free plan: what you actually get (and why no credit card)
+- Foundations vs. Mailchimp — why a marketing tool isn't built for internal comms
+- Foundations vs. ContactMonkey — comparison framing (queued brief)
+- Foundations vs. Workshop — email-first or omni-channel? (queued brief)
+- Switching from Outlook / Gmail in an afternoon — practical migration playbook
+- What analytics-enabled internal comms unlocks for SMB teams
+- Versus-page refreshes (Firstup time-sensitive per inputs.md)
 
 **Important dates**
-- July 4 — Independence Day (content gap; no sends that week)
-- Back half of July is a strong publishing window post-holiday
-- AI-assistant launch timing should anchor the month — lead with the announcement, build topic content around it
+- July 3 — soft no-send Friday (July 4 falls on Saturday)
+- July 4 — Independence Day (Saturday)
+- Insights Update launch — target 2026-07-06 (Mon, first full publishing week post-holiday)
+- Back half of July is the strong publishing window — anchor weeks 2–4 around launch + Foundations Free push
 
 ---
 
-## August 2026 — Ditch the Manual Stack
+## August 2026 — Back-to-Work Operations
 
 **Campaign Epic:** August Campaigns
 
-**Anchor:** Back-to-work season; new fiscal year planning for many orgs
+**Anchor:** Back-to-work / fall operational cadence — RTO, onboarding, new fiscal year planning kickoff. (The "Ditch the Manual Stack" Foundations Free positioning that used to live here moved to July to pair with the Insights Update launch.)
 
 **ICP pain points**
-- Still using Outlook or Gmail distribution lists to send company-wide email
-- Manual list management — every update is a request to IT or HR
-- No templates, no scheduling, no analytics — just a compose window and a prayer
-- Small teams feel like enterprise tools are out of reach or not worth the cost
+- New-hire onboarding comms don't scale — every cohort gets the same generic welcome email
+- RTO and hybrid comms are inconsistent across managers, teams, and locations
+- No editorial calendar for fall — comms happen ad hoc, no planning rhythm
+- Vacation coverage gaps: when key communicators are out, the internal cadence breaks
+- Frontline / multi-shift workplaces start fall ramps without a connected channel plan
 
 **Key topics**
-- Signs your internal comms setup is holding you back (Outlook-specific angles)
-- What a purpose-built internal email system actually looks like vs. a marketing tool
-- How to move off Outlook/Gmail without disrupting your workflow
-- Foundations vs. Mailchimp / Foundations vs. ContactMonkey — why the category matters
-- Back-to-school internal comms: onboarding new hires, communicating return-to-office updates, fall operational announcements
+- Onboarding comms playbook for the 50–500-person org — what to send when, and to whom
+- RTO communications that don't get ignored — segmenting by office vs. remote vs. hybrid
+- Fall operational push: setting your internal comms calendar before Q4 hits
+- Vacation coverage for one-person internal comms teams
+- Higher ed semester kickoff — university communicators' August reality
+- Back-to-school for working parents — workplace policy comms that respect the family calendar
+- Industry vertical: retail / hospitality fall ramp comms (continues June/July vertical playbook arc)
 
 **Important dates**
-- No major federal holidays — strong publishing window all month
-- Higher ed angle: semester kickoff, new student and staff onboarding is an active ICP moment for university communicators
+- No federal holidays — strong publishing window all month
+- Higher ed semester kickoff is an active ICP moment
+- August 26 — Women's Equality Day (content opportunity if relevant)
 
 ---
 
@@ -177,30 +188,36 @@ Product launches shape two months directly: Insights Update in May and AI-assist
 
 ---
 
-## November 2026 — Communicate Through Change
+## November 2026 — AI-Assisted Internal Comms
 
 **Campaign Epic:** November Campaigns
 
-**Anchor:** End-of-year change communications; Veterans Day; pre-holiday engagement push
+**Anchor:** AI-assistant product launch (mid-Q4 target — exact date TBD; expect early-to-mid November). Veterans Day + end-of-year change comms remain calendar anchors but as secondary themes within the AI launch month.
 
 **ICP pain points**
-- Year-end announcements (layoffs, reorgs, leadership changes, strategy shifts) are hard to get right
-- Employee engagement drops in Q4 — people are distracted and disengaged
+- Communicators are overwhelmed writing every message from scratch; capacity is the bottleneck
+- Inconsistent tone and quality across sends, especially when multiple people contribute
+- AI tools feel risky or hype-y — teams worry about losing their organization's voice
+- Year-end change announcements (layoffs, reorgs, leadership changes, AI rollouts) are hard to get right
 - Holiday and recognition communications feel hollow without personalization
-- Leadership visibility through internal comms is inconsistent
 
 **Key topics**
-- How to communicate difficult news internally — a practical framework
-- Leading with empathy: internal comms during organizational change
-- Holiday and year-end employee recognition communications that don't feel like copy-paste
-- How to maintain employee engagement in Q4
+- Introducing the Cerkl AI-assistant — what it does, who gets it, why now
+- How AI is changing internal communications (accessible, not hype-forward)
+- Using AI to draft faster without losing your organization's voice
+- AI-assisted comms: practical use cases for small and mid-size teams
+- The internal communicator's guide to AI tools in 2026
+- Communicating through change — including the change AI brings to your own IC team's workflow
 - Veterans in the workforce: communicating recognition authentically on Veterans Day and beyond
+- Holiday and year-end recognition that doesn't feel like copy-paste (where AI helps vs. where it doesn't)
+- Black Friday / Cyber Monday operational comms for retail and frontline workforces
 
 **Important dates**
+- AI-assistant launch — expected early-to-mid November (date TBD; confirm at next monthly plan generation)
 - November 7 — Native American Heritage Month begins (angle: communicating inclusively and authentically)
-- November 11 — Veterans Day (content opportunity: recognizing veteran employees, hiring and inclusion communications)
+- November 11 — Veterans Day (content opportunity: recognizing veteran employees)
 - November 26 — Thanksgiving (content gap; no sends Thanksgiving week)
-- Black Friday/Cyber Monday — retail and frontline ICP moment; communications for high-volume operational periods
+- Black Friday / Cyber Monday — retail and frontline ICP moment
 
 ---
 

@@ -16,6 +16,7 @@
 | `cerkl_icpro` |  |
 | `cerkl_sales` |  |
 | `cerkl_innercerkl-news` |  |
+| `cerkl_intercom` |  |
 
 ## Partner-side
 

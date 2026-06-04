@@ -1,0 +1,417 @@
+{
+  "template_id": "EAGqLMN8_Po",
+  "name": "Square Social_speakers_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" \u2014 top tag label",
+          "placeholder": "Webinar",
+          "role_hint": "top tag label",
+          "element_id": "PBCV6H4c0hBh21lc-LBDPHJw1DqhJnKd8",
+          "container_type": "TEXT",
+          "position": {
+            "top": 236.2711118715323,
+            "left": 84.00831746651943
+          },
+          "dimension": {
+            "width": 624.7324967063178,
+            "height": 67
+          }
+        },
+        {
+          "raw": "\"|   Mar 6, 2025 1:00 pm est\" \u2014 date/time tag",
+          "placeholder": "|   Mar 6, 2025 1:00 pm est",
+          "role_hint": "date/time tag",
+          "element_id": "PBCV6H4c0hBh21lc-LB8tWgWT2RBMQqqJ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 68.5484315337735,
+            "left": 402.734326758373
+          },
+          "dimension": {
+            "width": 612.0129748289283,
+            "height": 43.66666
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 main headline",
+          "placeholder": "Webinar title",
+          "role_hint": "main headline",
+          "element_id": "PBCV6H4c0hBh21lc-LBDPHJw1DqhJnKd8",
+          "container_type": "TEXT",
+          "position": {
+            "top": 236.2711118715323,
+            "left": 84.00831746651943
+          },
+          "dimension": {
+            "width": 624.7324967063178,
+            "height": 67
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 2 speakers (right column)",
+          "placeholder": "Name",
+          "role_hint": "2 speakers (right column)",
+          "element_id": "PBCV6H4c0hBh21lc-LB0qrBHccmLC8Xl3",
+          "container_type": "TEXT",
+          "position": {
+            "top": 692.7320034692107,
+            "left": 664.4009871406131
+          },
+          "dimension": {
+            "width": 350.3463144466883,
+            "height": 37.60006
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 bottom-left label (preceded by Cerkl logo image fill)",
+          "placeholder": "Presented by:",
+          "role_hint": "bottom-left label (preceded by Cerkl logo image fill)",
+          "element_id": "PBCV6H4c0hBh21lc-LBkWZWrFBsjTv9cF",
+          "container_type": "TEXT",
+          "position": {
+            "top": 993.9808040707619,
+            "left": 84.00831746651949
+          },
+          "dimension": {
+            "width": 415.9176709336157,
+            "height": 37.60004
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAGg-8Ldy8k`",
+          "current_asset_id": "MAGg-8Ldy8k",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBCV6H4c0hBh21lc-LBxrfnWDPmbG3g4h",
+          "occurrence": 1,
+          "parent_element_id": "PBCV6H4c0hBh21lc",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1080
+          },
+          "editable": true
+        },
+        {
+          "raw": "32x32, role: icon (play icon next to \"Webinar\"), current asset_id: `MAGg-1Nbpjs`",
+          "current_asset_id": "MAGg-1Nbpjs",
+          "dimensions": "32x32",
+          "role": "icon",
+          "element_id": "PBCV6H4c0hBh21lc-LBt3d2stcT8lqCXg-LB8kkLQD8MCJyr7W",
+          "occurrence": 1,
+          "parent_element_id": "PBCV6H4c0hBh21lc-LBt3d2stcT8lqCXg",
+          "container_type": "RECT",
+          "position": {
+            "top": 74.81129713059721,
+            "left": 330.7928361913057
+          },
+          "dimension": {
+            "width": 31.689349589078464,
+            "height": 31.925837272579045
+          },
+          "editable": true
+        },
+        {
+          "raw": "296x296, role: decorative-badge (IC Thought Leadership Series round badge), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "296x296",
+          "role": "decorative-badge",
+          "element_id": "PBCV6H4c0hBh21lc-LBWbcd4XL8jmdHYc",
+          "occurrence": 1,
+          "parent_element_id": "PBCV6H4c0hBh21lc",
+          "container_type": "RECT",
+          "position": {
+            "top": 160.4389072936966,
+            "left": 752.9517278065172
+          },
+          "dimension": {
+            "width": 296.01796916317977,
+            "height": 296.01796916317977
+          },
+          "editable": true
+        },
+        {
+          "raw": "247x247, role: headshot (speaker 1 frame, layered over bg), current asset_id: `MAGg-_VYc0Q` \u2014 layered frame: yes \u2014 image swap targets this fill",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "247x247",
+          "role": "headshot",
+          "layered": true,
+          "element_id": "PBCV6H4c0hBh21lc-LBdt9cdJsLNlbrwF-LBbxhY6dcSnbLvvQ",
+          "occurrence": 1,
+          "parent_element_id": "PBCV6H4c0hBh21lc-LBdt9cdJsLNlbrwF",
+          "container_type": "RECT",
+          "position": {
+            "top": 669.2493966518384,
+            "left": 73.60913231815987
+          },
+          "dimension": {
+            "width": 247.3319074728478,
+            "height": 247.3319074728478
+          },
+          "editable": true
+        },
+        {
+          "raw": "247x247, role: headshot (speaker 2 frame), current asset_id: `MAGg-_VYc0Q` \u2014 layered frame: yes",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "247x247",
+          "role": "headshot",
+          "layered": true,
+          "element_id": "PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9-LB4GhJFvL2fXW3Lh",
+          "occurrence": 2,
+          "parent_element_id": "PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9",
+          "container_type": "RECT",
+          "position": {
+            "top": 669.2493966518384,
+            "left": 362.48218578038427
+          },
+          "dimension": {
+            "width": 247.3319074728478,
+            "height": 247.3319074728478
+          },
+          "editable": true
+        },
+        {
+          "raw": "111x40, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "111x40",
+          "role": "logo",
+          "element_id": "PBCV6H4c0hBh21lc-LBCwKT6KRT0xWGqD",
+          "occurrence": 1,
+          "parent_element_id": "PBCV6H4c0hBh21lc",
+          "container_type": "RECT",
+          "position": {
+            "top": 1012.7808240707619,
+            "left": 627.9370418093633
+          },
+          "dimension": {
+            "width": 111.33319807693388,
+            "height": 39.50131690608968
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBCV6H4c0hBh21lc",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same skeleton with 3 speakers (Name/Title triple \u2014 across bottom row)",
+          "role_hint": "across bottom row)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGg-8Ldy8k`",
+          "current_asset_id": "MAGg-8Ldy8k",
+          "role": "full-bg",
+          "element_id": "PBPFQvRlvnKrPymH-LBPkRr0M4L6pCQ27",
+          "occurrence": 1,
+          "parent_element_id": "PBPFQvRlvnKrPymH",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1080
+          },
+          "editable": true
+        },
+        {
+          "raw": "play icon `MAGg-1Nbpjs` (32x32)",
+          "current_asset_id": "MAGg-1Nbpjs",
+          "dimensions": "32x32",
+          "role": "icon"
+        },
+        {
+          "raw": "IC badge `MAGg-9y8TiY` (296x296)",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "296x296",
+          "role": "decorative-badge",
+          "element_id": "PBPFQvRlvnKrPymH-LB48WKvTzKsxnrW5",
+          "occurrence": 1,
+          "parent_element_id": "PBPFQvRlvnKrPymH",
+          "container_type": "RECT",
+          "position": {
+            "top": 160.4389072936966,
+            "left": 752.9517278065172
+          },
+          "dimension": {
+            "width": 296.01796916317977,
+            "height": 296.01796916317977
+          },
+          "editable": true
+        },
+        {
+          "raw": "3 headshot frames `MAGg-_VYc0Q` (247x247 each, layered)",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "247x247",
+          "role": "headshot",
+          "layered": true,
+          "element_id": "PBPFQvRlvnKrPymH-LBw2s2Wycz8g8bkF-LBs31SWdj6Sb1LNl",
+          "occurrence": 1,
+          "parent_element_id": "PBPFQvRlvnKrPymH-LBw2s2Wycz8g8bkF",
+          "container_type": "RECT",
+          "position": {
+            "top": 579.2493966518384,
+            "left": 73.60913231815987
+          },
+          "dimension": {
+            "width": 247.3319074728478,
+            "height": 247.3319074728478
+          },
+          "editable": true
+        },
+        {
+          "raw": "logo `MAFYswpMFus` (111x40)",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "111x40",
+          "role": "logo",
+          "element_id": "PBPFQvRlvnKrPymH-LBh6J6c6SNT2zXkx",
+          "occurrence": 1,
+          "parent_element_id": "PBPFQvRlvnKrPymH",
+          "container_type": "RECT",
+          "position": {
+            "top": 1012.7808240707619,
+            "left": 627.9370418093633
+          },
+          "dimension": {
+            "width": 111.33319807693388,
+            "height": 39.50131690608968
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBPFQvRlvnKrPymH",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same headline"
+        },
+        {
+          "raw": "4 speaker Name/Title pairs in right column"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGg-8Ldy8k`",
+          "current_asset_id": "MAGg-8Ldy8k",
+          "role": "full-bg",
+          "element_id": "PBlLPq5XVkDmMYyN-LB0t5gQ5Bj1DdxLz",
+          "occurrence": 1,
+          "parent_element_id": "PBlLPq5XVkDmMYyN",
+          "container_type": "RECT",
+          "position": {
+            "top": 1.1368683772161603e-13,
+            "left": 1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1080,
+            "height": 1080
+          },
+          "editable": true
+        },
+        {
+          "raw": "play icon `MAGg-1Nbpjs` (32x32)",
+          "current_asset_id": "MAGg-1Nbpjs",
+          "dimensions": "32x32",
+          "role": "icon"
+        },
+        {
+          "raw": "IC badge `MAGg-9y8TiY` (296x296)",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "296x296",
+          "role": "decorative-badge",
+          "element_id": "PBlLPq5XVkDmMYyN-LByL87G1BbZ7N9qK",
+          "occurrence": 1,
+          "parent_element_id": "PBlLPq5XVkDmMYyN",
+          "container_type": "RECT",
+          "position": {
+            "top": 160.4389072936966,
+            "left": 752.9517278065172
+          },
+          "dimension": {
+            "width": 296.01796916317977,
+            "height": 296.01796916317977
+          },
+          "editable": true
+        },
+        {
+          "raw": "4 headshot frames `MAGg-_VYc0Q` (183x183 each, 2x2 grid, layered)",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "183x183",
+          "role": "headshot",
+          "layered": true,
+          "element_id": "PBlLPq5XVkDmMYyN-LBkZsgDsGW1hFYS8-LBYslgCqnkvfvZx1",
+          "occurrence": 1,
+          "parent_element_id": "PBlLPq5XVkDmMYyN-LBkZsgDsGW1hFYS8",
+          "container_type": "RECT",
+          "position": {
+            "top": 630.4264292769041,
+            "left": 84.00831746651959
+          },
+          "dimension": {
+            "width": 183.37432455860622,
+            "height": 183.37432455860622
+          },
+          "editable": true
+        },
+        {
+          "raw": "logo `MAFYswpMFus` (111x40)",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "111x40",
+          "role": "logo",
+          "element_id": "PBlLPq5XVkDmMYyN-LBFkxqKlwVshpSWC",
+          "occurrence": 1,
+          "parent_element_id": "PBlLPq5XVkDmMYyN",
+          "container_type": "RECT",
+          "position": {
+            "top": 1012.7808240707619,
+            "left": 627.9370418093633
+          },
+          "dimension": {
+            "width": 111.33319807693388,
+            "height": 39.50131690608968
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBlLPq5XVkDmMYyN",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-speaker-card",
+  "canvas": "1080x1080",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW7fJPJY",
+  "notes": "CRITICAL layered-frame pattern \u2014 all headshot fills (`MAGg-_VYc0Q`) are independent editable image elements layered atop the full-bg fill. Image swap for a speaker MUST target the specific headshot element_id (NOT the bg). This is the canonical layered-frame template the 2026-05-29 spike identified. Cerkl logo is bottom-right wordmark image fill (not text). IC Thought Leadership badge is decorative circle 296x296 \u2014 large round = decorative-badge per inference rule. 2/3/4 speaker variants align with EAGqLOHvqK8 page-count.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW7fJPJY"
+}

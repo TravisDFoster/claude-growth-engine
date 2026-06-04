@@ -1,0 +1,519 @@
+{
+  "template_id": "EAHG3Tpp4CI",
+  "name": "Square_Data / IC Fact post",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"60%\" \u2014 large stat number (664x224)",
+          "placeholder": "60%",
+          "role_hint": "large stat number (664x224)",
+          "element_id": "PBjCPJpyTvbQPMVZ-LB0qS5J173WBwDg7",
+          "container_type": "TEXT",
+          "position": {
+            "top": 338.470332043149,
+            "left": 161.91074112084743
+          },
+          "dimension": {
+            "width": 663.748906049379,
+            "height": 224
+          }
+        },
+        {
+          "raw": "\"of employees say they miss important updates\" \u2014 stat body (760x155)",
+          "placeholder": "of employees say they miss important updates",
+          "role_hint": "stat body (760x155)",
+          "element_id": "PBjCPJpyTvbQPMVZ-LB0gqkhLn3BM5xRn",
+          "container_type": "TEXT",
+          "position": {
+            "top": 578.9651328460859,
+            "left": 161.91074112084743
+          },
+          "dimension": {
+            "width": 760.2657737858597,
+            "height": 155.33335
+          }
+        },
+        {
+          "raw": "\"Learn more at cerkl.com\" \u2014 CTA pill text (over CTA capsule SHAPE)",
+          "placeholder": "Learn more at cerkl.com",
+          "role_hint": "CTA pill text (over CTA capsule SHAPE)",
+          "element_id": "PBjCPJpyTvbQPMVZ-LBjjf803YTPsKzwQ-LBJSk2xdZcLdB4VS",
+          "container_type": "TEXT",
+          "position": {
+            "top": 857.6372399311681,
+            "left": 286.90884228365917
+          },
+          "dimension": {
+            "width": 508.7517090947524,
+            "height": 53.93334
+          }
+        },
+        {
+          "raw": "\"Example post\" \u2014 top tag SHAPE (decorative)",
+          "placeholder": "Example post",
+          "role_hint": "top tag SHAPE (decorative)",
+          "element_id": "PBjCPJpyTvbQPMVZ-LBt4SLvYgN69dl1T",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 385.59162292815313
+          },
+          "dimension": {
+            "width": 308.81675414369374,
+            "height": 69.47033204314903
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAHG1QAn6v0`",
+          "current_asset_id": "MAHG1QAn6v0",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBjCPJpyTvbQPMVZ",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "65x65, role: icon (Broadcast/compass mark, bottom-right), current asset_id: `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "dimensions": "65x65",
+          "role": "icon",
+          "element_id": "PBjCPJpyTvbQPMVZ-LB4mlWC4Zm7T8lHH",
+          "occurrence": 1,
+          "parent_element_id": "PBjCPJpyTvbQPMVZ",
+          "container_type": "RECT",
+          "position": {
+            "top": 972,
+            "left": 972
+          },
+          "dimension": {
+            "width": 64.93289058568465,
+            "height": 64.93289058568465
+          },
+          "editable": true
+        },
+        {
+          "raw": "104x104, role: icon (page-number \"1\" badge top-right), current asset_id: `MAHG22i2Esw`",
+          "current_asset_id": "MAHG22i2Esw",
+          "dimensions": "104x104",
+          "role": "icon",
+          "element_id": "PBjCPJpyTvbQPMVZ-LBJmfHRtmNvKZk9f",
+          "occurrence": 1,
+          "parent_element_id": "PBjCPJpyTvbQPMVZ",
+          "container_type": "RECT",
+          "position": {
+            "top": 104.48223389005284,
+            "left": 817.8501406813926
+          },
+          "dimension": {
+            "width": 104.3263742253144,
+            "height": 104.3263742253144
+          },
+          "editable": false
+        },
+        {
+          "raw": "716x103, role: photo-slot (browser-window/CTA capsule frame), current asset_id: `MAHG1nvS6R0` \u2014 layered frame: yes (decorative panel)",
+          "current_asset_id": "MAHG1nvS6R0",
+          "dimensions": "716x103",
+          "role": "photo-slot",
+          "layered": true,
+          "element_id": "PBjCPJpyTvbQPMVZ-LBjjf803YTPsKzwQ-LBdhdSWr0V4NdtTJ",
+          "occurrence": 1,
+          "parent_element_id": "PBjCPJpyTvbQPMVZ-LBjjf803YTPsKzwQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 831.6936466830226,
+            "left": 181.91074112084743
+          },
+          "dimension": {
+            "width": 716.1785177583051,
+            "height": 102.73457358188101
+          },
+          "editable": false
+        },
+        {
+          "raw": "56x56, role: icon (CTA arrow inside capsule), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "56x56",
+          "role": "icon",
+          "element_id": "PBjCPJpyTvbQPMVZ-LBjjf803YTPsKzwQ-LBFMPzTM57v4Whtj",
+          "occurrence": 1,
+          "parent_element_id": "PBjCPJpyTvbQPMVZ-LBjjf803YTPsKzwQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 855.2514269851292,
+            "left": 814.3943148163821
+          },
+          "dimension": {
+            "width": 55.619012977667694,
+            "height": 55.619012977667694
+          },
+          "editable": false
+        }
+      ],
+      "page_id": "PBjCPJpyTvbQPMVZ",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"XX%\" placeholder + \"Lorem ipsum dolor sit amet, consectetur elit\" + CTA",
+          "placeholder": "XX%",
+          "element_id": "PBw018cRBDdxc8Hb-LBbmBkZls9fjY6Vm",
+          "container_type": "TEXT",
+          "position": {
+            "top": 338.470332043149,
+            "left": 161.91074112084743
+          },
+          "dimension": {
+            "width": 663.748906049379,
+            "height": 224
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG1QAn6v0`",
+          "current_asset_id": "MAHG1QAn6v0",
+          "role": "full-bg",
+          "element_id": "PBw018cRBDdxc8Hb",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "compass `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "element_id": "PBw018cRBDdxc8Hb-LBmRKVxKks4Rn4Vk",
+          "occurrence": 1,
+          "parent_element_id": "PBw018cRBDdxc8Hb",
+          "container_type": "RECT",
+          "position": {
+            "top": 972,
+            "left": 972
+          },
+          "dimension": {
+            "width": 64.93289058568465,
+            "height": 64.93289058568465
+          },
+          "editable": true
+        },
+        {
+          "raw": "page-number badge `MAHG22i2Esw`",
+          "current_asset_id": "MAHG22i2Esw",
+          "role": "decorative-badge",
+          "element_id": "PBw018cRBDdxc8Hb-LBrHC3msL4mhr9Cr",
+          "occurrence": 1,
+          "parent_element_id": "PBw018cRBDdxc8Hb",
+          "container_type": "RECT",
+          "position": {
+            "top": 104.48223389005284,
+            "left": 817.8501406813926
+          },
+          "dimension": {
+            "width": 104.3263742253144,
+            "height": 104.3263742253144
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA capsule `MAHG1nvS6R0`",
+          "current_asset_id": "MAHG1nvS6R0",
+          "element_id": "PBw018cRBDdxc8Hb-LBL24TJfcpF9RjJZ-LBzr2D7JYhR5PTdV",
+          "occurrence": 1,
+          "parent_element_id": "PBw018cRBDdxc8Hb-LBL24TJfcpF9RjJZ",
+          "container_type": "RECT",
+          "position": {
+            "top": 831.6936466830226,
+            "left": 181.91074112084743
+          },
+          "dimension": {
+            "width": 716.1785177583051,
+            "height": 102.73457358188101
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "element_id": "PBw018cRBDdxc8Hb-LBL24TJfcpF9RjJZ-LBZxgCBx7KwLls7H",
+          "occurrence": 1,
+          "parent_element_id": "PBw018cRBDdxc8Hb-LBL24TJfcpF9RjJZ",
+          "container_type": "RECT",
+          "position": {
+            "top": 855.2514269851292,
+            "left": 814.3943148163821
+          },
+          "dimension": {
+            "width": 55.619012977667694,
+            "height": 55.619012977667694
+          },
+          "editable": false
+        }
+      ],
+      "page_id": "PBw018cRBDdxc8Hb",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Stop Sending Emails No One Reads\" \u2014 headline (760x174)",
+          "placeholder": "Stop Sending Emails No One Reads",
+          "role_hint": "headline (760x174)",
+          "element_id": "PBJxxCnYRZrgNZG1-LBvdN8Bc4b2Y4ZqP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 338.470332043148,
+            "left": 159.86711310707017
+          },
+          "dimension": {
+            "width": 760.2657737858597,
+            "height": 173.735115
+          }
+        },
+        {
+          "raw": "\"If your internal messages are competing with 100+ daily emails, your strategy needs more than better subject lines.\" \u2014 body (760x222)",
+          "placeholder": "If your internal messages are competing with 100+ daily emails, your strategy needs more than better subject lines.",
+          "role_hint": "body (760x222)",
+          "element_id": "PBJxxCnYRZrgNZG1-LBfK2vpHYMgslLY7",
+          "container_type": "TEXT",
+          "position": {
+            "top": 540,
+            "left": 159.86711310707017
+          },
+          "dimension": {
+            "width": 760.2657737858597,
+            "height": 222.40004
+          }
+        },
+        {
+          "raw": "\"Learn more at cerkl.com\" \u2014 CTA",
+          "placeholder": "Learn more at cerkl.com",
+          "role_hint": "CTA",
+          "element_id": "PBJxxCnYRZrgNZG1-LB9DSVXSbWGD9GNP-LBZbxD4vCL5zqR2Q",
+          "container_type": "TEXT",
+          "position": {
+            "top": 857.6372399311681,
+            "left": 286.90884228365917
+          },
+          "dimension": {
+            "width": 508.7517090947524,
+            "height": 53.93334
+          }
+        },
+        {
+          "raw": "\"Example post\" \u2014 top tag SHAPE",
+          "placeholder": "Example post",
+          "role_hint": "top tag SHAPE",
+          "element_id": "PBJxxCnYRZrgNZG1-LBxSGtwSL0RXyLC0",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 0,
+            "left": 385.59162292815313
+          },
+          "dimension": {
+            "width": 308.81675414369374,
+            "height": 69.47033204314903
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG1VWzUTw` (different bg)",
+          "current_asset_id": "MAHG1VWzUTw",
+          "role": "full-bg",
+          "element_id": "PBJxxCnYRZrgNZG1",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "compass `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "element_id": "PBJxxCnYRZrgNZG1-LBhNGxGrsnsmdf73",
+          "occurrence": 1,
+          "parent_element_id": "PBJxxCnYRZrgNZG1",
+          "container_type": "RECT",
+          "position": {
+            "top": 972,
+            "left": 972
+          },
+          "dimension": {
+            "width": 64.93289058568465,
+            "height": 64.93289058568465
+          },
+          "editable": true
+        },
+        {
+          "raw": "page-number badge `MAHG22i2Esw`",
+          "current_asset_id": "MAHG22i2Esw",
+          "role": "decorative-badge",
+          "element_id": "PBJxxCnYRZrgNZG1-LBllzQKKlQqhjQvR",
+          "occurrence": 1,
+          "parent_element_id": "PBJxxCnYRZrgNZG1",
+          "container_type": "RECT",
+          "position": {
+            "top": 104.48223389005284,
+            "left": 817.8501406813926
+          },
+          "dimension": {
+            "width": 104.3263742253144,
+            "height": 104.3263742253144
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA capsule `MAHG1nvS6R0`",
+          "current_asset_id": "MAHG1nvS6R0",
+          "element_id": "PBJxxCnYRZrgNZG1-LB9DSVXSbWGD9GNP-LB8vKWV07KTc5rL7",
+          "occurrence": 1,
+          "parent_element_id": "PBJxxCnYRZrgNZG1-LB9DSVXSbWGD9GNP",
+          "container_type": "RECT",
+          "position": {
+            "top": 831.6936466830226,
+            "left": 181.91074112084743
+          },
+          "dimension": {
+            "width": 716.1785177583051,
+            "height": 102.73457358188101
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "element_id": "PBJxxCnYRZrgNZG1-LB9DSVXSbWGD9GNP-LBHjJWFmFfJd3vSs",
+          "occurrence": 1,
+          "parent_element_id": "PBJxxCnYRZrgNZG1-LB9DSVXSbWGD9GNP",
+          "container_type": "RECT",
+          "position": {
+            "top": 855.2514269851292,
+            "left": 814.3943148163821
+          },
+          "dimension": {
+            "width": 55.619012977667694,
+            "height": 55.619012977667694
+          },
+          "editable": false
+        }
+      ],
+      "page_id": "PBJxxCnYRZrgNZG1",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "same skeleton as page 3, Lorem placeholders"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHG1VWzUTw`",
+          "current_asset_id": "MAHG1VWzUTw",
+          "role": "full-bg",
+          "element_id": "PBx1Yskc45RN1Z69",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "compass `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "element_id": "PBx1Yskc45RN1Z69-LBrPFKNK8nd8jrr7",
+          "occurrence": 1,
+          "parent_element_id": "PBx1Yskc45RN1Z69",
+          "container_type": "RECT",
+          "position": {
+            "top": 972,
+            "left": 972
+          },
+          "dimension": {
+            "width": 64.93289058568465,
+            "height": 64.93289058568465
+          },
+          "editable": true
+        },
+        {
+          "raw": "page-number badge `MAHG22i2Esw`",
+          "current_asset_id": "MAHG22i2Esw",
+          "role": "decorative-badge",
+          "element_id": "PBx1Yskc45RN1Z69-LBC8RqNXnWzLk8fn",
+          "occurrence": 1,
+          "parent_element_id": "PBx1Yskc45RN1Z69",
+          "container_type": "RECT",
+          "position": {
+            "top": 104.48223389005284,
+            "left": 817.8501406813926
+          },
+          "dimension": {
+            "width": 104.3263742253144,
+            "height": 104.3263742253144
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA capsule `MAHG1nvS6R0`",
+          "current_asset_id": "MAHG1nvS6R0",
+          "element_id": "PBx1Yskc45RN1Z69-LBpdybCVxjmdq5P3-LBkb8LB4BcdHVGk5",
+          "occurrence": 1,
+          "parent_element_id": "PBx1Yskc45RN1Z69-LBpdybCVxjmdq5P3",
+          "container_type": "RECT",
+          "position": {
+            "top": 831.6936466830226,
+            "left": 181.91074112084743
+          },
+          "dimension": {
+            "width": 716.1785177583051,
+            "height": 102.73457358188101
+          },
+          "editable": false
+        },
+        {
+          "raw": "CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "element_id": "PBx1Yskc45RN1Z69-LBpdybCVxjmdq5P3-LBtmYWhqkbNRyQrl",
+          "occurrence": 1,
+          "parent_element_id": "PBx1Yskc45RN1Z69-LBpdybCVxjmdq5P3",
+          "container_type": "RECT",
+          "position": {
+            "top": 855.2514269851292,
+            "left": 814.3943148163821
+          },
+          "dimension": {
+            "width": 55.619012977667694,
+            "height": 55.619012977667694
+          },
+          "editable": false
+        }
+      ],
+      "page_id": "PBx1Yskc45RN1Z69",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-stat-card",
+  "canvas": "1080x1080",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW9wA8NA",
+  "notes": "Stat-card carousel \u2014 pages 1+2 are XX% + statement; pages 3+4 are headline + body variant. Browser-window \"CTA capsule\" (`MAHG1nvS6R0`) sits inside the bg as decorative panel \u2014 non-editable, contains text + arrow icon overlaid. Page-number badge `MAHG22i2Esw` is the same \"1\" icon on every page (likely needs swap per slide for carousel pagination). Cerkl/Broadcast compass mark bottom-right is editable but tiny. No headshot/photo slot \u2014 stat-driven only.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW9wA8NA"
+}

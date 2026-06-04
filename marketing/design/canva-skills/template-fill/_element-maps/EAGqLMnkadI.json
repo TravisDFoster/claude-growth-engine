@@ -1,0 +1,128 @@
+{
+  "template_id": "EAGqLMnkadI",
+  "name": "Blog Post Cover_Industry Specific_Healthcare",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh\" \u2014 title",
+          "placeholder": "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh",
+          "role_hint": "title",
+          "element_id": "PBSkdrj2Nc1mNNPx-LB1V6c4qrgk9Cz8S",
+          "container_type": "TEXT",
+          "position": {
+            "top": 331.6507783399006,
+            "left": 105.94348265222527
+          },
+          "dimension": {
+            "width": 1211.5821025116556,
+            "height": 313.733385
+          }
+        },
+        {
+          "raw": "\"Healthcare\" \u2014 category pill (SHAPE-wrapped)",
+          "placeholder": "Healthcare",
+          "role_hint": "category pill (SHAPE-wrapped)",
+          "element_id": "PBSkdrj2Nc1mNNPx-LBzGklMSzM2QBndK",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 705.6545329607925,
+            "left": 105.94348265222527
+          },
+          "dimension": {
+            "width": 392.16993161717096,
+            "height": 85.59474457229305
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1500x1000, role: full-bg (SHAPE-hosted healthcare photo with blue overlay), current asset_id: `MAGkRHsF-oI`",
+          "current_asset_id": "MAGkRHsF-oI",
+          "dimensions": "1500x1000",
+          "role": "full-bg",
+          "element_id": "PBSkdrj2Nc1mNNPx-LB6Pqq7TGz0z54zL",
+          "occurrence": 1,
+          "parent_element_id": "PBSkdrj2Nc1mNNPx",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 5.684341886080802e-14,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1500,
+            "height": 1000
+          },
+          "editable": true
+        },
+        {
+          "raw": "187x56, role: logo (Cerkl wordmark top-left), current asset_id: `MAFZjCbguOo`",
+          "current_asset_id": "MAFZjCbguOo",
+          "dimensions": "187x56",
+          "role": "logo",
+          "element_id": "PBSkdrj2Nc1mNNPx-LBHVDM6yHGn1C4Z7",
+          "occurrence": 1,
+          "parent_element_id": "PBSkdrj2Nc1mNNPx",
+          "container_type": "RECT",
+          "position": {
+            "top": 188.327786139443,
+            "left": 105.94348265222527
+          },
+          "dimension": {
+            "width": 186.93148226095747,
+            "height": 56.11193932850007
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBSkdrj2Nc1mNNPx",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same title + Healthcare pill."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same shape with alternate healthcare photo (`MAGkRGh4jQs`) + Cerkl logo.",
+          "current_asset_id": "MAGkRGh4jQs",
+          "role": "logo",
+          "element_id": "PBTvJWmJGhj0CscR-LBwjdlhhXbz7dyD0",
+          "occurrence": 1,
+          "parent_element_id": "PBTvJWmJGhj0CscR",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 5.684341886080802e-14,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1500,
+            "height": 1000
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBTvJWmJGhj0CscR",
+      "dimension": {
+        "width": 1500,
+        "height": 1000
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-cover-industry-healthcare",
+  "canvas": "1500x1000",
+  "page_count": 2,
+  "inspection_design_id": "DAHLW6YsMWc",
+  "notes": "page 1 / page 2 are color/photo variants of the same layout. Layered frame: yes \u2014 background photo lives inside a SHAPE container; SHAPE pill (\"Healthcare\") and logo image overlay it.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6YsMWc"
+}

@@ -11,6 +11,7 @@ You are a senior B2B SaaS designer helping Travis Foster, Head of Marketing and 
 |------|-------|------|
 | **Find any visual asset** (logos, photos, icons, templates) — routing layer | `branding-assets/` | [`INDEX.md`](branding-assets/INDEX.md) |
 | **Pick a specific Cerkl photo** (hero, blog cover, OG image) | `branding-assets/Cerkl Photography/` | [`INDEX.md`](branding-assets/Cerkl%20Photography/INDEX.md) |
+| **Pick a specific Broadcast product image** (UI screenshot for a deck, blog, ad, social) | `branding-assets/Product Illustration/Product Images/` | [`INDEX.md`](branding-assets/Product%20Illustration/Product%20Images/INDEX.md) — routes to 16 feature subfolders, each with its own per-file INDEX |
 | Which logo to use, logo variants, lockup hierarchy | `branding-assets/Brand Guidelines/` | `logo-guide.md` |
 | Brand color hex values, color scales, gradients, CMYK | `branding-assets/Brand Guidelines/` | `colors.md` |
 | Font names, sizes, weights, web type scale | `branding-assets/Brand Guidelines/` | `typography.md` |
@@ -21,6 +22,7 @@ You are a senior B2B SaaS designer helping Travis Foster, Head of Marketing and 
 | Blog post images, in-body diagrams, OG/social cards (HTML → PNG, brand-aligned templates) | `blog-assets/` | [`PRINCIPLES.md`](blog-assets/PRINCIPLES.md) |
 | Browser tools, design inspiration | `branding-assets/Brand Guidelines/` | `design-resources.md` |
 | All brand guidelines (routing index) | `branding-assets/Brand Guidelines/` | `brand-guidelines.md` |
+| Compress branding-assets images / build INDEX skeletons (cross-channel tooling) | `tools/` | [`CLAUDE.md`](tools/CLAUDE.md) |
 | Social media graphics (raw assets) | `branding-assets/Social Assets/` | CONTEXT.md |
 | Canva source files | `branding-assets/Canva Assets/` | CONTEXT.md |
 | Broadcast logo/lockup files | `branding-assets/Broadcast/` | CONTEXT.md |
@@ -42,7 +44,7 @@ design/
 │       ├── letter-strip/              ← horizontal: 3-6 acronym letters or named pillars
 │       └── stat-hero/                 ← one dominant stat + framing (OG / social cards)
 ├── canva-skills/                       ← Canva asset-generation skills (built on brand templates)
-│   └── canva-asset-pack/               ← PLACEHOLDER: generate a pack of on-brand Canva assets
+│   └── template-fill/                  ← live: atomic skill to render one Canva asset from a brand template
 └── branding-assets/
     ├── Brand Guidelines/
     │   ├── brand-guidelines.md     ← routing index
@@ -117,7 +119,7 @@ design/
 
 | Task | Skill |
 |---|---|
-| Generating a pack of on-brand Canva assets from brand templates (webinar/campaign graphics) — **placeholder, not yet built** | `/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/canva-asset-pack/SKILL.md` |
+| Rendering one on-brand Canva asset from a brand template (Path B: create + edit + commit — atomic, channel-agnostic; channel processes dispatch one sub-agent per asset) | `/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/template-fill/SKILL.md` |
 | Generating or optimizing marketing images, OG images, hero graphics, mockups | `/Users/travisfoster/claude-code/cerkl/marketing/skills/image/SKILL.md` |
 | Producing video content with AI tools (Remotion, HeyGen, Veo, Runway) | `/Users/travisfoster/claude-code/cerkl/marketing/skills/video/SKILL.md` |
 | Writing copy for one-pagers, decks, banners, ad creative | `/Users/travisfoster/claude-code/cerkl/marketing/skills/copywriting/SKILL.md` |

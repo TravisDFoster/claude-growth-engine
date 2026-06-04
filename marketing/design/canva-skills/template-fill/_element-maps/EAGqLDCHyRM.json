@@ -1,0 +1,94 @@
+{
+  "template_id": "EAGqLDCHyRM",
+  "name": "Webinar Video Thumbnail",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a heading\" \u2014 title",
+          "placeholder": "Add a heading",
+          "role_hint": "title",
+          "element_id": "PBNyZwlj2zYJrFhf-LBtY9VmlV8yH5KpW",
+          "container_type": "TEXT",
+          "position": {
+            "top": 304.4674243289404,
+            "left": 89.53846153846155
+          },
+          "dimension": {
+            "width": 685.4659455128206,
+            "height": 92.5333
+          }
+        },
+        {
+          "raw": "\"Add a subheading\" \u2014 subtitle",
+          "placeholder": "Add a subheading",
+          "role_hint": "subtitle",
+          "element_id": "PBNyZwlj2zYJrFhf-LBbtmv7TjGDhkCpd",
+          "container_type": "TEXT",
+          "position": {
+            "top": 422.96283257588146,
+            "left": 89.53846153846155
+          },
+          "dimension": {
+            "width": 454.4921875,
+            "height": 57.39996
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1280x720, role: full-bg, current asset_id: `MAFvq4HVPj4`",
+          "current_asset_id": "MAFvq4HVPj4",
+          "dimensions": "1280x720",
+          "role": "full-bg",
+          "element_id": "PBNyZwlj2zYJrFhf-LBDccjVshnFGq4pb",
+          "occurrence": 1,
+          "parent_element_id": "PBNyZwlj2zYJrFhf",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": -1.1368683772161603e-13
+          },
+          "dimension": {
+            "width": 1280,
+            "height": 720
+          },
+          "editable": true
+        },
+        {
+          "raw": "602x74, role: decorative-badge (InnerCerkl Webinars kicker plate with embedded text+icon), current asset_id: `MAFvqxOFQJE`",
+          "current_asset_id": "MAFvqxOFQJE",
+          "dimensions": "602x74",
+          "role": "decorative-badge",
+          "element_id": "PBNyZwlj2zYJrFhf-LBxLK6QB4ZRGpmCn",
+          "occurrence": 1,
+          "parent_element_id": "PBNyZwlj2zYJrFhf",
+          "container_type": "RECT",
+          "position": {
+            "top": 194.76923076923066,
+            "left": 89.53846153846155
+          },
+          "dimension": {
+            "width": 601.9272270430099,
+            "height": 73.73608531276871
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBNyZwlj2zYJrFhf",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-video-thumbnail-generic",
+  "canvas": "1280x720",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW4SrkEc",
+  "notes": "minimal webinar thumbnail \u2014 kicker plate sits above title. Layered frame: yes \u2014 kicker plate image overlays full-bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4SrkEc"
+}

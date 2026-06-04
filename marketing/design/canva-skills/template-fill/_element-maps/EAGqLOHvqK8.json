@@ -1,0 +1,178 @@
+{
+  "template_id": "EAGqLOHvqK8",
+  "name": "Square post_ Webinar",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"live webinar\" \u2014 pill badge (SHAPE)",
+          "placeholder": "live webinar",
+          "role_hint": "pill badge (SHAPE)",
+          "element_id": "PBNQq4M7FkDMTkQL-LBfvy9CXJf55JSqh",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 108,
+            "left": 108.00000000000003
+          },
+          "dimension": {
+            "width": 274.1573266250768,
+            "height": 60.297939626436786
+          }
+        },
+        {
+          "raw": "\"Date and time\" \u2014 date/time line",
+          "placeholder": "Date and time",
+          "role_hint": "date/time line",
+          "element_id": "PBNQq4M7FkDMTkQL-LB3Wd9FBcnx33SYJ",
+          "container_type": "TEXT",
+          "position": {
+            "top": 234.0990724324324,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 47.00012
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 main headline",
+          "placeholder": "Webinar title",
+          "role_hint": "main headline",
+          "element_id": "PBNQq4M7FkDMTkQL-LBZ85yRtBKnLxwFM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 309.84623275240756,
+            "left": 107.99999999999994
+          },
+          "dimension": {
+            "width": 864.0000000000001,
+            "height": 87
+          }
+        },
+        {
+          "raw": "\"Hosted by:\" \u2014 section label",
+          "placeholder": "Hosted by:",
+          "role_hint": "section label",
+          "element_id": "PBNQq4M7FkDMTkQL-LBgBvfDMqVBcBHlk",
+          "container_type": "TEXT",
+          "position": {
+            "top": 553.5234267567569,
+            "left": 108
+          },
+          "dimension": {
+            "width": 182.453125,
+            "height": 31.66672
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 speaker 1 + 2 name/title pairs",
+          "placeholder": "Name",
+          "role_hint": "speaker 1 + 2 name/title pairs",
+          "element_id": "PBNQq4M7FkDMTkQL-LBpWGmBgMQnXJthW",
+          "container_type": "TEXT",
+          "position": {
+            "top": 834.805216499305,
+            "left": 108.00000000000003
+          },
+          "dimension": {
+            "width": 274.15732662507685,
+            "height": 35.13338
+          }
+        },
+        {
+          "raw": "\"INsert logo(s)\" \u2014 bottom logo placeholder text",
+          "placeholder": "INsert logo(s)",
+          "role_hint": "bottom logo placeholder text",
+          "element_id": "PBNQq4M7FkDMTkQL-LBd85Kw2d6BCNY7H",
+          "container_type": "TEXT",
+          "position": {
+            "top": 974.7237138778295,
+            "left": 108.00000000000006
+          },
+          "dimension": {
+            "width": 244.9765625,
+            "height": 31.66668
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-page fill (1080x1080), role: full-bg, current asset_id: `MAGRO9QE3rg`",
+          "current_asset_id": "MAGRO9QE3rg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBNQq4M7FkDMTkQL",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBNQq4M7FkDMTkQL",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same skeleton with 3 speakers (Name/Title triple)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9QE3rg` (1080x1080)",
+          "current_asset_id": "MAGRO9QE3rg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBMs2jymzkC1cHC7",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBMs2jymzkC1cHC7",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same headline skeleton"
+        },
+        {
+          "raw": "4 speaker Name/Title pairs arranged in 2x2 grid below"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9QE3rg` (1080x1080)",
+          "current_asset_id": "MAGRO9QE3rg",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBnSPjKSyvYKtDlK",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PBnSPjKSyvYKtDlK",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-square-generic",
+  "canvas": "1080x1080",
+  "page_count": 3,
+  "inspection_design_id": "DAHLWw_aD4Q",
+  "notes": "NO editable image fills for speaker headshots \u2014 the visible speaker thumbnails are within the single full-bg fill (rendered as part of background). Headshot insertion requires adding new image elements at speaker position. This contradicts speaker-card layered-frame pattern seen in EAGqLMN8_Po. Only full-bg image is editable. Logo placeholder is text-only (\"INsert logo(s)\") not a fill.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWw_aD4Q"
+}

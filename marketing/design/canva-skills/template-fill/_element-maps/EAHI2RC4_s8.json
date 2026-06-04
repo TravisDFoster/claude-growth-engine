@@ -1,0 +1,239 @@
+{
+  "template_id": "EAHI2RC4_s8",
+  "name": "Foundations and Product Images Templates",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\" \u2014 headline (864x250)",
+          "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "role_hint": "headline (864x250)",
+          "element_id": "PBSdqtyLgmnTMcfk-LBV561Qr2LzCFFH6",
+          "container_type": "TEXT",
+          "position": {
+            "top": 657,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 249.6
+          }
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet... aliqua.\" \u2014 body (864x157)",
+          "placeholder": "Lorem ipsum dolor sit amet... aliqua.",
+          "role_hint": "body (864x157)"
+        },
+        {
+          "raw": "\"Start free with Foundations\" \u2014 CTA pill text + SHAPE",
+          "placeholder": "Start free with Foundations",
+          "role_hint": "CTA pill text + SHAPE",
+          "element_id": "PBSdqtyLgmnTMcfk-LBhZlPhQxyqjXdv5-LB9mDWVCV5wn7Lf2",
+          "container_type": "TEXT",
+          "position": {
+            "top": 1171.347381314525,
+            "left": 218.74425813939018
+          },
+          "dimension": {
+            "width": 583.1044855103906,
+            "height": 53.93334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1350), role: full-bg, current asset_id: `MAHI2beEOSg`",
+          "current_asset_id": "MAHI2beEOSg",
+          "dimensions": "1080x1350",
+          "role": "full-bg",
+          "element_id": "PBSdqtyLgmnTMcfk",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "843x571, role: photo-slot (product UI montage), current asset_id: `MAG-KiuqDp8` \u2014 layered frame: yes",
+          "current_asset_id": "MAG-KiuqDp8",
+          "dimensions": "843x571",
+          "role": "photo-slot",
+          "layered": true
+        },
+        {
+          "raw": "65x65, role: icon (Cerkl compass mark), current asset_id: `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "dimensions": "65x65",
+          "role": "icon"
+        },
+        {
+          "raw": "56x56, role: icon (CTA arrow), current asset_id: `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "56x56",
+          "role": "icon"
+        }
+      ],
+      "page_id": "PBSdqtyLgmnTMcfk",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Duis aute irure dolor...\" headline + \"Start free with Foundations\" CTA",
+          "placeholder": "Duis aute irure dolor..."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHI1oJpYaM`",
+          "current_asset_id": "MAHI1oJpYaM",
+          "role": "full-bg",
+          "element_id": "PBqyKH5rfPPy4mSb",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "320x65 Broadcast lockup `MAHG2o30xY0`",
+          "current_asset_id": "MAHG2o30xY0",
+          "dimensions": "320x65",
+          "role": "logo"
+        },
+        {
+          "raw": "188x65 Cerkl wordmark `MAHHJ8ab-yI`",
+          "current_asset_id": "MAHHJ8ab-yI",
+          "dimensions": "188x65",
+          "role": "logo"
+        },
+        {
+          "raw": "843x571 product UI `MAG-Kmnn3Kg` (layered)",
+          "current_asset_id": "MAG-Kmnn3Kg",
+          "dimensions": "843x571",
+          "layered": true
+        },
+        {
+          "raw": "56x56 CTA arrow `MAHG2X6g4mw`",
+          "current_asset_id": "MAHG2X6g4mw",
+          "dimensions": "56x56"
+        }
+      ],
+      "page_id": "PBqyKH5rfPPy4mSb",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Excepteur sint occaecat...\" \u2014 headline (864x250)",
+          "placeholder": "Excepteur sint occaecat...",
+          "role_hint": "headline (864x250)"
+        },
+        {
+          "raw": "\"Lorem ipsum dolor sit amet, adipiscing elit, sed do tempor.\" \u2014 subhead (864x129)",
+          "placeholder": "Lorem ipsum dolor sit amet, adipiscing elit, sed do tempor.",
+          "role_hint": "subhead (864x129)",
+          "element_id": "PBLCZqSsw5lKGf0S-LB4lMp1LGkdv9nHm",
+          "container_type": "TEXT",
+          "position": {
+            "top": 409.9309135948692,
+            "left": 107.99999999999989
+          },
+          "dimension": {
+            "width": 864.0000000000002,
+            "height": 129.333345
+          }
+        },
+        {
+          "raw": "3 bullet rows: \"Duis aute irure dolor\" / \"Reprehenderit in voluptate\" / \"Excepteur sint occaecat\""
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHI2XnyHD4`",
+          "current_asset_id": "MAHI2XnyHD4",
+          "role": "full-bg",
+          "element_id": "PBLCZqSsw5lKGf0S",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "65x65 compass `MAGq6IEEnQQ`",
+          "current_asset_id": "MAGq6IEEnQQ",
+          "dimensions": "65x65"
+        },
+        {
+          "raw": "3x 45x45 check icons `MAHHTkSOnB8`",
+          "current_asset_id": "MAHHTkSOnB8",
+          "dimensions": "45x45",
+          "role": "icon"
+        },
+        {
+          "raw": "928x627 product UI `MAHA2RshL_k` (layered)",
+          "current_asset_id": "MAHA2RshL_k",
+          "dimensions": "928x627",
+          "layered": true
+        }
+      ],
+      "page_id": "PBLCZqSsw5lKGf0S",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "\"Duis aute irure dolor...\" headline + body",
+          "placeholder": "Duis aute irure dolor..."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAHI1ntFOa4`",
+          "current_asset_id": "MAHI1ntFOa4",
+          "role": "full-bg",
+          "element_id": "PBNQRHsMynTNRjHR",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "320x65 Broadcast lockup",
+          "dimensions": "320x65",
+          "role": "logo"
+        },
+        {
+          "raw": "188x65 Cerkl wordmark",
+          "dimensions": "188x65",
+          "role": "logo"
+        },
+        {
+          "raw": "928x627 product UI `MAHAD9i1oWI` (layered)",
+          "current_asset_id": "MAHAD9i1oWI",
+          "dimensions": "928x627",
+          "layered": true
+        }
+      ],
+      "page_id": "PBNQRHsMynTNRjHR",
+      "dimension": {
+        "width": 1080,
+        "height": 1350
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "foundations-product-images",
+  "canvas": "1080x1350",
+  "page_count": 4,
+  "inspection_design_id": "DAHLW6zuDFc",
+  "notes": "4-page 4:5 portrait product carousel. Each page has a layered product UI screenshot (843x571 or 928x627) \u2014 these are the primary swap targets. Pages 1+3 use compass `MAGq6IEEnQQ` + check-icons; pages 2+4 use Broadcast lockup + Cerkl wordmark at top. Bottom-right Broadcast watermark visible in render is part of bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW6zuDFc"
+}

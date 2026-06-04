@@ -1,0 +1,68 @@
+{
+  "template_id": "EAGqLFCzRhM",
+  "name": "Video endcard template - Broadcast",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Add a little bit of body text\" \u2014 caption",
+          "placeholder": "Add a little bit of body text",
+          "role_hint": "caption",
+          "element_id": "PBPxRfy7hZ9ZV0dt-LBqwpXnjwdSzxgHw",
+          "container_type": "TEXT",
+          "position": {
+            "top": 651.3581248008952,
+            "left": 535.6169502959673
+          },
+          "dimension": {
+            "width": 848.7660994080652,
+            "height": 60
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (page-level), role: full-bg (soft gradient), current asset_id: `MAFaAed19WI`",
+          "current_asset_id": "MAFaAed19WI",
+          "role": "full-bg",
+          "element_id": "PBPxRfy7hZ9ZV0dt",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "932x240, role: logo (Broadcast lockup hero, centered), current asset_id: `MAFYs9rAVro`",
+          "current_asset_id": "MAFYs9rAVro",
+          "dimensions": "932x240",
+          "role": "logo",
+          "element_id": "PBPxRfy7hZ9ZV0dt-LBQxKmk3SgmbVPnr",
+          "occurrence": 1,
+          "parent_element_id": "PBPxRfy7hZ9ZV0dt",
+          "container_type": "RECT",
+          "position": {
+            "top": 371.3081037778724,
+            "left": 493.89194520836935
+          },
+          "dimension": {
+            "width": 932.2161095832611,
+            "height": 240.41084494887306
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBPxRfy7hZ9ZV0dt",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "video-endcard-broadcast",
+  "canvas": "1920x1080",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW0f7_5M",
+  "notes": "Broadcast-branded endcard \u2014 twin of HWSB endcard (EAGqLHIx6Pc) with Broadcast lockup instead. Layered frame: yes \u2014 lockup image overlays gradient bg.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW0f7_5M"
+}

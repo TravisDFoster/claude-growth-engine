@@ -1,0 +1,84 @@
+{
+  "template_id": "EAGzQKpzwhM",
+  "name": "LinkedIn Newsletter_banner templates",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "(none \u2014 title/branding \"The Cerkular\" is embedded in the image, not exposed as editable text)",
+          "role_hint": "title/branding \"The Cerkular\" is embedded in the image, not exposed as editable text)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1470x327, role: photo-slot (centered hero illustration band: hills/clouds/Cerkular lockup as a single PNG), current asset_id: `MAGzQMWpsDc`",
+          "current_asset_id": "MAGzQMWpsDc",
+          "dimensions": "1470x327",
+          "role": "photo-slot",
+          "element_id": "PB3Sk7V0mCLnfW4Y-LBvGryhrJCbMmDtj",
+          "occurrence": 1,
+          "parent_element_id": "PB3Sk7V0mCLnfW4Y",
+          "container_type": "RECT",
+          "position": {
+            "top": 376.49773333569055,
+            "left": 225.1583520705192
+          },
+          "dimension": {
+            "width": 1469.6832958589616,
+            "height": 327.00453332861895
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB3Sk7V0mCLnfW4Y",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "(none)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "879x221, role: photo-slot (smaller variant of same illustration, lower-left), current asset_id: `MAGzQMWpsDc`",
+          "current_asset_id": "MAGzQMWpsDc",
+          "dimensions": "879x221",
+          "role": "photo-slot",
+          "element_id": "PBhldzkXjWByLbmf-LB11jD8ZhqZT71pW",
+          "occurrence": 1,
+          "parent_element_id": "PBhldzkXjWByLbmf",
+          "container_type": "RECT",
+          "position": {
+            "top": 765.0438069636433,
+            "left": 80.81800527316449
+          },
+          "dimension": {
+            "width": 879.1819947268356,
+            "height": 220.9869908974295
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBhldzkXjWByLbmf",
+      "dimension": {
+        "width": 1920,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-newsletter-banner",
+  "canvas": "1920x1080",
+  "page_count": 2,
+  "inspection_design_id": "DAHLW3T6ocQ",
+  "notes": "ALL typography is baked into the illustration asset \u2014 no editable text fields. Page 1 = large banner variant, page 2 = small/in-feed variant. Layered frame: no. Automation cannot swap headline text via text edits; would require asset replacement.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW3T6ocQ"
+}

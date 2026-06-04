@@ -21,7 +21,7 @@ Stop and surface an error if any fail:
 
 - **Live file exists** at the given path. If not: editing hasn't finished.
 - **Target CSV exists.** If not: Monday reconcile didn't create the scaffold — flag this back to the user, do not create the CSV from this skill.
-- **CSV has a row for this slug.** Look for `Slug: <slug>` in the Description column of a Task row where `Channel = Blog — internalcommspro.com`. If no match: the row was scheduled but the scaffold synthesized a different slug — surface the row's actual slug so the orchestrator/scaffold-creator divergence can be diagnosed.
+- **CSV has a row for this slug.** Look for a row where `Issue Type = Task` AND `Summary` starts with `Content - Blog (ICP) -` AND `Description` contains `Slug: <slug>`. (The `Channel` column is `Blog Posts` for both Cerkl and ICP rows; the `(ICP)` marker in `Summary` is what differentiates them — see [`../../CONTEXT.md`](../../CONTEXT.md#source-of-truth-for-what-to-write).) If no match: the row was scheduled but the scaffold synthesized a different slug — surface the row's actual slug so the orchestrator/scaffold-creator divergence can be diagnosed.
 - **The matched row's Description contains `[DRIVE_URL_PLACEHOLDER]`.** If already filled: this post has been published before — confirm with the user before overwriting.
 
 ## Steps
@@ -39,7 +39,7 @@ Capture the returned Drive Doc URL.
 ### 2. Insert URL into Jira CSV
 
 - Open the target CSV at the path from input #3
-- Find the Task row (Issue Type = `Task`, Channel = `Blog — internalcommspro.com`) whose Description contains `Slug: <slug>`
+- Find the Task row (`Issue Type = Task`, `Summary` starts with `Content - Blog (ICP) -`) whose `Description` contains `Slug: <slug>`. The `Channel` column is `Blog Posts` for both Cerkl and ICP rows — match on the `Summary` prefix, not on `Channel`.
 - In that row's Description, replace `[DRIVE_URL_PLACEHOLDER]` with the actual Drive URL
 - Preserve all other fields, all other rows, and the CSV header
 - Save the CSV in place

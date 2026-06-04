@@ -6,48 +6,27 @@
 >
 > **What channels do:** read their rows here, read the linked SEO brief (if any), execute, report completion back via the PA Push-Update Protocol.
 
-**Last reconciled:** 2026-05-21
+**Last reconciled:** 2026-06-01
 
 ---
 
 ## Carryover from prior week (in flight)
 
-| Deliverable | Channel | Publish | Owner | Status | Source brief |
-|---|---|---|---|---|---|
-| Has your leadership ever asked you to justify comms spend? | LinkedIn poll | 2026-05-21 | Furqan | in-progress | wraps case-investment blog |
-
-*Publishing today (2026-05-21). Should land as `shipped` at next reconcile and move to [`monthly-content-plans/may-2026-posted.md`](monthly-content-plans/may-2026-posted.md).*
-
----
-
-## Week 1 — May 25–29: Reinforce and Extend (locked, in Jira)
-
-*Memorial Day May 25 — no sends. Publishing resumes Tuesday. Lead week compressed (reconcile ran Thu 2026-05-21 to get ahead of the Monday holiday); writing pipeline runs Tue–Wed May 26–27.*
-
-*Capacity note: this week carries an EXTRA cerkl.com blog (sharepoint) on top of the usual 1/week per Travis 2026-05-21 reconcile call. LinkedIn wraps for sharepoint not yet scheduled (current LinkedIn slots are dedicated to the leadership-story blog) — decide at next reconcile or pre-write.*
+*Lead week of June 1–5 (Build the Problem) — all rows are mid-pipeline at this Monday reconcile. Manufacturing publishes today; the rest land Tue–Fri. They land in `monthly-content-plans/june-2026-posted.md` (create on first ship) at the next reconcile.*
 
 | Deliverable | Channel | Publish | Owner | Status | Source brief |
 |---|---|---|---|---|---|
-| From metrics to a leadership story: reporting on internal comms in a way that lands | Blog — cerkl.com | 2026-05-26 | Furqan | planned | — |
-| SharePoint for Internal Communications — A 2026 Playbook | Blog — cerkl.com | 2026-05-28 | Furqan | planned | [sharepoint-internal-communications](../seo/briefs/sharepoint-internal-communications.md) |
-| Employee wellness comms: how segmentation helps you reach the right people | Blog — internalcommspro.com | 2026-05-26 | Furqan | planned | — |
-| Month recap: prove your impact with better analytics | LinkedIn static/theme | 2026-05-26 | Furqan | planned | wraps leadership-story blog |
-| Link post: metrics to leadership story blog | LinkedIn static/blog | 2026-05-27 | Furqan | planned | wraps leadership-story blog |
-| When reporting internal comms metrics to leadership, what's the hardest part? | LinkedIn poll | 2026-05-28 | Furqan | planned | wraps leadership-story blog |
-
-## Week 2 — June 1–5: Build the Problem (planned)
-
-| Deliverable | Channel | Publish | Owner | Status | Source brief |
-|---|---|---|---|---|---|
-| Internal Communications in Manufacturing — A 2026 Frontline Playbook | Blog — cerkl.com | 2026-06-01 | Furqan | planned | [internal-communications-in-manufacturing](../seo/briefs/internal-communications-in-manufacturing.md) |
-| The Cross-Channel Read Gap — What Cerkl Data Reveals About Real Employee Reach | Blog — cerkl.com | 2026-06-03 | Furqan | planned | [cross-channel-read-gap](../seo/briefs/cross-channel-read-gap.md) |
+| Internal Communications in Manufacturing — A 2026 Frontline Playbook | Blog — cerkl.com | 2026-06-01 | Furqan | in-progress | [internal-communications-in-manufacturing](../seo/briefs/internal-communications-in-manufacturing.md) |
+| The Cross-Channel Read Gap — What Cerkl Data Reveals About Real Employee Reach | Blog — cerkl.com | 2026-06-03 | Furqan | in-progress | [cross-channel-read-gap](../seo/briefs/cross-channel-read-gap.md) |
 | Pride Month internal comms: communicating inclusion all year, not just June | Blog — internalcommspro.com | 2026-06-02 | Furqan | planned | — |
 | The frontline reach problem most internal comms teams haven't solved yet | LinkedIn static/theme | 2026-06-02 | Furqan | planned | wraps manufacturing blog |
 | Link post: Internal Communications in Manufacturing | LinkedIn static/blog | 2026-06-03 | Furqan | planned | wraps manufacturing blog |
-| The 3 places your internal comms is silently leaking employees | LinkedIn short video | 2026-06-04 | Furqan | planned | wraps cross-channel-read-gap blog |
+| — (planned out-of-band) | LinkedIn short video | 2026-06-04 | Furqan | planned | — (out-of-band, barebones Jira row) |
 | What percentage of your workforce reads every important company update? | LinkedIn poll | 2026-06-05 | Furqan | planned | wraps cross-channel-read-gap blog |
 
-## Week 3 — June 8–12: Show the Solution (planned)
+---
+
+## Week 1 — June 8–12: Show the Solution (locked, in Jira)
 
 | Deliverable | Channel | Publish | Owner | Status | Source brief |
 |---|---|---|---|---|---|
@@ -56,24 +35,50 @@
 | What inclusive internal comms actually looks like (beyond box-checking) | Blog — internalcommspro.com | 2026-06-09 | Furqan | planned | — |
 | Why Microsoft Teams alone isn't an internal comms strategy | LinkedIn static/theme | 2026-06-09 | Furqan | planned | wraps microsoft-teams blog |
 | Link post: Microsoft Teams for Internal Communications | LinkedIn static/blog | 2026-06-10 | Furqan | planned | wraps microsoft-teams blog |
-| Inside the comms challenges unique to financial services (60-sec take) | LinkedIn short video | 2026-06-11 | Furqan | planned | wraps financial-services blog |
-| Which channel does your workforce actually rely on for company updates? | LinkedIn poll | 2026-06-12 | Furqan | planned | wraps microsoft-teams blog |
+| — (planned out-of-band) | LinkedIn short video | 2026-06-11 | Furqan | planned | — (out-of-band, barebones Jira row) |
+| Financial services IC teams: which mandate eats most of your week — compliance, segmentation, or speed? | LinkedIn poll | 2026-06-12 | Furqan | planned | wraps financial-services blog |
 
-## Week 4 — June 15–19: Juneteenth Anchor (planned)
+## Week 2 — June 15–19: Claim the Strategic Seat (planned)
 
-*Juneteenth Friday June 19 — federal holiday, no Friday sends.*
+*Federal holiday Friday June 19 (Juneteenth) — no Friday sends. Juneteenth theme dropped 2026-06-01 in favor of strategic-IC + multilingual-reach angle. See [`monthly-content-plans/june-2026.md`](monthly-content-plans/june-2026.md#week-3--june-1519-claim-the-strategic-seat).*
 
-> **Gap:** No Juneteenth/DEI briefs exist in [`../seo/briefs/`](../seo/briefs/). The two cerkl.com blog rows below need SEO briefs by 2026-05-22 (deadline = 2026-06-01 minus 10 days, the start of their lead week) — **deadline is tomorrow as of this reconcile.** Holding both rows as TBD until briefs land.
+> **Gap (1 remaining):** Second cerkl.com row needs a multilingual/inclusive-reach brief from SEO by **2026-06-07** (Sun — push to Mon 2026-06-08 if needed; lead week W24 starts then). If brief slips, swap in another queued internal-communication-strategy brief and reslot multilingual for July.
 
 | Deliverable | Channel | Publish | Owner | Status | Source brief |
 |---|---|---|---|---|---|
-| TBD — Juneteenth + employee recognition communications | Blog — cerkl.com | 2026-06-15 | Furqan | blocked | **needs brief from SEO by 2026-05-22** |
-| TBD — DEI comms that land vs. the performative trap | Blog — cerkl.com | 2026-06-17 | Furqan | blocked | **needs brief from SEO by 2026-05-22** |
-| Communicating DEI initiatives in ways that actually land | Blog — internalcommspro.com | 2026-06-16 | Furqan | planned | — |
-| Juneteenth: how to communicate authentically, not performatively | LinkedIn static/theme | 2026-06-17 | Furqan | planned | wraps Juneteenth blog (TBD) |
-| Link post: Juneteenth practical guide | LinkedIn static/blog | 2026-06-18 | Furqan | planned | wraps Juneteenth blog (TBD) |
-| Juneteenth in 60 seconds: a quick framework for internal comms | LinkedIn short video | 2026-06-18 | Furqan | planned | wraps Juneteenth blog (TBD) |
-| How does your organization typically recognize Juneteenth internally? | LinkedIn poll | 2026-06-16 | Furqan | planned | wraps Juneteenth blog (TBD) |
+| How to Claim Your Strategic Seat in Internal Communications (Before Someone Else Does) | Blog — cerkl.com | 2026-06-15 | Furqan | planned | [claim-strategic-seat-internal-communications](../seo/briefs/claim-strategic-seat-internal-communications.md) |
+| TBD — Multilingual internal communications: reaching every employee in the language they prefer | Blog — cerkl.com | 2026-06-17 | Furqan | blocked | **needs brief from SEO by 2026-06-07** |
+| Beyond Pride Month: building inclusive comms structures that last | Blog — internalcommspro.com | 2026-06-16 | Furqan | planned | — |
+| The 4 conversations that earn IC a seat at the strategy table | LinkedIn static/theme | 2026-06-17 | Furqan | planned | wraps claim-strategic-seat blog |
+| Link post: How to Claim Your Strategic Seat in Internal Communications | LinkedIn static/blog | 2026-06-18 | Furqan | planned | wraps claim-strategic-seat blog |
+| — (planned out-of-band) | LinkedIn short video | 2026-06-18 | Furqan | planned | — (out-of-band, barebones Jira row) |
+| Which strategic conversation is hardest for IC to get a seat in? | LinkedIn poll | 2026-06-16 | Furqan | planned | wraps claim-strategic-seat blog |
+
+## Week 3 — June 22–26: Reinforce and Foundations Free Push (planned)
+
+| Deliverable | Channel | Publish | Owner | Status | Source brief |
+|---|---|---|---|---|---|
+| 10 Best Internal Newsletter Software Solutions for 2026 (Refresh) | Blog — cerkl.com | 2026-06-22 | Furqan | planned | [internal-email-newsletter-software](../seo/briefs/internal-email-newsletter-software.md) |
+| 7 Best Free Employee Newsletter Tools for 2026 (No Trial, No Card, No Catch) | Blog — cerkl.com | 2026-06-24 | Furqan | planned | [best-free-employee-newsletter-tools](../seo/briefs/best-free-employee-newsletter-tools.md) |
+| Reaching every employee: a practical channel mix for mid-size teams | Blog — internalcommspro.com | 2026-06-23 | Furqan | planned | — |
+| Reach every employee, every send — start free with Foundations | LinkedIn static/theme | 2026-06-23 | Furqan | planned | wraps free-newsletter-tools blog |
+| Link post: 7 Best Free Employee Newsletter Tools for 2026 | LinkedIn static/blog | 2026-06-24 | Furqan | planned | wraps free-newsletter-tools blog |
+| — (planned out-of-band) | LinkedIn short video | 2026-06-25 | Furqan | planned | — (out-of-band, barebones Jira row) |
+| Which group of employees feels least informed at your organization? | LinkedIn poll | 2026-06-26 | Furqan | planned | wraps free-newsletter-tools blog |
+
+## Week 4 — June 29–July 3: Set the Stage for AI (planned)
+
+*Friday July 3 soft no-send (Independence Day weekend). July plan generated 2026-06-01 — see [`monthly-content-plans/july-2026.md`](monthly-content-plans/july-2026.md). Rows below pulled from july-2026.md Week 1; will be locked into next reconcile (2026-06-08) when this becomes Week 3 of the rolling-4week.*
+
+| Deliverable | Channel | Publish | Owner | Status | Source brief |
+|---|---|---|---|---|---|
+| The AI Execution Gap in Internal Communications (And Why "Generation" Isn't the Answer) | Blog — cerkl.com | 2026-06-29 | Furqan | planned | [ai-execution-internal-communications](../seo/briefs/ai-execution-internal-communications.md) |
+| From Metrics to a Leadership Story — Reporting on Internal Comms in a Way That Lands | Blog — cerkl.com | 2026-07-01 | Furqan | planned | [internal-communications-report-to-leadership](../seo/briefs/internal-communications-report-to-leadership.md) |
+| AI in internal comms: hype vs. what's actually working in 2026 | Blog — internalcommspro.com | 2026-06-30 | Furqan | planned | — |
+| Most "AI for IC" tools stop at generation. Reach is the harder layer. | LinkedIn static/theme | 2026-06-30 | Furqan | planned | wraps ai-execution blog |
+| Link post: The AI Execution Gap in Internal Communications | LinkedIn static/blog | 2026-07-01 | Furqan | planned | wraps ai-execution blog |
+| — (planned out-of-band) | LinkedIn short video | 2026-07-02 | Furqan | planned | — (out-of-band, barebones Jira row) |
+| Where does your IC team's AI workflow stop today — generate, personalize, deliver, or land? | LinkedIn poll | 2026-07-02 | Furqan | planned | wraps ai-execution blog |
 
 ---
 

@@ -1,0 +1,244 @@
+{
+  "template_id": "EAGqLKbOQ-E",
+  "name": "Recording Video thumbnail_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PBHbCRyX9RKDgHnQ-LBRJVV721PhcKb3T",
+          "container_type": "TEXT",
+          "position": {
+            "top": 236.2711118715323,
+            "left": 84.00831746651943
+          },
+          "dimension": {
+            "width": 643.2748443646835,
+            "height": 67
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 speaker-block label",
+          "placeholder": "Presented by:",
+          "role_hint": "speaker-block label",
+          "element_id": "PBHbCRyX9RKDgHnQ-LB9PdyYcyHTRXKgZ-LBqcHJTW9f3HQNSX",
+          "container_type": "TEXT",
+          "position": {
+            "top": 511.7479501322622,
+            "left": 101.38575541729517
+          },
+          "dimension": {
+            "width": 190.4609375,
+            "height": 24.73332
+          }
+        },
+        {
+          "raw": "2 x \"Firstname\\nLastname\" \u2014 speaker-name SHAPE pills (2 speakers)",
+          "role_hint": "speaker-name SHAPE pills (2 speakers)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "1281x720, role: full-bg, current asset_id: `MAGg-4erikM`",
+          "current_asset_id": "MAGg-4erikM",
+          "dimensions": "1281x720",
+          "role": "full-bg",
+          "element_id": "PBHbCRyX9RKDgHnQ-LBF4CPN6hsGwWk3C",
+          "occurrence": 1,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 5.684341886080802e-14,
+            "left": -0.47442550037055753
+          },
+          "dimension": {
+            "width": 1280.9488510007413,
+            "height": 720.0000000000001
+          },
+          "editable": true
+        },
+        {
+          "raw": "498x71, role: decorative-badge (Webinar Recording kicker plate w/ embedded text+icon), current asset_id: `MAGg-55HmHU`",
+          "current_asset_id": "MAGg-55HmHU",
+          "dimensions": "498x71",
+          "role": "decorative-badge",
+          "element_id": "PBHbCRyX9RKDgHnQ-LB9KXzbdFgLpDfPF",
+          "occurrence": 1,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 125.11611008499375,
+            "left": 84.00831746651937
+          },
+          "dimension": {
+            "width": 498.43051996561087,
+            "height": 70.74645414302883
+          },
+          "editable": true
+        },
+        {
+          "raw": "68x24, role: logo (Cerkl wordmark inside Presented-by card), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "68x24",
+          "role": "logo",
+          "element_id": "PBHbCRyX9RKDgHnQ-LB9PdyYcyHTRXKgZ-LBHWk9nxF9Z62CMK",
+          "occurrence": 1,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ-LB9PdyYcyHTRXKgZ",
+          "container_type": "RECT",
+          "position": {
+            "top": 559.8986226831213,
+            "left": 101.38575541729534
+          },
+          "dimension": {
+            "width": 68.34934857764063,
+            "height": 24.250531962842608
+          },
+          "editable": true
+        },
+        {
+          "raw": "161x161, role: decorative-badge (Thought Leadership round badge), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "161x161",
+          "role": "decorative-badge",
+          "element_id": "PBHbCRyX9RKDgHnQ-LB0F9ZXMD6frtCJZ",
+          "occurrence": 1,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ",
+          "container_type": "RECT",
+          "position": {
+            "top": 470.1108995248908,
+            "left": 343.0935554046492
+          },
+          "dimension": {
+            "width": 160.71031640656403,
+            "height": 160.71031640656403
+          },
+          "editable": true
+        },
+        {
+          "raw": "225x225, role: headshot (speaker 1, square frame), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "225x225",
+          "role": "headshot",
+          "element_id": "PBHbCRyX9RKDgHnQ-LBJgCMTf5Tgv0Ymp-LB9Nfp5fFKbfc1jd",
+          "occurrence": 1,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ-LBJgCMTf5Tgv0Ymp",
+          "container_type": "RECT",
+          "position": {
+            "top": 120.97211372187279,
+            "left": 875.246609191724
+          },
+          "dimension": {
+            "width": 224.98141139380866,
+            "height": 224.98141139380866
+          },
+          "editable": true
+        },
+        {
+          "raw": "225x225, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "225x225",
+          "role": "headshot",
+          "element_id": "PBHbCRyX9RKDgHnQ-LBYJPVj05GSFBCQb-LBtrXQ3MvJcd3tHF",
+          "occurrence": 2,
+          "parent_element_id": "PBHbCRyX9RKDgHnQ-LBYJPVj05GSFBCQb",
+          "container_type": "RECT",
+          "position": {
+            "top": 385.22041590999265,
+            "left": 727.283161831203
+          },
+          "dimension": {
+            "width": 224.98141139380866,
+            "height": 224.98141139380866
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBHbCRyX9RKDgHnQ",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same + 3 Firstname/Lastname pills."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same full-bg + plate + Cerkl + TL badge + 3 x 166x166 headshots (`MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "166x166",
+          "role": "full-bg",
+          "element_id": "PB0Wvd0BYJZ7M3xT-LBDb8GGFPgdL1Pbz-LBxlgK34hLKcnRG5",
+          "occurrence": 1,
+          "parent_element_id": "PB0Wvd0BYJZ7M3xT-LBDb8GGFPgdL1Pbz",
+          "container_type": "RECT",
+          "position": {
+            "top": 94.28912803299929,
+            "left": 850.9590822563731
+          },
+          "dimension": {
+            "width": 166.45502352896852,
+            "height": 166.45502352896852
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB0Wvd0BYJZ7M3xT",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same + 4 Firstname/Lastname pills."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same full-bg + plate + Cerkl + TL badge + 4 x 133x133 headshots (`MAGg-_VYc0Q`).",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "133x133",
+          "role": "full-bg",
+          "element_id": "PBfS6B5WgT4f5z3R-LBn43VJltcBvljtb-LBblZSX4jFS58lgf",
+          "occurrence": 1,
+          "parent_element_id": "PBfS6B5WgT4f5z3R-LBn43VJltcBvljtb",
+          "container_type": "RECT",
+          "position": {
+            "top": 74.28912803299926,
+            "left": 925.3783946774495
+          },
+          "dimension": {
+            "width": 132.58138352163348,
+            "height": 132.58138352163348
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBfS6B5WgT4f5z3R",
+      "dimension": {
+        "width": 1280,
+        "height": 720
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-recording-thumbnail",
+  "canvas": "1280x720",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW4279HU",
+  "notes": "webinar recording thumbnail with exposed speaker headshot fills (unlike its 16:9 promotional sibling). Pages 1/2/3 = 2/3/4 speaker layouts. Layered frame: yes \u2014 multiple SHAPE plates (kicker, presented-by card, name pills) overlay full-bg; headshot fills overlay full-bg too.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4279HU"
+}

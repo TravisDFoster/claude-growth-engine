@@ -1,0 +1,12 @@
+{
+  "template_id": "EAGqLBhKYtg",
+  "name": "Facebook_Linkedin post_style 5",
+  "pages": [],
+  "use_case": "linkedin-share-card-1200x628",
+  "canvas": "1200x628",
+  "page_count": 1,
+  "inspection_design_id": "DAHLW8tfChk",
+  "notes": "Right-side circular image well visible in render is a SHAPE (not editable image fill). Image slot needs to be added/swapped manually. Only 2 editable images.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW8tfChk"
+}

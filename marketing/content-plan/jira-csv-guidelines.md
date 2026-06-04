@@ -71,7 +71,19 @@ Social media posts break down as:
 - 1 LinkedIn static post connected to theme
 - 1 LinkedIn static post connected to blog
 - 1 LinkedIn poll post
-- 1 LinkedIn short video post
+- 1 LinkedIn short video post (**out-of-band** — barebones Jira row only; see [Short video — out-of-band](#short-video--out-of-band))
+
+### Short video — out-of-band
+
+As of 2026-06-01, LinkedIn short videos are planned and produced outside the content-plan system. The weekly Jira CSV still includes a short-video Task for capacity tracking, but it is **barebones**:
+
+- **Summary:** `Social Media - LinkedIn - Short Video (out-of-band)`
+- **Description:** one line — `Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.`
+- **Subtasks:** none. The Task is the unit of work.
+- **No** `Slug:`, `Wraps:`, `Copy:`, or `Post type:` lines — these belong to the wrap pattern, and the short video no longer wraps a planned blog by default.
+- Start/Due dates still come from the rolling-4week row.
+
+Monthly plans and `rolling-4week.md` should mark the short-video row as `— (planned out-of-band)` in the Deliverable column and `— (out-of-band, barebones Jira row)` in the Source brief column.
 
 
 ## Date Rules
@@ -108,6 +120,7 @@ Description must include: topic, post type (static image, poll, video), prompt t
 
 - The LinkedIn **Task** Description ends with a `Copy:` line followed by a `[COPY_PLACEHOLDER]` token — the LinkedIn drafting process replaces it (on the parent Task, not in a subtask) with the drafted caption + asset spec + hashtags. The `LinkedIn – Copy` subtask keeps its plain action description (`Draft the post copy.`); it is the production step, not where the copy is stored.
 - For `poll` post-type rows, the `LinkedIn – Asset Creation` subtask Description reads: `(N/A for polls — native poll widget; skip or mark done.)`. The subtask still exists for shape consistency; it just carries the explicit skip note.
+- **Short video exception:** short-video Tasks are barebones — no subtasks, no `Copy:` block, no `Wraps:` line. See [Short video — out-of-band](#short-video--out-of-band) above. The 4 standard subtasks (Copy / Asset Creation / Approval / Implementation) are NOT generated for short-video rows.
 
 ### Marketing Email
 

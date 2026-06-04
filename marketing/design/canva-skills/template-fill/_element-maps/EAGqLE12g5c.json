@@ -1,0 +1,161 @@
+{
+  "template_id": "EAGqLE12g5c",
+  "name": "Facebook_Linkedin post_Webinar",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"live webinar\" pill SHAPE",
+          "placeholder": "live webinar",
+          "element_id": "PBsMPPCwWPyF6BJm-LB8DcS3SynfCDDgf",
+          "container_type": "SHAPE",
+          "position": {
+            "top": 83.6295426382309,
+            "left": 64.5053968253969
+          },
+          "dimension": {
+            "width": 191.22474689579167,
+            "height": 42.0578154351919
+          }
+        },
+        {
+          "raw": "\"Date and Time\" / \"Webinar title\" / \"Register now\" CTA",
+          "placeholder": "Date and Time",
+          "element_id": "PBsMPPCwWPyF6BJm-LBz53vgcYkRTnkFX",
+          "container_type": "TEXT",
+          "position": {
+            "top": 182.81910795860114,
+            "left": 64.50539682539693
+          },
+          "dimension": {
+            "width": 249.1875,
+            "height": 33.42008
+          }
+        },
+        {
+          "raw": "\"Hosted by:\" + \"INsert logo(s)\" labels",
+          "placeholder": "Hosted by:",
+          "element_id": "PBsMPPCwWPyF6BJm-LBYCBf9z5K595GrH",
+          "container_type": "TEXT",
+          "position": {
+            "top": 182.81910795860114,
+            "left": 810.4370418093639
+          },
+          "dimension": {
+            "width": 127.859375,
+            "height": 22.28004
+          }
+        },
+        {
+          "raw": "2x \"Name\" + \"Title\" speaker name/title pairs"
+        },
+        {
+          "raw": "Right-side speaker block SHAPE (430x628)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9eVcvc` (1200x628)",
+          "current_asset_id": "MAGRO9eVcvc",
+          "dimensions": "1200x628",
+          "role": "full-bg",
+          "element_id": "PBsMPPCwWPyF6BJm-LBNhNVVdvKGvr1hm",
+          "occurrence": 1,
+          "parent_element_id": "PBsMPPCwWPyF6BJm",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBsMPPCwWPyF6BJm",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same with 3 speakers"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9eVcvc`",
+          "current_asset_id": "MAGRO9eVcvc",
+          "role": "full-bg",
+          "element_id": "PBsVHM1fSqfQVywF-LBlHrpxrMJsBwZqV",
+          "occurrence": 1,
+          "parent_element_id": "PBsVHM1fSqfQVywF",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBsVHM1fSqfQVywF",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same with 4 speakers"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg `MAGRO9eVcvc`",
+          "current_asset_id": "MAGRO9eVcvc",
+          "role": "full-bg",
+          "element_id": "PBCphtJrqHcvx5vq-LB1tM1PS1cFCyrwl",
+          "occurrence": 1,
+          "parent_element_id": "PBCphtJrqHcvx5vq",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 628
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBCphtJrqHcvx5vq",
+      "dimension": {
+        "width": 1200,
+        "height": 628
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-linkedin-share-generic",
+  "canvas": "1200x628",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW26qXO0",
+  "notes": "Landscape 1200x628 webinar share card. 2/3/4 speaker variants. NO editable headshot fills \u2014 speaker headshots visible in render are baked into bg or rendered via SHAPE placeholders. Only 1 image fill per page (the bg). Logo placeholder is text \"INsert logo(s)\" not an image fill.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW26qXO0"
+}

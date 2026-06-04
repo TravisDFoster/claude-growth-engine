@@ -1,0 +1,184 @@
+{
+  "template_id": "EAGqLEt38SQ",
+  "name": "Blog Image_in text_miscellaneous",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" stat + \"Add a subheading\".",
+          "placeholder": "xx%",
+          "element_id": "PBkNnwzyKrTkdZBD-LBLpxVbNhk1P5fwP",
+          "container_type": "TEXT",
+          "position": {
+            "top": 237.666,
+            "left": 119.07148836817908
+          },
+          "dimension": {
+            "width": 319.9775090218676,
+            "height": 151.668
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7q-oD6g`) + 336x440 people-grid illustration (`MAFr7oev5II`).",
+          "current_asset_id": "MAFr7q-oD6g",
+          "dimensions": "336x440",
+          "role": "full-bg",
+          "element_id": "PBkNnwzyKrTkdZBD-LBpTW6rhm0y2R1wr",
+          "occurrence": 1,
+          "parent_element_id": "PBkNnwzyKrTkdZBD",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBkNnwzyKrTkdZBD",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"xx%\" stat + \"Add a subheading\".",
+          "placeholder": "xx%",
+          "element_id": "PB60TtVTm5bX1Klz-LBq5k81c8d699BGS",
+          "container_type": "TEXT",
+          "position": {
+            "top": 213.11344052687073,
+            "left": 721.628439275502
+          },
+          "dimension": {
+            "width": 427.05111202010653,
+            "height": 101.93334
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7mkJOhE`) only \u2014 stat-led, illustration baked into bg.",
+          "current_asset_id": "MAFr7mkJOhE",
+          "role": "full-bg",
+          "element_id": "PB60TtVTm5bX1Klz-LBQ699kG6B5WSmC1",
+          "occurrence": 1,
+          "parent_element_id": "PB60TtVTm5bX1Klz",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PB60TtVTm5bX1Klz",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Add a subheading\" + 2 x \"Add a little bit of body text\".",
+          "placeholder": "Add a subheading",
+          "element_id": "PBX6TK0fld31zyy2-LB8Lh664pTFT47Tj",
+          "container_type": "TEXT",
+          "position": {
+            "top": 223.388691974625,
+            "left": 193.09076180331772
+          },
+          "dimension": {
+            "width": 550.3034634289093,
+            "height": 41
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7jf7PsU`) + 899x361 illustration band (`MAFr7kS95Bs`).",
+          "current_asset_id": "MAFr7jf7PsU",
+          "dimensions": "899x361",
+          "role": "full-bg",
+          "element_id": "PBX6TK0fld31zyy2-LBdfxmHnDc1w4MFF",
+          "occurrence": 1,
+          "parent_element_id": "PBX6TK0fld31zyy2",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBX6TK0fld31zyy2",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 4,
+      "text_slots": [
+        {
+          "raw": "3 x \"Add a subheading\" + 3 x \"Add a little bit of body text\" (3-column)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (`MAFr7q0c5dY`) only \u2014 3-col cards baked into bg.",
+          "current_asset_id": "MAFr7q0c5dY",
+          "role": "full-bg",
+          "element_id": "PBm9JwDFQPTFGVTz-LB4kXCtqL94S17LH",
+          "occurrence": 1,
+          "parent_element_id": "PBm9JwDFQPTFGVTz",
+          "container_type": "RECT",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "dimension": {
+            "width": 1200,
+            "height": 627
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBm9JwDFQPTFGVTz",
+      "dimension": {
+        "width": 1200,
+        "height": 627
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "blog-inline-image-misc",
+  "canvas": "1200x627",
+  "page_count": 4,
+  "inspection_design_id": "DAHLWx3oY8Y",
+  "notes": "catch-all kit for stat-led + multi-column body. Layered frame: yes (page 1 grid illustration overlays bg; page 3 illustration band overlays bg).",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLWx3oY8Y"
+}

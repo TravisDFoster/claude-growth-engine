@@ -1,0 +1,274 @@
+{
+  "template_id": "EAGqLL_MWfw",
+  "name": "InnerCerkl Cover/Blog Cover_Thought Leadership_Webinar Series",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Webinar\" \u2014 kicker pill (SHAPE-wrapped)",
+          "placeholder": "Webinar",
+          "role_hint": "kicker pill (SHAPE-wrapped)",
+          "element_id": "PBsgl54fHHQxzgkG-LB7y9RkH5zkrGcHV-LB24BpNlkHhFJTbx",
+          "container_type": "TEXT",
+          "position": {
+            "top": 43.30209051772775,
+            "left": 42.00000000000006
+          },
+          "dimension": {
+            "width": 94.35126204208592,
+            "height": 19.66666
+          }
+        },
+        {
+          "raw": "\"Mar 6, 2025 1:00 pm est\" \u2014 date+time",
+          "placeholder": "Mar 6, 2025 1:00 pm est",
+          "role_hint": "date+time",
+          "element_id": "PBsgl54fHHQxzgkG-LBJ8H5dD7Xm7x32X",
+          "container_type": "TEXT",
+          "position": {
+            "top": 44.46020568966851,
+            "left": 188.5064868976709
+          },
+          "dimension": {
+            "width": 297.2965872743892,
+            "height": 19.66666
+          }
+        },
+        {
+          "raw": "\"Webinar title\" \u2014 title",
+          "placeholder": "Webinar title",
+          "role_hint": "title",
+          "element_id": "PBsgl54fHHQxzgkG-LBtb7ytLhZhXghsM",
+          "container_type": "TEXT",
+          "position": {
+            "top": 147.1348763579423,
+            "left": 40
+          },
+          "dimension": {
+            "width": 520,
+            "height": 38
+          }
+        },
+        {
+          "raw": "\"Presented by:\" \u2014 small label (top of presenter card)",
+          "placeholder": "Presented by:",
+          "role_hint": "small label (top of presenter card)",
+          "element_id": "PBsgl54fHHQxzgkG-LBR69bWHS6L1SmDR",
+          "container_type": "TEXT",
+          "position": {
+            "top": 201.81748169822072,
+            "left": 227.24010277980383
+          },
+          "dimension": {
+            "width": 87.67632852426898,
+            "height": 10.54354696341606
+          }
+        },
+        {
+          "raw": "\"Presented By\" \u2014 large label (inside presenter card)",
+          "placeholder": "Presented By",
+          "role_hint": "large label (inside presenter card)",
+          "element_id": "PBsgl54fHHQxzgkG-LB8Jd3lhKgDKgzsX",
+          "container_type": "TEXT",
+          "position": {
+            "top": 275.6641111643507,
+            "left": 46.889413890143544
+          },
+          "dimension": {
+            "width": 160.14183995273908,
+            "height": 17.06666
+          }
+        },
+        {
+          "raw": "\"Name\" / \"Title\" x2 \u2014 2 speaker rows",
+          "placeholder": "Name",
+          "role_hint": "2 speaker rows",
+          "element_id": "PBsgl54fHHQxzgkG-LBVRXjrdrW46NQ7Z",
+          "container_type": "TEXT",
+          "position": {
+            "top": 276.62347504937384,
+            "left": 445.9838713491963
+          },
+          "dimension": {
+            "width": 113.34999619357376,
+            "height": 12.84440666666667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "600x400, role: full-bg, current asset_id: `MAGg-_rPUJA`",
+          "current_asset_id": "MAGg-_rPUJA",
+          "dimensions": "600x400",
+          "role": "full-bg",
+          "element_id": "PBsgl54fHHQxzgkG-LBCfKtP6RwwVpD1K",
+          "occurrence": 1,
+          "parent_element_id": "PBsgl54fHHQxzgkG",
+          "container_type": "RECT",
+          "position": {
+            "top": 8.526512829121202e-14,
+            "left": 5.684341886080802e-14
+          },
+          "dimension": {
+            "width": 599.9999999999998,
+            "height": 399.9999999999998
+          },
+          "editable": true
+        },
+        {
+          "raw": "119x119, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`",
+          "current_asset_id": "MAGg-9y8TiY",
+          "dimensions": "119x119",
+          "role": "decorative-badge",
+          "element_id": "PBsgl54fHHQxzgkG-LBbfm8v1YPd3fd58",
+          "occurrence": 1,
+          "parent_element_id": "PBsgl54fHHQxzgkG",
+          "container_type": "RECT",
+          "position": {
+            "top": 19.92248844579739,
+            "left": 466.5891551124641
+          },
+          "dimension": {
+            "width": 118.82168977507187,
+            "height": 118.82168977507187
+          },
+          "editable": true
+        },
+        {
+          "raw": "16x16, role: icon (play icon inside Webinar pill), current asset_id: `MAGg_YhoQ4E`",
+          "current_asset_id": "MAGg_YhoQ4E",
+          "dimensions": "16x16",
+          "role": "icon",
+          "element_id": "PBsgl54fHHQxzgkG-LB7y9RkH5zkrGcHV-LBbjXQqyk7ptxG0g",
+          "occurrence": 1,
+          "parent_element_id": "PBsgl54fHHQxzgkG-LB7y9RkH5zkrGcHV",
+          "container_type": "RECT",
+          "position": {
+            "top": 45.90701281237677,
+            "left": 141.4790278409551
+          },
+          "dimension": {
+            "width": 15.523875934179204,
+            "height": 15.639725754583525
+          },
+          "editable": true
+        },
+        {
+          "raw": "37x13, role: logo (Cerkl wordmark inside presenter card pill), current asset_id: `MAFYswpMFus`",
+          "current_asset_id": "MAFYswpMFus",
+          "dimensions": "37x13",
+          "role": "logo",
+          "element_id": "PBsgl54fHHQxzgkG-LBf3YxXW7JJ5M3py",
+          "occurrence": 1,
+          "parent_element_id": "PBsgl54fHHQxzgkG",
+          "container_type": "RECT",
+          "position": {
+            "top": 314.0594692256423,
+            "left": 61.530244499351
+          },
+          "dimension": {
+            "width": 37.229944051616485,
+            "height": 13.209283877416777
+          },
+          "editable": true
+        },
+        {
+          "raw": "72x72, role: headshot (speaker 1), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "72x72",
+          "role": "headshot",
+          "element_id": "PBsgl54fHHQxzgkG-LBPbSS5fnz6Kkd1v",
+          "occurrence": 1,
+          "parent_element_id": "PBsgl54fHHQxzgkG",
+          "container_type": "RECT",
+          "position": {
+            "top": 274.4705514055366,
+            "left": 235.90030265326902
+          },
+          "dimension": {
+            "width": 72.49108367788236,
+            "height": 72.49108367788236
+          },
+          "editable": true
+        },
+        {
+          "raw": "72x72, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`",
+          "current_asset_id": "MAGg-_VYc0Q",
+          "dimensions": "72x72",
+          "role": "headshot",
+          "element_id": "PBsgl54fHHQxzgkG-LBk7lqH588ggpBLV-LBkBjWvqyxK7VZx8",
+          "occurrence": 2,
+          "parent_element_id": "PBsgl54fHHQxzgkG-LBk7lqH588ggpBLV",
+          "container_type": "RECT",
+          "position": {
+            "top": 274.4705514055366,
+            "left": 319.99999999999994
+          },
+          "dimension": {
+            "width": 72.49108367788236,
+            "height": 72.49108367788236
+          },
+          "editable": true
+        }
+      ],
+      "page_id": "PBsgl54fHHQxzgkG",
+      "dimension": {
+        "width": 600,
+        "height": 400
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "same kicker/date/title/Presented-by + 3 Name slots (no per-row Title on this variant \u2014 \"Name 1/2/3\").",
+          "role_hint": "\"Name 1/2/3\")."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same full-bg + TL badge + play icon + Cerkl logo + 3 x 61x61 headshots.",
+          "dimensions": "61x61",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBtB3ZmmlxrWCJx0",
+      "dimension": {
+        "width": 600,
+        "height": 400
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "same kicker/date/title/Presented-by + 4 Name slots (\"Name 1/2/3/Name 3\" \u2014 last is duplicated literal).",
+          "role_hint": "last is duplicated literal)."
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "same full-bg + TL badge + play icon + Cerkl logo + 4 x 50x50 headshots.",
+          "dimensions": "50x50",
+          "role": "full-bg"
+        }
+      ],
+      "page_id": "PBrLKq7drr4mbpBK",
+      "dimension": {
+        "width": 600,
+        "height": 400
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "webinar-blog-cover",
+  "canvas": "600x400",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW16mRcA",
+  "notes": "large layered presenter SHAPE card (538x90) overlays full-bg with an inner pill SHAPE for \"Presented By\" label. Layered frame: yes \u2014 outer presenter SHAPE card and inner pill SHAPE both sit on top of full-bg image; headshot fills overlay the outer SHAPE card.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW16mRcA"
+}

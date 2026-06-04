@@ -1,0 +1,162 @@
+{
+  "template_id": "EAGqLEqOaM4",
+  "name": "Copy of Linkedin pdf post_Employee Spotlight",
+  "pages": [
+    {
+      "page": 1,
+      "text_slots": [
+        {
+          "raw": "\"Employee Spotlight\" \u2014 cover headline (864x351)",
+          "placeholder": "Employee Spotlight",
+          "role_hint": "cover headline (864x351)",
+          "element_id": "PB9tVSmbklmc6GM9-LBkVnWdTsgJYgy6p",
+          "container_type": "TEXT",
+          "position": {
+            "top": 434.42883216216205,
+            "left": 108
+          },
+          "dimension": {
+            "width": 864,
+            "height": 351.333
+          }
+        },
+        {
+          "raw": "CTA arrow SHAPE (110x110) \u2014 round button",
+          "role_hint": "round button"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg (dark), current asset_id: `MAFZ0-rZy4Y`",
+          "current_asset_id": "MAFZ0-rZy4Y",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PB9tVSmbklmc6GM9",
+          "occurrence": 1,
+          "editable": true
+        }
+      ],
+      "page_id": "PB9tVSmbklmc6GM9",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 2,
+      "text_slots": [
+        {
+          "raw": "\"Firstname Lastname\" \u2014 name",
+          "placeholder": "Firstname Lastname",
+          "role_hint": "name",
+          "element_id": "PBz7ld7vjn29XFd7-LBfYhKr6m07w1yg3",
+          "container_type": "TEXT",
+          "position": {
+            "top": 494.2630308752505,
+            "left": 364.046875
+          },
+          "dimension": {
+            "width": 351.90625,
+            "height": 41.066739999999996
+          }
+        },
+        {
+          "raw": "\"Position\" \u2014 title",
+          "placeholder": "Position",
+          "role_hint": "title",
+          "element_id": "PBz7ld7vjn29XFd7-LBltQfxx23xlHD07",
+          "container_type": "TEXT",
+          "position": {
+            "top": 546.4275193141929,
+            "left": 489.515625
+          },
+          "dimension": {
+            "width": 100.96875,
+            "height": 33.40004
+          }
+        },
+        {
+          "raw": "\"Cerkl always prioritizes... How Work Should Be.\" \u2014 quote (864x263)",
+          "placeholder": "Cerkl always prioritizes... How Work Should Be.",
+          "role_hint": "quote (864x263)"
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "full-bg (1080x1080), role: full-bg, current asset_id: `MAFZ0yn26Cs`",
+          "current_asset_id": "MAFZ0yn26Cs",
+          "dimensions": "1080x1080",
+          "role": "full-bg",
+          "element_id": "PBz7ld7vjn29XFd7",
+          "occurrence": 1,
+          "editable": true
+        },
+        {
+          "raw": "335x335, role: headshot (round, centered), current asset_id: `MABw6X6WEUY` \u2014 layered frame: yes (NON-editable in this template \u2014 note: editable=false, so swap may not be straightforward)",
+          "current_asset_id": "MABw6X6WEUY",
+          "dimensions": "335x335",
+          "role": "headshot",
+          "layered": true,
+          "editable": false,
+          "element_id": "PBz7ld7vjn29XFd7-LBNGTLB5mnJgH23t",
+          "occurrence": 1,
+          "parent_element_id": "PBz7ld7vjn29XFd7",
+          "container_type": "RECT",
+          "position": {
+            "top": 126.63729082833387,
+            "left": 372.5033669784276
+          },
+          "dimension": {
+            "width": 334.99326604314496,
+            "height": 334.99326604314496
+          }
+        }
+      ],
+      "page_id": "PBz7ld7vjn29XFd7",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    },
+    {
+      "page": 3,
+      "text_slots": [
+        {
+          "raw": "\"Join our Team!\" headline + supporting body + \"View open opportunities\" CTA pill",
+          "placeholder": "Join our Team!",
+          "element_id": "PB5Rgx7lp1YbNZW1-LBwBsr5LKyqXCL9L",
+          "container_type": "TEXT",
+          "position": {
+            "top": 337.31097155057716,
+            "left": 107.99999999999989
+          },
+          "dimension": {
+            "width": 864,
+            "height": 135.667
+          }
+        }
+      ],
+      "image_slots": [
+        {
+          "raw": "bg is a SHAPE (1080x1080), no editable image",
+          "dimensions": "1080x1080"
+        }
+      ],
+      "page_id": "PB5Rgx7lp1YbNZW1",
+      "dimension": {
+        "width": 1080,
+        "height": 1080
+      },
+      "is_responsive": false
+    }
+  ],
+  "use_case": "linkedin-pdf-carousel-employee-spotlight",
+  "canvas": "1080x1080",
+  "page_count": 3,
+  "inspection_design_id": "DAHLW4eAQh8",
+  "notes": "Dark-mode variant of employee spotlight. Centered round headshot (vs half-page in EAGqLAfjcls). Headshot fill is marked editable:false here \u2014 may need to add new fill or workaround for personalization swap. p3 uses SHAPE background only.",
+  "enriched": true,
+  "enriched_from_design_id": "DAHLW4eAQh8"
+}

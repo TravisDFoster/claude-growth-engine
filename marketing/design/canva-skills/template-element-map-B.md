@@ -1,0 +1,844 @@
+# Canva Brand Template Element Map (batch B)
+> Generated 2026-06-01 by parallel crawl. Captures the slot shape of each template for use by the create-then-edit Canva automation. Inspection design_ids are throwaway artifacts requiring manual cleanup in Canva.
+
+## Twitter post_style 6 — `EAGqLAknzCo`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW2lvT9M`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore" — title (580x143)
+  - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat." — body (580x143)
+  - "DELETE\nplace image or graphic here" — image-slot instructional label (delete on use)
+- image slots (page 1):
+  - 1200x675, role: full-bg, current asset_id: `MAFZL5pLExM`
+  - 336x129, role: logo (Broadcast lockup), current asset_id: `MAFYs9rAVro`
+- notes: secondary image area on right is described by a placeholder text element ("DELETE place image or graphic here") rather than a real image fill — user must add image manually or replace label.
+---
+## Twitter post_style 6 (dup ID) — `EAGqLHxOpsg`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLWweexCw`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore" — title
+  - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat." — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - 1200x675, role: full-bg, current asset_id: `MAFZL5pLExM`
+  - 336x129, role: logo (Broadcast lockup), current asset_id: `MAFYs9rAVro`
+- notes: structurally identical duplicate of EAGqLAknzCo (same asset_ids and layout).
+---
+## 16:9 post_Thought Leadership_Webinar Series — `EAGqLLgAXU0`
+- use_case: webinar-share-card-16x9
+- canvas: 1200x675
+- pages: 3
+- inspection design_id: `DAHLW3nL6mk`
+- text slots (page 1):
+  - "Webinar" — kicker/category label
+  - "|   Mar 6, 2025 1:00 pm est" — date+time
+  - "Webinar title" — title
+  - "Presented by:" — speaker-block label (inside white card)
+  - "Register now" — CTA button label
+  - "Name" — speaker-1 name
+  - "Title" — speaker-1 title
+  - "Name" — speaker-2 name
+  - "Title" — speaker-2 title
+- image slots (page 1):
+  - 1200x675, role: full-bg, current asset_id: `MAGg-wY0_sI`
+  - 68x24, role: logo (Cerkl wordmark, inside presented-by card), current asset_id: `MAFYswpMFus`
+  - 150x150, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`
+  - 24x24, role: icon (play icon next to "Webinar" kicker), current asset_id: `MAGg--nIQbc`
+- text slots (page 2): same as page 1 plus a third speaker row (3 Name/Title pairs total).
+- image slots (page 2): identical full-bg + logo + badge + icon set (no per-speaker headshot fills; speaker thumbs render via SHAPE+TEXT not image fills).
+- text slots (page 3): same plus a fourth speaker row (4 Name/Title pairs total).
+- image slots (page 3): identical 4-image set (full-bg + logo + badge + icon).
+- notes: speaker-card area uses SHAPE containers with text-only labels — no per-speaker image fills are exposed, so headshot swaps must be done by adding fills manually. Pages 1/2/3 differ only by speaker count (2/3/4). Layered frame: yes — Presented-by card SHAPE overlays the full-bg image; presenter swap targets background fill, white card is decorative.
+---
+## 16:9 post_Webinar — `EAGqLJan-Ck`
+- use_case: webinar-share-16x9-generic
+- canvas: 1200x675
+- pages: 3
+- inspection design_id: `DAHLW4DuC-c`
+- text slots (page 1):
+  - "live webinar" — kicker pill (SHAPE-wrapped)
+  - "Date and Time" — date+time
+  - "Webinar title" — title
+  - "Register now" — CTA button label
+  - "Hosted by:" — speaker-block label
+  - "INsert logo(s)" — logo placeholder instruction
+  - "Name" / "Title" x2 — 2 speaker rows
+- image slots (page 1):
+  - 429x675, role: photo-slot (right-side panel, NOT full-bg — covers right ~36% of canvas), current asset_id: `MAFZiZb7uOs`
+- text slots (page 2): same kicker/date/title/CTA/hosted-by + "INsert logo(s)" + 3 Name/Title rows.
+- image slots (page 2): same single 429x675 right panel fill.
+- text slots (page 3): same plus 4 Name/Title rows.
+- image slots (page 3): same single 429x675 right panel fill.
+- notes: only ONE image fill (the right-side colored panel); no headshot fills, no logo fills — speaker thumbs and partner logos must be added manually. Pages differ only by speaker-row count (2/3/4). Layered frame: yes — kicker is a SHAPE with embedded text overlay; right panel image fill underlies the speaker-card text stack.
+---
+## LinkedIn Newsletter_banner templates — `EAGzQKpzwhM`
+- use_case: linkedin-newsletter-banner
+- canvas: 1920x1080
+- pages: 2
+- inspection design_id: `DAHLW3T6ocQ`
+- text slots (page 1): (none — title/branding "The Cerkular" is embedded in the image, not exposed as editable text)
+- image slots (page 1):
+  - 1470x327, role: photo-slot (centered hero illustration band: hills/clouds/Cerkular lockup as a single PNG), current asset_id: `MAGzQMWpsDc`
+- text slots (page 2): (none)
+- image slots (page 2):
+  - 879x221, role: photo-slot (smaller variant of same illustration, lower-left), current asset_id: `MAGzQMWpsDc`
+- notes: ALL typography is baked into the illustration asset — no editable text fields. Page 1 = large banner variant, page 2 = small/in-feed variant. Layered frame: no. Automation cannot swap headline text via text edits; would require asset replacement.
+---
+## Twitter post_style 5 — `EAGqLChFVBg`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLWyQM6rU`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore" — title
+  - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat." — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label (delete on use)
+- image slots (page 1):
+  - full-bg, role: full-bg (page-level fill, no explicit dimension), current asset_id: `MAFZLtGE-Mo`
+  - 50x50, role: icon (Broadcast compass mark bottom-right), current asset_id: `MAFZLu2JowY`
+- notes: circular illustration on the right is a TEXT instruction, not a real image fill — user must add a graphic manually inside the circular zone. Layered frame: no real layering exposed.
+---
+## Twitter post_style 3 — `EAGqLMr1Kxw`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW-xM3e8`
+- text slots (page 1):
+  - "XX%" — stat (large numeric hero)
+  - "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna" — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label (delete on use)
+- image slots (page 1):
+  - full-bg, role: full-bg (page-level fill), current asset_id: `MAFZQNritPQ`
+  - 50x50, role: icon (Broadcast compass mark bottom-right), current asset_id: `MAFZLu2JowY`
+- notes: stat-led (XX%) layout — leads with a numeric hero. Circular illustration slot is a TEXT placeholder. Layered frame: no.
+---
+## Twitter post_style 4 — `EAGqLMNBS7U`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW2Dw9h0`
+- text slots (page 1):
+  - "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\"" — quote (large pull-quote)
+  - "Firstname Lastname" — attribution name
+  - "Company / Position" — attribution title
+  - "DELETE\nplace image or graphic here" — image-slot instructional label (delete on use)
+- image slots (page 1):
+  - full-bg, role: full-bg (page-level fill), current asset_id: `MAFZLhIFSzQ`
+  - 299x115, role: logo (Broadcast lockup bottom-right), current asset_id: `MAFYs2RusE8`
+  - 450x296, role: decorative-badge (orange swoop graphic top-right), current asset_id: `MAFZLjrDtjk`
+- notes: testimonial/quote layout — attribution row sits left of Broadcast lockup. Small DELETE label marks a circular headshot spot (no actual fill). Layered frame: yes — decorative-badge graphic overlays the full-bg fill in upper right.
+---
+## Twitter post_style 5 (dup ID) — `EAGqLKobc-w`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLWy4FC34`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore" — title
+  - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nigh euismod tincunt ut laoreet dolore magna aliqum erat volutpat." — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg, role: full-bg, current asset_id: `MAFZLtGE-Mo`
+  - 50x50, role: icon (Broadcast mark), current asset_id: `MAFZLu2JowY`
+- notes: structurally identical to EAGqLChFVBg (same asset_ids and layout).
+---
+## Twitter post_style 4 (dup ID) — `EAGqLICXfBg`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW4PEJH0`
+- text slots (page 1):
+  - "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\"" — quote
+  - "Firstname Lastname" — attribution name
+  - "Company / Position" — attribution title
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg, role: full-bg, current asset_id: `MAFZLhIFSzQ`
+  - 299x115, role: logo (Broadcast lockup), current asset_id: `MAFYs2RusE8`
+  - 450x296, role: decorative-badge (orange swoop), current asset_id: `MAFZLjrDtjk`
+- notes: structurally identical to EAGqLMNBS7U (same asset_ids and layout).
+---
+## Twitter post_style 1 — `EAGqLKm0rEY`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLWxgFzB4`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet" — title
+  - "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna" — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (light/cream backdrop with shape decor), current asset_id: `MAFZQS2xJrI`
+  - 450x296, role: decorative-badge (illustration cluster top-right circle), current asset_id: `MAFZLpnoBN4`
+  - 336x129, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs9rAVro`
+- notes: lighter background variant of the Twitter family. Layered frame: yes — decorative-badge illustration overlays the full-bg fill behind the right-side image placeholder.
+---
+## Twitter post_style 2 — `EAGqLKvBCw0`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW0nT4yc`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad" — title
+  - "Read the report" — CTA button label (SHAPE-wrapped pill)
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (blue backdrop with shape decor), current asset_id: `MAFZQNF_kII`
+  - 299x115, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs2RusE8`
+  - 414x414, role: decorative-badge (large circular illustration container right side), current asset_id: `MAFZLycTv8I`
+- notes: CTA-led variant; SHAPE container hosts the "Read the report" pill button. Layered frame: yes — decorative-badge circle (with embedded document icon graphic) sits over the full-bg fill and behind the DELETE text label.
+---
+## Twitter post_style 3 (dup ID) — `EAGqLG5T8O8`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW6gKquQ`
+- text slots (page 1):
+  - "XX%" — stat
+  - "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna" — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg, role: full-bg, current asset_id: `MAFZQNritPQ`
+  - 50x50, role: icon (Broadcast mark), current asset_id: `MAFZLu2JowY`
+- notes: structurally identical to EAGqLMr1Kxw (same asset_ids and layout).
+---
+## Twitter post_style 1 (dup ID) — `EAGqLPc6brc`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW_LHf3w`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet" — title
+  - "Sed diam nonummy nigh euismod tincunt ut laoreet dolore magna" — body
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg (light cream), role: full-bg, current asset_id: `MAFZQS2xJrI`
+  - 450x296, role: decorative-badge (illustration cluster), current asset_id: `MAFZLpnoBN4`
+  - 336x129, role: logo (Broadcast lockup), current asset_id: `MAFYs9rAVro`
+- notes: structurally identical to EAGqLKm0rEY (same asset_ids and layout).
+---
+## Twitter post_style 2 (dup ID) — `EAGqLPaOVTE`
+- use_case: twitter-post-1200x675
+- canvas: 1200x675
+- pages: 1
+- inspection design_id: `DAHLW513qSU`
+- text slots (page 1):
+  - "Euismod tincidunt ut laoreet dolore magna aliqua ut enim ad" — title
+  - "Read the report" — CTA pill (SHAPE)
+  - "DELETE\nplace image or graphic here" — image-slot instructional label
+- image slots (page 1):
+  - full-bg, role: full-bg, current asset_id: `MAFZQNF_kII`
+  - 299x115, role: logo (Broadcast lockup), current asset_id: `MAFYs2RusE8`
+  - 414x414, role: decorative-badge (circular illustration), current asset_id: `MAFZLycTv8I`
+- notes: structurally identical to EAGqLKvBCw0 (same asset_ids and layout).
+---
+## Email Blast Banner_Thought Leadership_Webinar Series — `EAGqLERK1oE`
+- use_case: webinar-email-banner
+- canvas: 600x200
+- pages: 3
+- inspection design_id: `DAHLW6FUqEs`
+- text slots (page 1):
+  - "Webinar" — kicker
+  - "|   Mar 6, 2025 1:00 pm est" — date+time
+  - "Webinar title" — title
+  - "Register Now" — CTA pill (SHAPE-wrapped)
+  - "Presented by:" — speaker-block label (SHAPE-wrapped pill)
+  - "Name" / "Title" x2 — 2 speaker rows
+- image slots (page 1):
+  - 600x200, role: full-bg, current asset_id: `MAGg-9EbU4I`
+  - 9x9, role: icon (play icon next to kicker), current asset_id: `MAGg--nIQbc`
+  - 70x70, role: headshot (speaker 1, square frame), current asset_id: `MAGg-_VYc0Q`
+  - 36x13, role: logo (Cerkl wordmark inside presented-by pill), current asset_id: `MAFYswpMFus`
+  - 70x70, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`
+  - 77x77, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`
+- text slots (page 2): same kicker/date/title/CTA/Presented-by + 3 Name + 3 Title.
+- image slots (page 2): full-bg + play-icon + Cerkl wordmark + thought-leadership badge + 3 x 59x59 headshot squares (asset `MAGg-_VYc0Q`).
+- text slots (page 3): same kicker/date/title/CTA/Presented-by + 4 Name + 4 Title (2x2 grid).
+- image slots (page 3): full-bg + play-icon + Cerkl wordmark + thought-leadership badge + 4 x 46x46 headshot squares (asset `MAGg-_VYc0Q`).
+- notes: speaker count drives page choice (2/3/4). Headshot fills ARE exposed in this template (unlike its 16:9 sibling). Layered frame: yes — Presented-by SHAPE pill overlays the full-bg image; headshot squares overlay the full-bg as well.
+---
+## Zoom Banner_Thought Leadership_Webinar Series — `EAGqLIWzZTY`
+- use_case: webinar-zoom-banner
+- canvas: 640x200
+- pages: 3
+- inspection design_id: `DAHLWwhndv8`
+- text slots (page 1):
+  - "Webinar" — kicker
+  - "|   Mar 6, 2025 1:00 pm est" — date+time
+  - "Webinar title" — title
+  - "Presented by:" — speaker-block label (SHAPE pill)
+  - "Name" / "Title" x2 — 2 speaker rows
+- image slots (page 1):
+  - 640x200, role: full-bg, current asset_id: `MAGg-4jxTu8`
+  - 9x9, role: icon (play icon), current asset_id: `MAGg--nIQbc`
+  - 72x72, role: headshot (speaker 1), current asset_id: `MAGg-_VYc0Q`
+  - 37x13, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`
+  - 82x82, role: decorative-badge (Thought Leadership round badge), current asset_id: `MAGg-9y8TiY`
+  - 72x72, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`
+- text slots (page 2): same + 3 Name/Title rows.
+- image slots (page 2): full-bg + play-icon + Cerkl logo + TL badge + 3 x 59x59 headshots (`MAGg-_VYc0Q`).
+- text slots (page 3): same + 4 Name/Title rows (2x2 grid).
+- image slots (page 3): full-bg + play-icon + Cerkl logo + TL badge + 4 x 52x52 headshots (`MAGg-_VYc0Q`).
+- notes: structurally a 640-wide twin of EAGqLERK1oE (same speaker logic / asset families). Layered frame: yes — same Presented-by pill SHAPE over full-bg.
+---
+## Blog cover image_Webinar — `EAGqLJvHcxg`
+- use_case: webinar-blog-cover-generic
+- canvas: 1500x1000
+- pages: 1
+- inspection design_id: `DAHLW8dWFc0`
+- text slots (page 1):
+  - "webinar" — kicker pill (SHAPE)
+  - "recap & summary" — sub-kicker / category
+  - "Audience management webinar - what did we learn?" — title
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (dark navy backdrop), current asset_id: `MAFZj_VBN48`
+  - 390x37, role: logo (InnerCerkl Webinars lockup bottom-left), current asset_id: `MAFZi1OGzmM`
+- notes: hero photo/illustration area on the right is implied by background art (no exposed image fill). Only one editable image fill (the logo) + page background. Layered frame: no — clean stacking.
+---
+## InnerCerkl Cover/Blog Cover_Thought Leadership_Webinar Series — `EAGqLL_MWfw`
+- use_case: webinar-blog-cover
+- canvas: 600x400
+- pages: 3
+- inspection design_id: `DAHLW16mRcA`
+- text slots (page 1):
+  - "Webinar" — kicker pill (SHAPE-wrapped)
+  - "Mar 6, 2025 1:00 pm est" — date+time
+  - "Webinar title" — title
+  - "Presented by:" — small label (top of presenter card)
+  - "Presented By" — large label (inside presenter card)
+  - "Name" / "Title" x2 — 2 speaker rows
+- image slots (page 1):
+  - 600x400, role: full-bg, current asset_id: `MAGg-_rPUJA`
+  - 119x119, role: decorative-badge (Thought Leadership round badge top-right), current asset_id: `MAGg-9y8TiY`
+  - 16x16, role: icon (play icon inside Webinar pill), current asset_id: `MAGg_YhoQ4E`
+  - 37x13, role: logo (Cerkl wordmark inside presenter card pill), current asset_id: `MAFYswpMFus`
+  - 72x72, role: headshot (speaker 1), current asset_id: `MAGg-_VYc0Q`
+  - 72x72, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`
+- text slots (page 2): same kicker/date/title/Presented-by + 3 Name slots (no per-row Title on this variant — "Name 1/2/3").
+- image slots (page 2): same full-bg + TL badge + play icon + Cerkl logo + 3 x 61x61 headshots.
+- text slots (page 3): same kicker/date/title/Presented-by + 4 Name slots ("Name 1/2/3/Name 3" — last is duplicated literal).
+- image slots (page 3): same full-bg + TL badge + play icon + Cerkl logo + 4 x 50x50 headshots.
+- notes: large layered presenter SHAPE card (538x90) overlays full-bg with an inner pill SHAPE for "Presented By" label. Layered frame: yes — outer presenter SHAPE card and inner pill SHAPE both sit on top of full-bg image; headshot fills overlay the outer SHAPE card.
+---
+## Newsletter Cover image Template — `EAGqLPDHPIM`
+- use_case: newsletter-cover
+- canvas: 1500x1000
+- pages: 2
+- inspection design_id: `DAHLW1iSbJc`
+- text slots (page 1):
+  - "Title" — title
+- image slots (page 1):
+  - 1000x1500 (offset top:-250 left:250 — extends past canvas), role: photo-slot (right-side vertical photo column overlay), current asset_id: `MAFsazLNb5I`
+  - 187x56, role: logo (Cerkl wordmark bottom-left), current asset_id: `MAFZjCbguOo`
+- text slots (page 2):
+  - "Title" — title
+- image slots (page 2):
+  - 1500x1000, role: full-bg, current asset_id: `MAFsayG4wgQ`
+  - 197x60, role: logo (Cerkl wordmark beside title), current asset_id: `MAFYswpMFus`
+- notes: two layout variants — page 1 has a right-column hero photo over a colored backdrop, page 2 uses a full-bg photo with logo near the title. Layered frame: yes (page 1) — vertical photo image overlays the page-level color fill; logo overlays both.
+---
+## Blog cover image_photography — `EAGqLJA3MGo`
+- use_case: blog-cover-photography
+- canvas: 1500x1000
+- pages: 5
+- inspection design_id: `DAHLW80_4gQ`
+- text slots (page 1-5): (none — all text is baked into the photography asset / no editable text fields)
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 1087x315, role: photo-slot (lower hero band), current asset_id: `MAFsM5s1Zds`
+  - 187x56, role: logo (Cerkl wordmark bottom-right), current asset_id: `MAFZjCbguOo`
+- image slots (page 2):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 1379x1000, role: photo-slot (near-full-canvas photo, slight right margin), current asset_id: `MAFsM53xSlI`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- image slots (page 3):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 2009x2050 (oversized, offset), role: photo-slot (full-bleed scenic), current asset_id: `MAF62PP5Zjo`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- image slots (page 4):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 819x624, role: photo-slot (right-side block), current asset_id: `MAFsM2LNjUI`
+  - 819x461, role: photo-slot (left-side top block, same asset duplicated), current asset_id: `MAFsM2LNjUI`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- image slots (page 5):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 819x1000, role: photo-slot (right-side full-height column), current asset_id: `MAFsM2LNjUI`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- notes: photo-only template family — title text is intended to be added manually OR composed entirely with imagery. Each page is a different photo composition. Layered frame: yes — photo-slot rectangles overlay the page-level full-bg fill on every page.
+---
+## Blog Post Cover_Industry Specific_Healthcare — `EAGqLMnkadI`
+- use_case: blog-cover-industry-healthcare
+- canvas: 1500x1000
+- pages: 2
+- inspection design_id: `DAHLW6YsMWc`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh" — title
+  - "Healthcare" — category pill (SHAPE-wrapped)
+- image slots (page 1):
+  - 1500x1000, role: full-bg (SHAPE-hosted healthcare photo with blue overlay), current asset_id: `MAGkRHsF-oI`
+  - 187x56, role: logo (Cerkl wordmark top-left), current asset_id: `MAFZjCbguOo`
+- text slots (page 2): same title + Healthcare pill.
+- image slots (page 2): same shape with alternate healthcare photo (`MAGkRGh4jQs`) + Cerkl logo.
+- notes: page 1 / page 2 are color/photo variants of the same layout. Layered frame: yes — background photo lives inside a SHAPE container; SHAPE pill ("Healthcare") and logo image overlay it.
+---
+## Blog Post Cover_Industry Specific_Higher Ed — `EAGqLOGn2ko`
+- use_case: blog-cover-industry-higher-ed
+- canvas: 1500x1000
+- pages: 2
+- inspection design_id: `DAHLWz9iAvQ`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh" — title
+  - "HIgher Education" — category pill (SHAPE, typo preserved)
+- image slots (page 1):
+  - 1500x1000, role: full-bg (SHAPE-hosted Higher Ed photo with dark overlay), current asset_id: `MAGkRAYYVMY`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- text slots (page 2): identical.
+- image slots (page 2): alternate photo asset (`MAGkRIjOn08`) + Cerkl logo.
+- notes: identical structure to Healthcare cover (EAGqLMnkadI) with different category text + photos. Note typo "HIgher Education" preserved as-is. Layered frame: yes — background image in SHAPE, category SHAPE pill + logo overlay.
+---
+## Blog cover image_list — `EAGqLDVthiA`
+- use_case: blog-cover-list
+- canvas: 1500x1000
+- pages: 3
+- inspection design_id: `DAHLW8e24LA`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed diam nonummy nibh" — title
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 756x1000, role: photo-slot (right column hero), current asset_id: `MAFZjoKq-GY`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- text slots (page 2):
+  - same title.
+- image slots (page 2):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAF66xoDd4A`
+  - 1500x1000, role: full-bg (overlay photo), current asset_id: `MAF668KFz3c`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- text slots (page 3):
+  - "Top 10" — list-count badge (SHAPE pill)
+  - "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed" — title
+- image slots (page 3):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjn0iEmM`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- notes: 3 layout variants — right-column photo / full-photo overlay / text-only with "Top 10" badge. Layered frame: yes (page 1 right column overlays full-bg; page 2 overlay image covers page-level fill).
+---
+## Webinar Recap Blog Cover_Thought Leadership_Webinar Series — `EAGqLEylplk`
+- use_case: webinar-recap-blog-cover
+- canvas: 1500x1000
+- pages: 3
+- inspection design_id: `DAHLW4XsCpw`
+- text slots (page 1):
+  - "Webinar Recap" — kicker (with play icon image beside it)
+  - "Webinar title" — title
+  - "Presented By" — speaker-block label
+  - "Name" / "Title" x2 — 2 speaker rows
+- image slots (page 1):
+  - 1500x1000, role: full-bg, current asset_id: `MAGg-8lonfE`
+  - 302x302, role: decorative-badge (Thought Leadership round badge, partially off-canvas bottom-right), current asset_id: `MAGg-9y8TiY`
+  - 66x67, role: icon (play icon next to kicker), current asset_id: `MAGg-1Nbpjs`
+  - 96x34, role: logo (Cerkl wordmark inside Presented-by pill), current asset_id: `MAFYswpMFus`
+- text slots (page 2): same plus 3 Name/Title rows.
+- image slots (page 2): same full-bg + TL badge + play icon + Cerkl wordmark (no per-speaker headshot fills exposed — speaker thumbs render via SHAPE circles only).
+- text slots (page 3): same plus 4 Name rows (no per-row Title text on this variant — Title labels embedded under Name).
+- image slots (page 3): same full-bg + TL badge + play icon + Cerkl wordmark (still no headshot fills).
+- notes: speaker count drives page choice (2/3/4). Headshot circles are SHAPE containers ONLY — no exposed image fills per speaker — so automation cannot inject headshots without adding new fills. Large translucent presenter-card SHAPE overlays full-bg. Layered frame: yes — Presented-by pill SHAPE inside large presenter-card SHAPE, both over full-bg.
+---
+## Blog cover image_product — `EAGqLNbZEEc`
+- use_case: blog-cover-product
+- canvas: 1500x1000
+- pages: 2
+- inspection design_id: `DAHLWzTN1TQ`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet consectetuer adiiscing elit, sed " — title
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAFZjojYvQs`
+  - 420x161, role: logo (Broadcast lockup top-left), current asset_id: `MAFYs2RusE8`
+- text slots (page 2): same title.
+- image slots (page 2): identical structure (same assets).
+- notes: minimal layout — only title + Broadcast lockup + page bg. Hero product visual is intended to be added manually OR is part of the bg art. Layered frame: no real layering beyond logo over bg.
+---
+## Blog post cover_resource — `EAGqLK6_xYo`
+- use_case: blog-cover-resource
+- canvas: 1500x1000
+- pages: 3
+- inspection design_id: `DAHLW4n5GzU`
+- text slots (page 1): (none — no editable text fields)
+- image slots (page 1):
+  - 1740x1767 (oversized, offset), role: full-bg (full-bleed scenic photo), current asset_id: `MAF62PP5Zjo`
+  - 187x56, role: logo (Cerkl wordmark, inside bottom-right SHAPE container), current asset_id: `MAFZjCbguOo`
+- image slots (page 2):
+  - 2333x2268 (oversized, offset), role: full-bg, current asset_id: `MAF8-ffg_N0`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- image slots (page 3):
+  - 1887x1916 (oversized, offset), role: full-bg, current asset_id: `MAF62PLMti8`
+  - 187x56, role: logo (Cerkl wordmark), current asset_id: `MAFZjCbguOo`
+- notes: text-free photo cover family — title text intended to be added manually. Each page swaps the hero photo. SHAPE container (260x119) at bottom-right holds the Cerkl wordmark pill. Layered frame: yes — logo SHAPE pill overlays the oversized photo.
+---
+## Blog Post Promo — `EAHJUVpBsz4`
+- use_case: blog-post-promo
+- canvas: 1200x675
+- pages: 2
+- inspection design_id: `DAHLW0CXETg`
+- text slots (page 1):
+  - "Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor " — title
+  - "Read More" — CTA button label
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg, current asset_id: `MAHJUA4UVOY`
+  - 46x46, role: icon (arrow icon inside CTA, NOT editable), current asset_id: `MAHG2X6g4mw`
+  - 351x55, role: logo (Cerkl + Blog Post lockup, NOT editable), current asset_id: `MAHJUGCy-_A`
+- text slots (page 2): same title + Read More.
+- image slots (page 2): same full-bg variant (`MAHJUCDd4Hg`) + same icon + lockup.
+- notes: CTA SHAPE pill wraps the Read More button. Two of the three image fills are locked editable=false (icon + lockup). Layered frame: yes — CTA SHAPE overlays full-bg.
+---
+## Blog image_in text_photography — `EAGqLJI22iM`
+- use_case: blog-inline-image-photo
+- canvas: 1200x627
+- pages: 9
+- inspection design_id: `DAHLWwm0YXw`
+- text slots (page 1): one paragraph body ("DEI communications are a critical component...")
+- image slots (page 1): oversized full-bg photo (asset `MAE7D0Z7i08`, NOT editable) + decorative 320x320 brand-shape overlay (`MAGRUFQ9SHQ`).
+- text slots (page 2): one paragraph body about effective communication.
+- image slots (page 2): 293x292 decorative brand-shape (`MAGRTXlqHRk`) on full-bg page color.
+- text slots (page 3): paragraph on employee experience.
+- image slots (page 3): 230x200 decorative brand-shape (`MAGRTXlqHRk`).
+- text slots (page 4): pull-quote/long quote about effectiveness.
+- image slots (page 4): 320x320 decorative brand-shape (`MAGRUFQ9SHQ`) on right.
+- text slots (page 5): two-paragraph body about GDPR + a thin SHAPE divider.
+- image slots (page 5): 619x619 large decorative brand-shape (`MAGRUFQ9SHQ`) on right.
+- text slots (page 6): "List title" + 10 numbered "x" placeholder list rows (10 numeric labels 1-10 + 10 "x" text rows).
+- image slots (page 6): full-bg image (`MAFsMyV_a6A`) — the number-led list canvas.
+- text slots (page 7): paragraph on engaging newsletters.
+- image slots (page 7): 230x200 decorative brand-shape (`MAGRTXlqHRk`); large SHAPE container on left for body card.
+- text slots (page 8): paragraph on lunch dates + SHAPE bottom card container.
+- image slots (page 8): full-canvas SHAPE-hosted image (`MAGeuPH2-8M`).
+- text slots (page 9):
+  - "Effective Internal Communications:" — title
+  - 4 bullet labels (alignment, consistency, brand image, trust) each beside a check-circle SHAPE
+- image slots (page 9): full-bg (`MAFsM4Hag30`) + 4 x 35x35 check-icon images (`MAF49bRGRc4`) + right-side 495x495 decorative SHAPE.
+- notes: this is a 9-page inline-illustration kit covering paragraph/quote/list/checklist layouts. Many decorative pieces are SHAPE-only (no fills). Page 6's numbered list uses 10 separate SHAPE bullets + literal "x" placeholders to be replaced. Layered frame: yes (multiple pages) — body card SHAPE overlays page-bg SHAPE on most pages; circle/check icons overlay full-bg on page 9.
+---
+## Blog image_in text_illustrated — `EAGqLF2Ksbw`
+- use_case: blog-inline-image-illustrated
+- canvas: 1200x627
+- pages: 14
+- inspection design_id: `DAHLWwV8aKE`
+- text slots (page 1): "Add a subheading" + 3 x "Your paragraph text" (checklist rows).
+- image slots (page 1): full-bg (`MAFsMyV_a6A`) + 3 x 478x64 row pills (`MAFsNP1430w`) + 410x410 illustration character (`MAFsNpUv-b4`).
+- text slots (page 2): "Add a subheading" + 2 x "Your paragraph text" (two SHAPE pill rows).
+- image slots (page 2): full-bg (`MAFsM4Hag30`) + 2 x 147x147 check-icon (`MAFr7T1C0mA`) + 623x528 illustration (`MAFsZXyAeDQ`).
+- text slots (page 3): "xx%" stat + "Add a subheading".
+- image slots (page 3): full-bg (`MAFsM7ylVpc`) + 472x462 illustration (`MAFsNPcboG8`) + 258x258 inner illustration (`MAFsNKpVmM8`).
+- text slots (page 4): "Add a subheading" + "xx%" stat (stat-led inverse layout).
+- image slots (page 4): full-bg (`MAFsM-blb8c`) + 899x287 illustration band (`MAFsNEOI96k`) + 380x380 round portrait/illustration (`MAFsN2yuNaU`).
+- text slots (page 5): "Add a subheading" only.
+- image slots (page 5): full-bg (`MAFsM6-CFvQ`) + 667x565 illustration (`MAFsZQf7vzQ`).
+- text slots (page 6): "xx%" stat + "Add a subheading" (left column).
+- image slots (page 6): full-bg (`MAFsM7oCqfY`) + 756x640 illustration (`MAFsZXAusXA`).
+- text slots (page 7): 4 x "Add a subheading" (1 large + 3 row labels).
+- image slots (page 7): full-bg (`MAFsMw8ExqQ`) + 3 x 90x90 icon-circle (`MAFsNRfs_E4`) + 3 x 64x64 inner-glyph icons + 589x570 main illustration (`MAFvNsbYET8`).
+- text slots (page 8): "Add a subheading" + 3 x "Your paragraph text" pill rows.
+- image slots (page 8): full-bg (`MAFsM66uG_k`) + 3 x 629x64 row pills (`MAFsNAeTASE`) + 704x596 illustration (`MAFsTdb-j4s`).
+- text slots (pages 9-14): (none — illustration-only pages)
+- image slots (page 9): full-bg (`MAFsM8Bp0I4`) + 1369x1526 oversized scene (`MAFsZZl0PKo`).
+- image slots (page 10): full-bg (`MAFsM7DIBSQ`) + 1663x1738 oversized scene (`MAFsSx-qAd0`).
+- image slots (page 11): full-bg (`MAFsM7FOvGQ`) + 1549x1619 oversized scene (`MAFsZQl1PpU`).
+- image slots (page 12): full-bg (`MAFsM0zKvTg`) + 1108x938 illustration (`MAFsTW3RHrc`).
+- image slots (page 13): full-bg (`MAFsM68lSsE`) + 879x735 illustration (`MAFsTZ6OoEA`).
+- image slots (page 14): full-bg (`MAFsM0djxQ8`) + 656x812 illustration (`MAFsZslsR-o`) + 600x700 illustration (`MAFsTZ6OoEA`).
+- notes: 14-page inline illustration kit — mix of text-driven (pages 1-8) and illustration-only (pages 9-14). Many pill SHAPE rows host both image fills and overlapping text. Layered frame: yes throughout — illustration assets overlay full-bg fills; pill SHAPEs overlay both.
+---
+## Blog image_in text_product — `EAGt2RCwGPw`
+- use_case: blog-inline-image-product
+- canvas: 1200x627
+- pages: 10
+- inspection design_id: `DAHLW4vq2n8`
+- text slots (page 1): "Add a subheading" + 3 x "Add a subheading" row labels.
+- image slots (page 1): full-bg (`MAFsMyV_a6A`) + 3 x 90x90 icon-circle (`MAFsNRfs_E4`) + 3 x 64x64 glyph icons (`MAFsNfb-eps`) + 730x487 product screenshot (`MAFsd588Exo`) offset left.
+- text slots (page 2): same 4 subheadings.
+- image slots (page 2): full-bg (`MAFsayG4wgQ`) + 3 x 90x90 icon-circle (`MAFsa4hSpZk`) + 3 x 64x64 glyph icons (`MAFsNfb-eps`).
+- text slots (page 3): "Add a subheading" header + 3 x row labels.
+- image slots (page 3): full-bg (`MAFsa9lVmyc`) + 770x314 large screenshot (`MAFsbLvOc9g`) + 3 x 50x50 check icon (`MAFsa72mIGk`).
+- text slots (page 4): (none — illustration page)
+- image slots (page 4): full-bg (`MAFsa_V-NKc`) + 215x60 logo strip (`MAFsd2mr7RY`) + 205x60 logo strip (`MAFsdyPniCc`) — appears to be partner-logos band.
+- text slots (page 5): "Text" tag (SHAPE pill) + "Add a subheading".
+- image slots (page 5): full-bg (`MAFsa9QIhnk`) + 872x581 product screenshot (`MAFsd72otSQ`).
+- text slots (pages 6-10): (none — product/screenshot showcase pages)
+- image slots (page 6): full-bg (`MAFsa_WxV2M`) + 941x627 large screenshot (`MAFsd4Cbncs`).
+- image slots (page 7): full-bg only (`MAFsa8B_yaE`).
+- image slots (page 8): full-bg only (`MAFsa2lkx_Q`).
+- image slots (page 9): full-bg only (`MAFsazLNb5I`).
+- image slots (page 10): full-bg only (`MAFsbAOw9qc`).
+- notes: product-showcase blog-inline kit — pages 1-5 are interactive layouts, pages 6-10 are screenshot-only "swap the whole image" slides. Page 4 dedicated to partner/integration logos. Layered frame: yes — icon glyphs overlay icon-circles overlay full-bg on pages 1/2; screenshots overlay full-bg elsewhere.
+---
+## Blog Image_in text_graphs — `EAGqLI3Y5v8`
+- use_case: blog-inline-image-graphs
+- canvas: 1200x627
+- pages: 7
+- inspection design_id: `DAHLW9IeLks`
+- text slots (page 1): "Add a subheading" + "x label" + "y label" (graph axis labels) + chart SHAPE.
+- image slots (page 1): full-bg (`MAFr6sTTSaE`) — chart is drawn entirely via SHAPE + TEXT, no chart image fill.
+- text slots (page 2): "Add a subheading" + "xx%" stat + chart SHAPE.
+- image slots (page 2): full-bg (`MAFr60qHpbg`).
+- text slots (page 3): "xx%" stat + "Add a subheading" + "Source" pill (SHAPE).
+- image slots (page 3): full-bg (`MAFr60yRIlU`).
+- text slots (page 4): "Add a subheading" + "xx%" stat.
+- image slots (page 4): full-bg (`MAFr7OguqLc`) + 328x328 chart illustration (`MAFr7RVtFNY`).
+- text slots (page 5): "Add a subheading" + "Source" pill + 2 x "text" labels + 2 x "xx%" stats.
+- image slots (page 5): full-bg (`MAFr7aIw5_4`) + 2 x 899x205 chart bands (`MAFr7cGnvc4`) + 2 x 130x130 icon-circle (`MAFr7T1C0mA`).
+- text slots (page 6): 2 x "xx%" stat + 2 x "Add a little bit of body text" + 2 SHAPE icon containers.
+- image slots (page 6): full-bg (`MAFr7V95H4o`) + 2 x 899x205 chart bands (`MAFr7l7umDE`) + 67x166 bar-chart glyph (`MAFr7q5FcpM`) + 156x156 donut/pie glyph (`MAFr7kKDwJQ`).
+- text slots (page 7): "xx%" hero stat + "Add a little bit of body text" + "Source" pill (SHAPE).
+- image slots (page 7): full-bg (`MAFr7s66NoY`) + 207x207 chart icon-circle (`MAFr7T1C0mA`).
+- notes: stat-led / chart kit — pages 1-3 use SHAPE-only charts (no chart image fills), pages 4-7 mix chart imagery + stats. Source attribution pill is recurring (SHAPE + "Source" text). Layered frame: yes — chart bands + glyphs overlay full-bg on pages 5-7.
+---
+## Blog Image_in text_miscellaneous — `EAGqLEt38SQ`
+- use_case: blog-inline-image-misc
+- canvas: 1200x627
+- pages: 4
+- inspection design_id: `DAHLWx3oY8Y`
+- text slots (page 1): "xx%" stat + "Add a subheading".
+- image slots (page 1): full-bg (`MAFr7q-oD6g`) + 336x440 people-grid illustration (`MAFr7oev5II`).
+- text slots (page 2): "xx%" stat + "Add a subheading".
+- image slots (page 2): full-bg (`MAFr7mkJOhE`) only — stat-led, illustration baked into bg.
+- text slots (page 3): "Add a subheading" + 2 x "Add a little bit of body text".
+- image slots (page 3): full-bg (`MAFr7jf7PsU`) + 899x361 illustration band (`MAFr7kS95Bs`).
+- text slots (page 4): 3 x "Add a subheading" + 3 x "Add a little bit of body text" (3-column).
+- image slots (page 4): full-bg (`MAFr7q0c5dY`) only — 3-col cards baked into bg.
+- notes: catch-all kit for stat-led + multi-column body. Layered frame: yes (page 1 grid illustration overlays bg; page 3 illustration band overlays bg).
+---
+## HeyGen Video Thumbnail Template — `EAGrS_c73Us`
+- use_case: video-thumbnail-heygen
+- canvas: 1280x720
+- pages: 4
+- inspection design_id: `DAHLW5Boqwo`
+- text slots (page 1):
+  - "Best Employee Communication Platforms " — title
+  - "Who Actually Personalizes?" — subtitle pill (SHAPE)
+- image slots (page 1):
+  - 1280x720, role: full-bg (blue backdrop), current asset_id: `MAGrSjyT1tY`
+  - 784x698, role: photo-slot (right-side AI avatar / presenter cutout), current asset_id: `MAGrSgVCW6c`
+  - 483x110, role: logo (Cerkl + Broadcast co-lockup top-left), current asset_id: `MAFvNSHHFmY`
+- text slots (page 2): same title + subtitle.
+- image slots (page 2): alternate bg (`MAGrSrQDuLg`) + same logo + same presenter cutout.
+- text slots (page 3): "Title" + "Subtitle" placeholders.
+- image slots (page 3): bg (`MAGrSjyT1tY`) + co-lockup only — no presenter cutout (text-only variant).
+- text slots (page 4): "Title" + "Subtitle" placeholders.
+- image slots (page 4): alternate bg (`MAGrSrQDuLg`) + co-lockup only.
+- notes: pages 1/2 are example-filled with the presenter cutout; pages 3/4 are blank starter variants. Layered frame: yes — presenter cutout image overlays full-bg; subtitle SHAPE pill overlays both.
+---
+## Recording Video thumbnail_Thought Leadership_Webinar Series — `EAGqLKbOQ-E`
+- use_case: webinar-recording-thumbnail
+- canvas: 1280x720
+- pages: 3
+- inspection design_id: `DAHLW4279HU`
+- text slots (page 1):
+  - "Webinar title" — title
+  - "Presented by:" — speaker-block label
+  - 2 x "Firstname\nLastname" — speaker-name SHAPE pills (2 speakers)
+- image slots (page 1):
+  - 1281x720, role: full-bg, current asset_id: `MAGg-4erikM`
+  - 498x71, role: decorative-badge (Webinar Recording kicker plate w/ embedded text+icon), current asset_id: `MAGg-55HmHU`
+  - 68x24, role: logo (Cerkl wordmark inside Presented-by card), current asset_id: `MAFYswpMFus`
+  - 161x161, role: decorative-badge (Thought Leadership round badge), current asset_id: `MAGg-9y8TiY`
+  - 225x225, role: headshot (speaker 1, square frame), current asset_id: `MAGg-_VYc0Q`
+  - 225x225, role: headshot (speaker 2), current asset_id: `MAGg-_VYc0Q`
+- text slots (page 2): same + 3 Firstname/Lastname pills.
+- image slots (page 2): same full-bg + plate + Cerkl + TL badge + 3 x 166x166 headshots (`MAGg-_VYc0Q`).
+- text slots (page 3): same + 4 Firstname/Lastname pills.
+- image slots (page 3): same full-bg + plate + Cerkl + TL badge + 4 x 133x133 headshots (`MAGg-_VYc0Q`).
+- notes: webinar recording thumbnail with exposed speaker headshot fills (unlike its 16:9 promotional sibling). Pages 1/2/3 = 2/3/4 speaker layouts. Layered frame: yes — multiple SHAPE plates (kicker, presented-by card, name pills) overlay full-bg; headshot fills overlay full-bg too.
+---
+## Employee feature_Video thumbnail — `EAGqLELBS7Q`
+- use_case: video-thumbnail-employee-feature
+- canvas: 1280x720
+- pages: 6
+- inspection design_id: `DAHLW1OQ4NI`
+- text slots (page 1):
+  - "Customer Success Spotlight" — kicker (SHAPE pill)
+  - "Meet Cerkl's Customer Success Team" — title
+- image slots (page 1):
+  - 1280x720, role: full-bg, current asset_id: `MAGS5TKSaRg`
+  - 135x40, role: logo (Cerkl wordmark top-left), current asset_id: `MAFbOsxqlcA`
+  - 6 x 180x180, role: headshot (3-row x 2-col grid of round headshots), current asset_ids: `MAGS5YHGrFc, MAGS5famiKM, MAGS5Y1uKKQ, MAF9QtgfBmI, MAGLbbRaLb0, MAGS5bDcmjU`
+- text slots (page 2): "Employee Spotlight " kicker (SHAPE) + "Title" placeholder.
+- image slots (page 2): full-bg `MAGRO9eVcvc` (oversized photo) + foreground overlay (`MAGSjPTxses`) + Cerkl logo.
+- text slots (page 3): "Employee Spotlight " kicker + "Title" + 4 round headshot SHAPE containers (no fills).
+- image slots (page 3): full-bg (`MAGS6HcTmAI`) + Cerkl logo only — 4 round circles are SHAPE-only (no image fills exposed for these heads).
+- text slots (page 4): "Employee Spotlight " kicker + "TItle" + 2 round SHAPE containers.
+- image slots (page 4): full-bg + Cerkl logo only — 2 round circles are SHAPE-only.
+- text slots (page 5): "Employee Spotlight " kicker + "Title" + 1 large round SHAPE.
+- image slots (page 5): full-bg + Cerkl logo only — large round circle is SHAPE-only.
+- text slots (page 6): (none)
+- image slots (page 6): full-bg only (`MAGS6HcTmAI`) — blank starter.
+- notes: pages 1/2 = filled example variants with real headshot fills; pages 3/4/5 = blank starter variants with SHAPE placeholders for 4/2/1 headshots (no image fills exposed — must be added). Page 6 = blank starter, no kicker. Layered frame: yes — kicker SHAPE + headshot SHAPEs overlay full-bg.
+---
+## Vlog Series_Video thumbnail — `EAGqLGUSREQ`
+- use_case: video-thumbnail-vlog
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLWxyVN4E`
+- text slots (page 1):
+  - "Perspectives" — kicker
+  - "  Strategic internal" — title line 1 (SHAPE-wrapped highlight)
+  - "  communications -" — title line 2 (SHAPE highlight)
+  - "  an approach" — title line 3 (SHAPE highlight)
+  - "Name" — speaker name
+  - "Title" — speaker title
+- image slots (page 1):
+  - 1280x720, role: full-bg (illustrated landscape), current asset_id: `MAFbhP_EeWE`
+  - 135x40, role: logo (Cerkl wordmark bottom-left), current asset_id: `MAFbOsxqlcA`
+- notes: highlighted-title layout — each title line is its own SHAPE-wrapped TEXT with leading whitespace for the highlight inset. No speaker headshot fill exposed. Layered frame: yes — three SHAPE highlight blocks overlay full-bg.
+---
+## Employee highlight/interview_video thumbnail — `EAGqLKnxpbY`
+- use_case: video-thumbnail-employee-highlight
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLW-oEHr0`
+- text slots (page 1):
+  - "Broadcast Suite for Internal Communicators" — title
+  - "Add cut-out photo" — instructional placeholder (delete on use)
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (blue brand backdrop), current asset_id: `MAFbWGS_6Js`
+  - 404x87, role: logo (Cerkl + tagline lockup), current asset_id: `MAFbWBISwhM`
+- notes: cut-out photo zone exists only as a TEXT placeholder — user must add a real cut-out image manually. Layered frame: no real exposed layering.
+---
+## Video Interview Template — `EAGqLKCh5Is`
+- use_case: video-interview
+- canvas: 1920x1080
+- pages: 5
+- inspection design_id: `DAHLW3_phyo`
+- text slots (page 1): "Add a heading" — lower-third title.
+- image slots (page 1): (none)
+- text slots (page 2):
+  - "Sam Huber" — interview-name (centered)
+  - "Principal Product Designer" — role (inside SHAPE lower-third pill)
+- image slots (page 2):
+  - 124x51, role: icon (small icon inside lower-third, NOT editable), current asset_id: `MAFX5e3L0vY`
+  - 147x82, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`
+  - 741x129, role: decorative-badge (name-plate underline gradient, off-canvas left), current asset_id: `MAFojMZQho4`
+  - 438x168, role: logo (Broadcast lockup, off-canvas right), current asset_id: `MAFYs2RusE8`
+- text slots (page 3): "Add a heading" — alternate lower-third title.
+- image slots (page 3): (none)
+- text slots (page 4): (none — likely end-card)
+- image slots (page 4): 438x168, role: logo (Broadcast lockup off-canvas right), current asset_id: `MAFYs2RusE8`
+- text slots (page 5): "Add a little bit of body text" — caption.
+- image slots (page 5): full-bg (`MAFaAed19WI`) + 910x198 logo/brand strip (`MAFn5cT5Krw`).
+- notes: video interview kit — title cards (1,3), filled lower-third with attribution (2), endcard (4), branded body slide (5). Layered frame: yes (page 2) — name-plate SHAPE underline overlays attribution row; multiple logo + icon image fills overlap. Canvas is 1920x1080 (HD video).
+---
+## Video question / transition template — `EAGqLH6qggI`
+- use_case: video-transition
+- canvas: 1920x1080
+- pages: 1
+- inspection design_id: `DAHLW3LsbUY`
+- text slots (page 1):
+  - "Add a heading" — title/question text
+- image slots (page 1): (none)
+- notes: minimal solid-color transition card; no fills at all. Title-only. Layered frame: no.
+---
+## Video endcard template - HWSB — `EAGqLHIx6Pc`
+- use_case: video-endcard-hwsb
+- canvas: 1920x1080
+- pages: 1
+- inspection design_id: `DAHLW1Rr65Q`
+- text slots (page 1):
+  - "Add a little bit of body text" — caption
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (soft gradient), current asset_id: `MAFaAed19WI`
+  - 910x198, role: logo (Cerkl "How Work Should Be" lockup centered), current asset_id: `MAFn5cT5Krw`
+- notes: HWSB = "How Work Should Be" tagline endcard. Single hero lockup over gradient bg. Layered frame: yes — lockup image overlays page-level gradient fill.
+---
+## Case study_video thumbnail — `EAGqLN17b_0`
+- use_case: video-thumbnail-case-study
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLW0Ix04M`
+- text slots (page 1):
+  - "Case Study | Business" — kicker pill (SHAPE)
+  - "Add company logo" — logo placeholder (SHAPE outlined box)
+- image slots (page 1):
+  - 1280x720, role: full-bg, current asset_id: `MAFbVr6r3MI`
+  - 469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`
+- notes: customer-logo zone is a SHAPE outline + TEXT placeholder — user must paste real customer logo manually. Layered frame: yes — logo-placeholder SHAPE + kicker SHAPE pill overlay full-bg.
+---
+## Video name card template — `EAGqLCGg9JI`
+- use_case: video-name-card
+- canvas: 1920x1080
+- pages: 1
+- inspection design_id: `DAHLW654vB4`
+- text slots (page 1):
+  - "Name" — speaker name
+  - "Title" — speaker title (inside lower-third SHAPE pill)
+- image slots (page 1):
+  - 124x51, role: icon (small icon inside lower-third, NOT editable), current asset_id: `MAFX5e3L0vY`
+  - 147x82, role: logo (Cerkl wordmark), current asset_id: `MAFYswpMFus`
+  - 741x129, role: decorative-badge (name-plate gradient, off-canvas left), current asset_id: `MAFojMZQho4`
+  - 438x168, role: logo (Broadcast lockup, off-canvas right), current asset_id: `MAFYs2RusE8`
+- notes: standalone lower-third name card variant of EAGqLKCh5Is page 2. No background photo — lives on solid color. Layered frame: yes — name-plate SHAPE underlines Name/Title text, with multiple branding image fills overlapping.
+---
+## Blog post_video thumbnail — `EAGqLGbY8PI`
+- use_case: video-thumbnail-blog-post
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLWw3UiAs`
+- text slots (page 1):
+  - "Video title" — title
+  - "Add cover image from blog post" — image instructional placeholder
+- image slots (page 1):
+  - 1757x728 (oversized, offset left), role: full-bg (blue brand backdrop), current asset_id: `MAFu0JOPNyc`
+  - 469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`
+  - 2000x829 (oversized, offset), role: decorative-badge (large rounded shape revealing blog cover area on right), current asset_id: `MAFu0AlF_Z8`
+- notes: blog cover image area is a TEXT placeholder, not an exposed image fill — user must add the cover image manually. Layered frame: yes — large decorative shape image overlays the full-bg image; co-lockup overlays both.
+---
+## Webinar Video Thumbnail — `EAGqLDCHyRM`
+- use_case: webinar-video-thumbnail-generic
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLW4SrkEc`
+- text slots (page 1):
+  - "Add a heading" — title
+  - "Add a subheading" — subtitle
+- image slots (page 1):
+  - 1280x720, role: full-bg, current asset_id: `MAFvq4HVPj4`
+  - 602x74, role: decorative-badge (InnerCerkl Webinars kicker plate with embedded text+icon), current asset_id: `MAFvqxOFQJE`
+- notes: minimal webinar thumbnail — kicker plate sits above title. Layered frame: yes — kicker plate image overlays full-bg.
+---
+## Video endcard template - Broadcast — `EAGqLFCzRhM`
+- use_case: video-endcard-broadcast
+- canvas: 1920x1080
+- pages: 1
+- inspection design_id: `DAHLW0f7_5M`
+- text slots (page 1):
+  - "Add a little bit of body text" — caption
+- image slots (page 1):
+  - full-bg (page-level), role: full-bg (soft gradient), current asset_id: `MAFaAed19WI`
+  - 932x240, role: logo (Broadcast lockup hero, centered), current asset_id: `MAFYs9rAVro`
+- notes: Broadcast-branded endcard — twin of HWSB endcard (EAGqLHIx6Pc) with Broadcast lockup instead. Layered frame: yes — lockup image overlays gradient bg.
+---
+## Overview_ video thumbnail — `EAGqLGVVV7I`
+- use_case: video-thumbnail-overview
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLW2OGKfA`
+- text slots (page 1):
+  - "Broadcast Suite for Internal Communicators" — title
+- image slots (page 1):
+  - 1280x720, role: full-bg (blue brand backdrop with right-side reveal column), current asset_id: `MAFbVw8K69w`
+  - 469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`
+- notes: minimal overview thumbnail — title + co-lockup. Layered frame: no (logo overlays bg only).
+---
+## Broadcast Channels_video thumbnail — `EAGqLK6kDP0`
+- use_case: video-thumbnail-broadcast-channels
+- canvas: 1280x720
+- pages: 1
+- inspection design_id: `DAHLWygIYlA`
+- text slots (page 1):
+  - "Broadcast Suite for Internal Communicators" — title
+- image slots (page 1):
+  - 856x720 (covers ~67% of canvas, left), role: full-bg (blue brand panel), current asset_id: `MAFbWOE6Z_s`
+  - 469x92, role: logo (Cerkl + Broadcast co-lockup bottom-left), current asset_id: `MAFbUrBeep4`
+- notes: minimal Broadcast Channels variant — same as Overview thumbnail but with the brand panel sized to only the left ~67% of canvas (right side reveals page color/illustration). Layered frame: no (logo overlays panel only).
+---
