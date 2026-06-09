@@ -52,9 +52,11 @@ A process file *uses* skills. A skill that needs three other skills probably wan
 
 A `[job]-process.md` step declares `Parallelizable with: [step IDs]`. When the symmetric flag exists, the orchestrator dispatches both steps in one message with multiple `Agent` tool calls. Parallel steps must not write to overlapping output paths.
 
-## 8. Push-update protocol crosses folder boundaries
+## 8. Git is the ledger — derive activity, don't re-record it
 
-When work in folder A affects state tracked in folder B, A appends an update block to B's relevant file using a declared format. B owns reconciliation. Folders never reach across silently.
+Every session ends with a commit; git log already records what moved, where, and when. Don't ask folders to re-record that motion in each other's files. When work in folder A is relevant to folder B, A states it in chat at session end; B (usually PA's `refresh`) derives changes from git log and recent file edits. Exception: durable *knowledge* corrections (e.g., a competitor signal that contradicts `shared/competitors.md`) are appended directly to the file that owns the knowledge — that's content, not status.
+
+(Replaced the push-update protocol 2026-06-09. Hand-reconciled status ledgers drifted constantly; the protocol added write-reconcile-archive ceremony to every domain session for information git already had.)
 
 ## 9. Token discipline is structural, not editorial
 

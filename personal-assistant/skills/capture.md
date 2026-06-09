@@ -2,41 +2,33 @@
 
 Triggered when Travis says "add a task", "log this", "remember to X", or drops a quick item that needs to land in the system.
 
-Goal: get the task into the right place fast, without losing context, in the canonical format.
+Goal: get the item into the right project file fast, without losing context.
 
 ## Procedure
 
-1. **Identify the project** — match the task topic against `INDEX.md`'s project links.
+1. **Identify the project** — match the task topic against the files in `projects/`.
    - Clear match → use it.
    - Multiple plausible matches → ask Travis.
-   - No match → call `skills/new-project.md`. That skill applies the create-vs-fold criteria and either auto-creates a new project file (and returns its name) or folds into the closest adjacent project. Continue this skill with whatever it returns.
+   - No match → call `skills/new-project.md` (create-vs-fold criteria live there). Continue with whatever it returns.
 
-2. **Extract the row fields**
-   - **Next step** — one-line description of the action. Convert verbose capture into a tight imperative.
-   - **Priority** — High/Med/Low. If Travis didn't say, infer from context (deadline, blocker, exploration) and confirm.
-   - **Due** — YYYY-MM-DD. Convert relative dates ("Friday", "next week") using today as anchor. If no deadline, leave `—`.
-   - **On track** — default to `Yes` for fresh tasks unless context says otherwise.
-   - **Owner** — default Travis unless Travis names someone else.
+2. **Append a dated log line** to the project's `## Log` (create the section at the bottom of the file if it doesn't exist):
+   ```
+   - YYYY-MM-DD — captured: <tight imperative one-liner> (due YYYY-MM-DD if any)
+   ```
+   Convert relative dates ("Friday", "next week") to absolute before writing.
 
-3. **Add to INDEX** — insert row in priority order (High → Med → Low). Use the existing column format.
+3. **Rich context goes with it** — background, people, links, constraints: add to the project's Notes section (or as indented sub-lines under the log entry if it's brief).
 
-4. **If the capture has rich context** — append to the project file's narrative section (not as a next-steps list). Examples:
-   - Background or motivation
-   - References to people, tools, links
-   - Constraints or open questions
-   The INDEX row stays as the canonical action; the project file holds the *why*.
+4. **Escalate only if warranted**
+   - Hard date → add a Calendar Anchors line in `INDEX.md`.
+   - It has Travis's attention *now* → propose a Top of Mind change (his call; ≤5 items).
+   - Otherwise INDEX is untouched — the log line is enough.
 
-5. **Show what you wrote** — confirm the row added and any project-file updates so Travis can correct on the spot.
-
-## Format reminder (INDEX row)
-
-```
-| [Project Name](projects/<project>.md) | <next step> | <priority> | <due> | <on track> | <owner> |
-```
+5. **Show what you wrote** so Travis can correct on the spot.
 
 ## Don't
 
-- Don't add the same task to multiple projects. Pick one; cross-reference if needed.
-- Don't write the next step in two places (INDEX + project file's checklist). INDEX is canonical.
-- Don't skip date conversion. "Soon" / "ASAP" / "next week" all need to become YYYY-MM-DD or `—`.
+- Don't add the same item to multiple projects. Pick one; cross-reference if needed.
+- Don't promote every capture to Top of Mind. Most belong only in the project log.
+- Don't skip date conversion. "Soon" / "ASAP" / "next week" become YYYY-MM-DD or nothing.
 - Don't load domain context to guess. If you don't know which project, ask.

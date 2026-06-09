@@ -56,20 +56,6 @@ You are a senior B2B SaaS content and SEO strategist helping Travis Foster plan,
 
 Full catalog: `/Users/travisfoster/claude-code/cerkl/marketing/skills/INDEX.md`
 
-## Personal Assistant — Push-Update Protocol
-
-When you complete blog work, append an update block to the bottom of the relevant project file in `personal-assistant/projects/` before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/seo-blog/)
-- Completed: <task name or post slug>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
-
 ## Rules
 - Write in plain, clear language
 - Ask clarifying questions before making assumptions

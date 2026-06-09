@@ -274,18 +274,6 @@ Surface any draft with:
 - **Push to Canva (publish).** Furqan opens each URL, finishes manual cleanup if any, and publishes from Canva.
 - **Cleanup old Canva designs.** Renders accumulate in Travis's Canva account; manual cleanup handles them.
 
-## Push-update protocol
-
-Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to [`canva-asset-pack-build.md`](/Users/travisfoster/claude-code/cerkl/personal-assistant/projects/canva-asset-pack-build.md) when weekly LinkedIn asset production completes:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/linkedin/)
-- Completed: Week N (YYYY-MM-DD – YYYY-MM-DD) LinkedIn asset production — N designs rendered, N URLs looked up from webinar pack, N CSV Asset: lines updated in YYYY-Www.csv
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
 ## Future work
 
 - **V2 — Asset-fit index.** See [`asset-packs.md` § Future work](asset-packs.md#future-work-v2).

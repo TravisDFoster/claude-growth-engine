@@ -75,20 +75,6 @@ paid-youtube/
         └── prompts.md
 ```
 
-## Personal Assistant — Push-Update Protocol
-
-When you complete paid YouTube work, append an update block to the bottom of the relevant project file in `personal-assistant/projects/` (likely `youtube.md` or `advertising.md` — verify before writing) before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/paid-youtube/)
-- Completed: <task name or asset reference>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
-
 ## Rules
 - Every hook must map to one ICP pain or one positioning line — never both, never neither
 - Read `proven-hooks.md` before generating any new batch — bias toward proven patterns, avoid repeating flops

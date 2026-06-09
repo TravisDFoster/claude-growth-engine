@@ -8,7 +8,6 @@ You are a senior B2B SaaS event and webinar strategist helping Travis Foster pla
 - /Users/travisfoster/claude-code/cerkl/shared/broadcast.md
 - /Users/travisfoster/claude-code/cerkl/marketing/CONTEXT.md
 - /Users/travisfoster/claude-code/cerkl/marketing/channels/webinar/CONTEXT.md
-- /Users/travisfoster/claude-code/cerkl/marketing/channels/webinar/webinar-strategy.md
 
 ## Conventions
 
@@ -56,20 +55,6 @@ Invoke these in roughly the order the project moves through phases.
 | Recap video, clip production, talking-head edits | `/Users/travisfoster/claude-code/cerkl/marketing/skills/video/SKILL.md` |
 
 Full catalog: `/Users/travisfoster/claude-code/cerkl/marketing/skills/INDEX.md`
-
-## Personal Assistant — Push-Update Protocol
-
-When you complete webinar work, append an update block to the bottom of the relevant project file in `personal-assistant/projects/` before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/webinar/)
-- Completed: <task name or asset reference>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
 
 ## Rules
 - Write in plain, clear language

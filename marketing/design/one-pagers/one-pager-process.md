@@ -209,12 +209,12 @@ Wait for user direction; do NOT auto-pick.
 
 Record what was tried in the .md source as an HTML comment near the affected section so a future reader knows what remediation was applied (and why).
 
-### Step 7 — Push-update to PA if applicable
+### Step 7 — Session handoff
 - **Owner:** Claude
-- **Needs:** [marketing/CLAUDE.md Push-Update Protocol](../../CLAUDE.md)
+- **Needs:** —
 - **Inputs:** the project this one-pager serves (webinar event folder, sales handoff, etc.)
-- **Produces:** an update block appended to the relevant `personal-assistant/projects/<project>.md`
-- **What to do:** If the one-pager was created for a tracked project (webinar, partnership, sales hand-off), append the standard update block. Skip if it's standalone.
+- **Produces:** chat output
+- **What to do:** End by stating in chat what shipped and the proposed next step. PA derives activity from git log — no update blocks.
 
 ---
 

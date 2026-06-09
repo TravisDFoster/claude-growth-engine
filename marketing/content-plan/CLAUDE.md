@@ -48,4 +48,4 @@ content-plan/
 
 - Brief lifecycle changes (queued → scheduled → in-progress → shipped) always touch the brief's frontmatter in [`../seo/briefs/`](../seo/briefs/) — the brief file is canonical; this folder's tables reference it.
 - Slug threading is the system's identity model. Slug stays exactly the same string from brief → rolling-4week → Jira CSV → publishing skill → Webflow URL. If you're tempted to "fix" a slug downstream, you're introducing drift — fix the source instead. See [`jira/CONTEXT.md`](jira/CONTEXT.md#slug-threading-the-canonical-identity).
-- Travis writes `rolling-4week.md` at Monday reconcile; channels never edit it directly. Channels report completion via the PA Push-Update Protocol.
+- Travis writes `rolling-4week.md` at Monday reconcile; channels never edit it directly. Channels state completion in chat at session end; reconcile reads git log.

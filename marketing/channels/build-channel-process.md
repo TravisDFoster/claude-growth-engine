@@ -38,7 +38,7 @@ Every channel should have its own `CLAUDE.md` that:
 1. Defines **identity** — what kind of work happens here
 2. Loads **only what this channel needs** — no aspirational extras
 3. Documents **channel-specific conventions** — folder naming, date formats, file naming
-4. **Restates parent rules locally** when they apply to this channel — push-update protocols, voice guidelines (don't trust routing to carry behavior)
+4. **Restates parent rules locally** when they apply to this channel — voice guidelines, conventions (don't trust routing to carry behavior)
 5. Lists **channel-local skills** — the table the agent uses to route within the channel
 6. Lists **reference docs and templates** — the foundations the skills build on
 
@@ -117,7 +117,7 @@ The user will spot issues: cadence wrong, owner mislabeled, naming awkward, edge
 
 ### Phase 8 — Update channel CLAUDE.md and commit
 
-1. Update the channel `CLAUDE.md` to list every built skill (with phase mapping), reference docs, templates folder, conventions, and the locally-restated push-update protocol
+1. Update the channel `CLAUDE.md` to list every built skill (with phase mapping), reference docs, templates folder, and conventions
 2. Trim or remove the TODO list as items are completed
 3. Stage **only this session's files** (avoid `git add -A` so unrelated WIP doesn't ride along)
 4. Commit with a message that explains the *why* of the structural changes, not just the file count
@@ -219,12 +219,11 @@ Skill:
 - [ ] Channel `CLAUDE.md` loads only what every task in this channel needs
 - [ ] All `Context to load` paths resolve (test by listing each)
 - [ ] Channel has its own conventions section (folder naming, dates, file naming)
-- [ ] Every skill folder has a `SKILL.md` with: name, description (with trigger phrases), prerequisites, output path, push-update reference
+- [ ] Every skill folder has a `SKILL.md` with: name, description (with trigger phrases), prerequisites, output path
 - [ ] Skills table in `CLAUDE.md` lists every built skill with the phase it belongs to
 - [ ] Reference docs and templates referenced in `CLAUDE.md` exist
 - [ ] At least one past project folder demonstrates the conventions in practice (rename old folders to match the new convention if needed)
 - [ ] Dry-run executed with hypothetical inputs and reviewed by the user
-- [ ] Push-update protocol restated locally in the channel `CLAUDE.md`
 - [ ] No `Untracked files` from this work in `git status` — everything intentional is staged
 - [ ] Commit message explains the *why* of structural changes, not just the file count
 

@@ -54,20 +54,6 @@ paid-meta/
 └── <YYYY-MM-DD>-test-N/       ← created at test launch
 ```
 
-## Personal Assistant — Push-Update Protocol
-
-When you complete paid-Meta work that affects [meta-ads-channel-launch.md](../../../personal-assistant/projects/meta-ads-channel-launch.md), append an update block to the bottom of that file before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/paid-meta/)
-- Completed: <task name or asset reference>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
-
 ## Rules
 - Read `system-status.md` and `audience-guidelines.md` before designing or launching any test — both move fast
 - Every test must have a hypothesis, success metric, and end date defined before launch (no open-ended tests)

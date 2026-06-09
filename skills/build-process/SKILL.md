@@ -56,7 +56,7 @@ Find its home by walking down from the workspace root.
 
 **Naming-collision check** — before settling on a folder name, skill name, or process slug, grep for it across the workspace. Two `*-daily-process.md` files with overlapping triggers will confuse routing.
 
-**Cross-folder consumers** — if the output of this process feeds work in another folder, the process owns the output path; the consumer reads from there. If the consumer needs to *know* about new outputs, use the push-update protocol (see PRINCIPLES.md #8) — never reach across.
+**Cross-folder consumers** — if the output of this process feeds work in another folder, the process owns the output path; the consumer reads from there. If the consumer needs to *know* about new outputs, state it in chat at session end — activity is derived from git log (see PRINCIPLES.md #8); never reach across.
 
 ### Phase 3 — Audit context loading along the route
 
@@ -240,7 +240,7 @@ This skill applies anywhere with a `CLAUDE.md` routing chain. For `personal/`:
 
 - Root is `personal/CLAUDE.md`.
 - "Departments" map to `planning/`, `projects/<project>/`, `google/`, etc.
-- Push-update protocol still applies — a project's process can declare an update format that planning reads.
+- PRINCIPLES #8 still applies — planning derives activity from git log; processes end by stating what shipped in chat.
 
 The phases (scope → locate → audit → map → reuse-vs-build → build → dry-run → finalize) carry over verbatim.
 

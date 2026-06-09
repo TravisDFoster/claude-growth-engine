@@ -167,18 +167,6 @@ Print one line per post: `slug — score X/50 — brand-check <pass/fixed> — <
 
 ICPro has no brief queue, so there's no `status` field to flip anywhere. The Jira task itself tracks lifecycle; rolling-4week's `Status` column is the operational marker.
 
-## Push-update protocol
-
-Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to `personal-assistant/projects/icpro-seo.md` when weekly production completes:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/icpro-blog/)
-- Completed: Week N (YYYY-MM-DD – YYYY-MM-DD) ICPro production — N posts published to Drive, N CSV rows updated in YYYY-Www.csv
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
 ## Future work
 
 - When internalcommspro.com starts featuring named author bylines, swap the `ICP Staff` default in the pre-writing skill for an author-selection step.

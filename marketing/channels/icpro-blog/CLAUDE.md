@@ -57,20 +57,6 @@ Full catalog: `/Users/travisfoster/claude-code/cerkl/marketing/skills/INDEX.md`
 
 (Note: `schema-markup` and `programmatic-seo` from the seo-blog table are intentionally omitted here — internalcommspro.com doesn't use FAQ/Article schema in the same way and isn't a target for programmatic templated production.)
 
-## Personal Assistant — Push-Update Protocol
-
-When you complete ICPro blog work, append an update block to the bottom of `personal-assistant/projects/icpro-seo.md` before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/icpro-blog/)
-- Completed: <task name or post slug>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
-
 ## Rules
 - Never name Cerkl competitors (Simpplr, LumApps, Firstup, Workvivo, Poppulo, Staffbase, Haiilo)
 - Mention Cerkl rarely and only as *"tools like Cerkl Broadcast"* in a list context

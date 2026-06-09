@@ -4,7 +4,7 @@
 >
 > **Who writes here:** Travis (Monday reconciles). Channels never edit this file. New ideas reach the plan three ways: (a) Travis pulls a queued brief from [`../seo/briefs/`](../seo/briefs/) (the canonical path for SEO content), (b) Travis adds non-SEO items during reconcile (e.g., customer story, product announcement — fast path), or (c) they appear in [`inputs.md`](inputs.md) via the Wednesday team-update (evidence-backed path).
 >
-> **What channels do:** read their rows here, read the linked SEO brief (if any), execute, report completion back via the PA Push-Update Protocol.
+> **What channels do:** read their rows here, read the linked SEO brief (if any), execute, and state completion in chat at session end (activity is derived from git log).
 
 **Last reconciled:** 2026-06-09 (Tuesday — reconcile ran one day after the Monday lead-day)
 

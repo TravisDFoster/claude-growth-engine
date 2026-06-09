@@ -12,7 +12,7 @@
 ## Inputs
 
 - **Source path** (required) — absolute path to the `.md` file to convert
-- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `weekly-plan` (PA `current-week.md`) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `dashboard` (number-driven status report with inline SVG/CSS charts; for leadership briefings, program health checks, KPI snapshots) | `one-pager` (print-format letter portrait; uses `cerkl/marketing/design/one-pagers/reference-one-pager.html` — different design system optimized for print, runs through `html-overflow-detector` + `html-to-pdf` after this skill) | `generic`
+- **Artifact type** (optional) — `deep-dive` (default, e.g., competitor profile) | `daily-recap` (IC trends recap) | `weekly-plan` (retired in cerkl/ PA 2026-06-09; still used in `personal/`) | `hook-batch` (paid-youtube hook ideas — interactive selection) | `dashboard` (number-driven status report with inline SVG/CSS charts; for leadership briefings, program health checks, KPI snapshots) | `one-pager` (print-format letter portrait; uses `cerkl/marketing/design/one-pagers/reference-one-pager.html` — different design system optimized for print, runs through `html-overflow-detector` + `html-to-pdf` after this skill) | `generic`
 - **Theme** (optional) — `light` (default) | `dark`. Dark variant is opt-in and works with any artifact type. Use for short, high-impact, external-facing artifacts (leadership briefs, pitch one-pagers, prospect-shareable comp profiles). Don't use for long-read daily artifacts (recaps, deep-dives) — eye fatigue.
 
 ## Output
@@ -195,7 +195,7 @@ Layout-specific patterns:
 
 ### `weekly-plan`
 
-See `reference-weekly-plan.html` for the canonical example. Used by the `personal-assistant` `plan-week` skill to render a sibling HTML of `current-week.md`. Scope is Mon–Fri work — not a personal life-plan (that artifact lives in `personal/` with a different theme).
+See `reference-weekly-plan.html` for the canonical example. (The cerkl/ PA retired its materialized week file 2026-06-09 — this artifact type remains for `personal/` and any future weekly-plan-shaped content.)
 
 Sections:
 1. **Hero** — breadcrumb (`Personal Assistant · Weekly Plan`), title (`Week of <Mon> — W##`), meta-row (Range, Week A/B chip, Materialized date), TL;DR (2–3 sentences synthesizing the week's shape), and a **deadline-pill strip** for any hard EOD/by-date deadlines in the week. No verdict pill — weekly plans don't recommend; they allocate.

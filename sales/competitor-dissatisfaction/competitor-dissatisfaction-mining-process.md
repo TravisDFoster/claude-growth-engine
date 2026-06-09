@@ -105,8 +105,7 @@ Ask at start of each run (skip if obvious from context):
 - **Produces:**
   - `handoffs/<YYYY-MM-DD>.md` (master + Google Sheet link)
   - Slack-ready 4–6 bullet exec summary (in-chat, for Travis to send to AEs)
-  - Update block appended to [`personal-assistant/projects/competitor-dissatisfaction-mining.md`](../../personal-assistant/projects/competitor-dissatisfaction-mining.md)
-- **What to do:** Generate `complaint_summary` per row per §7 voice rules. Pull `recommended_angle` from §5 + Step 2b positioning context. Format as Sheet-ready table. Draft Slack summary (theme leaders + bucket distribution + dedupe stats + flagged-but-skipped). Append PA push-update with completion + status change + next step.
+- **What to do:** Generate `complaint_summary` per row per §7 voice rules. Pull `recommended_angle` from §5 + Step 2b positioning context. Format as Sheet-ready table. Draft Slack summary (theme leaders + bucket distribution + dedupe stats + flagged-but-skipped). End by stating in chat what shipped and the proposed next step (PA derives activity from git log).
 
 ## Output
 

@@ -139,18 +139,6 @@ If every drafted post is `skip-*`, no asset process needed — the roll-up ends 
 - An updated Jira CSV at `../../content-plan/jira/imports/YYYY-Www.csv` with the LinkedIn Task Description filled in (copy inserted on the `Copy:` line) for each post
 - A chat-printed roll-up
 
-## Push-update protocol
-
-Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to the relevant project file in `personal-assistant/projects/` when weekly LinkedIn production completes:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/linkedin/)
-- Completed: Week N (YYYY-MM-DD – YYYY-MM-DD) LinkedIn production — N posts drafted, N CSV rows updated in YYYY-Www.csv
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
 ## Future work
 
 - **Per-post-type templates need depth.** Carousel is the most fleshed out (from 2026-05-20 work). The other 4 (static-theme, static-blog, poll, short-video) are skeletons. Refine after each runs.

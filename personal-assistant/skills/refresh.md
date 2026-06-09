@@ -2,7 +2,7 @@
 
 Triggered at the start of a session, after time away, or when Travis asks "catch me up" / "what's changed".
 
-Goal: reconcile sibling-agent updates and recent edits with INDEX so Travis starts each session on accurate state.
+Goal: tell Travis what moved since he last looked — **derived from git, not reconciled from ledgers**.
 
 ## Procedure
 
@@ -10,52 +10,31 @@ Goal: reconcile sibling-agent updates and recent edits with INDEX so Travis star
    - If Travis names one ("since last week", "since Friday") — convert to absolute date.
    - Otherwise default to 7 days.
 
-2. **Pull recent changes via git log**
+2. **Pull what moved via git log**
    ```
-   git log --since="<date>" --pretty=format:'%h %ad %s' --date=short -- \
-     personal-assistant/ marketing/ sales/ hubspot/ strategy/
+   git log --since="<date>" --pretty=format:'%h %ad %s' --date=short --name-only
    ```
    - Run from `/Users/travisfoster/claude-code/cerkl/`.
-   - This is the cheapest signal of what moved.
+   - Group touched paths by top-level folder (marketing/, sales/, research/, ...). Commit messages + paths are the signal; don't read the diffs unless something is surprising.
 
-3. **Read sibling-agent push updates**
-   For each project file in `projects/`, read just the bottom (`Read` with offset to last ~30 lines) and look for:
-   ```
-   ## Update — YYYY-MM-DD (from <agent>/)
-   - Completed: <ref>
-   - Status change: <if any>
-   - New blocker: <if any>
-   - Proposed next step: <one line>
-   ```
+3. **Read the tails of Top of Mind project files**
+   - For each project linked in INDEX's Top of Mind, read the last ~15 lines (`Read` with offset) for recent `## Log` entries.
 
-4. **Reconcile each update into INDEX**
-   - **Completed** → remove the row from INDEX, append to project's `## Completed` section with date.
-   - **Status change** → update the project's Status block (state, on-track, last updated).
-   - **New blocker** → reflect in Status block; consider whether the row in INDEX should be paused or re-prioritized.
-   - **Proposed next step** → update or add the INDEX row.
-
-5. **Archive the update block** — once reconciled, move the `## Update — ...` block out of the project's bottom area into a `## History` section (append-only). Keep the project file scannable.
-
-6. **Surface a summary to Travis** — terse:
+4. **Surface a summary** — terse:
    ```
    ## Refresh — <date>
-   - <N> sibling updates reconciled
-   - Completed: <list>
-   - New: <list>
-   - Status changes: <list>
-   - Anything that needs your attention: <list>
+   - What shipped: <from commits + log entries>
+   - Movement on Top of Mind items: <per item, or "none">
+   - Past-due Calendar Anchors: <list, or "none">
+   - Suggested INDEX edits: <promote/demote/anchor changes — proposals only>
    ```
 
-7. **If git log is empty and no update blocks exist**: say so. Don't fabricate motion.
+5. **Apply INDEX edits only on Travis's confirm.** Top of Mind is his call.
 
-## Edge cases
-
-- **Conflict**: if INDEX disagrees with a sibling's proposed next step, surface it — don't silently overwrite. Ask Travis to resolve.
-- **Update block from an unknown agent**: keep the block, flag it, but apply if the format matches.
-- **Project file edited directly (not via push contract)**: git log will show it. Read the diff and ask Travis if it changes the INDEX row.
+6. **If git log is empty**: say so. Don't fabricate motion.
 
 ## Don't
 
 - Don't load domain context.
 - Don't run git mutations (commit/push) — read-only.
-- Don't apply reconciled changes silently. Always show the summary first; apply on confirm if changes are non-trivial.
+- Don't maintain any ledger. This skill reads and proposes; the only file it ever edits (on confirm) is `INDEX.md`.

@@ -136,13 +136,13 @@ The parent `website/CLAUDE.md` routes here on phrases like:
 - **Produces:** appended entry in `landing-pages/playbook.md` (every concluded test, winner OR loser); updated row in `landing-pages/backlog.md` (status → `shipped` / `killed` / `parked`)
 - **What to do:** Use the playbook entry template. Capture the **reusable pattern**, not just the result. If the pattern could apply to another landing page, add a new hypothesis to `backlog.md` referencing this test as evidence (which raises its Confidence score).
 
-### Step 10 — Personal Assistant push-update
+### Step 10 — Session handoff
 - **Owner:** Claude
 - **Parallelizable with:** —
 - **Needs:** —
 - **Inputs:** `results.md`
-- **Produces:** appended update block at the bottom of the relevant `personal-assistant/projects/cerkl-website*` file (or equivalent — verify path before writing)
-- **What to do:** Follow the push-update protocol in `marketing/CLAUDE.md`: absolute YYYY-MM-DD date, what completed, status change, blocker, proposed next step. Do NOT edit `personal-assistant/INDEX.md` directly.
+- **Produces:** chat output
+- **What to do:** End by stating in chat what shipped and the proposed next step. PA derives activity from git log — no update blocks.
 
 ---
 

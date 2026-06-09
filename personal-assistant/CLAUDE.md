@@ -19,8 +19,8 @@ Most interactions run through one of these skills. Load the skill file when inte
 | Intent | Skill |
 |---|---|
 | "Plan my day", "what's next today", "what should I focus on", balancing today's priorities | `skills/plan.md` |
-| "Plan the week", "Monday weekly plan", "materialize the week", start of a new week | `skills/plan-week.md` |
-| "Friday retro", "wrap up the week", "archive this week" | `skills/retro.md` |
+| "Plan the week", "Monday weekly plan", start of a new week — re-rank Top of Mind + sweep anchors | `skills/plan-week.md` |
+| "Friday retro", "wrap up the week" | `skills/retro.md` |
 | "Process this meeting note", "extract action items from `<meetings/...>`", reviewing meeting files | `skills/process-meeting.md` |
 | "Catch me up", start of session, returning after time away, checking what's changed | `skills/refresh.md` |
 | "Regenerate the leadership review", "growth project tracker", Thursday leadership-meeting prep | `skills/growth-project-tracker.md` |
@@ -29,7 +29,7 @@ Most interactions run through one of these skills. Load the skill file when inte
 
 ## Team rollups
 
-For "What's `<person>` working on?" / status questions about a teammate, read the rollup file directly. These are per-person summaries of in-flight work — different shape from project files (no Status block).
+For "What's `<person>` working on?" / status questions about a teammate, read the rollup file directly. These are per-person summaries of in-flight work — different shape from project files.
 
 | Person | File |
 |---|---|
@@ -42,32 +42,18 @@ For "What's `<person>` working on?" / status questions about a teammate, read th
 personal-assistant/
 ├── CLAUDE.md          ← this file (router)
 ├── CONTEXT.md         ← role, team, tools (stable)
-├── INDEX.md           ← live ledger of next steps  ← always read
+├── INDEX.md           ← Top of Mind + Calendar Anchors — the only hand-maintained state
 ├── skills/            ← workflow procedures, loaded on demand
-│   ├── plan.md            ← daily plan
-│   ├── plan-week.md       ← Monday weekly materialization
-│   ├── retro.md           ← Friday wrap + archive
-│   ├── process-meeting.md
-│   ├── refresh.md
-│   ├── growth-project-tracker.md  ← weekly evergreen leadership review (Thursday meeting)
-│   ├── capture.md
-│   └── new-project.md     ← spin up a new project; called by capture and process-meeting
-├── projects/          ← per-project state + history
-│   ├── archive/       ← closed projects
-│   └── <project>.md   ← starts with Status block, then narrative
+├── projects/          ← one file per project: Overview · Plan · append-only ## Log
+│   └── archive/       ← closed projects (older files may carry legacy Status blocks — ignore, don't maintain; delete the block when next editing the file)
 ├── calendar/
-│   ├── recurring.md       ← durable definition of standing meetings (Week A/B parity anchor)
-│   ├── current-week.md    ← this week's materialized schedule (refreshed Monday, archived Friday)
-│   └── archive/           ← prior weeks (named YYYY-WXX.md)
-└── meetings/          ← meeting notes (will move to Obsidian later)
+│   ├── recurring.md   ← durable definition of standing meetings (Week A/B parity anchor)
+│   └── archive/       ← weekly retro notes (YYYY-WNN.md)
+└── meetings/          ← meeting notes
 ```
 
 ## Rules
 
-- **INDEX is canonical for the *current* next step** of each project (and at most one parallel step if a project has independent tracks). Project files hold the **full plan / sequence** — all upcoming steps, the work done so far, decisions, references, and history. Don't restate a project's current next-step text inside its plan section verbatim; let the plan list upcoming steps and let INDEX point at which one is active.
-- **Cheap reads first.** When triaging a project, read its Status block (top ~10 lines) before reading the full file. Use `Read` with a `limit` to do this.
-- **All dates absolute** (YYYY-MM-DD). Convert "Thursday", "next week", "after launch" to a calendar date before writing.
-- **Task completion:** when a task is done, remove the row from `INDEX.md` and append it to the project file's `## Completed` section with the date.
-- **Project closure:** when a project closes, move the file to `projects/archive/` and remove its rows from `INDEX.md`.
-- **Sibling-agent updates** (from `marketing/`, `sales/`, `hubspot/`, `strategy/`) arrive as `## Update — YYYY-MM-DD (from <agent>/)` blocks at the bottom of project files. The `refresh` skill reconciles them into INDEX, then archives the update block into the project's history section.
-- **Stay in your lane.** If Travis asks you to do domain work, decline and route him to the top-level `cerkl/CLAUDE.md`.
+- **State lives in two places only.** `INDEX.md` holds Top of Mind (≤5 items) + Calendar Anchors. Each project file tells its own story as an append-only `## Log` of dated entries — newest at the bottom, never rewritten. Nothing is reconciled between files; there is no table to keep in sync.
+- **Derive, don't re-record.** What happened recently comes from `git log` + project `## Log` tails (see `skills/refresh.md`), not from status fields. Google Calendar is the truth for Travis's schedule — `recurring.md` only defines standing meetings; never materialize a copy of the week.
+- **All dates absolute** (YYYY-MM-DD). Project closure = move the file to `projects/archive/` and drop it from Top of Mind.

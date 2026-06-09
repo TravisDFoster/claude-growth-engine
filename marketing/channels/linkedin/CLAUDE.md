@@ -43,20 +43,6 @@ You are a senior B2B SaaS social strategist helping Travis Foster draft LinkedIn
 | Poll | [`templates/poll.md`](templates/poll.md) |
 | Short video (60-sec) | [`templates/short-video.md`](templates/short-video.md) |
 
-## Personal Assistant — Push-Update Protocol
-
-When you complete LinkedIn work, append an update block to the bottom of the relevant project file in `personal-assistant/projects/` before ending the session:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/linkedin/)
-- Completed: <task name or post slug>
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
-Do **not** edit `personal-assistant/INDEX.md` directly — PA's `refresh` skill reconciles update blocks during Travis's next planning session.
-
 ## Rules
 - Match Cerkl voice (see [`linkedin-writing-guide.md`](linkedin-writing-guide.md))
 - Ask clarifying questions before making assumptions

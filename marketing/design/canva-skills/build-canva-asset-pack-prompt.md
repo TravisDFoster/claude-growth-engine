@@ -55,4 +55,4 @@ Build the `canva-asset-pack` skill and `linkedin-asset-process.md` that uses it,
 
 **Acceptance check:** the skill produces all 9 IC Thought Leadership Series asset shapes for the Rachel Folz solo webinar (2026-06-25) end-to-end.
 
-**Project file:** `cerkl/personal-assistant/projects/canva-asset-pack-build.md` — append an Update block per the PA push-update protocol when each milestone lands.
+**Project file:** `cerkl/personal-assistant/projects/canva-asset-pack-build.md` — append a dated log line when each milestone lands (append-only; no update-block ceremony).

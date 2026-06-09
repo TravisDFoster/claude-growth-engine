@@ -4,7 +4,7 @@ Triggered:
 - Directly when Travis says "let's start a project for X", "spin up a new project", "create a project file for X"
 - Indirectly when `capture` or `process-meeting` detects an action item that doesn't fit any existing project
 
-Goal: spin up a new project file from the template, add the first INDEX row, and surface what was created so Travis can adjust on the spot. Auto-create when criteria are met; fold into an existing project otherwise.
+Goal: spin up a new project file from the template and surface what was created so Travis can adjust on the spot. Auto-create when criteria are met; fold into an existing project otherwise.
 
 ## Decision: create vs. fold
 
@@ -16,35 +16,24 @@ Count how many of these are true for the proposed project:
 4. Has its own stakeholders or external partners
 5. Scope doesn't substantially overlap an existing project
 
-**≥2 true → create the project.** Auto-create using the procedure below.
+**≥2 true → create the project.** **<2 true → fold:** append a dated `## Log` line to the closest existing project instead. Don't create a new file.
 
-**<2 true → fold into the closest existing project.** Add the task to that project's `## Plan / Sequence` and add a row in INDEX with that project's link. Don't create a new file.
-
-If the call came from `capture` or `process-meeting`, return control to that skill after the decision — don't double-process the task.
+If the call came from `capture` or `process-meeting`, return control to that skill after the decision — don't double-process.
 
 ## Procedure (auto-create)
 
-1. **Derive a kebab-case filename**
-   - From the project name. e.g. "Partner Co-Marketing with Crescenzo" → `partner-co-marketing-crescenzo.md` (trim aggressively — under 40 chars where possible).
-   - Check for collisions in `projects/` and `projects/archive/`. If a collision, append a disambiguator and surface it to Travis.
+1. **Derive a kebab-case filename** from the project name (under 40 chars where possible). Check for collisions in `projects/` and `projects/archive/`; disambiguate and surface if needed.
 
-2. **Clarify, then populate the template** (below)
-   - Before writing, ask Travis briefly for any of these that aren't obvious from the capture: **context** (why now / is something broken / why this matters), **scope** (what's in / out), **acceptance criteria** (what makes it done). Keep it tight — one question per gap, skip what's already clear.
-   - Default owner = Travis silently. Don't ask about ownership unless he names someone else in the capture.
-   - For remaining unknowns after the clarify pass, write `<pending — to fill in>` and surface them in the post-create summary. Don't block on them.
-   - `Last updated: <today's date>` in YYYY-MM-DD.
+2. **Clarify, then populate** — ask Travis briefly for whatever isn't obvious: **context** (why now), **scope** (in/out), **acceptance criteria** (what makes it done). One question per gap; skip what's clear. Owner defaults to Travis silently.
 
 3. **Write `projects/<filename>.md`** using the template.
 
-4. **Add to INDEX**
-   - One row for the project's immediate next step (use abstracted phrasing — don't restate the Plan section verbatim).
-   - If hard deadline → also add a `Calendar Anchors` entry.
-   - If High priority + blocked or at-risk → also add to `Top of Mind`.
+4. **Escalate only if warranted** — hard deadline → Calendar Anchors line in `INDEX.md`; commands Travis's attention now → propose a Top of Mind slot (≤5; his call). Otherwise INDEX is untouched.
 
 5. **Surface to Travis**
    ```
    Created projects/<filename>.md
-   - Next step (in INDEX): <text>
+   - First step: <text>
    - Plan: <N> steps drafted
    - Pending fields to confirm: <list, if any>
    - Anything to adjust?
@@ -55,41 +44,36 @@ If the call came from `capture` or `process-meeting`, return control to that ski
 ```markdown
 # <Project Name>
 
-## Status
-- **State:** <Active | In progress | Exploration | Blocked | Decision pending>
-- **Next step:** <abstracted one-line — matches the INDEX row>
-- **Due:** <YYYY-MM-DD or —>
-- **On track:** <Yes | At risk | Blocked | n/a>
-- **Last updated:** <YYYY-MM-DD>
-
----
-
 ## Overview
 <1–3 sentences: what this project is and why it exists. Include the original trigger if it came from a meeting or capture.>
 
 ## Plan / Sequence
-- [ ] <step 1 — the current next step, more detailed than the INDEX row>
+- [ ] <step 1 — concrete first step>
 - [ ] <step 2>
 - [ ] <step 3>
 
 ## Notes / References
-- **Context / why now:** <one line — what's broken, what changed, why this matters>
+- **Context / why now:** <one line>
 - **Scope:** <what's in / out>
 - **Acceptance criteria:** <what makes this done>
 - <other: contacts, links, constraints, open questions>
+
+## Log
+- YYYY-MM-DD — project created (<trigger: capture / meeting / direct>)
 ```
+
+The `## Log` is append-only — dated entries, newest at the bottom. It is the project's state: the latest entry tells you where things stand. No Status block to maintain.
 
 ## Don't
 
-- Don't create a project with an empty `## Plan / Sequence` — at minimum draft the immediate next step. If you can't, that's a signal the criteria aren't met (fold instead).
-- Don't restate the INDEX row verbatim inside `## Plan / Sequence`. Plan section can be more detailed; INDEX is the abstracted pointer.
+- Don't create a project with an empty `## Plan / Sequence` — at minimum draft the first step. If you can't, fold instead.
 - Don't create when criteria say "fold." Return control to the caller.
 - Don't load `marketing/`, `sales/`, `hubspot/`, `strategy/`, or `shared/`.
-- Don't populate the project file with speculative future phases beyond what's actually decided. Phase 1 should be concrete; later phases can be one-liners.
+- Don't populate speculative future phases. Phase 1 concrete; later phases one-liners.
 
 ## Edge cases
 
-- **Filename collision** with archived project: append a year/qualifier (e.g. `webinars-2026.md`). Surface clearly so Travis knows there's a related historical file.
-- **Insufficient information to draft a Plan**: ask Travis for the first 2–3 steps before writing the file. Don't auto-create with placeholder steps.
-- **Two new initiatives that might be one project**: surface the question to Travis rather than creating both. Better to delay 30 seconds than to split scope wrong.
-- **Project is blocked from day 1**: still create. Status `Blocked`, Plan section's first step is the unblock action (e.g. "Engage IT to resolve account access"). This matches the `meta-ads-channel-launch.md` pattern.
+- **Filename collision** with archived project: append a year/qualifier (e.g. `webinars-2026.md`) and surface it.
+- **Insufficient information for a Plan**: ask for the first 2–3 steps before writing. Don't auto-create with placeholders.
+- **Two new initiatives that might be one project**: ask rather than creating both.
+- **Blocked from day 1**: still create; first Plan step is the unblock action, first Log entry names the blocker.

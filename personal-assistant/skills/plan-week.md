@@ -1,102 +1,44 @@
-# Skill: Plan Week
+# Skill: Plan Week (Monday)
 
-Triggered on Monday morning (or when Travis says "plan the week", "weekly plan", "materialize the week", "let's set up the week").
+Triggered on Monday morning (or when Travis says "plan the week", "weekly plan", "set up the week").
 
-Goal: produce a fresh `calendar/current-week.md` that materializes the upcoming week — recurring meetings expanded into dated slots, free time identified, INDEX priorities allocated to days. Treat the output as a working draft, not a contract.
+Goal: a 10-minute re-rank ritual, **in chat** — no file materialization. The week's shape is agreed conversationally; INDEX is the only file edited.
 
 ## Procedure
 
-1. **Confirm the target week**
-   - Default: the week containing today.
-   - If today is Tue–Sun, ask: "Materialize the current week (started <Monday's date>) or next week (starting <next Monday>)?"
-   - All dates absolute (YYYY-MM-DD).
+1. **Refresh first** if INDEX's `Last refreshed` is older than ~5 days — run `skills/refresh.md`, then continue.
 
-2. **Compute Week A / B parity**
-   - Read the anchor in `calendar/recurring.md` (currently: Week A starts 2026-05-04).
-   - For Monday `M` of the target week: parity = `((M − anchor) / 7) mod 2` → `0` = A, `1` = B.
+2. **Compute Week A/B parity** from the anchor in `calendar/recurring.md` (Week A starts 2026-05-04): parity = `((Monday − anchor) / 7) mod 2`. Note which standing meetings fall this week.
 
-3. **Expand recurring → dated slots**
-   - Pull every weekly meeting into its weekday slot.
-   - Pull bi-weekly meetings matching the target week's parity.
-   - Pull any monthly meetings whose date falls inside the target week.
+3. **Sweep Calendar Anchors**
+   - Drop past dates (anything shipped gets a `## Log` line in its project file with the date).
+   - Ask Travis for new hard dates entering the horizon.
 
-4. **Read existing ad-hocs** for the week
-   - If `current-week.md` already has ad-hocs noted, preserve them.
-   - Ask Travis: "Any ad-hoc meetings already on your calendar for this week I should add?" — only ask if you're starting fresh; if regenerating mid-week, just preserve what's there.
+4. **Re-rank Top of Mind with Travis**
+   - Propose promotions/demotions based on: anchors inside this week, blockers that cleared, items that slipped.
+   - Keep it ≤5. Demoted items need nothing — their state lives in their project files.
 
-5. **Compute free blocks per day**
-   - Assume working hours 9:00 am – 5:00 pm unless Travis says otherwise.
-   - Subtract meetings.
-   - List remaining contiguous blocks as `H:MM am/pm – H:MM am/pm (Xh)`.
-   - Sum total free hours per day.
-
-6. **Pull priorities from INDEX**
-   - Read `INDEX.md` Top of Mind + High-priority rows.
-   - Note hard deadlines that fall inside this week or the following week (forward visibility).
-
-7. **Allocate priorities to days, not time slots**
-   - Hard deadlines first: work backward from due date.
-   - Travis-owned blockers next.
-   - Group related work on the same day where it makes sense (e.g. webinar landing page + follow-up email together).
-   - **If you don't know the effort of a task, ask Travis** before slotting (per the design rule — no effort estimates in INDEX).
-   - Don't pin to specific time slots — the day-level allocation is enough.
-
-8. **Identify carryover candidates**
-   - INDEX rows that didn't make this week's allocation. List them at the bottom of `current-week.md` so they're visible if a free block opens up.
-
-9. **Write `calendar/current-week.md`** using this structure:
+5. **Surface the week's shape in chat** — terse:
    ```
-   # Current Week — <Monday> to <Friday>
+   ## Week of <Monday> (Week <A|B>)
 
-   > **Week <A|B>** · Materialized <today>. Friday retro will archive this to `archive/<YYYY-WXX>.md`.
+   **Standing meetings:** <inline>
+   **Hard dates this week:** <from anchors>
 
-   ## Week At a Glance
-   <table: Day | Meetings | Free time | Top priority>
+   ### Focus
+   1. <Top of Mind #1 — what "done by Friday" looks like>
+   2. ...
 
-   **Hard deadline this week:** <if any>
-
-   ---
-
-   ## Daily
-   <one section per Mon–Fri, each with: Meetings · Free blocks · Priorities for the day · Ad-hocs/notes>
-
-   ## Carryover candidates
-   <Med/Low INDEX items not slotted>
-
-   ## Friday retro notes
-   _(populated during Friday retro)_
+   ### Watch
+   - <blocked/passive items with a date risk>
    ```
+   Flag tight spots ("Promo Email #1 sends Sunday — Thu/Fri are the only build days").
 
-10. **Surface the plan to Travis**
-    - Show the Week At a Glance table inline.
-    - Flag any tight spots: "Press Release deadline Fri — Mon and Tue are your only big focus blocks before Maria needs the draft."
-    - Ask: anything to adjust before finalizing?
-
-11. **Render HTML sibling** (after Travis confirms the markdown is final)
-    - Dispatch the `md-to-html` skill on `calendar/current-week.md` with artifact-type `weekly-plan`.
-    - Output lands at `calendar/current-week.html` (same basename, sibling path).
-    - Brief for the sub-agent:
-      ```
-      Run the md-to-html skill on /Users/travisfoster/claude-code/cerkl/personal-assistant/calendar/current-week.md with artifact-type weekly-plan.
-
-      1. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/SKILL.md
-      2. Read /Users/travisfoster/claude-code/cerkl/skills/md-to-html/reference-weekly-plan.html
-      3. Read the source markdown.
-      4. Write current-week.html at the sibling path.
-      5. Return only the output path + one-line confirmation. Do not echo HTML.
-      ```
-    - Re-run this step on any mid-week re-materialization or after the Friday retro updates the file. The HTML is a derived artifact — always regenerated from the `.md`, never edited directly.
+6. **Edit INDEX on confirm** — Top of Mind order + anchor changes. That's the only write.
 
 ## Don't
 
-- Don't pin tasks to specific time slots within a day. Day-level allocation only.
-- Don't load domain context (`marketing/`, `sales/`, `hubspot/`, `strategy/`).
-- Don't rewrite `recurring.md`. If a recurring meeting needs to change, ask Travis to update `recurring.md` directly, then re-materialize.
-- Don't archive last week here — the `retro` skill handles that on Friday.
-- Don't fabricate effort estimates. If you can't tell whether a task fits a day, ask.
-
-## Edge cases
-
-- **Mid-week re-materialization** (e.g. major schedule change): preserve any ad-hocs and Friday retro notes already in `current-week.md`. Re-compute free blocks and priorities only.
-- **No INDEX deadlines this week:** focus on Travis-owned blockers and active in-progress work.
-- **Priority count > available capacity:** don't cram. Surface the conflict — "5 High items, ~30h of free time, you'll need to push 2 to next week. Which?"
+- Don't write a weekly plan file or mirror the calendar — Google Calendar is the truth; the chat summary is the plan.
+- Don't load domain context.
+- Don't rewrite `recurring.md` — if a standing meeting changed, ask Travis to update it.
+- Don't fabricate effort estimates. If you can't tell whether the week is overloaded, ask.

@@ -2,53 +2,46 @@
 
 Triggered when Travis asks you to read a meeting note and extract action items, or when a new file appears in `meetings/`.
 
-Goal: turn meeting notes into INDEX rows + project file updates so nothing is lost. Never apply changes without showing the proposed diff first.
+Goal: turn meeting notes into project `## Log` entries (and INDEX changes when warranted) so nothing is lost. Never apply changes without showing the proposed diff first.
 
 ## Procedure
 
-1. **Read the meeting note** — the full file, since meeting notes are usually small.
+1. **Read the meeting note** — the full file; meeting notes are usually small.
 
 2. **Extract**:
-   - **Decisions** — anything resolved or agreed in the meeting. Goes to the relevant project file's narrative section.
-   - **Action items** — must include: owner, what, due date (convert relative → absolute YYYY-MM-DD).
-   - **Blockers** — anything explicitly waiting on a person or external dependency.
-   - **Context shifts** — scope changes, priority changes, status changes that affect a project's Status block.
+   - **Decisions** — anything resolved or agreed. → dated `## Log` entry in the relevant project.
+   - **Action items** — owner, what, due date (relative → absolute YYYY-MM-DD). → dated `## Log` entry.
+   - **Blockers** — anything waiting on a person or external dependency. → log entry naming who/what.
 
-3. **Map each item to a project** — use `INDEX.md`'s project links as the registry. If an action item doesn't fit an existing project:
-   - Call `skills/new-project.md`. That skill applies the create-vs-fold criteria and either auto-creates a new project file or folds into the closest adjacent one.
-   - For multiple new initiatives surfaced in the same meeting, batch the create-vs-fold decisions before showing Travis the diff (avoid a flurry of mid-process confirmations).
+3. **Map each item to a project** — match against `projects/`. If an item doesn't fit an existing project, call `skills/new-project.md` (batch the create-vs-fold decisions before showing the diff).
 
 4. **Build the proposed diff** — show Travis before writing:
    ```
    ## Proposed updates from meetings/<file>
 
-   ### INDEX.md
-   - ADD row: <project> | <next step> | <priority> | <due> | <on track> | <owner>
-   - MODIFY row "<existing next step>": <change>
-   - REMOVE row "<completed>": done in this meeting
+   ### projects/<project>.md — ## Log
+   - YYYY-MM-DD — <entry>
 
-   ### projects/<project>.md
-   - Update Status block: <what changes>
-   - Append decision/note to narrative: "<text>"
-   - Move row "<x>" to ## Completed (date: <meeting date>)
+   ### INDEX.md (only if warranted)
+   - Calendar Anchor: <date — what>
+   - Top of Mind: <proposed change>
    ```
 
 5. **Apply on approval** — only after Travis confirms.
 
-6. **Annotate the meeting file** — at the bottom, append:
+6. **Annotate the meeting file** — append at the bottom:
    ```
    ## Processed — YYYY-MM-DD
-   - INDEX rows added/modified: <count + brief>
-   - Project files updated: <list>
+   - Log entries written: <count + projects>
    ```
-   So `refresh` can tell at a glance which meetings have been processed.
+   So `refresh` can tell which meetings have been processed.
 
 ## Date discipline
 
-If the meeting note says "by Thursday", "next sprint", "after launch" — convert to YYYY-MM-DD using today's date as anchor. If ambiguous, ask Travis.
+"By Thursday", "next sprint", "after launch" → YYYY-MM-DD using today as anchor. If ambiguous, ask.
 
 ## Don't
 
-- Don't load domain context (`marketing/`, `sales/`, etc.). Meeting notes give you what you need.
-- Don't write speculative tasks. If an action item has no clear owner, flag it as a question rather than inventing one.
-- Don't duplicate decisions across multiple project files. Pick the most relevant project; cross-reference the others.
+- Don't load domain context. Meeting notes give you what you need.
+- Don't write speculative tasks. No clear owner → flag as a question, don't invent one.
+- Don't duplicate decisions across project files. Pick the most relevant; cross-reference the others.

@@ -32,19 +32,6 @@ Layout: the first pinned item (`growth-project-tracker`) renders **wide** and sp
 - **cadence**: weekly
 - **notes**: Evergreen — one file (`growth-project-tracker.{md,html}`) updated in place each week. The doc's content carries the date in its meta header; the filename never changes.
 
-### current-week
-- **kind**: artifact
-- **label**: Current Week Calendar
-- **url**: `/cerkl/personal-assistant/calendar/current-week.html`
-- **subtitle**: PA — Mon–Fri work plan
-- **refresh_prompt**:
-  ```
-  Re-plan / materialize my current week.
-
-  Process: /Users/travisfoster/claude-code/cerkl/personal-assistant/skills/plan-week.md
-  ```
-- **cadence**: weekly
-
 ### content-reconcile
 - **kind**: action
 - **label**: Content Reconcile
@@ -256,6 +243,5 @@ Never include — apply to every category scan:
 
 - HubSpot / SEO audits/briefs → run through [`md-to-html`](../skills/md-to-html/SKILL.md), then move from MD-only to main category list.
 - When `growth-project-tracker.html` becomes evergreen (one file), update `pinned.growth-project-tracker.url` and remove the date from `personal-assistant` category items.
-- Consider extracting from `current-week.md` too (deadlines or today's priorities) if the inline content proves useful for Growth Project Tracker.
 - Per-pinned-item *stale* indicator could use `extract_from` file mtime as ground truth rather than referenced HTML mtime.
 - `cadence` could be extended to per-day (e.g., "Mon/Wed/Fri") if a 3x-week IC trends rhythm gets adopted.

@@ -171,18 +171,6 @@ Print one line per post: `slug — score X/50 — <Doc URL> — CSV row updated 
 - A chat-printed roll-up summary
 - Each brief's `status:` is `in-progress` after Step 2a runs. **Do not flip to `shipped` here** — that happens when the post actually goes live in Webflow, after Furqan copies the Drive Doc over. The planner archives shipped briefs on the next Monday reconcile.
 
-## Push-update protocol
-
-Per [PRINCIPLES.md #8](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), append an update block to `personal-assistant/projects/seo-strategy-plan.md` (or the relevant blog project file — no dedicated `cerkl-blog.md` PA project exists yet) when weekly production completes:
-
-```
-## Update — YYYY-MM-DD (from marketing/channels/seo-blog/)
-- Completed: Week N (YYYY-MM-DD – YYYY-MM-DD) blog production — N posts published to Drive, N CSV rows updated in YYYY-Www.csv
-- Status change: <if any, otherwise "none">
-- New blocker: <if any, otherwise "none">
-- Proposed next step: <one line>
-```
-
 ## Future work
 
 - When `seo-blog-pre-writing` evolves into per-post research lookups (e.g., SERP intent, competitor coverage), consider splitting Step 2a into 2a-research + 2a-properties.
