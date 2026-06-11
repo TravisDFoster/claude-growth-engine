@@ -22,6 +22,8 @@ Epics represent a campaign theme and are long-lived. They are assumed to exist b
 Naming format: `YEAR Theme`
 Example: `2026 Foundations Free`
 
+**Current Epic key (for scaffold pre-fill):** `<CONFIRM — Travis: paste the Jira Epic key here>` — update this line when the campaign Epic changes; the scaffold reads it rather than guessing.
+
 ### Tasks
 
 Tasks are the atomic unit of work. Each Task represents one publishable deliverable — completion equals publication.

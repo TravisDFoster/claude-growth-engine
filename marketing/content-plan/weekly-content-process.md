@@ -63,6 +63,7 @@ Apply the decisions, then **clean up `inputs.md` before moving on**:
 - Approved for a later week → move to Upcoming with a date
 - Dead → prune; this week's sketch → delete (it's locked now); later sketches → update to match what was decided
 - Existing briefs scheduled → frontmatter `status: scheduled` + `scheduled_for:`; shipped briefs → archive
+- **Displacement is a swap, not a slide.** Bumping a scheduled item requires naming the slot it lands in (within the ceilings) — or it reverts to `queued` (date cleared) with an Upcoming note saying why. Never assign a date without a slot; reslotting is a future session's call.
 
 Slate confirmed in chat = the week is locked.
 
@@ -112,3 +113,11 @@ Pause anywhere; remaining `[…_PLACEHOLDER]` tokens in the CSV are the resume l
 ## Learnings
 
 <!-- append "what broke / what we changed" notes here as the session runs -->
+
+### 2026-06-10 — Dry run (Travis test, pre-v2)
+
+- **Raw queue counts lie.** 4 queued briefs passed the old `<4` gate, but 2–3 were stance-banned versus briefs — usable depth was ~2. Fix landed in v2: no count threshold; Phase 0 presents the full table and judgment decides.
+- **"Push to early July" assumed capacity that didn't exist.** All sketched July weeks were at the 2/week cerkl.com ceiling, so displaced briefs had nowhere to land. Fix: the "displacement is a swap, not a slide" rule in Phase 1.
+- **Session-created blogs (launch announcements, bylines) mint their own slug** — no brief to thread from at scaffold time. Fix landed in v2: slug decided in the conversation, `[BRIEF_PENDING]` backfilled after Wave 1.
+- **Epic key had to be guessed.** Pre-fill needs the live Epic key recorded, not just the naming format — now in `jira-csv-guidelines.md` §Epics.
+- What worked: writes held at the pause point; capacity saturation correctly *derived* from Upcoming sketches + ceilings (no capacity ledger needed); the `cerkl-vs-firstup` stray date caught independently by the session and the Upcoming note.
