@@ -27,7 +27,7 @@
 - /Users/travisfoster/claude-code/cerkl/marketing/CONTEXT.md
 - /Users/travisfoster/claude-code/cerkl/marketing/channels/icpro-blog/CONTEXT.md
 - /Users/travisfoster/claude-code/cerkl/marketing/content-plan/CONTEXT.md
-- /Users/travisfoster/claude-code/cerkl/marketing/content-plan/content-lifecycle-process.md (end-to-end cadence — read for the Drive-URL-before-CSV ordering constraint and the Monday-CSV-scaffold expectation)
+- /Users/travisfoster/claude-code/cerkl/marketing/content-plan/content-lifecycle-process.md (end-to-end cadence — read for the Drive-URL-before-CSV ordering and the weekly-session context)
 
 (Per [PRINCIPLES.md #4](/Users/travisfoster/claude-code/cerkl/PRINCIPLES.md), this list is authoritative for this scope — parent loads do not apply unless re-listed here.)
 
