@@ -21,8 +21,9 @@
 - /Users/travisfoster/claude-code/cerkl/marketing/content-plan/CONTEXT.md
 - /Users/travisfoster/claude-code/cerkl/marketing/content-plan/inputs.md
 - /Users/travisfoster/claude-code/cerkl/marketing/content-plan/jira-csv-guidelines.md
+- /Users/travisfoster/claude-code/cerkl/marketing/seo/keyword-strategy.md
 
-(Per PRINCIPLES.md #4, this list is authoritative for this scope. The annual plan `2026-content-plan.md` is **not** a mandatory load — consult it on demand as a suggestion; it goes stale fast and never overrides inputs + SEO status + Travis's call.)
+(Per PRINCIPLES.md #4, this list is authoritative for this scope. `keyword-strategy.md` is what makes the topic conversation SEO-informed — its "How content-plan should consume this" section applies here. The heavy inventory files stay with the Wave 1 brief subagent. The annual plan `2026-content-plan.md` is **not** a mandatory load — consult it on demand as a suggestion; it goes stale fast and never overrides inputs + SEO status + Travis's call.)
 
 ## State model
 
@@ -46,14 +47,15 @@ The top-level conversation is the orchestrator and stays thin. Every unit of wor
 
 1. **Upcoming sweep:** read `inputs.md` § Upcoming — what's due this week / next, what needs rework (delays, launches, deadlines)?
 2. **Brief table:** read the YAML frontmatter of every file in `../seo/briefs/` (skip `_template.md`, `archive/`) and present one table: `slug · status · scheduled_for · pillar`. This is the whole queue view — scheduled, in-progress, and leftovers.
-3. **SEO freshness check:** report the age of (a) the newest `../seo/inventory/webflow-export-*.csv` (date is in the filename) and (b) the last commit touching `../seo/keyword-strategy.md`. **Either >30 days → flag**: cannibalization checks may miss recent posts; suggest a refresh (new Webflow export + `inventory/generate-derived.py`, keyword-strategy review) as a separate task. Don't block the session.
-4. Only if Travis asks: scan a prior week's CSV tokens, or recap what shipped.
+3. **SEO gap read:** from `keyword-strategy.md` (loaded above), present a short candidate list: Tier 1/2 keywords marked 🔴 (no page), the Coverage-gaps section, 🟡 refresh candidates, and any recent Insights implications not yet acted on — **filtered through the editorial stance** (stance-banned items don't count as candidates). Note pillar balance: which of the 5 pillars look thin across the brief table + recent posts.
+4. **SEO freshness check:** report the age of (a) the newest `../seo/inventory/webflow-export-*.csv` (date is in the filename) and (b) keyword-strategy's `Last updated:` line. **Either >30 days → flag**: cannibalization checks may miss recent posts; suggest a refresh (new Webflow export + `inventory/generate-derived.py`, keyword-strategy review) as a separate task. Don't block the session.
+5. Only if Travis asks: scan a prior week's CSV tokens, or recap what shipped.
 
 ## Phase 1 — Decide (the conversation)
 
 Propose a slate for the target week, drawn from (in rough priority): Upcoming items that are due → ideas worth promoting → keyword gaps from `keyword-strategy.md` (Tier 1/2 🔴, coverage gaps, refresh candidates) → already-scheduled briefs. The annual plan is a suggestion if consulted at all.
 
-- **cerkl.com blog(s):** for each, agree **topic + angle + primary keyword + pillar** in chat — this is the brief review, done up front. An existing queued brief can fill a slot; nothing requires one.
+- **cerkl.com blog(s):** for each, agree **topic + angle + primary keyword + pillar** in chat — this is the brief review, done up front. Proposals should tie back to the Phase 0 gap read; a topic with no keyword target is allowed but must be **explicitly tagged "editorial — no SEO target"** (bylines, launch announcements, POV pieces). An existing queued brief can fill a slot; nothing requires one.
 - **ICPro blog:** topic decided here.
 - **LinkedIn wraps:** a menu, not a quota — theme / blog link / poll / carousel; short video is out-of-band.
 - **Anything from Upcoming that's due:** webinar emails, PR, launch coverage.
@@ -121,3 +123,4 @@ Pause anywhere; remaining `[…_PLACEHOLDER]` tokens in the CSV are the resume l
 - **Session-created blogs (launch announcements, bylines) mint their own slug** — no brief to thread from at scaffold time. Fix landed in v2: slug decided in the conversation, `[BRIEF_PENDING]` backfilled after Wave 1.
 - **Epic key had to be guessed.** Pre-fill needs the live Epic key recorded, not just the naming format — now in `jira-csv-guidelines.md` §Epics.
 - What worked: writes held at the pause point; capacity saturation correctly *derived* from Upcoming sketches + ceilings (no capacity ledger needed); the `cerkl-vs-firstup` stray date caught independently by the session and the Upcoming note.
+- **Topic proposals weren't SEO-informed** — the test proposed a brief with no keyword ideas. Root cause: `keyword-strategy.md` wasn't in the session's `Context to load`; the keyword work was deferred to the Wave 1 brief subagent, which is after the topic decision. Fix: keyword-strategy loaded into the conversation; Phase 0 gained the "SEO gap read" (Tier 🔴 / coverage gaps / refresh candidates / unacted Insights, stance-filtered, + pillar balance); every cerkl.com slate item now names its primary keyword + pillar or is tagged "editorial — no SEO target." **Rule:** if a decision is supposed to be informed by a file, that file must be loaded at the decision, not downstream.
