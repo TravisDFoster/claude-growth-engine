@@ -60,7 +60,7 @@ find /Users/travisfoster/claude-code/cerkl/research/ic-trends/daily/ -maxdepth 1
     - `ic-trends-team-updates`: `"Team Update — {date}"`
     - `competitor-marketing-weekly`: `"Week {NN}"` from `YYYY-Www`
     - `competitor-marketing-profiles`: company name (strip trailing date)
-    - `sales-reporting`: `"Week {NN}"` from a single `YYYY-Www`; `"Weeks {NN}–{MM}"` from a `YYYY-Www-Wmm` range. Date = Monday of the **first** ISO week in the label.
+    - `sales-reporting`: `"Week {NN}"` from a single `YYYY-Www`; `"Weeks {NN}–{MM}"` from a `YYYY-Www-Wmm` range. Date = Monday of the **last (ending)** ISO week in the label — a multi-week roll-up sorts by the week it covers *through*, not where it starts, so the newest roll-up surfaces on top.
     - `ic-trends-deepdives`: `"{Source} — {Topic}"` when filename starts with a known source token (`forrester`, `gartner`, `mckinsey`, `ragan`, `oracle`, `workshop`, `prdaily`, `hr-reporter`); otherwise default humanization
   - **url**: file path with `/Users/travisfoster/claude-code` stripped → server-relative path
   - **is_md**: ext is `.md`

@@ -202,7 +202,7 @@ Each category has: `slug`, `label`, `path`, `match`, `home_recent`, `kind` (html
 
   Process: /Users/travisfoster/claude-code/cerkl/sales/sales-reporting/weekly-sales-report-process.md
   ```
-- **notes**: Title override (see process Step 3): `2026-W21` → "Week 21"; range labels like `2026-W19-W22` → "Weeks 19–22". Date is the Monday of the first ISO week. `reports/` holds only dated outputs; the locked `reference-weekly-sales-report.html` lives in the parent folder and is never scanned. Family color: `ops` (shared with HubSpot — revenue/ops grouping).
+- **notes**: Title override (see process Step 3): `2026-W21` → "Week 21"; range labels like `2026-W19-W22` → "Weeks 19–22". Date is the Monday of the **last (ending)** ISO week in the label, so a 4-week roll-up sorts by the week it covers through (e.g. `2026-W21-W24` dates to W24's Monday, surfacing above single-week reports). `reports/` holds only dated outputs; the locked `reference-weekly-sales-report.html` lives in the parent folder and is never scanned. Family color: `ops` (shared with HubSpot — revenue/ops grouping).
 
 > **Note (2026-05-25):** Blog channels (Content Production) and SEO Briefs are now surfaced on the dedicated **[content-dashboard](../content-dashboard/)** — they were removed from this registry to avoid duplication. This dashboard focuses on non-content artifacts (research, audits, IC trends, competitor profiles, leadership reports). The Content Reconcile and This Week's Blog Posts pinned actions remain as quick launchers.
 

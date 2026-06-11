@@ -242,15 +242,15 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-06-01",
-      "stale": true,
+      "last_run": "2026-06-08",
+      "stale": false,
       "new_run_prompt": "Run the weekly sales report.\n\nProcess: /Users/travisfoster/claude-code/cerkl/sales/sales-reporting/weekly-sales-report-process.md",
       "items": [
+        { "title": "Weeks 21–24", "date": "2026-06-08", "url": "/cerkl/sales/sales-reporting/reports/2026-W21-W24.html", "is_md": false },
         { "title": "Week 23", "date": "2026-06-01", "url": "/cerkl/sales/sales-reporting/reports/2026-W23.html", "is_md": false },
         { "title": "Week 22", "date": "2026-05-25", "url": "/cerkl/sales/sales-reporting/reports/2026-W22.html", "is_md": false },
-        { "title": "Weeks 21–24", "date": "2026-05-18", "url": "/cerkl/sales/sales-reporting/reports/2026-W21-W24.html", "is_md": false },
-        { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/sales/sales-reporting/reports/2026-W21.html", "is_md": false },
-        { "title": "Weeks 19–22", "date": "2026-05-04", "url": "/cerkl/sales/sales-reporting/reports/2026-W19-W22.html", "is_md": false }
+        { "title": "Weeks 19–22", "date": "2026-05-25", "url": "/cerkl/sales/sales-reporting/reports/2026-W19-W22.html", "is_md": false },
+        { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/sales/sales-reporting/reports/2026-W21.html", "is_md": false }
       ]
     },
     {
@@ -285,6 +285,6 @@
     { "title": "Daily Recap — 2026-06-10", "date": "2026-06-10", "url": "/cerkl/research/ic-trends/daily/2026-06-10.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
     { "title": "Daily Recap — 2026-06-09", "date": "2026-06-09", "url": "/cerkl/research/ic-trends/daily/2026-06-09.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false },
     { "title": "Week 24", "date": "2026-06-08", "url": "/cerkl/research/competitor-marketing/weekly/2026-W24.html", "cat_label": "Competitor Marketing — Weekly", "cat_slug": "competitor-marketing-weekly", "is_md": false },
-    { "title": "Daily Recap — 2026-06-05", "date": "2026-06-05", "url": "/cerkl/research/ic-trends/daily/2026-06-05.html", "cat_label": "IC Trends — Daily", "cat_slug": "ic-trends-daily", "is_md": false }
+    { "title": "Weeks 21–24", "date": "2026-06-08", "url": "/cerkl/sales/sales-reporting/reports/2026-W21-W24.html", "cat_label": "Sales — Weekly Pipeline", "cat_slug": "sales-reporting", "is_md": false }
   ]
 }
