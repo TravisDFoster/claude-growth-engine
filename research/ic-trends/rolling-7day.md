@@ -6,6 +6,27 @@
 
 ---
 
+## 2026-06-17
+
+1. **HBR: Why employees aren't transparent about their AI usage (trust beats policy for surfacing shadow AI)** — Analyst — https://hbr.org/2026/06/why-employees-arent-transparent-about-their-ai-usage
+2. **Staffbase 2026 VOICES Awards — "trust and adoption" named EX's new differentiators (frontline reach now table stakes)** — Competitor — https://www.globenewswire.com/news-release/2026/06/16/3312692/0/en/Staffbase-announces-2026-global-VOICES-Award-winners-winning-work-points-to-trust-and-adoption-as-employee-experience-s-new-differentiators.html
+3. **HBR: Help employees get better — not just faster — with AI (judgment is the scarce skill)** — Analyst — https://hbr.org/2026/06/help-employees-get-better-not-just-faster-with-ai
+4. **Gallup: managers are the key to engagement — manager engagement fell 27% → 22% (2024→2025)** — Analyst — https://crestcom.com/blog/2026/05/28/managers-are-the-key-to-employee-engagement-in-the-workplace/
+5. **Ipsos Karian & Box publishes the IC Index 2026 (4th edition, ~5,000 UK employees)** — Community — https://ipsoskarianandbox.com/insights/
+6. **Ragan: inside Pinterest's popular employee AMA sessions with executives (weekly exec AMAs via Slido)** — Publication — https://www.ragan.com/a-look-inside-pinterests-popular-employee-ama-sessions-with-executives/
+7. **Ragan: why companies shouldn't encourage employees to become brand ambassadors (forced advocacy backfires)** — Publication — https://www.ragan.com/why-companies-shouldnt-encourage-employees-to-become-brand-ambassadors/
+8. **McKinsey: HR's dual mandate in the AI era** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/hrs-dual-mandate-in-the-ai-era
+
+## 2026-06-15
+
+1. **The "engagement → experience" pivot goes from theme to mandate (Ragan + PR Daily, two pushes)** — Publication — https://www.ragan.com/why-communicators-are-trading-employee-engagement-for-employee-experience/
+2. **Ragan: 9 lessons from building an AI-integrated comms function (NY Life CCO playbook)** — Publication — https://www.ragan.com/9-lessons-from-building-an-ai-integrated-comms-function/
+3. **Ragan: Amazon's AI-leaderboard headache shows why adoption signals matter** — Publication — https://www.ragan.com/amazon-ai-leaderboard-communications/
+4. **Staffbase presses bottom-funnel: "best frontline communication tools in 2026" (vendor-owned conquest SEO)** — Competitor — https://staffbase.com/blog/frontline-communication-tools
+5. **Poppulo, post-Sociabble: "We're the undisputed market leader" (signage + comms + intranet "ECA" convergence)** — Competitor — https://invidis.com/news/2026/06/poppulo-after-sociabble-deal-were-the-undisputed-market-leader/
+6. **Ragan Q&A: an employee experience that isn't "corporate wallpaper" (EVP → lived reality)** — Publication — https://www.ragan.com/employee-value-proposition-lhh/
+7. **IoIC: "AI and the future of the intranet" with Suzie Robinson — intranet shifts from browse to query** — Competitor — https://www.youtube.com/watch?v=qDCyUR6fCqQ
+
 ## 2026-06-10
 
 1. **Forrester launches the EX Index (Total Experience Score) — EX is now graded like CX (37% of 150 US brands score negative)** — Analyst — https://www.forrester.com/blogs/forresters-ex-index-completes-the-total-experience-picture/
@@ -58,27 +79,3 @@
 4. **HBR: "Employees Are Relying on AI for Personal Support. That's Risky."** — Analyst — https://hbr.org/2026/05/employees-are-relying-on-ai-for-personal-support-thats-risky
 5. **McKinsey: State of Organizations 2026 — 75% fail to build high-performance cultures (new cut)** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations
 6. **Ragan webinar pitch: 78% of IC teams use AI but only 9% of frontline employees are very satisfied with comms** — Publication — https://www.ragan.com/store/beyond-ai-hype-what-actually-moves-the-needle-in-internal-communications/
-
-## 2026-06-02
-
-1. **LumApps publishes "The AI Employee Hub" launch video** — Competitor — https://www.youtube.com/watch?v=jOhO2gs6F0o
-2. **Gartner: AI will create more jobs than it eliminates beginning in 2028** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-hr-research-reveals-ai-will-create-more-jobs-than-it-eliminates-beginning-in-2028
-3. **HBR: Leading the Human-AI Organization** — Analyst — https://hbr.org/2026/05/leading-the-human-ai-organization
-4. **Ragan: 3 tactics to protect brand trust when AI is threatening it** — Publication — https://www.ragan.com/3-tactics-to-protect-brand-trust-when-ai-is-threatening-it/
-5. **Forrester: AI will rewrite employee experience — deep listening shows how** — Analyst — https://www.forrester.com/blogs/ai-will-rewrite-employee-experience-deep-listening-shows-how/
-6. **Jenni Field: Navigating the internal-communication identity crisis in 2026** — Community — https://redefiningcomms.com/blog/navigating-the-internal-communication-identity-crisis-in-2026/
-7. **Ragan Consulting: 3 big questions facing communicators in 2026** — Community — https://raganconsulting.com/3-big-questions-facing-internal-communications-in-2026/
-8. **Ragan: Blood Cancer United took a "big risk" trusting employees with its rebrand** — Publication — https://www.ragan.com/blood-cancer-united-took-a-major-risk-trusting-employees-with-its-rebrand-it-paid-off/
-9. **isitworking: 2026 workplace predictions — monitoring/surveillance is the next IC fault line** — Community — https://isitworking.substack.com/p/2026-workplace-predictions-fewer
-10. **Simpplr publishes 2026 Employee Experience Excellence Awards winners** — Competitor — https://www.simpplr.com/blog/winners-of-employee-experience-excellence-awards/
-
-## 2026-06-01
-
-1. **ContactMonkey ships Approval Workflows + teases natural-language campaign analytics (same day)** — Competitor — https://www.contactmonkey.com/blog/approval-workflows
-2. **Mt. Sinai's ECCC playbook for reaching deskless workers** — Publication — https://www.ragan.com/ragan-insider-eccc2026-mt-sinai-deskless/
-3. **Gartner: AI layoffs create budget room but no ROI** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-05-gartner-says-autonomous-business-and-artificial-intelligence-layoffs-may-create-budget-room-but-do-not-deliver-returns
-4. **Firstup: 2026 IC Engagement Research — up to 75% miss critical updates** — Competitor — https://firstup.io/blog/internal-communications-failure-2026-research/
-5. **Ragan: How communicators can productively say no to message requests** — Publication — https://www.ragan.com/internal-communications-how-to-say-no-requests/
-6. **IC Index 2026 (Ipsos Karian / IoIC): UK "excellent" comms rating drops 9 points YoY** — Community — https://isitworking.substack.com/p/latest-ic-research-is-a-reality-check
-7. **PR Daily: 5 ways the Clinton Foundation is reclaiming trust in an age of attack** — Publication — https://www.prdaily.com/5-ways-the-clinton-foundation-is-reclaiming-trust-in-an-age-of-attack/
-8. **Staffbase × Haver & Boecker: 5-year frontline app case study** — Competitor — https://www.youtube.com/watch?v=hXC3TmehE0Y

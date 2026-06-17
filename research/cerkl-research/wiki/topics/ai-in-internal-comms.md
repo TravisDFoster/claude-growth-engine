@@ -38,6 +38,8 @@ The third story's practical consequence: **practitioners are AI-anxious, not AI-
 
 **June 2026 addition — the adoption-mechanism finding.** [[gallup-engagement-strategies-2026]] introduces the first quantitative IC-side data point on what actually moves AI adoption: employees whose managers actively support AI use are **2.1x more likely to use AI a few times a week or more**. Same source pins the rollout-comms gap empirically — only **26% of employees** say their organization has communicated a clear plan for integrating AI, which is the IC-side measurement of Gartner's qualitatively-framed [[enablement-illusion]] / [[shadow-ai-comms-problem]] chain. Concept page at [[manager-as-ai-champion]] captures the mechanism. The finding has two cross-cuts: (a) it pulls evidence onto the *enable* side of [[route-around-vs-enable]] for the AI-rollout use case specifically (without overturning the broader cascade-is-broken finding) and (b) it reframes the lever from platform-AI features to manager-modeling visibility — putting Cerkl's read-attribution surface closer to the adoption-mechanism story than any vendor platform-AI suite.
 
+**June 2026 addition — the practitioner operating-model frame (the "how," not the "whether").** [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] gives the vault its strongest in-house account of *operationalizing* AI in an IC function: [[paul-gennaro]] (CCO, [[new-york-life]]) maps 22 months of integration against [[institute-for-public-relations|IPR]]'s nine-item adoption checklist ([[ai-integrated-comms-function]]). Two cross-links matter. (1) **The change-narrative gap now has two independent pins:** IPR's **37%** of orgs with a clear AI change story sits right beside Gallup's **26%** with a clear AI plan — converging evidence that ~a quarter-to-a-third of orgs have done the rollout comms. (2) **It's the constructive answer to [[ai-anxious-buyer]]:** structured, human-centric, leadership-modeled adoption reports *78% higher job satisfaction because of AI* — anxiety converted to agency by the operating model, not the tool. Separately, [[ragan-engagement-to-experience-2026-06-11]] ([[interact]]) adds the supply-side reframe — "we don't have a content problem anymore," so the comms leader becomes the **steward of institutional knowledge** that makes the org AI-ready ([[comms-as-knowledge-steward]]). Both reinforce the topic's spine: in 2026 the AI question for IC has moved from *whether* to adopt to *how the function operates and what knowledge it governs*.
+
 The AI-feature categories that [[forrester]] explicitly evaluates remain the 2026 buyer checklist for intranet platforms:
 
 - AI-enabled search
@@ -66,6 +68,10 @@ The AI-feature categories that [[forrester]] explicitly evaluates remain the 202
 - [[peter-cardon]] / [[anthony-coman]] / [[linjuan-rita-men]] — academic anchors
 - [[simpplr]] — vendor + survey source (2026 State of IC, n=448; ironic data-vs-positioning gap)
 - [[eric-lamarre]] / [[kate-smaje]] / [[rob-levin]] — McKinsey Senior Partners; *Rewired 2.0* authors
+- [[paul-gennaro]] / [[new-york-life]] — practitioner-tier operating-model proof case (AI-integrated comms function)
+- [[institute-for-public-relations]] — research-tier source of the nine-item AI-adoption checklist (37% change-narrative stat)
+- [[samantha-stark]] / [[phyusion]] — conduit for the IPR research
+- [[interact]] / [[daren-jennings]] — vendor voice for the knowledge-steward / trusted-action frame
 - [[bcg]] / [[julia-dhar]] — adjacent transformation-consulting frame (behavioral-design)
 - [[bain]] — adjacent operating-model redesign frame; AI-rationale-drops-understanding finding
 - [[deloitte]] — counter-narrative; 2026 Human Capital Trends ("Human Advantage" / adaptability)
@@ -90,6 +96,8 @@ The AI-feature categories that [[forrester]] explicitly evaluates remain the 202
 - [[human-agentic-collaboration]] — *Rewired 2.0* Lever #4; most comms-adjacent
 - [[n-2-n-3-leader-development]] — *Rewired 2.0* Lever #1
 - [[manager-as-ai-champion]] — Gallup-anchored 2.1x mechanism; pulls evidence onto enable side of [[route-around-vs-enable]] for AI rollout
+- [[ai-integrated-comms-function]] — practitioner operating-model (IPR nine-item checklist + NY Life proof); the "how" layer
+- [[comms-as-knowledge-steward]] — supply-side reframe: IC governs the knowledge AI draws on
 
 ## Practitioner Voices
 
@@ -115,6 +123,8 @@ The AI-feature categories that [[forrester]] explicitly evaluates remain the 202
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | *Rewired 2.0* + talent-transformation thesis; 4 levers (N-2/N-3 + 70-30 flips + workplace + human-agentic); Lever #4 "emotional work" quote; hypocrisy critique |
 | [[ragan-gartner-2026-comms-predictions-2025-10-09]] | 2025-10-09 | Whittle/Gartner change-leadership three-step framework for AI-rollout comms; analyst-tier prescriptive pair to Poitevin/Gartner's diagnostic frames |
 | [[gallup-engagement-strategies-2026]] | 2026-05 | 2.1x manager-AI-support → weekly+ usage; 26% with clear AI plan; first IC-side quantitative pin on [[manager-as-ai-champion]] mechanism |
+| [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] | 2026-06-11 | Practitioner operating-model ([[ai-integrated-comms-function]]); IPR nine-item checklist + NY Life proof; 37% change-narrative gap (twin of Gallup's 26%); AI→agency answer to [[ai-anxious-buyer]] |
+| [[ragan-engagement-to-experience-2026-06-11]] | 2026-06-11 | Knowledge-steward / "trusted action" reframe ([[comms-as-knowledge-steward]]); "content problem is solved" thesis (Interact, vendor-tier) |
 
 ## Open Questions
 

@@ -1,0 +1,115 @@
+Work Item ID,Issue Type,Parent ID,Epic Link,Summary,Description,Owner,Channel,Start Date,Due Date
+T001,Task,,MCM-992,Content - Blog (Cerkl.com) - Insights Update Launch Announcement,"Topic: Insights Update — product launch announcement (new Insights analytics capability). Launch-coverage post for the 2026-06-20 release. Source drafts: Inner Cerkl News Google Doc (https://docs.google.com/document/d/1bCBRhRr_i8muLylzVsP12_884SHnW1pRAsjpOBloHro/edit).
+Slug: cerkl-insights-update
+Brief link: editorial — no SEO target (launch announcement; no brief)
+Primary keyword: editorial — no SEO target
+Webflow CMS properties:
+  - Primary Category: internal-communications-measurement
+  - Primary Solution: Foundations
+  - All Categories: Internal Communications Measurement, Internal Communication Strategy
+Draft (Google Doc): https://docs.google.com/document/d/1-TaXbPodDv7La8jDpgx1hN3paQhG4ofcePg2mMOn560/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-22
+S001,Subtask,T001,,Blog – Copy,Write the launch announcement copy from the Inner Cerkl News source drafts.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-18
+S002,Subtask,T001,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-17,2026-06-19
+S003,Subtask,T001,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-19,2026-06-20
+S004,Subtask,T001,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-20,2026-06-22
+T002,Task,,MCM-992,Content - Blog (ICP) - Reaching Every Employee: A Practical Channel Mix,"Topic: Reaching every employee — a practical channel mix for internal comms (deskless / multi-channel reach).
+Slug: reaching-every-employee-practical-channel-mix
+Note: ICPro has no brief queue — slug is synthesized from the deliverable title at scaffold time
+Draft (Google Doc): https://docs.google.com/document/d/1edUSyYaZSbK1avwYu09Vck-XiWIy2bBkxU83O1rB0i0/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-23
+S005,Subtask,T002,,Blog – Copy,Write the blog post copy from the outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-18
+S006,Subtask,T002,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-18,2026-06-20
+S007,Subtask,T002,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-22,2026-06-22
+S008,Subtask,T002,,Blog – Implementation / Publishing,Stage in Wix with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-22,2026-06-23
+T003,Task,,MCM-992,Marketing Email - Email - Insights Update Launch Blast,"Topic: Insights Update launch — Email Blast announcing the new Insights analytics capability to the subscriber base. Source drafts: Inner Cerkl News Google Doc.
+Draft (Google Doc): https://docs.google.com/document/d/1n19sPSt9b903wxG5XdpxGi4d6iBOqL8RwiJ8071Tq1s/edit",62bb263d268cac6e31c40941,Marketing Emails,2026-06-17,2026-06-23
+S009,Subtask,T003,,Email – Copy,Draft the email blast copy from the launch source drafts.,62bb263d268cac6e31c40941,Marketing Emails,2026-06-17,2026-06-19
+S010,Subtask,T003,,Email – Audience Segmentation,Define and build the send audience.,62bb263d268cac6e31c40941,Marketing Emails,2026-06-19,2026-06-22
+S011,Subtask,T003,,Email – Review,Review copy + audience; sign off for send.,62bb263d268cac6e31c40941,Marketing Emails,2026-06-22,2026-06-23
+S012,Subtask,T003,,Email – Schedule Send,Schedule the blast for the publish date.,62bb263d268cac6e31c40941,Marketing Emails,2026-06-23,2026-06-23
+T004,Task,,MCM-992,Social Media - LinkedIn - Insights Update Launch (Theme),"Topic: Insights Update launch — theme post on what the new Insights capability means for IC teams (read-attribution / measurement story).
+Post type: static-theme
+Wraps: cerkl-insights-update
+Copy:
+Someone asks how the all-staff update performed. How long does it take you to answer?
+
+For a lot of internal comms teams, the honest answer is ""longer than it should."" You send the message, then dig through a reporting tool that was never built for a quick answer, clicking layers deep for the one number leadership wanted.
+
+Insights changes that. It is a ground-up rebuild of the analytics inside Cerkl Broadcast, live for every Broadcast customer as of June 20, 2026.
+
+The part that matters most for measurement: context. A 22% open rate on its own tells you nothing. Insights compares every rate against your own organization's average from the last 18 months, so you can see whether you landed above or below where your audience normally does. That is the difference between a metric and an insight.
+
+You also get clearer visuals, faster load times, drill-down from a high-level summary to a single subscriber's click history, channel-level and News Digest reporting, and dashboards you can hand to a stakeholder without exporting a thing.
+
+Communicators are measured on outcomes but rarely given time to be analysts. Insights closes that gap.
+
+What's the one question about your comms you've been meaning to answer?
+
+Link in comments ↓
+
+[ASSET — Stat card] Stat: 18 months | Supporting: ""Every rate, compared to your own running average."" | Takeaway: ""That's the difference between a metric and an insight."" | Source: Cerkl Insights | Cerkl brand colors, one large numeral, logo bottom corner, mobile-legible.
+
+#InternalCommunications #EmployeeEngagement #ICMeasurement
+
+Asset: https://www.canva.com/design/DAHMo8SSw9o/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-19,2026-06-23
+S013,Subtask,T004,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-19,2026-06-20
+S014,Subtask,T004,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-20,2026-06-22
+S015,Subtask,T004,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-22,2026-06-23
+S016,Subtask,T004,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-23,2026-06-23
+T005,Task,,MCM-992,Content - Blog (Cerkl.com) - 7 Best Free Employee Newsletter Tools,"Topic: 7 Best Free Employee Newsletter Tools for 2026 (No Trial, No Card, No Catch) — Foundations-free push.
+Slug: best-free-employee-newsletter-tools
+Brief link: ../seo/briefs/best-free-employee-newsletter-tools.md
+Primary keyword: best free employee newsletter tool
+Secondary keywords: free internal newsletter software, free employee newsletter platform, free newsletter app for work, no-cost newsletter tools
+Webflow CMS properties:
+  - Primary Category: employee-email
+  - Primary Solution: Foundations
+  - All Categories: Free/Foundations
+Draft (Google Doc): https://docs.google.com/document/d/1VV9GrtGCKDSgOXMen0kwtfVRXqTkTBMB5dp_ImOFcOU/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-24
+S017,Subtask,T005,,Blog – Copy,Write the blog post copy from the brief.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-16,2026-06-19
+S018,Subtask,T005,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-19,2026-06-22
+S019,Subtask,T005,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-22,2026-06-23
+S020,Subtask,T005,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-23,2026-06-24
+T006,Task,,MCM-992,Social Media - LinkedIn - Insights Update Launch (Blog Link),"Topic: Insights Update launch — drive-to-blog post linking the launch announcement.
+Post type: static-blog
+Wraps: cerkl-insights-update
+Copy:
+You send the all-staff update, the benefits reminder, the policy change legal needs everyone to read. Then someone asks how it performed, and the honest answer depends on how much patience you have for digging.
+
+Insights, now live in Broadcast for every customer, rebuilds the analytics around the three things you actually do with your data: see it, navigate it, and share it. Clearer visuals, faster pages, breadcrumbs so you never lose your place drilling from a summary down to a single subscriber's clicks.
+
+The piece that turns a number into a decision: every rate is compared against your organization's own 18-month average. A 22% open rate stops floating in space. You see whether it sits above or below where your audience normally lands.
+
+Core email and content analytics are available on every plan, including free Foundations.
+
+Full breakdown:
+
+https://cerkl.com/blog/cerkl-insights-update | Asset: link card auto-rendered by LinkedIn from the blog OG image — no Canva render. | #InternalCommunications #EmployeeEngagement #HRTech",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-20,2026-06-24
+S021,Subtask,T006,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-20,2026-06-22
+S022,Subtask,T006,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-22,2026-06-23
+S023,Subtask,T006,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-23,2026-06-24
+S024,Subtask,T006,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-24,2026-06-24
+T007,Task,,MCM-992,Social Media - LinkedIn - Short Video (out-of-band),"Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-24,2026-06-25
+T008,Task,,MCM-992,Social Media - LinkedIn - Insights Update Launch (Carousel),"Topic: Insights Update launch — carousel walking IC teams through the redesigned Broadcast analytics (what changed, why it matters for measurement). Wraps the launch announcement blog.
+Post type: carousel
+Wraps: cerkl-insights-update
+Copy:
+Measuring internal comms used to mean clicking three layers deep and losing your place before you found the number leadership asked for.
+
+Insights is now live for every Broadcast customer. Five changes that make measurement faster. ↓
+
+[Slide 1 — Cover] Insights is here: 5 changes to Broadcast analytics / A ground-up rebuild, live for every Broadcast customer June 20.
+[Slide 2 — See it, don't dig for it] Performance now reads as a picture before you read it as a number. A wider range of visuals surfaces trends, comparisons, and outliers at a glance. Want raw detail? Customizable tables let you add, remove, and rearrange columns, then export. Why it matters: a quick visual read and a full data export on the same screen.
+[Slide 3 — Navigation that gets out of your way] Insights reworked navigation from the ground up: breadcrumbs show where you are, pathways stay consistent. Load times are faster too. Why it matters: you retrace your steps instead of starting over.
+[Slide 4 — From the big picture to a single click] Start at a summary, then drill into email and Blast engagement, content by channel, and audience detail down to one person and one message. Why it matters: you are never stuck at the altitude the tool decided for you.
+[Slide 5 — Every rate, compared to your own norm] Insights compares current performance against your org's own 18-month average. Why it matters: the difference between a metric and an insight you can act on.
+[Slide 6 — Dashboards you can actually share] Build custom dashboards, then decide who sees them. Admins get full visibility, team members share selectively, permissions adjust as needs change. Why it matters: reporting moves from your screen into the leadership conversation.
+[Slide 7 — CTA] Insights is live for every Broadcast customer now. Full walkthrough in our latest post → Link in comments.
+
+#InternalCommunications #EmployeeEngagement #HRTech
+
+Asset: https://www.canva.com/design/DAHMo7i3Ssk/edit
+Manual finish: clean up in Canva before publish — remove EXAMPLE/DELETE tags, hide 2 spare pages (p2-p3), fix '#1'-'#5' number tags (p4-p8), clear leftover Lorem-ipsum + confirm button on CTA page (p9), add cover subhead.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-22,2026-06-26
+S025,Subtask,T008,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-22,2026-06-23
+S026,Subtask,T008,,LinkedIn – Asset Creation,Create the carousel slides per the asset spec.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-23,2026-06-24
+S027,Subtask,T008,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-25,2026-06-26
+S028,Subtask,T008,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-26,2026-06-26

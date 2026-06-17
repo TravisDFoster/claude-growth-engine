@@ -1,60 +1,48 @@
-# Shadow AI Is a Content Problem (Not a Governance Problem)
+# Shadow AI in Internal Communications: A Content Problem, Not a Governance Problem
 
-I have been watching three of the largest internal communications vendors spend the last two weeks rotating the same headline through their ad creative. The wording barely changes. "Our employees are already using AI tools we haven't approved." "Cut shadow AI, reduce complexity." "Three strategies to stop shadow AI without killing productivity." The stat that keeps showing up is 79% of organizations suspect employees are misusing approved AI tools.
+Shadow AI is the use of generative AI tools that employees adopt on their own, without formal approval from their employer. In internal communications, it shows up as a quiet pattern: an employee needs a company answer, cannot find it fast enough through official channels, and asks ChatGPT instead. Much of the current vendor conversation treats this as a governance problem to be solved with approval lists, audits, and content controls. That framing misses where the problem actually lives.
 
-Every one of those pitches lands on the same recommendation. Governance. Approve a list. Audit the inputs. Block the outputs. Stand up a control panel.
+Shadow AI in internal communications is a distribution problem, not a security one. Employees reach for an outside AI tool because the sanctioned channel did not deliver the answer when they needed it. That is a content and distribution gap, and it sits in the lane internal communications already owns. The fix is not a control panel. It is a channel employees trust enough to check first.
 
-It is the cleanest IT pitch the category has run in years. It is also the wrong answer to the problem most of the people reading this own.
+## Why employees use shadow AI instead of the sanctioned channel
 
-I run marketing and growth ops at Cerkl, which is internal comms software. So I am not pretending I do not have a horse in this race. But the horse I am riding is the unflattering one: the reason employees go to ChatGPT for the company answer is that the company answer never showed up in a channel they read. That is a content and distribution problem. It is the lane internal comms already owns. And the vendors selling governance are quietly conceding it by pitching past you to your IT counterpart.
+The behavior is rarely a discipline problem. It is a speed-and-relevance problem.
 
-## Why employees go to ChatGPT for the answer that should have come from you
+Picture a common moment. An employee has a few minutes between meetings and needs to know whether the new PTO policy applies to contractors, or when HSA enrollment closes. The all-company email from two weeks ago is buried in the inbox. Intranet search returns an outdated policy and a broken link. So the employee opens a tab that is already there and asks the model, and the answer arrives in seconds.
 
-The behavior is not a security failure. It is a distribution failure.
+That is the moment the sanctioned channel has to win, and it loses whenever the alternative is faster and more useful for the task at hand. Labeling the behavior as misuse or unapproved access describes how it looks to a security team. It does not describe what happened. A person needed an answer quickly and found one in the channel that worked. If the official channel had worked, the model would not have been the first place that person looked.
 
-Picture the actual moment. Someone has thirty seconds between meetings and needs to know whether the new PTO policy applies to contractors, when the HSA enrollment closes, what the company line is on the layoff at the competitor down the street, or whether the office is closed for Juneteenth. They reach for the fastest path to a real-sounding answer. The internal email from two weeks ago is buried under nine other emails from two weeks ago. The intranet search returns a 2022 policy and a broken link. So they open a tab they already have open and ask the model.
+## Why governance is the wrong frame for internal communications
 
-That is the moment your governance policy needs to win, and it loses every time. Not because employees are sneaking around. Because the alternative is genuinely worse for the job they are trying to do.
+Much of the 2026 vendor messaging around shadow AI leads with governance: approve a list of tools, audit the inputs, restrict the outputs, stand up a control workflow. Read with the buyer in mind, that pitch is written for IT. It describes someone with approval authority over software, a security posture to defend, and a budget line for control tooling. The outcome it produces is an enterprise procurement cycle for an AI approval system.
 
-The category is selling you the security framing of that behavior. "Misuse." "Unapproved." "Shadow." Those words make IT nod. They do not describe what is happening. What is happening is a person who needed an answer fast and found one in the channel that worked. If the sanctioned channel had worked, the model would not have been the first place they looked.
+That buyer does not own internal communications. The IC director, the head of people, the chief of staff, and the operations lead at a mid-sized company work from a different mandate: get the right message to the right employee on the channel that employee actually reads. None of them have the authority to police what employees type into a browser, and a control panel does not help them do that job.
 
-## Governance is what the category sells when it cannot sell reach
+The statistic that anchors much of this messaging is that roughly 79% of organizations suspect employees are misusing AI tools. It is meant to read as alarming. Read another way, it is evidence of a channel problem. If four in five organizations believe employees are turning to AI tools for work answers, the issue is less about employee discipline and more about whether those organizations have given employees a faster, more relevant channel than a chatbot.
 
-Read the new ad creative again with the buyer in mind.
+## Make the sanctioned channel the first place employees look
 
-The buyer the copy is describing is the head of IT, the CISO, the chief data officer. It is the title that has approval authority on tools, a security posture to defend, and a budget for control software. That is the title the pitch lands on. The deal it produces is an enterprise procurement cycle to stand up an AI approval workflow.
+The durable fix for shadow AI is not to block and restrict. It is to build a sanctioned channel that answers the question before an employee thinks to ask a chatbot. In practice, that comes down to three capabilities.
 
-That title is not who owns internal communications. The IC director, the head of people, the chief of staff, the operations lead at a 600-person company. None of those people have a mandate to police what employees type into a browser. None of them want one. They have a mandate to make sure the right message reaches the right person on the channel that person reads. They are being sold a problem they cannot fix with a tool they cannot buy.
+The first is targeting: the message reaches the specific employees who need it, not the entire company. The second is delivery where employees already are, whether that is the inbox, a Microsoft Teams feed, or a mobile app, rather than a portal they have to remember to visit. The third is measurement: the comms team can see, after the send, who actually read the message. None of this requires AI governance. All of it requires treating internal communications as a distribution discipline with real measurement, not a publishing chore.
 
-The 79% number is the giveaway. It is supposed to land as alarming. To me it lands as the opposite. If four in five organizations think employees are misusing AI tools, the problem is not employee discipline. The problem is that those organizations have not given their employees a faster, more relevant, more trusted channel than a chatbot. Misuse is what the channel calls it when the channel is losing.
+The uncomfortable version is worth saying plainly. If the sanctioned channel is a six-thousand-word all-hands newsletter that few people open, employees will keep asking an AI tool for the deadline. The model is not taking the conversation. The channel is losing it.
 
-## The reframe: make the sanctioned channel the first place people look
+## Three moves to reduce shadow AI this quarter
 
-The fix is not block and restrict. The fix is to build the channel employees go to first because it answers the question.
+Closing the gap does not require new software or a steering committee. Three moves get most of the way there.
 
-In plain terms, that means three things. The message reaches the right person, not the whole company. It arrives in the place they already are: their inbox, their Teams feed, their phone. And you can tell, after the fact, who read it, so the next message gets sharper instead of getting longer. None of that requires AI governance. All of it requires that internal comms is treated as a distribution discipline with real measurement, not a publishing chore.
+Start by finding the questions employees keep asking AI tools. The help desk knows them. Manager Slack channels know them. The HR inbox knows them. There is usually a short list of recurring questions that should have been answered in a message and were not. Write down the top five.
 
-The honest version of this argument is uncomfortable. If your sanctioned channel is a six-thousand-word all-hands newsletter that nobody opens, your employees will keep asking ChatGPT for the deadline. The model is not stealing the conversation. You are losing it. The fix is the channel, not the chatbot policy.
+Next, take the top three and rewrite them as targeted sends to the people who need each one, rather than company-wide blasts. The PTO policy update goes to managers first. The benefits-enrollment reminder goes to the cohort that has not enrolled. The product or competitor news goes to client-facing teams. Each message should be short, written for its reader, and sent on the channel that reader already checks.
 
-I have watched enough IC teams ship the same all-hands newsletter for ten years and then call it a culture problem when nobody reads it. It is not a culture problem. It is a content and targeting problem, and you can move it inside one quarter without IT signing anything.
+Finally, measure who read them. A team that cannot tell which message landed cannot tell which channel is winning. An AI tool wins today because it answers the question. A sanctioned message wins when the right person reads it, and that claim needs a number behind it.
 
-## What to do this quarter without buying a control panel
+## How Cerkl Broadcast Foundations helps
 
-Three moves. No procurement, no implementation, no quarterly steering committee.
+Reducing shadow AI comes down to a sanctioned channel that is targeted, delivered where employees already are, and measurable. Cerkl Broadcast's [Foundations plan](https://cerkl.com/broadcast/foundations) is free and covers exactly that ground. A comms team can stand up a sanctioned channel segmented by role, delivered into the inbox employees already use, with read-rate measurement on every send, in an afternoon and without an IT ticket.
 
-First, find the questions employees keep asking AI tools. Your help desk knows. Your manager Slack channels know. Your HR inbox knows. There is a short list of recurring questions that should have been answered in a message, and were not, and the proof is that people went outside to find the answer. Write down the top five.
-
-Second, pick the top three and write them as targeted sends to the people who actually need each one. Not company-wide. The new PTO policy goes to managers first, with a sharper version for individual contributors. The benefits deadline goes to the cohort that has not enrolled. The competitor news goes to client-facing teams. Targeted, short, written for the reader, sent on the channel they read on. This is the work. It is not glamorous and it does not need new software to do once.
-
-Third, measure who read them. If you cannot tell which message landed, you cannot tell which channel is winning. The reason the AI tool wins right now is that it answers the question. The reason your message wins is that the right person reads it. You cannot claim the second without a number.
-
-## Where Foundations fits
-
-This is the part where I am supposed to sell you something, so let me be quick about it. Cerkl's [Foundations plan](https://cerkl.com/broadcast/foundations) is free. You can stand up a sanctioned channel, segmented by role, sent into the inbox your employees already use, with read-rate measurement on every send, in an afternoon. No IT ticket. No procurement. No annual contract.
-
-I am not pretending that solves AI governance. It does not. I am saying that the problem the category is selling governance against is mostly not a governance problem. It is a reach problem. The vendors leading with shadow AI in ad creative are answering the wrong question. The right question is why the employee did not come to you first. The answer is almost always the channel. Fix the channel. The governance debate will be smaller than the category is telling you it is.
-
----
+Foundations does not solve AI governance, and it is not meant to. The behavior driving most shadow-AI concern is a reach problem, not a governance one. The more useful question is why the employee did not come to the sanctioned channel first, and the answer is almost always the channel itself. Fix the channel, and the governance debate gets a lot smaller.
 
 ## Frequently Asked Questions
 
@@ -64,19 +52,19 @@ Shadow AI is the use of generative AI tools by employees that have not been form
 
 ### Why is internal communications software being sold against shadow AI in 2026?
 
-Three of the largest enterprise internal communications vendors are now running ad creative that leads with shadow-AI pain. All three pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. The framing positions IT as the co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier.
+Several large enterprise internal communications vendors are now running messaging that leads with shadow-AI pain, and most of them pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. That framing positions IT as a co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier.
 
 ### Is shadow AI an internal communications problem or an IT problem?
 
-Both, but the IT framing is being oversold. The reason employees default to outside AI tools for work questions is that the sanctioned channels are not landing with them. Slow newsletters, broken intranet search, and untargeted org-wide sends all push people toward a faster external answer. That is a content and distribution problem, which is internal communications' lane. Governance can audit the behavior. It cannot change the behavior. Only a better sanctioned channel changes the behavior.
+Both, but the IT framing is being oversold. The reason employees default to outside AI tools for work questions is that the sanctioned channels are not landing with them. Slow newsletters, broken intranet search, and untargeted org-wide sends all push people toward a faster external answer. That is a content and distribution problem, which is internal communications' lane. Governance can audit the behavior. It cannot change it. Only a better sanctioned channel can.
 
 ### How does internal communications software help with shadow AI?
 
-A modern internal comms platform helps in three concrete ways. It segments the audience so the right message reaches the right person instead of everyone. It publishes into the channels employees already read, including email, Microsoft Teams, mobile, and SharePoint. And it measures read rates per send so the comms team can tell which messages are landing and which need to be rewritten or re-sent. Together, those three capabilities make the sanctioned channel faster and more relevant than an outside AI tool for company-specific questions.
+A modern internal comms platform helps in three concrete ways. It segments the audience so the right message reaches the right person instead of everyone. It publishes into the channels employees already read, including email, Microsoft Teams, mobile, and SharePoint. And it measures read rates per send, so the comms team can tell which messages are landing and which need to be rewritten or re-sent. Together, those three capabilities make the sanctioned channel faster and more relevant than an outside AI tool for company-specific questions.
 
-### Can a free internal communications tool actually fix this?
+### Can a free internal communications tool fix this?
 
-For a large share of organizations, yes. Cerkl's Foundations plan is free forever, supports segmentation and read-rate analytics out of the box, and can be set up in an afternoon without IT involvement. The point is not that free tooling solves AI governance. The point is that the underlying behavior (employees defaulting to outside AI tools because the internal channel is failing them) is fixable without an enterprise procurement cycle.
+For a large share of organizations, yes. Cerkl's Foundations plan is free forever, supports segmentation and read-rate analytics out of the box, and can be set up in an afternoon without IT involvement. The point is not that free tooling solves AI governance. The point is that the underlying behavior, employees defaulting to outside AI tools because the internal channel is failing them, is fixable without an enterprise procurement cycle.
 
 ## FAQ Schema
 
@@ -101,7 +89,7 @@ Paste this JSON-LD block into the Webflow custom-code area for the post head.
       "name": "Why is internal communications software being sold against shadow AI in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three of the largest enterprise internal communications vendors are now running ad creative that leads with shadow-AI pain. All three pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. The framing positions IT as the co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier."
+        "text": "Several large enterprise internal communications vendors are now running messaging that leads with shadow-AI pain, and most of them pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. That framing positions IT as a co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier."
       }
     },
     {
@@ -109,7 +97,7 @@ Paste this JSON-LD block into the Webflow custom-code area for the post head.
       "name": "Is shadow AI an internal communications problem or an IT problem?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both, but the IT framing is being oversold. The reason employees default to outside AI tools for work questions is that the sanctioned channels are not landing with them. Slow newsletters, broken intranet search, and untargeted org-wide sends all push people toward a faster external answer. That is a content and distribution problem, which is internal communications' lane. Governance can audit the behavior. It cannot change the behavior. Only a better sanctioned channel changes the behavior."
+        "text": "Both, but the IT framing is being oversold. The reason employees default to outside AI tools for work questions is that the sanctioned channels are not landing with them. Slow newsletters, broken intranet search, and untargeted org-wide sends all push people toward a faster external answer. That is a content and distribution problem, which is internal communications' lane. Governance can audit the behavior. It cannot change it. Only a better sanctioned channel can."
       }
     },
     {
@@ -117,15 +105,15 @@ Paste this JSON-LD block into the Webflow custom-code area for the post head.
       "name": "How does internal communications software help with shadow AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A modern internal comms platform helps in three concrete ways. It segments the audience so the right message reaches the right person instead of everyone. It publishes into the channels employees already read, including email, Microsoft Teams, mobile, and SharePoint. And it measures read rates per send so the comms team can tell which messages are landing and which need to be rewritten or re-sent. Together, those three capabilities make the sanctioned channel faster and more relevant than an outside AI tool for company-specific questions."
+        "text": "A modern internal comms platform helps in three concrete ways. It segments the audience so the right message reaches the right person instead of everyone. It publishes into the channels employees already read, including email, Microsoft Teams, mobile, and SharePoint. And it measures read rates per send, so the comms team can tell which messages are landing and which need to be rewritten or re-sent. Together, those three capabilities make the sanctioned channel faster and more relevant than an outside AI tool for company-specific questions."
       }
     },
     {
       "@type": "Question",
-      "name": "Can a free internal communications tool actually fix this?",
+      "name": "Can a free internal communications tool fix this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For a large share of organizations, yes. Cerkl's Foundations plan is free forever, supports segmentation and read-rate analytics out of the box, and can be set up in an afternoon without IT involvement. The point is not that free tooling solves AI governance. The point is that the underlying behavior (employees defaulting to outside AI tools because the internal channel is failing them) is fixable without an enterprise procurement cycle."
+        "text": "For a large share of organizations, yes. Cerkl's Foundations plan is free forever, supports segmentation and read-rate analytics out of the box, and can be set up in an afternoon without IT involvement. The point is not that free tooling solves AI governance. The point is that the underlying behavior, employees defaulting to outside AI tools because the internal channel is failing them, is fixable without an enterprise procurement cycle."
       }
     }
   ]

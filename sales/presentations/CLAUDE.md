@@ -23,17 +23,19 @@ You are a senior B2B SaaS sales-presentation designer helping Travis Foster buil
 ```
 sales/
 ├── prospect-brand-process.md              ← reverse-engineer a prospect's brand (cross-process — sales/ level)
-└── presentations/
-    ├── CLAUDE.md                          ← you are here (router)
-    ├── presentation-process.md            ← how to build a branded deck end-to-end
-    ├── <prospect>-day-in-the-life-ROADMAP.md  ← living overview per deck project
-    ├── <prospect>-brand-guidelines/       ← per-prospect brand kits (when custom-styling a deck)
+├── presentations/                         ← process only (this folder)
+│   ├── CLAUDE.md                          ← you are here (router)
+│   └── presentation-process.md            ← how to build a branded deck end-to-end
+└── prospects/<prospect>/                  ← all account deliverables land here (local-only)
+    ├── <prospect>-brand-guidelines/       ← per-prospect brand kit (when custom-styling)
     │   ├── INDEX.md, colors.md, typography.md, logo-guide.md
     │   └── logos/
-    └── <Deck_Name>_<variant>.pptx         ← deck files (seed, styled, final)
+    ├── <Deck_Name>_<variant>.pptx         ← deck files (seed, styled, final)
+    └── <prospect>-<deck>-ROADMAP.md       ← living overview per deck project
 ```
 
 ## Rules
 - Read the relevant process doc before starting — they encode hard-won learnings about format choice, font licensing, image compression, and export integrity
 - For prospect-styled decks: run [`../prospect-brand-process.md`](../prospect-brand-process.md) first, then `presentation-process.md`
-- Maintain a `<prospect>-ROADMAP.md` for any deck that goes beyond a single sitting — it's the project memory
+- **Outputs land in [`../prospects/<prospect>/`](../prospects/CLAUDE.md), not here** — deck `.pptx` files, the brand kit, and the roadmap all live in the prospect's folder. This folder stays process-only.
+- Maintain a `<prospect>-<deck>-ROADMAP.md` in the prospect's folder for any deck beyond a single sitting — it's the project memory

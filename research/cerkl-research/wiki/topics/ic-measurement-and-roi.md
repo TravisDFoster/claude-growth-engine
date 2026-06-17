@@ -27,6 +27,8 @@ Benchmark sources for IC measurement stratify by authority tier:
 
 For blog citation discipline: anchor headline stats with primary-research where possible. Use practitioner-survey or vendor-tier benchmarks for channel-specific numbers (email open rates, channel-effectiveness ratings) with the source and methodology explicitly named. Cross-vendor numbers measuring different denominators are not contradictory and shouldn't be presented as such (see [[ai-in-internal-comms]] for an example: 49% vendor-AI adoption (Forrester) vs 73% weekly+ AI use (Workshop)).
 
+**June 2026 — the measurers-vs-builders rebuttal gets practitioner evidence, and "behavior change > open rate" goes mainstream.** Three Ragan pieces converge on outcome-over-activity measurement. (1) [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] — a sitting CCO ([[paul-gennaro]], [[new-york-life]]) prescribes measuring *outcomes* (time reallocated to strategy, capacity added, internal-client satisfaction), not tool-usage — the exact action-driving-measurement frame that rebuts [[measurers-vs-builders]] from the practitioner side, anchored in the [[ai-integrated-comms-function]] / IPR checklist. (2) [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] — [[tony-kihl]]/[[lhh]] model multi-signal EVP measurement (comms metrics *and* people metrics: engagement-survey movement, internal mobility, employer reputation), explicitly "no one perfect dashboard." (3) [[ragan-engagement-to-experience-2026-06-11]] — Interact practitioners question whether "click rate and open rate" indicate impact at all vs behavior change ([[open-rate-inflation]] echoed by the buyer). Net: the discipline's own voices are now arguing what Cerkl argues — measure what changed, not what was opened.
+
 ## Citable Stat Anchors (curated for blog use)
 
 Strongest single anchors across the vault, ordered by authority tier. **Competitor-sourced stats are excluded per the Blog Post Research Mode rule in [CLAUDE.md](../../CLAUDE.md);** competitor names are listed at the bottom for awareness.
@@ -99,6 +101,9 @@ Other Cerkl competitors (per the hardcoded list in [CLAUDE.md](../../CLAUDE.md))
 - [[measurers-vs-builders]] — Cloudflare's 2026 counter-narrative that measurement is automatable overhead; the frame this topic must rebut
 - [[delivery-as-comms-strategy]] — unifying topic-level frame
 - [[trust-and-credibility]] — adjacent topic: measuring whether messages are *believed*, and info-integrity as enterprise risk
+- [[ai-integrated-comms-function]] — Lesson 8 (measure outcomes, not tool-usage) is the practitioner-side measurers-vs-builders rebuttal
+- [[engagement-to-experience-pivot]] — the 2026 move from surface metrics to behavior-change/outcome measurement
+- [[corporate-wallpaper]] — multi-signal EVP measurement (comms + people metrics) as a practitioner pattern
 
 ## Practitioner Voices
 
@@ -118,6 +123,9 @@ Other Cerkl competitors (per the hardcoded list in [CLAUDE.md](../../CLAUDE.md))
 | [[gartner-information-integrity-risk-2026-05-13]] | 2026-05-13 | Info-integrity = #1 enterprise risk (n=337); "verifiable comms" becomes a governance requirement |
 | [[ragan-week-in-comms-cloudflare-wix-clickup-2026-05-29]] | 2026-05-29 | The [[measurers-vs-builders]] counter-narrative — measurement publicly framed as automatable overhead |
 | [[why-employees-right-not-to-trust-ic]] | 2026-05-26 | Candour↔trust is measurable (IKB); measure whether messages are *believed*, not just opened |
+| [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] | 2026-06-11 | CCO prescribes outcome-measurement (time reallocated, capacity, client satisfaction) over tool-usage; practitioner rebuttal to [[measurers-vs-builders]] |
+| [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] | 2026-06-10 | Multi-signal EVP measurement (comms + people metrics); "no one perfect dashboard"; self-reported town-hall 50-60%→90-100% |
+| [[ragan-engagement-to-experience-2026-06-11]] | 2026-06-11 | Practitioners question open/click rate as impact proxy ([[open-rate-inflation]] echo); ROI-is-indirect on engagement |
 
 ## Open Questions
 

@@ -25,6 +25,7 @@ You are a senior B2B SaaS sales strategist helping Travis Foster build sales pro
 | Weekly sales report — HubSpot pipeline metrics for the sales cadence (Josh/Marc/Tarek) | [`sales-reporting/weekly-sales-report-process.md`](sales-reporting/weekly-sales-report-process.md) |
 | **Build / restyle a sales presentation** (PPTX, prospect-styled or Cerkl-styled) | [`presentations/`](presentations/CLAUDE.md) |
 | **Reverse-engineer a prospect's brand** (colors / fonts / logo — for any prospect-styled collateral) | [`prospect-brand-process.md`](prospect-brand-process.md) |
+| **Account deliverables for a named prospect** (decks, brand kits, roadmaps, one-pagers — where they're stored) | [`prospects/`](prospects/CLAUDE.md) — one folder per prospect |
 
 ## Vendored skills (referenced from sales)
 

@@ -31,6 +31,8 @@ The 2026 manager-cascade picture has three load-bearing facts and one organizing
 
 **June 2026 update — one specific cascade DOES work.** [[gallup-engagement-strategies-2026]] adds Gallup's 2.1x finding: employees whose managers actively support AI use are 2.1x more likely to use AI weekly+. This is the first quantitative IC-side evidence that the manager-cascade remains the operative lever for the AI-rollout use case specifically, even where [[manager-burnout-structural-thesis]] holds. Concept page at [[manager-as-ai-champion]]. The finding pulls evidence onto the *enable* side of [[route-around-vs-enable]] **only** for AI-rollout content (general IC delivery still subject to the structural-broken argument); reconciliation: the AI-modeling behavior is lighter-weight than the 15-minute cascade conversation Karian's argument is about — exhausted managers can still model a tool, even when they can't carry a cascade. This sharpens (rather than dissolves) the "both sides" Cerkl positioning: route around for general delivery, enable manager modeling for AI rollout, same measurement on both paths.
 
+**June 2026 — a worked enable-side example.** [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] ([[tony-kihl]] / [[lhh]]) documents a successful cascade-deck approach for an EVP launch — leaders given scripts structured as "say this, ask this, listen for this, do this." It's a reminder that scripted, well-resourced enablement still works for a high-investment *campaign moment* (consistent with the [[manager-as-ai-champion]] "works when actively supported" exception), even though the general 2026 thesis is that the routine cascade is structurally broken. The qualifier matters: this is a flagship, resourced moment, not the daily message — it doesn't overturn [[manager-burnout-structural-thesis]], it bounds it.
+
 ## Key Entities
 
 - [[workshop]] — vendor publisher of the headline 56/4 cascade-gap data
@@ -67,6 +69,7 @@ The 2026 manager-cascade picture has three load-bearing facts and one organizing
 | [[gartner-managers-working-harder-2026-04-29]] | 2026-04-29 | 47% / 66% / ~25% time-allocation stats; PARTIAL (WebFetch 403) |
 | [[karian-middle-manager-burnout-2026-06-04]] | 2026-06-04 | The structural-thesis frame; 5 root causes; IKB 2023→2025 WLB divergence |
 | [[gallup-engagement-strategies-2026]] | 2026-05 | 2.1x AI-champion finding — the cascade-works-here exception ([[manager-as-ai-champion]]); 26% with-a-clear-AI-plan as the rollout-comms gap |
+| [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] | 2026-06-10 | Worked enable-side example: EVP cascade decks ("say this, ask this, listen for this, do this") for a flagship campaign moment |
 
 ## Open Questions
 

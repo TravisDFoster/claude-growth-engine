@@ -129,8 +129,3 @@ If every drafted post is `skip-*`, no asset process needed — the roll-up ends 
 - **Voice divergence.** LinkedIn voice currently matches blog voice exactly. Revisit after 2–3 weeks.
 - **Archive automation.** Once a draft's CSV row is filled and the post publishes, move the draft to `archive/`. Manual move for now.
 - **Per-type drafting skills.** If a particular type (e.g., carousel) develops Cerkl-specific drafting complexity, extract it into `skills/linkedin-carousel/SKILL.md`. Today the templates + this process are enough.
-
-## Learnings
-
-- 2026-05-21 — Monday reconcile now scaffolds LinkedIn Tasks + 4 social-media subtasks by default, with `Post type` lines on the Task and `[COPY_PLACEHOLDER]` tokens on the `LinkedIn – Copy` subtask. Step 3 no longer blocks on a hand-rolled fallback. Starts clean from the next reconcile (W23); W21/W22 stay on their hand-rolled state.
-- 2026-05-28 — Moved the `[COPY_PLACEHOLDER]` / drafted copy from the `LinkedIn – Copy` subtask to the parent Task Description (a `Copy:` line) so the caption + asset spec + hashtags are visible on the card itself; the Copy subtask reverts to a plain production step. Applied retroactively to W23's LinkedIn Tasks.

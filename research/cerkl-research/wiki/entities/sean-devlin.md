@@ -19,6 +19,7 @@ Recurring contributor to [[ragan-communications]] / PR Daily, authoring two sour
 - [[edelman-trust-barometer-2026]] — author ("By the Numbers" pickup of the 2026 Edelman Trust Barometer, 2026-02-12)
 - [[ragan-toughest-internal-critics-2026-05-29]] — author (ECCC 2026 critics-as-resource piece; partial/paywalled)
 - [[ragan-gartner-2026-comms-predictions-2025-10-09]] — author (Whittle/Gartner *Predicts 2026* comms framing pickup)
+- [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] — author (Q&A with Tony Kihl / LHH; coins [[corporate-wallpaper]])
 
 ## Connections
 

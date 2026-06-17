@@ -19,6 +19,8 @@ Ragan Communications is the trade-publishing and training company that owns [[pr
 - **Trade-press editorial via PR Daily.** Practitioner interviews, conference recaps, and AI-in-comms coverage — useful for named-source quotes ([[austin-roth-eagle]] / [[cisco-comms-leader-ai-content]]) and trend reporting.
 - **"Week in Comms" editorial throughline (2026).** [[sean-devlin]]'s weekly column at ragan.com aggregates the dominant change-comms moments and reads them comparatively — currently building a multi-week throughline that 2026 layoff/restructure comms is a *delivery-and-choreography* problem more than a writing problem ([[ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15]]).
 - **Training and certification stream.** Ragan training programs and the ECCC (European/Employee Comms) conference series are distinct revenue lines from the publishing business.
+- **Center for AI Strategy.** A Ragan program advising comms leaders on AI adoption; advisors include [[paul-gennaro]] (CCO, New York Life) and [[samantha-stark]] ([[phyusion]]). It distributes [[institute-for-public-relations|IPR]] research to the practitioner audience ([[ragan-9-lessons-ai-integrated-comms-2026-06-11]]) and runs the AI Horizons Summit.
+- **Vendor-roundtable distribution (cf. white papers).** Ragan also cohosts vendor roundtables and publishes the resulting thought-leadership as editorial — e.g. the [[interact]] engagement→experience Q&A ([[ragan-engagement-to-experience-2026-06-11]]). Same editorial-cover pattern as the co-branded benchmarks: the frame is Ragan's, the POV is the vendor's.
 
 ## Appearances in Sources
 
@@ -31,6 +33,9 @@ Ragan Communications is the trade-publishing and training company that owns [[pr
 - [[ragan-toughest-internal-critics-2026-05-29]] — Devlin's ECCC 2026 critics-as-resource piece (partial/paywalled; Ragan Insider)
 - [[qualtrics-change-engagement-2026-05-21]] — 2026-05-21 article surfacing the Qualtrics change-engagement finding for IC trade audience (added the "comms quality" framing on top of Qualtrics' "listening cadence" moderator)
 - [[ragan-gartner-2026-comms-predictions-2025-10-09]] — Sean Devlin's 2025-10-09 piece anchoring [[mark-whittle]]'s [[change-leadership-three-step]] framework via Gartner's *Predicts 2026* doc 7160430
+- [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] — Paul Gennaro (Center for AI Strategy advisor) on building an AI-integrated comms function; IPR nine-item checklist
+- [[ragan-engagement-to-experience-2026-06-11]] — Interact roundtable Q&A (engagement→experience pivot); vendor-roundtable distribution pattern
+- [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] — Sean Devlin Q&A with Tony Kihl (LHH) on EVP-as-lived-experience; previews Ragan's Employee Experience Conference (Aug 2026)
 
 ## Connections
 

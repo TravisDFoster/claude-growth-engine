@@ -1,0 +1,42 @@
+# Wraps: cerkl-insights-update — carousel LinkedIn post, publish 2026-06-26
+# Source draft: drafts/2026-06-26_carousel_insights-update.md
+template_id: EAHHb4dbs1Y   # linkedin-carousel-5-part-list (4:5, text-led)
+page_index: 1
+design_title: insights-update-carousel-2026-06-26
+# 7 content slides (cover + 5 items + CTA) mapped onto the 5-part-list template.
+# Per-item placeholders are resolved via live richtexts[] smart-matching at render (template-fill).
+slides:
+  cover: "Insights is here: 5 changes to Broadcast analytics"
+  cover_sub: "A ground-up rebuild, live for every Broadcast customer June 20."
+  item_1_title: "See it, don't dig for it"
+  item_1_body: "Performance reads as a picture before a number. A wider range of visuals surfaces trends and outliers at a glance; customizable tables give you the raw detail and export."
+  item_2_title: "Navigation that gets out of your way"
+  item_2_body: "Breadcrumbs show where you are, pathways stay consistent, and pages load faster. You retrace your steps instead of starting over."
+  item_3_title: "From the big picture to a single click"
+  item_3_body: "Start at a summary, then drill into email and Blast engagement, content by channel, and audience detail down to one person and one message."
+  item_4_title: "Every rate, compared to your own norm"
+  item_4_body: "Insights compares current performance against your org's own 18-month average — the difference between a metric and an insight you can act on."
+  item_5_title: "Dashboards you can actually share"
+  item_5_body: "Build custom dashboards, then decide who sees them. Admins get full visibility; team members share selectively; permissions adjust as needs change."
+  cta: "Insights is live for every Broadcast customer now. Full walkthrough in our latest post."
+image_assets: {}            # text-led, no photo slot
+commit_mode: auto
+# NOTE: 9-page template vs 7 content slides — expect manual finish in Canva (hide/repurpose spare pages,
+# confirm per-item text landed on the right slide). Carousel manual-finish is normal per linkedin-asset-process.
+
+# === Render result (written by linkedin-asset-process) ===
+result:
+  rendered_at: "2026-06-15"
+  design_id: "DAHMo7i3Ssk"
+  edit_url: "https://www.canva.com/design/DAHMo7i3Ssk/edit"
+  view_url: "https://www.canva.com/design/DAHMo7i3Ssk/view"
+  template_id: "EAHHb4dbs1Y"
+  re_edited_in_place: "2026-06-15 — tightened item copy (fixed text overlap), set number tags 01-05, blanked EXAMPLE/DELETE tags + CTA Lorem lines. Images left as placeholders for launch screenshots."
+  warnings:
+    - "real cover page (p1) has no subhead text element; subhead line not placed"
+    - "number tag '03' sits on item-2's page (p5) alongside '02'; item-3 page (p6) has no tag — template artifact"
+  manual_finish:
+    - "delete 2 spare pages (p2 duplicate cover, p3 intro — both still Lorem) — MCP has no delete-page op"
+    - "move number tag '03' from p5 to item-3 page (p6)"
+    - "fill the 9 image placeholders with launch screenshots"
+    - "optional: add a cover subhead text box ('A ground-up rebuild of Broadcast analytics — live for every customer June 20.')"

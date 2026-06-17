@@ -23,6 +23,8 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 
 **2026 EX research is internally contested.** [[qualtrics-change-engagement-2026-05-21]] (n=33,831) makes the strongest 2026 positive claim — employees experiencing more change are *more* engaged — and operationalizes the moderator as [[listening-cadence]] (87/44 engagement gap). [[gallagher]]'s State of the Sector 2026 + [[perceptyx]]'s 20M-response data hold the [[change-fatigue]] frame. The reconcilable view: Qualtrics' effect holds for investment-coded change inside the [[goldilocks-zone-of-change]] / below [[change-saturation]]; the fatigue frame is real once those conditions break. EX measurement going forward will need to track *cumulative concurrent change-events*, not just sentiment scores.
 
+**June 2026 — the engagement→experience pivot becomes the trade-press banner.** [[ragan-communications]] ran both a feature and a "New Employee Experience Mandate" reader survey inside one week, formalizing the [[engagement-to-experience-pivot]]: demote engagement metrics (clicks, open rate) in favor of lived experience + business outcomes. Two sources land it. (1) [[ragan-engagement-to-experience-2026-06-11]] ([[interact]] execs) supplies the *vendor* frame — EX as "the experience layer where reliable information results in trusted action," plus the [[comms-as-knowledge-steward]] thesis. Read it as destination-framing: an intranet vendor arguing the intranet *is* the experience. (2) [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] ([[tony-kihl]] / [[lhh]]) supplies the *practitioner* frame — an EVP only counts when it's lived, not announced ([[corporate-wallpaper]]); see the [[employer-brand]] topic. Cerkl's stake: the pivot's emphasis on outcomes and behavior-change is Cerkl's home ground (delivered/opened/read by employee), but "experience" is also the word the EX-suite vendors use to justify destinations — own the proof layer, don't cede the noun.
+
 ## Key Entities
 
 - [[gallup]] — primary-research source
@@ -49,6 +51,9 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 - [[change-fatigue]] — competing frame; Gallagher / Perceptyx anchored
 - [[change-saturation]] — Prosci threshold model
 - [[manager-burnout-structural-thesis]] — Karian-coined; 2023→2025 WLB divergence between middle managers and executives is an EX-measurement signal worth surfacing
+- [[engagement-to-experience-pivot]] — the 2026 reframe demoting engagement metrics for lived-experience + outcomes
+- [[corporate-wallpaper]] — EVP failure mode: stated experience ≠ lived experience
+- [[comms-as-knowledge-steward]] — the AI-readiness reframe of IC's EX contribution
 
 ## Practitioner Voices
 
@@ -64,6 +69,8 @@ Daily negative-emotion experience remains elevated: stress 40%, sadness 23%, ang
 | [[forrester-ai-rewrite-ex-deep-listening-2026-05-15]] | 2026-02-06 | Category-naming for deep listening; 24-month build window for EX/Comms vendor field |
 | [[gartner-people-centric-ai-2026-05-15]] | 2026-05-13 | CHRO at the center of AI-era org design; complementary axis to Forrester |
 | [[qualtrics-change-engagement-2026-05-21]] | 2026-05-21 | Triangulates Qualtrics' change-engagement finding against Gallup / Gallagher / Perceptyx / Prosci counter-data; listening-cadence as named moderator |
+| [[ragan-engagement-to-experience-2026-06-11]] | 2026-06-11 | Names the [[engagement-to-experience-pivot]]; vendor "experience layer / trusted action" frame; ROI-is-indirect admission (Interact, vendor-tier) |
+| [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] | 2026-06-10 | [[corporate-wallpaper]] framing; EVP-as-lived-experience practitioner case (LHH); multi-signal EX measurement |
 
 ## Open Questions
 

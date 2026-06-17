@@ -79,9 +79,12 @@ Vendor homepages. WebFetch each, capture H1 + sub-headline + primary CTA + top n
 - Vendor exec voices — search for CEO, CMO, Head of Marketing posts via WebSearch:
   - Staffbase: Martin Böhringer (CEO)
   - Simpplr: Dhiraj Sharma (CEO)
-  - Firstup: Nicole Alvino (CEO)
-  - Workvivo: Joe Lennon (CEO)
-  - ContactMonkey: Scott Pielsticker (CEO)
+  - Firstup: Bill Schuh (CEO since June 2025; Nicole Alvino is former CEO)
+  - Workvivo: John Goulding (CEO); Joe Lennon (CTO/co-founder); Justin Black (people science)
+  - ContactMonkey: Jeff Cates (CEO since March 2026; Scott Pielsticker is founder, stepped down)
+  - Poppulo: Ruth Fornell (CEO)
+  - Workshop: Rick Knudtson (CEO)
+  - AxiosHQ: Jim VandeHei (CEO, Axios)
   - (Add others as you identify them via WebSearch)
 
 **Reddit:**
@@ -150,7 +153,7 @@ Also probe **comparison pages**: `"<vendor> vs <vendor>"` searches surface when 
 |---|---|---|
 | Staffbase | https://staffbase.com/pricing | typically gated |
 | Simpplr | https://www.simpplr.com/pricing | typically gated |
-| LumApps | https://www.lumapps.com/pricing | typically gated |
+| LumApps | — (page 404 since 2026-W23; removed) | n/a — dropped |
 | Firstup | https://firstup.io/pricing | typically gated |
 | Poppulo | https://www.poppulo.com/pricing | typically gated |
 | Workvivo | https://www.workvivo.com/pricing | per-employee public |

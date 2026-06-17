@@ -26,6 +26,7 @@ Most interactions run through one of these skills. Load the skill file when inte
 | "Regenerate the leadership review", "growth project tracker", Thursday leadership-meeting prep | `skills/growth-project-tracker.md` |
 | "Add a task: X", "log this", quick capture into the right project | `skills/capture.md` |
 | "Start a project for X", "spin up a new project" — also called by `capture` and `process-meeting` when no project fits | `skills/new-project.md` |
+| "Sync/ingest meeting notes from Drive", Meet Recordings → local markdown (token-free script + launchd) | `meeting-ingest/meeting-ingest-process.md` |
 
 ## Team rollups
 
@@ -44,6 +45,7 @@ personal-assistant/
 ├── CONTEXT.md         ← role, team, tools (stable)
 ├── INDEX.md           ← Top of Mind + Calendar Anchors — the only hand-maintained state
 ├── skills/            ← workflow procedures, loaded on demand
+├── meeting-ingest/    ← token-free Drive→markdown sync (ingest.py + launchd job); output lands in meetings/drive-sync/
 ├── projects/          ← one file per project: Overview · Plan · append-only ## Log
 │   └── archive/       ← closed projects (older files may carry legacy Status blocks — ignore, don't maintain; delete the block when next editing the file)
 ├── calendar/

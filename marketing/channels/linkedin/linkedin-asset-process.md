@@ -167,7 +167,12 @@ Sub-agent type: `general-purpose`. No conversation context inherited. Each rende
 - **Owner:** Claude
 - **Produces:** Updated manifests + accumulated `slug → result` dict
 
-For each sub-agent return with `status: OK`, append a `result:` block to its manifest YAML:
+**URL verification (required — do not trust the sub-agent's self-reported URL).** The trustworthy handle is `design_id` (11-char `DA…`), not any URL: a sub-agent can hallucinate a link, AND `get-design`'s own `urls.edit_url`/`view_url` are `/d/<token>` short links that **rotate on every call** (verified — three different tokens for one design), so they go stale in a saved CSV. The orchestrator is a separate trust boundary, so for each returned `design_id`:
+  1. Call `mcp__claude_ai_Canva__get-design` to confirm the design exists/committed (validates the `design_id`).
+  2. Write the **stable canonical URL** `https://www.canva.com/design/<design_id>/edit` into the `result:` block and the CSV — built from the `design_id`, never the rotating `/d/<token>` from the response and never the sub-agent's string.
+  - If `get-design` errors or returns no design, the render did not produce a usable asset: surface `design_not_found`, do **not** write an `Asset:` line, and flag it for re-render.
+
+For each sub-agent return with `status: OK`, append a `result:` block to its manifest YAML (using the **canonical** `design_id`-derived URL):
 
 ```yaml
 # === Render result (written by linkedin-asset-process) ===
@@ -191,7 +196,7 @@ For `webinar-lookup` drafts (Step 2a), the URL came from the webinar's manifest 
 - **Inputs:** result dict + target week's CSV path
 - **Produces:** Updated CSV Task Descriptions
 
-For each draft with a resolved `edit_url` (whether from Step 5 render or Step 2a lookup):
+For each draft with a `get-design`-**verified** `edit_url` (from Step 5's verification, or the Step 2a webinar lookup):
 
 1. Find the Task row in `../../content-plan/jira/imports/YYYY-Www.csv` matched by `Post type:` + `Wraps:` in the Description (same key as Step 1; not free-text Summary).
 2. Add an `Asset:` line **at the end of the Description**, after the hashtags block (separated by a blank line). Format:
@@ -282,9 +287,3 @@ Surface any draft with:
 - **Render-verify automation.** Today the per-op success is checked but visual regression is human-only. A vision pass on each post-render thumbnail to detect element overlap would catch problems before commit. Pair with the length-fit pre-check.
 - **Re-render UX.** Today re-rendering means editing the manifest and re-running with `subset: [<slug>]`. A cleaner shape would be `"Re-render <slug> with statement: <new text>"` — orchestrator updates the manifest in place, dispatches one sub-agent.
 - **Auto-archive drafts after CSV row + manifest are both filled** — currently manual move from `drafts/` to `archive/`.
-
-## Learnings (append-only)
-
-- **2026-05-21** — Monday reconcile scaffolds LinkedIn Tasks + social-media subtasks with `Post type:` + `[COPY_PLACEHOLDER]`. This process runs against clean scaffolded rows.
-- **2026-05-28** — Moved drafted copy from the `LinkedIn – Copy` subtask to the parent Task Description (`Copy:` line).
-- **2026-06-02 (v2 architecture rewrite)** — Process rewritten to the `webinar-canva-render` pattern (parallel sub-agent dispatch, per-draft manifests as canonical store, `asset-packs.md` as cache gate). Adopted webinar-channel smart text matching (use live `richtexts[]` before substring fallback). Added length-fit pre-check after the W24 stat-card render produced a "send." overlap with the CTA capsule. `Asset:` line placement moved to bottom of Description (was: directly below `Copy:` label, which split the Copy block visually). Renamed skill references from `canva-asset-pack` to `template-fill` everywhere.

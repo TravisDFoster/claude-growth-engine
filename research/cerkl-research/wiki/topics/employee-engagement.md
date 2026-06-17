@@ -19,6 +19,8 @@ For IC strategy: the decline rebuts the comfortable narrative that engagement pr
 
 **June 2026 — the AI-rollout cut.** [[gallup-engagement-strategies-2026]] frames engagement around three 2026 strategies (clarity / connection / development) and inserts a new IC-relevant data point in the AI-rollout space: **managers actively supporting AI use → employees 2.1x more likely to use AI weekly+** ([[manager-as-ai-champion]]). Restates the long-running Gallup finding that **managers account for 70% of the variance in team-engagement** as the underlying justification. The article is the cleanest published bridge between engagement-strategy framing and the AI-rollout-comms chain — useful for both blog citation and the route-around-vs-enable positioning conversation.
 
+**June 2026 — vendors are now arguing *against* engagement as the goal.** [[ragan-engagement-to-experience-2026-06-11]] ([[interact]]) claims "engagement scores have been flat for 20 years and even declining" and that the engagement→ROI link is indirect, advocating a pivot to employee *experience* ([[engagement-to-experience-pivot]]). Treat the "20 years flat" claim as uncited vendor rhetoric — it's directionally consistent with Gallup's real 2023→2025 decline but broader than any actual series. The substantive point worth keeping: engagement is being demoted from end-goal to *downstream effect* of better work outcomes, which reframes what IC should measure.
+
 ## Key Entities
 
 - [[gallup]] — primary-research source; Q12 framework owner
@@ -40,6 +42,7 @@ For IC strategy: the decline rebuts the comfortable narrative that engagement pr
 - [[span-of-control]] — Gallup-anchored; weekly meaningful feedback triples engagement regardless of span
 - [[manager-burnout-structural-thesis]] — manager bandwidth is upstream of any engagement-program effectiveness
 - [[manager-as-ai-champion]] — the AI-adoption sub-case where the cascade still works (Gallup 2.1x)
+- [[engagement-to-experience-pivot]] — 2026 vendor/trade-press move demoting engagement to a downstream effect of experience
 
 ## Practitioner Voices
 
@@ -54,6 +57,7 @@ For IC strategy: the decline rebuts the comfortable narrative that engagement pr
 | [[qualtrics-change-engagement-2026-05-21]] | 2026-05-21 | n=33,831 finding that more change = more engaged; conditional on type + cadence; counter-research from Gallup / Gallagher / Perceptyx / Prosci |
 | [[gallup-span-of-control-2026]] | 2026-01-14 | Span time series + manager-talent + weekly-feedback moderators; 3x engagement multiplier on weekly meaningful feedback |
 | [[gallup-engagement-strategies-2026]] | 2026-05 | Three 2026 strategies (clarity / connection / development); 2.1x manager-AI-support stat; 26% with-a-clear-AI-plan; restates manager-70%-variance and 23/18/51 business-impact triple |
+| [[ragan-engagement-to-experience-2026-06-11]] | 2026-06-11 | Vendor argument to demote engagement in favor of experience; "flat for 20 years" (uncited); engagement→ROI is indirect |
 
 ## Open Questions
 

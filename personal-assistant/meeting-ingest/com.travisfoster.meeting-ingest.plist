@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.travisfoster.meeting-ingest</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/Frameworks/Python.framework/Versions/3.11/bin/python3</string>
+        <string>/Users/travisfoster/claude-code/cerkl/personal-assistant/meeting-ingest/ingest.py</string>
+    </array>
+
+    <!-- gws (and its node runtime) live in the nvm bin dir; launchd has a minimal PATH. -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/travisfoster/.nvm/versions/node/v24.14.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/travisfoster/claude-code/cerkl/personal-assistant/meeting-ingest</string>
+
+    <!-- Run once a day at 17:00 local. Notes appear shortly after each meeting; daily is plenty. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>17</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/travisfoster/claude-code/cerkl/personal-assistant/meetings/drive-sync/.ingest.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/travisfoster/claude-code/cerkl/personal-assistant/meetings/drive-sync/.ingest.log</string>
+</dict>
+</plist>

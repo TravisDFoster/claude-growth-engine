@@ -37,14 +37,14 @@ Two starting points:
 
 Either way: end this step with a **slide-by-slide content map** that's separated from styling. The map is what you rebuild from.
 
-Also write a roadmap doc — `<prospect>-<deck-slug>-ROADMAP.md` in the same folder (local-only). North star, status table, slide map with Broadcast feature links, open questions, next actions. Update it as the project moves.
+Also write a roadmap doc — `<prospect>-<deck-slug>-ROADMAP.md` in the prospect's folder `sales/prospects/<prospect>/` (local-only). North star, status table, slide map with Broadcast feature links, open questions, next actions. Update it as the project moves.
 
 ---
 
 ## Step 2 — Brand kit
 
 - **Cerkl-branded deck** → load from [`marketing/design/branding-assets/Brand Guidelines/`](../../marketing/design/branding-assets/Brand%20Guidelines/) (colors.md, typography.md, logo-guide.md).
-- **Prospect-branded deck** → run [`../prospect-brand-process.md`](../prospect-brand-process.md) first (it lives at `sales/` level because brand kits are reused across decks, outbound, ABM, etc.). Default output for deck work: `sales/presentations/<prospect>-brand-guidelines/`. Reuse on every deck for that prospect.
+- **Prospect-branded deck** → run [`../prospect-brand-process.md`](../prospect-brand-process.md) first (it lives at `sales/` level because brand kits are reused across decks, outbound, ABM, etc.). Default output for deck work: `sales/prospects/<prospect>/<prospect>-brand-guidelines/`. Reuse on every deck for that prospect.
 
 **Font licensing reality**: most enterprises use commercial typefaces (TWK Everett, Söhne, GT America, etc.). For one-off sales decks, use a free Google Fonts stand-in — Inter is the safest geometric-sans substitute. Document the substitution in the brand kit's typography.md.
 
@@ -111,7 +111,7 @@ PNG and JPG embed as binary parts inside the .pptx zip. They travel with the fil
 
 ## Step 5 — Export and QA
 
-1. **Save the editable .pptx** as `<Deck_Name>_<variant>.pptx`. Variant tag captures the styling pass: `seed`, `cerkl-styled`, `<prospect>-styled`, `final`.
+1. **Save the editable .pptx** as `<Deck_Name>_<variant>.pptx` in the prospect's folder (`sales/prospects/<prospect>/`). Variant tag captures the styling pass: `seed`, `cerkl-styled`, `<prospect>-styled`, `final`.
 2. **Open in Keynote** (Mac default — double-click). This is the most honest preview because Keynote renders fonts and shadows differently than PowerPoint. If Keynote looks fine, PowerPoint will look fine.
 3. **Common rendering gotchas**:
    - **Font missing → falls back to system default.** If you used Inter/Roboto and the recipient doesn't have them installed, they'll see Helvetica. Embed fonts in the .pptx if licensing allows, or flatten headlines to outlines (right-click → Convert to Shape in PowerPoint).
@@ -138,7 +138,7 @@ PNG and JPG embed as binary parts inside the .pptx zip. They travel with the fil
 
 - **One ROADMAP.md per deck project.** Living overview, updated as the deck evolves. Lives local-only alongside the deck.
 - **Variant naming.** `<Deck_Name>_seed.pptx` → `<Deck_Name>_<brand>-styled.pptx` → `<Deck_Name>_final.pptx`. Keep all variants in the folder; don't delete prior versions.
-- **Brand kits live with the deck, not with marketing/design/.** A prospect's brand isn't a Cerkl brand asset. Keep `<prospect>-brand-guidelines/` here in `sales/presentations/`.
+- **Brand kits live with the deck, not with marketing/design/.** A prospect's brand isn't a Cerkl brand asset. Keep `<prospect>-brand-guidelines/` in the prospect's folder `sales/prospects/<prospect>/`.
 
 ---
 

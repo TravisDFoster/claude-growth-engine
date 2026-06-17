@@ -213,9 +213,19 @@ If `commit_mode == "auto"`: continue directly to Step 9.
 
 Call `mcp__claude_ai_Canva__commit-editing-transaction` with `{"transaction_id": ...}`.
 
+### Step 9b — Confirm the design via `get-design`, then return a canonical URL
+
+After commit, the trustworthy handle is `design_id` — **not any URL**. Do not return the `edit_url`/`view_url` from Step 2 (an operator can construct or hallucinate a link), and do **not** return `get-design`'s `urls.edit_url`/`view_url` either — those are `/d/<token>` short links that **rotate on every call** and go stale in a saved file. Instead:
+
+```
+mcp__claude_ai_Canva__get-design { "design_id": "<design_id>" }
+```
+
+Use this only to **confirm the design exists/committed**. If it errors or returns no design, return `{"status": "ERR_DESIGN_NOT_FOUND", "design_id": ...}`. Otherwise build and return the **stable canonical URL** from the `design_id`: `https://www.canva.com/design/<design_id>/edit` (and `/view`). `design_id` is the source of truth; the canonical URL is derived from it — never reported from memory and never the rotating short link.
+
 ### Step 10 — Return
 
-Return the final result:
+Return the final result (`edit_url`/`view_url` are the **canonical `design_id`-derived** URLs from Step 9b — `https://www.canva.com/design/<design_id>/edit` — not the Step 2 capture or a `/d/<token>` short link):
 
 ```json
 {
@@ -412,27 +422,3 @@ template-fill/
 - **Wire to `/schedule`** once the LinkedIn process runs weekly.
 
 ---
-
-## Learnings (append-only)
-
-Notes from real runs go here. Each entry: what broke, what we changed, why.
-
-### 2026-06-02 — first live acceptance check
-
-- **`get-design-content` is text-only.** The MCP tool only returns `richtexts`, not image fills. The full element tree (text + image fills + page metadata) comes back from `start-editing-transaction`'s response. Step 4 of the procedure was wrong on the first draft of this skill (told the operator to call `get-design-content`); corrected after the live run.
-- **Three distinct URLs in the loop.** `create-design-from-brand-template` returns `edit_url` and `view_url` (post-commit views). `start-editing-transaction` returns `edit_design_url` (the in-flight transaction view). For checkpoint review, surface the in-flight URL — the post-commit URL still shows the empty template-copy until commit. Travis caught this on the first run ("I don't see anything changed").
-- **PNG export removed.** Downstream owner (Furqan today) finishes the asset in Canva and publishes from there. The Canva URL is the sole deliverable; the skill stops at `commit-editing-transaction`. Simpler interface, fewer moving parts, no temp files on disk.
-- **Per-op `success` is not sufficient.** The MCP returns thumbnails in both the start-transaction response and the perform-ops response. Surface them at checkpoint — they're the visual confirmation that what the API thinks happened actually happened. (Constraint that pre-dated this skill, now codified in Step 7 + Step 8.)
-- **Layered headshot frames need `insert_fill`, not `update_fill`.** The first commit looked successful at the API layer — speaker 1 fill went from `MAGg-_VYc0Q` to `MAFZdaEt2Wc`, all per-op statuses success. But the rendered design (verified via a second transaction) showed the same empty-frame placeholder icon. Diagnosis: the back-layer fill the MCP exposed sat behind a foreground decorative SHAPE that wasn't in `fills[]` or `richtexts[]` — the SHAPE was rendering its own placeholder icon over the swapped photo. Fix: emit `insert_fill` at the back-layer's live coordinates (read `containerElement.position` + `dimension` from the live transaction response). Confirmed: a single `insert_fill` op put Rachel's photo on top of the SHAPE as a bare rectangle.
-
-- **The "purple frame" isn't a thin border — it's a full illustration.** Iterated `insert_fill` at multiple inset sizes (231×231, 200×200) trying to expose a clean decorative border around a smaller Rachel. Each smaller insert just revealed more of the placeholder *illustration* (cloud + grass scene) around her. The "rounded frame look" is produced by a SHAPE's clip path + the illustration filling the interior — there is no thin border with empty space to fit a smaller image into. The cleanest visual outcome via MCP-only ops is a full 247×247 bare-rectangle insert (covers everything).
-
-- **The Canva UI's drag-and-drop creates an element type the MCP can't.** Travis dragged Rachel into the empty speaker-2 frame of a duplicate design (`DAHLbAfO4xo`). Inspection showed Canva had created a NEW sibling fill inside the existing frame group — `element_id: PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9-LBZL5KFjzmmlBQpP`, `containerElement.type: "SHAPE"`, dimensions 220.77×220.77 (inset ~13px from the original 247.33 RECT). That SHAPE-container fill renders with rounded clipping perfectly. The MCP's `insert_fill` schema has no `parent_element_id` parameter — it can only insert page-level RECT fills, never child SHAPE fills inside a group. So the UI's drag-and-drop is currently unreplicable via MCP.
-
-- **Final workflow (Travis's call 2026-06-02): MCP insert + manual drag.** For layered placeholder frames, the skill inserts the image at the placeholder's coords (page-level bare rect, full size) AND adds a `manual_drag_required` entry to the output. The recipient (Furqan today) opens the Canva URL, drags the inserted image onto the placeholder once (~5–10 sec), and Canva auto-creates the SHAPE-container fill inside the frame group. On-brand rounded styling preserved with one manual step per slot. Skill bumped to v1.3.0. The decision rule at runtime: branch on the live `containerElement.type` — `SHAPE` → `update_fill` (no manual step); `RECT` + layered headshot → `insert_fill` + manual-drag flag.
-
-- **`delete_element` accepts parent-ID prefixes — the one MCP path to remove foreground decorative SHAPEs.** On the 2026-06-02 launch run (design `DAHLbDC9Nqo`), speaker 2 needed to be removed entirely for Rachel's solo card. The MCP exposed the speaker 2 image fill at `element_id: "PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9-LB4GhJFvL2fXW3Lh"` (3-segment: page-parent-child), but the foreground decorative SHAPE wasn't exposed at all in `fills[]` or `richtexts[]`. Calling `delete_element` on just the **parent prefix** `"PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9"` (no leaf segment) succeeded and removed both the back-layer image fill AND the foreground decorative SHAPE in one op — the entire frame group went away cleanly. This is the only documented MCP path to address foreground SHAPEs that aren't directly exposed; previously we believed they were completely unaddressable. Codified as Step 6b (`delete_slots` manifest field) and bumped skill to v1.4.0. Use cases: solo speakers on multi-up cards, 2-speaker variants of 3- or 4-up grids, removing decorative elements that don't apply to a given asset.
-
-- **Element-map JSONs enriched — skill now disk-driven (v1.5.0).** 2 parallel sub-agents ran `enrich_element_maps.py` against all 96 templates' existing 2026-06-01 inspection designs. Each transaction was opened (read-only), the `pages[] / richtexts[] / fills[]` saved, the merge utility ran, and the transaction cancelled. Result: 259 text slots + 378 image slots enriched with runtime fields (element_id, parent_element_id, container_type, position, dimension, page_id, occurrence, editable). Verified element_id and parent_element_id are deterministic per template — the speaker-card's speaker-2 parent_element_id in the JSON (`PBCV6H4c0hBh21lc-LBTwLFZGwqQPRfD9`) matches exactly the ID that succeeded in the launch-run `delete_element` op. Steps 3, 5, 6, 6b rewritten to read from disk instead of parsing the live transaction response. The transaction is still opened (perform-editing-operations requires it), but the response data is no longer parsed for element IDs.
-
-  130 text + 166 image slots were unmatched across the catalog. Most of those (12 templates) had empty markdown-source JSONs to begin with — those need a source-markdown re-crawl, not an enrichment fix. The rest reflect markdown crawl gaps on multi-page templates where the crawler summarized later pages as "same skeleton" instead of enumerating slots (e.g., EAGqLMN8_Po pages 2-3 are only partially enriched). For the speaker-card use case we care about, page 1 is fully enriched (5/5 text, 6/6 image).

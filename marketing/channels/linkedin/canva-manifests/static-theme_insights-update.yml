@@ -1,0 +1,23 @@
+# Wraps: cerkl-insights-update — static-theme LinkedIn post, publish 2026-06-23
+# Source draft: drafts/2026-06-23_static-theme_insights-update.md
+template_id: EAHHbiYvZCE   # social-landscape-text-only (asset-packs.md: static-theme text-only -> page 1)
+page_index: 1
+design_title: insights-update-static-theme-2026-06-23
+text_values:
+  "Clarity is the Real Goal of Internal Comms": "Every rate, compared to your own 18-month average."
+  "It's not about how many messages you send. It's about how well they're understood.": "That's the difference between a metric and an insight. New in Cerkl Insights."
+image_assets: {}            # text-led; keep CTA + decorative defaults
+commit_mode: auto
+# Re-templated 2026-06-15: original stat-card EAHG3Tpp4CI broke on a non-% stat ("18 months" wrapped and
+# overlapped the statement). Moved to the text-only statement template per asset-packs static-theme "text-only" route.
+
+# === Render result (written by linkedin-asset-process) ===
+result:
+  rendered_at: "2026-06-15"
+  design_id: "DAHMo8SSw9o"
+  edit_url: "https://www.canva.com/design/DAHMo8SSw9o/edit"
+  view_url: "https://www.canva.com/design/DAHMo8SSw9o/view"
+  template_id: "EAHHbiYvZCE"
+  warnings:
+    - "headline auto-fit to 48px to clear the subhead; verify visually before publishing"
+  manual_drag_required: []

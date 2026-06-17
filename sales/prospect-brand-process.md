@@ -4,7 +4,7 @@
 >
 > **Used by:** sales presentations, outbound visual collateral, partner co-marketing, ABM landing pages, account-styled one-pagers, and anywhere we need to render a prospect's brand back to them.
 >
-> **Output:** a folder named `<prospect>-brand-guidelines/` (same shape as Cerkl's brand kit). One kit per prospect — placed alongside the **first** process that needs it, then referenced by every downstream process. These folders live local-only (gitignored under `sales/presentations/`).
+> **Output:** a folder named `<prospect>-brand-guidelines/` (same shape as Cerkl's brand kit). One kit per prospect, in the prospect's folder `sales/prospects/<prospect>/` — stood up once, then referenced by every downstream process (decks, outbound, ABM). These folders live local-only (gitignored under `sales/prospects/`).
 
 ---
 
@@ -114,7 +114,7 @@ Document the substitution decision in the brand kit's `typography.md` so the nex
 Mirror the file shape from Cerkl's [`Brand Guidelines/`](../marketing/design/branding-assets/Brand%20Guidelines/) — that's the reference structure:
 
 ```
-<consuming-process-folder>/<prospect>-brand-guidelines/
+sales/prospects/<prospect>/<prospect>-brand-guidelines/
 ├── INDEX.md            ← router, sources, at-a-glance, known gaps
 ├── colors.md           ← primary palette + full scales + data viz + don'ts
 ├── typography.md       ← font names, type scale, fallback decision
@@ -126,14 +126,9 @@ Mirror the file shape from Cerkl's [`Brand Guidelines/`](../marketing/design/bra
     └── <prospect>-logo-black.svg
 ```
 
-**Where to put it:** alongside the first process that needs it. Common locations:
-- Sales deck → `sales/presentations/<prospect>-brand-guidelines/`
-- Outbound landing page → `sales/outbound/<prospect>-brand-guidelines/`
-- ABM one-pager → `sales/enablement/<prospect>-brand-guidelines/`
+**Where to put it:** in the prospect's folder — `sales/prospects/<prospect>/<prospect>-brand-guidelines/` — regardless of which process needs it first. The deck, the outbound landing page, and the ABM one-pager all reference the same kit. One kit per prospect; every downstream deliverable links to it by relative path. **Don't duplicate** it per process.
 
-Other processes reference by relative path. If a prospect gets multiple touchpoints over time, leave the kit where it landed and link to it — **don't duplicate**.
-
-**Template:** copy the structure of any existing `<prospect>-brand-guidelines/` folder under `sales/presentations/` (local-only). Keep the section headings and table shapes; replace prospect-specific content.
+**Template:** copy the structure of any existing `<prospect>-brand-guidelines/` folder under `sales/prospects/` (local-only). Keep the section headings and table shapes; replace prospect-specific content.
 
 ---
 

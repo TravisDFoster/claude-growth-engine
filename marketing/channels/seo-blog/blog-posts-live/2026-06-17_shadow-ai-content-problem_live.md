@@ -1,94 +1,95 @@
 ## Properties
 
-**Title:** Shadow AI Is a Content Problem (Not a Governance Problem)
+**Title:** Shadow AI in Internal Communications: A Content Problem, Not a Governance Problem
 
 **Slug:** shadow-ai-content-problem
 
-**Author:** Travis Foster (Head of Marketing & Growth Operations, Cerkl)
+**Primary Keyword:** shadow AI internal communications
 
-**Publish date:** 2026-06-17
+**Top 3 Organic Search Keywords:**
+1. shadow AI internal communications
+2. shadow AI
+3. unapproved AI tools at work
 
-**Primary Keyword:** n/a — editorial POV, no SEO brief.
-
-**Top 3 Organic Search Keywords:** n/a (editorial). Topical entities the post registers on: shadow AI, internal communications, sanctioned channel.
+**Secondary Keywords (additional):**
+- shadow AI governance
+- sanctioned communication channel
+- employee AI tool usage
+- internal communications AI
 
 **Primary Solution:** Foundations
 
-**Top CTA:** Nothing
+**Top CTA:** Email General Top
 
-**Middle CTA:** Foundations Free Middle
+**Middle CTA:** Email Analytics Middle
 
-**Bottom CTA:** Foundations Free Bottom
+**Bottom CTA:** Email General Bottom
 
 **Primary Category:** Internal Communication Strategy
 
 **All Categories:** AI in IC
 
-**Meta Title:** Shadow AI Is a Content Problem, Not a Governance Problem
+**Meta Title:** Shadow AI in Internal Communications: Content, Not Governance
 
-**Meta Description:** The category is racing to sell shadow-AI governance. The buyer isn't IT. Employees use outside AI tools because internal comms is failing them. Fix the channel.
+**Meta Description:** Shadow AI in internal communications is a distribution problem, not a governance one. Here is why employees use unapproved AI tools, and how to fix the channel.
 
 ---
 
-# Shadow AI Is a Content Problem (Not a Governance Problem)
+# Shadow AI in Internal Communications: A Content Problem, Not a Governance Problem
 
-**[Top CTA — Nothing]**
+**[Top CTA — Email General Top]**
 
 **[Content 1]**
 
-Three of the largest internal communications vendors have spent the last two weeks rotating the same headline through their ad creative. "Our employees are already using AI tools we haven't approved." "Cut shadow AI, reduce complexity." "Three strategies to stop shadow AI without killing productivity." The stat that keeps showing up is 79% of organizations suspect employees are misusing approved AI tools.
+Shadow AI is the use of generative AI tools that employees adopt on their own, without formal approval from their employer. In internal communications, it shows up as a quiet pattern: an employee needs a company answer, cannot find it fast enough through official channels, and asks ChatGPT instead. Much of the current vendor conversation treats this as a governance problem to be solved with approval lists, audits, and content controls. That framing misses where the problem actually lives.
 
-Every pitch lands on the same recommendation: governance. Approve a list, audit the inputs, block the outputs, stand up a control panel. It is the cleanest IT pitch the category has run in years, and it is the wrong answer to the problem most of the people reading this own.
+Shadow AI in internal communications is a distribution problem, not a security one. Employees reach for an outside AI tool because the sanctioned channel did not deliver the answer when they needed it. That is a content and distribution gap, and it sits in the lane internal communications already owns. The fix is not a control panel. It is a channel employees trust enough to check first.
 
-I run marketing at Cerkl, which sells internal comms software, so I have a horse in this race. The horse I am riding is the unflattering one. Employees go to ChatGPT for the company answer because the company answer never showed up in a channel they read. That is a content and distribution problem, and it is the lane internal comms already owns. The vendors selling governance are quietly conceding it by pitching past you to your IT counterpart.
+## Why employees use shadow AI instead of the sanctioned channel
 
-## Why employees go to ChatGPT for the answer that should have come from you
+The behavior is rarely a discipline problem. It is a speed-and-relevance problem.
 
-The behavior is not a security failure. It is a distribution failure.
+Picture a common moment. An employee has a few minutes between meetings and needs to know whether the new PTO policy applies to contractors, or when HSA enrollment closes. The all-company email from two weeks ago is buried in the inbox. Intranet search returns an outdated policy and a broken link. So the employee opens a tab that is already there and asks the model, and the answer arrives in seconds.
 
-Picture the moment. Someone has thirty seconds between meetings and needs to know whether the new PTO policy applies to contractors, or when HSA enrollment closes. The internal email from two weeks ago is buried. The intranet search returns a 2022 policy and a broken link. So they open a tab they already have open and ask the model.
+That is the moment the sanctioned channel has to win, and it loses whenever the alternative is faster and more useful for the task at hand. Labeling the behavior as misuse or unapproved access describes how it looks to a security team. It does not describe what happened. A person needed an answer quickly and found one in the channel that worked. If the official channel had worked, the model would not have been the first place that person looked.
 
-That is the moment your governance policy needs to win, and it loses every time, because the alternative is faster and more useful for the job they are trying to do.
+## Why governance is the wrong frame for internal communications
 
-The category is selling you the security framing. "Misuse." "Unapproved." "Shadow." Those words make IT nod. They do not describe what is happening. A person needed an answer fast and found one in the channel that worked. If the sanctioned channel had worked, the model would not have been the first place they looked.
+Much of the 2026 vendor messaging around shadow AI leads with governance: approve a list of tools, audit the inputs, restrict the outputs, stand up a control workflow. Read with the buyer in mind, that pitch is written for IT. It describes someone with approval authority over software, a security posture to defend, and a budget line for control tooling. The outcome it produces is an enterprise procurement cycle for an AI approval system.
 
-## Governance is what the category sells when it cannot sell reach
+That buyer does not own internal communications. The IC director, the head of people, the chief of staff, and the operations lead at a mid-sized company work from a different mandate: get the right message to the right employee on the channel that employee actually reads. None of them have the authority to police what employees type into a browser, and a control panel does not help them do that job.
 
-Read the ad creative again with the buyer in mind. It is describing the head of IT or the CISO: approval authority on tools, a security posture to defend, a budget line for control software. The deal it produces is an enterprise procurement cycle to stand up an AI approval workflow.
+The statistic that anchors much of this messaging is that roughly 79% of organizations suspect employees are misusing AI tools. It is meant to read as alarming. Read another way, it is evidence of a channel problem. If four in five organizations believe employees are turning to AI tools for work answers, the issue is less about employee discipline and more about whether those organizations have given employees a faster, more relevant channel than a chatbot.
 
-That title does not own internal communications. The IC director, the head of people, the chief of staff, the operations lead at a 600-person company. None of them have a mandate to police what employees type into a browser, and none of them want one. They have a mandate to get the right message to the right person on the channel that person reads. They are being sold a problem they cannot fix.
+## Make the sanctioned channel the first place employees look
 
-The 79% number is the giveaway. It is supposed to land as alarming. It lands as the opposite. If four in five organizations think employees are misusing AI tools, the problem is not employee discipline. It is that those organizations have not given their employees a more relevant channel than a chatbot. Misuse is what the channel calls it when the channel is losing.
+The durable fix for shadow AI is not to block and restrict. It is to build a sanctioned channel that answers the question before an employee thinks to ask a chatbot. In practice, that comes down to three capabilities.
 
-## The reframe: make the sanctioned channel the first place people look
+The first is targeting: the message reaches the specific employees who need it, not the entire company. The second is delivery where employees already are, whether that is the inbox, a Microsoft Teams feed, or a mobile app, rather than a portal they have to remember to visit. The third is measurement: the comms team can see, after the send, who actually read the message. None of this requires AI governance. All of it requires treating internal communications as a distribution discipline with real measurement, not a publishing chore.
 
-The fix is not block and restrict. It is to build the channel employees go to first because it answers the question.
+The uncomfortable version is worth saying plainly. If the sanctioned channel is a six-thousand-word all-hands newsletter that few people open, employees will keep asking an AI tool for the deadline. The model is not taking the conversation. The channel is losing it.
 
-In practice that is three things. The message reaches the right person, not the whole company. It arrives where they already are: inbox, Teams feed, phone. And you can tell, after the fact, who read it. None of that requires AI governance. All of it requires that internal comms gets treated as a distribution discipline with measurement, not a publishing chore.
-
-The honest version is uncomfortable. If your sanctioned channel is a six-thousand-word all-hands newsletter that nobody opens, employees will keep asking ChatGPT for the deadline. The model is not stealing the conversation. You are losing it. Fix the channel, not the chatbot policy.
-
-**[Middle CTA — Foundations Free Middle]**
+**[Middle CTA — Email Analytics Middle]**
 
 **[Content 2]**
 
-## What to do this quarter without buying a control panel
+## Three moves to reduce shadow AI this quarter
 
-Three moves. No procurement, no implementation, no steering committee.
+Closing the gap does not require new software or a steering committee. Three moves get most of the way there.
 
-First, find the questions employees keep asking AI tools. Your help desk knows. Your manager Slack channels know. Your HR inbox knows. There is a short list of recurring questions that should have been answered in a message and were not. Write down the top five.
+Start by finding the questions employees keep asking AI tools. The help desk knows them. Manager Slack channels know them. The HR inbox knows them. There is usually a short list of recurring questions that should have been answered in a message and were not. Write down the top five.
 
-Second, pick the top three and rewrite them as targeted sends to the people who need each one. Not company-wide. The PTO policy goes to managers first. The benefits deadline goes to the cohort that has not enrolled. The competitor news goes to client-facing teams. Short, written for the reader, sent on the channel they read. This is the work, and it does not need new software to do once.
+Next, take the top three and rewrite them as targeted sends to the people who need each one, rather than company-wide blasts. The PTO policy update goes to managers first. The benefits-enrollment reminder goes to the cohort that has not enrolled. The product or competitor news goes to client-facing teams. Each message should be short, written for its reader, and sent on the channel that reader already checks.
 
-Third, measure who read them. If you cannot tell which message landed, you cannot tell which channel is winning. The AI tool wins right now because it answers the question. Your message wins when the right person reads it, and you cannot claim that without a number.
+Finally, measure who read them. A team that cannot tell which message landed cannot tell which channel is winning. An AI tool wins today because it answers the question. A sanctioned message wins when the right person reads it, and that claim needs a number behind it.
 
-## Where Foundations fits
+## How Cerkl Broadcast Foundations helps
 
-This is the part where I am supposed to sell you something. Cerkl's [Foundations plan](https://cerkl.com/broadcast/foundations) is free. You can stand up a sanctioned channel, segmented by role, delivered into the inbox your employees already use, with read-rate measurement on every send, in an afternoon. No IT ticket, no procurement, no annual contract.
+Reducing shadow AI comes down to a sanctioned channel that is targeted, delivered where employees already are, and measurable. Cerkl Broadcast's [Foundations plan](https://cerkl.com/broadcast/foundations) is free and covers exactly that ground. A comms team can stand up a sanctioned channel segmented by role, delivered into the inbox employees already use, with read-rate measurement on every send, in an afternoon and without an IT ticket.
 
-That does not solve AI governance, and I am not pretending it does. The problem the category is selling governance against is mostly a reach problem, not a governance problem. The vendors leading with shadow AI in ad creative are answering the wrong question. The right question is why the employee did not come to you first, and the answer is almost always the channel. Fix the channel. The governance debate will be smaller than the category is telling you it is.
+Foundations does not solve AI governance, and it is not meant to. The behavior driving most shadow-AI concern is a reach problem, not a governance one. The more useful question is why the employee did not come to the sanctioned channel first, and the answer is almost always the channel itself. Fix the channel, and the governance debate gets a lot smaller.
 
-**[Bottom CTA — Foundations Free Bottom]**
+**[Bottom CTA — Email General Bottom]**
 
 ---
 
@@ -100,7 +101,7 @@ Shadow AI is the use of generative AI tools by employees that have not been form
 
 ### Why is internal communications software being sold against shadow AI in 2026?
 
-Three of the largest enterprise internal communications vendors are now running ad creative that leads with shadow-AI pain. All three pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. The framing positions IT as the co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier.
+Several large enterprise internal communications vendors are now running messaging that leads with shadow-AI pain, and most of them pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. That framing positions IT as a co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier.
 
 ### Is shadow AI an internal communications problem or an IT problem?
 
@@ -137,7 +138,7 @@ Paste this JSON-LD block into the Webflow custom-code area for the post head.
       "name": "Why is internal communications software being sold against shadow AI in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three of the largest enterprise internal communications vendors are now running ad creative that leads with shadow-AI pain. All three pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. The framing positions IT as the co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier."
+        "text": "Several large enterprise internal communications vendors are now running messaging that leads with shadow-AI pain, and most of them pitch governance as the answer: approval workflows, usage audits, permission layers, content controls. That framing positions IT as a co-buyer alongside internal communications, which favors vendors with enterprise procurement motions and works against a self-serve free tier."
       }
     },
     {
@@ -171,29 +172,29 @@ Paste this JSON-LD block into the Webflow custom-code area for the post head.
 
 ---
 **Edit log**
-- Final score: 42/50 (Directness 9, Rhythm 8, Trust 8, Authenticity 9, Density 8). Strongest dimensions: Directness (statements, not announcements; first-person POV with the thesis stated in the third intro paragraph); Authenticity (Travis voice, slightly contrarian, unflattering self-disclosure about Cerkl's horse-in-the-race). Lowest dimensions: Trust (only one external data anchor, the competitor 79% stat, framed as something the category is moving on rather than a verified claim; intentional for editorial but caps the score); Density (the operational arc in "What to do this quarter" could be tightened further, but cutting more would thin the section that earns the Foundations mention). 35/50 exit threshold cleared on first scoring pass.
-- Body word count: 1,021 prose words. Lands at the upper edge of the 700–1,000 target band from the editorial brief; trimmed from 1,251 in the draft. Holding the slight overage because the diagnostic argument (why governance is the wrong frame for the IC buyer) needs three H2 sections to land before the operational pivot.
-- Major structural changes from draft: tightened intro from 4 paragraphs to 3 (merged "Every one of those pitches..." with "It is the cleanest IT pitch..."); reframed the negative-parallelism close in H2 #1 ("Not because employees are sneaking around. Because the alternative is genuinely worse...") into a single causal sentence; collapsed parallel-noun list in H2 #2 ("the head of IT, the CISO, the chief data officer" → "the head of IT or the CISO") to break the rule-of-three; tightened the "Picture the moment" paragraph (removed Juneteenth third example to break rule-of-three); cut the "I have watched too many IC teams..." closing paragraph in H2 #3 to land the section on the chatbot-policy line; tightened the "Where Foundations fits" closer.
-- Notable phrase/structure fixes: banned-phrase pass — "genuinely" removed (1 instance); "actually" removed (3 instances total, 2 body + 1 FAQ heading, all rewritten); "let me be quick about it" cut (meta-commentary throat-clearer); negative-listing fragment removed from H2 #1 close. Em-dash count in body prose: 0 (verified by grep; the only em-dash in the body region is inside the `**[Middle CTA — Foundations Free Middle]**` marker, which is a structural element). All internal Cerkl mentions use absolute https://cerkl.com URLs.
-- Middle CTA placement: after H2 #3 "The reframe: make the sanctioned channel the first place people look" (position 3 of 5 body H2s, 60%). Inside the 55–65% target band. The diagnosis arc closes at the end of H2 #3 (problem framing → governance critique → reframe); the operational arc opens with H2 #4 ("What to do this quarter") and lands at H2 #5 ("Where Foundations fits"). `Foundations Free Middle` pairs thematically with the operational arc that follows.
-- Content 1 / Content 2 balance: 700 / 321 (69/31). Inside the 30/70–70/30 band. Slight bias toward Content 1 because the diagnostic argument (why governance is the wrong frame) carries the conceptual weight of the post, and a Travis-bylined POV piece earns the recommendation by being right about the problem before pitching the fix.
-- Verification: 0 em-dashes in body prose (verified); 0 banned phrases in body or FAQ (verified — no "really," "just," "actually," "genuinely," "simply," "leverage," "robust," "delve," "explore," "in today's," "here's the thing," "let me be clear," "moreover," "furthermore," "additionally"); Properties block copied from pre-writing with minor consolidation (dropped duplicate topical-entity line); all 5 body markers present and correctly named — `**[Top CTA — Nothing]**`, `**[Content 1]**`, `**[Middle CTA — Foundations Free Middle]**`, `**[Content 2]**`, `**[Bottom CTA — Foundations Free Bottom]**`; FAQ-schema JSON-LD present and Q&A count matches FAQ section (5/5); one internal link (https://cerkl.com/broadcast/foundations) in the "Where Foundations fits" section, wrapped on the noun phrase "Foundations plan" (no "click here" or path-as-anchor).
-- Competitor handling: per the editorial brief, Staffbase, LumApps, and Simpplr ad copy is quoted verbatim as signal but the vendors are not named in the post. The post refers to "the category" and "three of the largest internal communications vendors." Aligns with the 2026-06-01 editorial stance (no competitor/versus posts); positioning content that counter-frames the category's ad creative without naming names.
-- Sprint framing: per the editorial brief, the 3-week wedge sprint ("AI writes; Cerkl delivers and proves") is not surfaced in the post copy. The post leads the thesis without flagging the sprint position.
+- Final score: 39/50 (Directness 8, Rhythm 8, Trust 7, Authenticity 8, Density 8). Rewritten from the earlier first-person editorial version into a standard Cerkl-voice supporting post. Trust is the lowest dimension — single external data point (the ~79% figure), referenced as category messaging rather than a verified, attributed stat; see open item below.
+- Conversion from editorial → traditional: removed first-person narration ("I run marketing at Cerkl," "the horse I am riding") and the `Author` / `Publish date` byline fields from the Properties block; rewrote the intro to define "shadow AI" and state the thesis directly (standard direct-answer-early structure) instead of opening on the competitor-ad-creative anecdote; converted all five H2s to descriptive, keyword-aligned headings; held practical second/third-person voice throughout.
+- CTAs: all three pulled from the canonical catalog in `seo-blog-pre-writing/SKILL.md` — Top `Email General Top` (Foundations, tool-agnostic), Middle `Email Analytics Middle` (operational half centers on read-rate measurement), Bottom `Email General Bottom`. Replaces the earlier non-catalog `Foundations Free Middle/Bottom` and `Top CTA — Nothing`.
+- Body word count: ~960 prose words. At the lower edge of the 1,000–1,500 supporting-post band; the single-thesis topic does not need padding to satisfy intent.
+- Middle CTA placement: after H2 #3 "Make the sanctioned channel the first place employees look" (position 3 of 5 body H2s, 60%). Inside the 55–65% band. Diagnosis arc (why employees leave → governance is the wrong frame → the reframe) closes at H2 #3; operational arc (three moves → Foundations) opens at H2 #4. `Email Analytics Middle` pairs with the measurement theme that carries the second half.
+- Content 1 / Content 2 balance: ~600 / ~360 (~63/37). Inside the 30/70–70/30 band.
+- Verification: 0 em-dashes in body prose (only structural CTA markers carry the em-dash); 0 banned phrases/adverbs in body or FAQ; Properties block matches the pre-writing file verbatim; all 5 body markers present and correctly named — `**[Top CTA — Email General Top]**`, `**[Content 1]**`, `**[Middle CTA — Email Analytics Middle]**`, `**[Content 2]**`, `**[Bottom CTA — Email General Bottom]**`; FAQ-schema JSON-LD present and Q&A count matches FAQ section (5/5); one internal link (https://cerkl.com/broadcast/foundations) wrapped on the noun phrase "Foundations plan."
+- Open item for final review: the ~79% figure is presented as category messaging, kept internally consistent as "misusing AI tools" (the earlier draft's "misusing *approved* AI tools" conflicted with the shadow-AI/unapproved-tools argument). Confirm or attribute the figure to a named source before publish, or cut it.
+- Competitor handling: per the 2026-06-01 stance, no vendors named; the post references "vendor messaging" and "the category."
 
 **Image candidates**
 
-1. **stat-hero** — The 79% competitor stat, reframed. Best for OG / social preview because the stat is the load-bearing signal in the lede and the post's main reframe ("Misuse is what the channel calls it when the channel is losing") inverts it.
+1. **stat-hero** — The ~79% figure, reframed. Best for OG / social preview because the stat anchors the governance critique and the post inverts it ("evidence of a channel problem, not a discipline problem").
    - Stat: `79%`
    - Tag: "of organizations suspect employees are misusing AI tools."
-   - Takeaway: "Misuse is what the channel calls it when the channel is losing."
-   - Source: Quoted from category ad creative, 2026-06
+   - Takeaway: "That is a channel problem, not a discipline problem."
+   - Source: Category messaging, 2026 — verify/attribute before render.
 
-2. **numbered-stack** — Three-action ladder from the "What to do this quarter" section. Best for in-body placement at the head of that H2.
-   - Rungs: 01 Find the questions employees keep asking AI · 02 Rewrite the top three as targeted sends · 03 Measure who read them
+2. **numbered-stack** — Three-action ladder from "Three moves to reduce shadow AI this quarter." Best for in-body placement at the head of that H2.
+   - Rungs: 01 Find the questions employees ask AI · 02 Rewrite the top three as targeted sends · 03 Measure who read them
    - Marker: "No procurement required." above 01
 
-3. **letter-strip** — Three-pillar strip showing the category's governance vocabulary, set up to be inverted by the body copy. Best for placement near H2 #2 ("Governance is what the category sells when it cannot sell reach").
+3. **letter-strip** — Three-pillar strip of the governance vocabulary, set up to be inverted by the body copy. Best near H2 #2 ("Why governance is the wrong frame for internal communications").
    - Pillars: APPROVE · AUDIT · BLOCK
    - Sub-labels: "the list" · "the inputs" · "the outputs"
-   - Marker: "What the category is selling IT. Not what IC owns."
+   - Marker: "What the category sells IT. Not what IC owns."

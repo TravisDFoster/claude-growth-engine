@@ -103,6 +103,8 @@ The Cerkl-positioning thread: **"the way the message is shared is often just as 
 | [[mckinsey-rewired-2-2026-05-21]] | 2026-05-04 | *Rewired 2.0* talent-transformation thesis; four levers with Lever #4 ("emotional work of helping humans feel safe alongside machine colleagues") most directly change-comms-adjacent |
 | [[layoff-memo-subgenre-2026-05-21]] | 2026-05-21 | Names the 2026 AI-restructure layoff-memo subgenre as a discrete comms category; six-anchor comparison (Cisco/GitLab/GM/LinkedIn/Microsoft/Oracle + Meta extension); five emerging conventions; reference frameworks (Chesky/Collison/Niccol/Sutton PUCC/Sucher) |
 | [[ragan-gartner-2026-comms-predictions-2025-10-09]] | 2025-10-09 | Whittle/Gartner three-step change-leadership framework; analyst-tier prescriptive pair to Poitevin's diagnosis; *"effective leadership today is change leadership"* verbatim |
+| [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] | 2026-06-11 | "Unified change narrative" as Lesson 3; only 37% of orgs have a clear AI-adoption change story (IPR) — empirical pin on the AI-rollout change-comms gap |
+| [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] | 2026-06-10 | EVP run as a *business transformation*, not a memo; reinforcement > launch; cascade-deck leadership enablement; sustaining energy named as the hard part |
 
 ## Open Questions
 

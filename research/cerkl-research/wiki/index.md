@@ -13,7 +13,8 @@ _Broad IC subject hubs. Pages get created the first time a source touches them._
 - [[culture-and-belonging]] — Inclusion, identity, meaning at work; daily loneliness/stress/sadness data
 - [[delivery-as-comms-strategy]] — Unifying 2026 thesis: how a message lands *is* the comms strategy. Four evidence streams: newsletter audits, layoff choreography, AI-anxious-buyer, CIO/CHRO co-buyer change-comms
 - [[employee-engagement]] — Psychological investment in work; declining globally to 20% per Gallup 2025; 2026 strategy frame = clarity/connection/development
-- [[employee-experience]] — Full lived experience of work; wellbeing-engagement divergence; [[deep-listening]] reshaping the EX measurement layer
+- [[employee-experience]] — Full lived experience of work; wellbeing-engagement divergence; [[deep-listening]] reshaping the EX measurement layer; 2026 [[engagement-to-experience-pivot]]
+- [[employer-brand]] — EVP / internal-branding activation; the [[corporate-wallpaper]] gap between stated and lived experience; single-source (LHH) as of June 2026
 - [[frontline-communications]] — Reaching deskless / non-remote-capable workers; 13pp engagement gap; now a named Forrester evaluation criterion
 - [[ic-measurement-and-roi]] — Quantifying IC impact; primary / analyst / practitioner-survey / academic / vendor benchmark tiers; [[cross-channel-benchmark]] vacuum; analyst-trio names change-comms as new measurement lane
 - [[internal-email]] — IC's most-effective channel (81%); paired 2026 vendor anchors — PoliteMail 66/7 + ContactMonkey 76/9 — both [[open-rate-inflation]]-caveated; [[newsletter-format-audit]] is the 2026 tactical layer
@@ -41,12 +42,14 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[british-gas]] — UK energy company; Karian's radical-honesty proof case (trust sustained through a 3,000-job offshoring)
 - [[cheryl-mckinnon]] — Principal Analyst at Forrester; authors the Intranet Platforms Wave
 - [[chuck-robbins]] — Chair and CEO, Cisco; author of 2026-05-13 "Our Path Forward" memo (strong-quarter layoff anchor)
+- [[cindy-knezevich]] — CMO, Interact; engagement-vs-experience definition ([[engagement-to-experience-pivot]])
 - [[cisco]] — Fortune-100 enterprise vendor; IC practitioner organization via Roth-Eagle
 - [[clickup]] — Work-management SaaS; 2026 22% layoff with people-centered "different work, new roles" framing
 - [[cloudflare]] — Internet-infrastructure vendor; 2026 "measurers" layoff op-ed (Prince); antagonist to IC measurement
 - [[contactmonkey]] — Internal-email platform vendor; publishes annual benchmark report (76% open / 9% click in 2026)
 - [[culture-amp]] — Employee-experience / people-science platform vendor
 - [[daniel-shapero]] — CEO, LinkedIn (2026–); 2026-05-13 layoff memo (~875 cuts); strategic-framing but formulaic
+- [[daren-jennings]] — CSO, Interact; "trusted action" intranet thesis + [[comms-as-knowledge-steward]]
 - [[david-brodeur-johnson]] — Principal Analyst at Forrester; EX research lead; co-coined [[deep-listening]] (Feb 2026)
 - [[deloitte]] — Professional services firm; 2026 Global Human Capital Trends ("Human Advantage") — adaptability-anchored counter-narrative to McKinsey *Rewired 2.0*
 - [[edelman]] — Global PR firm; publisher of the annual Trust Barometer (2026: employers most-trusted institution at 78%)
@@ -63,6 +66,8 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[helen-poitevin]] — Distinguished VP Analyst, Gartner; coined [[people-amplification]]; voiced the 80%-cut / zero-ROI-correlation finding
 - [[hr-reporter]] — Canadian HR / People Ops trade publication; published [[sarah-dobson]]'s 2025-12 piece anchoring the [[ai-anxious-buyer]] frame in trade press
 - [[iabc]] — Professional association for business communicators; co-publisher of independent *Global Communication Report* series
+- [[institute-for-public-relations]] — Independent PR/comms research institute; 2026 generative-AI research + nine-item adoption checklist ([[ai-integrated-comms-function]]); 37% change-narrative stat
+- [[interact]] — Intranet/EX platform vendor; engagement→experience + "trusted action" thought-leadership (not on Cerkl's competitor list)
 - [[ipsos-karian-and-box]] — Ipsos-owned IC research/measurement firm; candour↔trust data across millions of employee responses
 - [[james-mcquivey]] — Forrester analyst; co-coined [[deep-listening]] with Brodeur-Johnson
 - [[jon-beck]] — VP at ButcherBox; ECCC 2026 change-management-arc quote (critics-as-resource piece)
@@ -70,6 +75,7 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[justin-black]] — Head of Seer at Workvivo; ex-Glint People Science founder
 - [[kate-smaje]] — Senior Partner, McKinsey Digital; co-author of *Rewired* 1st/2nd editions
 - [[katie-satterlee]] — Internal & Editorial Communications Specialist, Roku; named practitioner case for audience-aware newsletter variants
+- [[lhh]] — Global talent / career-transition firm (Adecco Group); "beautiful working world" EVP-launch case ([[corporate-wallpaper]])
 - [[linjuan-rita-men]] — UF Professor of Public Relations; author of *AI for Internal Communication* (PRR, n=20); articulates the [[co-piloting]] prescription
 - [[linkedin]] — Microsoft-owned professional network; May 2026 layoff-comms case 1 (~875 cuts, formulaic but acceptable)
 - [[mark-whittle]] — VP Advisory, Gartner (comms practice); coined [[change-leadership-three-step]]; primary public voice on Gartner's 2026 comms predictions
@@ -78,11 +84,14 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[meltwater]] — Media intelligence / social listening platform; data partner on *A Quiet Shift* (2026 academic comms research)
 - [[meta]] — Social-media / AI platform vendor; 2026-05-20 Zuckerberg memo ("success isn't a given") — culture rating −39%
 - [[microsoft]] — Enterprise software vendor; 2026 Rule-of-70 voluntary-first no-memo layoff anchor; parent of LinkedIn and Glint
+- [[new-york-life]] — Fortune-100 mutual insurer; proof-case for an [[ai-integrated-comms-function]] (Gennaro, 22-month integration)
 - [[niamh-emerson]] — Editor of *YourYale*, Yale University; named practitioner case for slot-based newsletter structure
 - [[oracle]] — Fortune 100 enterprise vendor; 2026-03-31 mass-email layoff (~20–30K, ~18% of global) — the highest-scale anchor in 2026 [[layoff-comms-choreography]] reference set
+- [[paul-gennaro]] — CCO, New York Life; Ragan Center for AI Strategy advisor; author of the [[ai-integrated-comms-function]] account
 - [[peakon]] — Workday Peakon Employee Voice; employee-listening product inside Workday HCM
 - [[perceptyx]] — Employee-listening / EX research vendor; 20M-response dataset; counter-research position to Qualtrics on change-engagement
 - [[peter-cardon]] — USC Marshall professor; co-author of Cardon & Coman 2025 (n=1,100) on AI-assisted workplace writing trust degradation
+- [[phyusion]] — AI-strategy advisory founded by Samantha Stark; conduit for IPR's 2026 generative-AI research
 - [[politemail]] — Outlook plug-in IC email measurement vendor; ~2B emails / ~11M employees telemetry; closest positioning analog to Cerkl
 - [[pr-daily]] — Ragan-owned trade publication for IC and PR
 - [[prosci]] — Change-management research firm; ADKAR framework; change-saturation threshold model
@@ -91,11 +100,13 @@ _People, organizations, vendors, publications, analyst firms, books._
 - [[rob-levin]] — Senior Partner, McKinsey; joined *Rewired* 2nd-edition author lineup in 2026
 - [[robert-sutton]] — Stanford organizational-behavior scholar; coined PUCC framework for difficult-decision comms
 - [[roku]] — Streaming-platform company; named practitioner case for audience-aware newsletter variants (regional subject lines)
+- [[samantha-stark]] — Founder, Phyusion; Ragan Center for AI Strategy advisor; presented IPR's 2026 generative-AI research
 - [[sarah-dobson]] — HR Reporter staff writer; author of the 2025-12 *Using AI for Internal Communications? Know the Risks* article
 - [[sean-devlin]] — Ragan contributor authoring the 2026 "Week in Comms" weekly editorial throughline; also authored 2026-05-18 newsletter-format-audit piece
 - [[seer]] — Workvivo's people-intelligence product, launched 2026-05-06; most-direct in-market execution of Forrester's deep-listening frame
 - [[simpplr]] — IC/EX platform vendor (modern intranet + Comms AI); publisher of 2026 State of IC Report (n=448) anchoring [[ai-anxious-buyer]] data; ironic position (sells AI maximalism + publishes the anxiety data)
 - [[swagatam-basu]] — Senior Director Analyst, Gartner HR practice; co-authored 2026-05-13 *People-Centric AI* release; articulator of [[enablement-illusion]]
+- [[tony-kihl]] — Director of Global IC, LHH; coined [[corporate-wallpaper]]; EVP-as-transformation playbook
 - [[usc-annenberg]] — USC's communication school; academic anchor of independent *Global Communication Report* series
 - [[wix]] — Website-builder SaaS; 2026 ~20% AI-attributed layoff (Abrahami)
 - [[workshop]] — Email-first IC platform vendor; publishes annual Internal Comms Trends Report
@@ -117,17 +128,21 @@ _Frameworks, theories, terms._
 - [[ai-rollout-comms]] — Unifying 2026 thesis: bad rollout → shadow AI → no ROI → AI-attributed layoffs → choreography failure → deep listening emerges
 - [[ai-slop]] — Roth-Eagle's framing: AI content fails when taste, judgment, and voice are absent
 - [[ai-washing]] — Three senses: attributing cuts to AI when driver is elsewhere; disclaimer-backfire (GitLab); side-channel split-messaging (LinkedIn)
+- [[ai-integrated-comms-function]] — Practitioner operating-model for AI in IC (IPR nine-item checklist + NY Life proof); culture/governance/workflow/measurement over tools
 - [[analyst-trio-comms-as-ai-gate]] — McKinsey + Gartner + Forrester convergence: communications is the binding constraint on AI ROI
 - [[boilerplate-layoff-language]] — 2026 pattern: "broader organizational change" euphemism (Oracle/GM/Sony/ProPublica); language-axis sibling to [[layoff-comms-choreography]]
 - [[change-fatigue]] — Dominant 2026 IC-trade-press counter-frame to Qualtrics; Gallagher/Perceptyx/Prosci-anchored
 - [[change-leadership-three-step]] — Whittle/Gartner three-step framework (Acknowledge / Regulate / Train); analyst-tier practitioner prescription pairing with [[people-amplification]]
 - [[change-saturation]] — Prosci threshold model; engagement inverts above cumulative-events threshold
 - [[co-piloting]] — Academic-grade prescription for AI in IC: humans draft relational content, AI for polish (Men et al., Cardon & Coman 2025)
+- [[comms-as-knowledge-steward]] — 2026 thesis: IC's AI-era job is stewarding institutional knowledge so the org is AI-ready; "content problem is solved"
+- [[corporate-wallpaper]] — Kihl/LHH: the EVP failure mode where stated values aren't lived; antidote is EVP-as-campaign
 - [[context-delivery]] — Karian's prescription: IC as context delivery / radical honesty, not reputation management
 - [[cross-channel-benchmark]] — Structurally absent IC benchmark category; defensible content slot for vendors with multi-channel HRIS-synced telemetry
 - [[deep-listening]] — Forrester's Feb 2026 category-naming: AI on collaboration exhaust → real-time sentiment; Cerkl's complement-not-compete positioning
 - [[do-more-with-less]] — Persistent IC-team resource framing; 2026 shows practitioner pushback (44% have resources they need); now backed by Gartner's people-amplification rebuttal
 - [[employee-engagement-three-bucket-model]] — Gallup's engaged / not engaged / actively disengaged
+- [[engagement-to-experience-pivot]] — 2026 reframe demoting engagement metrics (clicks/opens) for lived experience + business outcomes
 - [[employee-influencers]] — Trusted internal voices as IC amplifiers; 41% of teams actively investing
 - [[employee-listening]] — Systematic collection and analysis of employee feedback
 - [[enablement-illusion]] — Gartner-coined: leaders mistake adoption metrics for transformation; the "True ROI Index" rebuttal
@@ -192,3 +207,6 @@ _One summary page per ingested source._
 - [[why-employees-right-not-to-trust-ic]] — Ghassan Karian / isitworking Substack (2026-05-26); IKB-data-backed; coins [[ic-credibility-deficit]] + [[context-delivery]]
 - [[ragan-toughest-internal-critics-2026-05-29]] — Ragan / Sean Devlin (2026-05-29); ECCC 2026 critics-as-comms-resource (PARTIAL — paywalled)
 - [[gallup-engagement-strategies-2026]] — Gallup (~2026-05, companion to *State of the Global Workplace*); coins [[manager-as-ai-champion]] (2.1x manager-AI-support → weekly+ usage); 26% with-a-clear-AI-plan; restates manager-70%-variance + 23/18/51 business-impact triple
+- [[ragan-engagement-to-experience-2026-06-11]] — Ragan / Interact roundtable (2026-06-11); names [[engagement-to-experience-pivot]]; "trusted action" + [[comms-as-knowledge-steward]]; vendor-tier
+- [[ragan-9-lessons-ai-integrated-comms-2026-06-11]] — Ragan / Paul Gennaro, NY Life CCO (2026-06-11); [[ai-integrated-comms-function]] via IPR nine-item checklist; 37% change-narrative gap; outcome-measurement rebuttal to [[measurers-vs-builders]]
+- [[ragan-evp-corporate-wallpaper-lhh-2026-06-10]] — Ragan / Sean Devlin × Tony Kihl, LHH (2026-06-10); coins [[corporate-wallpaper]]; EVP-as-campaign; cascade-deck enablement; multi-signal measurement

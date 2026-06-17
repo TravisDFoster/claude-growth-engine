@@ -2,8 +2,10 @@
 name: webinar-canva-render
 description: "Render the full Canva asset pack for one webinar by dispatching one parallel sub-agent per manifest in the event's canva-manifests/ folder. Each sub-agent invokes template-fill against its assigned manifest and returns the Canva edit URL. The orchestrator appends each URL to its manifest YAML (primary source-of-truth) and mirrors the URL into the Drive MAP's Deliverable column (bonus for the internal team). Trigger phrases: 'render the canva assets for [webinar]', 'kick off canva render for rachel', 'run the asset pack render', 'fill all the webinar templates'. Inputs: event-folder path + headshot Canva asset ID. Output: chat-printed roll-up of role → URL + warnings + manual_drag_required list."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
   status: live
+  changelog:
+    - "0.2.0 (2026-06-10): URLs are now Canva-verified. Sub-agents must call get-design after commit and return the canonical /design/<id>/edit form; orchestrator Step 6 validates every edit_url against its design_id before write. Fixes the short-link 404 incident."
 ---
 
 # Webinar Canva Render
@@ -88,13 +90,18 @@ You are running template-fill against a single Canva manifest.
    - Add a `manual_drag_required` entry — recipient drops the rectangle into the visible frame in Canva's UI (same pattern as the speaker-card layered case).
    - **Do not treat DELETE-placeholder templates as a different category from layered frames.** Same workflow.
 5. Use commit_mode from the manifest (already normalized by the orchestrator).
-6. Return ONLY a JSON object — no narrative, ≤200 words:
+6. **Verify the URLs against Canva — do NOT self-report them.** After a successful commit you know the `design_id`. The edit/view URLs returned inline by the editing-transaction tools are unreliable short-link tokens that frequently 404 (real incident 2026-06-10: every sub-agent reported a `/d/<token>/edit` link that did not resolve, even though the designs were fine). So:
+   - Call `mcp__claude_ai_Canva__get-design` with the committed `design_id`.
+   - Take `view_url` **verbatim** from that response.
+   - Construct `edit_url` as the stable canonical form `https://www.canva.com/design/<design_id>/edit` (do not paste a `/d/<token>` short link — even the one get-design returns; the `/design/<id>/edit` form is the durable one).
+   - If get-design fails, return `status: "ERR_URL_UNVERIFIED"` with the `design_id` so the orchestrator can re-pull — never emit a guessed/self-constructed URL.
+7. Return ONLY a JSON object — no narrative, ≤200 words:
    {
      "role": "<filename stem>",
      "status": "OK" | "AWAITING_REVIEW" | "ERR_…",
      "design_id": "<DAH…>",
-     "edit_url": "<https://www.canva.com/design/DAH…/edit>",
-     "view_url": "<https://www.canva.com/design/DAH…/view>",
+     "edit_url": "https://www.canva.com/design/<design_id>/edit",   // canonical form, built from the verified design_id
+     "view_url": "<verbatim from get-design>",
      "warnings": [...],
      "manual_drag_required": [...]
    }
@@ -108,15 +115,17 @@ Accumulate the N JSON returns into a `role → result` dict.
 
 ### Step 6 — Write URLs into manifests (canonical store)
 
-For each result with `status: OK`, append a `result_url:` field (with metadata) to the matching manifest YAML:
+**URL guard (orchestrator-side safety net).** Before writing, validate every result's `edit_url`. It MUST match `https://www.canva.com/design/<design_id>/edit` where `<design_id>` equals that result's `design_id`. If a sub-agent returned anything else — a `/d/<token>` short link, a mismatched ID, or status `ERR_URL_UNVERIFIED` — do NOT store it. Call `mcp__claude_ai_Canva__get-design` yourself with the `design_id`, then store the canonical `https://www.canva.com/design/<design_id>/edit` (and `view_url` verbatim from get-design). This is the backstop for the 2026-06-10 short-link 404 incident; never let an unverified URL reach the manifest.
+
+For each result with `status: OK`, append a `result:` block to the matching manifest YAML:
 
 ```yaml
 # Append to the bottom of the manifest:
 result:
   rendered_at: "2026-06-02T14:32:00Z"   # ISO timestamp, UTC
   design_id: "DAH…"
-  edit_url: "https://www.canva.com/design/DAH…/edit"
-  view_url: "https://www.canva.com/design/DAH…/view"
+  edit_url: "https://www.canva.com/design/DAH…/edit"   # canonical /design/<id>/edit form ONLY — never a /d/<token> short link
+  view_url: "https://www.canva.com/d/…"                # verbatim from get-design
   warnings_count: 0
   manual_drag_required_count: 1
 ```
@@ -171,6 +180,7 @@ URLs mirrored into:
 | Sub-agents return `AWAITING_REVIEW` instead of `OK` | A manifest's `commit_mode` was `checkpoint` AND Step 3 override didn't apply | Bug in this skill — Step 3 must normalize ALL manifests to `auto` for parallel dispatch |
 | MAP mirror step skipped with `map_mirror_skipped` | Brief is missing or has an unparseable MAP link | Non-fatal; canonical store is intact |
 | Manifest YAML write-back fails (Step 6) | Permission or path issue | This is the canonical store — fail loudly. Surface error to user and DO NOT continue to Step 7 (mirror) — keeps consistency. |
+| Stored `edit_url` 404s when opened | Sub-agent self-reported a `/d/<token>` short link instead of querying Canva (the inline transaction URLs are unreliable) | Re-pull via `mcp__claude_ai_Canva__get-design` on the `design_id` and store the canonical `https://www.canva.com/design/<design_id>/edit`. Step 6's URL guard should now catch this before write — if one still slips through, the guard regex (`/design/<design_id>/edit`) wasn't applied. (Root cause of the 2026-06-10 incident.) |
 
 ---
 

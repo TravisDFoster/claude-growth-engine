@@ -15,11 +15,15 @@ personal-assistant/meetings/
 # Active sales pipeline + named prospect work — PII / competitive
 sales/sales-reporting/reports/
 
-# sales/presentations/: ignore everything except the system files (allowlist)
-# Prospect-specific decks, brand kits, and roadmaps stay local-only.
+# sales/presentations/: process-only folder. Ignore stray local files; keep the system files.
 sales/presentations/*
 !sales/presentations/CLAUDE.md
 !sales/presentations/presentation-process.md
+
+# sales/prospects/: named prospect work (decks, brand kits, roadmaps) — local-only, PII / competitive.
+# Allowlist only the convention router; every <prospect>/ folder stays local.
+sales/prospects/*
+!sales/prospects/CLAUDE.md
 
 # HubSpot CRM audit reports — portal-level stats + contact-level findings
 hubspot/reports/

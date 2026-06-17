@@ -123,7 +123,3 @@
 - Promote to a skill if scaffold generation becomes Tuesday-morning routine and we want auto-trigger (currently invoked manually each Monday).
 - Pull subtask date offsets out of this file into a config block in `../jira-csv-guidelines.md` once we see what real-world cadence wants.
 - Add a `--dry-run` mode that prints the planned CSV to chat without writing the file (useful when iterating on the slug synthesis rule).
-
-## Learnings
-
-Append "what broke / what we changed" notes here as the process matures.
