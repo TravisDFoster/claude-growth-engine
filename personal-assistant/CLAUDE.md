@@ -22,6 +22,7 @@ Most interactions run through one of these skills. Load the skill file when inte
 | "Plan the week", "Monday weekly plan", start of a new week — re-rank Top of Mind + sweep anchors | `skills/plan-week.md` |
 | "Friday retro", "wrap up the week" | `skills/retro.md` |
 | "Process this meeting note", "extract action items from `<meetings/...>`", reviewing meeting files | `skills/process-meeting.md` |
+| "Process all new meetings", batch-ingest the drive-sync corpus into projects, backfill meeting insights | `skills/process-meetings-batch.md` |
 | "Catch me up", start of session, returning after time away, checking what's changed | `skills/refresh.md` |
 | "Regenerate the leadership review", "growth project tracker", Thursday leadership-meeting prep | `skills/growth-project-tracker.md` |
 | "Add a task: X", "log this", quick capture into the right project | `skills/capture.md` |

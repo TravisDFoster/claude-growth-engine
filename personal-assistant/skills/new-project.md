@@ -64,6 +64,8 @@ If the call came from `capture` or `process-meeting`, return control to that ski
 
 The `## Log` is append-only — dated entries, newest at the bottom. It is the project's state: the latest entry tells you where things stand. No Status block to maintain.
 
+**Entry format:** a simple item is one line — `- YYYY-MM-DD — <entry>`. A multi-point update (e.g. a meeting batch) is a dated sub-block — `### Update — YYYY-MM-DD (from <source>)` followed by bullet lines. Both live under the single `## Log` section. `## Log` is the one canonical name — earlier files used `## History` / `## Update`; those were unified to `## Log` on 2026-06-19, so don't reintroduce them.
+
 ## Don't
 
 - Don't create a project with an empty `## Plan / Sequence` — at minimum draft the first step. If you can't, fold instead.

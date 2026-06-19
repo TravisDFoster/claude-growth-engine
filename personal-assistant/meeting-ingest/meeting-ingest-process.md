@@ -29,6 +29,20 @@ Each `.md` carries frontmatter: `source_id`, `meeting`, `date`, `kind`, `drive_n
 
 Recurring series live in `RECURRING_SERIES` in `ingest.py` — add a slug there to give a meeting its own folder.
 
+## Ad-hoc import (one-off doc outside Meet Recordings)
+When Travis hands over a Drive doc link to pull on demand, **no script change** — these are
+ad-hoc and the link changes each time. Pull it directly:
+```bash
+# file id = the part between /d/ and /edit in the share URL
+# gws -o is sandboxed to cwd, so cd into the destination folder first
+cd meetings/drive-sync/<folder> && \
+gws drive files export --params '{"fileId":"<ID>","mimeType":"text/markdown"}' -o <YYYY-MM-DD>-notes.md
+```
+- Pick `<folder>` to match the content — an existing series folder, a new descriptive one, or `one-offs/`.
+- Date the filename from the doc's `modifiedTime` (`gws drive files get … --fields modifiedTime`) or just today.
+- Frontmatter is **optional** for ad-hoc pulls — only add the drive-sync schema fields if a downstream skill (e.g. `process-meeting`) will consume the file.
+- Don't add it to the manifest; these aren't tracked, so a later `ingest.py` run leaves them alone.
+
 ## Relationship to other PA skills
 - `meetings/drive-sync/` is machine-generated and **separate** from the hand-written notes in `growth-meeting-notes/`, `sales-meeting-notes/`, etc. The script never touches those.
 - To turn an ingested note into project `## Log` entries, run `skills/process-meeting.md` against the file — that step is the only one that uses inference, and only when you ask for it.

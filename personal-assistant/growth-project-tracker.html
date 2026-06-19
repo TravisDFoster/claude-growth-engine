@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marketing &amp; Growth Ops — Portfolio Review · 2026-06-11</title>
+<title>Marketing &amp; Growth Ops — Portfolio Review · 2026-06-19</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -15,25 +15,25 @@
     --ink: #f5f5fa;
     --muted: #bfbfc7;
     --line: #373740;
-    --accent: #4c60d9;
-    --accent-strong: #3547c4;
-    --accent-deep: #0c1159;
-    --accent-pale: #a7b3ed;
+    --accent: #4c60d9;            /* Cobalt 50 */
+    --accent-strong: #3547c4;     /* Cobalt 60 — primary bar fill */
+    --accent-deep: #0c1159;       /* Cobalt 100 */
+    --accent-pale: #a7b3ed;       /* Cobalt 40 */
     --accent-soft: rgba(76, 96, 217, 0.14);
     --accent-border: rgba(167, 179, 237, 0.28);
-    --warm: #ffaa22;
+    --warm: #ffaa22;              /* Butter base */
     --warm-pale: #ffbf57;
-    --good: #6de4c9;
+    --good: #6de4c9;              /* Forest 40 */
     --good-bg: rgba(59, 197, 164, 0.10);
     --good-border: rgba(109, 228, 201, 0.30);
     --warn: #ffbf57;
     --warn-bg: rgba(255, 170, 34, 0.10);
     --warn-border: rgba(255, 170, 34, 0.30);
-    --bad: #f79499;
+    --bad: #f79499;               /* Ruby 40 */
     --bad-bg: rgba(242, 73, 95, 0.10);
     --bad-border: rgba(242, 73, 95, 0.30);
-    --quote: #a869fd;
-    --violet: #802ee6;
+    --quote: #a869fd;             /* Violet 40 */
+    --violet: #802ee6;            /* Violet base */
     --code-bg: #27272e;
     --shadow: 0 1px 0 rgba(0,0,0,0.30), 0 8px 24px rgba(0,0,0,0.40);
     --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
@@ -147,22 +147,83 @@
     color: var(--accent-pale);
   }
 
-  /* ---------- Timeline ---------- */
+  /* ---------- Badges ---------- */
+  .badge {
+    display: inline-flex; align-items: center;
+    font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 999px; border: 1px solid;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    white-space: nowrap;
+  }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .badge.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .badge.info { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+
+  /* ---------- Pills ---------- */
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10px; font-weight: 600; padding: 2px 9px;
+    border-radius: 999px; border: 1px solid;
+    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
+    letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+  }
+  .pill::before { content: "\25CF"; font-size: 7px; }
+  .pill.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
+  .pill.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
+  .pill.info { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
+
+  /* ---------- Top of Mind — number-led cards ---------- */
+  .strat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 6px;
+  }
+  @media (max-width: 820px) { .strat-grid { grid-template-columns: 1fr; } }
+  .strat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex; flex-direction: column;
+  }
+  .strat-card.flag-bad  { border-color: var(--bad-border); }
+  .strat-card.flag-warn { border-color: var(--warn-border); }
+  .strat-card .strat-eyebrow {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .strat-card .strat-title {
+    font-size: 16px; color: var(--ink); font-weight: 600; margin: 2px 0 6px;
+  }
+  .strat-card .strat-ctx {
+    font-size: 13px; color: var(--muted); margin: 0 0 10px;
+  }
+  .strat-card .strat-ctx b { color: var(--ink); font-weight: 600; }
+  .strat-card .strat-outcome {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--accent-pale); font-weight: 500;
+  }
+
+  /* ---------- Timeline strip ---------- */
   .timeline {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 8px;
     margin-top: 8px;
   }
-  @media (max-width: 720px) {
-    .timeline { grid-template-columns: 1fr 1fr; }
-  }
+  @media (max-width: 900px) { .timeline { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .timeline { grid-template-columns: 1fr; } }
   .timeline-week {
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 10px;
     padding: 12px;
-    min-height: 140px;
+    min-height: 120px;
     display: flex; flex-direction: column;
   }
   .week-label {
@@ -184,70 +245,53 @@
     font-variant-numeric: tabular-nums;
   }
   .brief-chip .b-title { color: var(--ink); font-weight: 500; line-height: 1.3; }
-  .brief-chip .b-pillar {
-    display: inline-block; font-size: 10px; font-weight: 600;
-    margin-top: 4px; color: var(--muted);
-  }
-  .brief-chip.press   { border-left-color: #3547c4; }
-  .brief-chip.email   { border-left-color: #a7b3ed; }
-  .brief-chip.webinar { border-left-color: #802ee6; }
-  .brief-chip.ads     { border-left-color: #ffaa22; }
-  .brief-chip.seo     { border-left-color: #6de4c9; }
-  .brief-chip.hard { box-shadow: inset 0 0 0 1px var(--warn-border); }
-  .brief-chip .b-deadline {
-    display: inline-block; font-size: 9px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
-    color: var(--warm); margin-left: 6px;
-  }
+  .brief-chip .b-title b { color: #ffffff; font-weight: 700; }
+  .brief-chip.launch   { border-left-color: #ffaa22; }       /* Butter — launch cluster */
+  .brief-chip.webinar  { border-left-color: #802ee6; }       /* Violet — webinar runway */
+  .brief-chip.ext      { border-left-color: var(--line); opacity: 0.72; } /* external */
 
-  /* ---------- Top-of-mind strategic cards ---------- */
-  .strat-grid {
+  /* ---------- Bar chart (portfolio health) ---------- */
+  .bar-chart { display: flex; flex-direction: column; gap: 9px; margin-top: 6px; }
+  .bar-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 6px;
+    grid-template-columns: 110px 1fr 150px;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
   }
-  @media (max-width: 820px) { .strat-grid { grid-template-columns: 1fr; } }
-  .strat-card {
+  .bar-row .bar-label { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .bar-track {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 18px 20px;
-    display: flex; flex-direction: column;
+    border-radius: 6px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
   }
-  .strat-card.flag-bad  { border-color: var(--bad-border); }
-  .strat-card.flag-warn { border-color: var(--warn-border); }
-  .strat-card .strat-eyebrow {
-    font-size: 10px; color: var(--muted); text-transform: uppercase;
-    letter-spacing: 0.08em; font-weight: 600; margin-bottom: 6px;
+  .bar-fill {
+    background: var(--accent-strong);
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px;
+    color: #ffffff; font-size: 12px; font-weight: 600;
+    white-space: nowrap;
   }
-  .strat-card .strat-title {
-    font-size: 16px; color: var(--ink); font-weight: 600; margin: 2px 0 8px;
+  .bar-fill.good { background: #1a9979; }
+  .bar-fill.warm { background: var(--warm); color: #18181d; }
+  .bar-fill.bad  { background: #b00045; }
+  .bar-fill.pale { background: var(--accent-pale); color: #0c1159; }
+  .bar-meta {
+    font-size: 12px; color: var(--muted);
+    display: flex; align-items: center; gap: 8px;
+    justify-content: flex-end;
   }
-  .strat-card .strat-status {
-    display: inline-flex; align-items: center; gap: 6px;
-    align-self: flex-start;
-    font-size: 11px; font-weight: 600; padding: 3px 10px;
-    border-radius: 999px; border: 1px solid;
-    background: var(--good-bg); color: var(--good); border-color: var(--good-border);
-    letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .strat-card .strat-status::before { content: "●"; font-size: 8px; }
-  .strat-card .strat-status.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
-  .strat-card .strat-status.bad  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
-  .strat-card .strat-next {
-    font-size: 13px; color: var(--ink); margin: 0 0 10px; line-height: 1.45;
-  }
-  .strat-card .strat-next b { color: #ffffff; font-weight: 600; }
-  .strat-card .strat-why {
-    margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid var(--line);
-    font-size: 12px; color: var(--muted); line-height: 1.45;
+  @media (max-width: 720px) {
+    .bar-row { grid-template-columns: 1fr; gap: 4px; }
+    .bar-meta { justify-content: flex-start; }
   }
 
-  /* ---------- Gauges ---------- */
+  /* ---------- Status gauges (blockers) ---------- */
   .gauge-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -260,7 +304,6 @@
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 18px 20px;
-    position: relative;
   }
   .gauge-card.bad  { border-color: var(--bad-border); }
   .gauge-card.warn { border-color: var(--warn-border); }
@@ -275,102 +318,44 @@
     letter-spacing: 0.04em; text-transform: uppercase;
     margin-bottom: 10px;
   }
-  .gauge-status::before { content: "●"; font-size: 8px; }
+  .gauge-status::before { content: "\25CF"; font-size: 8px; }
   .gauge-status.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
   .gauge-unlocks {
     font-size: 12px; color: var(--muted); line-height: 1.45;
   }
-  .gauge-unlocks b { color: var(--ink); font-weight: 500; }
-
-  /* ---------- Ledger bar chart (status mix) ---------- */
-  .bar-chart { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
-  .bar-row {
-    display: grid;
-    grid-template-columns: 150px 1fr 120px;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-  }
-  .bar-row .bar-label { color: var(--ink); font-weight: 600; }
-  .bar-track {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    height: 22px;
-    position: relative;
-    overflow: hidden;
-  }
-  .bar-fill {
-    background: var(--accent-strong);
-    height: 100%;
-    border-radius: 5px 0 0 5px;
-    display: flex; align-items: center; justify-content: flex-end;
-    padding-right: 8px;
-    color: #ffffff; font-size: 12px; font-weight: 600;
-    white-space: nowrap;
-  }
-  .bar-fill.good { background: #1a9979; }
-  .bar-fill.warn { background: var(--warm); color: #18181d; }
-  .bar-fill.bad  { background: #b00045; }
-  .bar-fill.mute { background: var(--muted); color: #18181d; }
-  .bar-meta {
-    font-size: 12px; color: var(--muted);
-    display: flex; align-items: center; gap: 8px;
-    justify-content: flex-end;
-  }
-  @media (max-width: 720px) {
-    .bar-row { grid-template-columns: 1fr; gap: 4px; }
-    .bar-meta { justify-content: flex-start; }
-  }
+  .gauge-unlocks b { color: var(--ink); font-weight: 600; }
 
   /* ---------- Ledger table ---------- */
-  table.ledger {
-    width: 100%; border-collapse: collapse; margin-top: 14px;
+  table.actions {
+    width: 100%; border-collapse: collapse; margin-top: 6px;
     font-size: 13px;
   }
-  table.ledger th, table.ledger td {
+  table.actions th, table.actions td {
     text-align: left; padding: 9px 12px; vertical-align: top;
     border-bottom: 1px solid var(--line); color: var(--ink);
   }
-  table.ledger th {
+  table.actions th {
     font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
     color: var(--accent-pale); font-weight: 600; background: var(--panel);
   }
-  table.ledger tr:last-child td { border-bottom: none; }
-  table.ledger tr:hover td { background: var(--panel); }
-  table.ledger .l-state { color: var(--muted); }
-  .pill {
-    display: inline-block; font-size: 10px; font-weight: 600;
-    padding: 2px 8px; border-radius: 999px; border: 1px solid;
-    letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
-  }
-  .pill.active   { background: var(--good-bg); color: var(--good); border-color: var(--good-border); }
-  .pill.blocked  { background: var(--bad-bg);  color: var(--bad);  border-color: var(--bad-border); }
-  .pill.done     { background: var(--accent-soft); color: var(--accent-pale); border-color: var(--accent-border); }
-  .pill.hold     { background: var(--warn-bg); color: var(--warn); border-color: var(--warn-border); }
-  .pill.explore  { background: var(--panel-soft); color: var(--muted); border-color: var(--line); }
+  table.actions tr:last-child td { border-bottom: none; }
+  table.actions tr:hover td { background: var(--panel); }
+  table.actions td.proj { font-weight: 600; font-family: var(--mono); font-size: 12px; color: var(--accent-pale); white-space: nowrap; }
+  table.actions td.st { white-space: nowrap; }
+  table.actions td b { color: #ffffff; font-weight: 600; }
 
-  /* ---------- Recently shipped list ---------- */
-  .shipped { list-style: none; padding: 0; margin: 6px 0 0; }
-  .shipped li {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-    align-items: baseline;
+  /* ---------- Shipped list ---------- */
+  .ship-list { display: flex; flex-direction: column; gap: 0; margin-top: 6px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .ship-row {
+    display: grid; grid-template-columns: 120px 1fr; gap: 14px;
+    padding: 11px 16px; border-bottom: 1px solid var(--line);
+    align-items: baseline; font-size: 14px;
   }
-  .shipped li:last-child { border-bottom: none; }
-  .shipped .s-date {
-    font-size: 12px; color: var(--good); font-weight: 600;
-    font-variant-numeric: tabular-nums;
-  }
-  .shipped .s-text { color: var(--ink); line-height: 1.45; }
-  .shipped .s-text b { color: #ffffff; font-weight: 600; }
-  @media (max-width: 520px) {
-    .shipped li { grid-template-columns: 1fr; gap: 2px; }
-  }
+  .ship-row:last-child { border-bottom: none; }
+  .ship-row:nth-child(odd) { background: var(--panel); }
+  .ship-date { font-size: 12px; color: var(--good); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ship-row .ship-what { color: var(--ink); }
+  @media (max-width: 520px) { .ship-row { grid-template-columns: 1fr; gap: 2px; } }
 
   /* ---------- TL;DR strip ---------- */
   .tldr-strip {
@@ -379,7 +364,7 @@
     padding: 6px 0 6px 16px;
     font-size: 15px; line-height: 1.55;
     color: rgba(255,255,255,0.92);
-    max-width: 80ch;
+    max-width: 84ch;
   }
   .tldr-strip b { color: #ffffff; }
 
@@ -415,43 +400,45 @@
     h2 .lead { color: #373740; }
     h3 { color: #373740; }
 
-    .timeline-week, .strat-card, .gauge-card { background: #f5f5fa; border-color: #d5d5db; }
+    .strat-card, .timeline-week, .gauge-card { background: #f5f5fa; border-color: #d5d5db; }
+    .strat-card .strat-eyebrow, .strat-card .strat-ctx { color: #373740; }
+    .strat-card .strat-ctx b { color: #18181d; }
+    .strat-card .strat-outcome { color: #3547c4; border-top-color: #d5d5db; }
     .brief-chip { background: #ffffff; }
-    .brief-chip .b-title { color: #18181d; }
-    .brief-chip .b-pillar, .brief-chip .b-date, .week-label { color: #373740; }
-    .brief-chip .b-deadline { color: #80550f; }
+    .brief-chip .b-title, .brief-chip .b-title b { color: #18181d; }
+    .brief-chip .b-date, .week-label { color: #373740; }
 
-    .strat-card .strat-eyebrow, .strat-card .strat-why { color: #373740; }
-    .strat-card .strat-next { color: #18181d; }
-    .strat-card .strat-next b { color: #18181d; }
-    .strat-card .strat-status { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
-    .strat-card .strat-status.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .strat-card .strat-status.bad { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .bar-track { background: #ebebf0; border-color: #d5d5db; }
+    .bar-fill { background: #3547c4; color: #ffffff; }
+    .bar-fill.good { background: #1a9979; }
+    .bar-fill.warm { background: #ffaa22; color: #18181d; }
+    .bar-fill.bad  { background: #b00045; }
+    .bar-fill.pale { background: #a7b3ed; color: #0c1159; }
+    .bar-label, .bar-meta { color: #373740; }
 
     .gauge-status { background: #fcf0f0; color: #b00045; border-color: #b00045; }
     .gauge-status.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
     .gauge-unlocks { color: #373740; }
 
-    .bar-track { background: #ebebf0; border-color: #d5d5db; }
-    .bar-fill { background: #3547c4; color: #ffffff; }
-    .bar-fill.good { background: #1a9979; }
-    .bar-fill.warn { background: #ffaa22; color: #18181d; }
-    .bar-fill.bad { background: #b00045; }
-    .bar-fill.mute { background: #8a8a93; color: #ffffff; }
-    .bar-meta { color: #373740; }
+    table.actions th { background: #ebebf0; color: #373740; border-color: #d5d5db; }
+    table.actions td { color: #18181d; border-color: #d5d5db; }
+    table.actions td.proj { color: #3547c4; }
+    table.actions td b { color: #18181d; }
 
-    table.ledger th { background: #ebebf0; color: #373740; border-color: #d5d5db; }
-    table.ledger td { color: #18181d; border-color: #d5d5db; }
-    table.ledger .l-state { color: #373740; }
-    .pill.active { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
-    .pill.blocked { background: #fcf0f0; color: #b00045; border-color: #b00045; }
-    .pill.done { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
-    .pill.hold { background: #fff9f2; color: #80550f; border-color: #80550f; }
-    .pill.explore { background: #f5f5fa; color: #373740; border-color: #d5d5db; }
+    .ship-list { border-color: #d5d5db; }
+    .ship-row { border-color: #d5d5db; }
+    .ship-row:nth-child(odd) { background: #f5f5fa; }
+    .ship-date { color: #1a9979; }
+    .ship-row .ship-what { color: #18181d; }
 
-    .shipped .s-date { color: #1a9979; }
-    .shipped .s-text, .shipped .s-text b { color: #18181d; }
-    .shipped li { border-color: #d5d5db; }
+    .badge { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
+    .badge.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
+    .badge.bad  { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .badge.info { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
+    .pill { background: #e8fffa; color: #1a9979; border-color: #1a9979; }
+    .pill.warn { background: #fff9f2; color: #80550f; border-color: #80550f; }
+    .pill.bad  { background: #fcf0f0; color: #b00045; border-color: #b00045; }
+    .pill.info { background: #f0f2fc; color: #3547c4; border-color: #3547c4; }
 
     footer { color: #373740; border-top-color: #d5d5db; }
     a { color: #18181d; }
@@ -466,7 +453,7 @@
     <div class="breadcrumb">Personal Assistant · Growth Project Tracker</div>
     <h1>Marketing &amp; Growth Ops — Portfolio Review</h1>
     <div class="meta-row">
-      <span><b>Date:</b> 2026-06-11 (Thursday)</span>
+      <span><b>Date:</b> 2026-06-19 (Friday)</span>
       <span><b>Audience:</b> Tarek Kamil (CEO) + leadership team</span>
       <span><b>Author:</b> Travis Foster, Head of Marketing &amp; Growth Ops</span>
     </div>
@@ -480,260 +467,351 @@
         <div class="h-num">5</div>
         <div class="h-lbl">Top of mind</div>
       </div>
-      <div class="h-stat warm">
-        <div class="h-num">4</div>
-        <div class="h-lbl">Hard deadlines · 14 days</div>
+      <div class="h-stat">
+        <div class="h-num">8</div>
+        <div class="h-lbl">Dated commitments · 14 days</div>
       </div>
       <div class="h-stat bad">
-        <div class="h-num">3</div>
+        <div class="h-num">5</div>
         <div class="h-lbl">Blocked or at-risk</div>
       </div>
-      <div class="h-stat">
-        <div class="h-num">11</div>
-        <div class="h-lbl">Milestones to 7/11</div>
+      <div class="h-stat warm">
+        <div class="h-num">07<small>-09</small></div>
+        <div class="h-lbl">Webinar — LIVE date</div>
       </div>
     </div>
 
     <p class="tldr-strip">
-      Two launch threads dominate the next two weeks: <b>Insights 3.0</b> press release clears final approval <b>6/13</b> and publishes <b>6/20</b>,
-      and the <b>Downloadable Asset Emails</b> CTA swap holds its <b>6/12</b> slot (no further slip after slipping twice). The
-      <b>Rachel + Maddy webinar</b> was rescoped this week — date moved to <b>2026-07-09</b> and a second internal presenter (Maddy Rieman) added —
-      pushing its crunch window into early July and off the immediate critical path. Risk is concentrated in two blockers:
-      <b>Cerkular</b> still gated on Jira FUTURE-232, and <b>Meta Ads</b> is built but blocked on Allison's creative (confirm ETA at the 6/16 1:1).
+      Launch week dominates: the <b>Insights 3.0 cluster</b> (product 06-20 &rarr; press release 06-23 8:00 AM &rarr; prospect nurture 06-24)
+      plus the runway to the <b>Rachel + Maddy webinar 07-09</b>. Meta Ads' first test campaign is <b>live</b> ($20/day), and paid is
+      consolidating around Bing + demo-request landing pages + new AI ad channels (OpenAI). Main risks: Downloadable Asset Emails has
+      <b>slipped a 3rd time</b>, and three paid initiatives are blocked on external handoffs (Pixel/Drew, Banana Tag LP/Tarek, OpenAI account/Joe).
     </p>
   </header>
 
   <!-- ============== SECTION 1: TOP OF MIND ============== -->
   <section>
-    <h2><span class="num">01</span>Top of mind<span class="lead">5 priorities · 2 flagged</span></h2>
+    <h2><span class="num">01</span>Top of mind<span class="lead">5 priorities driving the quarter</span></h2>
     <div class="strat-grid">
-
       <div class="strat-card flag-warn">
-        <div class="strat-eyebrow">1 · Demand gen · July</div>
-        <div class="strat-title">Webinar — Rachel Folz + Maddy Rieman</div>
-        <span class="strat-status warn">Rescoped 6/10</span>
-        <p class="strat-next"><b>Next:</b> Close the 2026-06-18 setup batch (Zoom + tracking URLs · reg page · 2-speaker Canva pack · bios/headshots · LinkedIn intro · pre-event blog) → Email Blast #1 on 2026-06-29.</p>
-        <p class="strat-why">Flagship demand-gen moment. The +14-day shift (6/25 → 7/09) relieves June pressure but adds a second presenter to coordinate; setup batch re-rendered for 2 speakers. Title locked: <em>"Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer."</em></p>
+        <div class="strat-eyebrow"><span>Demand event of the quarter</span><span class="pill info">Live 07-09</span></div>
+        <div class="strat-title">Webinar — Rachel + Maddy</div>
+        <div class="strat-ctx">Flagship demand event. Next: close the setup batch; <b>Email Blast #1 06-29</b>; outline / script / visuals lock 07-02.</div>
+        <div class="strat-outcome">Runway anchors July demand gen</div>
       </div>
-
       <div class="strat-card flag-warn">
-        <div class="strat-eyebrow">2 · Self-serve motion</div>
-        <div class="strat-title">Downloadable Asset Emails</div>
-        <span class="strat-status warn">Due 6/12 · slipped twice</span>
-        <p class="strat-next"><b>Next:</b> Inventory downloadable-asset follow-up sequences and swap CTAs from book-a-meeting → Foundations.</p>
-        <p class="strat-why">Aligns the post-download offer with the self-serve Foundations motion. Slotted Fri 2026-06-12 (W24). Slipped past the original 5/29 deadline and again in W23 — guard the 6/12 slot.</p>
+        <div class="strat-eyebrow"><span>Paid channel launch</span><span class="pill warn">Blocked</span></div>
+        <div class="strat-title">Meta Ads channel launch</div>
+        <div class="strat-ctx">First test campaign <b>LIVE</b> on a lookalike audience ($20/day, 4 creatives). Next: stand up remaining audience cells. Blocked: Pixel won't connect via GTM (&rarr; Drew / GrowMyAds).</div>
+        <div class="strat-outcome">New top-of-funnel channel coming online</div>
       </div>
-
       <div class="strat-card">
-        <div class="strat-eyebrow">3 · Launch anchor</div>
+        <div class="strat-eyebrow"><span>Launch anchor</span><span class="pill">Approved</span></div>
         <div class="strat-title">Press Release — Insights 3.0</div>
-        <span class="strat-status">On track · 6/20 firm</span>
-        <p class="strat-next"><b>Next:</b> Watch for external final approval by <b>2026-06-13</b>; once cleared, run implementation / publishing for <b>2026-06-20</b>.</p>
-        <p class="strat-why">Anchors the Insights 3.0 launch narrative and unblocks the Product Hunt review-site push (which waits on the 6/13 launch). Travis's prep complete (W23); passive on external approval, but the date is firm.</p>
+        <div class="strat-ctx">Approval complete. Product launches <b>06-20</b>; PR wires <b>06-23 8:00 AM</b>; nurture 06-24. Anchors the whole launch cluster.</div>
+        <div class="strat-outcome">Centerpiece of launch week</div>
       </div>
-
       <div class="strat-card flag-bad">
-        <div class="strat-eyebrow">4 · New paid channel</div>
-        <div class="strat-title">Meta Ads Channel Launch</div>
-        <span class="strat-status bad">Blocked on creative</span>
-        <p class="strat-next"><b>Next:</b> Confirm asset timeline with Allison at the <b>2026-06-16</b> 1:1; pre-stage the 3-cell ABO ad set structure so launch is a one-step flip once creative lands.</p>
-        <p class="strat-why">Audiences built and uploaded (1% LAL, interest, retargeting staged). Launch gated on Allison delivering the Pains video + 10 image-ad concepts; budget pivot ($30 → ~$90/day) pending lock at launch. Everything but creative is ready.</p>
+        <div class="strat-eyebrow"><span>At-risk</span><span class="pill bad">Slipped 3&times;</span></div>
+        <div class="strat-title">Downloadable Asset Emails</div>
+        <div class="strat-ctx">CTA swap (book-a-meeting &rarr; Foundations). <b>AT-RISK</b> — slipped a 3rd time past 06-12; new slot TBD.</div>
+        <div class="strat-outcome">Needs a committed slot to unblock</div>
       </div>
-
       <div class="strat-card">
-        <div class="strat-eyebrow">5 · Structural foundation</div>
+        <div class="strat-eyebrow"><span>Protect the organic base</span><span class="pill info">In motion</span></div>
         <div class="strat-title">SEO Strategy &amp; Plan</div>
-        <span class="strat-status">Active · W24 if 1–3 allow</span>
-        <p class="strat-next"><b>Next:</b> Refactor <code>keyword-strategy.md</code> to a pillar-first structure (open follow-up after Phase 2 #1 shipped 2026-05-28).</p>
-        <p class="strat-why">Sets the structural foundation for keyword-to-content mapping across every channel. Pillar-first refactor slots into W24 only if items 1–3 allow.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============== SECTION 2: RISK GAUGES ============== -->
-  <section>
-    <h2><span class="num">02</span>Blocked &amp; at-risk<span class="lead">3 items · where risk concentrates</span></h2>
-    <div class="gauge-grid">
-      <div class="gauge-card bad">
-        <div class="gauge-tool">The Cerkular</div>
-        <div class="gauge-status">Blocked</div>
-        <div class="gauge-unlocks">Gated on <b>HubSpot → Broadcast API (Jira FUTURE-232)</b> — the gate to launch.</div>
-      </div>
-      <div class="gauge-card bad">
-        <div class="gauge-tool">Meta Ads Channel</div>
-        <div class="gauge-status">Blocked on creative</div>
-        <div class="gauge-unlocks">Audiences built/uploaded; gated on <b>Allison's Pains video + 10 image-ad concepts</b>. Confirm ETA at the 6/16 1:1.</div>
-      </div>
-      <div class="gauge-card warn">
-        <div class="gauge-tool">Downloadable Asset Emails</div>
-        <div class="gauge-status warn">At risk · slipped twice</div>
-        <div class="gauge-unlocks">CTA swap slotted <b>2026-06-12 (W24)</b>; slipped past 5/29 and again in W23 — no further slip.</div>
+        <div class="strat-ctx">Fresh 30-day analysis due; answer-engine crawl access; negative-SEO mitigations holding, DR recovering. Protects organic as AI overviews erode clicks.</div>
+        <div class="strat-outcome">Defends the largest demand surface</div>
       </div>
     </div>
   </section>
 
-  <!-- ============== SECTION 3: MILESTONE TIMELINE ============== -->
+  <!-- ============== SECTION 2: UPCOMING MILESTONES TIMELINE ============== -->
   <section>
-    <h2><span class="num">03</span>Upcoming milestones — 2026-06-11 → 2026-07-11<span class="lead">11 milestones · 4 hard deadlines</span></h2>
+    <h2><span class="num">02</span>Upcoming milestones<span class="lead">2026-06-19 &rarr; 2026-07-19</span></h2>
     <div class="timeline">
-
       <div class="timeline-week">
-        <div class="week-label">Week of Jun 8</div>
-        <div class="brief-chip email hard">
-          <div class="b-date">Fri · Jun 12<span class="b-deadline">Hard</span></div>
-          <div class="b-title">Downloadable Asset Emails — CTA swap (W24 Fri slot; slipped twice)</div>
-          <div class="b-pillar">Self-serve</div>
+        <div class="week-label">Week of Jun 19 — Launch</div>
+        <div class="brief-chip launch">
+          <div class="b-date">Sat · Jun 20</div>
+          <div class="b-title">Insights 3.0 <b>product launch</b></div>
         </div>
-      </div>
-
-      <div class="timeline-week">
-        <div class="week-label">Week of Jun 15</div>
-        <div class="brief-chip press hard">
-          <div class="b-date">Sat · Jun 13<span class="b-deadline">Hard</span></div>
-          <div class="b-title">Insights 3.0 launch / press embargo lifts + final approval due</div>
-          <div class="b-pillar">Press</div>
-        </div>
-        <div class="brief-chip ads">
-          <div class="b-date">Mon · Jun 16</div>
-          <div class="b-title">Week A 1:1 with Allison — confirm Meta Ads creative ETA</div>
-          <div class="b-pillar">Paid</div>
-        </div>
-        <div class="brief-chip webinar hard">
-          <div class="b-date">Thu · Jun 18<span class="b-deadline">Hard</span></div>
-          <div class="b-title">Rachel + Maddy webinar — setup batch (Zoom · reg page · 2-speaker Canva · bios · LinkedIn · blog)</div>
-          <div class="b-pillar">Webinar</div>
-        </div>
-        <div class="brief-chip press hard">
-          <div class="b-date">Sat · Jun 20<span class="b-deadline">Hard</span></div>
-          <div class="b-title">Press release implementation / publishing</div>
-          <div class="b-pillar">Press</div>
-        </div>
-      </div>
-
-      <div class="timeline-week">
-        <div class="week-label">Week of Jun 22</div>
-        <div class="brief-chip seo">
+        <div class="brief-chip">
           <div class="b-date">Mon · Jun 22</div>
-          <div class="b-title">SEM LP re-scope revisit week (W26 decision)</div>
-          <div class="b-pillar">SEM</div>
+          <div class="b-title">Foundations-admin email · Product Hunt prep ready · SEM LP re-scope decision</div>
         </div>
+        <div class="brief-chip launch">
+          <div class="b-date">Tue · Jun 23</div>
+          <div class="b-title"><b>Press Release wires 8:00 AM</b></div>
+        </div>
+        <div class="brief-chip ext">
+          <div class="b-date">Tue · Jun 23 · ext</div>
+          <div class="b-title">Customer CS "Insights" webinar</div>
+        </div>
+        <div class="brief-chip launch">
+          <div class="b-date">Wed · Jun 24</div>
+          <div class="b-title">Prospect nurture email</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jun 29</div>
         <div class="brief-chip webinar">
           <div class="b-date">Mon · Jun 29</div>
-          <div class="b-title">Rachel + Maddy webinar — Email Blast #1</div>
-          <div class="b-pillar">Webinar</div>
+          <div class="b-title">Webinar Email Blast #1</div>
         </div>
       </div>
-
       <div class="timeline-week">
-        <div class="week-label">Weeks of Jun 29 – Jul 6</div>
+        <div class="week-label">Week of Jul 2</div>
         <div class="brief-chip webinar">
-          <div class="b-date">Thu · Jul 2</div>
-          <div class="b-title">Webinar — outline / script / visuals complete (joint)</div>
-          <div class="b-pillar">Webinar</div>
-        </div>
-        <div class="brief-chip webinar">
-          <div class="b-date">Mon · Jul 6</div>
-          <div class="b-title">Webinar — rehearsal + Email #2</div>
-          <div class="b-pillar">Webinar</div>
-        </div>
-        <div class="brief-chip webinar">
-          <div class="b-date">Wed · Jul 8</div>
-          <div class="b-title">Webinar — Email #3 (last reminder) + Zoom waiting-room banner</div>
-          <div class="b-pillar">Webinar</div>
-        </div>
-        <div class="brief-chip webinar hard">
-          <div class="b-date">Thu · Jul 9<span class="b-deadline">Live</span></div>
-          <div class="b-title">Rachel + Maddy webinar — LIVE</div>
-          <div class="b-pillar">Webinar</div>
+          <div class="b-date">Wed · Jul 2</div>
+          <div class="b-title">Webinar outline / script / visuals lock</div>
         </div>
       </div>
-
+      <div class="timeline-week">
+        <div class="week-label">Week of Jul 6</div>
+        <div class="brief-chip webinar">
+          <div class="b-date">Sun · Jul 6</div>
+          <div class="b-title">Webinar rehearsal + Email #2</div>
+        </div>
+        <div class="brief-chip webinar">
+          <div class="b-date">Tue · Jul 8</div>
+          <div class="b-title">Webinar Email #3 + Zoom waiting-room banner</div>
+        </div>
+      </div>
+      <div class="timeline-week">
+        <div class="week-label">Week of Jul 6 — Event</div>
+        <div class="brief-chip webinar">
+          <div class="b-date">Wed · Jul 9</div>
+          <div class="b-title"><b>Rachel + Maddy webinar — LIVE</b></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============== SECTION 4: PROJECT LEDGER ============== -->
+  <!-- ============== SECTION 3: PORTFOLIO HEALTH ============== -->
   <section>
-    <h2><span class="num">04</span>Project ledger — portfolio state<span class="lead">24 projects across 5 status bands</span></h2>
-
+    <h2><span class="num">03</span>Portfolio health<span class="lead">24 active projects by state</span></h2>
     <div class="bar-chart">
       <div class="bar-row">
-        <div class="bar-label">Active</div>
-        <div class="bar-track"><div class="bar-fill good" style="width: 50%;">12</div></div>
-        <div class="bar-meta">50% of portfolio</div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">Exploration</div>
-        <div class="bar-track"><div class="bar-fill" style="width: 25%;">6</div></div>
-        <div class="bar-meta">25%</div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">Post-launch / done</div>
-        <div class="bar-track"><div class="bar-fill warn" style="width: 12.5%;">3</div></div>
-        <div class="bar-meta">12.5%</div>
+        <div class="bar-label">In motion</div>
+        <div class="bar-track"><div class="bar-fill good" style="width: 79.2%;">19</div></div>
+        <div class="bar-meta"><span class="badge">Active / shipping</span></div>
       </div>
       <div class="bar-row">
         <div class="bar-label">Blocked</div>
-        <div class="bar-track"><div class="bar-fill bad" style="width: 8.3%;">2</div></div>
-        <div class="bar-meta">8.3%</div>
+        <div class="bar-track"><div class="bar-fill bad" style="width: 12.5%;">3</div></div>
+        <div class="bar-meta"><span class="badge bad">External handoff</span></div>
       </div>
       <div class="bar-row">
-        <div class="bar-label">Deprioritized</div>
-        <div class="bar-track"><div class="bar-fill mute" style="width: 4.2%;">1</div></div>
-        <div class="bar-meta">4.2%</div>
+        <div class="bar-label">At-risk</div>
+        <div class="bar-track"><div class="bar-fill warm" style="width: 8.3%;">2</div></div>
+        <div class="bar-meta"><span class="badge warn">Slipped / Cerkular</span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Top of mind</div>
+        <div class="bar-track"><div class="bar-fill pale" style="width: 20.8%;">5</div></div>
+        <div class="bar-meta"><span class="badge info">Priority focus</span></div>
       </div>
     </div>
+  </section>
 
-    <table class="ledger">
+  <!-- ============== SECTION 4: BLOCKERS ============== -->
+  <section>
+    <h2><span class="num">04</span>Blocked &amp; at-risk — unblock surface<span class="lead">5 items · 3 on external handoffs</span></h2>
+    <div class="gauge-grid">
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Meta Ads — Pixel</div>
+        <div class="gauge-status">Blocked</div>
+        <div class="gauge-unlocks">Pixel won't connect via GTM. Owner: <b>Drew / GrowMyAds</b>. Unblocks remaining audience cells.</div>
+      </div>
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Advertising — OpenAI</div>
+        <div class="gauge-status">Blocked</div>
+        <div class="gauge-unlocks">OpenAI click campaigns waiting on <b>account access &rarr; Joe</b>. Bing remains primary (~$4.8k/mo).</div>
+      </div>
+      <div class="gauge-card bad">
+        <div class="gauge-tool">Comparison SEO — Banana Tag</div>
+        <div class="gauge-status">Blocked</div>
+        <div class="gauge-unlocks">Banana Tag Bing test gated on <b>LP URL &rarr; Tarek</b>. Other comparison pages already live.</div>
+      </div>
+      <div class="gauge-card warn">
+        <div class="gauge-tool">Downloadable Asset Emails</div>
+        <div class="gauge-status warn">At-risk</div>
+        <div class="gauge-unlocks">CTA swap <b>slipped 3&times;</b> past 06-12. LP image fixes + email-capture widget pending; new slot TBD.</div>
+      </div>
+      <div class="gauge-card warn">
+        <div class="gauge-tool">The Cerkular</div>
+        <div class="gauge-status warn">At-risk</div>
+        <div class="gauge-unlocks">Launch tasks underway; personalization blocked on <b>FUTURE-232</b>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SECTION 5: PROJECT LEDGER ============== -->
+  <section>
+    <h2><span class="num">05</span>Project ledger<span class="lead">latest log per project · 24 active</span></h2>
+    <table class="actions">
       <thead>
-        <tr><th>Project</th><th>Status</th><th>Current state</th></tr>
+        <tr>
+          <th>Project</th>
+          <th>Current state (latest log)</th>
+          <th>Flag</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>Webinar — Rachel + Maddy (July 2026)</td><td><span class="pill active">Active</span></td><td class="l-state">Rescoped 2026-06-10: live date → 2026-07-09, Maddy added as 2nd presenter, title locked. Setup batch due 2026-06-18.</td></tr>
-        <tr><td>Downloadable Asset Emails</td><td><span class="pill hold">At risk</span></td><td class="l-state">CTA swap slotted 2026-06-12 (W24); slipped twice, no further slip.</td></tr>
-        <tr><td>Press Release — Insights 3.0</td><td><span class="pill active">Active</span></td><td class="l-state">Prep complete; awaiting external final approval (due 2026-06-13), publish 2026-06-20.</td></tr>
-        <tr><td>Meta Ads Channel Launch</td><td><span class="pill blocked">Blocked</span></td><td class="l-state">Blocked on creative — audiences built/uploaded; gated on Allison's Pains video + 10 image-ad concepts.</td></tr>
-        <tr><td>SEO Strategy &amp; Plan</td><td><span class="pill active">Active</span></td><td class="l-state">Phase 2 #1 done 2026-05-28; next is pillar-first refactor of <code>keyword-strategy.md</code>.</td></tr>
-        <tr><td>The Cerkular</td><td><span class="pill blocked">Blocked</span></td><td class="l-state">HubSpot → Broadcast API (Jira FUTURE-232) is the gate to launch.</td></tr>
-        <tr><td>SEM Landing Page Rebuild</td><td><span class="pill hold">Deprioritized</span></td><td class="l-state">Deprioritized 2026-06-09 — 6/10 launch dropped; re-scope in W26 (week of 2026-06-22).</td></tr>
-        <tr><td>Review Sites</td><td><span class="pill active">Active</span></td><td class="l-state">In progress — Sourceforge done, Gartner advancing; Product Hunt waits on Insights 3.0 (2026-06-13).</td></tr>
-        <tr><td>Press / Webinars (program)</td><td><span class="pill done">Post-launch</span></td><td class="l-state">Matt Frost page + Resources menu live; remaining work is rolling YouTube snippets.</td></tr>
-        <tr><td>Canva-Connected Design Skills</td><td><span class="pill active">Active</span></td><td class="l-state">Editing-API route selected; next is the curation Google Sheet (Templates + Assets tabs).</td></tr>
-        <tr><td>Canva Asset Pack Build</td><td><span class="pill done">Build complete</span></td><td class="l-state">Skill live (v1.1.0); next run against Week 1 LinkedIn drafts.</td></tr>
-        <tr><td>Comparison SEO Pages</td><td><span class="pill active">Active</span></td><td class="l-state">Build the <code>comparison-seo</code> channel process before drafting the first page.</td></tr>
-        <tr><td>Weekly Sales Report</td><td><span class="pill active">Active</span></td><td class="l-state">V1 shipped 2026-05-29; V2 = structured feature-request capture process.</td></tr>
-        <tr><td>Ad Conversion Tracking</td><td><span class="pill active">Active</span></td><td class="l-state">Diagnose+fix landed 2026-05-15; passively waiting on a real event to fire in Google Ads.</td></tr>
-        <tr><td>Pressure Prospecting</td><td><span class="pill active">Active</span></td><td class="l-state">Travis reviewing Phase 1 methodology; pick Phase 2 owner + pilot date.</td></tr>
-        <tr><td>Cerkl Website</td><td><span class="pill done">Post-launch</span></td><td class="l-state">Remaining items Furqan-owned or low priority (WCAG blurb).</td></tr>
-        <tr><td>Advertising</td><td><span class="pill active">Active</span></td><td class="l-state">Low-activity — LinkedIn Ads (test w/ Rachel Gallagher) + UTM hygiene.</td></tr>
-        <tr><td>Design Tools</td><td><span class="pill explore">Exploration</span></td><td class="l-state">Research AI video tools (HeyGen alternatives) for the Pains ad video.</td></tr>
-        <tr><td>ICP Blog May Rewrites</td><td><span class="pill done">Done</span></td><td class="l-state">Awaiting Travis's decision to publish 3 Docs to ICPro (Wix) or close.</td></tr>
-        <tr><td>YouTube</td><td><span class="pill explore">Decision pending</span></td><td class="l-state">Discuss with TK whether product videos post to Cerkl YouTube.</td></tr>
-        <tr><td>IC Trends Knowledge Base</td><td><span class="pill explore">Exploration</span></td><td class="l-state">Decide scope option before any restructure.</td></tr>
-        <tr><td>Claude Code Trends Research</td><td><span class="pill explore">Captured</span></td><td class="l-state">Not started — spin up using ic-trends as the pattern.</td></tr>
-        <tr><td>PA System Refresh</td><td><span class="pill explore">Exploration</span></td><td class="l-state">Design notes captured; revisit when ready to prototype.</td></tr>
-        <tr><td>Competitor Dissatisfaction Mining</td><td><span class="pill explore">Backburnered</span></td><td class="l-state">Backburnered 2026-06-01 — shelved until tooling budget or strategy shifts.</td></tr>
+        <tr>
+          <td class="proj">meta-ads-channel-launch</td>
+          <td>First test campaign LIVE ($20/day, 4 assets, 1 audience); next = audience cells. Blocked: Pixel via GTM &rarr; Drew. (06-19)</td>
+          <td class="st"><span class="pill bad">Blocked</span></td>
+        </tr>
+        <tr>
+          <td class="proj">press-release</td>
+          <td>Approval complete; launch cluster — product 06-20, PR wire 06-23 8 AM, nurture 06-24. (06-19)</td>
+          <td class="st"><span class="pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">webinar-rachel-maddy-july-2026</td>
+          <td>LIVE 07-09; respond to Fos's questions; brief to Rachel. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">downloadable-asset-emails</td>
+          <td><b>AT-RISK</b> — CTA swap slipped 3&times;; LP image fixes + email-capture widget pending. (06-19)</td>
+          <td class="st"><span class="pill warn">At-risk</span></td>
+        </tr>
+        <tr>
+          <td class="proj">seo-strategy-plan</td>
+          <td>Fresh 30-day analysis due; answer-engine crawl access; FAQ schema; negative-SEO holding. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">advertising</td>
+          <td>Bing primary (~$4.8k/mo); launching OpenAI click campaigns; 5-video rotation backlog. Blocked: OpenAI acct &rarr; Joe. (06-19)</td>
+          <td class="st"><span class="pill bad">Blocked</span></td>
+        </tr>
+        <tr>
+          <td class="proj">sem-landing-page-rebuild</td>
+          <td>Migrating SEM / YouTube / Bing LPs to demo-request; building evergreen demo page. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">ad-conversion-tracking</td>
+          <td>Repairing Segment / Bing / HubSpot&harr;Google conversion tracking; account-default goals set. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">comparison-seo-pages</td>
+          <td>Pages live (PoliteMail / Workshop / ContactMonkey / Axios); Banana Tag Bing test. Blocked: LP URL &rarr; Tarek. (06-19)</td>
+          <td class="st"><span class="pill bad">Blocked</span></td>
+        </tr>
+        <tr>
+          <td class="proj">the-cerkular</td>
+          <td>Launch tasks (audience upload, welcome Blast, HubSpot&rarr;Broadcast API). Blocked: personalization &rarr; FUTURE-232. (06-19)</td>
+          <td class="st"><span class="pill warn">At-risk</span></td>
+        </tr>
+        <tr>
+          <td class="proj">cerkl-website</td>
+          <td>Negative-SEO monitoring; add Insights video; fix CWV 403 on HubSpot form embed (na1/22209301). (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">review-sites</td>
+          <td>Sourceforge done; Gartner advancing; Product Hunt prep ~06-22 (folded here). (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">youtube</td>
+          <td>Reduce spam clicks; new test videos &rarr; Why Pay / Foundations+; HeyGen sync. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">competitor-dissatisfaction-mining</td>
+          <td>"Execution gap" counter-positioning; competitors going AI-native / governance. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">icp-blog-may-rewrites</td>
+          <td>Allison finalizing graphics for Rachel's 2 articles. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">pressure-prospecting</td>
+          <td>Josh to share SUNY-schools outreach + Gemini contact list. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">canva-asset-pack-build</td>
+          <td>Carousels now require manual review (Allison standing reviewer). (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">pa-system-refresh</td>
+          <td>Grant Furqan repo access; share folder-architecture post-AI-Showcase. (06-19)</td>
+          <td class="st"><span class="pill info">In flight</span></td>
+        </tr>
+        <tr>
+          <td class="proj">webinars</td>
+          <td>Promo / copy / LP workflow systemized in Claude Code. (06-19)</td>
+          <td class="st"><span class="pill">On track</span></td>
+        </tr>
+        <tr>
+          <td class="proj">canva-design-skills</td>
+          <td>Build sub-project queued. (06-01)</td>
+          <td class="st"><span class="pill info">Queued</span></td>
+        </tr>
+        <tr>
+          <td class="proj">claude-code-trends-research</td>
+          <td>Planned. (05-07)</td>
+          <td class="st"><span class="pill info">Planned</span></td>
+        </tr>
+        <tr>
+          <td class="proj">design-tools</td>
+          <td>No recent activity.</td>
+          <td class="st"><span class="pill warn">Idle</span></td>
+        </tr>
+        <tr>
+          <td class="proj">ic-trends-knowledge-base</td>
+          <td>No recent activity.</td>
+          <td class="st"><span class="pill warn">Idle</span></td>
+        </tr>
+        <tr>
+          <td class="proj">weekly-sales-report</td>
+          <td>Recurring weekly cadence.</td>
+          <td class="st"><span class="pill">Recurring</span></td>
+        </tr>
       </tbody>
     </table>
   </section>
 
-  <!-- ============== SECTION 5: RECENTLY SHIPPED ============== -->
+  <!-- ============== SECTION 6: RECENTLY SHIPPED ============== -->
   <section>
-    <h2><span class="num">05</span>Recently shipped<span class="lead">Last 3 weeks</span></h2>
-    <ul class="shipped">
-      <li><span class="s-date">2026-06-11</span><span class="s-text"><b>Content pipeline consolidated</b> into one weekly session (wave-dispatch + JIT briefs); keyword-strategy wired into the weekly session; middle plan layers retired.</span></li>
-      <li><span class="s-date">2026-06-10</span><span class="s-text"><b>Rachel + Maddy webinar rescoped:</b> date → 2026-07-09, Maddy Rieman added as 2nd presenter, 2-speaker Canva pack re-rendered, tracking URLs rebuilt.</span></li>
-      <li><span class="s-date">2026-06-09</span><span class="s-text"><b>PA simplified</b> to a derive-not-record model; 22-row Next Steps ledger retired (final state preserved in git <code>d4cd7b5</code>).</span></li>
-      <li><span class="s-date">2026-06-03</span><span class="s-text"><b>Meta Ads:</b> Foundations seed list built (~115 contacts); both audience source lists ready for Meta Custom Audiences.</span></li>
-      <li><span class="s-date">2026-06-02</span><span class="s-text"><b>Canva design skill:</b> live end-to-end acceptance check passed (6/6 ops) on the Rachel Folz speaker-card manifest; bumped to v1.5.0.</span></li>
-      <li><span class="s-date">2026-05-29</span><span class="s-text"><b>Weekly Sales Report V1 shipped</b> (pipeline hygiene + activity roll-up + feature-request extraction).</span></li>
-      <li><span class="s-date">2026-05-28</span><span class="s-text"><b>SEO Strategy Phase 2 #1 complete</b> (content-planning process with explicit SEO linkage); Meta Ads Pixel + CAPI Foundations event verified live (Phase 2 blocker cleared).</span></li>
-      <li><span class="s-date">2026-05-22</span><span class="s-text"><b>ICPro schema verified</b> passing in Google Rich Results Test; Gartner review-site listing pushed forward.</span></li>
-    </ul>
+    <h2><span class="num">06</span>Recently shipped<span class="lead">last ~2 weeks</span></h2>
+    <div class="ship-list">
+      <div class="ship-row">
+        <div class="ship-date">2026-06-17</div>
+        <div class="ship-what">SEO wedge-sprint W1: shadow-ai-content-problem post live</div>
+      </div>
+      <div class="ship-row">
+        <div class="ship-date">2026-06-16</div>
+        <div class="ship-what">Meta Ads first test campaign live (lookalike audience)</div>
+      </div>
+      <div class="ship-row">
+        <div class="ship-date">2026-06-13</div>
+        <div class="ship-what">Press Release Insights 3.0 final approval cleared</div>
+      </div>
+      <div class="ship-row">
+        <div class="ship-date">~2026-06-10</div>
+        <div class="ship-what">Competitor comparison pages live: PoliteMail, Workshop, ContactMonkey, Axios (replacing redirects)</div>
+      </div>
+      <div class="ship-row">
+        <div class="ship-date">~2026-06-03</div>
+        <div class="ship-what">Meta audience source data in place (Foundations seed + demo-request exclusion lists)</div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    Source: <code>growth-project-tracker.md</code> · Date: 2026-06-11 · Sources: INDEX.md (refreshed 2026-06-09) · git log · project state lines
+    Source: <code>growth-project-tracker.md</code> · Date: 2026-06-19 · Sources: INDEX.md (refreshed 2026-06-19) · git log · project logs (normalized to <code>## Log</code> 2026-06-19)
   </footer>
 
 </div>

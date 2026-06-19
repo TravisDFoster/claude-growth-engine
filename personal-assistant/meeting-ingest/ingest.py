@@ -31,7 +31,16 @@ DOC_MIME = "application/vnd.google-apps.document"
 EXPORT_MIME = "text/markdown"
 
 # Recurring meetings get their own series subfolder; everything else → one-offs/.
-RECURRING_SERIES = {"marketing-weekly", "cerkl-sem-sync"}
+# Slug == folder name; add a meeting's slugified title here to give it a folder.
+RECURRING_SERIES = {
+    "marketing-weekly",
+    "cerkl-sem-sync",
+    "bi-weekly-feature-request-meeting",
+    "cerkl-town-hall",
+    "cerkl-monthly-department-updates",
+    "cerkl-ai-showcase",
+    "sales-3-0",
+}
 
 DATE_RE = re.compile(r"(\d{4})[/-](\d{2})[/-](\d{2})")
 DRY_RUN = "--dry-run" in sys.argv
@@ -92,6 +101,10 @@ def parse_meeting(name, modified_iso):
     else:
         date = modified_iso[:10]
         title = name
+
+    # Drive copies prefix the title with "Copy of "; drop it so duplicated
+    # docs slug/series identically to the original meeting.
+    title = re.sub(r"^copy of\s+", "", title, flags=re.IGNORECASE).strip()
 
     low = name.lower()
     if "notes by gemini" in low:
