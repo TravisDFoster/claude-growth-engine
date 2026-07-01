@@ -22,7 +22,7 @@ Epics represent a campaign theme and are long-lived. They are assumed to exist b
 Naming format: `YEAR Theme`
 Example: `2026 Foundations Free`
 
-**Current Epic key (for scaffold pre-fill):** `MCM-992` — update this line when the campaign Epic changes; the scaffold reads it rather than guessing.
+**Current Epic key (for scaffold pre-fill):** `MCM-1139` — update this line when the campaign Epic changes; the scaffold reads it rather than guessing.
 
 ### Tasks
 
