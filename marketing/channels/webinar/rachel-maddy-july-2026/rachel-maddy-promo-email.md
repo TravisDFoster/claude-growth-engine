@@ -75,12 +75,42 @@ Seats are filling ahead of next week. Grab yours before the holiday week gets in
 
 ---
 
+## Cerkl voice — Email #3 of 3 (combined reminder, publish 2026-07-07)
+
+> Single combined reminder — the T-3d and T-1d reminders merged into one send. Carries "one more push" urgency plus a compact restatement of the value hook. Send Tue 2026-07-07 (T-2d) ahead of the Thu 2026-07-09 event.
+
+**Subject line options:**
+- `Two days out: the 5 questions your last send can't answer` *(primary)*
+- `This Thursday: your first look at the new Insights`
+- `Last call to save your seat for Thursday`
+
+**Preview text:** This Thursday, July 9 at 12pm EDT. Free, and we'll send the recording.
+
+---
+
+Hey [First Name],
+
+This is your reminder: it's happening **this Thursday, July 9 at 12:00 PM EDT**. Rachel Folz (Head of Product) and Maddy Rieman (Head of Customer Success) walk through the five questions every internal communicator should be able to answer about a send — who received it, who engaged, when to send, what content resonated, and what to fix next.
+
+It's a live first look at the newly redesigned **Insights**, built for communicators, not analysts. You'll leave able to build a leadership-ready report in minutes — no analytics skills required, and free in Foundations.
+
+If you've been meaning to save your seat, now's the time.
+
+**[Register Now →](https://us02web.zoom.us/webinar/register/2317762528324/WN_-vu4-AcITfGJq0KEHysSSw)**
+
+Thursday, July 9 · 12:00 PM EDT · 60 minutes · free to attend. Can't make it live? Register anyway and we'll send you the recording.
+
+— [Name]
+
+---
+
 ## HubSpot drafts (Cerkl voice)
 
 | Email | HubSpot ID | Draft name |
 |---|---|---|
 | #1 of 3 | `215560020657` | Rachel Folz July 2026 - Webinar Promo Email #1 |
 | #2 of 3 | `216064520627` | Rachel Folz July 2026 - Webinar Promo Email #2 |
+| #3 of 3 | `216262805530` | Rachel Folz July 2026 - Webinar Promo Email #3 |
 
 Email #1: updated the pre-cloned starter shell (215560020657) in place per the brief, rather than re-cloning from the standing template (`212619094633`). Partner-voice email N/A (internal webinar).
 
@@ -89,3 +119,5 @@ Email #2: REBUILT 2026-06-29. The original template-based draft (`216062405716`,
 **Audience warning — Email #1:** The starter shell was cloned from Matt Frost's April 2026 webinar email — its send list/segment is still pointed at Matt Frost's audience. Before send, re-point this draft to a prospects/leads marketing segment (general marketing audience, NOT current users). The API does not change list selection.
 
 **Audience note — Email #2:** Built from the standing template, so it should carry the correct prospects/leads marketing audience. Still confirm the send segment in the HubSpot UI before publishing (cloning carries audience settings forward, but list selection is not changed by the API). Set send time and check copy against this markdown source-of-truth. Do not publish from the API.
+
+Email #3: cloned 2026-07-01 from the most recent SENT promo (Email #2, `216064520627`) into draft `216262805530`, inheriting the verified prospects/leads audience (ILS list `1154` included) and the correct `cerkl_email` link. Subject + preview + body PATCHed via read-modify-write; layout preserved. Combined T-3d/T-1d reminder. **Before send:** confirm the segment in the HubSpot UI, set publish time to 2026-07-07, and do not publish from the API. Draft URL: https://app.hubspot.com/email/22209301/edit/216262805530/content

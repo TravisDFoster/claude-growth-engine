@@ -49,6 +49,10 @@ Put everything the reader needs in the caption, including the registration or de
 | Poll | Light (poll widget) | Tight (3–4 short paragraphs) | [`templates/poll.md`](templates/poll.md) |
 | Short video | Heavy (video) | Very short (2–3 lines) | [`templates/short-video.md`](templates/short-video.md) |
 
+## This guide is authoritative
+
+When this guide conflicts with a pattern in a prior week's Jira CSV, **the guide wins.** Old CSVs accumulate drift (hashtags, first-comment links) that predate or contradict these rules — do not treat them as precedent. If a rule genuinely needs to change, change it here first. The [`linkedin-editing`](skills/linkedin-editing/SKILL.md) skill is where these rules get enforced as a checked step (a compliance gate), not left to the drafter to self-grade.
+
 ## Banned moves (from blog editing, carried over)
 
 - Em-dashes (use periods or parentheses)

@@ -3,6 +3,7 @@
 **Wraps:** ai-execution-internal-communications (cerkl.com blog, publishes 2026-07-06) — July "Measure What Lands" arc
 **Publish:** 2026-07-06
 **Owner:** Furqan
+**Policy:** no hashtags; link in the caption (not first comment); no em-dashes; no banned adverbs.
 
 ## Caption
 
@@ -10,29 +11,19 @@ Every internal comms platform shipped an AI writer in the last eighteen months, 
 
 It's a good trick. It also solves the one part of the job IC teams least needed solved. Writing a clear announcement was never the bottleneck.
 
-The hard part starts after the draft. Who needs this. Which channel will they actually see. Did the night shift get it before they clocked in. Did anyone read past the subject line. None of the AI demos show you that.
+The hard part starts after the draft. Who needs this message. Which channel will they see. Did the night shift get it before they clocked in. Did anyone read past the subject line. None of the AI demos show you that.
 
-We think of it as four layers: Generate, Personalize, Deliver, Land. Generation is layer one, and it's table stakes now. Everyone has it. Almost no one owns the three layers that carry a message from written to landed, and prove it landed with the people it was written for.
+Think of it as four layers: Generate, Personalize, Deliver, Land. Generation is layer one, and it's table stakes now. The next time a vendor demos an AI that writes a newsletter in nine seconds, ask what it does in the next nine minutes. That answer tells you whether you are buying a writer or an execution layer.
 
-So the next time a vendor demos an AI that writes a newsletter in nine seconds, ask what it does in the next nine minutes. The answer tells you whether you're buying a writer or an execution layer.
+The four layers, and the 5 questions to ask any AI-for-IC vendor, are on the blog: [Furqan inserts live cerkl.com/blog/ai-execution-internal-communications on publish]
 
 ## Asset
 
-**Visual concept:** A vertical 4-layer stack that makes the "generation is only layer 1" point at a glance. Four stacked rungs, numbered:
+Numbered 4-layer stack (origination). Vertical rungs "01 Generate / 02 Personalize / 03 Deliver / 04 Land". Muted "Most AI stops here" tag on 01 (grayed); bright on-brand bracket grouping 02-04 labeled "The execution layer". Headline "AI can write the message. The win is what happens next." Cerkl brand colors, logo bottom corner, no headshot, text-only, 1080x1080, mobile-legible.
 
-- 01 Generate
-- 02 Personalize
-- 03 Deliver
-- 04 Land
+Rendered shell (NEEDS DESIGNER): https://www.canva.com/design/DAHOJY7YUJU/edit — see canva-manifests/static-theme_ai-execution-layers.yml
 
-Marker treatment: a muted "Most AI stops here" tag pinned to 01 Generate (grayed/de-emphasized). A bright on-brand bracket grouping 02–04 labeled "The execution layer." Headline across the top: "AI can write the message. The win is what happens next." Source tag: Cerkl Broadcast, bottom corner with logo.
-
-**Asset ID (optional):** Origination needed — no existing manifest. Numbered-stack layout, text-only (no photo slot). Mirrors the blog's "numbered-stack" image candidate.
-
-**Brand direction:** Cerkl brand colors per design CONTEXT. Layer 01 reads muted/secondary (the weak default); layers 02–04 are the on-brand focal group. Numerals and layer names must be legible at LinkedIn mobile feed size. Cerkl logo bottom corner. No headshot. 1080x1080.
-
----
-
-**Hashtags:** #InternalCommunications #AIinIC #EmployeeExperience
-
-**First comment:** Full breakdown — the four layers and the 5 questions to ask any AI-for-IC vendor: [BLOG URL — Furqan to insert live cerkl.com/blog/ai-execution-internal-communications on publish]
+## Edit log
+- Compliance: hashtags 0 · em-dashes 0 · banned adverbs 0 · link-in-caption yes · first-comment-link no · length 5 paras (band 3–5) · PASS
+- Score: 33/40 (Hook 8, Tightness 8, Voice 9, Payoff 8)
+- Fixes: dropped hashtags + first-comment; link moved into caption; cut "actually"; kept the nine-minutes close

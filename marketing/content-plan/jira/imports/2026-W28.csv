@@ -43,20 +43,16 @@ Every internal comms platform shipped an AI writer in the last eighteen months, 
 
 It's a good trick. It also solves the one part of the job IC teams least needed solved. Writing a clear announcement was never the bottleneck.
 
-The hard part starts after the draft. Who needs this. Which channel will they actually see. Did the night shift get it before they clocked in. Did anyone read past the subject line. None of the AI demos show you that.
+The hard part starts after the draft. Who needs this message. Which channel will they see. Did the night shift get it before they clocked in. Did anyone read past the subject line. None of the AI demos show you that.
 
-We think of it as four layers: Generate, Personalize, Deliver, Land. Generation is layer one, and it's table stakes now. Everyone has it. Almost no one owns the three layers that carry a message from written to landed, and prove it landed with the people it was written for.
+Think of it as four layers: Generate, Personalize, Deliver, Land. Generation is layer one, and it's table stakes now. The next time a vendor demos an AI that writes a newsletter in nine seconds, ask what it does in the next nine minutes. That answer tells you whether you are buying a writer or an execution layer.
 
-So the next time a vendor demos an AI that writes a newsletter in nine seconds, ask what it does in the next nine minutes. The answer tells you whether you're buying a writer or an execution layer.
+The four layers, and the 5 questions to ask any AI-for-IC vendor, are on the blog: [Furqan inserts live cerkl.com/blog/ai-execution-internal-communications on publish]
 
-Asset: Numbered 4-layer stack (origination needed; needs a Canva manifest + render in Wave 3). Vertical rungs: ""01 Generate / 02 Personalize / 03 Deliver / 04 Land"". Muted ""Most AI stops here"" tag on 01 (grayed); bright on-brand bracket grouping 02-04 labeled ""The execution layer"". Headline: ""AI can write the message. The win is what happens next."" Cerkl brand colors, logo bottom corner, no headshot, text-only, 1080x1080, legible at mobile feed size. Mirrors the blog's numbered-stack image candidate.
-
-#InternalCommunications #AIinIC #EmployeeExperience
-
-First comment: Full breakdown, the four layers and the 5 questions to ask any AI-for-IC vendor: [BLOG URL - Furqan inserts live cerkl.com/blog/ai-execution-internal-communications on publish]
+Asset spec: Numbered 4-layer stack (origination). Vertical rungs ""01 Generate / 02 Personalize / 03 Deliver / 04 Land"". Muted ""Most AI stops here"" tag on 01 (grayed); bright on-brand bracket grouping 02-04 labeled ""The execution layer"". Headline ""AI can write the message. The win is what happens next."" Cerkl brand colors, logo bottom corner, no headshot, text-only, 1080x1080, mobile-legible.
 
 Asset: https://www.canva.com/design/DAHOJY7YUJU/edit
-Manual finish: AI-origination SHELL ONLY (NEEDS DESIGNER) — resize to 1080x1080; build the numbered 4-rung stack (01 Generate grayed + ""Most AI stops here"" tag; 02 Personalize / 03 Deliver / 04 Land in Cobalt 60 with a bracket labeled ""The execution layer""); headline verbatim ""AI can write the message. The win is what happens next.""; add Cerkl Broadcast tag + logo. Full spec: channels/linkedin/canva-manifests/static-theme_ai-execution-layers.yml",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-06
+Manual finish: AI-origination SHELL ONLY (NEEDS DESIGNER). Resize to 1080x1080; build the numbered 4-rung stack (01 Generate grayed + ""Most AI stops here"" tag; 02 Personalize / 03 Deliver / 04 Land in Cobalt 60 with a bracket labeled ""The execution layer""); headline verbatim ""AI can write the message. The win is what happens next.""; add Cerkl Broadcast tag + logo. Full spec: channels/linkedin/canva-manifests/static-theme_ai-execution-layers.yml",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-06
 S013,Subtask,T004,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-03
 S014,Subtask,T004,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-06
 S015,Subtask,T004,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-06
@@ -69,17 +65,13 @@ Two days out.
 
 Your dashboard says 42% open rate. It cannot tell you whether the eleven managers on the night shift ever saw the message they needed to see.
 
-That gap is the whole reason we built this session. On Thursday, Rachel Folz and Maddy Rieman spend an hour on the 5 questions every internal communicator should be able to answer about their last send, with a first look at the new Insights in Broadcast. Named read attribution, not vanity open rates. Who received it, who engaged, who to follow up with by name.
+That gap is the whole reason we built this session. On Thursday, Rachel Folz and Maddy Rieman spend an hour on the 5 questions every internal communicator should be able to answer about their last send, with a first look at the new Insights in Broadcast. You see who received a message, who engaged with it, and who to follow up with by name.
 
-If you have been meaning to register, this is your reminder. Thursday, July 9, 12pm EDT. Free in Foundations, no analytics skills required.
+Thursday, July 9, 12pm EDT. Free in Foundations, no analytics skills required.
 
-Registration link in the comments.
+Register here: https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw
 
-Asset: existing countdown design, https://www.canva.com/design/DAHMM905XTM/edit (view https://www.canva.com/d/J-RWxJ4Ki70OGVU). NEEDS HAND-CHECK by Furqan: title wraps 3-4 lines and slightly overlaps the ""2"" numeral; nudge in UI before posting. No new render.
-
-#InternalCommunications #EmployeeEngagement #ICMeasurement
-
-First comment: Register for ""Stop Guessing About Your Analytics"" (7/9, Rachel Folz + Maddy Rieman): https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-07
+Asset: existing countdown design, https://www.canva.com/design/DAHMM905XTM/edit (view https://www.canva.com/d/J-RWxJ4Ki70OGVU). NEEDS HAND-CHECK by Furqan: title wraps 3-4 lines and slightly overlaps the ""2"" numeral; nudge in UI before posting. No new render.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-07
 S017,Subtask,T005,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-06
 S018,Subtask,T005,,LinkedIn – Asset Creation,Create the countdown asset (role: countdown; see webinar canva-manifests).,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-07
 S019,Subtask,T005,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-07,2026-07-07
@@ -90,22 +82,20 @@ Wraps: ai-in-microsoft-teams-where-native-ends
 Copy:
 Copilot can draft your announcement, summarize the thread, and post it to the channel in seconds. It cannot tell you who read it.
 
-For internal comms, that is the gap that matters. Teams confirms the send and stays silent on the read. A channel post proves the message exists somewhere people could see it, not that the 30 people who needed to act on a benefits deadline or a safety change are among the 8 who reacted with a thumbs-up. And the frontline crew who rarely open the app never had a chance to see it at all.
+For internal comms, that is the gap that matters. Teams confirms the send and stays silent on the read. A channel post proves a message exists somewhere people could see it. It does not prove the 30 people who needed to act on a benefits deadline are among the 8 who left a thumbs-up, and the frontline crew who rarely open the app never had a chance to see it.
 
-Native Teams is a strong collaboration tool. Comms delivery and measurement is a separate job: targeted delivery to the right audience, across more than one channel, with per-employee read tracking you can actually report on.
+Native Teams is a strong collaboration tool. Comms delivery and measurement is a separate job: targeted delivery to the right audience, across more than one channel, with per-employee read tracking you can report on.
 
-Our new post draws the line between where native Teams AI is enough and where you have outgrown it, plus the four signals that tell you which side you are on.
+The new post draws the line between where native Teams AI is enough and where you have outgrown it, plus the four signals that tell you which side you are on: [Furqan inserts live cerkl.com/blog/ai-in-microsoft-teams-where-native-ends on publish]
 
-https://cerkl.com/blog/ai-in-microsoft-teams-where-native-ends | Asset: link card auto-rendered by LinkedIn from the blog OG image, no Canva render. Pre-flight Webflow meta title/description/OG before scheduling.
-
-#InternalComms #EmployeeExperience #MicrosoftTeams",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-08
+Asset: link card auto-rendered by LinkedIn from the blog OG image, no Canva render. Pre-flight Webflow meta title/description/OG before scheduling.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-08
 S021,Subtask,T006,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-07
 S022,Subtask,T006,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-07,2026-07-08
 S023,Subtask,T006,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-08,2026-07-08
 S024,Subtask,T006,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-08,2026-07-08
 T007,Task,,MCM-992,Social Media - LinkedIn - Short Video (out-of-band),"Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-09,2026-07-10
 T008,Task,,MCM-992,"Marketing Email - Email - Webinar Reminder: Stop Guessing About Your Analytics (Rachel & Maddy, 7/9)","Topic: Webinar reminder email (combines the T-3d and T-1d reminders into one send) — Rachel Folz & Maddy Rieman, ""Stop Guessing About Your Analytics"" (7/9, 12pm EDT). Goal: drive final registration. Audience: prospects + leads marketing segment (NOT current users) — same segment as Email #1/#2. Banner: email-banner (webinar pack). Registration (tracked, cerkl_email): https://us02web.zoom.us/webinar/register/2317762528324/WN_-vu4-AcITfGJq0KEHysSSw
-Draft (HubSpot): [DRIVE_URL_PLACEHOLDER] — clone the most recent sent webinar promo to inherit verified audience + link; confirm send segment in UI before send",62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-07
+Draft (HubSpot): https://app.hubspot.com/email/22209301/edit/216262805530/content — clone the most recent sent webinar promo to inherit verified audience + link; confirm send segment in UI before send",62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-07
 S025,Subtask,T008,,Email – Copy,Draft the reminder copy + subject lines (webinar-promo-emails skill; combined T-3d/T-1d reminder).,62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-06
 S026,Subtask,T008,,Email – Audience Segmentation,Confirm the send audience = prospects/leads marketing segment in HubSpot.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-07
 S027,Subtask,T008,,Email – Review,"Review copy, links, tracking URL, and banner; sign off.",62bb263d268cac6e31c40941,Marketing Emails,2026-07-07,2026-07-07

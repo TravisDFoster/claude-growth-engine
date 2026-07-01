@@ -1,0 +1,460 @@
+<!doctype html>
+<!--
+  Marketing Team — 7-Day Rollup — 2026-07-01
+  Artifact type: team-update. Rendered via md-to-html skill.
+  Design system shared with reference-daily-recap.html (Cerkl brand palette,
+  Work Sans, numbered cards, callouts, watchlist, collapsibles). No verdict pill —
+  rollups synthesize and rank, they don't recommend a single yes/no.
+  Source: research/ic-trends/team-update/2026-07-01.md
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Team Rollup — 2026-07-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+    /* Action-item area badges — brand-aligned. */
+    --cat-content:  #1a9979;   /* Forest base — content/POV */
+    --cat-content-bg: #e8fffa;
+    --cat-content-border: #aaf7e6;
+    --cat-seo:     #3547c4;    /* Cobalt 60 — SEO/comparison */
+    --cat-seo-bg:  #f0f2fc;
+    --cat-seo-border: #ccd5f7;
+    --cat-evergreen: #802ee6;  /* Violet base — evergreen wedge */
+    --cat-evergreen-bg: #f7f2ff;
+    --cat-evergreen-border: #d5b2ff;
+    --cat-brand:   #80550f;    /* Butter 100 — brand/positioning */
+    --cat-brand-bg: #fff9f2;
+    --cat-brand-border: #ffeccd;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 74ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .headline-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .tldr {
+    font-size: 17px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+  .tldr strong { font-weight: 600; }
+  .tldr em { font-style: italic; }
+  .tldr p { margin: 0 0 12px; max-width: none; }
+  .tldr p:last-child { margin-bottom: 0; }
+
+  /* Underlying-research source strip */
+  .src-strip {
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted);
+  }
+  .src-strip .src-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px;
+  }
+  .src-strip ul { margin: 0; padding-left: 18px; }
+  .src-strip li { margin-bottom: 2px; }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 16px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+  }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+
+  /* Action items — numbered cards */
+  .action-items { display: grid; gap: 16px; }
+  .action-item {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 22px 18px;
+    display: grid; grid-template-columns: auto 1fr; gap: 16px;
+    align-items: start;
+  }
+  .rank-num {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--code-bg); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px; letter-spacing: -0.005em;
+    flex-shrink: 0;
+  }
+  .item-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 10px; }
+  .item-head h3 { margin: 0; font-size: 18px; line-height: 1.3; flex: 1; min-width: 220px; font-weight: 600; letter-spacing: -0.0025em; }
+  .cat-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+    border: 1px solid; flex-shrink: 0;
+  }
+  .cat-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .cat-badge.cat-content   { color: var(--cat-content);   border-color: var(--cat-content-border);   background: var(--cat-content-bg); }
+  .cat-badge.cat-seo       { color: var(--cat-seo);       border-color: var(--cat-seo-border);       background: var(--cat-seo-bg); }
+  .cat-badge.cat-evergreen { color: var(--cat-evergreen); border-color: var(--cat-evergreen-border); background: var(--cat-evergreen-bg); }
+  .cat-badge.cat-brand     { color: var(--cat-brand);     border-color: var(--cat-brand-border);     background: var(--cat-brand-bg); }
+
+  .field { margin: 0 0 10px; font-size: 15px; line-height: 1.55; }
+  .field:last-child { margin-bottom: 0; }
+  .field .f-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted); margin-right: 8px;
+  }
+  .field strong { font-weight: 600; }
+  .field em { font-style: italic; }
+
+  .action-callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+  .action-callout .f-label { color: var(--accent); }
+
+  /* Watchlist / calendar */
+  .watch-group { margin-top: 18px; }
+  .watch-group:first-of-type { margin-top: 6px; }
+  .watch-group h3 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600;
+    margin: 0 0 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cal-list { display: grid; gap: 12px; }
+  .cal-row {
+    display: grid; grid-template-columns: 132px 1fr; gap: 14px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-when {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--info-border);
+    padding: 3px 9px; border-radius: 999px;
+    justify-self: start;
+    white-space: nowrap;
+  }
+  .cal-when.live { color: var(--good); background: var(--good-bg); border-color: var(--good-border); }
+  .cal-body { font-size: 14.5px; }
+  .cal-body .c-title { font-weight: 600; color: var(--ink); }
+  .cal-body p { margin: 4px 0 0; font-size: 14px; color: var(--muted); max-width: none; }
+
+  /* Data-hygiene / notes list */
+  .plain-list { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 10px; }
+  .plain-list > li {
+    font-size: 14.5px; line-height: 1.5;
+    padding-left: 18px; position: relative;
+  }
+  .plain-list > li::before {
+    content: ""; position: absolute; left: 2px; top: 9px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  }
+  .plain-list strong { font-weight: 600; }
+  .plain-list code {
+    font-family: var(--mono); font-size: 0.86em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+  }
+
+  /* Notes — collapsibles */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 14px;
+    list-style: none; position: relative;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent);
+  }
+  details.q[open] summary::before { content: "\2212"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; margin: 0 0 8px; }
+  details.q .q-body p:last-child { margin-bottom: 0; }
+  details.q .q-body strong { font-weight: 600; color: var(--ink); }
+  details.q .q-body code {
+    font-family: var(--mono); font-size: 0.86em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+  }
+
+  code, pre { font-family: var(--mono); }
+  p code, li code { font-family: var(--mono); font-size: 0.9em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px; }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    a { color: #18181d; }
+    .action-item { page-break-inside: avoid; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q .q-body { display: block !important; }
+  }
+
+  @media (max-width: 640px) {
+    .action-item { grid-template-columns: 1fr; }
+    .cal-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Marketing Team Rollup</div>
+    <h1>Marketing Team — 7-Day Rollup</h1>
+    <div class="meta-row">
+      <span><b>Week ending:</b> 2026-07-01</span>
+      <span><b>Action items:</b> 5</span>
+      <span><b>Cadence:</b> Wednesday</span>
+    </div>
+    <div class="headline-label">Headline of the week</div>
+    <div class="tldr">
+      <p><strong>The trend discourse and the competitor content pointed at the same target this week: the message isn't reaching — or being read by — the people who most need it (the frontline, and everyone being asked to adopt AI).</strong> On the trends side, a wall of analyst data reframed AI adoption as a <em>communications</em> failure: SHRM found only 33% of individual contributors were told about their org's AI adoption vs. 74% of directors; Karian's IC Index says just 35% of employees think their org applies AI to the right problems and 32% got clear guidance; McKinsey pegs fully-scaled AI at 7%; Forrester explicitly names IC the strategic lever. On the competitor side, the gated-research axis rotated from "prove IC value" to <strong>"prove frontline reach"</strong> — Firstup dropped a new 1,000-frontline-worker manufacturing survey, Workvivo keeps pushing its "Frontline AI Gap" report — and two Ragan case studies this week (Sav-A-Tree, Goodwill) hammered deskless reach.</p>
+      <p><strong>This is Cerkl's ground twice over.</strong> Competitors can claim a worker was <em>"reached"</em> (40–50% of deskless, per ContactMonkey); only Cerkl's per-employee read attribution proves they <em>read</em> it — including the frontline. Every asset this quarter should sharpen from "we reach them" to "we prove they read it, by name, desk or no desk." The measurement-proof-asset play we've been queuing since W25 now gets a frontline cut, and it just got more urgent because the category is spending research budget to own the exact axis Cerkl can win on substance.</p>
+    </div>
+
+    <div class="src-strip">
+      <span class="src-label">Underlying research this rollup draws from</span>
+      <ul>
+        <li>Daily recaps: <a href="../daily/2026-07-01.md">daily/2026-07-01.md</a>, <a href="../daily/2026-06-30.md">daily/2026-06-30.md</a> (+ 06-18 → 06-09 via the rolling index)</li>
+        <li>Competitor marketing weekly: <a href="../../competitor-marketing/weekly/2026-W27.md">competitor-marketing/weekly/2026-W27.md</a></li>
+        <li>Rolling 7-day index: <a href="../rolling-7day.md">ic-trends/rolling-7day.md</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">ACTIONS</span>Action items (ranked)</h2>
+
+    <div class="action-items">
+
+      <div class="action-item">
+        <div class="rank-num">1</div>
+        <div>
+          <div class="item-head">
+            <h3>Add a frontline read-rate cut to the "State of Internal Comms Read Rates 2026" benchmark</h3>
+            <span class="cat-badge cat-content">Content · Benchmark</span>
+          </div>
+          <p class="field"><span class="f-label">What it is</span>The competitor gated-research axis rotated to frontline reach this week — Firstup's new 1,000-worker manufacturing survey + Workvivo's Frontline AI Gap report (<a href="../../competitor-marketing/weekly/2026-W27.md">W27 §Pain point 1</a>) — while the trend side ran two deskless-reach case studies (Sav-A-Tree, Goodwill) and quantified the AI-adoption comms gap (<a href="../daily/2026-07-01.md">daily 2026-07-01 §1, §8</a>).</p>
+          <p class="field"><span class="f-label">Why it matters for Cerkl marketing</span>This evolves the flagship benchmark idea (already queued from W26), it doesn't replace it. Competitors prove "reached"; Cerkl's per-employee read data proves "read" — and a deskless-vs-desk-based read-through segment is the one number none of them can publish. It's the un-fakeable version of the claim they're funding research to make.</p>
+          <div class="action-callout"><span class="f-label">Action</span>Marketing/Travis — when scoping the benchmark report, add a "frontline vs. desk-based read rates" section to the outline. Pull a defensible anonymized aggregate from platform data first. Keep it one report, not two. This quarter (anchors the Foundations campaign).</div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">2</div>
+        <div>
+          <div class="item-head">
+            <h3>Ship the "AI adoption is a comms problem" POV — the week's strongest earned narrative</h3>
+            <span class="cat-badge cat-content">Content · POV</span>
+          </div>
+          <p class="field"><span class="f-label">What it is</span>Five credible sources converged in seven days — SHRM (33% vs. 74% told about AI), McKinsey (7% scaled), Forrester (IC as strategic lever; 48% cut headcount to AI while deprioritizing change mgmt), HBR (middle managers overloaded), Karian (35%/32%) (<a href="../daily/2026-07-01.md">daily 2026-07-01 §1–5</a>).</p>
+          <p class="field"><span class="f-label">Why it matters for Cerkl marketing</span>This is analyst air-cover for elevating IC from cost center to strategic function — the exact budget argument Cerkl's buyers make internally — and Cerkl's read attribution is the proof mechanism: <em>the AI rollout plan doesn't matter if it's never read.</em> Sharper and better-sourced than the AI-backlash hook we've been sitting on since W23.</p>
+          <div class="action-callout"><span class="f-label">Action</span>Travis-bylined POV (Cerkular + LinkedIn) — <em>"Your AI rollout isn't failing on strategy. It's failing on comms."</em> + a stat-led LinkedIn carousel (one slide per source, Cerkl close on read-attribution as the adoption-visibility layer). This supersedes the older "AI backlash" framing of the queued AI POV. Ship this week — the sources are hot.</div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">3</div>
+        <div>
+          <div class="item-head">
+            <h3>Get the vs. Workshop + vs. AxiosHQ pages into production — conquest pressure is now two-vendor</h3>
+            <span class="cat-badge cat-seo">SEO · Comparison</span>
+          </div>
+          <p class="field"><span class="f-label">What it is</span>Staffbase joined ContactMonkey as an active conquester this week — surged to a 7/10 SERP-presence tie and surfaced "Simpplr Alternatives" + "ContactMonkey Alternatives" pages (<a href="../../competitor-marketing/weekly/2026-W27.md">W27 §5, §f</a>). Meanwhile no competitor shipped a new mid-market logo, and the customization complaint held across 9/10 — the 2K–10K segment is contested but quiet.</p>
+          <p class="field"><span class="f-label">Why it matters for Cerkl marketing</span>Two of the strongest players are now running conquest SEO; Foundations is the obvious next target. The two highest-leverage Cerkl comparison gaps remain unbuilt: <strong>vs. Workshop</strong> (most direct Foundations head-to-head; neutralize its back-to-back G2 #1 newsletter badge) and <strong>vs. AxiosHQ</strong> (cheapest win, free vs. ~$15k floor).</p>
+          <div class="action-callout"><span class="f-label">Action</span>Furqan/SEO + comparison-seo — move both briefs into the queue this week. (Editorial stance still bars <em>offensive</em> listicles; these are owned-comparison pages, which are in-scope.)</div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">4</div>
+        <div>
+          <div class="item-head">
+            <h3>Press the Foundations free-forever contrast — the moat widened to week 9</h3>
+            <span class="cat-badge cat-evergreen">Evergreen · Pricing</span>
+          </div>
+          <p class="field"><span class="f-label">What it is</span>0/10 vendors offer free-forever (9th straight week); pricing gating is near-total and no one reverted (<a href="../../competitor-marketing/weekly/2026-W27.md">W27 §f</a>).</p>
+          <p class="field"><span class="f-label">Why it matters for Cerkl marketing</span>The single competitive fact with zero erosion over two months. As peers gate harder, "free, public pricing, live this afternoon, no quote" reads cleaner every week.</p>
+          <div class="action-callout"><span class="f-label">Action</span>Marketing — keep the Foundations transparency line in rotation on the homepage hero + Foundations LP; pair it with the benchmark report as the gated-value counterweight ("free to use, and here's the data to prove it works"). Evergreen; reinforce alongside #1.</div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">5</div>
+        <div>
+          <div class="item-head">
+            <h3>Stand up the customization-ceiling wedge LP while the mid-market is quiet</h3>
+            <span class="cat-badge cat-brand">Brand · Wedge LP</span>
+          </div>
+          <p class="field"><span class="f-label">What it is</span>The template/customization complaint held across 9/10 vendors again (Workshop the lone holdout), and no competitor shipped a new 2K–10K logo this window (<a href="../../competitor-marketing/weekly/2026-W27.md">W27 §e</a>).</p>
+          <p class="field"><span class="f-label">Why it matters for Cerkl marketing</span>Durable, evergreen wedge — and the segment is momentarily uncontested on new proof, so a wedge asset lands without noise.</p>
+          <div class="action-callout"><span class="f-label">Action</span>Marketing — one-screen LP: <em>"You don't need to redesign your channels. Cerkl personalizes the message inside the channels you already have,"</em> with honestly-attributed G2 complaint fragments as backdrop. Low lift; carries from the W26/W17 recommendation.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">WATCH</span>Calendar / watchlist</h2>
+    <div class="cal-list">
+
+      <div class="cal-row">
+        <span class="cal-when live">Live now</span>
+        <div class="cal-body">
+          <span class="c-title">Firstup — "Communications crisis in manufacturing: what 1,000 frontline workers revealed"</span> · <a href="https://firstup.io/blog">firstup.io/blog</a>
+          <p>Watch whether Staffbase/Workvivo/ContactMonkey follow with their own frontline research (if 2+ do, "frontline reach" becomes the Q3 category battleground and item #1 becomes urgent).</p>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-when live">Live now</span>
+        <div class="cal-body">
+          <span class="c-title">ContactMonkey — "Beyond the Inbox" product launch</span> · <a href="https://www.contactmonkey.com/blog">contactmonkey.com/blog</a>
+          <p>New surface beyond email; watch positioning for channel-expansion overlap with Cerkl.</p>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-when">2026-07-08</span>
+        <div class="cal-body">
+          <span class="c-title">W28 competitor-marketing digest + next rollup</span> (next Wed)
+          <p>Check whether Staffbase's conquest turn escalates and whether its hero holds a 3rd week.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">HYGIENE</span>Data hygiene</h2>
+    <ul class="plain-list">
+      <li><code>shared/competitors.md</code> updated today with the W27 shifts (frontline-research axis, Staffbase hero-settled + conquest turn, Firstup frontline report). No stale entries introduced.</li>
+      <li><strong>Daily-recap gap 06-18 → 06-30</strong> (12 days, no runs) — the rolling-7day index is intact but thinner than a full 7 daily files; this rollup leans more on 06-30/07-01 + the weekly digest than on a dense daily stream. Not a data error, just a coverage note for interpreting week-over-week.</li>
+      <li>Bucket (d) exec names for <strong>LumApps and Haiilo</strong> are still unidentified in <code>competitor-marketing/sources.md</code> — low priority, but fill when convenient so social signal isn't blind for those two.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">NOTES</span>Notes</h2>
+
+    <details class="q" open>
+      <summary>Not a brand-new idea week — a convergence week</summary>
+      <div class="q-body">
+        <p>The frontline + AI-adoption-gap themes sharpen <strong>existing</strong> queued plays (benchmark report, AI POV) rather than spawning new ones. Kept the action list to evolutions to avoid idea sprawl.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Signal gaps (standing)</summary>
+      <div class="q-body">
+        <p>LinkedIn/Meta ad libraries blocked (9th wk — ad section is an LP proxy), G2 403 (themes from search snippets), Reddit /r/internalcomms unindexed (8th wk), Haiilo/Workshop homepages dark (9th wk). None changed the read this week.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Downstream sync (process Step 3.5)</summary>
+      <div class="q-body">
+        <p>Appended action items to <a href="../../../marketing/content-plan/inputs.md">marketing/content-plan/inputs.md</a> (§Ideas) and SEO signal to <a href="../../../marketing/seo/keyword-strategy.md">marketing/seo/keyword-strategy.md</a> (§Insights) per process Step 3.5.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-07-01 · Source markdown: <a href="./2026-07-01.md">team-update/2026-07-01.md</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

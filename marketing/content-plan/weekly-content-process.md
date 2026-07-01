@@ -83,7 +83,7 @@ Run [`jira/jira-scaffold-process.md`](jira/jira-scaffold-process.md) with the sl
 Orchestrator: fill Drive URLs (+ backfill any `[BRIEF_PENDING]` lines) in the CSV — one pass. **Checkpoint:** scores, new briefs, flags.
 
 **Wave 2 — LinkedIn copy (parallel, one subagent per post):**
-- Each subagent: draft caption + asset spec + hashtags from the wrapped source (per [`../channels/linkedin/linkedin-process.md`](../channels/linkedin/linkedin-process.md) Step 4 + templates). Returns: draft path · copy block.
+- Each subagent: draft caption + asset spec from the wrapped source (per [`../channels/linkedin/linkedin-process.md`](../channels/linkedin/linkedin-process.md) Step 4 + templates), **then run `linkedin-editing` (Step 4.5) on its own draft** before returning — the compliance gate (no hashtags, link in the caption not the comments, no em-dashes, no banned adverbs, no binary contrasts) must pass. Voice/policy rules live in [`../channels/linkedin/linkedin-writing-guide.md`](../channels/linkedin/linkedin-writing-guide.md), which is authoritative over any drift in prior CSVs. Returns: draft path · copy block · compliance verdict.
 
 Orchestrator: fill `Copy:` lines — one pass.
 

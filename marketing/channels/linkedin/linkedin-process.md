@@ -77,6 +77,16 @@ The draft is the source of truth. It contains:
 - Caption (the text above the asset, including any destination link)
 - Asset spec or content (slide copy for carousels; poll question + options; image direction for statics; video script for video)
 
+### Step 4.5 — Edit each post
+
+- **Owner:** Claude (sub-agent per post for `n ≥ 3`; inline for `n ≤ 2` — same dispatch rule as Step 4)
+- **Sequencing:** must run after that post's Step 4 completes; parallelizable across posts
+- **Needs:** [`skills/linkedin-editing/SKILL.md`](skills/linkedin-editing/SKILL.md)
+- **Inputs:** the draft file from Step 4
+- **Produces:** the same draft, edited in place, with a `## Edit log` block appended
+
+Run `linkedin-editing` on each draft: two passes (hook/tightness, then the hard compliance gate) plus the scaled score. This is a **separate pass from drafting on purpose** — the guardrails in [`linkedin-writing-guide.md`](linkedin-writing-guide.md) only bite when a fresh check enforces them, instead of the drafter self-grading. The compliance gate (no hashtags, link in the caption not the comments, no em-dashes, no banned adverbs, no binary contrasts) must fully pass before the copy is eligible for Step 5. A draft that can't clear the gate is surfaced, not inserted.
+
 ### Step 5 — Insert copy into the Jira CSV
 
 - **Owner:** Claude
@@ -118,8 +128,8 @@ If every drafted post is `skip-*`, no asset process needed — the roll-up ends 
 
 ## Output
 
-- `drafts/YYYY-MM-DD_[type]_[slug].md` — one per post
-- An updated Jira CSV at `../../content-plan/jira/imports/YYYY-Www.csv` with the LinkedIn Task Description filled in (copy inserted on the `Copy:` line) for each post
+- `drafts/YYYY-MM-DD_[type]_[slug].md` — one per post, each carrying a `## Edit log` (compliance gate + score) after Step 4.5
+- An updated Jira CSV at `../../content-plan/jira/imports/YYYY-Www.csv` with the LinkedIn Task Description filled in (copy inserted on the `Copy:` line) for each post — only copy that cleared the Step 4.5 compliance gate
 - A chat-printed roll-up
 
 ## Future work
