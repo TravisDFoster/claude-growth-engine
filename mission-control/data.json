@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-30",
-  "total_html": 88,
+  "generated_at": "2026-07-01",
+  "total_html": 93,
   "total_blog_posts": 0,
   "total_md_candidates": 4,
   "pinned": [
@@ -11,7 +11,7 @@
       "label": "Growth Project Tracker",
       "subtitle": "PA — used in Thursday leadership meeting",
       "url": "/cerkl/personal-assistant/growth-project-tracker.html",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-07-01",
       "cadence": "weekly",
       "stale": false,
       "refresh_prompt": "Regenerate the Growth Project Tracker (leadership review).\n\nProcess: /Users/travisfoster/claude-code/cerkl/personal-assistant/skills/growth-project-tracker.md",
@@ -20,15 +20,11 @@
         "items": [
           {
             "title": "Webinar — Rachel Folz + Maddy Rieman (July 2026)",
-            "summary": "Rescoped 2026-06-10: now two internal presenters (Maddy added) and live date moved to 2026-07-09 (+14 days)."
+            "summary": "LIVE Thursday 2026-07-09. Fully scaffolded (project plan · 9 Canva manifests · promo email · sales outreach · tracking URLs · analytics blog)."
           },
           {
             "title": "Meta Ads Channel Launch",
-            "summary": "Unblocked 2026-06-16 (Allison's creative delivered); first test campaign LIVE on a lookalike audience."
-          },
-          {
-            "title": "Press Release — Insights 3.0",
-            "summary": "Final approval complete. Insights 3.0 product launches Sat 2026-06-20; press release wires Tue 2026-06-23 8:00 AM."
+            "summary": "First test campaign LIVE ($20/day, 4 creatives); Pixel + conversion tracking confirmed working (2026-06-22) — prior GTM blocker cleared."
           },
           {
             "title": "Downloadable Asset Emails",
@@ -36,7 +32,7 @@
           },
           {
             "title": "SEO Strategy & Plan",
-            "summary": "Keyword-strategy pillar-first refactor; wedge-sprint W1 shipped (shadow-ai-content-problem live 06-17)."
+            "summary": "Keyword-strategy pillar-first refactor; W28 wedge blogs shipped (ai-execution · ai-in-microsoft-teams · IC measurement framework)."
           }
         ]
       }
@@ -81,12 +77,12 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-06-19",
-      "stale": true,
+      "last_run": "2026-07-01",
+      "stale": false,
       "items": [
         {
           "title": "Growth Project Tracker",
-          "date": "2026-06-19",
+          "date": "2026-07-01",
           "url": "/cerkl/personal-assistant/growth-project-tracker.html",
           "is_md": false
         }
@@ -194,172 +190,39 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "daily",
-      "last_run": "2026-06-18",
-      "stale": true,
+      "last_run": "2026-07-01",
+      "stale": false,
       "new_run_prompt": "Run today's IC Trends daily recap.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/ic-trends/ic-trends-daily-process.md",
       "items": [
-        {
-          "title": "Daily Recap — 2026-06-18",
-          "date": "2026-06-18",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-18.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-17",
-          "date": "2026-06-17",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-17.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-15",
-          "date": "2026-06-15",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-10",
-          "date": "2026-06-10",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-09",
-          "date": "2026-06-09",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-09.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-05",
-          "date": "2026-06-05",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-05.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-04",
-          "date": "2026-06-04",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-04.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-03",
-          "date": "2026-06-03",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-03.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-02",
-          "date": "2026-06-02",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-02.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-06-01",
-          "date": "2026-06-01",
-          "url": "/cerkl/research/ic-trends/daily/2026-06-01.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-29",
-          "date": "2026-05-29",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-29.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-28",
-          "date": "2026-05-28",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-28.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-27",
-          "date": "2026-05-27",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-27.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-26",
-          "date": "2026-05-26",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-26.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-25",
-          "date": "2026-05-25",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-25.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-22",
-          "date": "2026-05-22",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-22.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-21",
-          "date": "2026-05-21",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-21.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-20",
-          "date": "2026-05-20",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-20.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-19",
-          "date": "2026-05-19",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-19.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-18",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-18.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-15",
-          "date": "2026-05-15",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-14",
-          "date": "2026-05-14",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-14.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-13",
-          "date": "2026-05-13",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-13.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-12",
-          "date": "2026-05-12",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-12.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-11",
-          "date": "2026-05-11",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-11.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-10",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Daily Recap — 2026-05-07",
-          "date": "2026-05-07",
-          "url": "/cerkl/research/ic-trends/daily/2026-05-07.html",
-          "is_md": false
-        }
+        { "title": "Daily Recap — 2026-07-01", "date": "2026-07-01", "url": "/cerkl/research/ic-trends/daily/2026-07-01.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-30", "date": "2026-06-30", "url": "/cerkl/research/ic-trends/daily/2026-06-30.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-18", "date": "2026-06-18", "url": "/cerkl/research/ic-trends/daily/2026-06-18.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-17", "date": "2026-06-17", "url": "/cerkl/research/ic-trends/daily/2026-06-17.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-15", "date": "2026-06-15", "url": "/cerkl/research/ic-trends/daily/2026-06-15.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-10", "date": "2026-06-10", "url": "/cerkl/research/ic-trends/daily/2026-06-10.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-09", "date": "2026-06-09", "url": "/cerkl/research/ic-trends/daily/2026-06-09.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-05", "date": "2026-06-05", "url": "/cerkl/research/ic-trends/daily/2026-06-05.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-04", "date": "2026-06-04", "url": "/cerkl/research/ic-trends/daily/2026-06-04.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-03", "date": "2026-06-03", "url": "/cerkl/research/ic-trends/daily/2026-06-03.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-02", "date": "2026-06-02", "url": "/cerkl/research/ic-trends/daily/2026-06-02.html", "is_md": false },
+        { "title": "Daily Recap — 2026-06-01", "date": "2026-06-01", "url": "/cerkl/research/ic-trends/daily/2026-06-01.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-29", "date": "2026-05-29", "url": "/cerkl/research/ic-trends/daily/2026-05-29.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-28", "date": "2026-05-28", "url": "/cerkl/research/ic-trends/daily/2026-05-28.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-27", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/daily/2026-05-27.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-26", "date": "2026-05-26", "url": "/cerkl/research/ic-trends/daily/2026-05-26.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-25", "date": "2026-05-25", "url": "/cerkl/research/ic-trends/daily/2026-05-25.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-22", "date": "2026-05-22", "url": "/cerkl/research/ic-trends/daily/2026-05-22.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-21", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/daily/2026-05-21.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-20", "date": "2026-05-20", "url": "/cerkl/research/ic-trends/daily/2026-05-20.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-19", "date": "2026-05-19", "url": "/cerkl/research/ic-trends/daily/2026-05-19.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-18", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/daily/2026-05-18.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-15", "date": "2026-05-15", "url": "/cerkl/research/ic-trends/daily/2026-05-15.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-14", "date": "2026-05-14", "url": "/cerkl/research/ic-trends/daily/2026-05-14.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-13", "date": "2026-05-13", "url": "/cerkl/research/ic-trends/daily/2026-05-13.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-12", "date": "2026-05-12", "url": "/cerkl/research/ic-trends/daily/2026-05-12.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-11", "date": "2026-05-11", "url": "/cerkl/research/ic-trends/daily/2026-05-11.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-10", "date": "2026-05-10", "url": "/cerkl/research/ic-trends/daily/2026-05-10.html", "is_md": false },
+        { "title": "Daily Recap — 2026-05-07", "date": "2026-05-07", "url": "/cerkl/research/ic-trends/daily/2026-05-07.html", "is_md": false }
       ]
     },
     {
@@ -368,40 +231,16 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-06-24",
+      "last_run": "2026-07-01",
       "stale": false,
       "new_run_prompt": "Run this week's IC Trends team update.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/ic-trends/team-update-process.md",
       "items": [
-        {
-          "title": "Team Update — 2026-06-24",
-          "date": "2026-06-24",
-          "url": "/cerkl/research/ic-trends/team-update/2026-06-24.html",
-          "is_md": false
-        },
-        {
-          "title": "Team Update — 2026-06-17",
-          "date": "2026-06-17",
-          "url": "/cerkl/research/ic-trends/team-update/2026-06-17.html",
-          "is_md": false
-        },
-        {
-          "title": "Team Update — 2026-06-03",
-          "date": "2026-06-03",
-          "url": "/cerkl/research/ic-trends/team-update/2026-06-03.html",
-          "is_md": false
-        },
-        {
-          "title": "Team Update — 2026-05-20",
-          "date": "2026-05-20",
-          "url": "/cerkl/research/ic-trends/team-update/2026-05-20.html",
-          "is_md": false
-        },
-        {
-          "title": "Team Update — 2026-05-13",
-          "date": "2026-05-13",
-          "url": "/cerkl/research/ic-trends/team-update/2026-05-13.html",
-          "is_md": false
-        }
+        { "title": "Team Update — 2026-07-01", "date": "2026-07-01", "url": "/cerkl/research/ic-trends/team-update/2026-07-01.html", "is_md": false },
+        { "title": "Team Update — 2026-06-24", "date": "2026-06-24", "url": "/cerkl/research/ic-trends/team-update/2026-06-24.html", "is_md": false },
+        { "title": "Team Update — 2026-06-17", "date": "2026-06-17", "url": "/cerkl/research/ic-trends/team-update/2026-06-17.html", "is_md": false },
+        { "title": "Team Update — 2026-06-03", "date": "2026-06-03", "url": "/cerkl/research/ic-trends/team-update/2026-06-03.html", "is_md": false },
+        { "title": "Team Update — 2026-05-20", "date": "2026-05-20", "url": "/cerkl/research/ic-trends/team-update/2026-05-20.html", "is_md": false },
+        { "title": "Team Update — 2026-05-13", "date": "2026-05-13", "url": "/cerkl/research/ic-trends/team-update/2026-05-13.html", "is_md": false }
       ]
     },
     {
@@ -414,108 +253,23 @@
       "stale": false,
       "new_run_prompt": "Start a new IC Trends deep dive. I'll provide the source / topic when you ask.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/ic-trends/ic-trends-deepdive-process.md",
       "items": [
-        {
-          "title": "Karian Middle Manager Burnout",
-          "date": "2026-06-04",
-          "url": "/cerkl/research/ic-trends/deepdives/karian-middle-manager-burnout-2026-06-04.html",
-          "is_md": false
-        },
-        {
-          "title": "Lumapps Ai Employee Hub Video",
-          "date": "2026-06-02",
-          "url": "/cerkl/research/ic-trends/deepdives/lumapps-ai-employee-hub-video-2026-06-02.html",
-          "is_md": false
-        },
-        {
-          "title": "Gartner — Chatbots Over Intranets",
-          "date": "2026-05-27",
-          "url": "/cerkl/research/ic-trends/deepdives/gartner-chatbots-over-intranets-2026-05-27.html",
-          "is_md": false
-        },
-        {
-          "title": "Layoff Memo Subgenre",
-          "date": "2026-05-21",
-          "url": "/cerkl/research/ic-trends/deepdives/layoff-memo-subgenre-2026-05-21.html",
-          "is_md": false
-        },
-        {
-          "title": "McKinsey — Rewired 2",
-          "date": "2026-05-21",
-          "url": "/cerkl/research/ic-trends/deepdives/mckinsey-rewired-2-2026-05-21.html",
-          "is_md": false
-        },
-        {
-          "title": "Qualtrics — Change Engagement",
-          "date": "2026-05-21",
-          "url": "/cerkl/research/ic-trends/deepdives/qualtrics-change-engagement-2026-05-21.html",
-          "is_md": false
-        },
-        {
-          "title": "HR Reporter — AI Risks for IC",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/ic-trends/deepdives/hr-reporter-ai-risks-ic-2026-05-18.html",
-          "is_md": false
-        },
-        {
-          "title": "McKinsey — Agentic AI Workforce Redesign",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/ic-trends/deepdives/mckinsey-agentic-ai-workforce-redesign-2026-05-18.html",
-          "is_md": false
-        },
-        {
-          "title": "Oracle — Mass Email Layoff Lessons",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/ic-trends/deepdives/oracle-mass-email-layoff-lessons-2026-05-18.html",
-          "is_md": false
-        },
-        {
-          "title": "Ragan — Newsletter Pressure Test",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/ic-trends/deepdives/ragan-newsletter-pressure-test-2026-05-18.html",
-          "is_md": false
-        },
-        {
-          "title": "Forrester — AI Rewrite, EX Deep Listening",
-          "date": "2026-05-15",
-          "url": "/cerkl/research/ic-trends/deepdives/forrester-ai-rewrite-ex-deep-listening-2026-05-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Gartner — AI Layoffs, No Returns",
-          "date": "2026-05-15",
-          "url": "/cerkl/research/ic-trends/deepdives/gartner-ai-layoffs-no-returns-2026-05-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Gartner — People-Centric AI",
-          "date": "2026-05-15",
-          "url": "/cerkl/research/ic-trends/deepdives/gartner-people-centric-ai-2026-05-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Ragan — Week in Comms: LinkedIn, GM, GitLab",
-          "date": "2026-05-15",
-          "url": "/cerkl/research/ic-trends/deepdives/ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15.html",
-          "is_md": false
-        },
-        {
-          "title": "Workshop — Agentic Campaigns",
-          "date": "2026-05-14",
-          "url": "/cerkl/research/ic-trends/deepdives/workshop-agentic-campaigns-2026-05-14.html",
-          "is_md": false
-        },
-        {
-          "title": "PR Daily — Beyond the AI Hype",
-          "date": "2026-05-13",
-          "url": "/cerkl/research/ic-trends/deepdives/prdaily-beyond-ai-hype-2026-05-13.html",
-          "is_md": false
-        },
-        {
-          "title": "Ragan — Email Benchmarks Report",
-          "date": "2026-05-12",
-          "url": "/cerkl/research/ic-trends/deepdives/ragan-email-benchmarks-report-2026-05-12.html",
-          "is_md": false
-        }
+        { "title": "Karian Middle Manager Burnout", "date": "2026-06-04", "url": "/cerkl/research/ic-trends/deepdives/karian-middle-manager-burnout-2026-06-04.html", "is_md": false },
+        { "title": "Lumapps Ai Employee Hub Video", "date": "2026-06-02", "url": "/cerkl/research/ic-trends/deepdives/lumapps-ai-employee-hub-video-2026-06-02.html", "is_md": false },
+        { "title": "Gartner — Chatbots Over Intranets", "date": "2026-05-27", "url": "/cerkl/research/ic-trends/deepdives/gartner-chatbots-over-intranets-2026-05-27.html", "is_md": false },
+        { "title": "Layoff Memo Subgenre", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/layoff-memo-subgenre-2026-05-21.html", "is_md": false },
+        { "title": "McKinsey — Rewired 2", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/mckinsey-rewired-2-2026-05-21.html", "is_md": false },
+        { "title": "Qualtrics — Change Engagement", "date": "2026-05-21", "url": "/cerkl/research/ic-trends/deepdives/qualtrics-change-engagement-2026-05-21.html", "is_md": false },
+        { "title": "HR Reporter — AI Risks for IC", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/hr-reporter-ai-risks-ic-2026-05-18.html", "is_md": false },
+        { "title": "McKinsey — Agentic AI Workforce Redesign", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/mckinsey-agentic-ai-workforce-redesign-2026-05-18.html", "is_md": false },
+        { "title": "Oracle — Mass Email Layoff Lessons", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/oracle-mass-email-layoff-lessons-2026-05-18.html", "is_md": false },
+        { "title": "Ragan — Newsletter Pressure Test", "date": "2026-05-18", "url": "/cerkl/research/ic-trends/deepdives/ragan-newsletter-pressure-test-2026-05-18.html", "is_md": false },
+        { "title": "Forrester — AI Rewrite, EX Deep Listening", "date": "2026-05-15", "url": "/cerkl/research/ic-trends/deepdives/forrester-ai-rewrite-ex-deep-listening-2026-05-15.html", "is_md": false },
+        { "title": "Gartner — AI Layoffs, No Returns", "date": "2026-05-15", "url": "/cerkl/research/ic-trends/deepdives/gartner-ai-layoffs-no-returns-2026-05-15.html", "is_md": false },
+        { "title": "Gartner — People-Centric AI", "date": "2026-05-15", "url": "/cerkl/research/ic-trends/deepdives/gartner-people-centric-ai-2026-05-15.html", "is_md": false },
+        { "title": "Ragan — Week in Comms: LinkedIn, GM, GitLab", "date": "2026-05-15", "url": "/cerkl/research/ic-trends/deepdives/ragan-week-in-comms-linkedin-gm-gitlab-2026-05-15.html", "is_md": false },
+        { "title": "Workshop — Agentic Campaigns", "date": "2026-05-14", "url": "/cerkl/research/ic-trends/deepdives/workshop-agentic-campaigns-2026-05-14.html", "is_md": false },
+        { "title": "PR Daily — Beyond the AI Hype", "date": "2026-05-13", "url": "/cerkl/research/ic-trends/deepdives/prdaily-beyond-ai-hype-2026-05-13.html", "is_md": false },
+        { "title": "Ragan — Email Benchmarks Report", "date": "2026-05-12", "url": "/cerkl/research/ic-trends/deepdives/ragan-email-benchmarks-report-2026-05-12.html", "is_md": false }
       ]
     },
     {
@@ -524,52 +278,18 @@
       "kind": "html",
       "home_recent": 2,
       "cadence": "weekly",
-      "last_run": "2026-06-22",
+      "last_run": "2026-06-29",
       "stale": false,
       "new_run_prompt": "Run this week's competitor marketing weekly recap.\n\nProcess: /Users/travisfoster/claude-code/cerkl/research/competitor-marketing/competitor-marketing-weekly-process.md",
       "items": [
-        {
-          "title": "Week 26",
-          "date": "2026-06-22",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W26.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 25",
-          "date": "2026-06-15",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W25.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 24",
-          "date": "2026-06-08",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W24.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 23",
-          "date": "2026-06-01",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W23.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 22",
-          "date": "2026-05-25",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W22.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 21",
-          "date": "2026-05-18",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W21.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 20",
-          "date": "2026-05-11",
-          "url": "/cerkl/research/competitor-marketing/weekly/2026-W20.html",
-          "is_md": false
-        }
+        { "title": "Week 27", "date": "2026-06-29", "url": "/cerkl/research/competitor-marketing/weekly/2026-W27.html", "is_md": false },
+        { "title": "Week 26", "date": "2026-06-22", "url": "/cerkl/research/competitor-marketing/weekly/2026-W26.html", "is_md": false },
+        { "title": "Week 25", "date": "2026-06-15", "url": "/cerkl/research/competitor-marketing/weekly/2026-W25.html", "is_md": false },
+        { "title": "Week 24", "date": "2026-06-08", "url": "/cerkl/research/competitor-marketing/weekly/2026-W24.html", "is_md": false },
+        { "title": "Week 23", "date": "2026-06-01", "url": "/cerkl/research/competitor-marketing/weekly/2026-W23.html", "is_md": false },
+        { "title": "Week 22", "date": "2026-05-25", "url": "/cerkl/research/competitor-marketing/weekly/2026-W22.html", "is_md": false },
+        { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/research/competitor-marketing/weekly/2026-W21.html", "is_md": false },
+        { "title": "Week 20", "date": "2026-05-11", "url": "/cerkl/research/competitor-marketing/weekly/2026-W20.html", "is_md": false }
       ]
     },
     {
@@ -581,72 +301,17 @@
       "last_run": "2026-05-11",
       "stale": false,
       "items": [
-        {
-          "title": "Workvivo (Seer)",
-          "date": "2026-05-11",
-          "url": "/cerkl/research/competitor-marketing/Competitors/workvivo-seer-2026-05-11.html",
-          "is_md": false
-        },
-        {
-          "title": "Axios HQ",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/axios-hq-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "ContactMonkey",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/contactmonkey-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "FirstUp",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/firstup-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Haiilo",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/haiilo-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "LumApps",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/lumapps-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Poppulo",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/poppulo-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Simpplr",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/simpplr-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Staffbase",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/staffbase-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Workshop",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/workshop-2026-05-10.html",
-          "is_md": false
-        },
-        {
-          "title": "Workvivo",
-          "date": "2026-05-10",
-          "url": "/cerkl/research/competitor-marketing/Competitors/workvivo-2026-05-10.html",
-          "is_md": false
-        }
+        { "title": "Workvivo (Seer)", "date": "2026-05-11", "url": "/cerkl/research/competitor-marketing/Competitors/workvivo-seer-2026-05-11.html", "is_md": false },
+        { "title": "Axios HQ", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/axios-hq-2026-05-10.html", "is_md": false },
+        { "title": "ContactMonkey", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/contactmonkey-2026-05-10.html", "is_md": false },
+        { "title": "FirstUp", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/firstup-2026-05-10.html", "is_md": false },
+        { "title": "Haiilo", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/haiilo-2026-05-10.html", "is_md": false },
+        { "title": "LumApps", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/lumapps-2026-05-10.html", "is_md": false },
+        { "title": "Poppulo", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/poppulo-2026-05-10.html", "is_md": false },
+        { "title": "Simpplr", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/simpplr-2026-05-10.html", "is_md": false },
+        { "title": "Staffbase", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/staffbase-2026-05-10.html", "is_md": false },
+        { "title": "Workshop", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/workshop-2026-05-10.html", "is_md": false },
+        { "title": "Workvivo", "date": "2026-05-10", "url": "/cerkl/research/competitor-marketing/Competitors/workvivo-2026-05-10.html", "is_md": false }
       ]
     },
     {
@@ -659,60 +324,16 @@
       "stale": false,
       "new_run_prompt": "Run the weekly sales report.\n\nProcess: /Users/travisfoster/claude-code/cerkl/sales/sales-reporting/weekly-sales-report-process.md",
       "items": [
-        {
-          "title": "Week 27",
-          "date": "2026-06-29",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W27.html",
-          "is_md": false
-        },
-        {
-          "title": "Weeks 23–26",
-          "date": "2026-06-22",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W23-W26.html",
-          "is_md": false
-        },
-        {
-          "title": "Weeks 22–25",
-          "date": "2026-06-15",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W22-W25.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 25",
-          "date": "2026-06-15",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W25.html",
-          "is_md": false
-        },
-        {
-          "title": "Weeks 21–24",
-          "date": "2026-06-08",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W21-W24.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 23",
-          "date": "2026-06-01",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W23.html",
-          "is_md": false
-        },
-        {
-          "title": "Weeks 19–22",
-          "date": "2026-05-25",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W19-W22.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 22",
-          "date": "2026-05-25",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W22.html",
-          "is_md": false
-        },
-        {
-          "title": "Week 21",
-          "date": "2026-05-18",
-          "url": "/cerkl/sales/sales-reporting/reports/2026-W21.html",
-          "is_md": false
-        }
+        { "title": "Weeks 23–27", "date": "2026-06-29", "url": "/cerkl/sales/sales-reporting/reports/2026-W23-W27.html", "is_md": false },
+        { "title": "Week 27", "date": "2026-06-29", "url": "/cerkl/sales/sales-reporting/reports/2026-W27.html", "is_md": false },
+        { "title": "Weeks 23–26", "date": "2026-06-22", "url": "/cerkl/sales/sales-reporting/reports/2026-W23-W26.html", "is_md": false },
+        { "title": "Weeks 22–25", "date": "2026-06-15", "url": "/cerkl/sales/sales-reporting/reports/2026-W22-W25.html", "is_md": false },
+        { "title": "Week 25", "date": "2026-06-15", "url": "/cerkl/sales/sales-reporting/reports/2026-W25.html", "is_md": false },
+        { "title": "Weeks 21–24", "date": "2026-06-08", "url": "/cerkl/sales/sales-reporting/reports/2026-W21-W24.html", "is_md": false },
+        { "title": "Week 23", "date": "2026-06-01", "url": "/cerkl/sales/sales-reporting/reports/2026-W23.html", "is_md": false },
+        { "title": "Weeks 19–22", "date": "2026-05-25", "url": "/cerkl/sales/sales-reporting/reports/2026-W19-W22.html", "is_md": false },
+        { "title": "Week 22", "date": "2026-05-25", "url": "/cerkl/sales/sales-reporting/reports/2026-W22.html", "is_md": false },
+        { "title": "Week 21", "date": "2026-05-18", "url": "/cerkl/sales/sales-reporting/reports/2026-W21.html", "is_md": false }
       ]
     },
     {
@@ -782,6 +403,30 @@
   ],
   "recent": [
     {
+      "title": "Growth Project Tracker",
+      "date": "2026-07-01",
+      "url": "/cerkl/personal-assistant/growth-project-tracker.html",
+      "cat_label": "Personal Assistant",
+      "cat_slug": "personal-assistant",
+      "is_md": false
+    },
+    {
+      "title": "Daily Recap — 2026-07-01",
+      "date": "2026-07-01",
+      "url": "/cerkl/research/ic-trends/daily/2026-07-01.html",
+      "cat_label": "IC Trends — Daily",
+      "cat_slug": "ic-trends-daily",
+      "is_md": false
+    },
+    {
+      "title": "Team Update — 2026-07-01",
+      "date": "2026-07-01",
+      "url": "/cerkl/research/ic-trends/team-update/2026-07-01.html",
+      "cat_label": "IC Trends — Team Updates",
+      "cat_slug": "ic-trends-team-updates",
+      "is_md": false
+    },
+    {
       "title": "Deal Report",
       "date": "2026-06-30",
       "url": "/cerkl/sales/deal-report/reports/deal-report.html",
@@ -790,35 +435,11 @@
       "is_md": false
     },
     {
-      "title": "Week 27",
-      "date": "2026-06-29",
-      "url": "/cerkl/sales/sales-reporting/reports/2026-W27.html",
-      "cat_label": "Sales — Weekly Pipeline",
-      "cat_slug": "sales-reporting",
-      "is_md": false
-    },
-    {
-      "title": "Team Update — 2026-06-24",
-      "date": "2026-06-24",
-      "url": "/cerkl/research/ic-trends/team-update/2026-06-24.html",
-      "cat_label": "IC Trends — Team Updates",
-      "cat_slug": "ic-trends-team-updates",
-      "is_md": false
-    },
-    {
-      "title": "Week 26",
-      "date": "2026-06-22",
-      "url": "/cerkl/research/competitor-marketing/weekly/2026-W26.html",
-      "cat_label": "Competitor Marketing — Weekly",
-      "cat_slug": "competitor-marketing-weekly",
-      "is_md": false
-    },
-    {
-      "title": "Weeks 23–26",
-      "date": "2026-06-22",
-      "url": "/cerkl/sales/sales-reporting/reports/2026-W23-W26.html",
-      "cat_label": "Sales — Weekly Pipeline",
-      "cat_slug": "sales-reporting",
+      "title": "Daily Recap — 2026-06-30",
+      "date": "2026-06-30",
+      "url": "/cerkl/research/ic-trends/daily/2026-06-30.html",
+      "cat_label": "IC Trends — Daily",
+      "cat_slug": "ic-trends-daily",
       "is_md": false
     }
   ]
