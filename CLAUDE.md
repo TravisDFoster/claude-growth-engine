@@ -74,3 +74,4 @@ Workflow rules (keep routine pushes fast):
 - Load shared context before starting any task
 - Route to the correct subdirectory and load its CLAUDE.md (and CONTEXT.md) directly — do not use `find`/`ls`/`grep` to re-discover structure; the routing table is the map
 - Ask clarifying questions before making assumptions
+- **Google Drive I/O uses the `gws` CLI only** (via [`skills/md-to-drive`](skills/md-to-drive/SKILL.md)). Never use the Google Drive MCP (`mcp__claude_ai_Google_Drive__*`) — its OAuth token expires between sessions, so every call wastes a failed attempt plus a fallback. Same for Gmail/Calendar: prefer the `gws` equivalents.

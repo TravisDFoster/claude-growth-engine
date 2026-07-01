@@ -9,6 +9,8 @@ metadata:
 
 Convert one or more local Markdown files into native Google Docs in Travis's Drive, using the `gws` CLI. The Drive API converts markdown to Doc format on the fly when the request body specifies `mimeType: application/vnd.google-apps.document`, so the result is a real Doc — not a `.md` attachment.
 
+> **gws only — never the Drive MCP.** This skill is the sole sanctioned path for Drive I/O. Do not reach for the Google Drive MCP tools (`mcp__claude_ai_Google_Drive__*`); its OAuth token expires between sessions, so every call costs a failed attempt plus a fallback. Always use the `gws drive` commands below.
+
 ## Default destination
 
 **Folder:** `Claude-Uploads` at Travis's My Drive root
