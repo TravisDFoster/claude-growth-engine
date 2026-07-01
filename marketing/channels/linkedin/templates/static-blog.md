@@ -8,7 +8,7 @@
 
 ## Structure
 
-**Caption (medium — 3–5 short paragraphs):**
+**Caption (tight — 2–4 short paragraphs):**
 - Hook line tied to the blog's central insight
 - 1–2 paragraphs distilling the argument (enough to earn the click)
 - 1-line lead-in to the link
@@ -16,9 +16,7 @@
 **Asset (link card):**
 - LinkedIn auto-renders this from the blog URL. Confirm meta title, meta description, and OG image look right before posting.
 
-**Link policy:** This is the **exception** to "link in comments." The link card is the entire asset, so the link goes in the post body.
-
-**Hashtags:** 2–3 per [`../linkedin-writing-guide.md`](../linkedin-writing-guide.md#hashtag-policy).
+**Link policy:** The link goes in the post body. Per the writing guide all post links live in the caption, and here the link card is the asset.
 
 ## Skeleton
 
@@ -40,10 +38,6 @@
 [Lead-in to the link, e.g., "Full breakdown:"]
 
 [Blog URL]
-
----
-
-**Hashtags:** #InternalCommunications #EmployeeEngagement [optional third]
 ```
 
 ## Future work

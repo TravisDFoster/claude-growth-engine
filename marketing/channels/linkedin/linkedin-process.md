@@ -74,9 +74,8 @@ For each post:
 4. Write to `drafts/YYYY-MM-DD_[type]_[slug].md` using the publish date and a kebab-case slug (≤60 chars)
 
 The draft is the source of truth. It contains:
-- Caption (the text above the asset)
+- Caption (the text above the asset, including any destination link)
 - Asset spec or content (slide copy for carousels; poll question + options; image direction for statics; video script for video)
-- Hashtags
 
 ### Step 5 — Insert copy into the Jira CSV
 
@@ -84,7 +83,7 @@ The draft is the source of truth. It contains:
 - **Inputs:** Draft file path + target CSV path + the matching LinkedIn Task row
 - **Produces:** Updated CSV Task Description
 
-For each draft, update the Task row it was loaded from in Step 1 (matched by `Post type:` + `Wraps:` in the Description — not by free-text Summary). Replace `[COPY_PLACEHOLDER]` in that **Task's** Description (on its `Copy:` line) with the draft contents (caption + asset spec + hashtags). The `LinkedIn – Copy` subtask stays as the plain production step — don't write copy into it.
+For each draft, update the Task row it was loaded from in Step 1 (matched by `Post type:` + `Wraps:` in the Description — not by free-text Summary). Replace `[COPY_PLACEHOLDER]` in that **Task's** Description (on its `Copy:` line) with the draft contents (caption + asset spec). The `LinkedIn – Copy` subtask stays as the plain production step — don't write copy into it.
 
 Use a real CSV library (Python `csv`, or equivalent) — Description fields contain newlines.
 
@@ -125,7 +124,7 @@ If every drafted post is `skip-*`, no asset process needed — the roll-up ends 
 
 ## Future work
 
-- **Per-post-type templates need depth.** Carousel is the most fleshed out (from 2026-05-20 work). The other 4 (static-theme, static-blog, poll, short-video) are skeletons. Refine after each runs.
-- **Voice divergence.** LinkedIn voice currently matches blog voice exactly. Revisit after 2–3 weeks.
+- **Per-post-type templates need depth.** Carousel is the most fleshed out. The other 4 (static-theme, static-blog, poll, short-video) are skeletons. Refine after each runs.
+- **Voice divergence.** LinkedIn voice matches blog voice. Revisit if a distinct LinkedIn voice becomes warranted.
 - **Archive automation.** Once a draft's CSV row is filled and the post publishes, move the draft to `archive/`. Manual move for now.
 - **Per-type drafting skills.** If a particular type (e.g., carousel) develops Cerkl-specific drafting complexity, extract it into `skills/linkedin-carousel/SKILL.md`. Today the templates + this process are enough.

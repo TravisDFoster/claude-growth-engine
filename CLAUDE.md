@@ -68,6 +68,7 @@ Workflow rules (keep routine pushes fast):
 
 - **Dates**: ISO format `YYYY-MM-DD` (e.g., `2026-05-06`) everywhere — file content, update blocks, status notes. Convert relative dates ("Thursday", "next week") to absolute `YYYY-MM-DD` before writing them down.
 - **Event/project folders**: see the relevant channel's `CLAUDE.md` for naming conventions (e.g., webinars use `speaker-month-YYYY/`).
+- **Keep process docs history-agnostic**: write processes and reference docs for someone discovering them fresh a year from now, anywhere in the world. Fold what you learn back in as standing guidance rather than logging it — lean away from changelogs, "updated on…" stamps, and incident notes in process docs. This is a living system, so evolve the docs in place instead of narrating how they changed. (Time-bound data artifacts — weekly CSVs, dated event folders — are the natural exception; dates belong there.)
 
 ## Rules
 - Load shared context before starting any task

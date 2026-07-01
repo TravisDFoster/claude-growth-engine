@@ -9,7 +9,7 @@
 
 ## Structure
 
-**Caption (long — 4–6 short paragraphs):**
+**Caption (tight — 3–4 short paragraphs):**
 - 1-line framing of why the question matters now
 - 1–2 paragraphs of context or stakes
 - A pointer to the poll
@@ -18,8 +18,6 @@
 - Question (concise, ≤140 chars)
 - 2–4 answer options (LinkedIn max is 4)
 - Duration: 1 week (Cerkl default)
-
-**Hashtags:** 2–3 per [`../linkedin-writing-guide.md`](../linkedin-writing-guide.md#hashtag-policy).
 
 ## Skeleton
 
@@ -51,10 +49,6 @@
 4. [Option 4]
 
 **Duration:** 1 week
-
----
-
-**Hashtags:** #InternalCommunications #EmployeeEngagement [optional third]
 ```
 
 ## Future work

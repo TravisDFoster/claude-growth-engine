@@ -335,6 +335,9 @@
     .h-stat.zero .h-num { color: #9a9aa3; }
     .tldr-strip { color: #18181d; border-left-color: #3547c4; }
     section { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    /* Tables can be taller than a page, so protect the row (not the section) from slicing. */
+    thead { display: table-header-group; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
     .bar-fill { color: #ffffff; }
     footer { color: #373740; border-top-color: #d5d5db; }
     a { color: #18181d; }

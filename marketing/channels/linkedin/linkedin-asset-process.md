@@ -199,7 +199,7 @@ For `webinar-lookup` drafts (Step 2a), the URL came from the webinar's manifest 
 For each draft with a `get-design`-**verified** `edit_url` (from Step 5's verification, or the Step 2a webinar lookup):
 
 1. Find the Task row in `../../content-plan/jira/imports/YYYY-Www.csv` matched by `Post type:` + `Wraps:` in the Description (same key as Step 1; not free-text Summary).
-2. Add an `Asset:` line **at the end of the Description**, after the hashtags block (separated by a blank line). Format:
+2. Add an `Asset:` line **at the end of the Description**, after the caption (separated by a blank line). Format:
 
 ```
 Asset: <edit_url>
@@ -215,7 +215,7 @@ Use a real CSV library (Python `csv`) — Description fields contain newlines.
 
 **Invocation modes:** when this runs as a Wave subagent inside the weekly content session, do **not** edit the CSV — return the values (the orchestrator fills all tokens in one pass). Only edit the CSV directly when running standalone (single writer either way).
 
-**Placement note (2026-06-02):** earlier convention put `Asset:` directly below the `Copy:` label, which split the Copy block visually. Placement is now **at the bottom of the Description**, separated from hashtags by a blank line. Furqan finds it after scanning past the caption + hashtags.
+**Placement:** put the `Asset:` line **at the bottom of the Description**, separated from the caption by a blank line — not directly below the `Copy:` label, which splits the Copy block visually. Furqan finds it after scanning past the caption.
 
 If a Task row is missing or has no `Copy:` line filled in, surface a `csv_row_unfilled` warning and skip — Phase A (linkedin-process.md) hasn't run for that draft.
 

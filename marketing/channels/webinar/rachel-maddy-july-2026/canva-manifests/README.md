@@ -20,7 +20,7 @@
 
 ## What's pre-filled
 
-- Webinar title: `Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer`
+- Webinar title: `Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer`
 - Speaker 1: `Rachel Folz` — `Head of Product, Cerkl` — headshot `MAFZdaEt2Wc`
 - Speaker 2: `Maddy Rieman` — `Head of Customer Success, Cerkl` — headshot `MAFZdS-3JCo`
 - Date placeholder: `|   Jul 9, 2026 12:00 PM EDT` (no pipe on `countdown`; dropped on `recording-thumbnail` / `recap-blog-cover`)

@@ -268,6 +268,68 @@ def fetch_demos(tok, start_ms, end_ms, portal_id, owner_map):
     return {"total": len(submissions), "by_form": by_form, "submissions": submissions}
 
 
+def _int(v):
+    # HubSpot returns count properties as float-formatted strings ("5.0"), so parse
+    # through float — int("5.0") would raise and silently zero the value.
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return 0
+
+
+def fetch_email_activity(tok, start_ms, end_ms):
+    """Per-rep email engagement in the window: sent/received split + open/click engagement.
+
+    Degrades gracefully — the private-app token may still lack the email-read scope
+    (returns 403), in which case we report status='pending_scope' and the rest of the
+    report renders unaffected. If the open/click engagement properties aren't on this
+    portal's email schema (400), we fall back to direction-only counts ('no_engagement').
+    The moment the scope is granted in HubSpot, the next run lights up automatically.
+    """
+    filters = [
+        {"propertyName": "hubspot_owner_id", "operator": "IN", "values": OWNER_IDS},
+        {"propertyName": "hs_timestamp", "operator": "GTE", "value": str(start_ms)},
+        {"propertyName": "hs_timestamp", "operator": "LTE", "value": str(end_ms)},
+    ]
+    full_props = ["hubspot_owner_id", "hs_email_direction", "hs_email_status",
+                  "hs_email_open_count", "hs_email_click_count"]
+    core_props = ["hubspot_owner_id", "hs_email_direction", "hs_email_status"]
+    engagement = True
+    try:
+        try:
+            rows = search(tok, filters, full_props, obj="emails")
+        except requests.HTTPError as e:
+            # 400 ⇒ open/click props not on this portal's email schema; retry direction-only.
+            if e.response is not None and e.response.status_code == 400:
+                engagement = False
+                rows = search(tok, filters, core_props, obj="emails")
+            else:
+                raise
+    except requests.HTTPError as e:
+        code = e.response.status_code if e.response is not None else None
+        if code in (401, 403):
+            return {"status": "pending_scope", "by_owner": None, "totals": None}
+        raise
+
+    by_owner = {n: {"sent": 0, "received": 0, "opens": 0, "clicks": 0} for n in OWNERS.values()}
+    for d in rows:
+        p = d["properties"]
+        nm = OWNERS.get(p.get("hubspot_owner_id"))
+        if not nm:
+            continue
+        # hs_email_direction: INCOMING_EMAIL = received; EMAIL / FORWARDED_EMAIL = sent.
+        if "INCOMING" in (p.get("hs_email_direction") or "").upper():
+            by_owner[nm]["received"] += 1
+        else:
+            by_owner[nm]["sent"] += 1
+        if engagement:
+            by_owner[nm]["opens"] += _int(p.get("hs_email_open_count"))
+            by_owner[nm]["clicks"] += _int(p.get("hs_email_click_count"))
+    keys = ("sent", "received", "opens", "clicks")
+    totals = {k: sum(by_owner[n][k] for n in OWNERS.values()) for k in keys}
+    return {"status": "ok" if engagement else "no_engagement", "by_owner": by_owner, "totals": totals}
+
+
 def search(tok, filters, properties, obj="deals"):
     """Run a CRM-object search, following pagination. Returns list of result dicts."""
     headers = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json"}
@@ -373,9 +435,10 @@ def main():
     ], base_props)
 
     # 5) Activity engagements in period (owner-filtered) — counted per rep.
-    #    Emails are skipped: the token lacks the email-read scope (see process Future work).
-    #    Calls typically read 0 (AEs don't log call engagements).
-    ACTIVITY_TYPES = ["calls", "meetings", "notes", "tasks"]
+    #    Calls dropped 2026-06-22 (AEs don't log call engagements — always read 0).
+    #    Emails are pulled separately below (fetch_email_activity) and degrade
+    #    gracefully if the token still lacks the email-read scope.
+    ACTIVITY_TYPES = ["meetings", "notes", "tasks"]
     activity_by_owner = {name: {t: 0 for t in ACTIVITY_TYPES} for name in OWNERS.values()}
     for t in ACTIVITY_TYPES:
         for d in search(tok, [
@@ -389,7 +452,7 @@ def main():
     activity = {
         "by_owner": activity_by_owner,
         "totals": {t: sum(activity_by_owner[n][t] for n in OWNERS.values()) for t in ACTIVITY_TYPES},
-        "emails": None,  # scope-blocked; see Future work
+        "emails": fetch_email_activity(tok, start_ms, end_ms),  # sent/received + engagement; degrades on 403
     }
 
     # 6) Structured feature_gaps roll-up across AE deals (current state; complements the

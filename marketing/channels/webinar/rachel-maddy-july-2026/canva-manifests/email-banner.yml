@@ -4,7 +4,7 @@ design_title: rachel-maddy-email-banner-2026-07-09
 aspect_ratio: 3:1
 
 text_values:
-  "Webinar title": "Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer"
+  "Webinar title": "Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer"
   "Name": ["Rachel Folz", "Maddy Rieman"]
   "Title": ["Head of Product, Cerkl", "Head of Customer Success, Cerkl"]
   "|   Mar 6, 2025 1:00 pm est": "|   Jul 9, 2026 12:00 PM EDT"
@@ -17,6 +17,7 @@ commit_mode: auto
 # === Render result (re-render 2026-06-10, 2-speaker) ===
 result:
   rendered_at: "2026-06-10"
+  title_edited_in_place: "2026-06-19 — title swapped in place; design_id/edit_url unchanged. New title wraps to 4 lines (box auto-grew), no overflow"
   design_id: "DAHMM1XUg8I"
   edit_url: "https://www.canva.com/design/DAHMM1XUg8I/edit"
   view_url: "https://www.canva.com/d/fqNRQdpw7pv4vqn"

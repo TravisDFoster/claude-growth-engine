@@ -1,0 +1,552 @@
+<!doctype html>
+<!--
+  Team-update artifact (ic-trends Marketing 7-day rollup).
+  Rendered from team-update/2026-06-17.md via md-to-html skill.
+  Shares the daily-recap visual language (numbered cards, callouts, watchlist,
+  collapsibles) but the content shape is strategy + ranked actions, not a news
+  survey — so no bulk-select / downstream-prompt JS. Click-to-copy is retained
+  for the per-card "Action" line, the most reusable string on the page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing 7-Day Rollup — 2026-06-17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f5fa;
+    --panel: #ffffff;
+    --panel-soft: #f5f5fa;
+    --ink: #18181d;
+    --muted: #373740;
+    --line: #d5d5db;
+    --accent: #3547c4;
+    --accent-soft: #f0f2fc;
+    --good: #1a9979;
+    --good-bg: #e8fffa;
+    --good-border: #aaf7e6;
+    --warn: #80550f;
+    --warn-bg: #fff9f2;
+    --warn-border: #ffeccd;
+    --bad: #b00045;
+    --bad-bg: #fcf0f0;
+    --bad-border: #fbc2c4;
+    --info: #3547c4;
+    --info-bg: #f0f2fc;
+    --info-border: #ccd5f7;
+    --quote: #802ee6;
+    --code-bg: #ebebf0;
+    --shadow: 0 1px 0 rgba(24,24,29,0.04), 0 4px 16px rgba(24,24,29,0.06);
+    --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Work Sans", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    letter-spacing: -0.0025em;
+    -webkit-font-smoothing: antialiased;
+  }
+  section p, .tldr { max-width: 74ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+
+  header.hero {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  .breadcrumb {
+    font-size: 13px; color: var(--muted); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+    font-size: 14px; color: var(--muted); margin-bottom: 18px;
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+  .tldr {
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    border-left: 3px solid var(--accent); padding-left: 16px;
+    margin: 0;
+  }
+  .tldr .lead { font-weight: 600; }
+  .source-strip {
+    margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted);
+  }
+  .source-strip .label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 8px;
+  }
+  .source-strip ul { margin: 0; padding-left: 18px; }
+  .source-strip li { margin-bottom: 3px; }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px; margin: 0 0 16px; letter-spacing: -0.0025em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--code-bg); padding: 2px 8px; border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--info-border); }
+  a:hover { border-bottom-color: var(--accent); }
+  ul { padding-left: 20px; margin: 8px 0 12px; }
+  em { font-style: italic; }
+
+  /* Action items — numbered cards */
+  .actions-list { display: grid; gap: 16px; }
+  .action-item {
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px 16px;
+    display: grid; grid-template-columns: auto 1fr; gap: 16px;
+    align-items: start;
+  }
+  .rank-num {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--accent); color: #ffffff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px;
+    letter-spacing: -0.005em; flex-shrink: 0;
+  }
+  .action-item h3 {
+    margin: 2px 0 12px; font-size: 18px; line-height: 1.3; font-weight: 600;
+    letter-spacing: -0.0025em;
+  }
+  .field { font-size: 15px; line-height: 1.55; margin: 0 0 10px; }
+  .field:last-child { margin-bottom: 0; }
+  .field .flabel {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    display: block; margin-bottom: 2px;
+  }
+  .action-field {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-top: 12px;
+  }
+  .action-field .flabel { color: var(--accent); }
+  .action-row { display: flex; align-items: flex-start; gap: 10px; }
+  .action-row .action-text { flex: 1; }
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 4px 10px; border-radius: 6px;
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--info-border);
+    cursor: pointer;
+    font-family: inherit; font-weight: 600; font-size: 11px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    transition: background 120ms ease;
+  }
+  .copy-btn:hover { background: var(--info-bg); }
+
+  /* Callouts (data hygiene, notes intro) */
+  .callout {
+    border-radius: 10px; padding: 14px 16px; margin: 0 0 12px;
+    font-size: 15px; border-left: 3px solid;
+  }
+  .callout .label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; display: block; margin-bottom: 4px;
+  }
+  .callout.info { background: var(--info-bg); border-color: var(--info); }
+  .callout.info .label { color: var(--info); }
+  .callout.warn { background: var(--warn-bg); border-color: var(--warn); }
+  .callout.warn .label { color: var(--warn); }
+
+  /* Watchlist / data-hygiene compact rows */
+  .watch-list { display: grid; gap: 12px; }
+  .watch-row {
+    font-size: 15px; line-height: 1.5;
+    padding: 12px 14px;
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .watch-row .w-title { font-weight: 600; color: var(--ink); }
+  .watch-row p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+
+  /* Notes — collapsibles */
+  details.q {
+    background: var(--panel-soft); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0; margin-bottom: 8px; overflow: hidden;
+  }
+  details.q summary {
+    padding: 12px 16px; cursor: pointer; font-weight: 500; font-size: 15px;
+    list-style: none; position: relative; padding-right: 40px;
+  }
+  details.q summary::-webkit-details-marker { display: none; }
+  details.q summary::before {
+    content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--accent);
+  }
+  details.q[open] summary::before { content: "\2212"; }
+  details.q .q-body { padding: 0 16px 14px; font-size: 14px; color: var(--muted); }
+  details.q .q-body p { max-width: none; }
+
+  code, pre { font-family: var(--mono); }
+  p code, li code, .field code, .watch-row code, .q-body code {
+    font-family: var(--mono); font-size: 0.88em;
+    background: var(--code-bg); padding: 1px 6px; border-radius: 4px;
+  }
+
+  /* Toast for copy confirmation */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--ink); color: #ffffff;
+    padding: 10px 16px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    opacity: 0; pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 1000; box-shadow: var(--shadow);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media print {
+    body { background: #ffffff; color: #18181d; -webkit-font-smoothing: auto; }
+    .wrap { padding: 0; max-width: none; }
+    section, header.hero { box-shadow: none; border: 1px solid #d5d5db; page-break-inside: avoid; }
+    a { color: #18181d; }
+    .copy-btn, .toast { display: none !important; }
+    details.q { page-break-inside: avoid; }
+    details.q[open] summary::before, details.q summary::before { display: none; }
+    details.q[open] .q-body, details.q .q-body { display: block !important; }
+    details.q:not([open]) .q-body { display: block !important; }
+  }
+
+  @media (max-width: 640px) {
+    .action-item { grid-template-columns: 1fr; }
+    .rank-num { width: 28px; height: 28px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="breadcrumb">ic-trends · Marketing 7-Day Rollup</div>
+    <h1>Marketing Team — 7-Day Rollup</h1>
+    <div class="meta-row">
+      <span><b>Date:</b> 2026-06-17 (Wednesday)</span>
+      <span><b>Action items:</b> 7</span>
+      <span><b>Watchlist:</b> 6</span>
+    </div>
+    <p class="tldr">
+      <span class="lead">The IC category just crowded onto Cerkl's home turf — measurement.</span>
+      The "you can't prove your comms work" pain hook jumped from 3 vendors to <b>6 of 10</b> this week.
+      That's validation — the buyer now expects measurement, exactly the wedge Cerkl has claimed — but it
+      ends Cerkl's default ownership of the word: six competitors are planting flags on "measurement" with
+      <em>aggregate, borrowed stats</em> while none delivers <em>per-employee</em> read attribution. The play:
+      stop <em>describing</em> measurement and start <em>out-specifying</em> it — make the proof point a named
+      employee opening a message, not a percentage. Two HBR pieces plus Gartner's anti-uniform-governance
+      stance give Cerkl the empirical case that <b>trust + measurement beats control</b>.
+    </p>
+    <div class="source-strip">
+      <span class="label">Underlying research this rollup draws from</span>
+      <ul>
+        <li>Daily recaps: <a href="../daily/2026-06-17.md">daily/2026-06-17.md</a>, <a href="../daily/2026-06-15.md">daily/2026-06-15.md</a>, <a href="../daily/2026-06-10.md">daily/2026-06-10.md</a></li>
+        <li>Competitor marketing weekly: <a href="../../competitor-marketing/weekly/2026-W25.md">competitor-marketing/weekly/2026-W25.md</a></li>
+        <li>Rolling 7-day index: <a href="../rolling-7day.md">ic-trends/rolling-7day.md</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">ACTIONS</span>Action items (ranked)</h2>
+    <div class="actions-list">
+
+      <div class="action-item">
+        <div class="rank-num">1</div>
+        <div>
+          <h3>Out-specify the measurement crowd — ship a per-employee read-attribution LP variant</h3>
+          <p class="field"><span class="flabel">What it is</span>Measurement/outcomes went from 3 → 6 of 10 vendors leading with it this week — the standout WoW shift in <a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Top takeaways #1</a> and <a href="../../competitor-marketing/weekly/2026-W25.md">§(c) Advertising</a>. Every claim is aggregate (282% ROI, 92%, $1T); none shows employee-level read receipts, and G2 complaint themes (analytics/customization ceilings, 8 of 10 vendors) expose the gap.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>"Delivery + measurement layer… delivered, opened, read, by employee" is Cerkl's stated core position (<code>shared/competitors.md</code>). When six competitors advertise measurement with hand-waving stats, specificity is the differentiator — Cerkl can win the word by being the only one that shows the receipt.</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Marketing (Travis + Tracy) — build a measurement-hero LP variant whose proof point is a per-employee read-receipt visual: &quot;Not '282% ROI.' This: Sarah in Ops opened it. Marcus on the floor didn't — yet.&quot; Draft this week, live next. Highest-leverage item on the board.">Marketing (Travis + Tracy) — build a measurement-hero LP variant whose proof point is a <em>per-employee</em> read-receipt visual: <em>"Not '282% ROI.' This: Sarah in Ops opened it. Marcus on the floor didn't — yet."</em> Draft this week, live next. Highest-leverage item on the board.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">2</div>
+        <div>
+          <h3>Make the pricing-transparency gap loud while competitors gate harder</h3>
+          <p class="field"><span class="flabel">What it is</span>ContactMonkey (was tiered-public) and Workvivo (was per-employee public) <b>both pulled pricing behind "Request pricing" this week</b>; 0 of 10 vendors offer a free-forever tier for the 7th straight week (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Top takeaways #3</a>, <a href="../../competitor-marketing/weekly/2026-W25.md">§(f) Pricing</a>).</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>The category is moving <em>opposite</em> to Cerkl Foundations. The free-forever + public-pricing moat is more differentiated than it was a month ago, not less — but only if marketing actively contrasts it.</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Marketing — lead a Foundations campaign on the transparency contrast directly: &quot;Free. Public pricing. Live this afternoon. No quote required.&quot; Pair with the recurring 'escape the manual stack' Foundations message. Scope this week; ties to the Q3 Foundations window (see watchlist).">Marketing — lead a Foundations campaign on the transparency contrast directly: <em>"Free. Public pricing. Live this afternoon. No quote required."</em> Pair with the recurring "escape the manual stack" Foundations message. Scope this week; ties to the Q3 Foundations window (see watchlist).</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">3</div>
+        <div>
+          <h3>Ship the governance-vs-trust POV — the daily research now arms it</h3>
+          <p class="field"><span class="flabel">What it is</span>Two HBR pieces this week — employees hide AI use when trust is low (<a href="../daily/2026-06-17.md">06-17 #1</a>); judgment, not speed, is the scarce skill (<a href="../daily/2026-06-17.md">06-17 #3</a>) — plus Gartner's "uniform AI-agent governance will fail" (<a href="../rolling-7day.md">06-10, rolling index</a>) and Staffbase's own VOICES Awards reframing "trust and adoption" as the EX differentiators (<a href="../daily/2026-06-17.md">06-17 #2</a>). The empirical case: you only <em>see</em> shadow AI when employees trust you — control doesn't surface it.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>This is the third-party evidence behind Cerkl's <em>"governance is what you market when you don't trust your AI; we market what we measure"</em> counter-position (<code>shared/competitors.md</code>). The W25 digest notes this POV has been recommended for three weeks and <b>still hasn't shipped</b> — and now the supporting data is strongest.</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Marketing/content — publish the counter-positioning POV (blog or LP) tying sanctioned-AI to measurement: &quot;The sanctioned-AI promise dies the moment employees don't read the message.&quot; Anchor it to the HBR/Gartner data, not the AI-fear hook. Draft within 2 weeks.">Marketing/content — publish the counter-positioning POV (blog or LP) tying sanctioned-AI to measurement: <em>"The sanctioned-AI promise dies the moment employees don't read the message."</em> Anchor it to the HBR/Gartner data, not the AI-fear hook. Draft within 2 weeks.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">4</div>
+        <div>
+          <h3>G2 review-velocity push is now urgent — Workshop has a Spring + Summer badge</h3>
+          <p class="field"><span class="flabel">What it is</span>Workshop repeated its <b>#1 Internal Newsletter Software</b> win into G2 Summer 2026 — two consecutive seasons of badge ammunition it will press in every Foundations head-to-head (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Ideas to steal</a>, <a href="https://useworkshop.com/press/workshop-named-best-for-internal-and-frontline-communications-in-g2-summer-reports-2026/">useworkshop.com press</a>). Workshop is Cerkl's most direct Foundations-tier rival.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>Heading into the Q3 Foundations window, a competitor with a repeating G2 #1 badge and no recurring complaint theme is a sharp threat to the free-tier pitch. Cerkl needs its own badge before that window opens.</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Travis + Marketing — identify the 1–2 G2 categories Cerkl can realistically win for Fall 2026, then run an in-product review-velocity push (CSM-driven ask to happy Foundations users). Scope the category pick this week; the review push runs over the next 4–6 weeks.">Travis + Marketing — identify the 1–2 G2 categories Cerkl can realistically win for <b>Fall 2026</b>, then run an in-product review-velocity push (CSM-driven ask to happy Foundations users). Scope the category pick this week; the review push runs over the next 4–6 weeks.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">5</div>
+        <div>
+          <h3>Decide the "execution problem" frame — ship-or-kill</h3>
+          <p class="field"><span class="flabel">What it is</span>The "execution problem" CEO narrative (Cates/ContactMonkey, Black/Workvivo, Fornell/Poppulo) <b>stalled at 3 vendors for the 5th straight week</b> — no 4th adopter (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §(d)</a>). The first-mover window to claim or counter-position it has decayed to a decision point.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>Cerkl flagged weeks ago that two-then-three vendors converging on identical language was a category-language shift to claim or counter before it ossifies. It hasn't ossified — but the window isn't free forever.</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Travis — make the call this week: either (a) claim/counter-position the 'execution' frame in Cerkl messaging now, or (b) explicitly drop it and stop tracking. Don't leave it open a 6th week. Decision, not a project.">Travis — make the call this week: either (a) claim/counter-position the "execution" frame in Cerkl messaging now, or (b) explicitly drop it and stop tracking. Don't leave it open a 6th week. Decision, not a project.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">6</div>
+        <div>
+          <h3>Refresh "vs. Workvivo" + commission "vs. Haiilo" — destination convergence + advocacy backlash</h3>
+          <p class="field"><span class="flabel">What it is</span>Two converging signals. (a) Workvivo repositioned its hero to <em>"One digital headquarters for every employee"</em> (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Top takeaways #4</a>) — the sharpest "destination" frame yet, and a cleaner foil for Cerkl's anti-destination contrast. (b) Ragan ran a CCO POV arguing forced employee advocacy backfires (<a href="../daily/2026-06-17.md">06-17 #7</a>) — direct ammunition against Haiilo and the Poppulo+Sociabble advocacy bundle.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>The more competitors say "come to our hub," the cleaner Cerkl's <em>"we meet employees where they already are"</em> reads — but the live <code>versus/workvivo</code> page is stale (pre-digital-HQ), and there's <b>no live "vs. Haiilo" page</b> at all (counter-positioning writes itself per <code>shared/competitors.md</code>).</p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Marketing — (a) refresh cerkl.com/broadcast/versus/workvivo with the digital-HQ + Zoom-bundle + Seer narrative; (b) commission a net-new 'vs. Haiilo' page leaning on advocacy ≠ internal comms + post-merger seams. Queue both; vs-Workvivo refresh first.">Marketing — (a) refresh <code>cerkl.com/broadcast/versus/workvivo</code> with the digital-HQ + Zoom-bundle + Seer narrative; (b) commission a net-new "vs. Haiilo" page leaning on advocacy ≠ internal comms + post-merger seams. Queue both; vs-Workvivo refresh first.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="rank-num">7</div>
+        <div>
+          <h3>Stand up the customization-ceiling wedge — it's now near-universal (8 of 10)</h3>
+          <p class="field"><span class="flabel">What it is</span>The template/customization-ceiling complaint is confirmed across 8 of 10 vendors in G2 themes (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §(e)</a>); Workshop is the lone holdout.</p>
+          <p class="field"><span class="flabel">Why it matters for Cerkl marketing</span>A durable, evergreen wedge that doesn't depend on a competitor's weekly move: <em>"You don't need to redesign your channels — Cerkl personalizes the message inside the channels you already have."</em></p>
+          <div class="action-field">
+            <span class="flabel">Action</span>
+            <div class="action-row">
+              <div class="action-text" data-copy="Marketing — build a one-screen LP with honestly-attributed G2 complaint fragments as the backdrop. Lower urgency than 1–4; queue behind the measurement and Foundations pushes.">Marketing — build a one-screen LP with honestly-attributed G2 complaint fragments as the backdrop. Lower urgency than 1–4; queue behind the measurement and Foundations pushes.</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">WATCH</span>Calendar / watchlist</h2>
+    <p>Events, report drops, and competitor moves landing in the next 7–14 days the team should track or counter-program.</p>
+    <div class="watch-list">
+
+      <div class="watch-row">
+        <span class="w-title">Q3 2026 Foundations campaign window</span> — internal
+        <p>Needs the measurement LP (#1), transparency campaign (#2), and a G2 badge (#4) <em>ready before it opens</em>. Treat these three as the gating dependencies.</p>
+      </div>
+
+      <div class="watch-row">
+        <span class="w-title">2026-W26 (next digest)</span>
+        <p>Watch whether <b>ContactMonkey's conquest resumes/escalates</b> (W25 brought back both an offensive "Best Workshop Alternatives" and a defensive "what you'd be giving up" — split attack+defend signals churn pressure under Cates) and whether <b>Staffbase's shadow-AI hero stat holds or oscillates again</b> (it re-added the 79%/69% stat this week after softening it in W24 — reads like A/B testing). <a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Positioning shifts</a></p>
+      </div>
+
+      <div class="watch-row">
+        <span class="w-title">Ipsos Karian &amp; Box — IC Index 2026 (4th ed.)</span> — <a href="https://ipsoskarianandbox.com/insights/">insights hub</a>
+        <p>Practitioner benchmark for budget/headcount conversations; pin the specific report PDF when it surfaces for sales enablement. (<a href="../daily/2026-06-17.md">06-17 #5</a>)</p>
+      </div>
+
+      <div class="watch-row">
+        <span class="w-title">Ragan "New Employee Experience Mandate" survey</span> — <a href="https://www.ragan.com/your-input-needed-the-new-employee-experience-mandate/">ragan.com</a>
+        <p>Signals Ragan's next editorial theme (the engagement→experience pivot); a content + thought-leadership opening if Cerkl moves before the report lands. (<a href="../daily/2026-06-15.md">06-15 #1</a>)</p>
+      </div>
+
+      <div class="watch-row">
+        <span class="w-title">Simpplr 2026 State of Internal Communications report</span> — <a href="https://www.simpplr.com/newsroom/press-releases/2026-state-of-internal-communications-report/">simpplr.com</a>
+        <p><em>Verify publish date before citing</em> (may predate the window); useful stat anchor if current. (<a href="../daily/2026-06-15.md">06-15 watchlist</a>)</p>
+      </div>
+
+      <div class="watch-row">
+        <span class="w-title">Microsoft EWS deprecation — Oct 2026</span>
+        <p>ContactMonkey is running a vendor-readiness narrative on this; it doubles as a real re-evaluation window Cerkl can walk through. Standing watch item from <code>shared/competitors.md</code>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">HYGIENE</span>Data hygiene</h2>
+    <p>Cleanup needed before the next sales/marketing reuse.</p>
+
+    <div class="callout warn">
+      <span class="label">Stale — update before deal-room reuse</span>
+      <b><code>shared/competitors.md</code> — Staffbase entry partially stale.</b> The 2026-06-10 update says Staffbase "retreated from the W23 shadow-AI ad-copy lead" and "lost 4 SERP P1 slots." W25 <b>reversed both</b>: shadow-AI 79%/69% stat is back in the hero, and SERP recovered 3 → 6 P1 (now tied #1). Update the Staffbase row so deal-room talk tracks don't cite a retreat that's been undone. (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Top takeaways #2</a>)
+    </div>
+
+    <div class="callout warn">
+      <span class="label">Exec-name corrections — flagged 2+ weeks, still uncorrected</span>
+      In <code>competitor-marketing/sources.md</code>: Workvivo CEO is <b>John Goulding</b> (not Joe Lennon — he's CTO/co-founder); Firstup CEO is <b>Bill Schuh</b> (since June 2025, not Nicole Alvino). Fix before any outbound or competitive content names these leaders. (<a href="../../competitor-marketing/weekly/2026-W25.md">W25 §Gaps</a>)
+    </div>
+
+    <div class="callout info">
+      <span class="label">Trace before reuse</span>
+      <b>Borrowed competitor stats need source-tracing before reuse:</b> 282% ROI (Simpplr), $1T turnover (Firstup), 92%/90%/82% (AxiosHQ), 79%/69% shadow-AI (Staffbase). If Cerkl content references any of these to contrast, trace to the primary source first — several are vendor-commissioned.
+    </div>
+
+    <div class="callout info">
+      <span class="label">Minor</span>
+      <b><code>competitor-marketing/sources.md</code> — drop LumApps <code>/pricing</code></b> (404 for the 3rd straight week). Stops wasting sub-agent cycles.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">NOTES</span>Notes</h2>
+
+    <details class="q">
+      <summary>Freshness — ran against a fresh W25 digest</summary>
+      <div class="q-body">
+        <p>This rollup ran against a fresh <b>2026-W25</b> competitor digest (generated 2026-06-17 09:41, in the background per Travis). The Step 0 staleness gate triggered first — W25 didn't exist when the rollup started.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Step 3.5 (marketing inputs) — append status</summary>
+      <div class="q-body">
+        <p>See append status below — if either <code>marketing/content-plan/inputs.md</code> or <code>marketing/seo/keyword-strategy.md</code> was missing, it's noted here rather than failing the rollup.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Signal-quality caveat — thin week for net-new content</summary>
+      <div class="q-body">
+        <p>Both daily runs this week flagged a <em>thin</em> week for net-new analyst/competitor-blog content; much of the competitive signal is positioning/SEO motion, not product launches. The measurement-convergence story is real and cross-confirmed (W25 ads + daily publication pivot), but the daily-side novelty was lighter than usual.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Persistent blind spots (unchanged)</summary>
+      <div class="q-body">
+        <p>LinkedIn/Meta ad libraries (7 wks), G2 review pages (4 wks), Reddit r/internalcomms (6 wks), Haiilo + Workshop homepages (7 wks of 403). Competitive ad + review reads are proxy-reconstructed, not direct.</p>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary>Prompt-injection check</summary>
+      <div class="q-body">
+        <p>No prompt-injection attempts detected in any underlying daily or weekly fetch buckets this week.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-06-17 · Source markdown: <a href="2026-06-17.md">team-update/2026-06-17.md</a>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+(function () {
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+  }
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+  }
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const row = btn.closest('.action-row');
+      const src = row ? row.querySelector('.action-text') : null;
+      const text = src ? (src.getAttribute('data-copy') || src.textContent.trim()) : '';
+      if (!text) { showToast('Nothing to copy.'); return; }
+      const ok = await copyToClipboard(text);
+      showToast(ok ? 'Copied action — paste into Claude.' : 'Copy failed.');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

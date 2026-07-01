@@ -1,0 +1,148 @@
+Work Item ID,Issue Type,Parent ID,Epic Link,Summary,Description,Owner,Channel,Start Date,Due Date
+T001,Task,,MCM-992,Content - Blog (Cerkl.com) - Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer (Webinar Pre-Event),"Topic: Webinar pre-event blog (cerkl.com) — the 5 analytics questions every internal communicator should answer. Drives registration for the 7/9 Rachel Folz & Maddy Rieman webinar; measurement pillar.
+Slug: internal-communications-analytics-questions
+Brief link: — (webinar pre-event blog; no SEO brief — produced via webinar-blog-intro skill)
+Primary keyword: internal communications analytics
+Secondary keywords: employee email read rate, internal communications measurement
+Webflow CMS properties:
+  - Primary Category: Internal Communications Measurement
+  - Primary Solution: Foundations
+  - All Categories: Internal Communications Measurement, Internal Communication Strategy
+Draft (Google Doc): https://docs.google.com/document/d/13pjmiKmaByApQOrRxWeaIakMxFtLPGIjQRK-moMz9NU/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-06-29
+S001,Subtask,T001,,Blog – Copy,"Write the blog post copy (cerkl.com) from the webinar brief; 5-analytics-questions angle, CTA to webinar registration.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-06-25
+S002,Subtask,T001,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-25,2026-06-26
+S003,Subtask,T001,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-26,2026-06-26
+S004,Subtask,T001,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-26,2026-06-29
+T002,Task,,MCM-992,"Marketing Email - Email - Webinar Promo #2: Stop Guessing About Your Analytics (Rachel & Maddy, 7/9)","Topic: Webinar Promo Email #2 (value reiteration) — Rachel Folz & Maddy Rieman, ""Stop Guessing About Your Analytics"" (7/9, 12pm EDT). Goal: drive registration; recover from Email #1's Friday flop and beat the July 4 lull, so sent ~7/1 instead of the standard T-3d (7/6). Deepen the value angle; one specific failure point. Audience: prospects + leads marketing segment (NOT current users) — confirmed correct on Email #1's Friday send. Banner: email-banner DAHMM1XUg8I. Registration (tracked, cerkl_email): https://us02web.zoom.us/webinar/register/2317762528324/WN_-vu4-AcITfGJq0KEHysSSw
+Draft (HubSpot): ID 216064520627 — https://app.hubspot.com/email/22209301/edit/216064520627/content (cloned from Friday's sent Email #1 215560020657 to inherit verified audience + correct link; confirm send segment in UI before send)",62bb263d268cac6e31c40941,Marketing Emails,2026-06-29,2026-07-01
+S005,Subtask,T002,,Email – Copy,Draft Email #2 copy + subject lines (webinar-promo-emails skill; value reiteration).,62bb263d268cac6e31c40941,Marketing Emails,2026-06-29,2026-06-30
+S006,Subtask,T002,,Email – Audience Segmentation,Re-point the send audience to the prospects/leads marketing segment in HubSpot (fix Email #1 mis-target).,62bb263d268cac6e31c40941,Marketing Emails,2026-06-30,2026-06-30
+S007,Subtask,T002,,Email – Review,"Review copy, links, tracking URL, and banner; sign off.",62bb263d268cac6e31c40941,Marketing Emails,2026-06-30,2026-07-01
+S008,Subtask,T002,,Email – Schedule Send,Schedule the send in HubSpot for ~7/1 AM.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-01,2026-07-01
+T003,Task,,MCM-992,Content - Blog (ICP) - Stop Guessing About Your Analytics (Webinar Promo),"Topic: ICPro webinar promo (internalcommspro.com) — practitioner-framed promo for the 7/9 webinar; 5 analytics questions every IC should answer. Drive registration.
+Slug: stop-guessing-about-your-analytics
+Note: ICPro has no brief queue — slug synthesized from the deliverable title at scaffold time
+Draft (Google Doc): https://docs.google.com/document/d/11c7UV_WNNMRcD6YH8N9nRquumL-YxF6AbEr-5uRmREs/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-06-30
+S009,Subtask,T003,,Blog – Copy,Write the blog post copy (internalcommspro.com) from the outline; webinar-blog-intro adapted for ICPro.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-06-25
+S010,Subtask,T003,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-25,2026-06-26
+S011,Subtask,T003,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-29,2026-06-29
+S012,Subtask,T003,,Blog – Implementation / Publishing,Stage in Wix with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-29,2026-06-30
+T004,Task,,MCM-992,Social Media - LinkedIn - Theme post: Insights Launch repurpose (measurement),"Topic: Theme post — repurpose a stat/moment from last week's Insights Update launch into a measurement-themed LinkedIn post; soft tie to the 7/9 webinar.
+Post type: static-theme
+Wraps: — (theme: Insights launch repurpose / measurement)
+Copy:
+Every internal comms tool now says it does measurement. Watch the demos and they all land on the same screen: a dashboard of percentages. Open rate. Click rate. A number that went up or down since last quarter.
+
+A percentage tells you something happened to a crowd. It cannot tell you it reached the person who needed it.
+
+Here is the screen that changes the conversation. In a demo of Cerkl's new Insights last week, our team pulled up a single link in a single send and saw, by name, exactly who clicked it. Not a percentage. Three people: two we expected, one we didn't. Then the inverse: the named list of who got the message and never opened it.
+
+That is the unit of measurement IC has been missing. Not ""the update performed well."" ""These eleven managers on the night shift never saw it, and here they are.""
+
+The same view runs on a pulse survey or an acknowledgment. Filter to the people who said yes, and to the people who said nothing, then send only to the second group.
+
+Aggregate rates are for the board deck. Named attribution is for the work.
+
+Stop Guessing About Your Analytics — Rachel Folz + Maddy Rieman, July 9. Link in comments.
+
+Asset: Named-attribution card. Top, smaller/grayed (category default): faint tile ""Click rate: 14%"". Below, larger/on-brand: a short roster table — ""Carly: clicked / Jordan: clicked / Maria: did not open / +11 did not open"". Headline: ""Measurement isn't a percentage. It's a name."" Cerkl brand colors; use GENERIC first names on the final graphic. Text-only, no photo; needs origination (no existing manifest).
+
+#InternalCommunications #EmployeeEngagement #ICMeasurement
+
+First comment: Register for ""Stop Guessing About Your Analytics"" (7/9, Rachel Folz + Maddy Rieman): https://us02web.zoom.us/webinar/register/WN_-vu4-AcITfGJq0KEHysSSw
+Canva (asset — NEEDS HAND-FINISH by Furqan): https://www.canva.com/design/DAHNfi3Paeo/edit — shell only; resize to 1080x1080, build the named-roster table, fix headline + 14% tile. Manifest: ../../../channels/linkedin/canva-manifests/static-theme_named-read-attribution.yml",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-25,2026-06-30
+S013,Subtask,T004,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-25,2026-06-26
+S014,Subtask,T004,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-26,2026-06-29
+S015,Subtask,T004,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29
+S016,Subtask,T004,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-30
+T005,Task,,MCM-992,Content - Blog (Cerkl.com) - The 2026 Internal Communications Measurement Framework,"Topic: The 2026 Internal Communications Measurement Framework — IC measurement maturity model; lead with per-employee read attribution as the proof category leaders can't show (06-17 stance).
+Slug: internal-communications-measurement-framework
+Brief link: ../seo/briefs/internal-communications-measurement-framework.md
+Primary keyword: internal communications measurement framework
+Secondary keywords: IC measurement maturity model, how to measure internal communications
+Webflow CMS properties:
+  - Primary Category: internal-communications-measurement
+  - Primary Solution: Omni AI
+  - All Categories: (none)
+Draft (Google Doc): https://docs.google.com/document/d/1OJeNvLJsUyYUNUu4b4aUN3JgVgxny-bgUIbP81rlCSQ/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-07-01
+S017,Subtask,T005,,Blog – Copy,Write the blog post copy from the brief (../seo/briefs/internal-communications-measurement-framework.md).,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-24,2026-06-26
+S018,Subtask,T005,,Blog – Image Creation,Create or source images per the brief outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-26,2026-06-29
+S019,Subtask,T005,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-30,2026-06-30
+S020,Subtask,T005,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-30,2026-07-01
+T006,Task,,MCM-992,Social Media - LinkedIn - Link post: Stop Guessing About Your Analytics (webinar pre-event blog),"Topic: Link post — amplify the webinar pre-event blog (the real 5 questions). Drive blog reads + webinar registration.
+Post type: static-blog
+Wraps: internal-communications-analytics-questions
+Copy:
+You send the all-staff message about the reorg. It goes clean to 240 inboxes. Then your VP asks, ""Did people read it?"" and you don't know that the one director whose team is most affected never opened it.
+
+That gap between ""we sent it"" and ""we can prove who engaged"" is a measurement problem, not an effort problem. Gmail and Outlook were built to move external email, not to tell you whether your own employees engaged with it.
+
+Five questions every internal communicator should be able to answer about any message:
+1. Who received the message?
+2. Who is engaged and who isn't?
+3. When should I send for maximum impact?
+4. What content actually resonates with employees?
+5. What should I improve next?
+
+Question 2 separates a real measurement tool from a vanity dashboard. A percentage tells you something is wrong. A name tells you what to do about it. When you can see that Dana in the Cleveland warehouse and eleven colleagues missed the benefits reminder three days before the deadline, that's a follow-up you can still make.
+
+The blog walks through all five. Rachel Folz and Maddy Rieman go deeper on July 9 in our free webinar, ""Stop Guessing About Your Analytics,"" with the new Insights experience shown live.
+
+Here's the part most communicators don't believe yet: you can answer all five yourself, no analytics skills required. Leadership-ready reporting is built into Foundations, free.
+
+Read the five questions: [LIVE BLOG URL — Furqan inserts at publish]
+Register for July 9: https://us02web.zoom.us/webinar/register/WN_-vu4-AcITfGJq0KEHysSSw
+
+Asset: Link card — LinkedIn auto-renders from the blog URL once Furqan inserts it. No Canva render.
+
+#InternalCommunications #EmployeeEngagement #HRTech",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-26,2026-07-01
+S021,Subtask,T006,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-26,2026-06-29
+S022,Subtask,T006,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-30
+S023,Subtask,T006,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-30,2026-06-30
+S024,Subtask,T006,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-30,2026-07-01
+T007,Task,,MCM-992,Social Media - LinkedIn - Poll: Can you answer these 5 questions about your last send?,"Topic: Poll — mirrors the webinar's live poll #2 (""first metric leadership asks for""). Drive engagement + webinar registration.
+Post type: poll
+Wraps: internal-communications-measurement-framework
+Copy:
+POLL QUESTION (native widget): What's the first metric leadership asks you for after a major communication?
+OPTIONS: 1) Open rate  2) Reach & delivery  3) Clicks  4) Something else
+Duration: 1 week
+
+CAPTION:
+Think about your last all-staff send. Can you name a single employee who read it?
+
+Most internal comms teams can report an open rate. Far fewer can answer the question leadership asks next: did the people who needed this message read it?
+
+That gap is a maturity-stage problem, not a discipline problem. The teams that move past it get to per-employee read attribution: not an average, but a named list. (Illustrative: ""94% of affected employees read the policy change in 48 hours, and here's the 6% who didn't, by department."")
+
+So here's the self-diagnosis. When leadership comes to you after a big send, what do they ask for first?
+
+We're running this exact poll live at our 7/9 webinar, ""Stop Guessing About Your Analytics,"" with Rachel Folz and Maddy Rieman. Stop guessing whether your comms work. And yes, you can do this yourself. Registration in comments.
+
+#InternalCommunications #EmployeeEngagement #HRTech
+
+First comment: Register for ""Stop Guessing About Your Analytics"" (7/9, Rachel Folz + Maddy Rieman): https://us02web.zoom.us/webinar/register/WN_-vu4-AcITfGJq0KEHysSSw",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-07-02
+S025,Subtask,T007,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-30
+S026,Subtask,T007,,LinkedIn – Asset Creation,(N/A for polls — native poll widget; skip or mark done.),712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-30,2026-06-30
+S027,Subtask,T007,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-01,2026-07-01
+S028,Subtask,T007,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-01,2026-07-02
+T008,Task,,MCM-992,Social Media - LinkedIn - Short Video (out-of-band),"Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-02
+T009,Task,,MCM-992,Social Media - LinkedIn - Insights launch → webinar bridge (7/9),"Topic: Launch-momentum post — Insights is live (6/23 press release); bridge to the 7/9 webinar (""come see it work live""). Text-forward so it ships TODAY (6/29) with no dependency on the named-attribution asset (that's T004, later this week). Post type: static-news (text-forward; optional simple card). Wraps: — (Insights launch / webinar promo). Tracked link (cerkl_linkedin): https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw
+Copy:
+We just shipped Insights, a ground-up rebuild of Broadcast's analytics.
+
+Here is the problem it solves. A 60% open rate tells you almost nothing. It hides which teams read your message and which never saw it, whether managers engaged or only HR did, which locations are tuned out. The average is the story leadership asks about, and it buries what you actually need to know.
+
+Insights was built for communicators, not analysts: see engagement down to the named person, compare groups, and turn it into an answer instead of a guess.
+
+On Thursday July 9 at 12pm EDT, Rachel Folz (Head of Product) and Maddy Rieman (Head of Customer Success) run it live: ""Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer,"" walking through each question with the new reporting on screen.
+
+Free in Foundations. Register here: https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw
+
+Asset: text-only today, or a simple stat card with ""A 60% open rate tells you almost nothing"" as the hero line; don't block today's ship on design.
+
+#InternalCommunications #EmployeeEngagement #HRTech",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29
+S029,Subtask,T009,,LinkedIn – Copy,Draft the post copy (launch → webinar bridge).,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29
+S030,Subtask,T009,,LinkedIn – Asset Creation,Optional simple card or text-only; don't block today's ship on design.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29
+S031,Subtask,T009,,LinkedIn – Approval,Review post; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29
+S032,Subtask,T009,,LinkedIn – Implementation / Publishing,Publish today; drop reg link in first comment if not in body.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-06-29,2026-06-29

@@ -7,7 +7,7 @@ aspect_ratio: 1:1 1080x1080
 # (Previous solo render deleted speaker 2 via delete_slots — no longer applicable.)
 
 text_values:
-  "Webinar title": "Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer"
+  "Webinar title": "Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer"
   "|   Mar 6, 2025 1:00 pm est": "|   Jul 9, 2026 12:00 PM EDT"
   "Name": ["Rachel Folz", "Maddy Rieman"]
   "Title": ["Head of Product, Cerkl", "Head of Customer Success, Cerkl"]
@@ -20,6 +20,7 @@ commit_mode: auto
 # === Render result (re-render 2026-06-10, 2-speaker) ===
 result:
   rendered_at: "2026-06-10"
+  title_edited_in_place: "2026-06-19 — title swapped to new 'Stop Guessing About Your Analytics…' wording in the existing design; design_id/edit_url unchanged"
   design_id: "DAHMM5ntBls"
   edit_url: "https://www.canva.com/design/DAHMM5ntBls/edit"
   view_url: "https://www.canva.com/d/9p0Q_N37hWZoym9"

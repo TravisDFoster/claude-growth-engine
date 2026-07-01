@@ -244,10 +244,45 @@ def section_open(o):
     )
 
 
+def _email_block(em):
+    """Email engagement sub-block for section 04 — handles three states:
+    pending_scope (token still lacks email-read), no_engagement (counts but no open/click
+    props on the portal), ok (full sent/received + open/click)."""
+    if not em or em.get("status") == "pending_scope":
+        return ('<p class="note-italic">Emails — pending HubSpot scope grant '
+                '(<code>sales-email-read</code> / <code>crm.objects.emails.read</code>). '
+                'Sent/received counts and open/click engagement will appear here automatically once granted.</p>')
+    by_owner = em.get("by_owner") or {}
+    tot = em.get("totals") or {}
+    engagement = em.get("status") == "ok"
+    cols = [("sent", "Sent"), ("received", "Received")]
+    if engagement:
+        cols += [("opens", "Opens"), ("clicks", "Clicks")]
+    head = "".join(f'<th class="num">{lbl}</th>' for _, lbl in cols)
+    rows = "".join(
+        f'<tr><td class="owner">{esc(name)}</td>'
+        + "".join(f'<td class="num">{d.get(k, 0)}</td>' for k, _ in cols)
+        + "</tr>"
+        for name, d in by_owner.items()
+    )
+    foot = "".join(f'<td class="num">{tot.get(k, 0)}</td>' for k, _ in cols)
+    note = ('Sent/received from logged email engagements; opens/clicks from tracked sends.'
+            if engagement else
+            'Sent/received from logged email engagements. Open/click tracking not available on this portal.')
+    note += ' Opens are total opens (a single email opened multiple times counts each time).' if engagement else ''
+    return (
+        '<h3 style="margin-top: 22px;">Email engagement</h3>'
+        f'<table class="data"><thead><tr><th>Owner</th>{head}</tr></thead>'
+        f'<tbody>{rows}</tbody>'
+        f'<tfoot><tr><td>Team</td>{foot}</tr></tfoot></table>'
+        f'<p class="note-italic">{note}</p>'
+    )
+
+
 def section_activity(a):
     if not a:
         return ""
-    types = [("calls", "Calls"), ("meetings", "Meetings"), ("notes", "Notes"), ("tasks", "Tasks")]
+    types = [("meetings", "Meetings"), ("notes", "Notes"), ("tasks", "Tasks")]
     head = "".join(f'<th class="num">{lbl}</th>' for _, lbl in types)
     rows = "".join(
         f'<tr><td class="owner">{esc(name)}</td>'
@@ -263,7 +298,7 @@ def section_activity(a):
         f'<table class="data"><thead><tr><th>Owner</th>{head}</tr></thead>'
         f'<tbody>{rows}</tbody>'
         f'<tfoot><tr><td>Team</td>{foot}</tr></tfoot></table>'
-        '<p class="note-italic">Emails excluded — pending HubSpot scope grant. Calls reflect logged call engagements only.</p>'
+        f'{_email_block(a.get("emails"))}'
         '</section>'
     )
 

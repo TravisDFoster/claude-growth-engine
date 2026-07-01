@@ -9,7 +9,7 @@
 
 ## Structure
 
-**Caption (short — 2–4 lines):**
+**Caption (very short — 2–3 lines):**
 - Hook line (specific, provocative, or counterintuitive)
 - 1-line setup (optional)
 - Downward pointer ("60-sec take ↓" / "Watch ↓")
@@ -18,8 +18,6 @@
 - **0–3 sec — Hook:** Specific claim or visual that stops the scroll
 - **3–50 sec — Body:** The argument. One point. No setup.
 - **50–60 sec — Payoff:** Where to go next or one-line takeaway
-
-**Hashtags:** 2–3 per [`../linkedin-writing-guide.md`](../linkedin-writing-guide.md#hashtag-policy).
 
 ## Skeleton
 
@@ -54,10 +52,6 @@
 - **Format:** [vertical / square / horizontal]
 - **Captions:** burned-in, required (LinkedIn auto-mutes)
 - **Brand:** [logo / lower-third per design CONTEXT]
-
----
-
-**Hashtags:** #InternalCommunications #EmployeeEngagement [optional third]
 ```
 
 ## Future work

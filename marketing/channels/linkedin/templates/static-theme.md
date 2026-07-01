@@ -9,7 +9,7 @@
 
 ## Structure
 
-**Caption (long — 4–8 short paragraphs):**
+**Caption (tight — 3–5 short paragraphs):**
 - Hook line / specific moment
 - 2–4 paragraphs of argument
 - 1 paragraph payoff or "so what"
@@ -18,8 +18,6 @@
 **Asset (1 graphic):**
 - Quote, stat, or short headline rendered in Cerkl brand
 - The graphic anchors; the caption does the work
-
-**Hashtags:** 2–3 per [`../linkedin-writing-guide.md`](../linkedin-writing-guide.md#hashtag-policy).
 
 ## Skeleton
 
@@ -47,10 +45,6 @@
 **Visual concept:** [What the graphic shows — quote, stat, headline]
 **Asset ID (optional):** [Canva asset ID from `/marketing/design/canva-skills/canva-asset-index.md` — only required when the inferred template has a content-bearing photo-slot (photo+text, product, downloadable per [`asset-packs.md`](../asset-packs.md)). Omit for stat/quote/text-only.]
 **Brand direction:** [Cerkl colors per design CONTEXT; logo placement; legibility notes]
-
----
-
-**Hashtags:** #InternalCommunications #EmployeeEngagement [optional third]
 ```
 
 ## Future work

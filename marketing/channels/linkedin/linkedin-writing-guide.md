@@ -13,7 +13,7 @@ Cerkl voice — matches the blog. Apply the [`seo-blog-editing` references](/Use
 - Direct, plain, zero-fluff
 - Date format `YYYY-MM-DD`
 
-**Future work:** Decide whether LinkedIn voice should diverge from blog voice (shorter sentences, more hook energy, more line breaks). For now they are identical. Revisit after 2–3 weeks of posts.
+**Open question:** Whether LinkedIn voice should diverge from blog voice (shorter sentences, more hook energy, more line breaks). For now they are identical.
 
 ## Universal structure
 
@@ -24,37 +24,30 @@ Every LinkedIn post has two pieces:
 
 ## Caption length rules
 
-- **Asset-heavy posts (carousel, short video):** caption is short. A tight hook, optional 1-line setup, and a downward pointer. The visual carries the content.
-- **Light-asset posts (static-theme, static-blog, poll):** caption is longer. The caption carries the argument. Use line breaks; 4–8 short paragraphs is typical.
+Brevity first. These are social posts, not articles. Lead with the hook, cut every line that does not earn its place, and stop once the point lands. When in doubt, make it shorter.
 
-No fixed character cap — write to the post, not to a limit.
+- **Asset-heavy posts (carousel, short video):** caption is very short. A tight hook and an optional 1-line setup. The visual carries the content.
+- **Light-asset posts (static-theme, static-blog, poll):** the caption carries the argument, but keep it tight. Aim for 3–5 short paragraphs, never a wall of text. Use line breaks for scannability.
+
+No fixed character cap, but the default instinct is to trim. A reader should get the whole point in one scroll.
 
 ## Hashtag policy
 
-Restrained. Two to three hashtags max, only the high-relevance ones. Default set for Cerkl:
-
-- `#InternalCommunications`
-- `#EmployeeEngagement`
-
-Add one topical hashtag where it fits (e.g., `#EmployeeBenefits` for a benefits-comms post, `#HRTech` for a platform-positioning post). Never tag-bomb.
+Skip hashtags. They clutter the caption without earning meaningful reach for our audience, so leave them out entirely. If a specific campaign ever calls for one, that is a deliberate exception the writer flags, not a default.
 
 ## Link policy
 
-LinkedIn suppresses reach when external links sit in the post body. Default: put the link in the first comment, and write the caption with a downward pointer:
-
-> *Link in comments ↓*
-
-**Exception:** link posts (`static-blog`) where the link card *is* the asset. There the link goes in the post body, because the card is the point.
+Put everything the reader needs in the caption, including the registration or destination link. Do not push links to the first comment. A reader should never have to hunt for the next step, and a post that makes them dig loses more than it gains. LinkedIn may show slightly less reach on an in-body link; that tradeoff is worth a frictionless path to the CTA.
 
 ## Per-post-type table
 
 | Type | Asset weight | Caption length | Template |
 |---|---|---|---|
-| Carousel | Heavy (8–12 slides) | Short (3–5 lines) | [`templates/carousel.md`](templates/carousel.md) |
-| Static — theme | Light (1 graphic) | Long (4–8 short paragraphs) | [`templates/static-theme.md`](templates/static-theme.md) |
-| Static — blog link | Light (link card) | Medium (3–5 paragraphs) | [`templates/static-blog.md`](templates/static-blog.md) |
-| Poll | Light (poll widget) | Long (4–6 paragraphs) | [`templates/poll.md`](templates/poll.md) |
-| Short video | Heavy (video) | Short (2–4 lines) | [`templates/short-video.md`](templates/short-video.md) |
+| Carousel | Heavy (8–12 slides) | Very short (2–4 lines) | [`templates/carousel.md`](templates/carousel.md) |
+| Static — theme | Light (1 graphic) | Tight (3–5 short paragraphs) | [`templates/static-theme.md`](templates/static-theme.md) |
+| Static — blog link | Light (link card) | Tight (2–4 short paragraphs) | [`templates/static-blog.md`](templates/static-blog.md) |
+| Poll | Light (poll widget) | Tight (3–4 short paragraphs) | [`templates/poll.md`](templates/poll.md) |
+| Short video | Heavy (video) | Very short (2–3 lines) | [`templates/short-video.md`](templates/short-video.md) |
 
 ## Banned moves (from blog editing, carried over)
 

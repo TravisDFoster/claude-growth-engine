@@ -7,7 +7,7 @@ aspect_ratio: 16:9
 # Title slot handled via the orchestrator's smart text-matching against live richtexts[].
 
 text_values:
-  "Webinar title": "Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer"
+  "Webinar title": "Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer"
   "Name": ["Rachel Folz", "Maddy Rieman"]
   "Title": ["Head of Product, Cerkl", "Head of Customer Success, Cerkl"]
 
@@ -19,6 +19,7 @@ commit_mode: auto
 # === Render result (re-render 2026-06-10, 2-speaker) ===
 result:
   rendered_at: "2026-06-10"
+  title_edited_in_place: "2026-06-19 — title swapped in place; design_id/edit_url unchanged. Wraps to ~5 lines, tight against bottom-left (known for this template) — verify in UI"
   design_id: "DAHMM8rNdPg"
   edit_url: "https://www.canva.com/design/DAHMM8rNdPg/edit"
   view_url: "https://www.canva.com/d/R5ER3NThy72VEVp"

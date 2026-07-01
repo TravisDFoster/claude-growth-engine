@@ -34,9 +34,11 @@ shift || true
 
 OUT=""
 SKIP_VERIFY=0
+SINGLE_PAGE=0
 while [ $# -gt 0 ]; do
   case "$1" in
     --skip-verify) SKIP_VERIFY=1 ;;
+    --single-page) SINGLE_PAGE=1 ;;
     *) OUT="$1" ;;
   esac
   shift
@@ -60,8 +62,20 @@ if [ ! -x "$CHROME" ]; then
   exit 2
 fi
 
-# --- VERIFY GATE -----------------------------------------------------------
 SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# --- SINGLE-PAGE MODE ------------------------------------------------------
+# One content-sized page for digital/zoomable scrolling dashboards (no .page
+# convention, so no verify gate). Delegates to the dependency-free CDP renderer.
+if [ "$SINGLE_PAGE" -eq 1 ]; then
+  if ! command -v node >/dev/null 2>&1; then
+    echo "ERROR: --single-page needs Node (>=22, for built-in WebSocket/fetch); not found on PATH" >&2
+    exit 2
+  fi
+  exec node "$SKILL_DIR/single_page.mjs" "$SRC" "$OUT" "$CHROME"
+fi
+
+# --- VERIFY GATE -----------------------------------------------------------
 DETECTOR="$SKILL_DIR/../html-overflow-detector/run.sh"
 
 if [ "$SKIP_VERIFY" -eq 0 ] && [ -x "$DETECTOR" ]; then

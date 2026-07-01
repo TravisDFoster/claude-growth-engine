@@ -23,17 +23,29 @@ The verify gate is the point of this skill — it's the difference between "rend
 - **Source path** (required) — absolute path to the `.html` file to render.
 - **Output path** (optional) — absolute path for the `.pdf`. Defaults to a sibling of the source with the same basename (`foo.html` → `foo.pdf`).
 - **`--skip-verify`** (optional) — bypass the overflow detector. Use ONLY for HTML that doesn't follow the `.page` div convention (e.g., generic single-flow documents the detector can't reason about).
+- **`--single-page`** (optional) — render the whole document as **one content-sized page** instead of paper pages. For digital, zoomable, scrolling deliverables (dashboards/reports), where paper pagination would slice content across page breaks. Measures the rendered content height and prints a single page sized exactly to it — zero internal breaks. Implies `--skip-verify` (there's no `.page` convention to check). Requires Node ≥22 (uses built-in WebSocket/fetch to drive Chrome over the DevTools Protocol — no npm install).
+
+## Two modes
+
+| | Default (paper) | `--single-page` |
+|---|---|---|
+| Use for | Print-format one-pagers, handouts (the `.page` convention) | Digital, zoomable dashboards/reports read on screen |
+| Pagination | US Letter pages | One page sized to content height |
+| Verify gate | Runs (unless `--skip-verify`) | Skipped (no `.page` concept) |
+| Renderer | Chrome `--print-to-pdf` | `single_page.mjs` (Chrome via DevTools Protocol) |
+
+For scrolling dashboards, `--single-page` is the right call — paper pagination has no notion of where a table row or card *should* break, so rows get sliced. Default paper mode also hardens against this where it can (`tr { break-inside: avoid }` in callers' print CSS keeps rows whole), but single-page sidesteps the problem entirely.
 
 ## Output
 
 - A `.pdf` file at the resolved output path.
 - `stdout`: status messages including page count and file size.
-- `exit code`: `0` = PDF written, `1` = verify gate failed (no PDF), `2` = bad args, `3` = render failed, `4` = empty/missing output.
+- `exit code`: `0` = PDF written, `1` = verify gate failed (no PDF), `2` = bad args, `3` = render failed, `4` = empty/missing output, `5` = (`--single-page`) content taller than the 200in single-page cap — use paper mode.
 
 ## How to invoke
 
 ```
-bash /Users/travisfoster/claude-code/cerkl/skills/html-to-pdf/run.sh <html-path> [output-path] [--skip-verify]
+bash /Users/travisfoster/claude-code/cerkl/skills/html-to-pdf/run.sh <html-path> [output-path] [--skip-verify] [--single-page]
 ```
 
 Pipeline pattern (typical):

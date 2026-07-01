@@ -21,7 +21,7 @@
 | Status | Task | Owner | Due | Notes |
 |---|---|---|---|---|
 | [ ] | Align with Rachel & Maddy on prep cadence | Joint | 2026-05-28 | Internal sync schedule; both presenters |
-| [x] | Finalize webinar topic and objectives | Joint | 2026-06-11 | Title set: "Stop Guessing: 5 Questions Every Internal Communicator Should Be Able to Answer" |
+| [x] | Finalize webinar topic and objectives | Joint | 2026-06-11 | Title set: "Stop Guessing About Your Analytics: 5 Questions Every Internal Communicator Should Answer" |
 | [ ] | Decide on giveaway (optional) | Cerkl | 2026-06-18 | Optional for an internal webinar |
 
 ## Phase 2 — Content Development (2026-06-11 to 2026-07-02)
@@ -50,7 +50,7 @@ Asset role mapping per [`../asset-packs.md`](../asset-packs.md). Channels marked
 | [ ] | Inner Cerkl News announcement *(optional)* | Cerkl | 2026-06-29 | `share-1200x628` | Internal employee channel |
 | [ ] | Intercom in-app banner *(optional)* | Cerkl | 2026-06-29 | `share-1200x628` | To existing customers |
 | [ ] | Customer-success outreach push *(optional)* | Cerkl | 2026-06-29 | `speaker-card` | CS team forwards to accounts (Maddy's network) |
-| [ ] | Sales enablement — talk track + asset *(optional)* | Cerkl | 2026-06-29 | `speaker-card` | Hand off to sales for outbound |
+| [~] | Sales enablement — talk track + asset *(optional)* | Cerkl | 2026-06-29 | `speaker-card` | Hand off to sales for outbound. Copy done: `rachel-maddy-sales-outreach.md` (1:1 email snippet + Marc/Josh links). `speaker-card` Canva asset still pending. |
 | [ ] | Email #2 — Cerkl | Cerkl | 2026-07-06 | `email-banner` |  |
 | [ ] | LinkedIn boost — Cerkl (countdown) | Cerkl | 2026-07-07 | `countdown` |  |
 | [ ] | Email #3 last reminder — Cerkl | Cerkl | 2026-07-08 | `email-banner` |  |

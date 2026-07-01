@@ -1,0 +1,76 @@
+# Wraps: ../webinar/insights-launch-june-2026/ (Insights launch, 2026-06-23) — measurement-theme repurpose
+# Draft: drafts/2026-06-30_static-theme_named-read-attribution.md
+# Publish: 2026-06-30 (W27)
+#
+# ORIGINATION MANIFEST — no packed template fits this shape.
+# Per asset-packs.md decision boundary: the 2-stat / named-attribution table layout does NOT
+# fit EAHG3Tpp4CI (stat card) page 1 cleanly, and no roster/results-table template exists in the
+# 12-template LinkedIn pack. This is the `template_unclear` / origination case. Rendered via
+# Canva generate-design (brand-kit AI generation), NOT template-fill. Cannot use the standard
+# template_id/page_index/text_values manifest shape because there is no template_id.
+
+route: origination          # not `render` (no packed template) and not `webinar-lookup`
+render_method: generate-design
+brand_kit_id: kAFYs6By4yc   # Cerkl Brand Kit
+design_type: instagram_post # 1:1 square family; resize to 1080x1080 if needed
+aspect: "1:1"               # LinkedIn square (1080x1080)
+commit_mode: auto
+
+# Content the asset must carry (from approved draft ## Asset section):
+content:
+  headline: "Measurement isn't a percentage. It's a name."
+  weak_tile:                # top, smaller, grayed — represents the old "category default"
+    label: "Click rate"
+    value: "14%"
+    treatment: "faint / muted gray dashboard tile — reads as the weak/old way"
+  roster:                   # below, larger, on-brand — the focal point, styled as a results table
+    style: "results table"
+    rows:
+      - {name: "Carly", status: "clicked"}
+      - {name: "Jordan", status: "clicked"}
+      - {name: "Maria", status: "did not open"}
+      - {name: "+11", status: "did not open"}   # "+11 did not open" summary row
+    status_treatment: "clicked = check / brand-positive; did not open = open-circle or muted. Must read at thumbnail size."
+  source_tag: "Cerkl Insights"
+  logo: "Broadcast powered by Cerkl (product context) — bottom corner; color logo on light bg, white on dark"
+
+# Brand direction (design CONTEXT):
+brand:
+  palette: [Cobalt 60 #3547C4, Cobalt 100 #0C1159, Cosmic 10 #F5F5FA, White #FFFFFF, Cosmic 90 #27272E, Butter 60 #FFAA22]
+  focal: "named roster (on-brand cobalt); grayed % tile recedes"
+  gradient: "one gradient max if used (linear or freeform, not both)"
+
+# === Render result (written after generate-design) ===
+result:
+  rendered_at: "2026-06-24T00:00:00Z"
+  render_method: generate-design
+  status: NEEDS_DESIGNER   # generation did not meet spec — see notes
+  brand_kit_id: kAFYs6By4yc
+  generate_job_id: aadad32f-9082-4524-bbcc-208e1b0ae930
+  design_id: DAHNfi3Paeo
+  edit_url: "https://www.canva.com/design/DAHNfi3Paeo/edit"
+  view_url: "https://www.canva.com/design/DAHNfi3Paeo/view"
+  warnings:
+    - "out_of_pack: no LinkedIn-pack template fits a named-attribution results-table layout (asset-packs.md decision boundary). Originated via generate-design instead of template-fill."
+    - "format_mismatch: generate-design produced a 4-page 1080x1350 (4:5) carousel, NOT a single 1080x1080 square. Spec requires one square card."
+    - "missing_focal_element: the named roster table (Carly/Jordan/Maria/+11 did not open) — the focal point of the spec — does NOT appear in the generated output. Pages 2-4 are generic filler."
+    - "literal_misread: '14%' tile rendered as an AI photo of a concrete brick; headline truncated to 'Measurement Isn't a Percentage' (missing 'It's a name.')."
+  manual_finish: |
+    This asset needs a designer (Furqan) to build by hand or via a new Canva template — the AI generation
+    candidate DAHNfi3Paeo is a usable starting shell (brand colors + headline + Cerkl Insights tag) but the
+    results-table is the load-bearing element and must be built manually:
+      1. Resize to 1080x1080 square, single page (delete pages 2-4).
+      2. Top: small, grayed/muted tile "Click rate: 14%" (replace the brick photo with a flat faint dashboard
+         tile in Cosmic gray — it should read as the weak/old default).
+      3. Below (focal): a results table in Cobalt 60, four rows:
+           Carly — clicked (green check)   |   Jordan — clicked (green check)
+           Maria — did not open (muted open circle)   |   +11 — did not open (muted open circle)
+         check vs open-circle must be legible at thumbnail size.
+      4. Full headline: "Measurement isn't a percentage. It's a name."
+      5. Keep "Cerkl Insights" source tag; ensure Broadcast/Cerkl logo in a bottom corner.
+  recommendation: |
+    Better long-term fix: build a reusable "named-attribution / results-table" brand template in Canva,
+    enrich its _element-maps JSON, and add it to asset-packs.md so future renders go through template-fill
+    cleanly (this is the asset-packs.md 'stat-comparison subtype' future-work item).
+</content>
+</invoke>

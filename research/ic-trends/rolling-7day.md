@@ -6,6 +6,28 @@
 
 ---
 
+## 2026-06-30
+
+1. **The benchmark-report arms race: ContactMonkey + Workshop both publish internal-email benchmarks in one week (proof-layer migration lands)** — Competitor — https://www.contactmonkey.com/blog/internal-email-benchmark-report-2026
+2. **Gartner: CHROs must identify hidden workforce costs to protect AI ROI (AI talent commands 3–4x pay)** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-06-29-gartner-says-chros-must-identify-hidden-workforce-costs-to-protect-ai-roi
+3. **Ragan: Top 10 reasons why intranets fail (ammunition for the anti-destination frame)** — Publication — https://www.ragan.com/top-10-reasons-why-intranets-fail/
+4. **HBR: Employees aren't questioning AI advice enough (over-trust; build healthy skepticism)** — Analyst — https://hbr.org/2026/06/employees-arent-questioning-ai-advice-enough
+5. **Poppulo data: measurement is still IC's #1 unsolved pain (63% can't measure sentiment, 31% quantifying impact)** — Competitor — https://www.poppulo.com/blog/employee-communications-in-2026-the-issues-senior-leaders-are-actually-grappling-with
+6. **Forrester: AI will rewrite employee experience, and "deep listening" shows how (Teams exhaust → real-time sentiment)** — Analyst — https://www.forrester.com/blogs/ai-will-rewrite-employee-experience-deep-listening-shows-how/
+7. **Staffbase: "What is an AI-powered employee experience platform?" (architected-in, not bolted-on, as the buying criterion)** — Competitor — https://staffbase.com/blog/ai-powered-employee-experience-platform
+8. **Ragan: comms for deskless workers — "if they can't see it, it's not there" (Sav-A-Tree frontline overhaul)** — Publication — https://www.ragan.com/eccc-2026-savatree-manowski/
+
+## 2026-06-18
+
+1. **The AI-productivity backlash gets a number: "AI may not be the comms engine we were promised" (78% use AI, ~9% satisfaction, more volume not better)** — Community — https://www.ragan.com/ai-is-here-to-stay-but-it-may-not-be-the-comms-productivity-engine-we-were-promised/
+2. **Ragan 2026 Communications Benchmark: given extra budget, 43% would hire humans — not buy tools** — Community — https://www.ragan.com/press-releases/ragan-releases-2026-communications-benchmark-report/
+3. **"Stop measuring activity, start measuring impact" — measurement/targeting/leadership alignment are IC's top unsolved gaps** — Community — https://www.ragan.com/stop-measuring-activity-and-start-measuring-impact/
+4. **A sudden federal directive makes your AI playbook vulnerable (government AI intervention now a real vendor-risk scenario)** — Policy — https://www.ragan.com/a-sudden-federal-directive-makes-your-ai-playbook-vulnerable/
+5. **PR Daily: When everyone is a thought leader (AI floods the channel; proof + POV differentiate)** — Publication — https://www.prdaily.com/when-everyone-is-a-thought-leader/
+6. **Ragan: the warning signs of an employee experience problem (Virgin Voyages) — engagement→experience pivot continues** — Publication — https://www.ragan.com/employe-experience-virgin-voyages-2026/
+7. **PR Daily: inside Nissan's "follow the sun" global comms structure (centralized CoE + follow-the-sun staffing)** — Publication — https://www.prdaily.com/pulling-back-the-curtain-on-nissans-follow-the-sun-global-comms-structure/
+8. **Gartner: AI will create more jobs than it eliminates beginning 2028 — transparent AI comms is the #1 adoption driver; positive-outlook employees 3.4x more productive** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-hr-research-reveals-ai-will-create-more-jobs-than-it-eliminates-beginning-in-2028
+
 ## 2026-06-17
 
 1. **HBR: Why employees aren't transparent about their AI usage (trust beats policy for surfacing shadow AI)** — Analyst — https://hbr.org/2026/06/why-employees-arent-transparent-about-their-ai-usage
@@ -37,7 +59,6 @@
 6. **Poppulo CEO Jo Coxhill: "If productivity is the goal, start with EX" — anti-"AI = more output" POV** — Competitor — https://www.poppulo.com/employee-experience-platform/blog/productivity-starts-with-ex
 7. **PR Daily: 7 tactics to increase read time on internal emails — read-through as the live IC metric** — Publication — https://www.prdaily.com/7-tips-to-increase-read-time-for-internal-emails/
 8. **Gartner: "By 2027, 50% of enterprises without a people-centric AI strategy will lose their top AI talent" — positive-outlook employees 3.4x more productive** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-05-13-gartner-predicts-by-2027-50-percent-of-enterprises-without-a-people-centric-ai-strategy-will-lose-their-top-ai-talent
-9. **Ragan Consulting (Abilene & IKEA): co-creation, not announcement, is IC's role in change** — Community — https://raganconsulting.com/abilene-and-ikea-and-boston-consulting-book-on-corporate-change/
 
 ## 2026-06-09
 
@@ -59,23 +80,3 @@
 6. **Ragan: "Don't let AI take away your sparkle" — writer-as-differentiator POV** — Publication — https://www.ragan.com/ragan-writing-cert-course-may2026-ai/
 7. **Staffbase APAC original research push (ASX 100 benchmark + "Australian leaders risking digital success by slighting culture")** — Competitor — https://staffbase.com/blog/asx-performance-benchmark-australian-organisations
 8. **Embedded competitor signal: Staffbase customer videos surface On Air (audio podcast) + Navigator (AI search) in production use** — Competitor — https://www.youtube.com/watch?v=jJqVNuBhhjo
-
-## 2026-06-04
-
-1. **LumApps triple-tap: Cargill frontline case study + Beekeeper ecosystem POV + 52-integration Marketplace** — Competitor — https://www.lumapps.com/insights/blog/cargill
-2. **Karian: "middle managers are becoming the most burned-out role in the western economy" — structural role-design argument (NOT the 12.1 stat — that's Gallup; see deep-dive)** — Community — https://isitworking.substack.com/p/why-middle-managers-are-becoming
-3. **HBR / BCG: "Designing Organizational Change That Actually Sticks" — a 5-phase model** — Analyst — https://hbr.org/2026/05/designing-organizational-change-that-actually-sticks
-4. **Ragan × Highwire: CEO-transition comms — employees cross-check internal announcement against press release and LinkedIn post** — Publication — https://www.ragan.com/ragan-highwire-ceo-transition-report-2026/
-5. **Ragan: news now bubbles bottom-up — the "3 categories of online chatter"** — Publication — https://www.ragan.com/understanding-the-3-categories-of-online-chatter/
-6. **ContactMonkey teases conversational campaign analytics — third vendor on NL reporting in 3 weeks** — Competitor — https://www.contactmonkey.com/blog/your-questions-about-campaign-performance-answered-instantly
-7. **HBR: "What Really Gets in the Way of Change" — exec teams mistake politeness for alignment** — Analyst — https://hbr.org/2026/05/what-really-gets-in-the-way-of-change
-8. **Staffbase drops 4 customer-story videos in one day (3 German-language) — coordinated post-event campaign** — Competitor — https://www.youtube.com/watch?v=1EX5J1xvMZo
-
-## 2026-06-03
-
-1. **Simpplr: "Three strategies to stop shadow AI without killing productivity"** — Competitor — https://www.simpplr.com/blog/govern-shadow-ai/
-2. **ContactMonkey: "Best Staffbase Alternatives in 2026" (4th conquest listicle in 14 days)** — Competitor — https://www.contactmonkey.com/blog/staffbase-alternatives
-3. **PR Daily: "How to prepare for more declines in traditional Google search traffic"** — Publication — https://www.prdaily.com/how-to-prepare-for-more-declines-in-traditional-google-search-traffic/
-4. **HBR: "Employees Are Relying on AI for Personal Support. That's Risky."** — Analyst — https://hbr.org/2026/05/employees-are-relying-on-ai-for-personal-support-thats-risky
-5. **McKinsey: State of Organizations 2026 — 75% fail to build high-performance cultures (new cut)** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-state-of-organizations
-6. **Ragan webinar pitch: 78% of IC teams use AI but only 9% of frontline employees are very satisfied with comms** — Publication — https://www.ragan.com/store/beyond-ai-hype-what-actually-moves-the-needle-in-internal-communications/
