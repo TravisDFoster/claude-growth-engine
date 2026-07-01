@@ -1,0 +1,61 @@
+# Wraps: ../seo-blog blog ai-execution-internal-communications (AI Execution Gap, 2026-07-06) — theme post
+# Draft: drafts/2026-07-06_static-theme_ai-execution-gap.md
+# Publish: 2026-07-06 (W28)
+#
+# ORIGINATION MANIFEST — no packed template fits this shape.
+# static-theme selector (asset-packs.md) has stat / quote / photo+text / text-only only; a numbered
+# N-part stack exists only for carousels. This is the `template_unclear` / origination case.
+# Rendered via Canva generate-design (brand-kit AI generation), NOT template-fill. No template_id.
+
+route: origination
+render_method: generate-design
+brand_kit_id: kAFYs6By4yc   # Cerkl Brand Kit
+design_type: instagram_post # 1:1 square family; resize to 1080x1080 if needed
+aspect: "1:1"               # LinkedIn square (1080x1080)
+commit_mode: auto
+
+# Content the asset must carry (from approved draft ## Asset section):
+content:
+  headline: "AI can write the message. The win is what happens next."
+  stack:
+    style: "numbered vertical stack, 4 rungs top-to-bottom"
+    rungs:
+      - {num: "01", label: "Generate", treatment: "muted / grayed — the weak/old default"}
+      - {num: "02", label: "Personalize", treatment: "on-brand"}
+      - {num: "03", label: "Deliver", treatment: "on-brand"}
+      - {num: "04", label: "Land", treatment: "on-brand"}
+    weak_tag: "Most AI stops here"          # small muted tag pinned to rung 01
+    bracket_label: "The execution layer"    # on-brand bracket grouping rungs 02-04
+  source_tag: "Cerkl Broadcast"
+  logo: "Broadcast powered by Cerkl — bottom corner; color logo on light bg, white on dark"
+
+# Brand direction (design CONTEXT):
+brand:
+  palette: [Cobalt 60 #3547C4, Cobalt 100 #0C1159, Cosmic 10 #F5F5FA, White #FFFFFF, Cosmic 90 #27272E, Butter 60 #FFAA22]
+  focal: "rungs 02-04 bracketed on-brand cobalt; rung 01 (Generate) recedes in gray"
+  gradient: "one gradient max if used (linear or freeform, not both)"
+
+# === Render result (written by linkedin-asset-process) ===
+result:
+  rendered_at: "2026-07-01"
+  render_method: generate-design
+  status: NEEDS_DESIGNER   # generation off-spec — usable only as a branded starting shell
+  brand_kit_id: kAFYs6By4yc
+  design_id: DAHOJY7YUJU
+  edit_url: "https://www.canva.com/design/DAHOJY7YUJU/edit"   # canonical (design_id-derived), not the rotating /d/ short link
+  view_url: "https://www.canva.com/design/DAHOJY7YUJU/view"
+  warnings:
+    - "wrong_aspect: rendered 4:5 (1080x1350), spec is 1:1 square (1080x1080) — resize."
+    - "missing_focal_element: the numbered 4-rung stack (01 Generate / 02 Personalize / 03 Deliver / 04 Land) did not render; no grayed rung 01, no 'Most AI stops here' tag, no cobalt bracket / 'The execution layer' label."
+    - "literal_misread: headline generated as generic 'Harnessing AI...' instead of verbatim 'AI can write the message. The win is what happens next.'"
+    - "missing: 'Cerkl Broadcast' source tag + logo."
+    - "known generate-design brand-kit failure mode (same as W27 named-read-attribution)."
+  manual_finish: |
+    Shell only. Resize to 1080x1080; drop the wave-gradient art, bg Cosmic 10 (#F5F5FA). Headline top,
+    verbatim: "AI can write the message. The win is what happens next." (Cosmic 90 #27272E). Build a 4-rung
+    numbered vertical stack: 01 Generate grayed + small gray tag "Most AI stops here"; 02 Personalize /
+    03 Deliver / 04 Land in Cobalt 60 (#3547C4) with a cobalt bracket down the left labeled
+    "The execution layer". Add "Cerkl Broadcast" source tag + logo bottom corner. Text-only, mobile-legible.
+  recommendation: |
+    Better long-term fix: build a reusable numbered-N-part static-theme brand template in Canva, enrich its
+    _element-maps JSON, add it to asset-packs.md so future stack cards render through template-fill cleanly.

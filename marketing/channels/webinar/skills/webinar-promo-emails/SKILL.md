@@ -1,6 +1,6 @@
 ---
 name: webinar-promo-emails
-description: When the user wants webinar promotional emails — the 3-email sequence (intro at T-10d, value reiteration at T-3d, last reminder at T-1d) for both Cerkl and the partner. Trigger phrases include "promo emails", "webinar emails", "email sequence", "promotional emails", "draft the emails", "T-10 email", "day-before email", "last reminder email". Run this AFTER the brief is filled out.
+description: When the user wants webinar promotional emails — the 3-email sequence (intro at T-10d, value reiteration at T-3d, last reminder at T-1d) for both Cerkl and the partner, plus the 1:1 sales outreach snippet reps paste into active deals. Trigger phrases include "promo emails", "webinar emails", "email sequence", "promotional emails", "draft the emails", "T-10 email", "day-before email", "last reminder email", "sales outreach snippet", "sales email template", "something for sales to send", "1:1 rep outreach". Run this AFTER the brief is filled out.
 metadata:
   version: 0.1.0
 ---
@@ -153,6 +153,53 @@ Append a "HubSpot drafts" footer to the markdown file after staging:
 
 Cloned from Webinar Promo Template (`212619094633`). Partner-voice emails sent by partner from their own system.
 ```
+
+## Sales 1:1 outreach snippet (NOT a blast)
+
+Separate from the 6 marketing emails above. This is a short, personal note a **sales rep pastes into an existing thread** with a prospect they're actively working — not a designed campaign. Produce it alongside the promo emails whenever the webinar has an active sales motion (default: yes for prospect/lead-facing webinars).
+
+**How it differs from the blasts — keep these straight:**
+
+| | Marketing blasts (#1–#3) | Sales 1:1 snippet |
+|---|---|---|
+| Audience | Cerkl marketing list (cold-ish) | Named prospects a rep is mid-conversation with |
+| Voice | Editorial, branded | Personal, references the ongoing conversation |
+| Chrome | Banner, buttons, HubSpot layout | Plain text — pastes into a live thread |
+| Tracking link | `cerkl_email` | Per-rep `cerkl_<rep>` link (attributes to the rep) |
+| Delivery | HubSpot draft → user publishes | Rep sends manually from their own inbox |
+| HubSpot draft | Yes | **No** — never stage this in HubSpot |
+
+**Prerequisite:** per-rep tracking links exist in `<speaker-slug>-tracking-urls.md` (e.g. `cerkl_marc`, `cerkl_josh`). If only `cerkl_email` exists, mint per-rep links first per [`../../tracking-urls-convention.md`](../../tracking-urls-convention.md).
+
+### Template (generalize the bracketed slots from the brief)
+
+```
+Subject line options:
+- Thought of you — quick thing on [Weekday, Month D]
+- This is basically the conversation we've been having
+
+Hi [First Name],
+
+Quick one that's relevant to what we've been talking through. [Speaker + role] is
+running a 60-minute session on [Weekday, Month D at Time TZ] on [one-line promise —
+pull from the brief's Core Message].
+
+[One sentence tying the webinar to THIS prospect's situation — reference the specific
+pain they raised.] Figured it'd be worth an hour given where you're at.
+
+Register here: [your tracking link]
+
+Happy to compare notes after if you make it — and either way, I can walk you through
+the same thing 1:1 whenever's useful.
+
+[Rep name]
+```
+
+Keep it under ~120 words. No "free in Foundations" hard-sell — these people are already in a sales conversation; the value is the content and the rep's soft 1:1 offer.
+
+### Output
+
+Write to `<speaker-slug>-sales-outreach.md` in the event folder with: the template above, a **rep tracking-link table** (one row per `cerkl_<rep>` slug from the tracking-urls file), and an optional "asset/press-release to forward" line. Reference: [rachel-maddy-sales-outreach.md](../../rachel-maddy-july-2026/rachel-maddy-sales-outreach.md) (gold standard). Do **not** push this to HubSpot.
 
 ## Push update
 

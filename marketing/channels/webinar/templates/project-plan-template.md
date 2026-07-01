@@ -51,7 +51,7 @@ Asset role mapping per [`asset-packs.md`](../asset-packs.md). Channels marked *(
 | [ ] | Inner Cerkl News announcement *(optional)* | Cerkl | T-10d | `share-1200x628` | Internal newsletter / employee channel |
 | [ ] | Intercom in-app banner *(optional)* | Cerkl | T-10d | `share-1200x628` | To existing customers |
 | [ ] | Customer-success outreach push *(optional)* | Cerkl | T-10d | `speaker-card` | CS team forwards to accounts |
-| [ ] | Sales enablement — talk track + asset *(optional)* | Cerkl | T-10d | `speaker-card` | Hand off to sales for outbound nudges |
+| [ ] | Sales 1:1 outreach snippet — `<speaker-slug>-sales-outreach.md` *(optional)* | Cerkl (Claude) | T-10d | `speaker-card` | `webinar-promo-emails` → "Sales 1:1 outreach snippet" section. Paste-into-thread copy for reps + per-rep tracking links. NOT a HubSpot blast. |
 | [ ] | Email Blast #1 — Partner | Partner | T-10d | `email-banner` | Partner-side; N/A for solo/internal |
 | [ ] | LinkedIn intro mirror — Partner | Partner | T-10d | — | N/A for solo/internal |
 | [ ] | Thought-leadership post — Partner | Partner | T-10d | — | N/A for solo/internal |

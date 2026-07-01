@@ -64,7 +64,7 @@ Apply the decisions, then **clean up `inputs.md` before moving on**:
 - Pulled into the slate → **delete from Upcoming/Ideas** (the CSV owns it now; git remembers)
 - Approved for a later week → move to Upcoming with a date
 - Dead → prune; this week's sketch → delete (it's locked now); later sketches → update to match what was decided
-- Existing briefs scheduled → frontmatter `status: scheduled` + `scheduled_for:`; shipped briefs → archive
+- Shipped briefs → archive. Briefs are **not** pre-dated — scheduling and priority live in `inputs.md` + this session, never in brief frontmatter.
 - **Displacement is a swap, not a slide.** Bumping a scheduled item requires naming the slot it lands in (within the ceilings) — or it reverts to `queued` (date cleared) with an Upcoming note saying why. Never assign a date without a slot; reslotting is a future session's call.
 
 Slate confirmed in chat = the week is locked.

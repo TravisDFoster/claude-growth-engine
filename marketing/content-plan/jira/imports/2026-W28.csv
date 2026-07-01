@@ -1,0 +1,130 @@
+Work Item ID,Issue Type,Parent ID,Epic Link,Summary,Description,Owner,Channel,Start Date,Due Date
+T001,Task,,MCM-992,Content - Blog (Cerkl.com) - The AI Execution Gap in Internal Communications,"Topic: The AI Execution Gap in Internal Communications — reframe AI in IC from content-generation to the execution layer (delivery + proof-it-landed). July arc W2 (""Measure What Lands""); claim ""execution layer"" as Cerkl differentiation language.
+Slug: ai-execution-internal-communications
+Brief link: ../seo/briefs/ai-execution-internal-communications.md
+Primary keyword: AI execution layer internal communications
+Secondary keywords: AI execution gap, internal communications execution, AI internal comms strategy, beyond AI content generation
+Webflow CMS properties:
+  - Primary Category: internal-communication-strategy
+  - Primary Solution: Educational
+  - All Categories: AI in IC
+Draft (Google Doc): https://docs.google.com/document/d/1O43ULdR5RW6HsqjKwznpA80NAq-sgAFWGFJwWLJ-264/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-30,2026-07-06
+S001,Subtask,T001,,Blog – Copy,Write the blog post copy from the brief (../seo/briefs/ai-execution-internal-communications.md).,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-06-30,2026-07-02
+S002,Subtask,T001,,Blog – Image Creation,Create or source images per the brief outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-02,2026-07-03
+S003,Subtask,T001,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-03,2026-07-03
+S004,Subtask,T001,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-03,2026-07-06
+T002,Task,,MCM-992,Content - Blog (Cerkl.com) - AI in Microsoft Teams: Where Native Ends,"Topic: AI in Microsoft Teams — where the native Teams experience ends and a purpose-built IC layer begins (mobile-EX pillar). July arc W2. Brief written just-in-time in Wave 1.
+Slug: ai-in-microsoft-teams-where-native-ends
+Brief link: ../seo/briefs/ai-in-microsoft-teams-where-native-ends.md
+Primary keyword: measure internal comms in microsoft teams
+Secondary keywords: does teams track who read a message, microsoft teams read receipts internal comms, teams announcement analytics, internal comms delivery beyond native teams
+Webflow CMS properties:
+  - Primary Category: mobile-employee-experience
+  - Primary Solution: Omni AI
+  - All Categories: AI in IC, Remote/Hybrid
+Draft (Google Doc): https://docs.google.com/document/d/1Dzx6K05rxcWOT33zv8huEa0bC5zGrkc67-vD5qIZHJ0/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-01,2026-07-08
+S005,Subtask,T002,,Blog – Copy,Write the brief (Wave 1) then draft the blog post copy from it.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-01,2026-07-03
+S006,Subtask,T002,,Blog – Image Creation,Create or source images per the brief outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-03,2026-07-06
+S007,Subtask,T002,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-07,2026-07-07
+S008,Subtask,T002,,Blog – Implementation / Publishing,Stage in Webflow with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-07,2026-07-08
+T003,Task,,MCM-992,Content - Blog (ICP) - What AI-First Actually Changes for the IC Role,"Topic: What ""AI-first"" actually changes for the internal communicator's role (internalcommspro.com) — practitioner-framed; what shifts, what doesn't, where IC judgment still wins. July arc W2.
+Slug: what-ai-first-actually-changes-ic-role
+Note: ICPro has no brief queue — slug synthesized from the deliverable title at scaffold time
+Draft (Google Doc): https://docs.google.com/document/d/1p_whYKFgKVLEm4yosGjd8Jlm8GyILuSG9IxRYe6JBYw/edit",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-01,2026-07-07
+S009,Subtask,T003,,Blog – Copy,Write the blog post copy (internalcommspro.com) from the outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-01,2026-07-03
+S010,Subtask,T003,,Blog – Image Creation,Create or source images per the post outline.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-03,2026-07-06
+S011,Subtask,T003,,Blog – Approval,Review draft + edit pass; sign off for publishing.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-06,2026-07-06
+S012,Subtask,T003,,Blog – Implementation / Publishing,Stage in Wix with CMS properties; schedule publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Blog Posts,2026-07-06,2026-07-07
+T004,Task,,MCM-992,Social Media - LinkedIn - Theme post: The AI Execution Gap (wraps ai-execution blog),"Topic: Theme post — the AI execution gap: AI can write the message, but the win is delivery + proof it landed. Wraps the ai-execution blog (same-day, 7/6).
+Post type: static-theme
+Wraps: ai-execution-internal-communications
+Copy:
+Every internal comms platform shipped an AI writer in the last eighteen months, and the demos all look the same. Blank field, a prompt, a finished newsletter in nine seconds.
+
+It's a good trick. It also solves the one part of the job IC teams least needed solved. Writing a clear announcement was never the bottleneck.
+
+The hard part starts after the draft. Who needs this. Which channel will they actually see. Did the night shift get it before they clocked in. Did anyone read past the subject line. None of the AI demos show you that.
+
+We think of it as four layers: Generate, Personalize, Deliver, Land. Generation is layer one, and it's table stakes now. Everyone has it. Almost no one owns the three layers that carry a message from written to landed, and prove it landed with the people it was written for.
+
+So the next time a vendor demos an AI that writes a newsletter in nine seconds, ask what it does in the next nine minutes. The answer tells you whether you're buying a writer or an execution layer.
+
+Asset: Numbered 4-layer stack (origination needed; needs a Canva manifest + render in Wave 3). Vertical rungs: ""01 Generate / 02 Personalize / 03 Deliver / 04 Land"". Muted ""Most AI stops here"" tag on 01 (grayed); bright on-brand bracket grouping 02-04 labeled ""The execution layer"". Headline: ""AI can write the message. The win is what happens next."" Cerkl brand colors, logo bottom corner, no headshot, text-only, 1080x1080, legible at mobile feed size. Mirrors the blog's numbered-stack image candidate.
+
+#InternalCommunications #AIinIC #EmployeeExperience
+
+First comment: Full breakdown, the four layers and the 5 questions to ask any AI-for-IC vendor: [BLOG URL - Furqan inserts live cerkl.com/blog/ai-execution-internal-communications on publish]
+
+Asset: https://www.canva.com/design/DAHOJY7YUJU/edit
+Manual finish: AI-origination SHELL ONLY (NEEDS DESIGNER) — resize to 1080x1080; build the numbered 4-rung stack (01 Generate grayed + ""Most AI stops here"" tag; 02 Personalize / 03 Deliver / 04 Land in Cobalt 60 with a bracket labeled ""The execution layer""); headline verbatim ""AI can write the message. The win is what happens next.""; add Cerkl Broadcast tag + logo. Full spec: channels/linkedin/canva-manifests/static-theme_ai-execution-layers.yml",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-06
+S013,Subtask,T004,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-02,2026-07-03
+S014,Subtask,T004,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-06
+S015,Subtask,T004,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-06
+S016,Subtask,T004,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-06
+T005,Task,,MCM-992,Social Media - LinkedIn - Webinar countdown: Stop Guessing About Your Analytics (7/9),"Topic: Countdown post — 2 days to the 7/9 Rachel Folz & Maddy Rieman webinar, ""Stop Guessing About Your Analytics."" Drive last-push registration. Tracked link (cerkl_linkedin): https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw
+Post type: static-theme
+Wraps: — (webinar countdown; no blog)
+Copy:
+Two days out.
+
+Your dashboard says 42% open rate. It cannot tell you whether the eleven managers on the night shift ever saw the message they needed to see.
+
+That gap is the whole reason we built this session. On Thursday, Rachel Folz and Maddy Rieman spend an hour on the 5 questions every internal communicator should be able to answer about their last send, with a first look at the new Insights in Broadcast. Named read attribution, not vanity open rates. Who received it, who engaged, who to follow up with by name.
+
+If you have been meaning to register, this is your reminder. Thursday, July 9, 12pm EDT. Free in Foundations, no analytics skills required.
+
+Registration link in the comments.
+
+Asset: existing countdown design, https://www.canva.com/design/DAHMM905XTM/edit (view https://www.canva.com/d/J-RWxJ4Ki70OGVU). NEEDS HAND-CHECK by Furqan: title wraps 3-4 lines and slightly overlaps the ""2"" numeral; nudge in UI before posting. No new render.
+
+#InternalCommunications #EmployeeEngagement #ICMeasurement
+
+First comment: Register for ""Stop Guessing About Your Analytics"" (7/9, Rachel Folz + Maddy Rieman): https://us02web.zoom.us/webinar/register/2617762528258/WN_-vu4-AcITfGJq0KEHysSSw",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-07
+S017,Subtask,T005,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-03,2026-07-06
+S018,Subtask,T005,,LinkedIn – Asset Creation,Create the countdown asset (role: countdown; see webinar canva-manifests).,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-07
+S019,Subtask,T005,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-07,2026-07-07
+S020,Subtask,T005,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-07,2026-07-07
+T006,Task,,MCM-992,Social Media - LinkedIn - Link post: AI in Microsoft Teams (wraps AI-in-Teams blog),"Topic: Link post — amplify the AI in Microsoft Teams blog (same-day, 7/8). Drive blog reads; mobile-EX pillar.
+Post type: static-blog
+Wraps: ai-in-microsoft-teams-where-native-ends
+Copy:
+Copilot can draft your announcement, summarize the thread, and post it to the channel in seconds. It cannot tell you who read it.
+
+For internal comms, that is the gap that matters. Teams confirms the send and stays silent on the read. A channel post proves the message exists somewhere people could see it, not that the 30 people who needed to act on a benefits deadline or a safety change are among the 8 who reacted with a thumbs-up. And the frontline crew who rarely open the app never had a chance to see it at all.
+
+Native Teams is a strong collaboration tool. Comms delivery and measurement is a separate job: targeted delivery to the right audience, across more than one channel, with per-employee read tracking you can actually report on.
+
+Our new post draws the line between where native Teams AI is enough and where you have outgrown it, plus the four signals that tell you which side you are on.
+
+https://cerkl.com/blog/ai-in-microsoft-teams-where-native-ends | Asset: link card auto-rendered by LinkedIn from the blog OG image, no Canva render. Pre-flight Webflow meta title/description/OG before scheduling.
+
+#InternalComms #EmployeeExperience #MicrosoftTeams",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-08
+S021,Subtask,T006,,LinkedIn – Copy,Draft the post copy.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-06,2026-07-07
+S022,Subtask,T006,,LinkedIn – Asset Creation,Create or source the static / carousel / video asset.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-07,2026-07-08
+S023,Subtask,T006,,LinkedIn – Approval,Review post + asset; sign off.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-08,2026-07-08
+S024,Subtask,T006,,LinkedIn – Implementation / Publishing,Schedule in LinkedIn / Buffer / native; confirm publish.,712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-08,2026-07-08
+T007,Task,,MCM-992,Social Media - LinkedIn - Short Video (out-of-band),"Short video — topic, wrap, and copy planned outside the content-plan system. This row exists for Jira capacity tracking only. Furqan fills topic + asset at publish time.",712020:77c51683-fca4-4aee-9e06-929c5b3042ea,Social Media,2026-07-09,2026-07-10
+T008,Task,,MCM-992,"Marketing Email - Email - Webinar Reminder: Stop Guessing About Your Analytics (Rachel & Maddy, 7/9)","Topic: Webinar reminder email (combines the T-3d and T-1d reminders into one send) — Rachel Folz & Maddy Rieman, ""Stop Guessing About Your Analytics"" (7/9, 12pm EDT). Goal: drive final registration. Audience: prospects + leads marketing segment (NOT current users) — same segment as Email #1/#2. Banner: email-banner (webinar pack). Registration (tracked, cerkl_email): https://us02web.zoom.us/webinar/register/2317762528324/WN_-vu4-AcITfGJq0KEHysSSw
+Draft (HubSpot): [DRIVE_URL_PLACEHOLDER] — clone the most recent sent webinar promo to inherit verified audience + link; confirm send segment in UI before send",62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-07
+S025,Subtask,T008,,Email – Copy,Draft the reminder copy + subject lines (webinar-promo-emails skill; combined T-3d/T-1d reminder).,62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-06
+S026,Subtask,T008,,Email – Audience Segmentation,Confirm the send audience = prospects/leads marketing segment in HubSpot.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-06,2026-07-07
+S027,Subtask,T008,,Email – Review,"Review copy, links, tracking URL, and banner; sign off.",62bb263d268cac6e31c40941,Marketing Emails,2026-07-07,2026-07-07
+S028,Subtask,T008,,Email – Schedule Send,Schedule the send in HubSpot for 7/7.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-07,2026-07-07
+T009,Task,,MCM-992,Videos - YouTube - Stop Guessing About Your Analytics Webinar Recording,"Topic: Upload the 7/9 webinar recording to YouTube (full session) so the on-demand landing page and the registrant follow-up email can embed/link it. Full recording, not recap clips (clips are a separate W29 deliverable, 7/16).
+Source: Zoom cloud recording (post-event); ingest raw artifacts first (webinar-ingest).
+YouTube URL: [DRIVE_URL_PLACEHOLDER]",62bb263d268cac6e31c40941,Videos,2026-07-10,2026-07-10
+S029,Subtask,T009,,YouTube – Recording Prep,Pull the Zoom cloud recording; trim top/tail; confirm audio/video.,62bb263d268cac6e31c40941,Videos,2026-07-10,2026-07-10
+S030,Subtask,T009,,YouTube – Upload & Metadata,"Upload to YouTube; title, description, thumbnail (recording-thumbnail), visibility = unlisted or public per plan.",62bb263d268cac6e31c40941,Videos,2026-07-10,2026-07-10
+T010,Task,,MCM-992,Cerkl.com Website Pages - Webinar - On-Demand Landing Page: Stop Guessing About Your Analytics,"Topic: Publish the on-demand webinar landing page (Webflow) — embed the YouTube recording, keep the registration/lead-capture form for gated on-demand access. Converts the pre-event registration page to on-demand post-webinar (7/9).
+Slug: stop-guessing-about-your-analytics-webinar
+Draft (Google Doc): [DRIVE_URL_PLACEHOLDER]",5aa490a9f958b02df135afac,Cerkl.com Website Pages,2026-07-10,2026-07-10
+S031,Subtask,T010,,Website – Copy,Adapt registration-page copy to on-demand framing (webinar-registration-page skill, on-demand variant).,5aa490a9f958b02df135afac,Cerkl.com Website Pages,2026-07-10,2026-07-10
+S032,Subtask,T010,,Website – Implementation / Publishing,Embed the YouTube recording; stage + publish the on-demand page in Webflow.,5aa490a9f958b02df135afac,Cerkl.com Website Pages,2026-07-10,2026-07-10
+T011,Task,,MCM-992,Marketing Email - Email - Webinar Follow-Up: Recording + Recap (Registrants),"Topic: Post-webinar follow-up email to REGISTRANTS ONLY (not the subscriber base) — distribute the on-demand recording + a short recap; CTA to Foundations. Runs after webinar-ingest. Registrant list only, so it does not count against the 1-broadcast-email/week ceiling.
+Audience: 7/9 webinar registrants (imported to HubSpot post-event).
+Recording: on-demand page (T010) / YouTube (T009).
+Draft (HubSpot): [DRIVE_URL_PLACEHOLDER] — webinar-followup-email skill",62bb263d268cac6e31c40941,Marketing Emails,2026-07-10,2026-07-10
+S033,Subtask,T011,,Email – Copy,Draft the follow-up copy from the webinar-ingest output (webinar-followup-email skill).,62bb263d268cac6e31c40941,Marketing Emails,2026-07-10,2026-07-10
+S034,Subtask,T011,,Email – Audience Segmentation,Build the registrant list in HubSpot from the imported 7/9 registrations.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-10,2026-07-10
+S035,Subtask,T011,,Email – Review,"Review copy, recording link, and recap; sign off.",62bb263d268cac6e31c40941,Marketing Emails,2026-07-10,2026-07-10
+S036,Subtask,T011,,Email – Schedule Send,Schedule the send in HubSpot for 7/10.,62bb263d268cac6e31c40941,Marketing Emails,2026-07-10,2026-07-10

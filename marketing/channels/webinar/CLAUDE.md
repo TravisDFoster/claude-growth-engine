@@ -31,7 +31,7 @@ Invoke these in roughly the order the project moves through phases.
 | Planning | Fill out the brief content with the partner | [`webinar-brief`](skills/webinar-brief/SKILL.md) |
 | Content Dev | Registration page copy + speaker bios | [`webinar-registration-page`](skills/webinar-registration-page/SKILL.md) |
 | Content Dev | Webinar Canva assets (banner, social cards, 2-days-to-go) from brand templates | [`template-fill`](/Users/travisfoster/claude-code/cerkl/marketing/design/canva-skills/template-fill/SKILL.md) — live v1.6.0; channel process dispatches one sub-agent per role in [asset-packs.md](asset-packs.md) |
-| Promotion | 3-email sequence × 2 voices (Cerkl + partner) | [`webinar-promo-emails`](skills/webinar-promo-emails/SKILL.md) |
+| Promotion | 3-email sequence × 2 voices (Cerkl + partner) + 1:1 sales outreach snippet for reps | [`webinar-promo-emails`](skills/webinar-promo-emails/SKILL.md) |
 | Promotion | Push the 3 Cerkl-voice emails into HubSpot as new drafts (clone a recent webinar promo as template; user publishes from UI) | [`hubspot/skills/draft-marketing-email`](/Users/travisfoster/claude-code/cerkl/hubspot/skills/draft-marketing-email/SKILL.md) |
 | Promotion | 5 LinkedIn posts (intro, mirror, thought-leadership, 2 boosts) | [`webinar-linkedin-posts`](skills/webinar-linkedin-posts/SKILL.md) |
 | Promotion | Pre-event blog post | [`webinar-blog-intro`](skills/webinar-blog-intro/SKILL.md) |

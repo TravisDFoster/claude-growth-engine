@@ -6,6 +6,17 @@
 
 ---
 
+## 2026-07-01
+
+1. **SHRM: the AI-adoption comms gap quantified — 33% of ICs told about AI adoption vs. 74% of directors** — Analyst — https://www.shrm.org/topics-tools/research/navigating-ai-in-the-workplace/full-report
+2. **Forrester: make internal communications a strategic lever for employee (and brand) experience (48% cut headcount to AI, deprioritize change mgmt)** — Analyst — https://www.forrester.com/blogs/make-internal-communications-a-strategic-lever-for-employee-and-brand-experience/
+3. **McKinsey: are your people ready for AI at scale? (only 7% fully scaled; shared comms > one-off training)** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/are-your-people-ready-for-ai-at-scale
+4. **HBR: AI adoption is overloading your middle managers (hidden bottleneck absorbing validation/coaching load)** — Analyst — https://hbr.org/2026/06/ai-adoption-is-overloading-your-middle-managers
+5. **Karian (isitworking): "the data shows a workplace splitting in two" — 35% think org applies AI to right problems, 32% got clear guidance** — Community — https://isitworking.substack.com/p/the-data-shows-a-workplace-splitting
+6. **Ragan: how to rebuild trust when employees learn company news externally (ECCC 2026)** — Publication — https://www.ragan.com/ragan-insider-eccc-2026-wright/
+7. **Ragan: the week in comms — Meta AI task force, Robinhood layoff memo** — Publication — https://www.ragan.com/the-week-in-comms-meta-robinhood-dominos/
+8. **Staffbase session: "Stop the scavenger hunt — a single source of truth for all employees" (Mister Car Wash; destination-hub frame)** — Competitor — https://www.youtube.com/watch?v=4qgqIjL0JgQ
+
 ## 2026-06-30
 
 1. **The benchmark-report arms race: ContactMonkey + Workshop both publish internal-email benchmarks in one week (proof-layer migration lands)** — Competitor — https://www.contactmonkey.com/blog/internal-email-benchmark-report-2026
@@ -69,14 +80,3 @@
 5. **McKinsey HR Monitor 2026 — experience hinges on fairness/transparency/workload, not new programs (50%+ get feedback annually or never)** — Analyst — https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/hr-monitor
 6. **Workvivo: "Building an Employee Listening Culture" guide — Listening Gap thesis post-Seer** — Competitor — https://www.workvivo.com/blog/new-guide-building-an-employee-listening-culture/
 7. **isitworking (Karian): "Half of your workforce still doesn't trust leadership" — trust as an IC-owned measurement problem** — Community — https://isitworking.substack.com/p/why-half-of-your-workforce-still
-
-## 2026-06-05
-
-1. **Gartner Australia: 17% AI Champions vs. 56% Resisters — confidence, not training, drives adoption** — Analyst — https://www.gartner.com/en/newsroom/press-releases/2026-06-02-gartner-hr-survey-finds-ai-is-boosting-productivity-but-widening-workforce-divisions-in-australia
-2. **Gallagher 2026 "Readiness Gap": 61% of IC teams have no structure for change comms; 87% cite manager capability as the risk** — Publication — https://blog.haiilo.com/blog/gallagher-employee-comms-2026/
-3. **Staffbase: "Narrative Leadership is the human antidote to the 2026 visibility gap"** — Competitor — https://staffbase.com/blog/narrative-leadership-2026-visibility-gap
-4. **Ragan Week in Comms: Wix attributes cuts to AI, Teradata withholds raises citing AI, '60 Minutes' lead explains Pelley firing** — Publication — https://www.ragan.com/the-week-in-comms-cbs-meta-teradata/
-5. **Strictly Internal: IC hiring drops to 37 roles (down from 49–61 in May); change/transformation comms dominates listings** — Community — https://www.strictlyinternal.com/
-6. **Ragan: "Don't let AI take away your sparkle" — writer-as-differentiator POV** — Publication — https://www.ragan.com/ragan-writing-cert-course-may2026-ai/
-7. **Staffbase APAC original research push (ASX 100 benchmark + "Australian leaders risking digital success by slighting culture")** — Competitor — https://staffbase.com/blog/asx-performance-benchmark-australian-organisations
-8. **Embedded competitor signal: Staffbase customer videos surface On Air (audio podcast) + Navigator (AI search) in production use** — Competitor — https://www.youtube.com/watch?v=jJqVNuBhhjo
