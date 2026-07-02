@@ -1,5 +1,7 @@
 # Cerkl Ops Workspace
 
+> ⚠️ **Moved — now private.** This repo is frozen as of 2026-07-01; active work continues in a private repository. Kept public only to preserve its stars. Thanks to everyone who followed along.
+
 Internal ops repository for Travis Foster, Head of Marketing & Growth Operations at Cerkl. Contains strategy, marketing programs, sales tooling, CRM operations, and project management.
 
 > Private repo. Contains company strategy, ICP, sales content, and API integrations.
